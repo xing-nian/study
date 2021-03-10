@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>单元格合并</title>
+    <style>
+        table{
+            border: 1px solid red;
+            border-collapse: collapse;
+            text-align: center;
+        }
+        td
+        {
+            border: 1px solid red;
+        }
+    </style>
+</head>
+<body>
+    <!-- 
+        单元格合并步骤:
+        1.先确定行合并(rowspan)、列合并(colspan)colum：列
+        2.找到要合并的单元格，设置单元格合并的属性 rowspan=“num” 或者 colspan=“num”
+        3.删除多余的单元格
+
+
+     -->
+    <table>
+        <thead>
+            <tr>
+               <td></td>
+               <td>周一</td>
+               <td>周二</td>
+               <td>周岁</td>
+               <td>周四</td>
+               <td>周五</td>
+               <td>周六</td>
+               <td>周日</td>
+            </tr>
+        </thead>
+     <tbody>
+        <tr>
+               <td>上午</td>
+               <td>html</td>
+               <td>css</td>
+               <td>js</td>
+               <td>java</td>
+               <td>css</td>
+               <td>html</td>
+               <td rowspan="3">休息</td>  
+        </tr>
+            <tr>
+                <td>下午</td>
+                <td>html</td>
+                <td>html</td>
+                <td>css</td>
+                <td>js</td>
+                <td>java</td>
+                <td>css</td>
+        </tr>
+            <tr>
+                <td>晚上</td>
+                <td colspan="6">自习</td>
+            </tr>
+   
+     </tbody>
+   
+    </table>
+</body>
+</html>

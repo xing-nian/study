@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>京东框架布局</title>
+    <style>
+        body{
+            /* 设置外边距，分为上下左右四个边距 */
+            margin: 0;
+        }
+        div{
+            height: 30px;
+
+            background-color: #E6E6E6;
+            /* 底部边框  边框宽度  边框样式  边框颜色 */
+            border-bottom: 1px solid #E6E6E6;
+        }
+        .nva-top{
+            height: 30px;
+            line-height: 30px;
+        }
+        .container{
+           width: 1000px;
+           margin: 0 auto;
+           background-color: red;
+           height: 30px;
+        }
+        .header{
+            height: 140px;
+            background-color: #fff;
+            border-bottom: 1px solid #E6E6E6;
+
+        }
+        .nav-h{
+            height: 30px;
+        }
+        .header-h{
+            height: 140px;
+        }
+        .banner{
+            
+            background-color: #E6E6E6;
+            margin: 0 auto;
+            text-align: center;
+        }
+        .banner-h{
+            height: 480px;
+        }
+        
+           
+        
+        .box{
+            width: 200px;
+            height: 480px;
+            background-color: green;
+            
+        }
+        .center{
+            width: 590px;
+            height: 480px;
+            background-color: yellow;
+            
+        }
+        .dish{
+            display: inline-block;
+            
+        }
+    </style>
+</head>
+<body>
+    <!-- 顶部导航栏 -->
+    <div class="nva-top">
+         <div class="container nav-h"></div>
+    </div>
+    <!-- 搜索模块 -->
+    <div class="header">
+        <div class="container header-h" ></div>
+    </div>
+    <!-- 京东横幅 -->
+     <div class="banner">
+        <div class="container banner-h"></div>
+        <div class="left box dish"></div>
+        <div class="center dish"></div>
+        <div class="right box dish"></div>
+     </div>
+</body>
+</html>

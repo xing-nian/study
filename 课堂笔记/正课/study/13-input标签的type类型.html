@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>input标签的type类型</title>
+</head>
+<body>
+    <!-- 
+        form:表单，用来收集用户数据信息，并发送给服务器
+        action属性 指定当前表单提交数据的服务器地址
+        method属性 指定表单提交数据的方式， 方式有两种：get， post 方式
+    -->
+    <form action="" method="">
+        <!-- 
+            1.type="text" 文本输入框
+            2.type="password"密码框
+            3.type="checkbox"复选框(多选框)
+            4.input type="radio" 单选框(注意， 要实现单选状态，input标签必须添加相同的name属性)
+            5.type="button" 普通按钮，通过value属性定义内容
+            6.input type="submit" 提交按钮，默认按钮标题是“提交”，可以用value属性更改
+            7.input type="reset" 重置按钮，默认按钮标题是“重置”，可以用value属性更改
+         -->
+         <!-- 
+            1.br标签 换行
+          -->
+      账号：  <input type="text"> <br/>
+      密码：  <input type="password"><br/>
+             <input type="checkbox">阅读并接受<br>
+      你的爱好：
+      <input type="checkbox">吃饭
+      <input type="checkbox">睡觉
+      <input type="checkbox">打豆豆<br>
+    
+    <input type="radio" name="sex">男
+    <input type="radio" name="sex">女
+    <input type="radio" name="sex">未知<br>
+    
+    <input type="button" value="登录" >
+    <input type="submit"value="注册">
+    <input type="reset"><br>
+
+   <!-- 
+       以下内容了解
+       type="emali" 邮箱输入框，只有点击提交按钮，才能看到效果
+       type="file"  上传文件
+  -->
+   <input type="emali"><br>
+   <input type="file"><br>
+   <input type="number"><br>
+   <input type="color"><br>
+   <input type="date"><br>
+</form>
+</body>
+</html>

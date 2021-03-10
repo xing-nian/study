@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>03-常用块标签</title>
+    <style>
+        ul li{
+            background-color: blueviolet;
+        }
+    </style>
+</head>
+<body>
+    <!-- 
+        1.div: 分隔，一般在垂直方向上划分区域
+        2.标题标签，分6个级别
+        3.p标签不能嵌套块标签，浏览器解析会出错
+        4. ul ：unorder list  无序列表
+           ui里只能嵌套li，而li中可以嵌套任意元素
+
+           ol：order list 有序列表
+           ol里只能嵌套li，而li中可以嵌套任意元素
+
+           dl：define list 自定义列表
+               dt  一般对应列表标题
+               dd 一般情况下 一个dt对应多个dd
+
+     -->
+     <div>div：分割，属于块标签</div>
+     <h1>标题标签，分6个级别 ，属于块标签</h1>
+     <p> 段落标签</p>
+     <!-- <p><div></div></p>  不能这样写 -->
+     <h3>汽车种类</h3>
+     <ul>
+         <li>小汽车</li>
+         <li>越野车</li>
+         <li>大货车</li>
+         <li>碰碰车</li>
+         <li>玩具车</li>
+     </ul>
+
+     <h2>成绩单</h2>
+     <ol>
+         <li>刘思    113分</li>
+         <li>王强    110分</li>
+         <li>李伟    114分</li>
+     </ol>
+
+     <dl>
+           <dt>帮助中心</dt>
+           <dd>订单管理</dd>
+           <dd>选民系统</dd>
+           <dd>商品查询</dd>
+     </dl>
+</body>
+</html>

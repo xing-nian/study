@@ -1,0 +1,39 @@
+<!-- Vue.js 的核心是一个允许采用简洁的模板语法来声明式地将数据渲染进 DOM 的系统：
+
+<div id="app">
+  {{ message }}
+</div>
+var app = new Vue({
+  el: '#app',              //#是id选择器，el：挂载点， .是类（class）选择器
+  data: {              
+    message: 'Hello Vue!'  //将id为app中的内容替换  影响范围在<div></div>标签以内   只能支持双标签
+  }
+})
+ -->
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+     <meta charset="UTF-8">
+     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+     <title>v-for指令</title>
+ </head>
+ <body>
+  <div id="app">
+    <input type="button" value="点击" @click="doit(666)" >
+  </div>
+     <!-- 开发环境版本，包含了有帮助的命令行警告 -->
+     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js" ></script>
+     <script >
+       var app = new Vue({
+         el:"#app",
+         methods:{
+           dolt:function(p1){
+             console.log("做it");
+             console.log(p1);
+           }
+          
+         },
+     })
+     </script>
+ </body>
+ </html>
