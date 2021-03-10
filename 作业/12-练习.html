@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>费用报销单</title>
+</head>
+<style>
+   
+    h1{
+        margin: 0 auto;
+        width: 400px;
+        border-bottom:5px double #000
+    }
+    
+     div{
+        width: 1000px;
+        text-align: center;
+        margin: 0 auto;
+        font-weight: 700;
+     }
+        
+     
+     #p1{
+         float: left;
+        
+     }
+     td{
+         height: 50px;
+         border: 1px solid #000;
+         
+     }
+     table{
+        border: 1px solid #000;
+            /* 合并边框  collapse 合并*/
+            border-collapse: collapse;
+            width: 1000px;
+            height: 480px;
+            text-align: center;
+            margin: 0 auto;
+            font-weight: 600;
+     }
+ tfoot td{
+     text-align: left;
+ }
+ /* thead tr td:first-child{
+    width: 350px;
+ } */
+ #t1{
+     width: 350px;
+ }
+ /* thead tr td:nth-child(2){
+    width: 150px;
+ } */
+ #t2{
+     width: 150px;
+ }
+ /* thead tr td:nth-child(3){
+    width: 300px;
+ } */
+ #t3{
+     width: 300px;
+ }
+ /* thead tr td:nth-child(4){
+    width: 200px;
+ } */
+ #t4{
+     width: 200px;
+ }
+</style>
+<body>
+    <div>
+        <h1>费用报销单</h1>
+        <br><br>
+    </div>
+    <div>
+        <span id="p1">部门：</span>
+
+        <span>日期：&emsp; 年 &emsp;月 &emsp;日</span>
+    </div>
+    
+        <thead>
+            <table>
+                <tr>
+                    <td id="t1">报&emsp;销&emsp;内&emsp;容</td>
+                    <td id="t2">单据张数</td>
+                    <td id="t3">报&emsp;销&emsp;金&emsp;额</td>
+                    <td id="t4">备&emsp;注</td>
+                </tr>
+        </thead>
+           <tbody>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+           </tbody>
+            <tfoot>
+                <tr>
+                    <td colspan="4" >合计：人民币( 大写 )&emsp;&emsp;拾万&emsp;&emsp;万&emsp;&emsp;仟&emsp;&emsp;佰&emsp;&emsp;拾&emsp;&emsp;元&emsp;&emsp;角&emsp;&emsp;分&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;(小写)¥&emsp;&emsp;元</td>
+                    
+                </tr>
+                <tr>
+                    <td colspan="2" >总经理签字:</td>
+                    <td>财务负责人签字:</td>
+                    <td >报销人:</td>
+                    
+                </tr>
+                <tr>
+                    <td colspan="2">财务审核:</td>
+                    <td colspan="2">部门签字:</td>
+                    
+                </tr>
+            </tfoot>
+        </table>
+    
+</body>
+</html>
