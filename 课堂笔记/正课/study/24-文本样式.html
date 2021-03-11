@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>文本样式</title>
+    <style>
+        h1{
+            /* 一、font-**
+            font-size: 字体大小
+            font-weight:字体粗细 (100-900， 400-normal，700-bold)
+            font-style:字体风格，italic 表示斜体，normal 表示正常
+            font-family：设置字体
+             */
+        font-size: 20px;
+        font-weight: normal;
+        font-style: italic;
+        font-family: 宋体;
+
+        /* 字体复合属性 font： font-style font-weight font-size/line-height
+        font-family
+        注意:必须按照一定的顺序书写
+            不需要设置的属性可以省略，但是需要保留font-size和font-family
+         */
+        /* font: italic 400 20px 宋体; */
+        /* 二、text-
+        text-align：文本对齐方式  left center right
+        text-indent：首行缩进
+
+        text-decoration：文本的修饰线， underline：下划线，
+        overline：上划线，line-through 删除线，none：去除修饰线
+
+        text-transform:文本转换大小写， lowercase 所以英文字母小写
+        uppercase 所以英文字母大写，capitalize 单词首字母大写
+
+        text-shadow: 文字阴影(参数1：x轴 方向偏移量， 参数2： y轴方向偏移量，参数3：模糊程度， 参数4：颜色)
+         */
+         
+         /* 
+            三、【其他】
+            line-height：行高
+            1> 多行文本，设置行间距
+            2> 单行文本，设置文本垂直方向对齐方式
+
+            letter-spacing：字符间距
+            word-spacing： 单词与单词直接的间距
+          */
+        }
+        p{
+            /* em是一个相对单位 1em与你目前字体默认大小相同   如果默认大小设置为16px   1em=16px*/
+            /* 如果是多行文字，想要设置行间距， 可以设置行高来实现
+               行间距 = 行高 - 文字的大小
+               
+             */
+            line-height: 30px;
+            text-indent: 2em;
+            text-align: center;
+            text-decoration: line-through;
+            
+        }
+        .text1{
+            text-transform: uppercase;
+            word-spacing: 20px;
+        }
+        .text2{
+            text-transform: capitalize;
+            letter-spacing: 20px;
+        }
+        .text3{
+            text-transform: lowercase;
+            text-shadow: 3px 2px 3px  red;
+        }
+    </style>
+</head>
+<body>
+    <h1>标题</h1>
+    <p>
+        内容aaaaaaaaaaaaaaaaaaa
+        aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+        aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+
+
+    </p>
+    <div class="text1"> you is a good boy</div>
+    <div class="text2">you is a good boy</div>
+    <div class="text3">you is a good boy</div>
+</body>
+</html>

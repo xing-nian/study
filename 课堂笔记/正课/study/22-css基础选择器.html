@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>css基础选择器</title>
+    <style>
+        li{
+            color:blue;
+        }
+        #hong{
+            color: red;
+        }
+        .nav .nav-item a{
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <!-- 
+        1.标签选择器: 根据标签名查找对应的一个或者多个标签，给它们添加对应的样式
+
+        2.id选择器：根据 【id名 （#id）】查找出特定的样式，给其添加特定样式（id具有唯一性）
+
+        3.class选择器(类选择器)：根据 【类名 （.class）】查找对应的一个或者多个标签，给它们添加某一类样式
+       1>. 不同的标签可以具有相同的类名 (通常 我们给不同的标签 添加相同的类名是因为他们具有相同的样式，这样可以优化代码)
+       2>.同一个标签可以具有多个类名，类名与类名之间用空格隔开
+
+       注意： id与class的命名规范；要有意义，不能以数字开通，不要使用中文
+        4.后代选择器:选择器 选择器
+          父子选择器:选择器>选择器(后代选择器和父子选择器是根据 标签的嵌套关系 衍生出来的选择器)
+          写法：ul>#hong{}
+        5.并列选择器:选择器,选择器 
+        6.通配符 *
+     -->
+     <ul>
+         <li id="hong">item </li> 
+         <li>item </li>
+         <li>item </li>
+         <li>item </li>
+         <li>item </li>
+         <li>item </li>
+         <li>item </li>
+         <li>item </li>
+     </ul>
+     <div class="nav">
+         <span class="nav-item"><a href="">小米</a></span>
+     </div>
+</body>
+</html>

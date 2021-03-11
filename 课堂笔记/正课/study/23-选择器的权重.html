@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>选择器的权重</title>
+    <style>
+        /* 标签选择器的权重：1 最低*/
+        div{
+            color: red;
+        }
+        /* id 选择器的权重：100  其次*/
+        #div1{
+            color: green;
+        }
+        /* class选择器的权重 10 第三*/
+        .box{
+            color: hotpink;
+        }
+        #box{
+            color: #000000;
+        }
+
+       /*权重： 10+10+1+1 */
+        .x .w span a {
+            color: blanchedalmond;
+        }
+        /*权重： 100 */
+        #logo{
+            color: coral;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 
+        - css的优先级：指的就是css选择器的权重值，权重值越大，优先级越高。
+        - 优先级的排名顺序（!important除外）：
+        1.行内样式，权重值：1000
+        2.id 选择器的权重：100
+        3.class选择器 |伪类| 属性 的权重 10
+        4.标签选择器 | 伪元素 的权重：1
+        5**!important 权重无穷大**
+        6.最终优先级顺序：!important > 行内style > id  > class > 标签选择器
+     -->
+    <!-- 行内样式的权重：1000 最高 -->
+    <div style="color: blue;">
+         文字是蓝色
+    </div>
+    <div id="div1">文字的颜色是绿色</div>
+    <div class="box">文字的颜色是亮粉色</div>
+    <div class="box" id="box">文字的颜色是黑色</div>
+
+
+  <div class="x">
+      <div class="w">
+          <span><a href="" id="logo">百度</a></span>
+      </div>
+  </div>
+</body>
+
+</html>

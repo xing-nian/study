@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>css引入方式</title>
+    <style>
+         .header{
+             width: 300px;
+             height: 300px;
+             
+         }
+    </style>
+    <!-- 引入外部css文件 -->
+    <link rel="stylesheet" href="..\css\style.css">
+</head>
+<body>
+    <!-- 
+        1.行内样式
+        2.内联样式 :在一定程度上做到了标签与样式分离，但还是在同一个html文件中，分离的不够彻底。
+        3.外联样式 : html与css样式相分离，我们通常将css样式文件统一放在css文件夹中
+     -->
+     <div style="width: 100px; height: 100px; background-color: red; ">
+     </div>
+      
+     <div class="header">
+           <h1>注册页面</h1>
+     </div>
+</body>
+</html>
