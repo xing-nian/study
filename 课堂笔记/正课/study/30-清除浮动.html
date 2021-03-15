@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>清除浮动</title>
+    <style>
+        .box{
+            background-color: #ccc;
+            width: 1400px;
+            /* overflow: hidden; */
+
+        }
+        .item{
+            float: left;
+            width: 200px;
+            height: 200px;
+        }
+        .box div:nth-child(even){
+            background-color: blue;
+        }
+        .box div:nth-child(odd){
+            background-color:pink;
+        }
+        .box2{
+            width: 1400px;
+            height: 400px;
+            background-color:red;
+        }
+        /* xx::after 伪元素选择器 ，它类似于一个标签， 可以把它当做标签使用  */
+        .clearfix::after{
+                content:"";
+                display:block;
+                height: 0;
+                clear: both;
+                /* visibility ：可见的 */
+                visibility: hidden;
+        }
+        .clearfix{
+            /* IE6 7 兼容专用 */
+             *zoom:1;
+        }
+        .box3{
+            width: 1200px;
+            background-color: plum;
+
+        }
+        .item3{
+            width: 200px;
+            height: 200px;
+            float: left;
+        }
+        .box3 div:nth-child(odd){
+            background-color: #3f6d7e;
+
+        }
+        .box3 div:nth-child(even){
+            background-color: #6d3e4f;
+        }
+        .clear::before,
+        .clear::after{
+            content:"" ;
+            display: table;
+        }
+        .clear::after{
+            clear: both;
+        }
+        .clear{
+            *zoom:1
+        }
+    </style>
+</head>
+<body>
+    <!-- 
+        清除浮动  指的是清除浮动带来的影响
+        清除浮动的方式：
+        1.给浮动元素的父元素设置高度。
+        2.隔墙法：在浮动元素的末尾添加一个空标签，注意：这个空标签必须是一个块标签）
+        比如： <div style="clear:both"></div>
+        3.给父元素设置 overflow：hidden （overflow：溢出  hidden:隐藏）
+        4.给父元素添加伪元素：
+        .clearfix::after{
+                content:"";
+                display:block;
+                height: 0;
+                clear: both;
+                /* visibility ：可见的 */
+                visibility: hidden;
+        }
+        .clearfix{
+            /* IE6 7 兼容专用 */
+             *zoom:1;
+        5.双伪元素：  
+        伪元素：  指的就是假标签
+         .clear::before,
+            .clear::after{
+            content:"" ;
+            display: table;
+        }
+        .clear::after{
+            clear: both;
+        }
+        .clear{
+            *zoom:1
+        }
+
+        
+     -->
+     <div class="box clearfix">
+          <div class="item">1</div>
+          <div class="item">2</div>
+          <div class="item">3</div>
+          <div class="item">4</div>
+          <div class="item">5</div>
+          <!-- <div style="clear:both"></div> -->
+     </div>
+     <div class="box2"></div>
+     <div class="box3 clear">
+         <div class="item3">1</div>
+         <div class="item3">2</div>
+         <div class="item3">3</div>
+         <div class="item3">4</div>
+         <div class="item3">5</div>
+     </div>
+</body>
+</html>

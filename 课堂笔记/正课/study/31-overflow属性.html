@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>overflow属性</title>
+    <style>
+        #div1{
+            width: 400px;
+            height: 200px;
+            border: 1px solid green;
+            /* 溢出内容隐藏 */
+            overflow: scroll;
+            /* 
+               hidder：隐藏
+               visible：可见
+               scroll： 出现滚动条
+               auto： 自动（如果内容有溢出就显示滚动条，否则就没有滚动条）
+             */
+        }
+        #div2{
+            width: 500px;
+            height: 100px;
+            border: 5px solid red;
+            overflow: hidden;
+        }
+        .item{
+            width: 500px;   
+            height: 200px;
+            background-color: yellow;
+        }
+        #div3{
+            width: 1000px;
+            height: 300px;
+            border: 5px solid blueviolet;
+            overflow: auto;
+        }
+    </style>
+</head>
+<body>
+    <div id="div1">
+        3月15日，北京迎沙尘降温天气，空气能见度减弱。北京市气象台03月15日07时25分升级发布沙尘暴黄色预警信号：目前本市已出现明显沙尘天气，预计当前至15日中午，大部分地区能见度小于1000m，请注意防范。 中新网记者 李霈韵 摄
+
+中新网北京3月15日电 (记者 阮煜琳)受沙尘天气影响，中国华北、西北等地15日出现空气污染，张家口、大同、银川等多个城市空气质量指数达到500。
+
+中国环境监测总站监测显示，3月15日7时，张家口、大同、榆林、呼和浩特、包头、赤峰、鄂尔多斯、嘉峪关、金昌等多个城市空气质量出现严重污染，空气质量指数均达到500。
+
+在空气检测中，空气质量指数设置的最高数值为500，超过500的即为爆表。(完)
+    </div>
+    <div id="div2">
+        <div class="item">
+
+        </div>
+  
+        </div>
+        
+        <div id="div3">
+            3月15日，北京迎沙尘降温天气，空气能见度减弱。北京市气象台03月15日07时25分升级发布沙尘暴黄色预警信号：目前本市已出现明显沙尘天气，预计当前至15日中午，大部分地区能见度小于1000m，请注意防范。 中新网记者 李霈韵 摄
+
+中新网北京3月15日电 (记者 阮煜琳)受沙尘天气影响，中国华北、西北等地15日出现空气污染，张家口、大同、银川等多个城市空气质量指数达到500。
+
+中国环境监测总站监测显示，3月15日7时，张家口、大同、榆林、呼和浩特、包头、赤峰、鄂尔多斯、嘉峪关、金昌等多个城市空气质量出现严重污染，空气质量指数均达到500。
+
+在空气检测中，空气质量指数设置的最高数值为500，超过500的即为爆表。(完)
+    </div>
+</body>
+</html>
