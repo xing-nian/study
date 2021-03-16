@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>块的居中问题</title>
+    <style>
+        body{
+            margin: 0;
+        }
+        .container{
+            background-color: #ccc;
+        }
+        .w{
+            /* 前提：定宽 */
+            width: 1000px;
+            /* 关键：设置左右margin为auto（自动） */
+            margin: 0 auto;
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="w">
+            版心区域
+        </div>
+    </div>
+</body>
+</html>

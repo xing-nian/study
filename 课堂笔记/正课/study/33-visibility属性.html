@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>visibility属性</title>
+    <style>
+        .father{
+            background-color:pink;
+            width: 100px;
+        }
+        a{
+            text-decoration: none;
+        }
+        .son-hidden{
+            background-color: red;
+            /* 隐藏 */
+            visibility: hidden;
+        }
+        /* 注意：鼠标经过的元素 与 显示/隐藏的元素，必须是父子关系 */
+       .father:hover .son-hidden{
+           /* 显示 */
+            visibility: visible;
+        }
+    </style>
+</head>
+<body>
+    <!-- visibility： 实现元素的显示和隐藏
+         特点：当元素隐藏时，依旧占据原来的位置。
+
+         对比overflow属性，overflow实现溢出内容的显示和隐藏
+    -->
+    <div class="father">
+        <a href="">设置</a>
+        <div class="son-hidden">当鼠标经过时显示</div>
+    </div>
+</body>
+</html>

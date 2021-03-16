@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>外边距穿透问题</title>
+    <style>
+        .father{
+            width: 500px;
+            height: 500px;
+            background-color: red;
+            /* 方式一 */
+            /* overflow: hidden; */
+
+            /* 方式二 */
+            /* 给父元素加上边框 */
+            /* transparent 透明色 */
+            /* border-top: 1px solid transparent; */
+
+            /* 方式三 */
+            /* padding-top: 100px;
+            box-sizing: border-box; */
+        }
+        .son{
+            width: 200px;
+            height: 200px;
+            background-color: yellow;
+            margin-top: 100px;
+            /* 方式4 给父元素或者子元素设置float，固定定位，绝对定位 */
+            float: left;
+            
+        }
+        span{
+                background-color: #fff;
+                /* 行标签设置上下外边距无效 */
+                /* margin-top: 100px */
+
+            };
+        input{
+            /*行内块可以设置上下外边距,不存在外边距穿透问题  */
+            margin-top: 100px;
+        }
+    </style>
+</head>
+<body>
+    <div class="father">
+        <div class="son"></div>
+    </div>
+    <div class="father" style="background: #222;">
+    <span>11111</span>
+    <input type="text">
+    </div>
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>行元素，行内块元素之间的间隙问题</title>
+    <style>
+        span{
+            background-color: red;
+
+        }
+        .box2 span:nth-child(n+2){
+
+            /* 第二种方式：使用margin 让元素偏移 */
+            margin-left: -5px;
+        }
+           /* 第三种方式：先设置父元素的font-size：0px，然后在设置子元素的font-size */
+        .box3{
+          
+           font-size: 0;
+        }
+        .box3 span{
+            font-size: 16px;
+        }
+        /* 第四种方式 设置浮动偏移,要记得清除浮动带来的影响 */
+        .box4 span{
+            float: left;
+        }
+    </style>
+</head>
+<body>
+    <!-- 间隙问题是由于换行产生的. -->
+    <!--第一种方式：元素与元素紧挨着，不敲换行符 -->
+    <div class="box1">
+        <span>第1项</span><span>第2项</span><span>第3项</span>
+    </div>
+    <div class="box2">
+        <span>第1项</span>
+        <span>第2项</span>
+        <span>第3项</span>
+    </div>
+    <div class="box3">
+        <span>第1项</span>
+        <span>第2项</span>
+        <span>第3项</span>
+    </div>
+    <div class="box4">
+        <span>第1项</span>
+        <span>第2项</span>
+        <span>第3项</span>
+    </div>
+</body>
+</html>
