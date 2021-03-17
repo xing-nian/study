@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>绝对定位(2)</title>
+    <style>
+        .father{
+            width: 500px;
+            height: 500px;
+            background-color: #af6;
+        }
+        .son1{
+            width: 100px;
+            height: 100px;
+            background-color: #222;
+            position: relative;
+            left: 500px;
+            
+            /* 相对定位的元素不会脱离标准文档流，它依然占据着原来的空间 */
+        }
+        .son2{
+            width: 200px;
+            height: 200px;
+            background-color: #3cf;
+        }
+        .father2{
+            width: 500px;
+            height: 500px;
+            background-color: #3c7;
+            position: relative;
+        }
+        span{
+            position: absolute;
+            /* position: relative; */
+            left: 100px;
+            top: 100px;
+            width: 100px;
+            height: 100px;
+            background-color: #222;
+        }
+        .child1{
+            width: 100px;
+            height: 100px;
+            background-color: #ef2;
+            position: absolute;
+            top: 300px;
+            /* 绝对定位的元素会脱离标准文档流，不再占据原来的空间 */
+        }
+        .chlid2{
+            width: 200px;
+            height: 200px;
+            background-color: #f23;
+        }
+    </style>
+</head>
+<body>
+    <!-- 1.相对定位是否会脱标？  不会！！ -->
+    <div class="father">
+        <div class="son1"></div>
+        <div class="son2"></div>
+        <!-- 无效！ -->
+        <!-- <span>对其相对定位，能否设置宽高吗</span> -->
+    </div>
+    <!-- 2.绝对定位是否会脱标？ 会！！ -->
+    <div class="father2">
+      <div class="child1"></div>
+      <div class="chlid2"></div>
+      <!-- 有效！ -->
+      <span>对其绝对定位，能否设置宽高吗</span>
+    </div>
+    <!-- 
+        3.绝对定位的元素性质会发生改变，会变成行内块元素。（与浮动元素的特征相同）
+     -->
+</body>
+</html>

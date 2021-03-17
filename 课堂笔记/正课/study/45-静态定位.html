@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>静态定位</title>
+    <style>
+        .father{
+            width: 500px;
+            height: 500px;
+            background-color: pink;
+        }
+        .son{
+            width: 200px;
+            height: 200px;
+            background-color: skyblue;
+            /*1. position：指定定位方式。 static：静态定位 */
+            position: static;
+
+            /*2. 通常我们通过top/left/right/bottom指定元素的位置 */
+            /* top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0; */
+
+            /*3. 元素默认的状态就是静态定位，通过top，left，right，bottom 无法调整元素的位置 */
+            /*4.静态定位不脱离标准文档流 */
+            top: 100px;
+            left: 100px;
+        }
+    </style>
+</head>
+<body>
+    <div class="father">
+        <div class="son"></div>
+    </div>
+</body>
+</html>

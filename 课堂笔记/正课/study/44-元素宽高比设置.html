@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>元素宽高比设置百分比</title>
+    <style>
+        html{
+            height: 100%;
+        }
+        body{
+            margin: 0;
+            background-color: white;
+            height: 100%;
+
+        }
+        .div1{
+            height: 20%;
+            background-color: aqua;
+        }
+        .div2{
+            height: 200px;
+            width: 200px;
+            background-color: pink;
+        }
+        h1{
+            margin: 0;
+            height: 100%;
+            width: 50%;
+            background-color: blue;
+        }
+        .div3{
+            height: 300px;
+            border: 5px solid #222;
+        }
+        .item{
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(244, 0, 0, .5);
+        }
+    </style>
+</head>
+<body>
+    <!-- 参考 https://blog.csdn.net/huitoukest/article/details/51375345 -->
+    <!--
+         方法一：从根的Html开始，到字的div结束，全部都具有百分比高度，这样，就都能够获取到高度信息；
+         方法二：给父元素设置具体宽高，子元素百分比高度
+         方法三：使用定位，实现子元素与父元素宽高一致
+    -->
+    <!-- 总结：子元素设置的宽高百分比，是相对于父元素的实际宽高 -->
+    <div class="div1"></div>
+    <div class="div2">
+        <h1>标题</h1>
+    </div>
+    <div class="div3">
+        <div class="item"></div>
+    </div>
+</body>
+</html>

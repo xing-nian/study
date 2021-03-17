@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>绝对定位</title>
+    <style>
+         body{
+            margin: 0;
+            position: relative;
+        }
+         .father{
+            width: 300px;
+            height: 300px;
+            background-color: pink;
+            /* 此时，设置fa的定位模式为 relative，是为了给绝对定位的子元素找个参照物 */
+            position: relative;
+        }
+        .son{
+            width: 200px;
+            height: 200px;
+            background-color: skyblue;
+            position: absolute;
+            right: 20px;
+            bottom: 40px;
+           
+        }
+        .fa2{
+            width: 100px;
+            height: 100px;
+            border: 1px solid #333;
+            position: absolute;
+            left: 30px;
+            top: 30px;
+        }
+        .box1{
+            width: 600px;
+            height: 600px;
+            border: 2px solid red;
+            /* position: relative; */
+            position: absolute;
+            left: 300px;
+        }
+        .box2{
+            width: 250px;
+            height: 250px;
+            border: 2px solid blueviolet;
+            margin: 0 auto;
+            position: relative;
+        }
+    </style>
+    
+    
+</head>
+<body>
+    <!-- 
+        常规使用：【子绝父相】，一般某个元素要进行绝对定位，会指定它的父元素作为参照物
+
+        绝对定位元素查找参照物的规律：
+        一个元素进行绝对定位，如果没有指定参照物，那么他会一层一层向上查找参照物。
+        首先先看最近的父元素是否有定位（相对、绝对、固定）如果没有，会继续向上一级查找；直到找到某一级的父元素有定位，此时以该元素为参照物；
+        如果一直找到根标签html都没找到定位元素，则以根标签html为参照物。
+     -->
+     <div class="father">
+        <div class="son"></div>
+    </div>
+    <div class="box1">
+        <div class="box2">
+            <div class="fa2">fa2</div>
+        </div>
+    </div>
+</body>
+</html>
