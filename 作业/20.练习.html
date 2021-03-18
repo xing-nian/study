@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>新浪导航定位练习</title>
+    <style>
+      body {
+        width: 100%;
+        margin: 0 auto;
+        border-top: 3px solid orange;
+        border-bottom: 1px solid #edeef0;
+        display: inline-block;
+      }
+      span {
+        width: 100px;
+        height: 40px;
+        display: inline-block;
+        font-size: 13px;
+        position: relative;
+        line-height: 30px;
+        font-family: "Microsoft YaHei", "微软雅黑", "SimSun", "宋体";
+        /* background-color: #EDEEF0; */
+        margin: 0 auto;
+        text-align: center;
+      }
+      span:nth-child(n):hover {
+        background-color: #edeef0;
+      }
+      div {
+        height: 40px;
+        line-height: 40px;
+      }
+      .div1::before {
+        content: "";
+
+        width: 5px;
+        height: 5px;
+        border-left: 1px solid red;
+        border-top: 1px solid red;
+        transform: rotate(225deg);
+        position: absolute;
+        top: 15px;
+        left: 690px;
+      }
+      .div2::before {
+        content: "";
+
+        width: 5px;
+        height: 5px;
+        border-left: 1px solid red;
+        border-top: 1px solid red;
+        transform: rotate(225deg);
+        position: absolute;
+        top: 15px;
+        left: 1170px;
+      }
+      .div3::before {
+        content: "";
+
+        width: 5px;
+        height: 5px;
+        border-left: 1px solid red;
+        border-top: 1px solid red;
+        transform: rotate(225deg);
+        position: absolute;
+        top: 15px;
+        left: 1270px;
+      }
+      .div4::before {
+        content: "";
+
+        width: 5px;
+        height: 5px;
+        border-left: 1px solid red;
+        border-top: 1px solid red;
+        transform: rotate(225deg);
+        position: absolute;
+        top: 15px;
+        left: 1370px;
+      }
+      .div1 {
+        /* width: 100px; */
+        height: 40px;
+        display: inline-block;
+      }
+      .div2 {
+        height: 40px;
+        display: inline-block;
+      }
+      .div3 {
+        height: 40px;
+        display: inline-block;
+      }
+      .div4 {
+        height: 40px;
+        display: inline-block;
+      }
+
+      .div1:hover .list1 {
+        display: block;
+      }
+      .div2:hover .list2 {
+        display: block;
+      }
+      .div3:hover .list3 {
+        display: block;
+      }
+      .div4:hover .list4 {
+        display: block;
+      }
+      .list1 {
+        list-style: none;
+        position: absolute;
+        left: 560px;
+        top: 27px;
+        display: none;
+      }
+      .list2 {
+        list-style: none;
+        position: absolute;
+        left: 1060px;
+        top: 27px;
+        display: none;
+      }
+      .list3 {
+        list-style: none;
+        position: absolute;
+        left: 1160px;
+        top: 27px;
+        display: none;
+      }
+      .list4 {
+        list-style: none;
+        position: absolute;
+        left: 1260px;
+        top: 27px;
+        display: none;
+      }
+      li {
+        text-align: center;
+        width: 100px;
+        height: 40px;
+        line-height: 40px;
+        border-left: 1px solid orange;
+        border-right: 1px solid orange;
+        border-bottom: 1px solid orange;
+        font-size: 12px;
+      }
+      a:hover {
+        color: orange;
+        background-color: #edeef0;
+      }
+      a {
+        text-decoration: none;
+        color: #444;
+      }
+      .a1 {
+        position: absolute;
+        left: 400px;
+      }
+      .a2 {
+        position: absolute;
+        left: 500px;
+      }
+      .a3 {
+        position: absolute;
+        left: 600px;
+      }
+      .a4 {
+        position: absolute;
+        left: 1000px;
+      }
+      .a5 {
+        position: absolute;
+        left: 1100px;
+      }
+      .a6 {
+        position: absolute;
+        left: 1200px;
+      }
+      .a7 {
+        position: absolute;
+        left: 1300px;
+      }
+      .a8 {
+        position: absolute;
+        left: 1400px;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <a
+        href="https://www.sina.com.cn/setindex/select.html?tj=1#chrome-89.0.4389.90-640"
+        ><span class="a1">设为首页</span></a
+      >
+      <a href="https://sina.cn/"><span class="a2">手机新浪网</span></a>
+      <div class="div1">
+        <a href="#"><span class="a3">新浪移动端</span></a>
+        <ul class="list1">
+          <li>
+            <a
+              target="_blank"
+              href="http://m.weibo.com/web/cellphone.php#iphone"
+              suda-uatrack="key=index_new_menu&amp;value=sina_apps_list_click"
+              >新浪微博</a
+            >
+          </li>
+
+          <li>
+            <a
+              target="_blank"
+              href="https://so.sina.cn/palmnews/web-sinanews-app-download.d.html"
+              suda-uatrack="key=index_new_menu&amp;value=sina_apps_list_click"
+              >新浪新闻</a
+            >
+          </li>
+          <li>
+            <a
+              target="_blank"
+              href="http://finance.sina.com.cn/mobile/comfinanceweb.shtml"
+              suda-uatrack="key=index_new_menu&amp;value=sina_apps_list_click"
+              >新浪财经</a
+            >
+          </li>
+          <li>
+            <a
+              target="_blank"
+              href="http://m.sina.com.cn/m/sinasports.shtml"
+              suda-uatrack="key=index_new_menu&amp;value=sina_apps_list_click"
+              >新浪体育</a
+            >
+          </li>
+          <li>
+            <a
+              target="_blank"
+              href="http://edu.sina.com.cn/app/download.shtml"
+              suda-uatrack="key=index_new_menu&amp;value=sina_apps_list_click"
+              >新浪升学帮</a
+            >
+          </li>
+          <li>
+            <a
+              target="_blank"
+              href="http://licaishi.sina.com.cn/html5/act/ganggu/index.html"
+              suda-uatrack="key=index_new_menu&amp;value=sina_apps_list_click"
+              >新浪港股通</a
+            >
+          </li>
+          <li>
+            <a
+              target="_blank"
+              href="http://blog.sina.com.cn/lm/z/app/"
+              suda-uatrack="key=index_new_menu&amp;value=sina_apps_list_click"
+              >新浪博客</a
+            >
+          </li>
+          <li>
+            <a
+              target="_blank"
+              href="http://tianqitong.sina.cn/"
+              suda-uatrack="key=index_new_menu&amp;value=sina_apps_list_click"
+              >天气通</a
+            >
+          </li>
+          <li>
+            <a
+              target="_blank"
+              href="http://games.sina.com.cn/o/kb/12392.shtml"
+              suda-uatrack="key=index_new_menu&amp;value=sina_apps_list_click"
+              >新浪游戏</a
+            >
+          </li>
+          <li>
+            <a
+              target="_blank"
+              href="http://zhongce.sina.com.cn/about/app"
+              suda-uatrack="key=index_new_menu&amp;value=sina_apps_list_click"
+              >新浪众测</a
+            >
+          </li>
+          <li>
+            <a
+              target="_blank"
+              href="http://mail.sina.com.cn/client/mobile/index.php?suda-key=mail_app&amp;suda-value=login"
+              suda-uatrack="key=index_new_menu&amp;value=sina_apps_list_click"
+              style="padding-right: 12px"
+              >新浪邮箱客户端</a
+            >
+          </li>
+        </ul>
+      </div>
+      <a href="https://sina.cn/"><span class="a4">登录</span></a>
+
+      <div class="div2">
+        <a href="https://weibo.com/"><span class="a5">微博</span></a>
+        <ul class="list2">
+          <li>
+            <a
+              target="_blank"
+              href="https://weibo.com/login.php?url=https%3A%2F%2Fweibo.com%2Fmessages%3Ftopnav%3D1%26wvr%3D4"
+              suda-uatrack="key=index_new_menu&amp;value=sina_apps_list_click"
+              >私信</a
+            >
+          </li>
+          <li>
+            <a
+              target="_blank"
+              href="https://weibo.com/login.php?url=https%3A%2F%2Fweibo.com%2Fcomment%2Finbox%3Ftopnav%3D1%26wvr%3D4%26f%3D1"
+              >评论</a
+            >
+          </li>
+          <li>
+            <a
+              target="_blank"
+              href="https://weibo.com/login.php?url=https%3A%2F%2Fweibo.com%2Fat%2Fweibo%3Ftopnav%3D1%26wvr%3D4"
+              >&emsp;@我&emsp;</a
+            >
+          </li>
+        </ul>
+      </div>
+      <div class="div3">
+        <a
+          href="https://login.sina.com.cn/signup/signin.php?entry=blog&r=http%3A%2F%2Fi.blog.sina.com.cn&from=referer:http%3A%2F%2Fi.blog.sina.com.cn"
+          ><span class="a6">博客</span></a
+        >
+        <ul class="list3">
+          <li suda-uatrack="key=index_new_menu&amp;value=blog_list_click">
+            <a
+              href="http://i.blog.sina.com.cn/blogprofile/profilecommlist.php?type=1"
+              title="博客评论"
+              target="_blank"
+              data-role="blogcomment"
+              >&emsp;博客评论&emsp;</a
+            >
+          </li>
+          <li suda-uatrack="key=index_new_menu&amp;value=blog_list_click">
+            <a
+              href="http://i.blog.sina.com.cn/blog_rebuild/profile/controllers/notelist.php?action=profilenotice"
+              title="未读提醒"
+              target="_blank"
+              data-role="unreadnotices"
+              >&emsp;未读提醒&emsp;</a
+            >
+          </li>
+        </ul>
+      </div>
+      <div class="div4">
+        <a href="https://mail.sina.com.cn/"><span class="a7">邮箱</span></a>
+        <ul class="list4">
+          <li suda-uatrack="key=index_new_menu&amp;value=mail_list_click">
+            <a
+              href="http://mail.sina.com.cn/"
+              title="免费邮箱"
+              target="_blank"
+              data-role="unread"
+              >免费邮箱</a
+            >
+          </li>
+          <li suda-uatrack="key=index_new_menu&amp;value=mail_list_click">
+            <a href="http://vip.sina.com.cn/" title="VIP邮箱" target="_blank"
+              >VIP邮箱</a
+            >
+          </li>
+          <li suda-uatrack="key=index_new_menu&amp;value=mail_list_click">
+            <a href="http://mail.sina.net/" title="企业邮箱" target="_blank"
+              >企业邮箱</a
+            >
+          </li>
+          <li suda-uatrack="key=index_new_menu&amp;value=mail_list_click">
+            <a
+              href="http://mail.sina.com.cn/client/mobile/index.php?suda-key=mail_app&amp;suda-value=login"
+              title="新浪邮箱客户端"
+              target="_blank"
+              >新浪邮箱客户端</a
+            >
+          </li>
+        </ul>
+      </div>
+
+      <a href="http://news.sina.com.cn/guide/"
+        ><span class="a8">网站导航</span></a
+      >
+    </div>
+  </body>
+</html>

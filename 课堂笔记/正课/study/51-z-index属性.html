@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>z-index属性</title>
+    <style>
+        .box{
+            width: 800px;
+            height: 500px;
+            border: 1px solid #000;
+            position: relative;
+        }
+        .box .item:first-child{
+            background-color: turquoise;
+            width: 200px;
+            height: 200px;
+            position: absolute;
+            top: 50px;
+            left: 200px;
+            z-index: 2;
+        }
+        .box .item:nth-child(2){
+            background-color: yellow;
+            height: 100px;
+            width: 100px;
+            position: absolute;
+            top: 50px;
+            left: 200px;
+            z-index: 3;
+        }
+        .box .item:nth-child(3){
+            background-color: pink;
+            height: 300px;
+            width: 300px;
+            position: absolute;
+            top: 50px;
+            left: 200px;
+
+        }
+        .box .item:nth-child(4){
+            background-color: red;
+            height: 50px;
+            width: 50px;
+        }
+        .box .item:nth-child(5){
+            background-color: blue;
+            width: 800px;
+            height: 300px;
+        }
+    </style>
+</head>
+<body>
+    <!-- z-index:设置定位（除了静态定位）元素的堆叠层级，值越大，层级越高。
+         默认值是0。可以设置正值或负值
+
+    -->
+    <div class="box">
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+        <div class="item">4</div>
+        <div class="item">5</div>
+    </div>
+</body>
+</html>

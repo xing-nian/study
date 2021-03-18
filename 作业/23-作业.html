@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>css手册</title>
+    <style>
+        *{
+              margin: 0;
+              padding: 0;
+        }
+        div{
+            position: relative;
+        }
+        span{
+            width: 150px;
+            height: 30px;
+            border: 1px solid #aaa;
+            position: absolute;
+            right: 50px;
+            top: 20px;
+            line-height: 30px;
+        }
+        div:hover ul{
+            display: block;
+        }
+        ul{
+            height: 280px;
+            list-style: none;
+            position: absolute;
+            right: 50px;
+            top: 50px;
+            display: none;
+            
+        }
+        ul li:last-child {
+            border-bottom: 1px solid #ccc;
+            
+        }
+        li{
+            width: 130px;
+            height: 40px;
+            padding-right:20px;
+            border-left: 1px solid #ccc;
+            border-right: 1px solid #ccc;
+           
+            /* line-height: 40px; */
+            display: block;
+            
+        }
+    </style>
+</head>
+<body>
+    <div class="div1">
+        <span>其他简介条目</span>
+        <ul>
+            <li>更新历史</li>
+            <li>关于本手册</li>
+            <li>关于样式表</li>
+            <li>关于作者</li>
+            <li>阅读及使用指导</li>
+            <li>鸣谢</li>
+            <li>捐赠</li>
+        </ul>
+    </div>
+</body>
+</html>
