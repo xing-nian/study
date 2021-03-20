@@ -1,15 +1,16 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en "class="no-ie"style="overflow:hidden;">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ 
     <title>百度一下，你就知道</title>
-    <style>
-        #div1{
+    <style >
+        .div1{
             height: 900px;
         }
-        #top-left{
+        .top-left{
             height: 60px;
             width: 575px;
             float: left;
@@ -23,11 +24,11 @@
             color: #222;
             font: 13px/23px Arial,sans-serif;
         }
-        #top-right{
+        .top-right{
             float: right;
             height: 60px;
-            width: 173px;
-
+            width: 250px;
+            position: relative;
         }
         .s{
             margin-left: 32px;
@@ -40,6 +41,9 @@
             height: 24px;
             width: 48px;
             line-height: 24px;
+         }
+         .r:hover{
+             color: white;
          }
         .r{
             display: inline-block;
@@ -57,15 +61,19 @@
         }
         a:link{
             text-decoration: none;
-      
+            
         }
         a:visited{
             text-decoration:none
         }
+       
+        a:hover{
+            color: rgb(56, 107, 246);
+        }
         .content a{
             color: #bbb;
         }
-        img{
+        #img0{
             width: 270px;
             height: 129px;
             border: 0;
@@ -162,11 +170,101 @@
         #hot a{
             color: #222;
         }
+       ul{
+           display: none;
+           width: 80px;
+           height: 120px;
+           position: relative;
+           left: -30px;
+           top: -15px;
+       }
+        .rt{
+           
+            position: relative;
+            left: 1150px;
+        }
+        .item{
+            width: 80px;
+            text-align: center;
+            height: 30px;
+            border-left: 1px solid #ccc;
+            border-right:1px solid #ccc ;
+            margin: 0 auto;
+
+        }
+        ul .item:nth-child(1){
+            border-top: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        ul .item:nth-child(4){
+            border-bottom: 1px solid #ccc;
+            
+            border-radius: 5px;
+        }
+        .top-right:hover  ul{
+            display: block;
+        }
+        .img1{
+            width: 44px;
+            position: absolute;
+            top: 50px;
+            margin: 10px 20px;
+            display: none;
+        }
+        .gd{
+            width: 340px;
+            height: 260px;
+            /* border: 1px solid #ccc; */
+            position: relative;
+            left: 500px;
+            top: -43px;
+            /* display: none; */
+        }
+        .g{
+            display: inline-block;
+            height: 24px;
+            position: relative;
+            top: 50px;
+            margin: 30px 20px;
+            /* background-color: #ccc; */
+            display: none;
+        }
+        a{
+            height: 16px;
+            color: black;
+        }
+        .img2{
+            width: 44px;
+            position: absolute;
+            top: 150px;
+            display: none;
+            margin: 10px 20px;
+        }
+        .img3{
+            width: 44px;
+            position: absolute;
+            top: 150px;
+            left: 0px;
+            margin: 10px 20px;
+            display: none;
+        }
+        /* .gd:hover .img1{
+            display: block;
+        }
+        .gd:hover .img2{
+            display: block;
+        }
+        .gd:hover .img3{
+            display: block;
+        }
+        .gd:hover .g{
+            display: block;
+        } */
     </style>
 </head>
 <body>
-    <div id="div1">
-        <div id="top-left">
+    <div class="div1">
+        <div class="top-left">
             <a href="http://news.baidu.com" target="_blank" class="t">新闻</a>
             <a href="https://www.hao123.com" target="_blank" class="t">hao123</a>
             <a href="http://map.baidu.com" target="_blank" class="t">地图</a>
@@ -174,18 +272,54 @@
             <a href="https://haokan.baidu.com/?sfrom=baidu-top" target="_blank" class="t">视频</a>
             <a href="http://tieba.baidu.com" target="_blank" class="t">贴吧</a>
             <a href="http://xueshu.baidu.com" target="_blank" class="t">学术</a>
-            <a href="http://www.baidu.com/more/"  class="t" target="_blank">更多</a>
+            <div class="gd">
+                <a href="http://www.baidu.com/more/"  class="t " id="c" target="_blank" style="display: block;">更多</a><br>
+                
+                <a href="https://pan.baidu.com" target="_blank" name="tj_wangpan">
+                <img class="img1" src="https://dss0.bdstatic.com/5aV1bjqh_Q23odCf/static/superman/img/topnav/baiduyun@2x-e0be79e69e.png">
+                <div class="g">网盘&emsp;&emsp;</div></a><a href="https://zhidao.baidu.com" target="_blank" name="tj_zhidao">
 
+                    <img class="img1" src="https://dss0.bdstatic.com/5aV1bjqh_Q23odCf/static/superman/img/topnav/zhidao@2x-e9b427ecc4.png">
+                <div class="g">知道</div></a><a href="https://baike.baidu.com" target="_blank" name="tj_baike">
+
+                    <img class="img1" src="https://dss0.bdstatic.com/5aV1bjqh_Q23odCf/static/superman/img/topnav/baike@2x-1fe3db7fa6.png">
+                <div class="g">百科</div></a><a href="http://image.baidu.com" target="_blank" name="tj_img">
+
+                    <img class="img1" src="https://dss0.bdstatic.com/5aV1bjqh_Q23odCf/static/superman/img/topnav/tupian@2x-482fc011fc.png">
+                <div class="g">图片</div></a>
+
+                    <a href="https://baobao.baidu.com" target="_blank" name="tj_baobaozhidao">
+                    <img class="img3" src="https://dss0.bdstatic.com/5aV1bjqh_Q23odCf/static/superman/img/topnav/baobaozhidao@2x-af409f9dbe.png">
+                    <div class="g">宝宝知道</div></a>
+
+                    <a href="https://wenku.baidu.com" target="_blank" name="tj_wenku">
+                    <img class="img2" src="https://dss0.bdstatic.com/5aV1bjqh_Q23odCf/static/superman/img/topnav/wenku@2x-f3aba893c1.png">
+                    <div class="g">文库</div></a>
+
+                    <a href="https://jingyan.baidu.com" target="_blank" name="tj_jingyan">
+                    <img class="img2" src="https://dss0.bdstatic.com/5aV1bjqh_Q23odCf/static/superman/img/topnav/jingyan@2x-e53eac48cb.png">
+                    <div class="g">经验</div></a>
+
+                    <a href="http://music.taihe.com" target="_blank" name="tj_mp3">
+                    <img class="img2" src="https://dss0.bdstatic.com/5aV1bjqh_Q23odCf/static/superman/img/topnav/yinyue@2x-c18adacacb.png">
+                    <div class="g">音乐</div></a>
+        </div>
+            </div>
+        <div class="top-right">
+           
+            <span class="s" id="setting" >设置</span>
+            <ul>
+            <li class="item"><a href="#" >搜索设置</a></li>
+            <li class="item"><a href="#">高级设置</a></li>
+            <li class="item"><a href="#">开启预测</a></li>
+            <li class="item"><a href="#">隐私设置</a></li>
+           </ul>
             
         </div>
-        
-        <div id="top-right">
-            <span class="s" id="setting" >设置</span>
-            <a class="r" href="https://passport.baidu.com/v2/?login&amp;tpl=mn&amp;u=http%3A%2F%2Fwww.baidu.com%2F&amp;sms=5" >登录</a>
-        </div>
+        <div class="rt"><a class="r" href="https://passport.baidu.com/v2/?login&amp;tpl=mn&amp;u=http%3A%2F%2Fwww.baidu.com%2F&amp;sms=5"  >登录</a></div>
         <div id="lg">
             <a href="https://www.baidu.com/s?wd=%E4%BB%8A%E6%97%A5%E6%96%B0%E9%B2%9C%E4%BA%8B&tn=SE_PclogoS_8whnvm25&sa=ire_dl_gh_logo&rsv_dl=igh_logo_pcs" target="_blank">
-                <img src="https://www.baidu.com/img/PCtm_d9c8750bed0b3c7d089fa7d55720d6cf.png" alt="baidu" title="点击一下，了解更多">
+                <img id="img0" src="https://www.baidu.com/img/PCtm_d9c8750bed0b3c7d089fa7d55720d6cf.png" alt="baidu" title="点击一下，了解更多">
             </a>
         </div>
         <div id="ip">
@@ -207,6 +341,7 @@
             </ol>
            </div>
         </div>
+
         <div class="foot">
             <div class="content">
                 <p class="lh"><a class="text-color" href="https://www.baidu.com/cache/setindex/index.html" target="_blank">设为首页</a></p>

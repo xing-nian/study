@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>新浪显示栏切换</title>
+    <style>
+        body{ 
+            margin: 0 ;
+        }
+        ul{
+            list-style: none;
+            text-align: center;
+            font-size:0;
+        }
+        a:hover{
+            color: orange;
+        }
+        a{
+            
+            text-decoration: none;
+            color: black;
+        }
+        li{
+            font-size:0;
+            margin: 0;
+            display: inline-block;
+        }
+        #item1:hover .box1{
+            display: block;
+
+        }
+        #item2:hover .box2{
+            display: block;
+        }
+        #item3:hover .box3{
+            display: block;
+        }
+        .box1{
+          width: 360px;
+          height: 240px;
+          background-color: red;
+          /* display: none; */
+          position: absolute;
+          top: 50px;
+          left: 120px;
+        }
+        .box2{
+            width: 360px;
+            height: 240px;
+            background-color: yellow;
+            display: none;
+            position: absolute;
+            top: 50px;
+            left: 120px;
+        }
+        .box3{
+            width: 360px;
+            height: 240px;
+            background-color: skyblue;
+            display: none;
+            position: absolute;
+            top: 50px;
+            left: 120px;
+        }
+        #item1:hover{
+            border-left: 0;
+            border-bottom: 0;
+            border-top: 3px solid orange;
+            background-color: #fff;
+        }
+        #item2:hover{
+            border-bottom: 0;
+            border-top: 3px solid orange;
+            background-color: #fff;
+        }
+        #item3:hover{
+            border-bottom: 0;
+            border-top: 3px solid orange;
+            background-color: #fff;
+        }
+        #item1{
+            font-size: 14px;
+            width: 75px;
+            height: 40px;
+            border: 1px solid #ccc;
+            line-height: 40px;
+        }
+        
+        #item2{
+            font-size: 14px;
+            width: 60px;
+            height: 40px;
+            border: 1px solid #ccc;
+            line-height: 40px;
+        }
+        #item3{
+            font-size: 14px;
+            width: 60px;
+            height: 40px;
+            border: 1px solid #ccc;
+            line-height: 40px;
+        }
+        ul{
+            width: 360px;
+            height: 277px;
+           position: absolute;
+           top: 0px;
+           left: -120px;
+        }
+        .menu{
+            position: relative;
+            left: 800px;
+            top: 150px;
+            width: 360px;
+            height: 42px;
+            background-color: #eee;
+            /* box-shadow: 1px 3px 3px #aaa; */
+            
+        }
+     
+    </style>
+</head>
+
+<body>
+    <div class="menu">
+        <ul>
+            <li id="item1">
+                <a href="http://photo.sina.com.cn/" target="_blank" suda-uatrack="key=index_www_tag&amp;value=www_photo_click">图片</a>
+            <div class="box1">
+                  
+            </div>
+            </li >
+            <li id="item2">
+                <a href="http://finance.sina.com.cn/zl/" target="_blank" suda-uatrack="key=index_www_tag&amp;value=www_zhuanlan_click">专栏</a>
+                <div class="box2">
+    
+                </div>
+                </li>
+                <li id="item3">
+                    <span tab-type="tab-nav" suda-uatrack="key=index_www_tag&amp;value=www_hot_click" class=" ">热点</span>
+                    <div class="box3">
+        
+                    </div>
+                    </li>
+        </ul>
+        
+        
+    </div>
+</body>
+</html>
