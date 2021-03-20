@@ -1,152 +1,294 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>新浪显示栏切换</title>
     <style>
-        body{ 
-            margin: 0 ;
+      body {
+        margin: 0;
+      }
+      ul {
+        list-style: none;
+        text-align: center;
+        font-size: 0;
+        text-align: left;
+      }
+      a:hover {
+        color: orange;
+      }
+      a {
+        text-decoration: none;
+        color: black;
+      }
+      li {
+        font-size: 0;
+        margin: 0;
+        display: inline-block;
+      }
+      #item1:hover .box1 {
+        display: block;
+        visibility: visible;
+      }
+      /* 当悬浮在item2上是 box1不隐藏？  非父子关系 如何隐藏元素？*/
+      /* #item2:hover #item1 {
+            opacity: 0;
+            font-size: 0;  
         }
-        ul{
-            list-style: none;
-            text-align: center;
-            font-size:0;
-        }
-        a:hover{
-            color: orange;
-        }
-        a{
-            
-            text-decoration: none;
-            color: black;
-        }
-        li{
-            font-size:0;
-            margin: 0;
-            display: inline-block;
-        }
-        #item1:hover .box1{
-            display: block;
-
-        }
-        #item2:hover .box2{
-            display: block;
-        }
-        #item3:hover .box3{
-            display: block;
-        }
-        .box1{
-          width: 360px;
-          height: 240px;
-          background-color: red;
-          /* display: none; */
-          position: absolute;
-          top: 50px;
-          left: 120px;
-        }
-        .box2{
-            width: 360px;
-            height: 240px;
-            background-color: yellow;
-            display: none;
-            position: absolute;
-            top: 50px;
-            left: 120px;
-        }
-        .box3{
-            width: 360px;
-            height: 240px;
-            background-color: skyblue;
-            display: none;
-            position: absolute;
-            top: 50px;
-            left: 120px;
-        }
-        #item1:hover{
-            border-left: 0;
-            border-bottom: 0;
-            border-top: 3px solid orange;
-            background-color: #fff;
-        }
-        #item2:hover{
-            border-bottom: 0;
-            border-top: 3px solid orange;
-            background-color: #fff;
-        }
-        #item3:hover{
-            border-bottom: 0;
-            border-top: 3px solid orange;
-            background-color: #fff;
-        }
-        #item1{
-            font-size: 14px;
-            width: 75px;
-            height: 40px;
-            border: 1px solid #ccc;
-            line-height: 40px;
-        }
+        #item3:hover #item1{
+            opacity: 0;
+            font-size: 0;
+        } */
+      #item2:hover .box2 {
+        display: block;
+        overflow: hidden;
         
-        #item2{
-            font-size: 14px;
-            width: 60px;
-            height: 40px;
-            border: 1px solid #ccc;
-            line-height: 40px;
-        }
-        #item3{
-            font-size: 14px;
-            width: 60px;
-            height: 40px;
-            border: 1px solid #ccc;
-            line-height: 40px;
-        }
-        ul{
-            width: 360px;
-            height: 277px;
-           position: absolute;
-           top: 0px;
-           left: -120px;
-        }
-        .menu{
-            position: relative;
-            left: 800px;
-            top: 150px;
-            width: 360px;
-            height: 42px;
-            background-color: #eee;
-            /* box-shadow: 1px 3px 3px #aaa; */
-            
-        }
-     
+      }
+      #item3:hover .box3 {
+        display: block;
+        overflow: hidden;
+      }
+      .box1 {
+        width: 360px;
+        height: 240px;
+        /* display: none; */
+        position: absolute;
+        top: 50px;
+        left: 40px;
+      }
+      .box2 {
+        width: 360px;
+        height: 240px;
+        display: none;
+        position: absolute;
+        top: 50px;
+        left: 40px;
+      }
+      .box3 {
+        width: 360px;
+        height: 240px;
+        display: none;
+        position: absolute;
+        top: 50px;
+        left: 40px;
+      }
+      #item1:hover {
+        border-left: 0;
+        border-bottom: 0;
+        border-top: 3px solid orange;
+        background-color: #fff;
+      }
+      #item2:hover {
+        border-bottom: 0;
+        border-top: 3px solid orange;
+        background-color: #fff;
+      }
+      #item3:hover {
+        border-bottom: 0;
+        border-top: 3px solid orange;
+        background-color: #fff;
+      }
+      #item1 {
+        font-size: 14px;
+        width: 75px;
+        height: 40px;
+        border: 1px solid #ccc;
+        line-height: 40px;
+      }
+
+      #item2 {
+        font-size: 14px;
+        width: 60px;
+        height: 40px;
+        border: 1px solid #ccc;
+        line-height: 40px;
+      }
+      #item3 {
+        font-size: 14px;
+        width: 60px;
+        height: 40px;
+        border: 1px solid #ccc;
+        line-height: 40px;
+      }
+      ul {
+        width: 360px;
+        height: 277px;
+        position: absolute;
+        top: 0px;
+        left: -40px;
+      }
+      .menu {
+        position: relative;
+        left: 800px;
+        top: 150px;
+        width: 360px;
+        height: 42px;
+        background-color: #eee;
+        /* box-shadow: 1px 3px 3px #aaa; */
+      }
+        .tp {
+        width: 105px;
+        height: 70px;
+      }
     </style>
-</head>
+  </head>
 
-<body>
+  <body>
     <div class="menu">
-        <ul>
-            <li id="item1">
-                <a href="http://photo.sina.com.cn/" target="_blank" suda-uatrack="key=index_www_tag&amp;value=www_photo_click">图片</a>
-            <div class="box1">
-                  
-            </div>
-            </li >
-            <li id="item2">
-                <a href="http://finance.sina.com.cn/zl/" target="_blank" suda-uatrack="key=index_www_tag&amp;value=www_zhuanlan_click">专栏</a>
-                <div class="box2">
-    
-                </div>
-                </li>
-                <li id="item3">
-                    <span tab-type="tab-nav" suda-uatrack="key=index_www_tag&amp;value=www_hot_click" class=" ">热点</span>
-                    <div class="box3">
-        
-                    </div>
-                    </li>
-        </ul>
-        
-        
+      <ul>
+        <li id="item1">
+          <a
+            href="http://photo.sina.com.cn/"
+            target="_blank"
+            suda-uatrack="key=index_www_tag&amp;value=www_photo_click"
+            >图片</a
+          >
+          <div class="box1">
+            <img
+              class="tp"
+              src="https://n.sinaimg.cn/blog/175/w105h70/20210318/f04d-kmkptxe6694918.jpg"
+              alt=""
+            />
+            <img
+              class="tp"
+              src="https://n.sinaimg.cn/blog/175/w105h70/20210318/e0c6-kmkptxe6689189.jpg"
+              alt=""
+            />
+            <img
+              class="tp"
+              src="https://n.sinaimg.cn/blog/175/w105h70/20210318/16e9-kmkptxe6691325.jpg"
+              alt=""
+            /><br />
+
+            <a
+              
+              target="_blank"
+              href="https://k.sina.com.cn/article_2041291667_79aba39301900v21s.html?from=ent&amp;subch=oent"
+              >扑成这样还不死心？</a
+            >
+            <a
+              
+              target="_blank"
+              href="https://k.sina.com.cn/article_6306572464_177e6a8b001900sjy6.html?from=ent&amp;subch=oent"
+              >后院起火才是商战最致命的一击</a
+            ><br />
+            <a
+              
+              target="_blank"
+              href="https://sports.sina.com.cn/china/j/2021-03-19/doc-ikknscsi8784619.shtml"
+              >陈戌源:曾经后悔来足协</a
+            >
+            <a
+              
+              target="_blank"
+              href="https://sports.sina.com.cn/china/j/2021-03-19/doc-ikknscsi8779803.shtml"
+              >不赞成海港这个名字</a
+            ><br />
+            <a
+              
+              target="_blank"
+              href="http://finance.sina.com.cn/zl/china/2021-03-18/zl-ikknscsi7977347.shtml"
+              >这波周期股修复将超预期</a
+            >
+            <a
+             
+              target="_blank"
+              href="http://finance.sina.com.cn/tech/csj/2021-03-18/doc-ikknscsi8093104.shtml"
+              >外卖佣金到底有多高？</a
+            >
+          </div>
+        </li>
+        <li id="item2">
+          <a
+            href="http://finance.sina.com.cn/zl/"
+            target="_blank"
+            suda-uatrack="key=index_www_tag&amp;value=www_zhuanlan_click"
+            >专栏</a
+          >
+          <div class="box2">
+            <img
+              class="tp"
+              src="https://n.sinaimg.cn/news/transform/350/w210h140/20210320/1105-kmrcukz1129792.jpg"
+              alt=""
+            />
+            <img
+              class="tp"
+              src="https://n.sinaimg.cn/news/transform/350/w210h140/20210320/4e66-kmrcukz1131860.jpg"
+              alt=""
+            />
+            <img
+              class="tp"
+              src="https://n.sinaimg.cn/news/transform/350/w210h140/20210320/d8b9-kmrcukz1130768.jpg"
+              alt=""
+            /><br />
+            <a
+              target="_blank"
+              href="http://slide.news.sina.com.cn/slide_1_86058_510725.html  "
+              class="photoNewsLeft"
+              >新疆和静县雪花纷飞宁静神秘 犹如童话世界</a
+            ><br />
+            <a
+              target="_blank"
+              href="http://slide.news.sina.com.cn/slide_1_86058_510733.html "
+              class="liveNewsLeft photoNewsLeft"
+              >天津解放桥进行最大开启角度调试工作</a
+            ><br />
+            <a
+              target="_blank"
+              href="http://slide.news.sina.com.cn/slide_1_86058_510732.html"
+              class="liveNewsLeft photoNewsLeft"
+              >厦门商用直升机坠海 救援人员连夜海上搜救</a
+            >
+          </div>
+        </li>
+        <li id="item3">
+          <span
+            tab-type="tab-nav"
+            suda-uatrack="key=index_www_tag&amp;value=www_hot_click"
+            class=" "
+            >热点</span
+          >
+          <div class="box3">
+            <img
+              class="tp"
+              src="https://n.sinaimg.cn/news/transform/350/w210h140/20210320/e883-kmrcukz1133281.jpg"
+              alt=""
+            />
+            <img
+              class="tp"
+              src="https://n.sinaimg.cn/sports/transform/200/w100h100/20210319/3e7b-kmrcuky9758382.jpg"
+              alt=""
+            />
+            <img
+              class="tp"
+              src="https://n.sinaimg.cn/news_index/transform/175/w105h70/20210317/dbe7-kmkptxe2123662.png"
+              alt=""
+            /><br />
+            <a
+              target="_blank"
+              href="https://finance.sina.com.cn/roll/2021-03-20/doc-ikkntiam5703736.shtml"
+              >老人被手机清理软件套路 工信部已责令整改300款APP</a
+            ><br />
+            <a
+              target="_blank"
+              href="http://slide.news.sina.com.cn/slide_1_86058_510727.html  "
+              class="liveNewsLeft photoNewsLeft photoNewsLeft"
+              >山西太原迎来降雪天气</a
+            ><br />
+            <a
+              target="_blank"
+              href="https://sports.sina.com.cn/g/laliga/2021-03-19/doc-ikkntiam5563946.shtml"
+              >欧冠抽签-皇马对阵利物浦</a
+            >
+            <a
+              target="_blank"
+              href="https://sports.sina.com.cn/g/pl/2021-03-19/doc-ikknscsi8738944.shtml"
+              >欧联抽签:曼联将战西甲队</a
+            >
+          </div>
+        </li>
+      </ul>
     </div>
-</body>
+  </body>
 </html>

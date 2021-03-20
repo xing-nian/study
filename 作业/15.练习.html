@@ -190,27 +190,23 @@
             border-left: 1px solid #ccc;
             border-right:1px solid #ccc ;
             margin: 0 auto;
+            padding: 5px 0;
+            font-size: 12px;
 
         }
         ul .item:nth-child(1){
             border-top: 1px solid #ccc;
-            border-radius: 5px;
+            border-radius: 5px 5px 0px 0px;
         }
-        ul .item:nth-child(4){
+        ul .item:nth-child(5){
             border-bottom: 1px solid #ccc;
             
-            border-radius: 5px;
+            border-radius:0 0 5px 5px;
         }
         .top-right:hover  ul{
             display: block;
         }
-        .img1{
-            width: 44px;
-            position: absolute;
-            top: 50px;
-            margin: 10px 20px;
-            display: none;
-        }
+       
         .gd{
             width: 340px;
             height: 260px;
@@ -218,6 +214,7 @@
             position: relative;
             left: 500px;
             top: -43px;
+           
             /* display: none; */
         }
         .g{
@@ -225,41 +222,59 @@
             height: 24px;
             position: relative;
             top: 50px;
-            margin: 30px 20px;
+            margin: 30px 15px;
             /* background-color: #ccc; */
-            display: none;
+           
+           
         }
         a{
             height: 16px;
             color: black;
         }
+        .img1{
+            width: 44px;
+            position: absolute;
+            top: 5px;
+            margin: 10px 10px;
+            border:1px solid #eee;
+            /* display: none; */
+        }
         .img2{
             width: 44px;
             position: absolute;
-            top: 150px;
-            display: none;
-            margin: 10px 20px;
+            top: 100px;
+            border:1px solid #eee;
+            margin: 10px 10px;
         }
         .img3{
             width: 44px;
             position: absolute;
-            top: 150px;
-            left: 0px;
-            margin: 10px 20px;
+            top: 100px;
+            left: -2px;
+            margin: 10px 10px;
+            border:1px solid #eee;
+        }
+        
+        .gd:hover .x1{
+            display: inline-block;
+        }
+        .x1{
             display: none;
+            border: 1px solid #ccc;
+            box-shadow: 1px 1px 1px #ccc;
+            width: 300px;
+            height: 240px;
+            position: relative;
+            right: 250px;
+            border-radius: 20px;
+            text-align: center;
         }
-        /* .gd:hover .img1{
-            display: block;
+        .a1{
+             position: relative;
+             top: 30px;
+             color: #ccc;
+             font-size: 12px;
         }
-        .gd:hover .img2{
-            display: block;
-        }
-        .gd:hover .img3{
-            display: block;
-        }
-        .gd:hover .g{
-            display: block;
-        } */
     </style>
 </head>
 <body>
@@ -274,35 +289,37 @@
             <a href="http://xueshu.baidu.com" target="_blank" class="t">学术</a>
             <div class="gd">
                 <a href="http://www.baidu.com/more/"  class="t " id="c" target="_blank" style="display: block;">更多</a><br>
-                
+               <div class="x1">
                 <a href="https://pan.baidu.com" target="_blank" name="tj_wangpan">
-                <img class="img1" src="https://dss0.bdstatic.com/5aV1bjqh_Q23odCf/static/superman/img/topnav/baiduyun@2x-e0be79e69e.png">
-                <div class="g">网盘&emsp;&emsp;</div></a><a href="https://zhidao.baidu.com" target="_blank" name="tj_zhidao">
-
-                    <img class="img1" src="https://dss0.bdstatic.com/5aV1bjqh_Q23odCf/static/superman/img/topnav/zhidao@2x-e9b427ecc4.png">
-                <div class="g">知道</div></a><a href="https://baike.baidu.com" target="_blank" name="tj_baike">
-
-                    <img class="img1" src="https://dss0.bdstatic.com/5aV1bjqh_Q23odCf/static/superman/img/topnav/baike@2x-1fe3db7fa6.png">
-                <div class="g">百科</div></a><a href="http://image.baidu.com" target="_blank" name="tj_img">
-
-                    <img class="img1" src="https://dss0.bdstatic.com/5aV1bjqh_Q23odCf/static/superman/img/topnav/tupian@2x-482fc011fc.png">
-                <div class="g">图片</div></a>
-
-                    <a href="https://baobao.baidu.com" target="_blank" name="tj_baobaozhidao">
-                    <img class="img3" src="https://dss0.bdstatic.com/5aV1bjqh_Q23odCf/static/superman/img/topnav/baobaozhidao@2x-af409f9dbe.png">
-                    <div class="g">宝宝知道</div></a>
-
-                    <a href="https://wenku.baidu.com" target="_blank" name="tj_wenku">
-                    <img class="img2" src="https://dss0.bdstatic.com/5aV1bjqh_Q23odCf/static/superman/img/topnav/wenku@2x-f3aba893c1.png">
-                    <div class="g">文库</div></a>
-
-                    <a href="https://jingyan.baidu.com" target="_blank" name="tj_jingyan">
-                    <img class="img2" src="https://dss0.bdstatic.com/5aV1bjqh_Q23odCf/static/superman/img/topnav/jingyan@2x-e53eac48cb.png">
-                    <div class="g">经验</div></a>
-
-                    <a href="http://music.taihe.com" target="_blank" name="tj_mp3">
-                    <img class="img2" src="https://dss0.bdstatic.com/5aV1bjqh_Q23odCf/static/superman/img/topnav/yinyue@2x-c18adacacb.png">
-                    <div class="g">音乐</div></a>
+                    <img class="img1" src="https://dss0.bdstatic.com/5aV1bjqh_Q23odCf/static/superman/img/topnav/baiduyun@2x-e0be79e69e.png">
+                    <div class="g">网盘&emsp;&emsp;</div></a><a href="https://zhidao.baidu.com" target="_blank" name="tj_zhidao">
+    
+                        <img class="img1" src="https://dss0.bdstatic.com/5aV1bjqh_Q23odCf/static/superman/img/topnav/zhidao@2x-e9b427ecc4.png">
+                    <div class="g">知道</div></a><a href="https://baike.baidu.com" target="_blank" name="tj_baike">
+    
+                        <img class="img1" src="https://dss0.bdstatic.com/5aV1bjqh_Q23odCf/static/superman/img/topnav/baike@2x-1fe3db7fa6.png">
+                    <div class="g">百科</div></a><a href="http://image.baidu.com" target="_blank" name="tj_img">
+    
+                        <img class="img1" src="https://dss0.bdstatic.com/5aV1bjqh_Q23odCf/static/superman/img/topnav/tupian@2x-482fc011fc.png">
+                    <div class="g">图片</div></a>
+    
+                        <a href="https://baobao.baidu.com" target="_blank" name="tj_baobaozhidao">
+                        <img class="img3" src="https://dss0.bdstatic.com/5aV1bjqh_Q23odCf/static/superman/img/topnav/baobaozhidao@2x-af409f9dbe.png">
+                        <div class="g">宝宝知道</div></a>
+    
+                        <a href="https://wenku.baidu.com" target="_blank" name="tj_wenku">
+                        <img class="img2" src="https://dss0.bdstatic.com/5aV1bjqh_Q23odCf/static/superman/img/topnav/wenku@2x-f3aba893c1.png">
+                        <div class="g">文库</div></a>
+    
+                        <a href="https://jingyan.baidu.com" target="_blank" name="tj_jingyan">
+                        <img class="img2" src="https://dss0.bdstatic.com/5aV1bjqh_Q23odCf/static/superman/img/topnav/jingyan@2x-e53eac48cb.png">
+                        <div class="g">经验</div></a>
+    
+                        <a href="http://music.taihe.com" target="_blank" name="tj_mp3">
+                        <img class="img2" src="https://dss0.bdstatic.com/5aV1bjqh_Q23odCf/static/superman/img/topnav/yinyue@2x-c18adacacb.png">
+                        <div class="g">音乐</div></a><br>
+                        <a class="a1" href="https://www.baidu.com/more/">查看全部百度产品&gt;</a>
+               </div>
         </div>
             </div>
         <div class="top-right">
@@ -313,6 +330,7 @@
             <li class="item"><a href="#">高级设置</a></li>
             <li class="item"><a href="#">开启预测</a></li>
             <li class="item"><a href="#">隐私设置</a></li>
+            <div class="item"><a href="#">关闭热榜</a></div>
            </ul>
             
         </div>

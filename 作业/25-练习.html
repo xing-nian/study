@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>企汇网</title>
+    <style>
+      body {
+        width: 100%;
+        margin: 0 auto;
+        border-top: 3px solid orange;
+        border-bottom: 1px solid #edeef0;
+        display: inline-block;
+      }
+      span {
+        width: 100px;
+        height: 40px;
+        display: inline-block;
+        font-size: 13px;
+        position: relative;
+        line-height: 30px;
+        font-family: "Microsoft YaHei", "微软雅黑", "SimSun", "宋体";
+        /* background-color: #EDEEF0; */
+        margin: 0 auto;
+        text-align: center;
+      }
+      span:nth-child(n):hover {
+        background-color: #edeef0;
+      }
+      div {
+        height: 40px;
+        line-height: 40px;
+      }
+      #div1::before {
+        content: "";
+
+        width: 5px;
+        height: 5px;
+        border-left: 1px solid red;
+        border-top: 1px solid red;
+        transform: rotate(225deg);
+        position: absolute;
+        top: 15px;
+        left: 375px;
+      }
+      #div2::before {
+        content: "";
+
+        width: 5px;
+        height: 5px;
+        border-left: 1px solid red;
+        border-top: 1px solid red;
+        transform: rotate(225deg);
+        position: absolute;
+        top: 15px;
+        left: 875px;
+        z-index: 1;
+      }
+      #div3::before {
+        content: "";
+
+        width: 5px;
+        height: 5px;
+        border-left: 1px solid red;
+        border-top: 1px solid red;
+        transform: rotate(225deg);
+        position: absolute;
+        top: 15px;
+        left: 990px;
+        z-index: 1;
+      }
+      #div4::before {
+        content: "";
+
+        width: 5px;
+        height: 5px;
+        border-left: 1px solid red;
+        border-top: 1px solid red;
+        transform: rotate(225deg);
+        position: absolute;
+        top: 15px;
+        left: 1090px;
+        z-index: 1;
+      }
+      #div5::before {
+        content: "";
+
+        width: 5px;
+        height: 5px;
+        border-left: 1px solid red;
+        border-top: 1px solid red;
+        transform: rotate(225deg);
+        position: absolute;
+        top: 15px;
+        left: 1280px;
+        z-index: 1;
+      }
+      #div6::before {
+        content: "";
+
+        width: 5px;
+        height: 5px;
+        border-left: 1px solid red;
+        border-top: 1px solid red;
+        transform: rotate(225deg);
+        position: absolute;
+        top: 15px;
+        left: 1380px;
+        z-index: 1;
+      }
+      #div7::before {
+        content: "";
+
+        width: 5px;
+        height: 5px;
+        border-left: 1px solid red;
+        border-top: 1px solid red;
+        transform: rotate(225deg);
+        position: absolute;
+        top: 15px;
+        left: 1480px;
+        z-index: 1;
+      }
+
+      #div1 {
+        /* width: 100px; */
+        height: 40px;
+        display: inline-block;
+      }
+      #div2 {
+        height: 40px;
+        display: inline-block;
+      }
+      #div3 {
+        height: 40px;
+        display: inline-block;
+      }
+      #div4 {
+        height: 40px;
+        display: inline-block;
+      }
+      #div5 {
+        height: 40px;
+        display: inline-block;
+      }
+      #div6 {
+        height: 40px;
+        display: inline-block;
+      }
+      #div7 {
+        height: 40px;
+        display: inline-block;
+      }
+
+      #div1:hover #list1 {
+        display: block;
+      }
+      #div2:hover #list2 {
+        display: block;
+      }
+      #div3:hover #list3 {
+        display: block;
+      }
+      #div4:hover #list4 {
+        display: block;
+      }
+      #div5:hover #list5 {
+        display: block;
+      }
+      #div6:hover #list6 {
+        display: block;
+      }
+      #div7:hover #list7 {
+        display: block;
+      }
+      #list1 {
+        padding-right: 30px;
+        list-style: none;
+        position: absolute;
+        left: 250px;
+        top: 27px;
+        display: none;
+        width: 125px;
+        border-left: 1px solid #ccc;
+        border-right: 1px solid #ccc;
+        border-bottom: 1px solid #ccc;
+      }
+      #list2 {
+        list-style: none;
+        position: absolute;
+        left: 785px;
+        top: 27px;
+        display: none;
+        padding-right: 30px;
+    
+        border-left: 1px solid #ccc;
+        border-right: 1px solid #ccc;
+        border-bottom: 1px solid #ccc;
+      }
+      #list3 {
+        list-style: none;
+        position: absolute;
+        left: 885px;
+        top: 27px;
+        display: none;
+        padding-right: 30px;
+        
+        border-left: 1px solid #ccc;
+        border-right: 1px solid #ccc;
+        border-bottom: 1px solid #ccc;
+      }
+      #list4 {
+        list-style: none;
+        position: absolute;
+        left: 985px;
+        top: 27px;
+        display: none;
+        
+        padding-right: 30px;
+        border-left: 1px solid #ccc;
+        border-right: 1px solid #ccc;
+        border-bottom: 1px solid #ccc;
+      }
+      #list5 {
+        list-style: none;
+        position: absolute;
+        left: 1200px;
+        top: 27px;
+        display: none;
+        width: 190px;
+        text-align: left;
+        border: 1px solid #ccc;
+        padding:0 ;
+        
+      }
+      #list6 {
+        list-style: none;
+        position: absolute;
+        left: 1290px;
+        top: 27px;
+        display: none;
+        
+        padding-right: 30px;
+        border-left: 1px solid #ccc;
+        border-right: 1px solid #ccc;
+        border-bottom: 1px solid #ccc;
+        
+      }
+      #list7 {
+        list-style: none;
+        position: absolute;
+        left: 1400px;
+        top: 27px;
+        display: none;
+        padding-right: 30px;
+        border-left: 1px solid #ccc;
+        border-right: 1px solid #ccc;
+        border-bottom: 1px solid #ccc;
+        
+      }
+      
+      a:hover {
+        color: orange;
+        background-color: #edeef0;
+      }
+      a {
+        text-decoration: none;
+        color: #444;
+      }
+      .a1 {
+        position: absolute;
+        left: 300px;
+      }
+      .a2 {
+        position: absolute;
+        left: 400px;
+      }
+      .a3 {
+        position: absolute;
+        left: 500px;
+      }
+      .a4 {
+        position: absolute;
+        left: 700px;
+      }
+      .a5 {
+        position: absolute;
+        left: 800px;
+      }
+      .a6 {
+        position: absolute;
+        left: 900px;
+      }
+      .a7 {
+        position: absolute;
+        left: 1000px;
+      }
+      .a8 {
+        position: absolute;
+        left: 1100px;
+      }
+      .a9 {
+        position: absolute;
+        left: 1200px;
+      }
+      .a10 {
+        position: absolute;
+        left: 1300px;
+      }
+      .a11 {
+        position: absolute;
+        left: 1400px;
+      }
+      li{
+          font-size: 12px;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <div id="div1">
+        <a href="http://m.qihuiwang.com/"><span class="a1">手机站</span></a>
+        <ul id="list1">
+          <li>
+            <img src="https://static.qihuiwang.com/images/oneCode.jpg" alt="" />
+          </li>
+          <li>
+            <img
+              src="https://static.qihuiwang.com/images/xiaochengxu.jpg"
+              alt=""
+            />
+          </li>
+        </ul>
+      </div>
+      <a href="http://u.qihuiwang.com/member/login.html"
+        ><span class="a2">登录</span></a
+      >
+
+      <a href="http://u.qihuiwang.com/member/register.html"
+        ><span class="a3">免费注册</span></a
+      >
+
+      <a href="http://www.qihuiwang.com/"><span class="a4">企汇网首页</span></a>
+
+      <div id="div2">
+        <a
+          href="http://u.qihuiwang.com/Member/login.html?returnurl=http%3A%2F%2Fu.qihuiwang.com%2Fcollect%2Fcompany"
+          ><span class="a5">收藏夹</span></a
+        >
+        <ul id="list2">
+            <li><a href="http://u.qihuiwang.com/collect/product">收藏的产品</a></li>
+            <li><a href="http://u.qihuiwang.com/collect/company">收藏的店铺</a></li>
+        </ul>
+      </div>
+      <div id="div3">
+        <a
+          href="https://login.sina.com.cn/signup/signin.php?entry=blog&r=http%3A%2F%2Fi.blog.sina.com.cn&from=referer:http%3A%2F%2Fi.blog.sina.com.cn"
+          ><span class="a6">我是采购商</span></a
+        >
+        <ul id="list3">
+            <li><a href="http://u.qihuiwang.com/buyer">采购商中心</a></li>
+            <li><a href="http://u.qihuiwang.com/purchase/pub">发布采购单</a></li>
+            <li><a href="http://u.qihuiwang.com/purchase/list">采购管理</a></li>
+        </ul>
+      </div>
+      <div id="div4">
+        <a
+          href="http://u.qihuiwang.com/Member/login.html?returnurl=http%3A%2F%2Fu.qihuiwang.com%2Fbuyer"
+          ><span class="a7">我是供应商</span></a
+        >
+        <ul id="list4">
+            <li><a href="http://u.qihuiwang.com/buyer">供应商中心</a></li>
+            <li><a href="http://u.qihuiwang.com/buyer">发布产品</a></li>
+            <li><a href="http://u.qihuiwang.com/buyer">产品管理</a></li>
+            <li><a href="http://u.qihuiwang.com/buyer">店铺管理</a></li>
+        </ul>
+      </div>
+
+      <a href="http://qihuiguanjia.qihuiwang.com/"
+        ><span class="a8">企汇管家</span></a
+      >
+
+      
+      <div id="div5">
+        <a href="http://www.qihuiwang.com/service"
+        ><span class="a9">企汇服务</span></a
+      >
+      <ul id="list5">
+          <li><b>热门服务</b></li>
+          <li><a href="http://www.qihuiwang.com/service/42.html">标王</a> &emsp;&emsp;&emsp;&emsp;&emsp;<a href="http://www.qihuiwang.com/service/94.html">黄金展位</a></li>
+          <li><a href="http://www.qihuiwang.com/service/41.html">热门广告推荐位</a> <a href="http://www.qihuiwang.com/service/53.html">图片空间</a></li>
+          <li><a href="http://www.qihuiwang.com/service/24.html">信息包</a> &emsp;&emsp;&emsp;&emsp;<a href="http://www.qihuiwang.com/service/51.html">企汇金铺</a></li>
+          <li><a href="http://www.qihuiwang.com/service/52.html">金铺装修</a> &emsp;&emsp;&emsp;<a href="http://www.qihuiwang.com/service/index">更多服务</a></li>
+          
+      </ul>
+      </div>
+     
+      <div id="div6">
+        <a href="http://help.qihuiwang.com/"><span class="a10">客服中心</span></a>
+        <ul id="list6">
+                <li><a href="http://help.qihuiwang.com/help/ques_list.html">常见问题</a></li>
+                <li><a href="#"></a>在线客服</li>
+        </ul>
+      </div>
+      
+      <div id="div7">
+        <a href="http://www.qihuiwang.com/sitemap.html"
+        ><span class="a11">网站导航</span></a
+      >
+      <ul id="list7">
+                <li><b>特色服务</b></li>
+                <li><a href="http://www.qihuiwang.com/">首页</a> &emsp;&emsp;&emsp;<a href="http://www.qihuiwang.com/">资讯</a> &emsp;&emsp;&emsp;<a href="http://www.qihuiwang.com/exhibition/">展会</a>&emsp;&emsp;&emsp;<a href="http://qihuiguanjia.qihuiwang.com/">企汇管家</a> </li>
+                <li><a href="http://sms.qihuiwang.com/">企汇云信</a> &emsp;<a href="http://www.tiantis.com/cn/">天梯建站</a> &emsp;<a href="http://company.qihuiwang.com/">企业库</a> &emsp;&emsp;<a href="http://product.qihuiwang.com/">产品库</a></li>
+                <li><a href="http://zhengzhou.qihuiwang.com/">郑州站</a> &emsp;&emsp;<a href="http://pingdingshan.qihuiwang.com/">平顶山站</a> &emsp;<a href="http://m.qihuiwang.com/">手机站</a> &emsp;&emsp;<a href="http://s.qihuiwang.com/">搜索</a></li>
+                <li><a href="http://hot.qihuiwang.com/zt/rwt/">企业软文通</a> <a href="http://www.qihuiwang.com/AiCaiGou/introPage.html">百度采购</a> &emsp;<a href="http://app.tiantis.com/app/tiantisxcx">小程序</a> &emsp;&emsp;<a href="http://www.qihuiwang.com/zhitongche">企业直通</a> <hr></li>
+                <li><b>采购服务</b></li>
+                <li><a href="http://buy.qihuiwang.com/">采购中心</a> &emsp;<a href="http://buy.qihuiwang.com/pub">发布采购单</a><hr></li>
+                <li><b>行业市场</b></li>
+                <li><a href="http://jiancai.qihuiwang.com/">建材频道</a> &emsp;<a href="http://jixie.qihuiwang.com/">机械频道</a> &emsp;<a href="http://nongye.qihuiwang.com/">农业频道</a></li>
+     </ul>
+      </div>
+    </div>
+  </body>
+</html>
