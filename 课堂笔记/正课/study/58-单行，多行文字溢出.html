@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>单行，多行文字溢出</title>
+    <style>
+        .p1{
+            /*1. 定宽 */
+            width: 100px;
+            height: 20px;
+            border: 1px solid red;
+            /*2. 不换行 */
+            white-space:nowrap;
+            /* 3.溢出隐藏 */
+            overflow: hidden;
+            /* 4.溢出部分用省略号表示 */
+            text-overflow: ellipsis;
+        }
+        .p2{
+            border: 1px solid blue;
+            /* 多行文本显示省略号 */
+            /* 1.定宽 */
+            width: 180px;
+            /* 2.溢出隐藏 */
+            overflow: hidden;
+            /* 3.弹性伸缩盒子模型 */
+            display: -webkit-box;
+            /* 4.设置伸缩盒子中的子元素的排列方式 */
+            -webkit-box-orient: vertical;
+            /* 5.设置文本显示行数 */
+            -webkit-line-clamp: 3;
+            /* 6.显示省略号 */
+            text-overflow: ellipsis;
+            /* 
+              浏览器前缀
+              -webkit- 表示谷歌 chrome
+              -moz-表示火狐 firefox
+              -ms-表示ie
+              -o-bs  欧朋 opera
+             */
+        }
+    </style>
+</head>
+<body>
+    <p class="p1">键盘敲烂，月薪过万</p>
+    <p class="p2">键盘敲烂，月薪过万，此处省略一百万字键盘敲烂，月薪过万，此处省略一百万字键盘敲烂，月薪过万，此处省略一百万字键盘敲烂，月薪过万，此处省略一百万字键盘敲烂，月薪过万，此处省略一百万字键盘敲烂，月薪过万，此处省略一百万字键盘敲烂，月薪过万，此处省略一百万字键盘敲烂，月薪过万，此处省略一百万字键盘敲烂，月薪过万，此处省略一百万字键盘敲烂，月薪过万，此处省略一百万字键盘敲烂，月薪过万，此处省略一百万字键盘敲烂，月薪过万，此处省略一百万字</p>
+</body>
+</html>

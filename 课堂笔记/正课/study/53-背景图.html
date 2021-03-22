@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>背景图</title>
+    <style>
+        .div1{
+            width: 210px;
+            height: 140px;
+            border: 2px solid green;
+            background-image: url(https://n.sinaimg.cn/news/transform/350/w210h140/20210322/4f75-kmrcukz6524905.jpg);
+        }
+        .div2{
+            width: 400px;
+            height: 150px;
+            border: 2px solid yellow;
+            background-image: url(https://n.sinaimg.cn/news/transform/350/w210h140/20210322/4f75-kmrcukz6524905.jpg);
+            /* background-repeat  背景平铺 */
+            /* 
+               no-repeat：不平铺
+               preat-x ：只平铺x轴方向
+               preat-y ：只平铺y轴方向
+             */
+             background-repeat: no-repeat;
+             /* 
+                参数1指的是 宽
+                参数2指的是高
+              */
+              /* background-size: 100%; */
+              background-size: 400px;
+        }
+        .div3{
+            width: 400px;
+            height: 100px;
+            border: 2px solid yellow;
+            background-image: url(https://n.sinaimg.cn/news/transform/350/w210h140/20210322/4f75-kmrcukz6524905.jpg);
+            background-repeat: no-repeat;
+            background-size: 200px 50px;
+            /* background-size: contain; */
+            /* background-position:50% 50% ; */
+            /* background-position:center 50% ; */
+            background-position:right bottom ;
+            
+    }
+    .div4{
+            width: 400px;
+            height: 100px;
+            border: 2px solid yellow;
+            background-image: url(https://n.sinaimg.cn/news/transform/350/w210h140/20210322/4f75-kmrcukz6524905.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+    }
+    .div5{
+        height: 120px;
+        background-image: url(../../项目1/bg.jpg);
+        background-repeat: no-repeat;
+        /* background-size: contain; */
+        background-size: cover;
+        background-position: center center;
+    }
+    </style>
+</head>
+<body>
+    <div class="div1"></div>
+    <div class="div2"></div>
+    <div class="div3"></div>
+    <div class="div4"></div>
+    <div class="div5"></div>
+</body>
+</html>
