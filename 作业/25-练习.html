@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://at.alicdn.com/t/font_2440649_a6hyh73ilef.css">
     <title>企汇网</title>
     <style>
       body {
@@ -11,13 +12,28 @@
         margin: 0 auto;
         border-top: 3px solid #ccc;
         border-bottom: 1px solid #edeef0;
-        display: inline-block;
+        background-image: url(acg_banner.jpg);
+        background-repeat: no-repeat;
+        background-position: -25px 200px;
+        background-size:contain ;
+
+        /* display: inline-block; */
       }
+      .bjs{
+        width: 1920px;
+        height: 2400px;
+        background-color: #efefef;
+        position: absolute;
+        top: 700px;
+     
+      }
+      
+      /* 顶部导航栏样式 */
       span {
         width: 100px;
-        height: 40px;
+        height: 30px;
         display: inline-block;
-        font-size: 13px;
+        font-size: 12px;
         position: relative;
         line-height: 30px;
         font-family: "Microsoft YaHei", "微软雅黑", "SimSun", "宋体";
@@ -28,242 +44,139 @@
       span:nth-child(n):hover {
         background-color: #edeef0;
       }
-      div {
-        height: 40px;
-        line-height: 40px;
+      .dhl {
+        height: 30px;
+        line-height: 30px;
+        background-color: #fff;
+        background-color: #eee;
+      }
+      #div1::before, #div2::before, #div3::before, #div4::before, #div5::before, #div6::before, #div7::before{
+         content: "";
+         z-index: 1;
+        width: 5px;
+        height: 5px;
+        border-left: 1px solid #aaa;
+        border-top: 1px solid #aaa;
+        transform: rotate(225deg);
+        position: absolute;
+
+      }
+      #div1:hover::before{
+        transform: rotate(405deg);
+        
+      }
+      #div2:hover::before{
+        transform: rotate(405deg);
+        
+      }
+      #div3:hover::before{
+        transform: rotate(405deg);
+        
+      }
+      #div4:hover::before{
+        transform: rotate(405deg);
+        
+      }
+      #div5:hover::before{
+        transform: rotate(405deg);
+        
+      }
+      #div6:hover::before{
+        transform: rotate(405deg);
+        
+      }
+      #div7:hover::before{
+        transform: rotate(405deg);
+        
       }
       #div1::before {
-        content: "";
-
-        width: 5px;
-        height: 5px;
-        border-left: 1px solid red;
-        border-top: 1px solid red;
-        transform: rotate(225deg);
-        position: absolute;
         top: 15px;
-        left: 375px;
+        left: 385px;
       }
       #div2::before {
-        content: "";
-
-        width: 5px;
-        height: 5px;
-        border-left: 1px solid red;
-        border-top: 1px solid red;
-        transform: rotate(225deg);
-        position: absolute;
         top: 15px;
         left: 875px;
-        z-index: 1;
       }
       #div3::before {
-        content: "";
-
-        width: 5px;
-        height: 5px;
-        border-left: 1px solid red;
-        border-top: 1px solid red;
-        transform: rotate(225deg);
-        position: absolute;
         top: 15px;
         left: 990px;
-        z-index: 1;
       }
       #div4::before {
-        content: "";
-
-        width: 5px;
-        height: 5px;
-        border-left: 1px solid red;
-        border-top: 1px solid red;
-        transform: rotate(225deg);
-        position: absolute;
         top: 15px;
         left: 1090px;
-        z-index: 1;
       }
       #div5::before {
-        content: "";
-
-        width: 5px;
-        height: 5px;
-        border-left: 1px solid red;
-        border-top: 1px solid red;
-        transform: rotate(225deg);
-        position: absolute;
         top: 15px;
         left: 1280px;
-        z-index: 1;
       }
       #div6::before {
-        content: "";
-
-        width: 5px;
-        height: 5px;
-        border-left: 1px solid red;
-        border-top: 1px solid red;
-        transform: rotate(225deg);
-        position: absolute;
         top: 15px;
         left: 1380px;
-        z-index: 1;
       }
       #div7::before {
-        content: "";
-
-        width: 5px;
-        height: 5px;
-        border-left: 1px solid red;
-        border-top: 1px solid red;
-        transform: rotate(225deg);
-        position: absolute;
         top: 15px;
-        left: 1480px;
-        z-index: 1;
+        left: 1490px;
       }
 
-      #div1 {
+      #div1,#div2,#div3,#div4,#div5,#div6,#div7{
         /* width: 100px; */
         height: 40px;
         display: inline-block;
       }
-      #div2 {
-        height: 40px;
-        display: inline-block;
-      }
-      #div3 {
-        height: 40px;
-        display: inline-block;
-      }
-      #div4 {
-        height: 40px;
-        display: inline-block;
-      }
-      #div5 {
-        height: 40px;
-        display: inline-block;
-      }
-      #div6 {
-        height: 40px;
-        display: inline-block;
-      }
-      #div7 {
-        height: 40px;
-        display: inline-block;
-      }
 
-      #div1:hover #list1 {
+      #div1:hover #list1,#div2:hover #list2,#div3:hover #list3,#div4:hover #list4,#div5:hover #list5,#div6:hover #list6,#div7:hover #list7 {
         display: block;
       }
-      #div2:hover #list2 {
-        display: block;
-      }
-      #div3:hover #list3 {
-        display: block;
-      }
-      #div4:hover #list4 {
-        display: block;
-      }
-      #div5:hover #list5 {
-        display: block;
-      }
-      #div6:hover #list6 {
-        display: block;
-      }
-      #div7:hover #list7 {
-        display: block;
-      }
-      #list1 {
+      #list1,#list2,#list3,#list4,#list5,#list6,#list7{
         padding-right: 30px;
         list-style: none;
         position: absolute;
-        left: 250px;
-        top: 27px;
-        display: none;
-        width: 125px;
+        top: 17px;
         border-left: 1px solid #ccc;
         border-right: 1px solid #ccc;
         border-bottom: 1px solid #ccc;
+        display: none;
+        background-color: #fff;
+        z-index: 10;
+      }
+     
+      #list1 {
+        left: 250px;
+        width: 125px;
       }
       #list2 {
-        list-style: none;
-        position: absolute;
         left: 785px;
-        top: 27px;
-        display: none;
-        padding-right: 30px;
-
-        border-left: 1px solid #ccc;
-        border-right: 1px solid #ccc;
-        border-bottom: 1px solid #ccc;
       }
       #list3 {
-        list-style: none;
-        position: absolute;
         left: 885px;
-        top: 27px;
-        display: none;
-        padding-right: 30px;
-
-        border-left: 1px solid #ccc;
-        border-right: 1px solid #ccc;
-        border-bottom: 1px solid #ccc;
       }
       #list4 {
-        list-style: none;
-        position: absolute;
         left: 985px;
-        top: 27px;
-        display: none;
-
-        padding-right: 30px;
-        border-left: 1px solid #ccc;
-        border-right: 1px solid #ccc;
-        border-bottom: 1px solid #ccc;
       }
       #list5 {
-        list-style: none;
-        position: absolute;
         left: 1200px;
-        top: 27px;
-        display: none;
         width: 190px;
         text-align: left;
         border: 1px solid #ccc;
         padding: 0;
       }
       #list6 {
-        list-style: none;
-        position: absolute;
         left: 1290px;
-        top: 27px;
-        display: none;
-
-        padding-right: 30px;
-        border-left: 1px solid #ccc;
-        border-right: 1px solid #ccc;
-        border-bottom: 1px solid #ccc;
+        top: 17px;
       }
       #list7 {
-        list-style: none;
-        position: absolute;
         left: 1400px;
-        top: 27px;
-        display: none;
-        padding-right: 30px;
-        border-left: 1px solid #ccc;
-        border-right: 1px solid #ccc;
-        border-bottom: 1px solid #ccc;
       }
 
       a:hover {
         color: orange;
         background-color: #edeef0;
+        
       }
       a {
         text-decoration: none;
         color: #444;
+        
       }
       .a1 {
         position: absolute;
@@ -312,12 +225,534 @@
       li {
         font-size: 12px;
       }
+      .icon{
+        vertical-align: -5px;
+      }
+      .icon1{
+        vertical-align: -2px;
+      }
+      .icon2{
+        vertical-align: -3px;
+      }
+     
+      /* 以上为导航栏样式 */
+      .clearfix::after{
+                content:"";
+                display:block;
+                height: 0;
+                clear: both;
+                /* visibility ：可见的 */
+                visibility: hidden;
+        }
+        .clearfix{
+            /* IE6 7 兼容专用 */
+             *zoom:1;
+             }
+        .Logo{
+          display: inline-block;
+          margin: 0 300px;
+        }
+       #searchKey{
+         position: relative;
+         right: -800px;
+         top: -90px;
+         width: 340px;
+         height: 40px;
+         border: 2px solid #F16355;
+         padding: 0 15px;
+         outline: none;
+       }
+       #search-button{
+         position: relative;
+         right: -795px;
+         top: -72px;
+        height: 44px;
+        border: 2px solid #F16355;
+        width: 60px;
+        background-color: #F16355;
+        outline: none;
+        background-image: url(0025.png);
+        background-size: 40px 40px;
+        background-repeat: no-repeat;
+       }
+       #search-button:hover{
+        background-color: red;
+       }
+     .po-i{
+      position: relative;
+      right: -1245px;
+      top: -135px;
+      height: 44px;
+      width: 160px;
+      border: 1px solid #eee;
+      line-height: 44px;
+     }
+     .ewm{
+      position: relative;
+      right: -1430px;
+      top: -225px;
+      width: 150px;
+      height: 150px;
+     }
+     .head{
+       height: 380px;
+     }
+     
+     /* 以上页面头部样式 */
+     #list8{
+      list-style: none;
+      
+      float: left;
+     }
+     .main{
+       position: relative;
+       left: 260px;
+       bottom: 260px;
+       
+     }
+     .hot_nav{
+       font-size: 14px;
+       margin: 0 30px;
+       font-weight: 400;
+       height: 30px;
+       line-height: 30px;
+     }
+     .cd{
+    width: 170px;
+     font-size: 14px;
+     color: white;
+     font-weight: 400;
+     background-color: #EA3848;
+     display: inline-block;
+     height: 30px;
+     line-height: 30px;
+     }
+     .icon3{
+      vertical-align: -10px;
+     }
+     /* 以上更多分类样式 */
+     .nav-sub{
+       list-style: none;
+       height: 400px;
+     }
+     .mCate1,.mCate2,.mCate3,.mCate4,.mCate5,.mCate6,.mCate7,.mCate8,.mCate9,.mCate10{
+       position: relative;
+       left: 200px;
+       top: 0px;
+       font-size: 14px;
+       width: 200px;
+       z-index: 5;
+       
+      
+       
+     }
+     .bc{
+       width: 170px;
+       height: 490px;
+       background-color: #fff;
+       position: absolute;
+       top: 200px;
+       left: 300px;
+     }
+     
+     .subNav{
+      /* display: none; */
+      width: 650px;
+      height: 488px;
+      position: absolute;
+      left: 200px;
+      top: -265px;
+      float: left;
+      border: 1px solid #ccc;
+      z-index: 3;
+      background-color: #fff;
+      
+     }
+    .mCate1:hover #li1{
+       display: inline-block;
+    }
+    #li1,#li2,#li3,#li4,#li5,#li6,#li7,#li8,#li9,#li10{
+      font-size: 12px;
+      left: 220px;
+      
+    }
+    #li1{
+      display: none;
+      position: absolute;
+      top: -230px;
+     
+
+    }
+    .mCate2:hover #li2{
+       display: inline-block;
+    }
+    #li2{
+      display: none;
+      top: -297px;
+     
+    }
+    .mCate3:hover #li3{
+       display: inline-block;
+    }
+    #li3{
+      display: none;
+      top: -317px;
+     
+    }
+    .mCate4:hover #li4{
+       display: inline-block;
+    }
+    #li4{
+      display: none;
+      top: -335px;
+      
+    }
+    #li5{
+      display: none;
+      top: -355px;
+     
+    }
+    .mCate5:hover #li5{
+       display: inline-block;
+    }
+    #li6{
+      display: none;
+      top: -373px;
+     
+    }
+    .mCate6:hover #li6{
+       display: inline-block;
+    }
+    #li7{
+      display: none;
+      top: -392px;
+      
+    }
+    .mCate7:hover #li7{
+       display: inline-block;
+    }
+    #li8{
+      display: none;
+      top: -411px;
+     
+    }
+    .mCate8:hover #li8{
+       display: inline-block;
+    }
+    #li9{
+      display: none;
+      top: -430px;
+      
+    }
+    .mCate9:hover #li9{
+       display: inline-block;
+    }
+    #li10{
+      display: none;
+      top: -449px;
+      
+    }
+    .mCate10:hover #li10{
+       display: inline-block;
+    }
+    
+     .chilun{
+      position: relative;
+       left: 55px;
+       top: -270px;
+       margin: 0 30px;
+     }
+     .ncp{
+      position: relative;
+       left: 55px;
+       top: -250px;
+       margin: 0 30px;
+     }
+     .jc{
+      position: relative;
+       left: 55px;
+       top: -230px;
+       margin: 0 30px;
+     }
+     .kc{
+       position: relative;
+       left: 55px;
+       top: -210px;
+       margin: 0 30px;
+     }
+     .dq{
+      position: relative;
+       left: 55px;
+       top: -190px;
+       margin: 0 30px;
+      
+     }
+     .gyp{
+      position: relative;
+       left: 55px;
+       top: -170px;
+       margin: 0 30px;
+     }
+     .qx{
+      position: relative;
+       left: 55px;
+       top: -150px;
+       margin: 0 30px;
+     }
+     .jt{
+      position: relative;
+       left: 55px;
+       top: -130px;
+       margin: 0 30px;
+       
+     }
+     .wl{
+      position: relative;
+       left: 55px;
+       top: -110px;
+       margin: 0 30px;
+       
+     }
+     .wz{
+      position: relative;
+       left: 55px;
+       top: -90px;
+       margin: 0 30px;
+       
+     }
+     hr{
+      border: none;
+      background-color: #ccc;
+      height: 1px;
+      margin: 0 10px;
+     }
+     .rgImg{
+       height: 448px;
+       width: 266px;
+       border: 1px solid #ccc;
+       position: absolute;
+       left: 650px;
+       top: 0px;
+       background-color: white;
+     }
+     .picfont{
+       float: left;
+       
+     }
+
+     /* 轮播图下图片展示区域 样式*/
+     .showPro{
+       /* border: 1px solid #ccc; */
+       background-color: #fff;
+     }
+     .show-pic1{
+      position: relative;
+      
+      left: 30px;
+      top: -90px;
+      font-size: 12px;
+     }
+     .show-pic2{
+      position: relative;
+      left: 60px;
+      top: -90px;
+      font-size: 12px;
+     }
+     .show-pic3{
+      position: relative;
+      left: 410px;
+      top: -95px;
+      font-size: 12px;
+     }
+     .show-pic4{
+      position: relative;
+      left: 60px;
+      top: -90px;
+      font-size: 12px;
+     }
+     .a-1{
+       width: 180px;
+       height: 150px;
+     }
+     .a-2{
+       width: 180px;
+       height: 150px;
+     }
+     .a-3{
+      width: 180px;
+      height: 50px;
+      position: relative;
+      left: 0px;
+      top: -60px;
+     }
+     .a-4{
+      width: 180px;
+      height: 150px;
+      position: relative;
+      left: 550px;
+      top: -297px;
+     }
+     .a-1:hover{
+       color: #000;
+       background-color: #fff;
+     }
+     .a-2:hover{
+       color: #000;
+       background-color: #fff;
+     }
+     .a-3:hover{
+       color: #000;
+       background-color: #fff;
+     }
+     .a-4:hover{
+       color: #000;
+       background-color: #fff;
+     }
+     /* 右侧登录信息栏 */
+     .loginBar{
+         position: relative;
+         left: 1230px;
+         top: -957px;
+         background-color: #fff;
+     }
+     .logiName{
+          position: relative;
+          top: -63px;
+          right: -77px;
+     }
+     .logoTop{
+       height: 80px;
+     }
+     .on,.on1,.on2,.on3{
+       font-size: 12px;
+       padding: 5px 9px;
+     }
+     .xz{
+       position: relative;
+       left: 80px;
+       top: -60px;
+     }
+     #purchaseCount,#productCount{
+       color: red;
+       font-style: normal;
+       font-size: 18px;
+     }
+     .ss{
+       display: inline-block;
+       position: relative;
+       left: 20px;
+       top: 50px;
+       
+     }
+     em{
+       font-style: normal;
+     }
+     .wrap1{
+      list-style: none;
+      position: relative;
+      top: -940px;
+      left: 250px;
+      
+     }
+     .ts{
+       position: relative;
+       left: 250px;
+       top: 15px;
+     }
+     .pp{
+       position: relative;
+       left: 600px;
+       top: -150px;
+     }
+     .gys{
+       position: relative;
+       left: 270px;
+       top: 18px;
+     }
+     .tlTop{
+       position: relative;
+       left: 290px;
+       top: -1050px;
+     }
+     .hotWords1{
+       position: absolute;
+       left: 900px;
+       top: 5px;
+     }
+     .nf{
+      position: absolute;
+      left: 510px;
+      top: -20px;
+     }
+     .F1{
+       background-color: #fff;
+       height: 60px;
+       width: 1200px;
+       line-height: 60px;
+       position: relative;
+       top: -1075px;
+     }
+     .zan{
+       margin-left: 50px;
+     }
+     .jxzc:hover{
+       color: #000;
+     }
+     .F1-Nav{
+    width: 481px;
+    height: 490px;
+    border-right: 1px solid #efefef;
+    float: left;
+    padding: 15px 31px;
+    list-style: none;
+    position: relative;
+    top:-793px;
+    left: 200px;
+    background-color: #fff;
+     }
+     .F1-Md{
+       width: 0px;
+       list-style: none;
+     }
+     .jm:hover ,.hh:hover,.mgq:hover {
+       color: #000;
+     }
+     .companyList{
+       list-style: none;
+       font-size: 11px;
+       padding: 0;
+     }
+     .productList{
+      list-style: none;
+      font-size: 11px;
+      padding: 0;
+     }
+     .F1-Rg{
+       width: 180px;
+       height: 518px;
+       position: absolute;
+       top: 62px;
+       left: 1020px;
+       line-height: 25px;
+       background-color: #fff;
+     }
+     .floorRg_line{
+       font-size: 10px;
+       padding: 0;
+     }
+     .t2Top{
+       position: relative;
+       top: -530px;
+       left: 289px;
+     }
     </style>
   </head>
   <body>
-    <div>
+    <!-- 导航栏区域 -->
+    <div class="dhl">
+      <div class="bjs"></div>
       <div id="div1">
-        <a href="http://m.qihuiwang.com/"><span class="a1">手机站</span></a>
+        <a href="http://m.qihuiwang.com/"><span class="a1"><svg t="1616497690765" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="1402" width="20px" height="20px" ><path d="M304 208v640h432V208H304z m0-64h432c35.3 0 64 28.7 64 64v640c0 35.3-28.7 64-64 64H304c-35.3 0-64-28.7-64-64V208c0-35.3 28.7-64 64-64z m32 96h368v480H336V240z m32 32v416h304V272H368z" fill="#d81e06" p-id="1403"></path><path d="M464 752h96c17.7 0 32 14.3 32 32s-14.3 32-32 32h-96c-17.7 0-32-14.3-32-32s14.3-32 32-32z" fill="#d81e06" p-id="1404"></path></svg>手机站</span></a>
         <ul id="list1">
           <li>
             <img src="https://static.qihuiwang.com/images/oneCode.jpg" alt="" />
@@ -331,7 +766,7 @@
         </ul>
       </div>
       <a href="http://u.qihuiwang.com/member/login.html"
-        ><span class="a2">登录</span></a
+        ><span class="a2"><svg t="1616498354369" class="icon1" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2209" width="15px" height="15px"><path d="M993.429017 957.695134l0.075261 0c-0.075261-0.451565-0.180626-0.857974-0.270939-1.264383-0.030104-0.165574-0.060209-0.301044-0.090313-0.466618-24.459797-127.823137-97.011319-238.592151-204.498956-312.046803-46.255358-31.669793-96.619962-54.759841-149.197237-68.969102 87.5736-49.687256 146.834044-143.883816 146.834044-251.567132 0-159.282199-129.56919-288.866441-288.851389-288.866441s-288.851389 129.584242-288.851389 288.866441c0 111.958136 64.047038 209.360811 157.445833 257.317066-76.841394 23.932971-146.231956 66.229605-203.084051 124.225665-68.081023 69.420667-113.598824 156.301867-131.751757 251.401558-0.587035 2.182567-0.918183 4.440394-0.918183 6.803587 0 14.600617 11.831016 26.401529 26.431633 26.401529 12.719095 0 23.315831-9.016258 25.829546-20.952639l0.105365 0.015052c32.633132-176.1858 172.889372-316.773188 349.030016-349.827782 17.641158-3.296428 35.312421-5.509099 52.953579-6.668117 4.259768 0.180626 8.519535 0.316096 12.82446 0.316096 8.474379 0 16.873497-0.421461 25.16725-1.128914 83.825606 1.79121 165.393385 27.78633 236.213906 76.224254 96.108188 65.702778 160.952991 164.866559 182.613082 279.263149 0 0.015052 0 0.075261 0.015052 0.090313 0.045157 0.225783 0.075261 0.391357 0.090313 0.602087l0.060209 0c2.694341 11.710598 13.17066 20.425812 25.709128 20.425812 14.630722 0 26.431633-11.800911 26.431633-26.416581C993.745112 960.208849 993.624695 958.914361 993.429017 957.695134zM521.001205 558.285462c-12.222372-0.165574-24.474849 0.075261-36.742378 0.842922-124.029987-6.8939-222.832515-110.061561-222.832515-235.76234 0-130.141173 105.877054-236.033279 236.003175-236.033279s236.033279 105.907159 236.033279 236.033279C733.477819 445.544613 640.109128 546.454447 521.001205 558.285462z" p-id="2210" fill="#d81e06"></path></svg> 登录</span></a
       >
 
       <a href="http://u.qihuiwang.com/member/register.html"
@@ -431,7 +866,7 @@
 
       <div id="div7">
         <a href="http://www.qihuiwang.com/sitemap.html"
-          ><span class="a11">网站导航</span></a
+          ><span class="a11"><svg t="1616498508597" class="icon2" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2989" width="16" height="16"><path d="M838.6 484.7H578.5c-22.5 0-40.7-18.3-40.7-40.7V183.9c0-22.5 18.3-40.7 40.7-40.7h260.1c22.5 0 40.7 18.3 40.7 40.7V444c0 22.5-18.2 40.7-40.7 40.7zM578.5 170.8c-7.3 0-13.2 5.9-13.2 13.2v260c0 7.3 5.9 13.2 13.2 13.2h260.1c7.3 0 13.2-5.9 13.2-13.2V183.9c0-7.3-5.9-13.2-13.2-13.2H578.5zM838.6 880.4H578.5c-22.5 0-40.7-18.3-40.7-40.7V579.6c0-22.5 18.3-40.7 40.7-40.7h260.1c22.5 0 40.7 18.3 40.7 40.7v260.1c0 22.5-18.2 40.7-40.7 40.7zM578.5 566.5c-7.3 0-13.2 5.9-13.2 13.2v260.1c0 7.2 5.9 13.1 13.2 13.1h260.1c7.3 0 13.2-5.9 13.2-13.1V579.6c0-7.3-5.9-13.2-13.2-13.2H578.5zM444.1 484.7H184c-22.5 0-40.7-18.3-40.7-40.7V183.9c0-22.5 18.3-40.7 40.7-40.7h260.1c22.5 0 40.7 18.3 40.7 40.7V444c0 22.5-18.3 40.7-40.7 40.7zM184 170.8c-7.3 0-13.2 5.9-13.2 13.2v260c0 7.3 5.9 13.2 13.2 13.2h260.1c7.3 0 13.2-5.9 13.2-13.2V183.9c0-7.3-5.9-13.2-13.2-13.2H184zM444.1 880.4H184c-22.5 0-40.7-18.3-40.7-40.7V579.6c0-22.5 18.3-40.7 40.7-40.7h260.1c22.5 0 40.7 18.3 40.7 40.7v260.1c0 22.5-18.3 40.7-40.7 40.7zM184 566.5c-7.3 0-13.2 5.9-13.2 13.2v260.1c0 7.2 5.9 13.1 13.2 13.1h260.1c7.3 0 13.2-5.9 13.2-13.1V579.6c0-7.3-5.9-13.2-13.2-13.2H184z" fill="#d81e06" p-id="2990"></path></svg> 网站导航</span></a
         >
         <ul id="list7">
           <li><b>特色服务</b></li>
@@ -495,5 +930,1588 @@
       </div>
       
     </div>
+    <!-- 前台门户头部 -->
+    <div class="header">
+      <div class="head clearfix " >
+          <div class="Logo">
+              <a class="headLogo" href="http://www.qihuiwang.com" title="企汇网" target="_blank"><img src="25.png" alt="企汇网"></a>
+              <img src="025.png" alt="">
+          </div>
+          <div class="search">
+            <input id="searchKey" data-type="0" type="text" class="textInput" placeholder="请输入产品名称">
+            <input id="search-button" type="button" value="" >
+          </div>
+          <div class="po-i">
+            <a href="http://buy.qihuiwang.com/pub"> <span style="font-size: 16px; width: 160px; display: inline-block;"><svg t="1616505373338" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2569" width="24" height="24"><path d="M221.866667 737.450667l120.32-0.170667c9.045333 0 17.749333-3.584 24.064-10.069333l279.210666-279.210667a33.8432 33.8432 0 0 0 0-48.128l-120.149333-120.149333c-13.312-13.312-34.986667-13.312-48.298667 0L197.802667 558.933333c-6.485333 6.314667-9.898667 15.018667-10.069334 24.064v120.32a34.0992 34.0992 0 0 0 34.133334 34.133334zM256.170667 597.333333l245.077333-245.077333 71.850667 71.850667-245.248 245.077333H256l0.170667-71.850667zM626.688 219.648c19.285333-19.285333 52.565333-19.285333 71.850667 0a50.8928 50.8928 0 0 1 0 71.850667l-44.373334 44.373333 48.298667 48.298667 44.373333-44.373334c46.421333-46.421333 46.421333-122.026667 0-168.448C724.309333 148.992 694.272 136.533333 662.528 136.533333s-61.781333 12.458667-84.138667 34.816l-44.373333 44.373334 48.298667 48.298666 44.373333-44.373333zM861.013333 818.176H221.866667c-18.773333 0-34.133333 15.36-34.133334 34.133333s15.36 34.133333 34.133334 34.133334h639.146666c18.773333 0 34.133333-15.36 34.133334-34.133334s-15.36-34.133333-34.133334-34.133333z" p-id="2570" fill="#dbdbdb"></path></svg>发布采购单</span></a>
+           
+          </div>
+          <div class="ewm">
+            <p style="font-size: 12px;">企汇网手机站</p>
+            <img style="width: 68px; height: 68px;" src="https://static.qihuiwang.com/images/Appdown.jpg"  alt="" title="企汇网手机站">
+          </div>
+         </div>
+  </div>
+  <!-- 页面主体 -->
+  <div class="main">
+    <div class="nav-main" style="overflow:visible;  ">
+        <ul id="list8" >
+            <li class="title">
+              <div class="cd"><svg t="1616508755983" class="icon3" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2712" width="32" height="32"><path d="M199.68 300.032m-49.152 0a4.8 4.8 0 1 0 98.304 0 4.8 4.8 0 1 0-98.304 0Z" p-id="2713" fill="#e6e6e6"></path><path d="M402.432 343.04 829.44 343.04c23.552 0 44.032-19.456 44.032-44.032S852.992 256 829.44 256L402.432 256c-23.552 0-44.032 19.456-44.032 44.032S377.856 343.04 402.432 343.04z" p-id="2714" fill="#e6e6e6"></path><path d="M199.68 512m-49.152 0a4.8 4.8 0 1 0 98.304 0 4.8 4.8 0 1 0-98.304 0Z" p-id="2715" fill="#e6e6e6"></path><path d="M829.44 468.992 402.432 468.992c-23.552 0-44.032 19.456-44.032 44.032s19.456 44.032 44.032 44.032L829.44 557.056c23.552 0 44.032-19.456 44.032-44.032S852.992 468.992 829.44 468.992z" p-id="2716" fill="#e6e6e6"></path><path d="M199.68 724.992m-49.152 0a4.8 4.8 0 1 0 98.304 0 4.8 4.8 0 1 0-98.304 0Z" p-id="2717" fill="#e6e6e6"></path><path d="M829.44 680.96 402.432 680.96c-23.552 0-44.032 19.456-44.032 44.032s19.456 44.032 44.032 44.032L829.44 769.024c23.552 0 44.032-19.456 44.032-44.032S852.992 680.96 829.44 680.96z" p-id="2718" fill="#e6e6e6"></path></svg>所有分类 </div>
+              <a href="http://buy.qihuiwang.com" target="_blank" title="采购中心" class="hot_nav">采购中心</a>
+              <a href="/AiCaiGou/introPage.html" target="_blank" title="爱采购" class="hot_nav">爱采购</a>
+              <a href="http://www.tiantis.com/cn/" target="_blank" title="小程序" class="hot_nav">小程序</a>
+              <a href="http://hot.qihuiwang.com" target="_blank" title="活动汇"class="hot_nav">活动汇</a>
+              <a href="http://news.qihuiwang.com" target="_blank" title="资讯"class="hot_nav">资讯</a>
+              <a href="http://www.qihuiwang.com/exhibition/" target="_blank" title="展会"class="hot_nav">展会</a>
+              <a href="http://zhengzhou.qihuiwang.com" target="_blank" title="郑州站"class="hot_nav">郑州站</a>
+              <a href="http://pingdingshan.qihuiwang.com" target="_blank" title="平顶山站"class="hot_nav">平顶山站</a>
+              <a href="http://qihuiguanjia.qihuiwang.com" target="_blank" title="企汇管家"class="hot_nav">企汇管家</a>
+              <a href="http://sms.qihuiwang.com" target="_blank" title="企汇云信"class="hot_nav">企汇云信</a>
+            </li>
+        </ul>
+    </div>
+</div>
+<!--焦点区域-->
+
+<div class="bannerBar">
+  <div class="wrap">
+      <!--测导航-->
+      <div class="bc"></div>
+      <div class="categoryTab">
+          <ul class="nav-sub">
+              <li class="mCate1">
+                  <a target="_blank" href="http://jixie.qihuiwang.com" class="chilun"><i class="iconfont icon-chilun" ></i>&emsp;机械/设备/模具</a>
+                  <div class="subNav" id="li1">
+                      <div class="subItems">
+                          <dl>
+                              <dt></dt>
+                              <dd>
+                                   <b>| 风机、排风设&gt;</b>
+                                  <a href="http://product.qihuiwang.com/q35372" title="" target="_blank">通风机 |</a>
+                                  <a href="http://product.qihuiwang.com/q35374" title="" target="_blank">离子风机 |</a>
+                                  <a href="http://product.qihuiwang.com/q35375" title="" target="_blank">鼓风机 |</a>
+                                  <a href="http://product.qihuiwang.com/q35376" title="" target="_blank">工业风扇 |</a>
+                                  <a href="http://product.qihuiwang.com/q35377" title="" target="_blank">风机盘管 |</a>
+                                  <a href="http://product.qihuiwang.com/q35378" title="" target="_blank">风幕机 |</a>
+                                  <a href="http://product.qihuiwang.com/q35374" title="" target="_blank">离子风机 |</a>
+                                  <a href="http://product.qihuiwang.com/q35376" title="" target="_blank" style="color: orange;">工业风扇 |</a>
+                                  <a href="http://product.qihuiwang.com/q35379" title="" target="_blank">风叶 |</a>
+                                  <a href="http://product.qihuiwang.com/q35377" title="" target="_blank">风机盘管|</a>
+
+                              </dd>
+                          </dl><hr>
+                          <dl>
+                              <dt></dt>
+                              <dd>
+                                <b>| 刀具和夹具&gt;</b>
+                                  <a href="http://product.qihuiwang.com/q35395" title="" target="_blank">刀片 |</a>
+                                  <a href="http://product.qihuiwang.com/q35396" title="" target="_blank">铣刀 |</a>
+                                  <a href="http://product.qihuiwang.com/q35397" title="" target="_blank">夹具、夹头 |</a>
+                                  <a href="http://product.qihuiwang.com/q35398" title="" target="_blank">钻头 |</a>
+                                  <a href="http://product.qihuiwang.com/q35399" title="" target="_blank">其它刀具和夹具 |</a>
+                                  <a href="http://product.qihuiwang.com/q35401" title="" target="_blank">刀柄、刀杆 |</a>
+                                  <a href="http://product.qihuiwang.com/q35402" title="" target="_blank">数控刀具 |</a>
+                                  <a href="http://product.qihuiwang.com/q35403" title="" target="_blank">切刀 |</a>
+                                  <a href="http://product.qihuiwang.com/q35407" title="" target="_blank">滚刀 |</a>
+                                  <a href="http://product.qihuiwang.com/q35408" title="" target="_blank">冲头 |</a>
+
+                              </dd>
+                          </dl><hr>
+                          <dl>
+                              <dt></dt>
+                              <dd>
+                                  <b>| 通用五金配件&gt;</b>
+                                  <a href="http://product.qihuiwang.com/q38893" title="" target="_blank">滑轮 |</a>
+                                  <a href="http://product.qihuiwang.com/q38894" title="" target="_blank">脚轮、万向轮 |</a>
+                                  <a href="http://product.qihuiwang.com/q38895" title="" target="_blank">滚筒 |</a>
+                                  <a href="http://product.qihuiwang.com/q38896" title="" target="_blank">管夹 |</a>
+                                  <a href="http://product.qihuiwang.com/q38897" title="" target="_blank">锁具 |</a>
+                                  <a href="http://product.qihuiwang.com/q38898" title="" target="_blank">斗齿 |</a>
+                                  <a href="http://product.qihuiwang.com/q38899" title="" target="_blank">托辊 |</a>
+                                  <a href="http://product.qihuiwang.com/q38900" title="" target="_blank">卸扣 |</a>
+                                  <a href="http://product.qihuiwang.com/q38902" title="" target="_blank">直通 |</a>
+                                  <a href="http://product.qihuiwang.com/q38903" title="" target="_blank">吊钩、抓钩 |</a>
+
+                              </dd>
+                          </dl><hr>
+                          <dl>
+                              <dt></dt>
+                              <dd>
+                                 <b>| 矿山机械&gt;</b>
+                                  <a href="http://product.qihuiwang.com/q39082" title="" target="_blank" style="color: orange;">矿山机械 |</a>
+                                  <a href="http://product.qihuiwang.com/q39402" title="" target="_blank">矿山车 |</a>
+                                  <a href="http://product.qihuiwang.com/q39403" title="" target="_blank">煤矿机械 |</a>
+                                  <a href="http://product.qihuiwang.com/q39404" title="" target="_blank" style="color: orange;">破碎机 |</a>
+                                  <a href="http://product.qihuiwang.com/q39405" title="" target="_blank">磨矿设备 |</a>
+                                  <a href="http://product.qihuiwang.com/q39406" title="" target="_blank">浮选设备 |</a>
+                                  <a href="http://product.qihuiwang.com/q39407" title="" target="_blank">螺旋选矿机 |</a>
+                                  <a href="http://product.qihuiwang.com/q39408" title="" target="_blank">炭浆厂设备 |</a>
+                                  <a href="http://product.qihuiwang.com/q39414" title="" target="_blank">洗选机 |</a>
+
+                              </dd>
+                          </dl><hr>
+                          <dl>
+                              <dt></dt>
+                              <dd>
+                                 <b>| 食品机械&gt;</b>
+                                  <a href="http://product.qihuiwang.com/q39926" title="" target="_blank">粉碎与切割机械 |</a>
+                                  <a href="http://product.qihuiwang.com/q39927" title="" target="_blank">搅拌均匀与均质机械 |</a>
+                                  <a href="http://product.qihuiwang.com/q39928" title="" target="_blank">成型机械、分离机械 |</a>
+                                  <a href="http://product.qihuiwang.com/q39929" title="" target="_blank">蒸发与浓缩机械 |</a>
+                                  <a href="http://product.qihuiwang.com/q39930" title="" target="_blank" style="color: orange;">干燥机械 |</a>
+                                  <a href="http://product.qihuiwang.com/q39931" title="" target="_blank">冷冻机械 |</a>
+
+                              </dd>
+                          </dl><hr>
+                          <dl>
+                              <dt></dt>
+                              <dd>
+                                <b> | 真空设备&gt;</b>
+                                  <a href="http://product.qihuiwang.com/q35548" title="" target="_blank">真空设备 |</a>
+                                  <a href="http://product.qihuiwang.com/q39966" title="" target="_blank">旋片真空泵 |</a>
+                                  <a href="http://product.qihuiwang.com/q39970" title="" target="_blank">往复真空泵 |</a>
+                                  <a href="http://product.qihuiwang.com/q39971" title="" target="_blank">液环真空泵 |</a>
+                                  <a href="http://product.qihuiwang.com/q39972" title="" target="_blank">水喷射泵 |</a>
+                                  <a href="http://product.qihuiwang.com/q39975" title="" target="_blank">低温泵 |</a>
+
+                              </dd>
+                          </dl><hr>
+                          <dl>
+                              <dt></dt>
+                              <dd>
+                                <b>| 汽车轮毂&gt;</b>
+                                  <a href="http://product.qihuiwang.com/q39079" title="" target="_blank">汽车轮毂 |</a>
+                                  <a href="http://product.qihuiwang.com/q39378" title="" target="_blank">汽车轮毂喷剂 |</a>
+                                  <a href="http://product.qihuiwang.com/q39379" title="" target="_blank">汽车轮毂修复 |</a>
+                                  <a href="http://product.qihuiwang.com/q39381" title="" target="_blank">汽车轮毂清洗剂 |</a>
+                                  <a href="http://product.qihuiwang.com/q39382" title="" target="_blank">汽车轮毂改装 |</a>
+
+                              </dd>
+                          </dl><hr>
+                          <dl>
+                              <dt></dt>
+                              <dd>
+                                <b>| 道路养护机械&gt;</b>
+                                  <a href="http://product.qihuiwang.com/q39081" title="" target="_blank">道路养护机械 |</a>
+                                  <a href="http://product.qihuiwang.com/q39383" title="" target="_blank">微表处摊铺机 |</a>
+                                  <a href="http://product.qihuiwang.com/q39385" title="" target="_blank">铣刨机 |</a>
+                                  <a href="http://product.qihuiwang.com/q39386" title="" target="_blank">热再生修补机 |</a>
+                                  <a href="http://product.qihuiwang.com/q39391" title="" target="_blank">抛丸机 |</a>
+
+                              </dd>
+                          </dl><hr>
+
+                      </div>
+                      <div class="rgImg" style="height: 488px;">
+                          <p class="itemBrands">
+                              <a href="http://jhg002.shop.qihuiwang.com/" target="_blank"><img src="http://image.qihuiwang.com/F1/6/885/F1B68FF75095640FC7431783ADCD7D4F.jpg" alt="太原市晋源区晋华光矿山设备经营部"></a>        <a href="http://lljxgs.shop.qihuiwang.com/" target="_blank"><img src="http://image.qihuiwang.com/59/3/230/59430D0E6A2033B6B3364212A3D561B5.jpg" alt="巩义市雷力机械贸易有限公司"></a>        <a href="http://qfxyssjx03.shop.qihuiwang.com" target="_blank"><img src="http://image.qihuiwang.com/B2/7/794/B2B706B1A539EA00654699C1FD259529.jpg" alt="曲阜兴运输送机械设备有限公司"></a>        <a href="http://fanyinxia.shop.qihuiwang.com/" target="_blank"><img src="http://image.qihuiwang.com/A6/9/619/A619A666BF0AFC271F21EEBBBBCF2B81.jpg" alt="大城县大广安锦旭保温材料销售部"></a>        <a href="http://hailuzhonggong.shop.qihuiwang.com/" target="_blank"><img src="http://image.qihuiwang.com/4B/6/287/4B768391F5B5C1FBAC975D7F6021D9EF.jpg" alt="山东海陆之兴实业有限公司"></a>        <a href="http://sdxyjx888.shop.qihuiwang.com/" target="_blank"><img src="http://image.qihuiwang.com/F7/B/124/F78B2BC7C369DF81A50D055929A1BE39.jpg" alt="山东新悦机械设备有限公司"></a>        <a href="http://xnliaowuyan.shop.qihuiwang.com/" target="_blank"><img src="http://image.qihuiwang.com/35/5/726/35F55A2D6E557245F52A7F809B07ADCD.jpg" alt="重庆迅能厨电设备有限公司"></a>        <a href="http://gzqlsl.shop.qihuiwang.com/" target="_blank"><img src="http://image.qihuiwang.com/E5/6/521/E506592099284AD30B06CD42C38B516B.jpg" alt="江苏水工水下工程有限公司"></a>
+                          </p>
+                          <a class="itemPromotions" href="http://product.qihuiwang.com/396473213.html" target="_blank"><img src="http://image.qihuiwang.com/D6/8/546/D6F827E22E9C053E156C5C690C3C18D0.jpg" alt="圆筒裹包机"></a>
+                      </div>
+
+                  </div>
+              </li>
+              <li class="mCate2">
+                <a target="_blank" href="http://jixie.qihuiwang.com" class="ncp"><i class="iconfont icon-shu7"></i>&emsp;农作物/花卉/禽蓄</a>
+                <div class="subNav" id="li2">
+                  <div class="subItems">
+                    <dl>
+                        <dt></dt>
+                        <dd>
+                             <b>| 风机、排风设&gt;</b>
+                            <a href="http://product.qihuiwang.com/q35372" title="" target="_blank">通风机 |</a>
+                            <a href="http://product.qihuiwang.com/q35374" title="" target="_blank">离子风机 |</a>
+                            <a href="http://product.qihuiwang.com/q35375" title="" target="_blank">鼓风机 |</a>
+                            <a href="http://product.qihuiwang.com/q35376" title="" target="_blank">工业风扇 |</a>
+                            <a href="http://product.qihuiwang.com/q35377" title="" target="_blank">风机盘管 |</a>
+                            <a href="http://product.qihuiwang.com/q35378" title="" target="_blank">风幕机 |</a>
+                            <a href="http://product.qihuiwang.com/q35374" title="" target="_blank">离子风机 |</a>
+                            <a href="http://product.qihuiwang.com/q35376" title="" target="_blank" style="color: orange;">工业风扇 |</a>
+                            <a href="http://product.qihuiwang.com/q35379" title="" target="_blank">风叶 |</a>
+                            <a href="http://product.qihuiwang.com/q35377" title="" target="_blank">风机盘管|</a>
+
+                        </dd>
+                    </dl><hr>
+                    <dl>
+                        <dt></dt>
+                        <dd>
+                          <b>| 刀具和夹具&gt;</b>
+                            <a href="http://product.qihuiwang.com/q35395" title="" target="_blank">刀片 |</a>
+                            <a href="http://product.qihuiwang.com/q35396" title="" target="_blank">铣刀 |</a>
+                            <a href="http://product.qihuiwang.com/q35397" title="" target="_blank">夹具、夹头 |</a>
+                            <a href="http://product.qihuiwang.com/q35398" title="" target="_blank">钻头 |</a>
+                            <a href="http://product.qihuiwang.com/q35399" title="" target="_blank">其它刀具和夹具 |</a>
+                            <a href="http://product.qihuiwang.com/q35401" title="" target="_blank">刀柄、刀杆 |</a>
+                            <a href="http://product.qihuiwang.com/q35402" title="" target="_blank">数控刀具 |</a>
+                            <a href="http://product.qihuiwang.com/q35403" title="" target="_blank">切刀 |</a>
+                            <a href="http://product.qihuiwang.com/q35407" title="" target="_blank">滚刀 |</a>
+                            <a href="http://product.qihuiwang.com/q35408" title="" target="_blank">冲头 |</a>
+
+                        </dd>
+                    </dl><hr>
+                    <dl>
+                        <dt></dt>
+                        <dd>
+                            <b>| 通用五金配件&gt;</b>
+                            <a href="http://product.qihuiwang.com/q38893" title="" target="_blank">滑轮 |</a>
+                            <a href="http://product.qihuiwang.com/q38894" title="" target="_blank">脚轮、万向轮 |</a>
+                            <a href="http://product.qihuiwang.com/q38895" title="" target="_blank">滚筒 |</a>
+                            <a href="http://product.qihuiwang.com/q38896" title="" target="_blank">管夹 |</a>
+                            <a href="http://product.qihuiwang.com/q38897" title="" target="_blank">锁具 |</a>
+                            <a href="http://product.qihuiwang.com/q38898" title="" target="_blank">斗齿 |</a>
+                            <a href="http://product.qihuiwang.com/q38899" title="" target="_blank">托辊 |</a>
+                            <a href="http://product.qihuiwang.com/q38900" title="" target="_blank">卸扣 |</a>
+                            <a href="http://product.qihuiwang.com/q38902" title="" target="_blank">直通 |</a>
+                            <a href="http://product.qihuiwang.com/q38903" title="" target="_blank">吊钩、抓钩 |</a>
+
+                        </dd>
+                    </dl><hr>
+                    <dl>
+                        <dt></dt>
+                        <dd>
+                           <b>| 矿山机械&gt;</b>
+                            <a href="http://product.qihuiwang.com/q39082" title="" target="_blank" style="color: orange;">矿山机械 |</a>
+                            <a href="http://product.qihuiwang.com/q39402" title="" target="_blank">矿山车 |</a>
+                            <a href="http://product.qihuiwang.com/q39403" title="" target="_blank">煤矿机械 |</a>
+                            <a href="http://product.qihuiwang.com/q39404" title="" target="_blank" style="color: orange;">破碎机 |</a>
+                            <a href="http://product.qihuiwang.com/q39405" title="" target="_blank">磨矿设备 |</a>
+                            <a href="http://product.qihuiwang.com/q39406" title="" target="_blank">浮选设备 |</a>
+                            <a href="http://product.qihuiwang.com/q39407" title="" target="_blank">螺旋选矿机 |</a>
+                            <a href="http://product.qihuiwang.com/q39408" title="" target="_blank">炭浆厂设备 |</a>
+                            <a href="http://product.qihuiwang.com/q39414" title="" target="_blank">洗选机 |</a>
+
+                        </dd>
+                    </dl><hr>
+                    <dl>
+                        <dt></dt>
+                        <dd>
+                           <b>| 食品机械&gt;</b>
+                            <a href="http://product.qihuiwang.com/q39926" title="" target="_blank">粉碎与切割机械 |</a>
+                            <a href="http://product.qihuiwang.com/q39927" title="" target="_blank">搅拌均匀与均质机械 |</a>
+                            <a href="http://product.qihuiwang.com/q39928" title="" target="_blank">成型机械、分离机械 |</a>
+                            <a href="http://product.qihuiwang.com/q39929" title="" target="_blank">蒸发与浓缩机械 |</a>
+                            <a href="http://product.qihuiwang.com/q39930" title="" target="_blank" style="color: orange;">干燥机械 |</a>
+                            <a href="http://product.qihuiwang.com/q39931" title="" target="_blank">冷冻机械 |</a>
+
+                        </dd>
+                    </dl><hr>
+                    <dl>
+                        <dt></dt>
+                        <dd>
+                          <b> | 真空设备&gt;</b>
+                            <a href="http://product.qihuiwang.com/q35548" title="" target="_blank">真空设备 |</a>
+                            <a href="http://product.qihuiwang.com/q39966" title="" target="_blank">旋片真空泵 |</a>
+                            <a href="http://product.qihuiwang.com/q39970" title="" target="_blank">往复真空泵 |</a>
+                            <a href="http://product.qihuiwang.com/q39971" title="" target="_blank">液环真空泵 |</a>
+                            <a href="http://product.qihuiwang.com/q39972" title="" target="_blank">水喷射泵 |</a>
+                            <a href="http://product.qihuiwang.com/q39975" title="" target="_blank">低温泵 |</a>
+
+                        </dd>
+                    </dl><hr>
+                    <dl>
+                        <dt></dt>
+                        <dd>
+                          <b>| 汽车轮毂&gt;</b>
+                            <a href="http://product.qihuiwang.com/q39079" title="" target="_blank">汽车轮毂 |</a>
+                            <a href="http://product.qihuiwang.com/q39378" title="" target="_blank">汽车轮毂喷剂 |</a>
+                            <a href="http://product.qihuiwang.com/q39379" title="" target="_blank">汽车轮毂修复 |</a>
+                            <a href="http://product.qihuiwang.com/q39381" title="" target="_blank">汽车轮毂清洗剂 |</a>
+                            <a href="http://product.qihuiwang.com/q39382" title="" target="_blank">汽车轮毂改装 |</a>
+
+                        </dd>
+                    </dl><hr>
+                    <dl>
+                        <dt></dt>
+                        <dd>
+                          <b>| 道路养护机械&gt;</b>
+                            <a href="http://product.qihuiwang.com/q39081" title="" target="_blank">道路养护机械 |</a>
+                            <a href="http://product.qihuiwang.com/q39383" title="" target="_blank">微表处摊铺机 |</a>
+                            <a href="http://product.qihuiwang.com/q39385" title="" target="_blank">铣刨机 |</a>
+                            <a href="http://product.qihuiwang.com/q39386" title="" target="_blank">热再生修补机 |</a>
+                            <a href="http://product.qihuiwang.com/q39391" title="" target="_blank">抛丸机 |</a>
+
+                        </dd>
+                    </dl><hr>
+
+                </div>
+                <div class="rgImg" style="height: 488px;">
+                    <p class="itemBrands">
+                        <a href="http://jhg002.shop.qihuiwang.com/" target="_blank"><img src="http://image.qihuiwang.com/F1/6/885/F1B68FF75095640FC7431783ADCD7D4F.jpg" alt="太原市晋源区晋华光矿山设备经营部"></a>        <a href="http://lljxgs.shop.qihuiwang.com/" target="_blank"><img src="http://image.qihuiwang.com/59/3/230/59430D0E6A2033B6B3364212A3D561B5.jpg" alt="巩义市雷力机械贸易有限公司"></a>        <a href="http://qfxyssjx03.shop.qihuiwang.com" target="_blank"><img src="http://image.qihuiwang.com/B2/7/794/B2B706B1A539EA00654699C1FD259529.jpg" alt="曲阜兴运输送机械设备有限公司"></a>        <a href="http://fanyinxia.shop.qihuiwang.com/" target="_blank"><img src="http://image.qihuiwang.com/A6/9/619/A619A666BF0AFC271F21EEBBBBCF2B81.jpg" alt="大城县大广安锦旭保温材料销售部"></a>        <a href="http://hailuzhonggong.shop.qihuiwang.com/" target="_blank"><img src="http://image.qihuiwang.com/4B/6/287/4B768391F5B5C1FBAC975D7F6021D9EF.jpg" alt="山东海陆之兴实业有限公司"></a>        <a href="http://sdxyjx888.shop.qihuiwang.com/" target="_blank"><img src="http://image.qihuiwang.com/F7/B/124/F78B2BC7C369DF81A50D055929A1BE39.jpg" alt="山东新悦机械设备有限公司"></a>        <a href="http://xnliaowuyan.shop.qihuiwang.com/" target="_blank"><img src="http://image.qihuiwang.com/35/5/726/35F55A2D6E557245F52A7F809B07ADCD.jpg" alt="重庆迅能厨电设备有限公司"></a>        <a href="http://gzqlsl.shop.qihuiwang.com/" target="_blank"><img src="http://image.qihuiwang.com/E5/6/521/E506592099284AD30B06CD42C38B516B.jpg" alt="江苏水工水下工程有限公司"></a>
+                    </p>
+                    <a class="itemPromotions" href="http://product.qihuiwang.com/396473213.html" target="_blank"><img src="http://image.qihuiwang.com/D6/8/546/D6F827E22E9C053E156C5C690C3C18D0.jpg" alt="圆筒裹包机"></a>
+                </div>
+
+
+                  </div>
+              </li>
+              
+              <li class="mCate3">
+                  <a target="_blank" href="http://jiancai.qihuiwang.com" class="jc"><i class="iconfont icon-banshou"></i>&emsp;建筑/建材/五金</a>
+                  <div class="subNav" id="li3" >
+                    <div class="subItems">
+                      <dl>
+                          <dt></dt>
+                          <dd>
+                               <b>| 风机、排风设&gt;</b>
+                              <a href="http://product.qihuiwang.com/q35372" title="" target="_blank">通风机 |</a>
+                              <a href="http://product.qihuiwang.com/q35374" title="" target="_blank">离子风机 |</a>
+                              <a href="http://product.qihuiwang.com/q35375" title="" target="_blank">鼓风机 |</a>
+                              <a href="http://product.qihuiwang.com/q35376" title="" target="_blank">工业风扇 |</a>
+                              <a href="http://product.qihuiwang.com/q35377" title="" target="_blank">风机盘管 |</a>
+                              <a href="http://product.qihuiwang.com/q35378" title="" target="_blank">风幕机 |</a>
+                              <a href="http://product.qihuiwang.com/q35374" title="" target="_blank">离子风机 |</a>
+                              <a href="http://product.qihuiwang.com/q35376" title="" target="_blank" style="color: orange;">工业风扇 |</a>
+                              <a href="http://product.qihuiwang.com/q35379" title="" target="_blank">风叶 |</a>
+                              <a href="http://product.qihuiwang.com/q35377" title="" target="_blank">风机盘管|</a>
+
+                          </dd>
+                      </dl><hr>
+                      <dl>
+                          <dt></dt>
+                          <dd>
+                            <b>| 刀具和夹具&gt;</b>
+                              <a href="http://product.qihuiwang.com/q35395" title="" target="_blank">刀片 |</a>
+                              <a href="http://product.qihuiwang.com/q35396" title="" target="_blank">铣刀 |</a>
+                              <a href="http://product.qihuiwang.com/q35397" title="" target="_blank">夹具、夹头 |</a>
+                              <a href="http://product.qihuiwang.com/q35398" title="" target="_blank">钻头 |</a>
+                              <a href="http://product.qihuiwang.com/q35399" title="" target="_blank">其它刀具和夹具 |</a>
+                              <a href="http://product.qihuiwang.com/q35401" title="" target="_blank">刀柄、刀杆 |</a>
+                              <a href="http://product.qihuiwang.com/q35402" title="" target="_blank">数控刀具 |</a>
+                              <a href="http://product.qihuiwang.com/q35403" title="" target="_blank">切刀 |</a>
+                              <a href="http://product.qihuiwang.com/q35407" title="" target="_blank">滚刀 |</a>
+                              <a href="http://product.qihuiwang.com/q35408" title="" target="_blank">冲头 |</a>
+
+                          </dd>
+                      </dl><hr>
+                      <dl>
+                          <dt></dt>
+                          <dd>
+                              <b>| 通用五金配件&gt;</b>
+                              <a href="http://product.qihuiwang.com/q38893" title="" target="_blank">滑轮 |</a>
+                              <a href="http://product.qihuiwang.com/q38894" title="" target="_blank">脚轮、万向轮 |</a>
+                              <a href="http://product.qihuiwang.com/q38895" title="" target="_blank">滚筒 |</a>
+                              <a href="http://product.qihuiwang.com/q38896" title="" target="_blank">管夹 |</a>
+                              <a href="http://product.qihuiwang.com/q38897" title="" target="_blank">锁具 |</a>
+                              <a href="http://product.qihuiwang.com/q38898" title="" target="_blank">斗齿 |</a>
+                              <a href="http://product.qihuiwang.com/q38899" title="" target="_blank">托辊 |</a>
+                              <a href="http://product.qihuiwang.com/q38900" title="" target="_blank">卸扣 |</a>
+                              <a href="http://product.qihuiwang.com/q38902" title="" target="_blank">直通 |</a>
+                              <a href="http://product.qihuiwang.com/q38903" title="" target="_blank">吊钩、抓钩 |</a>
+
+                          </dd>
+                      </dl><hr>
+                      <dl>
+                          <dt></dt>
+                          <dd>
+                             <b>| 矿山机械&gt;</b>
+                              <a href="http://product.qihuiwang.com/q39082" title="" target="_blank" style="color: orange;">矿山机械 |</a>
+                              <a href="http://product.qihuiwang.com/q39402" title="" target="_blank">矿山车 |</a>
+                              <a href="http://product.qihuiwang.com/q39403" title="" target="_blank">煤矿机械 |</a>
+                              <a href="http://product.qihuiwang.com/q39404" title="" target="_blank" style="color: orange;">破碎机 |</a>
+                              <a href="http://product.qihuiwang.com/q39405" title="" target="_blank">磨矿设备 |</a>
+                              <a href="http://product.qihuiwang.com/q39406" title="" target="_blank">浮选设备 |</a>
+                              <a href="http://product.qihuiwang.com/q39407" title="" target="_blank">螺旋选矿机 |</a>
+                              <a href="http://product.qihuiwang.com/q39408" title="" target="_blank">炭浆厂设备 |</a>
+                              <a href="http://product.qihuiwang.com/q39414" title="" target="_blank">洗选机 |</a>
+
+                          </dd>
+                      </dl><hr>
+                      <dl>
+                          <dt></dt>
+                          <dd>
+                             <b>| 食品机械&gt;</b>
+                              <a href="http://product.qihuiwang.com/q39926" title="" target="_blank">粉碎与切割机械 |</a>
+                              <a href="http://product.qihuiwang.com/q39927" title="" target="_blank">搅拌均匀与均质机械 |</a>
+                              <a href="http://product.qihuiwang.com/q39928" title="" target="_blank">成型机械、分离机械 |</a>
+                              <a href="http://product.qihuiwang.com/q39929" title="" target="_blank">蒸发与浓缩机械 |</a>
+                              <a href="http://product.qihuiwang.com/q39930" title="" target="_blank" style="color: orange;">干燥机械 |</a>
+                              <a href="http://product.qihuiwang.com/q39931" title="" target="_blank">冷冻机械 |</a>
+
+                          </dd>
+                      </dl><hr>
+                      <dl>
+                          <dt></dt>
+                          <dd>
+                            <b> | 真空设备&gt;</b>
+                              <a href="http://product.qihuiwang.com/q35548" title="" target="_blank">真空设备 |</a>
+                              <a href="http://product.qihuiwang.com/q39966" title="" target="_blank">旋片真空泵 |</a>
+                              <a href="http://product.qihuiwang.com/q39970" title="" target="_blank">往复真空泵 |</a>
+                              <a href="http://product.qihuiwang.com/q39971" title="" target="_blank">液环真空泵 |</a>
+                              <a href="http://product.qihuiwang.com/q39972" title="" target="_blank">水喷射泵 |</a>
+                              <a href="http://product.qihuiwang.com/q39975" title="" target="_blank">低温泵 |</a>
+
+                          </dd>
+                      </dl><hr>
+                      <dl>
+                          <dt></dt>
+                          <dd>
+                            <b>| 汽车轮毂&gt;</b>
+                              <a href="http://product.qihuiwang.com/q39079" title="" target="_blank">汽车轮毂 |</a>
+                              <a href="http://product.qihuiwang.com/q39378" title="" target="_blank">汽车轮毂喷剂 |</a>
+                              <a href="http://product.qihuiwang.com/q39379" title="" target="_blank">汽车轮毂修复 |</a>
+                              <a href="http://product.qihuiwang.com/q39381" title="" target="_blank">汽车轮毂清洗剂 |</a>
+                              <a href="http://product.qihuiwang.com/q39382" title="" target="_blank">汽车轮毂改装 |</a>
+
+                          </dd>
+                      </dl><hr>
+                      <dl>
+                          <dt></dt>
+                          <dd>
+                            <b>| 道路养护机械&gt;</b>
+                              <a href="http://product.qihuiwang.com/q39081" title="" target="_blank">道路养护机械 |</a>
+                              <a href="http://product.qihuiwang.com/q39383" title="" target="_blank">微表处摊铺机 |</a>
+                              <a href="http://product.qihuiwang.com/q39385" title="" target="_blank">铣刨机 |</a>
+                              <a href="http://product.qihuiwang.com/q39386" title="" target="_blank">热再生修补机 |</a>
+                              <a href="http://product.qihuiwang.com/q39391" title="" target="_blank">抛丸机 |</a>
+
+                          </dd>
+                      </dl><hr>
+
+                  </div>
+                  <div class="rgImg" style="height: 488px;">
+                      <p class="itemBrands">
+                          <a href="http://jhg002.shop.qihuiwang.com/" target="_blank"><img src="http://image.qihuiwang.com/F1/6/885/F1B68FF75095640FC7431783ADCD7D4F.jpg" alt="太原市晋源区晋华光矿山设备经营部"></a>        <a href="http://lljxgs.shop.qihuiwang.com/" target="_blank"><img src="http://image.qihuiwang.com/59/3/230/59430D0E6A2033B6B3364212A3D561B5.jpg" alt="巩义市雷力机械贸易有限公司"></a>        <a href="http://qfxyssjx03.shop.qihuiwang.com" target="_blank"><img src="http://image.qihuiwang.com/B2/7/794/B2B706B1A539EA00654699C1FD259529.jpg" alt="曲阜兴运输送机械设备有限公司"></a>        <a href="http://fanyinxia.shop.qihuiwang.com/" target="_blank"><img src="http://image.qihuiwang.com/A6/9/619/A619A666BF0AFC271F21EEBBBBCF2B81.jpg" alt="大城县大广安锦旭保温材料销售部"></a>        <a href="http://hailuzhonggong.shop.qihuiwang.com/" target="_blank"><img src="http://image.qihuiwang.com/4B/6/287/4B768391F5B5C1FBAC975D7F6021D9EF.jpg" alt="山东海陆之兴实业有限公司"></a>        <a href="http://sdxyjx888.shop.qihuiwang.com/" target="_blank"><img src="http://image.qihuiwang.com/F7/B/124/F78B2BC7C369DF81A50D055929A1BE39.jpg" alt="山东新悦机械设备有限公司"></a>        <a href="http://xnliaowuyan.shop.qihuiwang.com/" target="_blank"><img src="http://image.qihuiwang.com/35/5/726/35F55A2D6E557245F52A7F809B07ADCD.jpg" alt="重庆迅能厨电设备有限公司"></a>        <a href="http://gzqlsl.shop.qihuiwang.com/" target="_blank"><img src="http://image.qihuiwang.com/E5/6/521/E506592099284AD30B06CD42C38B516B.jpg" alt="江苏水工水下工程有限公司"></a>
+                      </p>
+                      <a class="itemPromotions" href="http://product.qihuiwang.com/396473213.html" target="_blank"><img src="http://image.qihuiwang.com/D6/8/546/D6F827E22E9C053E156C5C690C3C18D0.jpg" alt="圆筒裹包机"></a>
+                  </div>
+
+
+                  </div>
+              </li>
+              <li class="mCate4">
+                  <a target="_blank" href="http://product.qihuiwang.com/q12890/" class="kc"><i class="iconfont icon-meitankaicai"></i>&emsp;能源/矿产/石油</a>
+                  <div class="subNav" id="li4">
+                    <div class="subItems">
+                      <dl>
+                          <dt></dt>
+                          <dd>
+                               <b>| 风机、排风设&gt;</b>
+                              <a href="http://product.qihuiwang.com/q35372" title="" target="_blank">通风机 |</a>
+                              <a href="http://product.qihuiwang.com/q35374" title="" target="_blank">离子风机 |</a>
+                              <a href="http://product.qihuiwang.com/q35375" title="" target="_blank">鼓风机 |</a>
+                              <a href="http://product.qihuiwang.com/q35376" title="" target="_blank">工业风扇 |</a>
+                              <a href="http://product.qihuiwang.com/q35377" title="" target="_blank">风机盘管 |</a>
+                              <a href="http://product.qihuiwang.com/q35378" title="" target="_blank">风幕机 |</a>
+                              <a href="http://product.qihuiwang.com/q35374" title="" target="_blank">离子风机 |</a>
+                              <a href="http://product.qihuiwang.com/q35376" title="" target="_blank" style="color: orange;">工业风扇 |</a>
+                              <a href="http://product.qihuiwang.com/q35379" title="" target="_blank">风叶 |</a>
+                              <a href="http://product.qihuiwang.com/q35377" title="" target="_blank">风机盘管|</a>
+
+                          </dd>
+                      </dl><hr>
+                      <dl>
+                          <dt></dt>
+                          <dd>
+                            <b>| 刀具和夹具&gt;</b>
+                              <a href="http://product.qihuiwang.com/q35395" title="" target="_blank">刀片 |</a>
+                              <a href="http://product.qihuiwang.com/q35396" title="" target="_blank">铣刀 |</a>
+                              <a href="http://product.qihuiwang.com/q35397" title="" target="_blank">夹具、夹头 |</a>
+                              <a href="http://product.qihuiwang.com/q35398" title="" target="_blank">钻头 |</a>
+                              <a href="http://product.qihuiwang.com/q35399" title="" target="_blank">其它刀具和夹具 |</a>
+                              <a href="http://product.qihuiwang.com/q35401" title="" target="_blank">刀柄、刀杆 |</a>
+                              <a href="http://product.qihuiwang.com/q35402" title="" target="_blank">数控刀具 |</a>
+                              <a href="http://product.qihuiwang.com/q35403" title="" target="_blank">切刀 |</a>
+                              <a href="http://product.qihuiwang.com/q35407" title="" target="_blank">滚刀 |</a>
+                              <a href="http://product.qihuiwang.com/q35408" title="" target="_blank">冲头 |</a>
+
+                          </dd>
+                      </dl><hr>
+                      <dl>
+                          <dt></dt>
+                          <dd>
+                              <b>| 通用五金配件&gt;</b>
+                              <a href="http://product.qihuiwang.com/q38893" title="" target="_blank">滑轮 |</a>
+                              <a href="http://product.qihuiwang.com/q38894" title="" target="_blank">脚轮、万向轮 |</a>
+                              <a href="http://product.qihuiwang.com/q38895" title="" target="_blank">滚筒 |</a>
+                              <a href="http://product.qihuiwang.com/q38896" title="" target="_blank">管夹 |</a>
+                              <a href="http://product.qihuiwang.com/q38897" title="" target="_blank">锁具 |</a>
+                              <a href="http://product.qihuiwang.com/q38898" title="" target="_blank">斗齿 |</a>
+                              <a href="http://product.qihuiwang.com/q38899" title="" target="_blank">托辊 |</a>
+                              <a href="http://product.qihuiwang.com/q38900" title="" target="_blank">卸扣 |</a>
+                              <a href="http://product.qihuiwang.com/q38902" title="" target="_blank">直通 |</a>
+                              <a href="http://product.qihuiwang.com/q38903" title="" target="_blank">吊钩、抓钩 |</a>
+
+                          </dd>
+                      </dl><hr>
+                      <dl>
+                          <dt></dt>
+                          <dd>
+                             <b>| 矿山机械&gt;</b>
+                              <a href="http://product.qihuiwang.com/q39082" title="" target="_blank" style="color: orange;">矿山机械 |</a>
+                              <a href="http://product.qihuiwang.com/q39402" title="" target="_blank">矿山车 |</a>
+                              <a href="http://product.qihuiwang.com/q39403" title="" target="_blank">煤矿机械 |</a>
+                              <a href="http://product.qihuiwang.com/q39404" title="" target="_blank" style="color: orange;">破碎机 |</a>
+                              <a href="http://product.qihuiwang.com/q39405" title="" target="_blank">磨矿设备 |</a>
+                              <a href="http://product.qihuiwang.com/q39406" title="" target="_blank">浮选设备 |</a>
+                              <a href="http://product.qihuiwang.com/q39407" title="" target="_blank">螺旋选矿机 |</a>
+                              <a href="http://product.qihuiwang.com/q39408" title="" target="_blank">炭浆厂设备 |</a>
+                              <a href="http://product.qihuiwang.com/q39414" title="" target="_blank">洗选机 |</a>
+
+                          </dd>
+                      </dl><hr>
+                      <dl>
+                          <dt></dt>
+                          <dd>
+                             <b>| 食品机械&gt;</b>
+                              <a href="http://product.qihuiwang.com/q39926" title="" target="_blank">粉碎与切割机械 |</a>
+                              <a href="http://product.qihuiwang.com/q39927" title="" target="_blank">搅拌均匀与均质机械 |</a>
+                              <a href="http://product.qihuiwang.com/q39928" title="" target="_blank">成型机械、分离机械 |</a>
+                              <a href="http://product.qihuiwang.com/q39929" title="" target="_blank">蒸发与浓缩机械 |</a>
+                              <a href="http://product.qihuiwang.com/q39930" title="" target="_blank" style="color: orange;">干燥机械 |</a>
+                              <a href="http://product.qihuiwang.com/q39931" title="" target="_blank">冷冻机械 |</a>
+
+                          </dd>
+                      </dl><hr>
+                      <dl>
+                          <dt></dt>
+                          <dd>
+                            <b> | 真空设备&gt;</b>
+                              <a href="http://product.qihuiwang.com/q35548" title="" target="_blank">真空设备 |</a>
+                              <a href="http://product.qihuiwang.com/q39966" title="" target="_blank">旋片真空泵 |</a>
+                              <a href="http://product.qihuiwang.com/q39970" title="" target="_blank">往复真空泵 |</a>
+                              <a href="http://product.qihuiwang.com/q39971" title="" target="_blank">液环真空泵 |</a>
+                              <a href="http://product.qihuiwang.com/q39972" title="" target="_blank">水喷射泵 |</a>
+                              <a href="http://product.qihuiwang.com/q39975" title="" target="_blank">低温泵 |</a>
+
+                          </dd>
+                      </dl><hr>
+                      <dl>
+                          <dt></dt>
+                          <dd>
+                            <b>| 汽车轮毂&gt;</b>
+                              <a href="http://product.qihuiwang.com/q39079" title="" target="_blank">汽车轮毂 |</a>
+                              <a href="http://product.qihuiwang.com/q39378" title="" target="_blank">汽车轮毂喷剂 |</a>
+                              <a href="http://product.qihuiwang.com/q39379" title="" target="_blank">汽车轮毂修复 |</a>
+                              <a href="http://product.qihuiwang.com/q39381" title="" target="_blank">汽车轮毂清洗剂 |</a>
+                              <a href="http://product.qihuiwang.com/q39382" title="" target="_blank">汽车轮毂改装 |</a>
+
+                          </dd>
+                      </dl><hr>
+                      <dl>
+                          <dt></dt>
+                          <dd>
+                            <b>| 道路养护机械&gt;</b>
+                              <a href="http://product.qihuiwang.com/q39081" title="" target="_blank">道路养护机械 |</a>
+                              <a href="http://product.qihuiwang.com/q39383" title="" target="_blank">微表处摊铺机 |</a>
+                              <a href="http://product.qihuiwang.com/q39385" title="" target="_blank">铣刨机 |</a>
+                              <a href="http://product.qihuiwang.com/q39386" title="" target="_blank">热再生修补机 |</a>
+                              <a href="http://product.qihuiwang.com/q39391" title="" target="_blank">抛丸机 |</a>
+
+                          </dd>
+                      </dl><hr>
+
+                  </div>
+                  <div class="rgImg" style="height: 488px;">
+                      <p class="itemBrands">
+                          <a href="http://jhg002.shop.qihuiwang.com/" target="_blank"><img src="http://image.qihuiwang.com/F1/6/885/F1B68FF75095640FC7431783ADCD7D4F.jpg" alt="太原市晋源区晋华光矿山设备经营部"></a>        <a href="http://lljxgs.shop.qihuiwang.com/" target="_blank"><img src="http://image.qihuiwang.com/59/3/230/59430D0E6A2033B6B3364212A3D561B5.jpg" alt="巩义市雷力机械贸易有限公司"></a>        <a href="http://qfxyssjx03.shop.qihuiwang.com" target="_blank"><img src="http://image.qihuiwang.com/B2/7/794/B2B706B1A539EA00654699C1FD259529.jpg" alt="曲阜兴运输送机械设备有限公司"></a>        <a href="http://fanyinxia.shop.qihuiwang.com/" target="_blank"><img src="http://image.qihuiwang.com/A6/9/619/A619A666BF0AFC271F21EEBBBBCF2B81.jpg" alt="大城县大广安锦旭保温材料销售部"></a>        <a href="http://hailuzhonggong.shop.qihuiwang.com/" target="_blank"><img src="http://image.qihuiwang.com/4B/6/287/4B768391F5B5C1FBAC975D7F6021D9EF.jpg" alt="山东海陆之兴实业有限公司"></a>        <a href="http://sdxyjx888.shop.qihuiwang.com/" target="_blank"><img src="http://image.qihuiwang.com/F7/B/124/F78B2BC7C369DF81A50D055929A1BE39.jpg" alt="山东新悦机械设备有限公司"></a>        <a href="http://xnliaowuyan.shop.qihuiwang.com/" target="_blank"><img src="http://image.qihuiwang.com/35/5/726/35F55A2D6E557245F52A7F809B07ADCD.jpg" alt="重庆迅能厨电设备有限公司"></a>        <a href="http://gzqlsl.shop.qihuiwang.com/" target="_blank"><img src="http://image.qihuiwang.com/E5/6/521/E506592099284AD30B06CD42C38B516B.jpg" alt="江苏水工水下工程有限公司"></a>
+                      </p>
+                      <a class="itemPromotions" href="http://product.qihuiwang.com/396473213.html" target="_blank"><img src="http://image.qihuiwang.com/D6/8/546/D6F827E22E9C053E156C5C690C3C18D0.jpg" alt="圆筒裹包机"></a>
+                  </div>
+
+                  </div>
+              </li>
+              <li class="mCate5">
+                  <a target="_blank" href="http://product.qihuiwang.com/q12896/" class="dq"><i class="iconfont icon-dianqi"></i>&emsp;电工/电气/配电</a>
+                  <div class="subNav" id="li5">
+                    <div class="subItems">
+                      <dl>
+                          <dt></dt>
+                          <dd>
+                               <b>| 风机、排风设&gt;</b>
+                              <a href="http://product.qihuiwang.com/q35372" title="" target="_blank">通风机 |</a>
+                              <a href="http://product.qihuiwang.com/q35374" title="" target="_blank">离子风机 |</a>
+                              <a href="http://product.qihuiwang.com/q35375" title="" target="_blank">鼓风机 |</a>
+                              <a href="http://product.qihuiwang.com/q35376" title="" target="_blank">工业风扇 |</a>
+                              <a href="http://product.qihuiwang.com/q35377" title="" target="_blank">风机盘管 |</a>
+                              <a href="http://product.qihuiwang.com/q35378" title="" target="_blank">风幕机 |</a>
+                              <a href="http://product.qihuiwang.com/q35374" title="" target="_blank">离子风机 |</a>
+                              <a href="http://product.qihuiwang.com/q35376" title="" target="_blank" style="color: orange;">工业风扇 |</a>
+                              <a href="http://product.qihuiwang.com/q35379" title="" target="_blank">风叶 |</a>
+                              <a href="http://product.qihuiwang.com/q35377" title="" target="_blank">风机盘管|</a>
+
+                          </dd>
+                      </dl><hr>
+                      <dl>
+                          <dt></dt>
+                          <dd>
+                            <b>| 刀具和夹具&gt;</b>
+                              <a href="http://product.qihuiwang.com/q35395" title="" target="_blank">刀片 |</a>
+                              <a href="http://product.qihuiwang.com/q35396" title="" target="_blank">铣刀 |</a>
+                              <a href="http://product.qihuiwang.com/q35397" title="" target="_blank">夹具、夹头 |</a>
+                              <a href="http://product.qihuiwang.com/q35398" title="" target="_blank">钻头 |</a>
+                              <a href="http://product.qihuiwang.com/q35399" title="" target="_blank">其它刀具和夹具 |</a>
+                              <a href="http://product.qihuiwang.com/q35401" title="" target="_blank">刀柄、刀杆 |</a>
+                              <a href="http://product.qihuiwang.com/q35402" title="" target="_blank">数控刀具 |</a>
+                              <a href="http://product.qihuiwang.com/q35403" title="" target="_blank">切刀 |</a>
+                              <a href="http://product.qihuiwang.com/q35407" title="" target="_blank">滚刀 |</a>
+                              <a href="http://product.qihuiwang.com/q35408" title="" target="_blank">冲头 |</a>
+
+                          </dd>
+                      </dl><hr>
+                      <dl>
+                          <dt></dt>
+                          <dd>
+                              <b>| 通用五金配件&gt;</b>
+                              <a href="http://product.qihuiwang.com/q38893" title="" target="_blank">滑轮 |</a>
+                              <a href="http://product.qihuiwang.com/q38894" title="" target="_blank">脚轮、万向轮 |</a>
+                              <a href="http://product.qihuiwang.com/q38895" title="" target="_blank">滚筒 |</a>
+                              <a href="http://product.qihuiwang.com/q38896" title="" target="_blank">管夹 |</a>
+                              <a href="http://product.qihuiwang.com/q38897" title="" target="_blank">锁具 |</a>
+                              <a href="http://product.qihuiwang.com/q38898" title="" target="_blank">斗齿 |</a>
+                              <a href="http://product.qihuiwang.com/q38899" title="" target="_blank">托辊 |</a>
+                              <a href="http://product.qihuiwang.com/q38900" title="" target="_blank">卸扣 |</a>
+                              <a href="http://product.qihuiwang.com/q38902" title="" target="_blank">直通 |</a>
+                              <a href="http://product.qihuiwang.com/q38903" title="" target="_blank">吊钩、抓钩 |</a>
+
+                          </dd>
+                      </dl><hr>
+                      <dl>
+                          <dt></dt>
+                          <dd>
+                             <b>| 矿山机械&gt;</b>
+                              <a href="http://product.qihuiwang.com/q39082" title="" target="_blank" style="color: orange;">矿山机械 |</a>
+                              <a href="http://product.qihuiwang.com/q39402" title="" target="_blank">矿山车 |</a>
+                              <a href="http://product.qihuiwang.com/q39403" title="" target="_blank">煤矿机械 |</a>
+                              <a href="http://product.qihuiwang.com/q39404" title="" target="_blank" style="color: orange;">破碎机 |</a>
+                              <a href="http://product.qihuiwang.com/q39405" title="" target="_blank">磨矿设备 |</a>
+                              <a href="http://product.qihuiwang.com/q39406" title="" target="_blank">浮选设备 |</a>
+                              <a href="http://product.qihuiwang.com/q39407" title="" target="_blank">螺旋选矿机 |</a>
+                              <a href="http://product.qihuiwang.com/q39408" title="" target="_blank">炭浆厂设备 |</a>
+                              <a href="http://product.qihuiwang.com/q39414" title="" target="_blank">洗选机 |</a>
+
+                          </dd>
+                      </dl><hr>
+                      <dl>
+                          <dt></dt>
+                          <dd>
+                             <b>| 食品机械&gt;</b>
+                              <a href="http://product.qihuiwang.com/q39926" title="" target="_blank">粉碎与切割机械 |</a>
+                              <a href="http://product.qihuiwang.com/q39927" title="" target="_blank">搅拌均匀与均质机械 |</a>
+                              <a href="http://product.qihuiwang.com/q39928" title="" target="_blank">成型机械、分离机械 |</a>
+                              <a href="http://product.qihuiwang.com/q39929" title="" target="_blank">蒸发与浓缩机械 |</a>
+                              <a href="http://product.qihuiwang.com/q39930" title="" target="_blank" style="color: orange;">干燥机械 |</a>
+                              <a href="http://product.qihuiwang.com/q39931" title="" target="_blank">冷冻机械 |</a>
+
+                          </dd>
+                      </dl><hr>
+                      <dl>
+                          <dt></dt>
+                          <dd>
+                            <b> | 真空设备&gt;</b>
+                              <a href="http://product.qihuiwang.com/q35548" title="" target="_blank">真空设备 |</a>
+                              <a href="http://product.qihuiwang.com/q39966" title="" target="_blank">旋片真空泵 |</a>
+                              <a href="http://product.qihuiwang.com/q39970" title="" target="_blank">往复真空泵 |</a>
+                              <a href="http://product.qihuiwang.com/q39971" title="" target="_blank">液环真空泵 |</a>
+                              <a href="http://product.qihuiwang.com/q39972" title="" target="_blank">水喷射泵 |</a>
+                              <a href="http://product.qihuiwang.com/q39975" title="" target="_blank">低温泵 |</a>
+
+                          </dd>
+                      </dl><hr>
+                      <dl>
+                          <dt></dt>
+                          <dd>
+                            <b>| 汽车轮毂&gt;</b>
+                              <a href="http://product.qihuiwang.com/q39079" title="" target="_blank">汽车轮毂 |</a>
+                              <a href="http://product.qihuiwang.com/q39378" title="" target="_blank">汽车轮毂喷剂 |</a>
+                              <a href="http://product.qihuiwang.com/q39379" title="" target="_blank">汽车轮毂修复 |</a>
+                              <a href="http://product.qihuiwang.com/q39381" title="" target="_blank">汽车轮毂清洗剂 |</a>
+                              <a href="http://product.qihuiwang.com/q39382" title="" target="_blank">汽车轮毂改装 |</a>
+
+                          </dd>
+                      </dl><hr>
+                      <dl>
+                          <dt></dt>
+                          <dd>
+                            <b>| 道路养护机械&gt;</b>
+                              <a href="http://product.qihuiwang.com/q39081" title="" target="_blank">道路养护机械 |</a>
+                              <a href="http://product.qihuiwang.com/q39383" title="" target="_blank">微表处摊铺机 |</a>
+                              <a href="http://product.qihuiwang.com/q39385" title="" target="_blank">铣刨机 |</a>
+                              <a href="http://product.qihuiwang.com/q39386" title="" target="_blank">热再生修补机 |</a>
+                              <a href="http://product.qihuiwang.com/q39391" title="" target="_blank">抛丸机 |</a>
+
+                          </dd>
+                      </dl><hr>
+
+                  </div>
+                  <div class="rgImg" style="height: 488px;">
+                      <p class="itemBrands">
+                          <a href="http://jhg002.shop.qihuiwang.com/" target="_blank"><img src="http://image.qihuiwang.com/F1/6/885/F1B68FF75095640FC7431783ADCD7D4F.jpg" alt="太原市晋源区晋华光矿山设备经营部"></a>        <a href="http://lljxgs.shop.qihuiwang.com/" target="_blank"><img src="http://image.qihuiwang.com/59/3/230/59430D0E6A2033B6B3364212A3D561B5.jpg" alt="巩义市雷力机械贸易有限公司"></a>        <a href="http://qfxyssjx03.shop.qihuiwang.com" target="_blank"><img src="http://image.qihuiwang.com/B2/7/794/B2B706B1A539EA00654699C1FD259529.jpg" alt="曲阜兴运输送机械设备有限公司"></a>        <a href="http://fanyinxia.shop.qihuiwang.com/" target="_blank"><img src="http://image.qihuiwang.com/A6/9/619/A619A666BF0AFC271F21EEBBBBCF2B81.jpg" alt="大城县大广安锦旭保温材料销售部"></a>        <a href="http://hailuzhonggong.shop.qihuiwang.com/" target="_blank"><img src="http://image.qihuiwang.com/4B/6/287/4B768391F5B5C1FBAC975D7F6021D9EF.jpg" alt="山东海陆之兴实业有限公司"></a>        <a href="http://sdxyjx888.shop.qihuiwang.com/" target="_blank"><img src="http://image.qihuiwang.com/F7/B/124/F78B2BC7C369DF81A50D055929A1BE39.jpg" alt="山东新悦机械设备有限公司"></a>        <a href="http://xnliaowuyan.shop.qihuiwang.com/" target="_blank"><img src="http://image.qihuiwang.com/35/5/726/35F55A2D6E557245F52A7F809B07ADCD.jpg" alt="重庆迅能厨电设备有限公司"></a>        <a href="http://gzqlsl.shop.qihuiwang.com/" target="_blank"><img src="http://image.qihuiwang.com/E5/6/521/E506592099284AD30B06CD42C38B516B.jpg" alt="江苏水工水下工程有限公司"></a>
+                      </p>
+                      <a class="itemPromotions" href="http://product.qihuiwang.com/396473213.html" target="_blank"><img src="http://image.qihuiwang.com/D6/8/546/D6F827E22E9C053E156C5C690C3C18D0.jpg" alt="圆筒裹包机"></a>
+                  </div>
+
+
+                  </div>
+              </li>
+              <li class="mCate6">
+                  <a target="_blank" href="http://product.qihuiwang.com/q12912/" class="gyp"><i class="iconfont icon-huaban"></i>&emsp;饰品/礼品/工艺品</a>
+                  <div class="subNav" id="li6">
+                    <div class="subItems">
+                      <dl>
+                          <dt></dt>
+                          <dd>
+                               <b>| 风机、排风设&gt;</b>
+                              <a href="http://product.qihuiwang.com/q35372" title="" target="_blank">通风机 |</a>
+                              <a href="http://product.qihuiwang.com/q35374" title="" target="_blank">离子风机 |</a>
+                              <a href="http://product.qihuiwang.com/q35375" title="" target="_blank">鼓风机 |</a>
+                              <a href="http://product.qihuiwang.com/q35376" title="" target="_blank">工业风扇 |</a>
+                              <a href="http://product.qihuiwang.com/q35377" title="" target="_blank">风机盘管 |</a>
+                              <a href="http://product.qihuiwang.com/q35378" title="" target="_blank">风幕机 |</a>
+                              <a href="http://product.qihuiwang.com/q35374" title="" target="_blank">离子风机 |</a>
+                              <a href="http://product.qihuiwang.com/q35376" title="" target="_blank" style="color: orange;">工业风扇 |</a>
+                              <a href="http://product.qihuiwang.com/q35379" title="" target="_blank">风叶 |</a>
+                              <a href="http://product.qihuiwang.com/q35377" title="" target="_blank">风机盘管|</a>
+
+                          </dd>
+                      </dl><hr>
+                      <dl>
+                          <dt></dt>
+                          <dd>
+                            <b>| 刀具和夹具&gt;</b>
+                              <a href="http://product.qihuiwang.com/q35395" title="" target="_blank">刀片 |</a>
+                              <a href="http://product.qihuiwang.com/q35396" title="" target="_blank">铣刀 |</a>
+                              <a href="http://product.qihuiwang.com/q35397" title="" target="_blank">夹具、夹头 |</a>
+                              <a href="http://product.qihuiwang.com/q35398" title="" target="_blank">钻头 |</a>
+                              <a href="http://product.qihuiwang.com/q35399" title="" target="_blank">其它刀具和夹具 |</a>
+                              <a href="http://product.qihuiwang.com/q35401" title="" target="_blank">刀柄、刀杆 |</a>
+                              <a href="http://product.qihuiwang.com/q35402" title="" target="_blank">数控刀具 |</a>
+                              <a href="http://product.qihuiwang.com/q35403" title="" target="_blank">切刀 |</a>
+                              <a href="http://product.qihuiwang.com/q35407" title="" target="_blank">滚刀 |</a>
+                              <a href="http://product.qihuiwang.com/q35408" title="" target="_blank">冲头 |</a>
+
+                          </dd>
+                      </dl><hr>
+                      <dl>
+                          <dt></dt>
+                          <dd>
+                              <b>| 通用五金配件&gt;</b>
+                              <a href="http://product.qihuiwang.com/q38893" title="" target="_blank">滑轮 |</a>
+                              <a href="http://product.qihuiwang.com/q38894" title="" target="_blank">脚轮、万向轮 |</a>
+                              <a href="http://product.qihuiwang.com/q38895" title="" target="_blank">滚筒 |</a>
+                              <a href="http://product.qihuiwang.com/q38896" title="" target="_blank">管夹 |</a>
+                              <a href="http://product.qihuiwang.com/q38897" title="" target="_blank">锁具 |</a>
+                              <a href="http://product.qihuiwang.com/q38898" title="" target="_blank">斗齿 |</a>
+                              <a href="http://product.qihuiwang.com/q38899" title="" target="_blank">托辊 |</a>
+                              <a href="http://product.qihuiwang.com/q38900" title="" target="_blank">卸扣 |</a>
+                              <a href="http://product.qihuiwang.com/q38902" title="" target="_blank">直通 |</a>
+                              <a href="http://product.qihuiwang.com/q38903" title="" target="_blank">吊钩、抓钩 |</a>
+
+                          </dd>
+                      </dl><hr>
+                      <dl>
+                          <dt></dt>
+                          <dd>
+                             <b>| 矿山机械&gt;</b>
+                              <a href="http://product.qihuiwang.com/q39082" title="" target="_blank" style="color: orange;">矿山机械 |</a>
+                              <a href="http://product.qihuiwang.com/q39402" title="" target="_blank">矿山车 |</a>
+                              <a href="http://product.qihuiwang.com/q39403" title="" target="_blank">煤矿机械 |</a>
+                              <a href="http://product.qihuiwang.com/q39404" title="" target="_blank" style="color: orange;">破碎机 |</a>
+                              <a href="http://product.qihuiwang.com/q39405" title="" target="_blank">磨矿设备 |</a>
+                              <a href="http://product.qihuiwang.com/q39406" title="" target="_blank">浮选设备 |</a>
+                              <a href="http://product.qihuiwang.com/q39407" title="" target="_blank">螺旋选矿机 |</a>
+                              <a href="http://product.qihuiwang.com/q39408" title="" target="_blank">炭浆厂设备 |</a>
+                              <a href="http://product.qihuiwang.com/q39414" title="" target="_blank">洗选机 |</a>
+
+                          </dd>
+                      </dl><hr>
+                      <dl>
+                          <dt></dt>
+                          <dd>
+                             <b>| 食品机械&gt;</b>
+                              <a href="http://product.qihuiwang.com/q39926" title="" target="_blank">粉碎与切割机械 |</a>
+                              <a href="http://product.qihuiwang.com/q39927" title="" target="_blank">搅拌均匀与均质机械 |</a>
+                              <a href="http://product.qihuiwang.com/q39928" title="" target="_blank">成型机械、分离机械 |</a>
+                              <a href="http://product.qihuiwang.com/q39929" title="" target="_blank">蒸发与浓缩机械 |</a>
+                              <a href="http://product.qihuiwang.com/q39930" title="" target="_blank" style="color: orange;">干燥机械 |</a>
+                              <a href="http://product.qihuiwang.com/q39931" title="" target="_blank">冷冻机械 |</a>
+
+                          </dd>
+                      </dl><hr>
+                      <dl>
+                          <dt></dt>
+                          <dd>
+                            <b> | 真空设备&gt;</b>
+                              <a href="http://product.qihuiwang.com/q35548" title="" target="_blank">真空设备 |</a>
+                              <a href="http://product.qihuiwang.com/q39966" title="" target="_blank">旋片真空泵 |</a>
+                              <a href="http://product.qihuiwang.com/q39970" title="" target="_blank">往复真空泵 |</a>
+                              <a href="http://product.qihuiwang.com/q39971" title="" target="_blank">液环真空泵 |</a>
+                              <a href="http://product.qihuiwang.com/q39972" title="" target="_blank">水喷射泵 |</a>
+                              <a href="http://product.qihuiwang.com/q39975" title="" target="_blank">低温泵 |</a>
+
+                          </dd>
+                      </dl><hr>
+                      <dl>
+                          <dt></dt>
+                          <dd>
+                            <b>| 汽车轮毂&gt;</b>
+                              <a href="http://product.qihuiwang.com/q39079" title="" target="_blank">汽车轮毂 |</a>
+                              <a href="http://product.qihuiwang.com/q39378" title="" target="_blank">汽车轮毂喷剂 |</a>
+                              <a href="http://product.qihuiwang.com/q39379" title="" target="_blank">汽车轮毂修复 |</a>
+                              <a href="http://product.qihuiwang.com/q39381" title="" target="_blank">汽车轮毂清洗剂 |</a>
+                              <a href="http://product.qihuiwang.com/q39382" title="" target="_blank">汽车轮毂改装 |</a>
+
+                          </dd>
+                      </dl><hr>
+                      <dl>
+                          <dt></dt>
+                          <dd>
+                            <b>| 道路养护机械&gt;</b>
+                              <a href="http://product.qihuiwang.com/q39081" title="" target="_blank">道路养护机械 |</a>
+                              <a href="http://product.qihuiwang.com/q39383" title="" target="_blank">微表处摊铺机 |</a>
+                              <a href="http://product.qihuiwang.com/q39385" title="" target="_blank">铣刨机 |</a>
+                              <a href="http://product.qihuiwang.com/q39386" title="" target="_blank">热再生修补机 |</a>
+                              <a href="http://product.qihuiwang.com/q39391" title="" target="_blank">抛丸机 |</a>
+
+                          </dd>
+                      </dl><hr>
+
+                  </div>
+                  <div class="rgImg" style="height: 488px;">
+                      <p class="itemBrands">
+                          <a href="http://jhg002.shop.qihuiwang.com/" target="_blank"><img src="http://image.qihuiwang.com/F1/6/885/F1B68FF75095640FC7431783ADCD7D4F.jpg" alt="太原市晋源区晋华光矿山设备经营部"></a>        <a href="http://lljxgs.shop.qihuiwang.com/" target="_blank"><img src="http://image.qihuiwang.com/59/3/230/59430D0E6A2033B6B3364212A3D561B5.jpg" alt="巩义市雷力机械贸易有限公司"></a>        <a href="http://qfxyssjx03.shop.qihuiwang.com" target="_blank"><img src="http://image.qihuiwang.com/B2/7/794/B2B706B1A539EA00654699C1FD259529.jpg" alt="曲阜兴运输送机械设备有限公司"></a>        <a href="http://fanyinxia.shop.qihuiwang.com/" target="_blank"><img src="http://image.qihuiwang.com/A6/9/619/A619A666BF0AFC271F21EEBBBBCF2B81.jpg" alt="大城县大广安锦旭保温材料销售部"></a>        <a href="http://hailuzhonggong.shop.qihuiwang.com/" target="_blank"><img src="http://image.qihuiwang.com/4B/6/287/4B768391F5B5C1FBAC975D7F6021D9EF.jpg" alt="山东海陆之兴实业有限公司"></a>        <a href="http://sdxyjx888.shop.qihuiwang.com/" target="_blank"><img src="http://image.qihuiwang.com/F7/B/124/F78B2BC7C369DF81A50D055929A1BE39.jpg" alt="山东新悦机械设备有限公司"></a>        <a href="http://xnliaowuyan.shop.qihuiwang.com/" target="_blank"><img src="http://image.qihuiwang.com/35/5/726/35F55A2D6E557245F52A7F809B07ADCD.jpg" alt="重庆迅能厨电设备有限公司"></a>        <a href="http://gzqlsl.shop.qihuiwang.com/" target="_blank"><img src="http://image.qihuiwang.com/E5/6/521/E506592099284AD30B06CD42C38B516B.jpg" alt="江苏水工水下工程有限公司"></a>
+                      </p>
+                      <a class="itemPromotions" href="http://product.qihuiwang.com/396473213.html" target="_blank"><img src="http://image.qihuiwang.com/D6/8/546/D6F827E22E9C053E156C5C690C3C18D0.jpg" alt="圆筒裹包机"></a>
+                  </div>
+
+
+                  </div>
+              </li>
+              <li class="mCate7">
+                <a target="_blank" href="http://product.qihuiwang.com/q12912/" class="qx"><i class="iconfont icon-cab"></i>&emsp;汽车/保养/维修</a>
+                <div class="subNav" id="li7">
+                  <div class="subItems">
+                    <dl>
+                        <dt></dt>
+                        <dd>
+                             <b>| 风机、排风设&gt;</b>
+                            <a href="http://product.qihuiwang.com/q35372" title="" target="_blank">通风机 |</a>
+                            <a href="http://product.qihuiwang.com/q35374" title="" target="_blank">离子风机 |</a>
+                            <a href="http://product.qihuiwang.com/q35375" title="" target="_blank">鼓风机 |</a>
+                            <a href="http://product.qihuiwang.com/q35376" title="" target="_blank">工业风扇 |</a>
+                            <a href="http://product.qihuiwang.com/q35377" title="" target="_blank">风机盘管 |</a>
+                            <a href="http://product.qihuiwang.com/q35378" title="" target="_blank">风幕机 |</a>
+                            <a href="http://product.qihuiwang.com/q35374" title="" target="_blank">离子风机 |</a>
+                            <a href="http://product.qihuiwang.com/q35376" title="" target="_blank" style="color: orange;">工业风扇 |</a>
+                            <a href="http://product.qihuiwang.com/q35379" title="" target="_blank">风叶 |</a>
+                            <a href="http://product.qihuiwang.com/q35377" title="" target="_blank">风机盘管|</a>
+
+                        </dd>
+                    </dl><hr>
+                    <dl>
+                        <dt></dt>
+                        <dd>
+                          <b>| 刀具和夹具&gt;</b>
+                            <a href="http://product.qihuiwang.com/q35395" title="" target="_blank">刀片 |</a>
+                            <a href="http://product.qihuiwang.com/q35396" title="" target="_blank">铣刀 |</a>
+                            <a href="http://product.qihuiwang.com/q35397" title="" target="_blank">夹具、夹头 |</a>
+                            <a href="http://product.qihuiwang.com/q35398" title="" target="_blank">钻头 |</a>
+                            <a href="http://product.qihuiwang.com/q35399" title="" target="_blank">其它刀具和夹具 |</a>
+                            <a href="http://product.qihuiwang.com/q35401" title="" target="_blank">刀柄、刀杆 |</a>
+                            <a href="http://product.qihuiwang.com/q35402" title="" target="_blank">数控刀具 |</a>
+                            <a href="http://product.qihuiwang.com/q35403" title="" target="_blank">切刀 |</a>
+                            <a href="http://product.qihuiwang.com/q35407" title="" target="_blank">滚刀 |</a>
+                            <a href="http://product.qihuiwang.com/q35408" title="" target="_blank">冲头 |</a>
+
+                        </dd>
+                    </dl><hr>
+                    <dl>
+                        <dt></dt>
+                        <dd>
+                            <b>| 通用五金配件&gt;</b>
+                            <a href="http://product.qihuiwang.com/q38893" title="" target="_blank">滑轮 |</a>
+                            <a href="http://product.qihuiwang.com/q38894" title="" target="_blank">脚轮、万向轮 |</a>
+                            <a href="http://product.qihuiwang.com/q38895" title="" target="_blank">滚筒 |</a>
+                            <a href="http://product.qihuiwang.com/q38896" title="" target="_blank">管夹 |</a>
+                            <a href="http://product.qihuiwang.com/q38897" title="" target="_blank">锁具 |</a>
+                            <a href="http://product.qihuiwang.com/q38898" title="" target="_blank">斗齿 |</a>
+                            <a href="http://product.qihuiwang.com/q38899" title="" target="_blank">托辊 |</a>
+                            <a href="http://product.qihuiwang.com/q38900" title="" target="_blank">卸扣 |</a>
+                            <a href="http://product.qihuiwang.com/q38902" title="" target="_blank">直通 |</a>
+                            <a href="http://product.qihuiwang.com/q38903" title="" target="_blank">吊钩、抓钩 |</a>
+
+                        </dd>
+                    </dl><hr>
+                    <dl>
+                        <dt></dt>
+                        <dd>
+                           <b>| 矿山机械&gt;</b>
+                            <a href="http://product.qihuiwang.com/q39082" title="" target="_blank" style="color: orange;">矿山机械 |</a>
+                            <a href="http://product.qihuiwang.com/q39402" title="" target="_blank">矿山车 |</a>
+                            <a href="http://product.qihuiwang.com/q39403" title="" target="_blank">煤矿机械 |</a>
+                            <a href="http://product.qihuiwang.com/q39404" title="" target="_blank" style="color: orange;">破碎机 |</a>
+                            <a href="http://product.qihuiwang.com/q39405" title="" target="_blank">磨矿设备 |</a>
+                            <a href="http://product.qihuiwang.com/q39406" title="" target="_blank">浮选设备 |</a>
+                            <a href="http://product.qihuiwang.com/q39407" title="" target="_blank">螺旋选矿机 |</a>
+                            <a href="http://product.qihuiwang.com/q39408" title="" target="_blank">炭浆厂设备 |</a>
+                            <a href="http://product.qihuiwang.com/q39414" title="" target="_blank">洗选机 |</a>
+
+                        </dd>
+                    </dl><hr>
+                    <dl>
+                        <dt></dt>
+                        <dd>
+                           <b>| 食品机械&gt;</b>
+                            <a href="http://product.qihuiwang.com/q39926" title="" target="_blank">粉碎与切割机械 |</a>
+                            <a href="http://product.qihuiwang.com/q39927" title="" target="_blank">搅拌均匀与均质机械 |</a>
+                            <a href="http://product.qihuiwang.com/q39928" title="" target="_blank">成型机械、分离机械 |</a>
+                            <a href="http://product.qihuiwang.com/q39929" title="" target="_blank">蒸发与浓缩机械 |</a>
+                            <a href="http://product.qihuiwang.com/q39930" title="" target="_blank" style="color: orange;">干燥机械 |</a>
+                            <a href="http://product.qihuiwang.com/q39931" title="" target="_blank">冷冻机械 |</a>
+
+                        </dd>
+                    </dl><hr>
+                    <dl>
+                        <dt></dt>
+                        <dd>
+                          <b> | 真空设备&gt;</b>
+                            <a href="http://product.qihuiwang.com/q35548" title="" target="_blank">真空设备 |</a>
+                            <a href="http://product.qihuiwang.com/q39966" title="" target="_blank">旋片真空泵 |</a>
+                            <a href="http://product.qihuiwang.com/q39970" title="" target="_blank">往复真空泵 |</a>
+                            <a href="http://product.qihuiwang.com/q39971" title="" target="_blank">液环真空泵 |</a>
+                            <a href="http://product.qihuiwang.com/q39972" title="" target="_blank">水喷射泵 |</a>
+                            <a href="http://product.qihuiwang.com/q39975" title="" target="_blank">低温泵 |</a>
+
+                        </dd>
+                    </dl><hr>
+                    <dl>
+                        <dt></dt>
+                        <dd>
+                          <b>| 汽车轮毂&gt;</b>
+                            <a href="http://product.qihuiwang.com/q39079" title="" target="_blank">汽车轮毂 |</a>
+                            <a href="http://product.qihuiwang.com/q39378" title="" target="_blank">汽车轮毂喷剂 |</a>
+                            <a href="http://product.qihuiwang.com/q39379" title="" target="_blank">汽车轮毂修复 |</a>
+                            <a href="http://product.qihuiwang.com/q39381" title="" target="_blank">汽车轮毂清洗剂 |</a>
+                            <a href="http://product.qihuiwang.com/q39382" title="" target="_blank">汽车轮毂改装 |</a>
+
+                        </dd>
+                    </dl><hr>
+                    <dl>
+                        <dt></dt>
+                        <dd>
+                          <b>| 道路养护机械&gt;</b>
+                            <a href="http://product.qihuiwang.com/q39081" title="" target="_blank">道路养护机械 |</a>
+                            <a href="http://product.qihuiwang.com/q39383" title="" target="_blank">微表处摊铺机 |</a>
+                            <a href="http://product.qihuiwang.com/q39385" title="" target="_blank">铣刨机 |</a>
+                            <a href="http://product.qihuiwang.com/q39386" title="" target="_blank">热再生修补机 |</a>
+                            <a href="http://product.qihuiwang.com/q39391" title="" target="_blank">抛丸机 |</a>
+
+                        </dd>
+                    </dl><hr>
+
+                </div>
+                <div class="rgImg" style="height: 488px;">
+                    <p class="itemBrands">
+                        <a href="http://jhg002.shop.qihuiwang.com/" target="_blank"><img src="http://image.qihuiwang.com/F1/6/885/F1B68FF75095640FC7431783ADCD7D4F.jpg" alt="太原市晋源区晋华光矿山设备经营部"></a>        <a href="http://lljxgs.shop.qihuiwang.com/" target="_blank"><img src="http://image.qihuiwang.com/59/3/230/59430D0E6A2033B6B3364212A3D561B5.jpg" alt="巩义市雷力机械贸易有限公司"></a>        <a href="http://qfxyssjx03.shop.qihuiwang.com" target="_blank"><img src="http://image.qihuiwang.com/B2/7/794/B2B706B1A539EA00654699C1FD259529.jpg" alt="曲阜兴运输送机械设备有限公司"></a>        <a href="http://fanyinxia.shop.qihuiwang.com/" target="_blank"><img src="http://image.qihuiwang.com/A6/9/619/A619A666BF0AFC271F21EEBBBBCF2B81.jpg" alt="大城县大广安锦旭保温材料销售部"></a>        <a href="http://hailuzhonggong.shop.qihuiwang.com/" target="_blank"><img src="http://image.qihuiwang.com/4B/6/287/4B768391F5B5C1FBAC975D7F6021D9EF.jpg" alt="山东海陆之兴实业有限公司"></a>        <a href="http://sdxyjx888.shop.qihuiwang.com/" target="_blank"><img src="http://image.qihuiwang.com/F7/B/124/F78B2BC7C369DF81A50D055929A1BE39.jpg" alt="山东新悦机械设备有限公司"></a>        <a href="http://xnliaowuyan.shop.qihuiwang.com/" target="_blank"><img src="http://image.qihuiwang.com/35/5/726/35F55A2D6E557245F52A7F809B07ADCD.jpg" alt="重庆迅能厨电设备有限公司"></a>        <a href="http://gzqlsl.shop.qihuiwang.com/" target="_blank"><img src="http://image.qihuiwang.com/E5/6/521/E506592099284AD30B06CD42C38B516B.jpg" alt="江苏水工水下工程有限公司"></a>
+                    </p>
+                    <a class="itemPromotions" href="http://product.qihuiwang.com/396473213.html" target="_blank"><img src="http://image.qihuiwang.com/D6/8/546/D6F827E22E9C053E156C5C690C3C18D0.jpg" alt="圆筒裹包机"></a>
+                </div>
+
+
+                </div>
+            </li>
+            
+              <li class="mCate8">
+                  <a target="_blank" href="http://product.qihuiwang.com/q23891/" class="jt"><i class="iconfont icon-qicheqianlian-"></i>&emsp;交通运输/配件</a>
+                  <div class="subNav" id="li8">
+                    <div class="subItems">
+                      <dl>
+                          <dt></dt>
+                          <dd>
+                               <b>| 风机、排风设&gt;</b>
+                              <a href="http://product.qihuiwang.com/q35372" title="" target="_blank">通风机 |</a>
+                              <a href="http://product.qihuiwang.com/q35374" title="" target="_blank">离子风机 |</a>
+                              <a href="http://product.qihuiwang.com/q35375" title="" target="_blank">鼓风机 |</a>
+                              <a href="http://product.qihuiwang.com/q35376" title="" target="_blank">工业风扇 |</a>
+                              <a href="http://product.qihuiwang.com/q35377" title="" target="_blank">风机盘管 |</a>
+                              <a href="http://product.qihuiwang.com/q35378" title="" target="_blank">风幕机 |</a>
+                              <a href="http://product.qihuiwang.com/q35374" title="" target="_blank">离子风机 |</a>
+                              <a href="http://product.qihuiwang.com/q35376" title="" target="_blank" style="color: orange;">工业风扇 |</a>
+                              <a href="http://product.qihuiwang.com/q35379" title="" target="_blank">风叶 |</a>
+                              <a href="http://product.qihuiwang.com/q35377" title="" target="_blank">风机盘管|</a>
+
+                          </dd>
+                      </dl><hr>
+                      <dl>
+                          <dt></dt>
+                          <dd>
+                            <b>| 刀具和夹具&gt;</b>
+                              <a href="http://product.qihuiwang.com/q35395" title="" target="_blank">刀片 |</a>
+                              <a href="http://product.qihuiwang.com/q35396" title="" target="_blank">铣刀 |</a>
+                              <a href="http://product.qihuiwang.com/q35397" title="" target="_blank">夹具、夹头 |</a>
+                              <a href="http://product.qihuiwang.com/q35398" title="" target="_blank">钻头 |</a>
+                              <a href="http://product.qihuiwang.com/q35399" title="" target="_blank">其它刀具和夹具 |</a>
+                              <a href="http://product.qihuiwang.com/q35401" title="" target="_blank">刀柄、刀杆 |</a>
+                              <a href="http://product.qihuiwang.com/q35402" title="" target="_blank">数控刀具 |</a>
+                              <a href="http://product.qihuiwang.com/q35403" title="" target="_blank">切刀 |</a>
+                              <a href="http://product.qihuiwang.com/q35407" title="" target="_blank">滚刀 |</a>
+                              <a href="http://product.qihuiwang.com/q35408" title="" target="_blank">冲头 |</a>
+
+                          </dd>
+                      </dl><hr>
+                      <dl>
+                          <dt></dt>
+                          <dd>
+                              <b>| 通用五金配件&gt;</b>
+                              <a href="http://product.qihuiwang.com/q38893" title="" target="_blank">滑轮 |</a>
+                              <a href="http://product.qihuiwang.com/q38894" title="" target="_blank">脚轮、万向轮 |</a>
+                              <a href="http://product.qihuiwang.com/q38895" title="" target="_blank">滚筒 |</a>
+                              <a href="http://product.qihuiwang.com/q38896" title="" target="_blank">管夹 |</a>
+                              <a href="http://product.qihuiwang.com/q38897" title="" target="_blank">锁具 |</a>
+                              <a href="http://product.qihuiwang.com/q38898" title="" target="_blank">斗齿 |</a>
+                              <a href="http://product.qihuiwang.com/q38899" title="" target="_blank">托辊 |</a>
+                              <a href="http://product.qihuiwang.com/q38900" title="" target="_blank">卸扣 |</a>
+                              <a href="http://product.qihuiwang.com/q38902" title="" target="_blank">直通 |</a>
+                              <a href="http://product.qihuiwang.com/q38903" title="" target="_blank">吊钩、抓钩 |</a>
+
+                          </dd>
+                      </dl><hr>
+                      <dl>
+                          <dt></dt>
+                          <dd>
+                             <b>| 矿山机械&gt;</b>
+                              <a href="http://product.qihuiwang.com/q39082" title="" target="_blank" style="color: orange;">矿山机械 |</a>
+                              <a href="http://product.qihuiwang.com/q39402" title="" target="_blank">矿山车 |</a>
+                              <a href="http://product.qihuiwang.com/q39403" title="" target="_blank">煤矿机械 |</a>
+                              <a href="http://product.qihuiwang.com/q39404" title="" target="_blank" style="color: orange;">破碎机 |</a>
+                              <a href="http://product.qihuiwang.com/q39405" title="" target="_blank">磨矿设备 |</a>
+                              <a href="http://product.qihuiwang.com/q39406" title="" target="_blank">浮选设备 |</a>
+                              <a href="http://product.qihuiwang.com/q39407" title="" target="_blank">螺旋选矿机 |</a>
+                              <a href="http://product.qihuiwang.com/q39408" title="" target="_blank">炭浆厂设备 |</a>
+                              <a href="http://product.qihuiwang.com/q39414" title="" target="_blank">洗选机 |</a>
+
+                          </dd>
+                      </dl><hr>
+                      <dl>
+                          <dt></dt>
+                          <dd>
+                             <b>| 食品机械&gt;</b>
+                              <a href="http://product.qihuiwang.com/q39926" title="" target="_blank">粉碎与切割机械 |</a>
+                              <a href="http://product.qihuiwang.com/q39927" title="" target="_blank">搅拌均匀与均质机械 |</a>
+                              <a href="http://product.qihuiwang.com/q39928" title="" target="_blank">成型机械、分离机械 |</a>
+                              <a href="http://product.qihuiwang.com/q39929" title="" target="_blank">蒸发与浓缩机械 |</a>
+                              <a href="http://product.qihuiwang.com/q39930" title="" target="_blank" style="color: orange;">干燥机械 |</a>
+                              <a href="http://product.qihuiwang.com/q39931" title="" target="_blank">冷冻机械 |</a>
+
+                          </dd>
+                      </dl><hr>
+                      <dl>
+                          <dt></dt>
+                          <dd>
+                            <b> | 真空设备&gt;</b>
+                              <a href="http://product.qihuiwang.com/q35548" title="" target="_blank">真空设备 |</a>
+                              <a href="http://product.qihuiwang.com/q39966" title="" target="_blank">旋片真空泵 |</a>
+                              <a href="http://product.qihuiwang.com/q39970" title="" target="_blank">往复真空泵 |</a>
+                              <a href="http://product.qihuiwang.com/q39971" title="" target="_blank">液环真空泵 |</a>
+                              <a href="http://product.qihuiwang.com/q39972" title="" target="_blank">水喷射泵 |</a>
+                              <a href="http://product.qihuiwang.com/q39975" title="" target="_blank">低温泵 |</a>
+
+                          </dd>
+                      </dl><hr>
+                      <dl>
+                          <dt></dt>
+                          <dd>
+                            <b>| 汽车轮毂&gt;</b>
+                              <a href="http://product.qihuiwang.com/q39079" title="" target="_blank">汽车轮毂 |</a>
+                              <a href="http://product.qihuiwang.com/q39378" title="" target="_blank">汽车轮毂喷剂 |</a>
+                              <a href="http://product.qihuiwang.com/q39379" title="" target="_blank">汽车轮毂修复 |</a>
+                              <a href="http://product.qihuiwang.com/q39381" title="" target="_blank">汽车轮毂清洗剂 |</a>
+                              <a href="http://product.qihuiwang.com/q39382" title="" target="_blank">汽车轮毂改装 |</a>
+
+                          </dd>
+                      </dl><hr>
+                      <dl>
+                          <dt></dt>
+                          <dd>
+                            <b>| 道路养护机械&gt;</b>
+                              <a href="http://product.qihuiwang.com/q39081" title="" target="_blank">道路养护机械 |</a>
+                              <a href="http://product.qihuiwang.com/q39383" title="" target="_blank">微表处摊铺机 |</a>
+                              <a href="http://product.qihuiwang.com/q39385" title="" target="_blank">铣刨机 |</a>
+                              <a href="http://product.qihuiwang.com/q39386" title="" target="_blank">热再生修补机 |</a>
+                              <a href="http://product.qihuiwang.com/q39391" title="" target="_blank">抛丸机 |</a>
+
+                          </dd>
+                      </dl><hr>
+
+                  </div>
+                  <div class="rgImg" style="height: 488px;">
+                      <p class="itemBrands">
+                          <a href="http://jhg002.shop.qihuiwang.com/" target="_blank"><img src="http://image.qihuiwang.com/F1/6/885/F1B68FF75095640FC7431783ADCD7D4F.jpg" alt="太原市晋源区晋华光矿山设备经营部"></a>        <a href="http://lljxgs.shop.qihuiwang.com/" target="_blank"><img src="http://image.qihuiwang.com/59/3/230/59430D0E6A2033B6B3364212A3D561B5.jpg" alt="巩义市雷力机械贸易有限公司"></a>        <a href="http://qfxyssjx03.shop.qihuiwang.com" target="_blank"><img src="http://image.qihuiwang.com/B2/7/794/B2B706B1A539EA00654699C1FD259529.jpg" alt="曲阜兴运输送机械设备有限公司"></a>        <a href="http://fanyinxia.shop.qihuiwang.com/" target="_blank"><img src="http://image.qihuiwang.com/A6/9/619/A619A666BF0AFC271F21EEBBBBCF2B81.jpg" alt="大城县大广安锦旭保温材料销售部"></a>        <a href="http://hailuzhonggong.shop.qihuiwang.com/" target="_blank"><img src="http://image.qihuiwang.com/4B/6/287/4B768391F5B5C1FBAC975D7F6021D9EF.jpg" alt="山东海陆之兴实业有限公司"></a>        <a href="http://sdxyjx888.shop.qihuiwang.com/" target="_blank"><img src="http://image.qihuiwang.com/F7/B/124/F78B2BC7C369DF81A50D055929A1BE39.jpg" alt="山东新悦机械设备有限公司"></a>        <a href="http://xnliaowuyan.shop.qihuiwang.com/" target="_blank"><img src="http://image.qihuiwang.com/35/5/726/35F55A2D6E557245F52A7F809B07ADCD.jpg" alt="重庆迅能厨电设备有限公司"></a>        <a href="http://gzqlsl.shop.qihuiwang.com/" target="_blank"><img src="http://image.qihuiwang.com/E5/6/521/E506592099284AD30B06CD42C38B516B.jpg" alt="江苏水工水下工程有限公司"></a>
+                      </p>
+                      <a class="itemPromotions" href="http://product.qihuiwang.com/396473213.html" target="_blank"><img src="http://image.qihuiwang.com/D6/8/546/D6F827E22E9C053E156C5C690C3C18D0.jpg" alt="圆筒裹包机"></a>
+                  </div>
+
+
+                  </div>
+              </li>
+              <li class="mCate9">
+                  <a target="_blank" href="http://product.qihuiwang.com/q23891/" class="wl"><i class="iconfont icon-chuan"></i>&emsp;物流/运输/货运</a>
+                  <div class="subNav" id="li9">
+                    <div class="subItems">
+                      <dl>
+                          <dt></dt>
+                          <dd>
+                               <b>| 风机、排风设&gt;</b>
+                              <a href="http://product.qihuiwang.com/q35372" title="" target="_blank">通风机 |</a>
+                              <a href="http://product.qihuiwang.com/q35374" title="" target="_blank">离子风机 |</a>
+                              <a href="http://product.qihuiwang.com/q35375" title="" target="_blank">鼓风机 |</a>
+                              <a href="http://product.qihuiwang.com/q35376" title="" target="_blank">工业风扇 |</a>
+                              <a href="http://product.qihuiwang.com/q35377" title="" target="_blank">风机盘管 |</a>
+                              <a href="http://product.qihuiwang.com/q35378" title="" target="_blank">风幕机 |</a>
+                              <a href="http://product.qihuiwang.com/q35374" title="" target="_blank">离子风机 |</a>
+                              <a href="http://product.qihuiwang.com/q35376" title="" target="_blank" style="color: orange;">工业风扇 |</a>
+                              <a href="http://product.qihuiwang.com/q35379" title="" target="_blank">风叶 |</a>
+                              <a href="http://product.qihuiwang.com/q35377" title="" target="_blank">风机盘管|</a>
+
+                          </dd>
+                      </dl><hr>
+                      <dl>
+                          <dt></dt>
+                          <dd>
+                            <b>| 刀具和夹具&gt;</b>
+                              <a href="http://product.qihuiwang.com/q35395" title="" target="_blank">刀片 |</a>
+                              <a href="http://product.qihuiwang.com/q35396" title="" target="_blank">铣刀 |</a>
+                              <a href="http://product.qihuiwang.com/q35397" title="" target="_blank">夹具、夹头 |</a>
+                              <a href="http://product.qihuiwang.com/q35398" title="" target="_blank">钻头 |</a>
+                              <a href="http://product.qihuiwang.com/q35399" title="" target="_blank">其它刀具和夹具 |</a>
+                              <a href="http://product.qihuiwang.com/q35401" title="" target="_blank">刀柄、刀杆 |</a>
+                              <a href="http://product.qihuiwang.com/q35402" title="" target="_blank">数控刀具 |</a>
+                              <a href="http://product.qihuiwang.com/q35403" title="" target="_blank">切刀 |</a>
+                              <a href="http://product.qihuiwang.com/q35407" title="" target="_blank">滚刀 |</a>
+                              <a href="http://product.qihuiwang.com/q35408" title="" target="_blank">冲头 |</a>
+
+                          </dd>
+                      </dl><hr>
+                      <dl>
+                          <dt></dt>
+                          <dd>
+                              <b>| 通用五金配件&gt;</b>
+                              <a href="http://product.qihuiwang.com/q38893" title="" target="_blank">滑轮 |</a>
+                              <a href="http://product.qihuiwang.com/q38894" title="" target="_blank">脚轮、万向轮 |</a>
+                              <a href="http://product.qihuiwang.com/q38895" title="" target="_blank">滚筒 |</a>
+                              <a href="http://product.qihuiwang.com/q38896" title="" target="_blank">管夹 |</a>
+                              <a href="http://product.qihuiwang.com/q38897" title="" target="_blank">锁具 |</a>
+                              <a href="http://product.qihuiwang.com/q38898" title="" target="_blank">斗齿 |</a>
+                              <a href="http://product.qihuiwang.com/q38899" title="" target="_blank">托辊 |</a>
+                              <a href="http://product.qihuiwang.com/q38900" title="" target="_blank">卸扣 |</a>
+                              <a href="http://product.qihuiwang.com/q38902" title="" target="_blank">直通 |</a>
+                              <a href="http://product.qihuiwang.com/q38903" title="" target="_blank">吊钩、抓钩 |</a>
+
+                          </dd>
+                      </dl><hr>
+                      <dl>
+                          <dt></dt>
+                          <dd>
+                             <b>| 矿山机械&gt;</b>
+                              <a href="http://product.qihuiwang.com/q39082" title="" target="_blank" style="color: orange;">矿山机械 |</a>
+                              <a href="http://product.qihuiwang.com/q39402" title="" target="_blank">矿山车 |</a>
+                              <a href="http://product.qihuiwang.com/q39403" title="" target="_blank">煤矿机械 |</a>
+                              <a href="http://product.qihuiwang.com/q39404" title="" target="_blank" style="color: orange;">破碎机 |</a>
+                              <a href="http://product.qihuiwang.com/q39405" title="" target="_blank">磨矿设备 |</a>
+                              <a href="http://product.qihuiwang.com/q39406" title="" target="_blank">浮选设备 |</a>
+                              <a href="http://product.qihuiwang.com/q39407" title="" target="_blank">螺旋选矿机 |</a>
+                              <a href="http://product.qihuiwang.com/q39408" title="" target="_blank">炭浆厂设备 |</a>
+                              <a href="http://product.qihuiwang.com/q39414" title="" target="_blank">洗选机 |</a>
+
+                          </dd>
+                      </dl><hr>
+                      <dl>
+                          <dt></dt>
+                          <dd>
+                             <b>| 食品机械&gt;</b>
+                              <a href="http://product.qihuiwang.com/q39926" title="" target="_blank">粉碎与切割机械 |</a>
+                              <a href="http://product.qihuiwang.com/q39927" title="" target="_blank">搅拌均匀与均质机械 |</a>
+                              <a href="http://product.qihuiwang.com/q39928" title="" target="_blank">成型机械、分离机械 |</a>
+                              <a href="http://product.qihuiwang.com/q39929" title="" target="_blank">蒸发与浓缩机械 |</a>
+                              <a href="http://product.qihuiwang.com/q39930" title="" target="_blank" style="color: orange;">干燥机械 |</a>
+                              <a href="http://product.qihuiwang.com/q39931" title="" target="_blank">冷冻机械 |</a>
+
+                          </dd>
+                      </dl><hr>
+                      <dl>
+                          <dt></dt>
+                          <dd>
+                            <b> | 真空设备&gt;</b>
+                              <a href="http://product.qihuiwang.com/q35548" title="" target="_blank">真空设备 |</a>
+                              <a href="http://product.qihuiwang.com/q39966" title="" target="_blank">旋片真空泵 |</a>
+                              <a href="http://product.qihuiwang.com/q39970" title="" target="_blank">往复真空泵 |</a>
+                              <a href="http://product.qihuiwang.com/q39971" title="" target="_blank">液环真空泵 |</a>
+                              <a href="http://product.qihuiwang.com/q39972" title="" target="_blank">水喷射泵 |</a>
+                              <a href="http://product.qihuiwang.com/q39975" title="" target="_blank">低温泵 |</a>
+
+                          </dd>
+                      </dl><hr>
+                      <dl>
+                          <dt></dt>
+                          <dd>
+                            <b>| 汽车轮毂&gt;</b>
+                              <a href="http://product.qihuiwang.com/q39079" title="" target="_blank">汽车轮毂 |</a>
+                              <a href="http://product.qihuiwang.com/q39378" title="" target="_blank">汽车轮毂喷剂 |</a>
+                              <a href="http://product.qihuiwang.com/q39379" title="" target="_blank">汽车轮毂修复 |</a>
+                              <a href="http://product.qihuiwang.com/q39381" title="" target="_blank">汽车轮毂清洗剂 |</a>
+                              <a href="http://product.qihuiwang.com/q39382" title="" target="_blank">汽车轮毂改装 |</a>
+
+                          </dd>
+                      </dl><hr>
+                      <dl>
+                          <dt></dt>
+                          <dd>
+                            <b>| 道路养护机械&gt;</b>
+                              <a href="http://product.qihuiwang.com/q39081" title="" target="_blank">道路养护机械 |</a>
+                              <a href="http://product.qihuiwang.com/q39383" title="" target="_blank">微表处摊铺机 |</a>
+                              <a href="http://product.qihuiwang.com/q39385" title="" target="_blank">铣刨机 |</a>
+                              <a href="http://product.qihuiwang.com/q39386" title="" target="_blank">热再生修补机 |</a>
+                              <a href="http://product.qihuiwang.com/q39391" title="" target="_blank">抛丸机 |</a>
+
+                          </dd>
+                      </dl><hr>
+
+                  </div>
+                  <div class="rgImg" style="height: 488px;">
+                      <p class="itemBrands">
+                          <a href="http://jhg002.shop.qihuiwang.com/" target="_blank"><img src="http://image.qihuiwang.com/F1/6/885/F1B68FF75095640FC7431783ADCD7D4F.jpg" alt="太原市晋源区晋华光矿山设备经营部"></a>        <a href="http://lljxgs.shop.qihuiwang.com/" target="_blank"><img src="http://image.qihuiwang.com/59/3/230/59430D0E6A2033B6B3364212A3D561B5.jpg" alt="巩义市雷力机械贸易有限公司"></a>        <a href="http://qfxyssjx03.shop.qihuiwang.com" target="_blank"><img src="http://image.qihuiwang.com/B2/7/794/B2B706B1A539EA00654699C1FD259529.jpg" alt="曲阜兴运输送机械设备有限公司"></a>        <a href="http://fanyinxia.shop.qihuiwang.com/" target="_blank"><img src="http://image.qihuiwang.com/A6/9/619/A619A666BF0AFC271F21EEBBBBCF2B81.jpg" alt="大城县大广安锦旭保温材料销售部"></a>        <a href="http://hailuzhonggong.shop.qihuiwang.com/" target="_blank"><img src="http://image.qihuiwang.com/4B/6/287/4B768391F5B5C1FBAC975D7F6021D9EF.jpg" alt="山东海陆之兴实业有限公司"></a>        <a href="http://sdxyjx888.shop.qihuiwang.com/" target="_blank"><img src="http://image.qihuiwang.com/F7/B/124/F78B2BC7C369DF81A50D055929A1BE39.jpg" alt="山东新悦机械设备有限公司"></a>        <a href="http://xnliaowuyan.shop.qihuiwang.com/" target="_blank"><img src="http://image.qihuiwang.com/35/5/726/35F55A2D6E557245F52A7F809B07ADCD.jpg" alt="重庆迅能厨电设备有限公司"></a>        <a href="http://gzqlsl.shop.qihuiwang.com/" target="_blank"><img src="http://image.qihuiwang.com/E5/6/521/E506592099284AD30B06CD42C38B516B.jpg" alt="江苏水工水下工程有限公司"></a>
+                      </p>
+                      <a class="itemPromotions" href="http://product.qihuiwang.com/396473213.html" target="_blank"><img src="http://image.qihuiwang.com/D6/8/546/D6F827E22E9C053E156C5C690C3C18D0.jpg" alt="圆筒裹包机"></a>
+                  </div>
+
+                  </div>
+              </li>
+              <li class="mCate10">
+                  <a target="_blank" href="http://product.qihuiwang.com/q12915/" class="wz"><i class="iconfont icon-dianshi"></i>&emsp;网站/广告/服务</a>
+                  <div class="subNav" id="li10">
+                    <div class="subItems">
+                      <dl>
+                          <dt></dt>
+                          <dd>
+                               <b>| 风机、排风设&gt;</b>
+                              <a href="http://product.qihuiwang.com/q35372" title="" target="_blank">通风机 |</a>
+                              <a href="http://product.qihuiwang.com/q35374" title="" target="_blank">离子风机 |</a>
+                              <a href="http://product.qihuiwang.com/q35375" title="" target="_blank">鼓风机 |</a>
+                              <a href="http://product.qihuiwang.com/q35376" title="" target="_blank">工业风扇 |</a>
+                              <a href="http://product.qihuiwang.com/q35377" title="" target="_blank">风机盘管 |</a>
+                              <a href="http://product.qihuiwang.com/q35378" title="" target="_blank">风幕机 |</a>
+                              <a href="http://product.qihuiwang.com/q35374" title="" target="_blank">离子风机 |</a>
+                              <a href="http://product.qihuiwang.com/q35376" title="" target="_blank" style="color: orange;">工业风扇 |</a>
+                              <a href="http://product.qihuiwang.com/q35379" title="" target="_blank">风叶 |</a>
+                              <a href="http://product.qihuiwang.com/q35377" title="" target="_blank">风机盘管|</a>
+
+                          </dd>
+                      </dl><hr>
+                      <dl>
+                          <dt></dt>
+                          <dd>
+                            <b>| 刀具和夹具&gt;</b>
+                              <a href="http://product.qihuiwang.com/q35395" title="" target="_blank">刀片 |</a>
+                              <a href="http://product.qihuiwang.com/q35396" title="" target="_blank">铣刀 |</a>
+                              <a href="http://product.qihuiwang.com/q35397" title="" target="_blank">夹具、夹头 |</a>
+                              <a href="http://product.qihuiwang.com/q35398" title="" target="_blank">钻头 |</a>
+                              <a href="http://product.qihuiwang.com/q35399" title="" target="_blank">其它刀具和夹具 |</a>
+                              <a href="http://product.qihuiwang.com/q35401" title="" target="_blank">刀柄、刀杆 |</a>
+                              <a href="http://product.qihuiwang.com/q35402" title="" target="_blank">数控刀具 |</a>
+                              <a href="http://product.qihuiwang.com/q35403" title="" target="_blank">切刀 |</a>
+                              <a href="http://product.qihuiwang.com/q35407" title="" target="_blank">滚刀 |</a>
+                              <a href="http://product.qihuiwang.com/q35408" title="" target="_blank">冲头 |</a>
+
+                          </dd>
+                      </dl><hr>
+                      <dl>
+                          <dt></dt>
+                          <dd>
+                              <b>| 通用五金配件&gt;</b>
+                              <a href="http://product.qihuiwang.com/q38893" title="" target="_blank">滑轮 |</a>
+                              <a href="http://product.qihuiwang.com/q38894" title="" target="_blank">脚轮、万向轮 |</a>
+                              <a href="http://product.qihuiwang.com/q38895" title="" target="_blank">滚筒 |</a>
+                              <a href="http://product.qihuiwang.com/q38896" title="" target="_blank">管夹 |</a>
+                              <a href="http://product.qihuiwang.com/q38897" title="" target="_blank">锁具 |</a>
+                              <a href="http://product.qihuiwang.com/q38898" title="" target="_blank">斗齿 |</a>
+                              <a href="http://product.qihuiwang.com/q38899" title="" target="_blank">托辊 |</a>
+                              <a href="http://product.qihuiwang.com/q38900" title="" target="_blank">卸扣 |</a>
+                              <a href="http://product.qihuiwang.com/q38902" title="" target="_blank">直通 |</a>
+                              <a href="http://product.qihuiwang.com/q38903" title="" target="_blank">吊钩、抓钩 |</a>
+
+                          </dd>
+                      </dl><hr>
+                      <dl>
+                          <dt></dt>
+                          <dd>
+                             <b>| 矿山机械&gt;</b>
+                              <a href="http://product.qihuiwang.com/q39082" title="" target="_blank" style="color: orange;">矿山机械 |</a>
+                              <a href="http://product.qihuiwang.com/q39402" title="" target="_blank">矿山车 |</a>
+                              <a href="http://product.qihuiwang.com/q39403" title="" target="_blank">煤矿机械 |</a>
+                              <a href="http://product.qihuiwang.com/q39404" title="" target="_blank" style="color: orange;">破碎机 |</a>
+                              <a href="http://product.qihuiwang.com/q39405" title="" target="_blank">磨矿设备 |</a>
+                              <a href="http://product.qihuiwang.com/q39406" title="" target="_blank">浮选设备 |</a>
+                              <a href="http://product.qihuiwang.com/q39407" title="" target="_blank">螺旋选矿机 |</a>
+                              <a href="http://product.qihuiwang.com/q39408" title="" target="_blank">炭浆厂设备 |</a>
+                              <a href="http://product.qihuiwang.com/q39414" title="" target="_blank">洗选机 |</a>
+
+                          </dd>
+                      </dl><hr>
+                      <dl>
+                          <dt></dt>
+                          <dd>
+                             <b>| 食品机械&gt;</b>
+                              <a href="http://product.qihuiwang.com/q39926" title="" target="_blank">粉碎与切割机械 |</a>
+                              <a href="http://product.qihuiwang.com/q39927" title="" target="_blank">搅拌均匀与均质机械 |</a>
+                              <a href="http://product.qihuiwang.com/q39928" title="" target="_blank">成型机械、分离机械 |</a>
+                              <a href="http://product.qihuiwang.com/q39929" title="" target="_blank">蒸发与浓缩机械 |</a>
+                              <a href="http://product.qihuiwang.com/q39930" title="" target="_blank" style="color: orange;">干燥机械 |</a>
+                              <a href="http://product.qihuiwang.com/q39931" title="" target="_blank">冷冻机械 |</a>
+
+                          </dd>
+                      </dl><hr>
+                      <dl>
+                          <dt></dt>
+                          <dd>
+                            <b> | 真空设备&gt;</b>
+                              <a href="http://product.qihuiwang.com/q35548" title="" target="_blank">真空设备 |</a>
+                              <a href="http://product.qihuiwang.com/q39966" title="" target="_blank">旋片真空泵 |</a>
+                              <a href="http://product.qihuiwang.com/q39970" title="" target="_blank">往复真空泵 |</a>
+                              <a href="http://product.qihuiwang.com/q39971" title="" target="_blank">液环真空泵 |</a>
+                              <a href="http://product.qihuiwang.com/q39972" title="" target="_blank">水喷射泵 |</a>
+                              <a href="http://product.qihuiwang.com/q39975" title="" target="_blank">低温泵 |</a>
+
+                          </dd>
+                      </dl><hr>
+                      <dl>
+                          <dt></dt>
+                          <dd>
+                            <b>| 汽车轮毂&gt;</b>
+                              <a href="http://product.qihuiwang.com/q39079" title="" target="_blank">汽车轮毂 |</a>
+                              <a href="http://product.qihuiwang.com/q39378" title="" target="_blank">汽车轮毂喷剂 |</a>
+                              <a href="http://product.qihuiwang.com/q39379" title="" target="_blank">汽车轮毂修复 |</a>
+                              <a href="http://product.qihuiwang.com/q39381" title="" target="_blank">汽车轮毂清洗剂 |</a>
+                              <a href="http://product.qihuiwang.com/q39382" title="" target="_blank">汽车轮毂改装 |</a>
+
+                          </dd>
+                      </dl><hr>
+                      <dl>
+                          <dt></dt>
+                          <dd>
+                            <b>| 道路养护机械&gt;</b>
+                              <a href="http://product.qihuiwang.com/q39081" title="" target="_blank">道路养护机械 |</a>
+                              <a href="http://product.qihuiwang.com/q39383" title="" target="_blank">微表处摊铺机 |</a>
+                              <a href="http://product.qihuiwang.com/q39385" title="" target="_blank">铣刨机 |</a>
+                              <a href="http://product.qihuiwang.com/q39386" title="" target="_blank">热再生修补机 |</a>
+                              <a href="http://product.qihuiwang.com/q39391" title="" target="_blank">抛丸机 |</a>
+
+                          </dd>
+                      </dl><hr>
+
+                  </div>
+                  <div class="rgImg" style="height: 488px;">
+                      <p class="itemBrands">
+                          <a href="http://jhg002.shop.qihuiwang.com/" target="_blank"><img src="http://image.qihuiwang.com/F1/6/885/F1B68FF75095640FC7431783ADCD7D4F.jpg" alt="太原市晋源区晋华光矿山设备经营部"></a>        <a href="http://lljxgs.shop.qihuiwang.com/" target="_blank"><img src="http://image.qihuiwang.com/59/3/230/59430D0E6A2033B6B3364212A3D561B5.jpg" alt="巩义市雷力机械贸易有限公司"></a>        <a href="http://qfxyssjx03.shop.qihuiwang.com" target="_blank"><img src="http://image.qihuiwang.com/B2/7/794/B2B706B1A539EA00654699C1FD259529.jpg" alt="曲阜兴运输送机械设备有限公司"></a>        <a href="http://fanyinxia.shop.qihuiwang.com/" target="_blank"><img src="http://image.qihuiwang.com/A6/9/619/A619A666BF0AFC271F21EEBBBBCF2B81.jpg" alt="大城县大广安锦旭保温材料销售部"></a>        <a href="http://hailuzhonggong.shop.qihuiwang.com/" target="_blank"><img src="http://image.qihuiwang.com/4B/6/287/4B768391F5B5C1FBAC975D7F6021D9EF.jpg" alt="山东海陆之兴实业有限公司"></a>        <a href="http://sdxyjx888.shop.qihuiwang.com/" target="_blank"><img src="http://image.qihuiwang.com/F7/B/124/F78B2BC7C369DF81A50D055929A1BE39.jpg" alt="山东新悦机械设备有限公司"></a>        <a href="http://xnliaowuyan.shop.qihuiwang.com/" target="_blank"><img src="http://image.qihuiwang.com/35/5/726/35F55A2D6E557245F52A7F809B07ADCD.jpg" alt="重庆迅能厨电设备有限公司"></a>        <a href="http://gzqlsl.shop.qihuiwang.com/" target="_blank"><img src="http://image.qihuiwang.com/E5/6/521/E506592099284AD30B06CD42C38B516B.jpg" alt="江苏水工水下工程有限公司"></a>
+                      </p>
+                      <a class="itemPromotions" href="http://product.qihuiwang.com/396473213.html" target="_blank"><img src="http://image.qihuiwang.com/D6/8/546/D6F827E22E9C053E156C5C690C3C18D0.jpg" alt="圆筒裹包机"></a>
+                  </div>
+
+
+                  </div>
+              </li>
+
+          </ul>
+      </div>
+      <!--测导航end-->
+      <!-- 轮播图静态 -->
+      <div class="focusBar">
+        <div class="focus">
+            <ul class="slider" style="position: relative; width: 0px; height: 305px; left: 480px; top: -640px; list-style: none;">        
+            <li style="position: absolute; width: 740px; left: 0px; top: 0px; display: list-item;">   
+            <a target="_blank" href="http://news.qihuiwang.com/notice/20200819186291.html">
+            <img src="http://image.qihuiwang.com/1B/C/455/1BBC0CDC7C3B6523D8B3EE859EEFBBC7.jpg" width="740" height="305"></a>    
+            </li>        
+           </ul>
+        </div>
+      <!-- 轮播图下图片展示区域 -->
+        <div class="showPro" style="width: 740px; height: 180px; position: absolute; top: 510px; left: 480px;">          
+        <a class="a-1" href="http://product.qihuiwang.com/507215002.html" target="_blank" style="display: inline-block;">                
+        <img src="http://image.qihuiwang.com/90/E/261/90AED19059A4AA05121B2F83A2272733.jpg" width="184" height="165" title="清洗清理设备" alt="清洗清理设备">                
+       <div class="show-pic1">
+        <h4>清洗清理设备</h4><p style="color: orange;">超声波清洗机</p>
+       </div>
+      </a>             
+        <a class="a-2" href="http://product.qihuiwang.com/387449485.html" target="_blank" style="display: inline-block;">                
+          <img src="http://image.qihuiwang.com/9A/0/952/9AD0037B83EC60FC260D5DC4164A5F04.jpg" width="184" height="165" title="保温材料" alt="保温材料">                
+         <div class="show-pic2">
+          <h4>保温材料</h4><p style="color: orange;">聚苯板</p>  
+         </div>
+        </a>             
+        <a class="a-3" href="http://product.qihuiwang.com/514131324.html" target="_blank" style="display: inline-block; ">                
+          <img src="http://image.qihuiwang.com/0D/8/161/0D384C8A1545005B912868815C598A7A.jpg" width="184" height="165" title="多功能果园管理机" alt="多功能果园管理机">                
+          <div class="show-pic3">
+            <h4>多功能果园管理机</h4><p style="color: orange;">开沟施肥机</p></a>
+          </div>             
+          <a class="a-4" href="http://product.qihuiwang.com/514172622.html" target="_blank" style="display: inline-block;">                
+          <img src="http://image.qihuiwang.com/94/6/265/94B600509B5697B9F27E7F0482225B64.jpg" width="184" height="165" title="广告牌" alt="广告牌">   
+        <div class="show-pic4">
+          <h4>广告牌</h4><p style="color: orange;">垃圾分类亭</p>
+        </div>
+        </a>         
+      </div>
+    </div>
+    <!-- 右侧登录信息栏 -->
+    <div class="loginBar" style="width: 245px; height: 480px;" >
+
+      <div id="noLogin" >
+          <div class="logoTop">
+              <div class="logoImg">
+                  <a href="http://u.qihuiwang.com/member/login.html" target="_blank">
+                      <img src="https://static.qihuiwang.com/images/idImg.gif" width="68" height="68">
+                  </a>
+              </div>
+              <div class="logiName">
+                  欢迎来到企汇网！<p class="kf"><i class="iconfont icon-kefu"></i><em style="color: red;">400-6677-369</em></p>
+              </div>
+          </div>
+          <div class="loginzh"><a  style="font-size: 16px; color: red; border: 1px solid red; margin: 20px 10px; width: 50px; height: 20px; padding: 10px 20px; display: inline-block;" href="http://u.qihuiwang.com/member/login.html" target="_blank"><i class="iconfont icon-user"></i>登录</a><a  style="font-size: 16px; color: red; border: 1px solid red; margin: 10px 20px; width: 50px; height: 20px; padding: 10px 20px;" href="http://u.qihuiwang.com/member/register.html" target="_blank"><i class="iconfont icon-iconset0137"></i>注册</a></div>
+      </div>
+      <div id="Logined" style="display: none;">
+          <div class="logoTop">
+              <div class="logoImg">
+                  <a id="Identylink" href="#" target="_blank">
+                      <img id="IdentyImg"  src="http://static.qihuiwang.com/images/bgLogoPic.png" width="58" height="58" >
+                  </a>
+
+              </div>
+              <div class="logiName" id="divuserName"></div>
+          </div>
+          <div class="loginzh"><a href="http://u.qihuiwang.com/buyer/">采购商中心</a><a href="http://u.qihuiwang.com/provider/">供应商中心</a></div>
+      </div>
+      <!--tabs-->
+      <div class="rgTabs">
+          <div class="tMenu"><a class="on" href="#;">公告</a><a href="#" class="on1">规则</a><a href="#" class="on2">供应商入门</a><a href="#" class="on3">采购商入门</a><i class="line" style="left: 1px; width: 38px;"></i></div>
+          <div class="tCon">
+              <!--公告-->
+              <ul style="list-style: none;"> 
+                 <li style="margin-right: 30px;"><a target="_blank" href="http://news.qihuiwang.com/notice/20200514186289.html" title="关于产品服务器机柜硬件故障排查升级的通知"><em style="font-style: normal;">[公告]</em>关于产品服务器机柜硬件故障排查升级的通知</a></li>                    
+                 <li><a target="_blank" href="http://help.qihuiwang.com/help/664.html" title="无法选择分类？点这里"><em>[公告]</em>无法选择分类？点这里</a></li>                    
+                 <li><a target="_blank" href="http://news.qihuiwang.com/networkmarket/20180911179848.html" title="随时随地一键重发"><em>[公告]</em>随时随地一键重发</a></li>                    
+                 <li><a target="_blank" href="http://news.qihuiwang.com/60/20180724176841.html" title="关于百度细雨算法的通知"><em>[公告]</em>关于百度细雨算法的通知</a></li>                    
+                 <li><a target="_blank" href="http://news.qihuiwang.com/activityre/20180823178683.html" title="广州车身广告制作安装"><em>[公告]</em>广州车身广告制作安装</a></li>
+                </ul>
+              <ul style="display: none; list-style: none;">   
+                <li><a target="_blank" href="http://help.qihuiwang.com/help/663.html" title="企汇网产品信息发布规则"><em>[规则]</em>企汇网产品信息发布规则</a></li>                        
+                <li><a target="_blank" href="http://help.qihuiwang.com/help/661.html" title="企汇网平台诚信认证规范要求"><em>[规则]</em>企汇网平台诚信认证规范要求</a></li>                        
+                <li><a target="_blank" href="http://help.qihuiwang.com/help/658.html" title="搜索引擎不会收录哪些页面"><em>[规则]</em>搜索引擎不会收录哪些页面</a></li>                        
+                <li><a target="_blank" href="http://help.qihuiwang.com/help/454.html" title="企汇网会员注册步骤"><em>[规则]</em>企汇网会员注册步骤</a></li>                        
+              </ul>
+              <ul style="display: none; list-style: none;">   
+                <li><a target="_blank" href="http://help.qihuiwang.com/help/659.html" title="如何提高信息收录和排名"><em> [快速入门]</em>如何提高信息收录和排名</a></li>                        
+                <li><a target="_blank" href="http://help.qihuiwang.com/help/636.html" title="产品信息发布注意几点"><em> [快速入门]</em>产品信息发布注意几点</a></li>                        
+                <li><a target="_blank" href="http://hot.qihuiwang.com/zt/xinShou/" title="企汇网新手入门说明"><em> [快速入门]</em>企汇网新手入门说明</a></li>                        
+                <li><a target="_blank" href="http://help.qihuiwang.com/help/651.html" title="自动发布工具的优化技巧"><em> [快速入门]</em>自动发布工具的优化技巧</a></li>                        
+              </ul>
+              <ul style="display: none; list-style: none;">  
+                <li><a target="_blank" href="http://help.qihuiwang.com/help/465.html" title="采购管理是什么"><em> [快速入门] </em>采购管理是什么</a> </li>                        
+                <li><a target="_blank" href="http://help.qihuiwang.com/help/399.html" title="采购报价"><em>[采购知识]</em>采购报价</a></li>
+              </ul>
+
+          </div>
+      </div>
+      <!--tab End-->
+      <!--今日数据-->
+      <dl class="dataShow">
+          <dt class="ss"><img src="25.1.png" alt=""></dt>
+          <dd class="xz">
+              <p style="font-size: 12px;">今日新增产品数</p>
+              <em><a href="http://product.qihuiwang.com/newlist/d20200718" target="_blank" id="productCount">35242</a></em>
+          </dd>
+          <dd  class="xz">
+              <p style="font-size: 12px;">今日新增采购数</p>
+              <em><a href="http://buy.qihuiwang.com/newlist/d20200718" target="_blank" id="purchaseCount">15</a></em>
+          </dd>
+      </dl>
+  </div>
+  <!--特色服务&&品牌供应商-->
+  <div class="wrap1 feature">
+    <div class="firmBox firmBoxLe">
+        <h5 class="ts"><em style="color: orange;">特色</em>服务<i class="line"></i></h5>
+        <ul style="list-style: none;">
+          <li style="display: inline-block; margin: 25px 10px;"><a href="http://www.qihuiwang.com/service/51.html" title="企汇金铺" target="_blank">企汇金铺</a></li>        
+          <li style="display: inline-block;margin: 25px 20px;"><a href="http://www.qihuiwang.com/service/52.html" title="金铺装修" target="_blank">金铺装修</a></li>
+          <li style="display: inline-block;margin: 25px 20px;"><a href="http://www.qihuiwang.com/service/55.html" title="短信套餐" target="_blank">短信套餐</a></li>
+          <li style="display: inline-block;margin: 25px 45px;"><a href="http://hot.qihuiwang.com/zt/rwt/" title="企汇软文通" target="_blank">企汇软文通</a></li>        
+          <li style="border: none;display: inline-block;margin: 25px 20px; "> <a href="http://www.qihuiwang.com/service/42.html" title="标王" target="_blank">标王</a></li><br>
+          <li style="display: inline-block;margin: 0px 10px;"><a href="http://www.qihuiwang.com/service/94.html" title="黄金展位" target="_blank">黄金展位</a></li>
+          <li style="display: inline-block;margin: 0px 20px;"><a href="http://qihuiguanjia.qihuiwang.com/Home/Postage" title="企汇管家" target="_blank">企汇管家</a></li>        
+          <li style="display: inline-block;margin: 0px 10px;"><a href="http://qihuiguanjia.qihuiwang.com/Home/Postage" title="企汇管家白银版" target="_blank">企汇管家白银版</a></li>        
+          <li style="display: inline-block;margin: 0px 20px;"><a href="http://qihuiguanjia.qihuiwang.com/Home/Postage" title="企汇管家黄金版" target="_blank">企汇管家黄金版</a></li>        
+          <li style="border: none; display: inline-block;margin: 0px 20px;"><a href="http://app.tiantis.com/app/tiantisxcx" title="小程序" target="_blank">小程序</a></li>
+        </ul>
+    </div>
+    <div class="firmBox firmBoxRi pp">
+        <h5 class="gys"><em style="color: orange;" >品牌</em>供应商<i class="line"></i></h5>
+        <ul style="list-style: none;">
+          <li style="display: inline-block; margin: 25px 20px;"><a href="http://henanzhengming.shop.qihuiwang.com/" title="河南正名精工科技有限公司" target="_blank">河南正名精工科技有限公司</a></li>
+          <li style="display: inline-block;margin: 25px 20px;"><a href="http://lh19939135885.shop.qihuiwang.com/" title="郑州隆浩交通设施有限公司" target="_blank">郑州隆浩交通设施有限公司</a></li>       
+          <li style="display: inline-block;margin: 25px 20px;"><a href="http://hnjiacheng.shop.qihuiwang.com/" title="河南省嘉成交通设施有限公司" target="_blank">河南省嘉成交通设施有限公司</a></li><br>      
+          <li style="display: inline-block;margin:0 21px ;"><a href=" http://stmy88.shop.qihuiwang.com/" title="河南盛唐木业有限公司" target="_blank">河南盛唐木业有限公司</a></li>       
+          <li style="display: inline-block;margin:0 20px ;"><a href="http://hnfrsdl.shop.qihuiwang.com/" title="郑州市中原区海思智能门控销售商行" target="_blank">郑州市中原区海思智能门控销售商行</a></li>       
+          <li style="display: inline-block;margin:0 20px ;"><a href="http://qixinnongmu.shop.qihuiwang.com/" title="郑州琪欣农牧业有限公司" target="_blank">郑州琪欣农牧业有限公司</a></li>
+        </ul>
+    </div>
+</div>
+<div class="tlTop"><a href="http://app.tiantis.com/app/tiantisxcx" target="_blank" title="天梯小程序"><img src="http://image.qihuiwang.com/86/C/401/86EC60991608962012C944BECF1C32DA.jpg" alt="天梯小程序"></a>
+</div><br>
+<div class="F1 tlTop" >
+  <h3 class="nf"><em style="color: orange;">1F</em>农林牧副</h3>
+  <!--今日活动-->
+  <div class="zan"><i class="iconfont icon-zan" style="color: red;"></i>今日活动：<a href="http://hot.qihuiwang.com/zt/rwt/" title="企汇软文通限时买二送一" target="_blank">企汇软文通限时买二送一</a></div>
+  <!--热门搜索-->
+  <div class="hotWords1">热门搜索：<a href="http://product.qihuiwang.com/q34023/" title="苹果" target="_blank"><em>苹果</em></a>     
+  <a href="http://product.qihuiwang.com/q22934/" title="花卉" target="_blank"><em>花卉</em></a> 
+  <a href="http://product.qihuiwang.com/q34077/" title="竹类植物" target="_blank"><em>竹类植物</em></a>
+</div>
+<div class="floorLe">        
+  <a class="jxzc" href="http://product.qihuiwang.com/q12894/" title="机械设备专场" target="_blank">
+    <img src="http://image.qihuiwang.com/05/7/779/05D7B1F0BAA8707BBB3D7DC67CFC086F.jpg" width="218" height="520" alt="机械设备专场">    
+    <div class="picFont">
+      <h2 style="position: relative; top: -450px; left: 20px;">机械设备专场</h2><p style="position: relative; top: -490px; left: 20px; font-size: 13px;">制造好货，共享优品</p><span style="position: relative; top: -520px; left: 20px; font-size: 14px; border: 2px solid orange; color: orange;">点击进入</span></div></a>        
+  </div>
+  <ul class="F1-Nav">
+    <li style="display: inline-block;"><h5 style="font-weight: bold;font-size: 16px;color: #fe500b;line-height: 40px;margin-bottom: 5px;">粮食油类</h5><a style="margin-right: 20px;" href="http://product.qihuiwang.com/q33985/" title="稻谷" target="_blank">稻谷</a><a style="margin-right: 20px;" href="http://product.qihuiwang.com/q33988/" title="薯类" target="_blank">薯类</a><a style="margin-right: 20px;" href="http://product.qihuiwang.com/q33989/" title="其他粮食" target="_blank">其他粮食</a><a style="margin-right: 20px;" href="http://product.qihuiwang.com/q310488" title="玉米油" target="_blank">玉米油</a>            </li>
+    <li style="display: inline-block;"><h5 style="font-weight: bold;font-size: 16px;color: #fe500b;line-height: 40px;margin-bottom: 5px;">生鲜水果</h5><a style="margin-right: 20px;" href="http://product.qihuiwang.com/q34023/" title="苹果" target="_blank">苹果</a><a style="margin-right: 20px;" href="http://product.qihuiwang.com/q34022/" title="葡萄" target="_blank">葡萄</a><a style="margin-right: 20px;" href="http://product.qihuiwang.com/q34024/" title="柑桔、橙、柚" target="_blank">柑桔、橙、柚</a><a style="margin-right: 20px;" href="http://product.qihuiwang.com/q34028/" title="枣" target="_blank">枣</a><a style="margin-right: 20px;" href="http://product.qihuiwang.com/q34026/" title="草莓" target="_blank">草莓</a>            </li>
+    <li style="display: inline-block;"><h5 style="font-weight: bold;font-size: 16px;color: #fe500b;line-height: 40px;margin-bottom: 5px;">畜牧种苗</h5><a style="margin-right: 20px;" href="http://product.qihuiwang.com/q34046/" title="猪" target="_blank">猪</a><a style="margin-right: 20px;" href="http://product.qihuiwang.com/q34052" title="兔" target="_blank">兔</a><a style="margin-right: 20px;" href="http://product.qihuiwang.com/q34048/" title="鸡" target="_blank">鸡</a><a style="margin-right: 20px;" href="http://product.qihuiwang.com/q34054/" title="鹅" target="_blank">鹅</a><a style="margin-right: 20px;" href="http://product.qihuiwang.com/q34049/" title="鹌鹑" target="_blank">鹌鹑</a>            </li>
+    <li style="display: inline-block;"><h5 style="font-weight: bold;font-size: 16px;color: #fe500b;line-height: 40px;margin-bottom: 5px;margin-left: 40px;">菌类水产</h5><a style="margin-right: 20px; margin-left: 40px;" href="http://product.qihuiwang.com/q34011/" title="草菇" target="_blank">草菇</a><a style="margin-right: 20px;" href="http://product.qihuiwang.com/q34057/" title="鱼类" target="_blank">鱼类</a><a style="margin-right: 20px;" href="http://product.qihuiwang.com/q34017/" title="平菇" target="_blank">平菇</a><a style="margin-right: 20px;" href="http://product.qihuiwang.com/q34058/" title="虾类" target="_blank">虾类</a><a style="margin-right: 20px;" href="http://product.qihuiwang.com/q34007/" title="木耳" target="_blank">木耳</a><a style="margin-right: 20px;" href="http://product.qihuiwang.com/q34059/" title="蟹类" target="_blank">蟹类</a></li>
+    <li style="display: inline-block;"><h5 style="font-weight: bold;font-size: 16px;color: #fe500b;line-height: 40px;margin-bottom: 5px;">粮食油类</h5><a style="margin-right: 20px;" href="http://product.qihuiwang.com/q33985/" title="稻谷" target="_blank">稻谷</a><a style="margin-right: 20px;" href="http://product.qihuiwang.com/q33988/" title="薯类" target="_blank">薯类</a><a style="margin-right: 20px;" href="http://product.qihuiwang.com/q33989/" title="其他粮食" target="_blank">其他粮食</a><a style="margin-right: 20px;" href="http://product.qihuiwang.com/q310488" title="玉米油" target="_blank">玉米油</a>            </li>
+    <li style="display: inline-block;"><h5 style="font-weight: bold;font-size: 16px;color: #fe500b;line-height: 40px;margin-bottom: 5px;">生鲜水果</h5><a style="margin-right: 20px;" href="http://product.qihuiwang.com/q34023/" title="苹果" target="_blank">苹果</a><a style="margin-right: 20px;" href="http://product.qihuiwang.com/q34022/" title="葡萄" target="_blank">葡萄</a><a style="margin-right: 20px;" href="http://product.qihuiwang.com/q34024/" title="柑桔、橙、柚" target="_blank">柑桔、橙、柚</a><a style="margin-right: 20px;" href="http://product.qihuiwang.com/q34028/" title="枣" target="_blank">枣</a><a style="margin-right: 20px;" href="http://product.qihuiwang.com/q34026/" title="草莓" target="_blank">草莓</a>            </li>
+    <li style="display: inline-block;"><h5 style="font-weight: bold;font-size: 16px;color: #fe500b;line-height: 40px;margin-bottom: 5px;">畜牧种苗</h5><a style="margin-right: 20px;" href="http://product.qihuiwang.com/q34046/" title="猪" target="_blank">猪</a><a style="margin-right: 20px;" href="http://product.qihuiwang.com/q34052" title="兔" target="_blank">兔</a><a style="margin-right: 20px;" href="http://product.qihuiwang.com/q34048/" title="鸡" target="_blank">鸡</a><a style="margin-right: 20px;" href="http://product.qihuiwang.com/q34054/" title="鹅" target="_blank">鹅</a><a style="margin-right: 20px;" href="http://product.qihuiwang.com/q34049/" title="鹌鹑" target="_blank">鹌鹑</a>            </li>
+    <li style="display: inline-block;"><h5 style="font-weight: bold;font-size: 16px;color: #fe500b;line-height: 40px;margin-bottom: 5px;margin-left: 40px;">菌类水产</h5><a style="margin-right: 20px; margin-left: 40px;" href="http://product.qihuiwang.com/q34011/" title="草菇" target="_blank">草菇</a><a style="margin-right: 20px;" href="http://product.qihuiwang.com/q34057/" title="鱼类" target="_blank">鱼类</a><a style="margin-right: 20px;" href="http://product.qihuiwang.com/q34017/" title="平菇" target="_blank">平菇</a><a style="margin-right: 20px;" href="http://product.qihuiwang.com/q34058/" title="虾类" target="_blank">虾类</a><a style="margin-right: 20px;" href="http://product.qihuiwang.com/q34007/" title="木耳" target="_blank">木耳</a><a style="margin-right: 20px;" href="http://product.qihuiwang.com/q34059/" title="蟹类" target="_blank">蟹类</a></li>
+</ul>
+<ul class="F1-Md">               
+  <li ><a class="jm" href="http://product.qihuiwang.com/512670413.html" target="_blank" title="鸡苗"><img style="position: absolute; top: 60px; left: 745px;" src="http://image.qihuiwang.com/4F/C/135/4FBCC48870BE369F6D3F00EB150888B9.jpg" alt="鸡苗">
+    <div class="picFont"><h6 style="position: absolute; top: 40px; left: 781px;">肉鸡苗批发</h6><span  style="position: absolute; top: 100px; left: 761px;">鸡苗</span ></div></a></li>         
+  <li><a class="hh" href="http://product.qihuiwang.com/509299520.html" target="_blank" title="花种"><img style="position: absolute; top: 60px; left: 882px;" src="http://image.qihuiwang.com/3B/8/188/3B28718BC13BFC9B7A118D457630D065.jpg" alt="花种">
+    <div class="picFont"><h6  style="position: absolute; top: 40px; left: 911px;">花卉种子行情</h6><span style="position: absolute; top: 100px; left: 898px;">花种</span></div></a></li>         
+  <li  class="liBig"><a class="mgq" href="http://product.qihuiwang.com/510338081.html" target="_blank" title="杜高犬"><img style="position: absolute; top: 242px; left: 745px; width: 272px; height: 338px;" src="http://image.qihuiwang.com/6B/E/102/6BAE96C66011BC6AD97BC76D07FC22E5.jpg" alt="杜高犬">
+    <div class="picFont"><h4 style="position: absolute; top: 252px; left: 856px;">杜高犬养殖</h4><span style="position: absolute; top: 312px; left: 836px;">杜高犬</span></div></a></li>           
+</ul>
+    <div class="F1-Rg">
+     <b><a href="http://hnssbgy.shop.qihuiwang.com/" title="巩义市鲁庄嵩山林果园" target="_blank">巩义市鲁庄嵩山林果园</a></b>
+     <div class="floorRg_line"><span style="display: inline-block;width: 60px; background-color: #efefef; height: 30px;">经营范围</span>苗圃,核桃苗,蟠桃苗,花椒,铁篱寨,柏树,生态园</div>       
+     <div class="floorRg_line"><span style="display: inline-block;width: 60px; background-color: #efefef; height: 30px;">联系电话</span> 13673372728</div>
+     <ul class="companyList"> <li><a href="http://youlianquanye.shop.qihuiwang.com/#" title=" 1.郓城县友联养殖有限公司" target="_blank"> 1.郓城县友联养殖有限公司</a></li>          
+      <li style="display: inline-block;"><a href="http://hnxyhlg.shop.qihuiwang.com/" title=" 2.河南鑫宇红心火龙果种植基地" target="_blank"> 2.河南鑫宇红心火龙果种植基地</a></li>          
+      <li style="display: inline-block;"><a href="http://nyszyj.shop.qihuiwang.com/" title=" 3.南阳树状月季开发中心" target="_blank"> 3.南阳树状月季开发中心</a></li>          
+      <li style="display: inline-block;"><a href="http://abc2513.shop.qihuiwang.com/" title=" 4.广西佳兴绿化草场" target="_blank"> 4.广西佳兴绿化草场</a></li>          
+      <li style="display: inline-block;"><a href="http://hnhngs.shop.qihuiwang.com/" title=" 5.夏邑县惠农果树专业合作社" target="_blank"> 5.夏邑县惠农果树专业合作社</a></li>          
+      <li style="display: inline-block;"><a href="http://luzhouzhongye.shop.qihuiwang.com" title=" 6.江苏省绿洲花卉苗木种业" target="_blank"> 6.江苏省绿洲花卉苗木种业</a></li>            
+    </ul>
+     <ul class="productList"> 
+       <li style="display: inline-block;"><a href="http://tsmiaomu.shop.qihuiwang.com/" target="_blank" title="山东泰山苗木有限公司">
+      <img src="http://image.qihuiwang.com/16/B/557/16FB23A2DE4BEB10AC1FAED73E1D9CC6.jpg" alt="山东泰山苗木有限公司"></a></li>            
+      <li style="display: inline-block;"><a href="http://guangzhouhuayu.shop.qihuiwang.com/" target="_blank" title=" 广州华羽禽业有限公司">
+      <img src="http://image.qihuiwang.com/F4/0/60/F4309243CDA87B01C5A06C7F91751447.jpg" alt=" 广州华羽禽业有限公司"></a></li>            
+      <li style="display: inline-block;"><a href="http://zsrose.shop.qihuiwang.com/" target="_blank" title="南阳市卧龙区赵氏月季城"><img src="http://image.qihuiwang.com/EB/F/749/EB6F90EED02C23EFD5BA7FDBA114DAD6.jpg" alt="南阳市卧龙区赵氏月季城"></a></li>            
+      <li style="display: inline-block;"><a href="http://abc2513.shop.qihuiwang.com/" target="_blank" title="宾阳县新桥镇佳兴草场"><img src="http://image.qihuiwang.com/2E/2/934/2E2242FA669BDB6EB3369671661E268A.jpg" alt="宾阳县新桥镇佳兴草场"></a></li>                
+    </ul>
+
+</div>
+</div>
+<div class="t2Top">  
+  <a href="http://u.qihuiwang.com/member/register.html" target="_blank" title="注册有礼">
+    <img src="http://image.qihuiwang.com/81/D/238/81FD184EE2AABB19A452745E28AD7DEF.jpg" alt="注册有礼" width="1200" height="80"></a> 
+  </div>
+  
   </body>
 </html>

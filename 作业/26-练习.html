@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>饿了么优惠券</title>
+    <style>
+      .box {
+        width: 200px;
+
+        height: 150px;
+
+        border: 1px solid #58c4e6;
+        background-color: skyblue;
+        position: relative;
+        left: 800px;
+        top: 300px;
+        /* box-shadow: 0px 0px 5px #ccc; */
+        border-right: none;
+        border-top-left-radius: 10px;
+        border-bottom-left-radius: 10px;
+      }
+
+      .box_right_top,
+      .box_right_bottom {
+        position: absolute;
+
+        width: 20px;
+
+        height: 20px;
+
+        border: 1px solid #fff;
+
+        z-index: 1;
+
+        background: #fff;
+      }
+      .box_right_top {
+        top: -1px;
+
+        right: -1px;
+
+        border-radius: 0px 0px 0px 50px;
+
+        border-bottom: 1px solid #58c4e6;
+
+        border-left: 1px solid #58c4e6;
+
+        border-top: 1px solid #ccc;
+      }
+      .box_right_bottom {
+        right: -1px;
+
+        bottom: -1px;
+
+        border-radius: 50px 0px 0px 0px;
+
+        border-top: 1px solid #58c4e6;
+
+        border-left: 1px solid #58c4e6;
+
+        border-bottom: 1px solid #ccc;
+      }
+      .p1 {
+        text-align: center;
+        line-height: 70px;
+        color: white;
+        font-size: 36px;
+      }
+      .box2 {
+        height: 150px;
+        width: 400px;
+        border: 1px solid #ccc;
+        /* box-shadow: 0px 0px 3px #ccc; */
+        position: relative;
+        left: 950px;
+        top: 148px;
+        border-left: none;
+        border-top-right-radius: 10px;
+        border-bottom-right-radius: 10px;
+      }
+      .p2 {
+        font-weight: 500;
+        color: #888;
+        font-size: 22px;
+        position: absolute;
+        left: 70px;
+        bottom: 50px;
+      }
+      .p3 {
+        position: absolute;
+        left: 70px;
+        bottom: 2px;
+        color: #ccc;
+      }
+      .p4 {
+        position: absolute;
+        left: 320px;
+        bottom: 58px;
+        color: #ccc;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box">
+      <p class="p1">20<sub style="font-size: 18px">元</sub></p>
+      <div class="box_right_top"></div>
+      <div class="box_right_bottom"></div>
+    </div>
+    <div class="box2">
+      <p class="p2">满100元可用</p>
+      <p class="p3">2021.3.22-2077.3.21</p>
+      <p class="p4">使用说明&gt;</p>
+    </div>
+  </body>
+</html>
