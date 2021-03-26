@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="https://at.alicdn.com/t/font_2440649_a6hyh73ilef.css">
+    <link rel="stylesheet" href="https://at.alicdn.com/t/font_2440649_7jys8i2w5m.css">
     <title>企汇网</title>
     <style>
       body {
@@ -12,7 +12,7 @@
         margin: 0 auto;
         border-top: 3px solid #ccc;
         border-bottom: 1px solid #edeef0;
-        background-image: url(acg_banner.jpg);
+        background-image: url(img/acg_banner.jpg);
         background-repeat: no-repeat;
         background-position: -25px 200px;
         background-size:contain ;
@@ -168,7 +168,7 @@
       #list7 {
         left: 1400px;
       }
-
+/* 页面头部样式 */
       a:hover {
         color: orange;
         background-color: #edeef0;
@@ -238,21 +238,23 @@
      
       /* 以上为导航栏样式 */
       .clearfix::after{
-                content:"";
-                display:block;
-                height: 0;
-                clear: both;
-                /* visibility ：可见的 */
-                visibility: hidden;
+         content:"";
+         display:block;
+         height: 0;
+         clear: both;
+         /* visibility ：可见的 */
+         visibility: hidden;
         }
         .clearfix{
             /* IE6 7 兼容专用 */
              *zoom:1;
              }
+         /* 头部logo样式  */
         .Logo{
           display: inline-block;
           margin: 0 300px;
         }
+        /* 搜索框样式 */
        #searchKey{
          position: relative;
          right: -800px;
@@ -272,7 +274,7 @@
         width: 60px;
         background-color: #F16355;
         outline: none;
-        background-image: url(0025.png);
+        background-image: url(img/3.png);
         background-size: 40px 40px;
         background-repeat: no-repeat;
        }
@@ -299,7 +301,8 @@
        height: 380px;
      }
      
-     /* 以上页面头部样式 */
+     
+     /* 以上更多分类样式 */
      #list8{
       list-style: none;
       
@@ -331,7 +334,7 @@
      .icon3{
       vertical-align: -10px;
      }
-     /* 以上更多分类样式 */
+     
      .nav-sub{
        list-style: none;
        height: 400px;
@@ -628,10 +631,14 @@
        font-size: 12px;
        padding: 5px 9px;
      }
+     
      .xz{
        position: relative;
        left: 80px;
        top: -60px;
+     }
+     .tCon ul li{
+       margin: 6px 10px ;
      }
      #purchaseCount,#productCount{
        color: red;
@@ -660,16 +667,19 @@
        position: relative;
        left: 250px;
        top: 15px;
+       font-size: 18px;
      }
      .pp{
        position: relative;
        left: 600px;
-       top: -150px;
+       top: -170px;
+       
      }
      .gys{
        position: relative;
        left: 270px;
        top: 18px;
+       font-size: 18px;
      }
      /* 一楼商品 */
      .tlTop{
@@ -830,6 +840,7 @@
        font-size: 10px;
        padding: 0;
      }
+     /* 底部展会信息区域 */
      .infor{
        position: relative;
        top: 30px;
@@ -846,6 +857,19 @@
        list-style: none;
        padding-left: 0;
        padding-right: 10px;
+     }
+     
+     .newList2 span {
+       color: #FF580E;
+     }
+     .newList span:hover{
+       background-color: white;
+     }
+     .newList2 span:hover{
+       background-color: white;
+     }
+     .newList3 span:hover{
+       background-color: white;
      }
      .rdzx{
       position: absolute;
@@ -885,22 +909,124 @@
      .nyxt{
       position: absolute;
        top: 19px;
-       left: 1085px;
+       left: 1087px;
        border: 3px solid #efefef;
        float: left;
        height: 500px;
      }
      .newList3{
-       align:
+       
        list-style: none;
        padding-left: 0;
        padding-right: 10px;
        width: 390px;
-        /*2. 不换行 */
-        white-space:nowrap;
-        /* 3.溢出隐藏 */
-        overflow: hidden;
-        line-height: 20px;
+       line-height: 25px;
+     }
+     /* 友情链接样式 */
+     .yq-link{
+       position: relative;
+       top: 600px;
+     }
+     .yq:hover{
+       color: red;
+     }
+     .linkBot{
+       
+       width: 1200px;
+       margin: 0 auto;
+       padding-right: 100px;
+     }
+     .linkBot a{
+    white-space: nowrap;
+    color: #666;
+    margin: 0 8px;
+    display: inline-block;
+    line-height: 25px;
+    font-size: 12px;
+     }
+     /* 页脚盒子区域 */
+     #footerBox{
+       position: relative;
+       top: 600px;
+       min-width: 1200px;
+       padding: 40px 0;
+      background: #1b1b1b;
+       margin-top: 20px
+     }
+     #footerBox ul{
+       list-style: none;
+     }
+     #footerBox li{
+       margin: 25px 0;
+       color: white;
+     }
+    
+     #footerBox a{
+       color: #ddd;
+     }
+     .gfNavTitle{
+       position: relative;
+       left: 40px;
+       color: white;
+     }
+     #footerBox a:hover{
+       color: red;
+       background-color: #1b1b1b;
+     }
+     .fonterCode{
+       position: relative;
+       top: -173px;
+       left: 1300px;
+       color: #666;
+     }
+     .fonterInfo{
+       position: relative;
+       top: -80px;
+       left: 250px;
+     }
+     .zmfl{
+       margin: 0 14px;
+       
+       
+     }
+     .fonterInfo i{
+       font-style: normal;
+     }
+     .footNav{
+       position: relative;
+       top: 0;
+       left: 0;
+       
+     }
+     .footNav a{
+      margin: 0 8px;
+      padding: 0 8px;
+      color: #666;
+     }
+     .footNav span:hover{
+      background-color:#1b1b1b ;
+     }
+     .footCopyright{
+       position: relative;
+       left: 100px;
+       top: -15px;
+       
+     }
+     .beiAn{
+       display: inline-block;
+     }
+     .footCopyright span:hover{
+       background-color: #1b1b1b;
+     }
+     /* 固定工具栏 */
+     .toolbarTabs{
+       position: sticky;
+       width: 50px;
+        height: 0;
+        border: 1px solid #000;
+        
+        left: 1850px;
+        bottom: 1000px;
      }
     </style>
   </head>
@@ -1091,12 +1217,17 @@
     <div class="header">
       <div class="head clearfix " >
           <div class="Logo">
-              <a class="headLogo" href="http://www.qihuiwang.com" title="企汇网" target="_blank"><img src="25.png" alt="企汇网"></a>
-              <img src="025.png" alt="">
+              <a class="headLogo" href="http://www.qihuiwang.com" title="企汇网" target="_blank"><img src="img/0.png" alt="企汇网"></a>
+              <img src="img/1.png" alt="">
           </div>
           <div class="search">
             <input id="searchKey" data-type="0" type="text" class="textInput" placeholder="请输入产品名称">
             <input id="search-button" type="button" value="" >
+            <select name="" id="" style="width: 92px; height: 44px; position: relative; top: -90px; left:269px; outline: none; border: 2px solid #F16355">
+              <option value="" selected>产品</option>
+              <option value="" >企业</option>
+              <option value="">采购</option>
+          </select>
           </div>
           <div class="po-i">
             <a href="http://buy.qihuiwang.com/pub"> <span style="font-size: 16px; width: 160px; display: inline-block;"><svg t="1616505373338" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2569" width="24" height="24"><path d="M221.866667 737.450667l120.32-0.170667c9.045333 0 17.749333-3.584 24.064-10.069333l279.210666-279.210667a33.8432 33.8432 0 0 0 0-48.128l-120.149333-120.149333c-13.312-13.312-34.986667-13.312-48.298667 0L197.802667 558.933333c-6.485333 6.314667-9.898667 15.018667-10.069334 24.064v120.32a34.0992 34.0992 0 0 0 34.133334 34.133334zM256.170667 597.333333l245.077333-245.077333 71.850667 71.850667-245.248 245.077333H256l0.170667-71.850667zM626.688 219.648c19.285333-19.285333 52.565333-19.285333 71.850667 0a50.8928 50.8928 0 0 1 0 71.850667l-44.373334 44.373333 48.298667 48.298667 44.373333-44.373334c46.421333-46.421333 46.421333-122.026667 0-168.448C724.309333 148.992 694.272 136.533333 662.528 136.533333s-61.781333 12.458667-84.138667 34.816l-44.373333 44.373334 48.298667 48.298666 44.373333-44.373333zM861.013333 818.176H221.866667c-18.773333 0-34.133333 15.36-34.133334 34.133333s15.36 34.133333 34.133334 34.133334h639.146666c18.773333 0 34.133333-15.36 34.133334-34.133334s-15.36-34.133333-34.133334-34.133333z" p-id="2570" fill="#dbdbdb"></path></svg>发布采购单</span></a>
@@ -1137,7 +1268,7 @@
       <div class="categoryTab">
           <ul class="nav-sub">
               <li class="mCate1">
-                  <a target="_blank" href="http://jixie.qihuiwang.com" class="chilun"><i class="iconfont icon-chilun" ></i>&emsp;机械/设备/模具</a>
+                  <a target="_blank"  href="http://jixie.qihuiwang.com" class="chilun"><i class="iconfont icon-chilun1" ></i>&emsp;机械/设备/模具</a>
                   <div class="subNav" id="li1">
                       <div class="subItems">
                           <dl>
@@ -1801,7 +1932,7 @@
                   </div>
               </li>
               <li class="mCate6">
-                  <a target="_blank" href="http://product.qihuiwang.com/q12912/" class="gyp"><i class="iconfont icon-huaban"></i>&emsp;饰品/礼品/工艺品</a>
+                  <a target="_blank" href="http://product.qihuiwang.com/q12912/" class="gyp"><i class="iconfont icon-shoubiao " style="width: 40px;height: 40px;"></i>&emsp;饰品/礼品/工艺品</a>
                   <div class="subNav" id="li6">
                     <div class="subItems">
                       <dl>
@@ -1934,7 +2065,7 @@
                   </div>
               </li>
               <li class="mCate7">
-                <a target="_blank" href="http://product.qihuiwang.com/q12912/" class="qx"><i class="iconfont icon-cab"></i>&emsp;汽车/保养/维修</a>
+                <a target="_blank" href="http://product.qihuiwang.com/q12912/" class="qx"><i class="iconfont icon-qiche"></i>&emsp;汽车/保养/维修</a>
                 <div class="subNav" id="li7">
                   <div class="subItems">
                     <dl>
@@ -2333,7 +2464,7 @@
                   </div>
               </li>
               <li class="mCate10">
-                  <a target="_blank" href="http://product.qihuiwang.com/q12915/" class="wz"><i class="iconfont icon-dianshi"></i>&emsp;网站/广告/服务</a>
+                  <a target="_blank" href="http://product.qihuiwang.com/q12915/" class="wz"><i class="iconfont icon-xianshiqiPc"></i>&emsp;网站/广告/服务</a>
                   <div class="subNav" id="li10">
                     <div class="subItems">
                       <dl>
@@ -2539,7 +2670,7 @@
           <div class="tMenu"><a class="on" href="#;">公告</a><a href="#" class="on1">规则</a><a href="#" class="on2">供应商入门</a><a href="#" class="on3">采购商入门</a><i class="line" style="left: 1px; width: 38px;"></i></div>
           <div class="tCon">
               <!--公告-->
-              <ul style="list-style: none;"> 
+              <ul style="list-style: none; padding:0;"> 
                  <li style="margin-right: 30px;"><a target="_blank" href="http://news.qihuiwang.com/notice/20200514186289.html" title="关于产品服务器机柜硬件故障排查升级的通知"><em style="font-style: normal;">[公告]</em>关于产品服务器机柜硬件故障排查升级的通知</a></li>                    
                  <li><a target="_blank" href="http://help.qihuiwang.com/help/664.html" title="无法选择分类？点这里"><em>[公告]</em>无法选择分类？点这里</a></li>                    
                  <li><a target="_blank" href="http://news.qihuiwang.com/networkmarket/20180911179848.html" title="随时随地一键重发"><em>[公告]</em>随时随地一键重发</a></li>                    
@@ -2568,7 +2699,7 @@
       <!--tab End-->
       <!--今日数据-->
       <dl class="dataShow">
-          <dt class="ss"><img src="25.1.png" alt=""></dt>
+          <dt class="ss"><img src="img/2.png" alt=""></dt>
           <dd class="xz">
               <p style="font-size: 12px;">今日新增产品数</p>
               <em><a href="http://product.qihuiwang.com/newlist/d20200718" target="_blank" id="productCount">35242</a></em>
@@ -2744,12 +2875,12 @@
         </div>
         <ul class="newList">
 
-            <li><a href="http://www.qihuiwang.com/Exhibition/zfj/19721.html" title="2018上海第十三届海外置业投资移民留学（秋季）展" target="_blank"><span>【致富经】</span>2018上海第十三届海外置业投资移民留学（秋季）展</a></li>
-            <li><a href="http://www.qihuiwang.com/Exhibition/zixun/19721.html" title="2018上海第十三届海外置业投资移民留学（秋季）展" target="_blank"><span>【展会资讯】</span>2018上海第十三届海外置业投资移民留学（秋季）展</a></li>
-            <li><a href="http://www.qihuiwang.com/Exhibition/shuiguo/19721.html" title="2018上海第十三届海外置业投资移民留学（秋季）展" target="_blank"><span>【水果】</span>2018上海第十三届海外置业投资移民留学（秋季）展</a></li>
-            <li><a href="http://www.qihuiwang.com/Exhibition/zcfg/19713.html" title="迪拜国际建材五大行业展览会" target="_blank"><span>【政策法规】</span>迪拜国际建材五大行业展览会</a></li>
-            <li><a href="http://www.qihuiwang.com/Exhibition/world/19713.html" title="迪拜国际建材五大行业展览会" target="_blank"><span>【国际展会】</span>迪拜国际建材五大行业展览会</a></li>
-            <li><a href="http://www.qihuiwang.com/Exhibition/yumi/19713.html" title="迪拜国际建材五大行业展览会" target="_blank"><span>【玉米】</span>迪拜国际建材五大行业展览会</a></li>
+            <li><a href="http://www.qihuiwang.com/Exhibition/zfj/19721.html" title="2018上海第十三届海外置业投资移民留学（秋季）展" target="_blank"><span style="color: #ff580e;">【致富经】</span>2018上海第十三届海外置业投资移民留学（秋季）展</a></li>
+            <li><a href="http://www.qihuiwang.com/Exhibition/zixun/19721.html" title="2018上海第十三届海外置业投资移民留学（秋季）展" target="_blank"><span style="color: #ff580e;">【展会资讯】</span>2018上海第十三届海外置业投资移民留学（秋季）展</a></li>
+            <li><a href="http://www.qihuiwang.com/Exhibition/shuiguo/19721.html" title="2018上海第十三届海外置业投资移民留学（秋季）展" target="_blank"><span style="color: #ff580e;">【水果】</span>2018上海第十三届海外置业投资移民留学（秋季）展</a></li>
+            <li><a href="http://www.qihuiwang.com/Exhibition/zcfg/19713.html" title="迪拜国际建材五大行业展览会" target="_blank"><span style="color: #ff580e;">【政策法规】</span>迪拜国际建材五大行业展览会</a></li>
+            <li><a href="http://www.qihuiwang.com/Exhibition/world/19713.html" title="迪拜国际建材五大行业展览会" target="_blank"><span style="color: #ff580e;">【国际展会】</span>迪拜国际建材五大行业展览会</a></li>
+            <li><a href="http://www.qihuiwang.com/Exhibition/yumi/19713.html" title="迪拜国际建材五大行业展览会" target="_blank"><span style="color: #ff580e;">【玉米】</span>迪拜国际建材五大行业展览会</a></li>
 
         </ul>
     </div>
@@ -2760,7 +2891,7 @@
       <dl>
           <dd class="thImg">
               <a href="http://news.qihuiwang.com/HeNan/20190228186225.html" target="_blank">
-                  <img src="http://i2.qihuiwang.com/collect/201812/2019022831.jpg" width="125" height="125" title="抖音国际版TikTok收集儿童信息 在美被罚570万美元应用" alt="抖音国际版TikTok收集儿童信息 在美被罚570万美元应用">
+                  <img style="float:left; margin:0 5px 5px 0;" src="http://i2.qihuiwang.com/collect/201812/2019022831.jpg" width="125" height="125" title="抖音国际版TikTok收集儿童信息 在美被罚570万美元应用" alt="抖音国际版TikTok收集儿童信息 在美被罚570万美元应用">
               </a>
           </dd>
           <dt><a  style="display: inline-block; font-size: 12px; padding-left: 50px;" href="http://news.qihuiwang.com/HeNan/20190228186225.html" title="抖音国际版TikTok收集儿童信息 在美被罚570万美元应用" target="_blank">抖音国际版TikTok收集儿童信息 在美被罚570万美元应用</a></dt>
@@ -2781,34 +2912,204 @@
       <h2><em>营销</em>指南</h2>
       <a style="position: absolute; left: 340px; top: 26px;" href="http://news.qihuiwang.com/MarketingGuide/" target="_blank" class="more">更多</a>
       <ul class="newList3">
-          <li>
+          <li style="float:left;">
               <a href="http://news.qihuiwang.com/marketingguide/20181217182833.html" title="" class="cellImg" target="_blank">
-                  <img style="height: 70px; width:70px; " src="http://i2.qihuiwang.com/web/2018-12-17/041817270b1b164ab5.jpg " alt="景区对华为手机用户免票">
+                  <img style="height: 70px; width:70px;float:left; margin:0 5px 5px 0; " src="http://i2.qihuiwang.com/web/2018-12-17/041817270b1b164ab5.jpg " alt="景区对华为手机用户免票">
               </a>
-              <div style=float:left; margin:0 5px 5px 0; class="title"><a href="http://news.qihuiwang.com/marketingguide/20181217182833.html" title="景区对华为手机用户免票" target="_blank">景区对华为手机用户免票</a></div><br>
-              <p style="display: inline-block;">近日，河南沁阳神农山风景区出台新政策，从 12 月 16 日到年底，景区对华为手机用户免门票。有人质疑，神农山景区这是在蹭华为的热点，尤其公告中“用华为手机，到神农山拍出大片。</p>
-          </li>
-          <li>
+              <div  class="title"><a href="http://news.qihuiwang.com/marketingguide/20181217182833.html" title="景区对华为手机用户免票" target="_blank"><b>景区对华为手机用户免票</b></a></div>
+              <p >近日，河南沁阳神农山风景区出台新政策，从 12 月 16 日到年底，景区对华为手机用户免门票。有人质疑，神农山景区这是在蹭华为的热点，尤其公告中“用华为手机，到神农山拍出大片。</p>
+          </li><br>
+          <li style="float:left;">
               <a href="http://news.qihuiwang.com/marketingguide/20181214182807.html" title="" class="cellImg" target="_blank">
-                  <img style="height: 70px; width:70px;" src="http://i2.qihuiwang.com/web/2018-12-14/045001d928d4f97c5c.jpg" alt="“尴尬”的双十二">
+                  <img style="height: 70px; width:70px;float:left; margin:0 5px 5px 0;" src="http://i2.qihuiwang.com/web/2018-12-14/045001d928d4f97c5c.jpg" alt="“尴尬”的双十二">
               </a>
-              <div style="display: inline-block;" class="title"><a href="http://news.qihuiwang.com/marketingguide/20181214182807.html" title="“尴尬”的双十二" target="_blank">“尴尬”的双十二</a></div><br>
-              <p style="display: inline-block;"> 淘宝双十二之所以缺乏存在感，原因还是与阿里的区别对待有着很大的关系。</p>
-          </li>
-          <li>
+              <div  class="title"><a href="http://news.qihuiwang.com/marketingguide/20181214182807.html" title="“尴尬”的双十二" target="_blank"><b>“尴尬”的双十二</b></a></div>
+              <p > 淘宝双十二之所以缺乏存在感，原因还是与阿里的区别对待有着很大的关系。</p>
+          </li><br>
+          <li style="float:left;">
               <a href="http://news.qihuiwang.com/marketingguide/20181213182783.html" title="" class="cellImg" target="_blank">
-                  <img style="height: 70px; width:70px;" src="http://i2.qihuiwang.com/web/2018-12-13/045651c3aef998d769.jpg" alt="淘宝双12大数据：近1亿用户加购商品超15件">
+                  <img style="height: 70px; width:70px;float:left; margin:0 5px 5px 0;" src="http://i2.qihuiwang.com/web/2018-12-13/045651c3aef998d769.jpg" alt="淘宝双12大数据：近1亿用户加购商品超15件">
               </a>
-              <div  style="display: inline-block;"class="title"><a href="http://news.qihuiwang.com/marketingguide/20181213182783.html" title="淘宝双12大数据：近1亿用户加购商品超15件" target="_blank">淘宝双12大数据：近1亿用户加购商品超15件</a></div><br>
-              <p style="display: inline-block;">12月11日消息，淘宝双12即将来临，有近1亿消费者在双12预热期间加购商品超过15件。</p>
-          </li>
-          <li>
+              <div  class="title"><a href="http://news.qihuiwang.com/marketingguide/20181213182783.html" title="淘宝双12大数据：近1亿用户加购商品超15件" target="_blank"><b>淘宝双12大数据：近1亿用户加购商品超15件</b></a></div>
+              <p >12月11日消息，淘宝双12即将来临，有近1亿消费者在双12预热期间加购商品超过15件。</p>
+          </li><br>
+          <li style="float:left;">
               <a href="http://news.qihuiwang.com/marketingguide/20181211182706.html" title="" class="cellImg" target="_blank">
-                  <img style="height: 70px; width:70px;" src="http://i2.qihuiwang.com/web/2018-12-11/0446183cd4f33cd1b0.jpg" alt="三星A8s发布！骁龙710+挖孔屏！">
+                  <img style="height: 70px; width:70px;float:left; margin:0 5px 5px 0;" src="http://i2.qihuiwang.com/web/2018-12-11/0446183cd4f33cd1b0.jpg" alt="三星A8s发布！骁龙710+挖孔屏！">
               </a>
-              <div class="title"><a href="http://news.qihuiwang.com/marketingguide/20181211182706.html" title="三星A8s发布！骁龙710+挖孔屏！" target="_blank">三星A8s发布！骁龙710+挖孔屏！</a></div>
-              <p style="display: inline-block;">三星A8s发布！骁龙710+挖孔屏！网友吐槽很扎心！华为要赢了！</p>
+              <div   class="title"><a href="http://news.qihuiwang.com/marketingguide/20181211182706.html" title="三星A8s发布！骁龙710+挖孔屏！" target="_blank"><b>三星A8s发布！骁龙710+挖孔屏！</b></a></div>
+              <p >三星A8s发布！骁龙710+挖孔屏！网友吐槽很扎心！华为要赢了！</p>
+          </li><br>
+      </ul>
+  </div>
+</div>
+<!--友情链接-->
+<div class="yq-link">
+  <div class="">
+      <div class="linkTop" style="position: relative; left: 300px;"><em style="color: orange; ">友情</em>链接</div><hr style="color: #efefef;"><br>
+      <div class="linkBot">
+
+          <a class="yq" href="http://www.qisufa.com" title="家居建材网" target="_blank">家居建材网</a>
+          <a class="yq" href="http://www.onwsw.com" title="网商网" target="_blank">网商网</a>
+          <a class="yq" href="http://www.136000.com" title="中国机械设备信息网" target="_blank">中国机械设备信息网</a>
+          <a class="yq" href="http://www.137000.com/" title="中国农业信息网" target="_blank">中国农业信息网</a>
+          <a class="yq" href="http://www.chinacrane.net/" title="起重 " target="_blank">起重 </a>
+          <a class="yq" href="http://www.5a.com/" title="商标查询" target="_blank">商标查询</a>
+          <a class="yq" href="http://www.18show.cn" title="仪表展览网" target="_blank">仪表展览网</a>
+          <a class="yq" href="http://www.damuzzz.com" title="大拇指商务网" target="_blank">大拇指商务网</a>
+          <a class="yq" href="https://www.huisuanzhang.com/" title="代理记账" target="_blank">代理记账</a>
+          <a class="yq" href="http://www.qiyegu.com/" title="企业谷" target="_blank">企业谷</a>
+          <a class="yq" href="http://www.sonhoo.com/" title="B2B平台" target="_blank">B2B平台</a>
+          <a class="yq" href="http://www.hqps.com/" title="智慧网" target="_blank">智慧网</a>
+          <a class="yq" href="http://beijing.liebiao.com/" title="北京分类信息" target="_blank">北京分类信息</a>
+          <a class="yq" href="http://news.d17.cc/" title="第一枪资讯" target="_blank">第一枪资讯</a>
+          <a class="yq" href="http://www.ccement.com/" title="中国水泥网" target="_blank">中国水泥网</a>
+          <a class="yq" href="http://www.maijx.com/" title="买卖机械网" target="_blank">买卖机械网</a>
+          <a class="yq" href="http://www.cbi360.net/" title="建筑网" target="_blank">建筑网</a>
+          <a class="yq" href="https://www.globrand.com/" title="加盟网" target="_blank">加盟网</a>
+          <a class="yq" href="http://www.chemcp.com/" title="化工产品网" target="_blank">化工产品网</a>
+          <a class="yq" href="https://www.skxox.com/" title="云同盟" target="_blank">云同盟</a>
+          <a class="yq" href="http://tianqi.eastday.com/" title="全国天气预报查询" target="_blank">全国天气预报查询</a>
+          <a class="yq" href="http://www.zz91.com/" title="再生塑料网" target="_blank">再生塑料网</a>
+          <a class="yq" href="http://news.jc001.cn/" title="装饰装修知识" target="_blank">装饰装修知识</a>
+          <a class="yq" href="http://www.fuwo.com/" title="室内装修" target="_blank">室内装修</a>
+          <a class="yq" href="http://www.metalnews.cn/" title="金属价格网" target="_blank">金属价格网</a>
+          <a class="yq" href="http://www.258.com/" title="供求信息" target="_blank">供求信息</a>
+          <a class="yq" href="http://www.21cp.com/" title="塑料门户网" target="_blank">塑料门户网</a>
+          <a class="yq" href="http://waimaoquan.alibaba.com/" title="外贸圈" target="_blank">外贸圈</a>
+          <a class="yq" href="http://www.gtobal.com/" title="电子商务平台" target="_blank">电子商务平台</a>
+          <a class="yq" href="http://www.hnquanbei.com" title="泉贝网络" target="_blank">泉贝网络</a>
+          <a class="yq" href="https://www.huamu.com/" title="花木网" target="_blank">花木网</a>
+          <a class="yq" href="http://www.139000.com/" title="商讯软件" target="_blank">商讯软件</a>
+          <a class="yq" href="http://www.cntrades.com/" title="中国贸易网" target="_blank">中国贸易网</a>
+          <a class="yq" href="http://www.chinawj.com.cn/" title="五金商机网" target="_blank">五金商机网</a>
+          <a class="yq" href="http://www.wjw.cn/" title="全球五金网" target="_blank">全球五金网</a>
+          <a class="yq" href="http://www.eastsoo.com/" title="东方供应商" target="_blank">东方供应商</a>
+          <a class="yq" href="http://www.xizhi.com/" title="悉知" target="_blank">悉知</a>
+          <a class="yq" href="http://m.qisufa.com" title="产品库" target="_blank">产品库</a>
+          <a class="yq" href="http://www.qisufa.com" title="企业库大全" target="_blank">企业库大全</a>
+          <a class="yq" href="http://www.tz1288.com/" title="天助网" target="_blank">天助网</a>
+          <a class="yq" href="http://b2b.makepolo.com/" title="马可波罗" target="_blank">马可波罗</a>
+          <a class="yq" href="https://www.bestb2b.com/" title="志趣网" target="_blank">志趣网</a>
+          <a class="yq" href="http://www.99inf.com/" title="久久信息网" target="_blank">久久信息网</a>
+          <a class="yq" href="http://www.qihuiwang.com/sitemap.xml" title="产品地图" target="_blank">产品地图</a>
+
+      </div>
+  </div>
+</div>
+<div id="footerBox">
+  <div class="footer">
+      <!-- 此处换成广告位配置 -->
+      <div class="footerTop">
+          <div class="gfNavItem gfLt" style="position: relative; left: 300px; top: -10px;" >
+              <a class="logo" href="#" target="_blank">
+                  <img src="https://static.qihuiwang.com/images/footerLogo.png" alt="企汇网logo" title="企汇网logo" width="156" height="60">
+              </a>
+              <p class="tel" style="color: white;"><i class="iconfont icon-dianhua01" style="color: white;"></i><b>400-6677-369</b></p>
+              <p class="date" style="color: #aaa; font-size: 12px;">周一至周五 9:00-18:00 </p>
+          </div>
+          <div class="gfNavItem" style="position: absolute; left: 500px; top: 0;">
+              <h4 class="gfNavTitle" >新手指南</h4>
+              <ul>
+                  <li><a href="http://u.qihuiwang.com/member/register.html" target="_blank">免费注册</a></li>
+                  <li><a href="http://help.qihuiwang.com/help/475.html" target="_blank">采购商入门</a></li>
+                  <li><a href="http://help.qihuiwang.com/help/394.html" target="_blank">供应商入门</a></li>
+                  <li><a href="http://u.qihuiwang.com/member/forgotpwd" target="_blank">找回密码</a></li>
+                  <li><a href="http://help.qihuiwang.com/help/index.html" target="_blank">帮助中心</a></li>
+              </ul>
+          </div>
+          <div class="gfNavItem" style="position: absolute; left: 800px; top: 0;">
+              <h4 class="gfNavTitle">企汇网服务</h4>
+              <ul >
+                  <li><a href="http://www.qihuiwang.com/service/49.html" target="_blank">自动发布工具</a></li>
+                  <li><a href="http://www.qihuiwang.com/service/52.html" target="_blank">金铺装修</a></li>
+                  <li><a href="http://hot.qihuiwang.com/zt/rwt/" target="_blank">企汇软文通</a></li>
+                  <li><a href="http://www.qihuiwang.com/service/42.html" target="_blank">标王</a></li>
+                  <li><a href="http://qihuiguanjia.qihuiwang.com/Home/Postage" target="_blank">套餐版本</a></li>
+              </ul>
+          </div>
+          <div class="gfNavItem about" style="position: absolute; left:1100px; top: 0;">
+              <h4 class="gfNavTitle">关于我们</h4>
+              <ul>
+                  <li><a href="http://help.qihuiwang.com/about/index.html" target="_blank">公司介绍</a></li>
+                  <li><a href="http://help.qihuiwang.com/about/contact.html" target="_blank">联系我们</a></li>
+                  <li><a href="http://www.qihuiwang.com/sitemap.html" target="_blank">网站导航</a></li>
+                  <li><a href="http://help.qihuiwang.com/help/pay.html" target="_blank">支付方式</a></li>
+                  <li><a href="http://gw.qihuiwang.com/" target="_blank">公司官网</a></li>
+              </ul>
+          </div>
+          <div class="fonterCode" >
+              <h4 class="mobileTitle">移动企汇网</h4>
+              <p>手机企汇网：m.qihuiwang.com</p>
+              <div class="codeBox" style="font-size: 12px; position: relative; right: 38px;">
+                  <dl style="display: inline-block;">
+                      <dd>
+                          <img src="https://static.qihuiwang.com/images/oneCode.jpg" alt="企汇网手机站" title="企汇网手机站" width="68" height="68">
+                      </dd>
+                      <dt style="position: relative; right: -40px;">企汇网手机站</dt>
+                  </dl>
+                  <dl style="display: inline-block;">
+                      <dd>
+                          <img src="https://static.qihuiwang.com/images/twoCode.jpg" alt="企汇网微信" title="企汇网微信" width="68" height="68">
+                      </dd>
+                      <dt style="position: relative; right: -45px;">企汇网微信</dt>
+                  </dl>
+              </div>
+          </div>
+      </div>
+
+      <ul class="fonterInfo">
+
+          <li class="footerSort" style="color: #666;">
+              <i>按字母分类：</i>
+              <a class="zmfl" style="color: #666;" href="http://s.qihuiwang.com/searchkeys/A" target="_blank">A</a><i style="color: #666;">|</i>
+              <a class="zmfl" style="color: #666;" href="http://s.qihuiwang.com/searchkeys/B" target="_blank">B</a><i style="color: #666;">|</i>
+              <a class="zmfl" style="color: #666;" href="http://s.qihuiwang.com/searchkeys/C" target="_blank">C</a><i style="color: #666;">|</i>
+              <a class="zmfl" style="color: #666;" href="http://s.qihuiwang.com/searchkeys/D" target="_blank">D</a><i style="color: #666;">|</i>
+              <a class="zmfl" style="color: #666;" href="http://s.qihuiwang.com/searchkeys/E" target="_blank">E</a><i style="color: #666;">|</i>
+              <a class="zmfl" style="color: #666;" href="http://s.qihuiwang.com/searchkeys/F" target="_blank">F</a><i style="color: #666;">|</i>
+              <a class="zmfl" style="color: #666;" href="http://s.qihuiwang.com/searchkeys/G" target="_blank">G</a><i style="color: #666;">|</i>
+              <a class="zmfl" style="color: #666;" href="http://s.qihuiwang.com/searchkeys/H" target="_blank">H</a><i style="color: #666;">|</i>
+              <a class="zmfl" style="color: #666;" href="http://s.qihuiwang.com/searchkeys/I" target="_blank">I</a><i style="color: #666;">|</i>
+              <a class="zmfl" style="color: #666;" href="http://s.qihuiwang.com/searchkeys/J" target="_blank">J</a><i style="color: #666;">|</i>
+              <a class="zmfl" style="color: #666;" href="http://s.qihuiwang.com/searchkeys/K" target="_blank">K</a><i style="color: #666;">|</i>
+              <a class="zmfl" style="color: #666;" href="http://s.qihuiwang.com/searchkeys/L" target="_blank">L</a><i style="color: #666;">|</i>
+              <a class="zmfl" style="color: #666;" href="http://s.qihuiwang.com/searchkeys/M" target="_blank">M</a><i style="color: #666;">|</i>
+              <a class="zmfl" style="color: #666;" href="http://s.qihuiwang.com/searchkeys/N" target="_blank">N</a><i style="color: #666;">|</i>
+              <a class="zmfl" style="color: #666;" href="http://s.qihuiwang.com/searchkeys/O" target="_blank">O</a><i style="color: #666;">|</i>
+              <a class="zmfl" style="color: #666;" href="http://s.qihuiwang.com/searchkeys/P" target="_blank">P</a><i style="color: #666;">|</i>
+              <a class="zmfl" style="color: #666;" href="http://s.qihuiwang.com/searchkeys/Q" target="_blank">Q</a><i style="color: #666;">|</i>
+              <a class="zmfl" style="color: #666;" href="http://s.qihuiwang.com/searchkeys/R" target="_blank">R</a><i style="color: #666;">|</i>
+              <a class="zmfl" style="color: #666;" href="http://s.qihuiwang.com/searchkeys/S" target="_blank">S</a><i style="color: #666;">|</i>
+              <a class="zmfl" style="color: #666;" href="http://s.qihuiwang.com/searchkeys/T" target="_blank">T</a><i style="color: #666;">|</i>
+              <a class="zmfl" style="color: #666;" href="http://s.qihuiwang.com/searchkeys/U" target="_blank">U</a><i style="color: #666;">|</i>
+              <a class="zmfl" style="color: #666;" href="http://s.qihuiwang.com/searchkeys/V" target="_blank">V</a><i style="color: #666;">|</i>
+              <a class="zmfl" style="color: #666;" href="http://s.qihuiwang.com/searchkeys/W" target="_blank">W</a><i style="color: #666;">|</i>
+              <a class="zmfl" style="color: #666;" href="http://s.qihuiwang.com/searchkeys/X" target="_blank">X</a><i style="color: #666;">|</i>
+              <a class="zmfl" style="color: #666;" href="http://s.qihuiwang.com/searchkeys/Y" target="_blank">Y</a><i style="color: #666;">|</i>
+              <a class="zmfl" style="color: #666;" href="http://s.qihuiwang.com/searchkeys/Z" target="_blank">Z</a><i style="color: #666;">|</i>
+              <a class="zmfl" style="color: #666;" href="http://s.qihuiwang.com/searchkeys/num" target="_blank">0-9</a>
+
           </li>
+          <li class="footerSortLine"></li>
+
+          <li class="footNav" >
+              <a style="color: #666;" href="http://www.qihuiwang.com" target="_self">网站首页</a><i style="color: #666;">|</i>
+              <a style="color: #666;" href="http://help.qihuiwang.com/about/index.html" target="_self">关于我们</a><i style="color: #666;">|</i>
+              <a style="color: #666;" href="http://help.qihuiwang.com/about/contact.html" target="_self">联系我们</a><i style="color: #666;">|</i>
+              <a style="color: #666;" href="http://help.qihuiwang.com/about/law.html" target="_self">使用协议</a><i style="color: #666;">|</i>
+              <a style="color: #666;" href="http://help.qihuiwang.com/about/copyright.html" target="_self">版权隐私</a><i style="color: #666;">|</i>
+              <a style="color: #666;" href="http://www.qihuiwang.com/cpzx" target="_self">产品资讯</a><i style="color: #666;">|</i>
+              <a style="color: #666;" href="http://www.qihuiwang.com/chanpin" target="_self">产品动态</a><i style="color: #666;">|</i>
+              <a style="color: #666;" href="http://www.qihuiwang.com/userright.html" target="_blank">维权通道</a><i style="color: #666;">|</i>
+              <a style="color: #666;" href="http://www.qihuiwang.com/sitemap.html" target="_self">网站导航</a><i style="color: #666;">|</i>
+              <a style="color: #666;" href="http://www.qihuiwang.com/feedback.html" target="_blank">用户反馈</a>
+              <a style="color: #666;" class="footIco qqChat" href="javascript:;" target="_self" rel="nofollow" id="qqChat3">
+                <span style="color: #666;">在线客服：</span><i style="color: red;" class="iconfont icon-qq"></i></a><a class="footIco" href="https://weibo.com/qihuiwang" target="_blank" rel="nofollow">
+                  <span style="color: #666;">关注我们：</span><i style="color: red;" class="iconfont  icon-logo-weibo"></i>
+                </a>
+          </li>
+          <li class="footCopyright" style="color: #666;">Copyright 2008-2018 河南企汇网信息技术股份有限公司&nbsp;&nbsp;保留所有权利&nbsp;&nbsp;&nbsp;&nbsp;经营许可证编号：<span class="bianHao"><a style="color: #666;" href="https://beian.miit.gov.cn" target="_black">豫B2-20140075</a></span><span class="beiAn" style="width: 60px;">豫公网安备</span>41019702002055号</li>
       </ul>
   </div>
 </div>
