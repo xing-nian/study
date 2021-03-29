@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>表单验证</title>
+</head>
+<body>
+    <input type="text" id="username">
+    <button id="btn">登录</button>
+</body>
+<script>
+    //  获取页面元素 input button
+    var username = document.getElementById("username");
+    var btn = document.getElementById("btn");
+
+    // 绑定点击事件
+    btn.onclick = function(){
+        // 获取用户输入到文本框中的内容
+        var val = username.value;
+        // 判断用户名的长度是否在6-12之间
+        if (val.length >= 6 && val.length <= 12) {
+            // 符合条件则执行内部代码
+            alert("登陆成功");
+        } else {
+            alert("请输入正确的账号和密码!!");
+        }
+       
+    }
+    
+</script>
+</html>

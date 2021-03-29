@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>表单事件</title>
+  </head>
+  <body>
+    <form action="" id="myForm">
+      <input type="text" id="username" />
+      <input type="password" id="psw" />
+      <input type="submit" />
+      <input type="reset" />
+    </form>
+  </body>
+  <script>
+    var myForm = document.getElementById("myForm");
+    var username = document.getElementById("username");
+
+    myForm.onsubmit = function () {
+      var val = username.value;
+      if (val.length < 6 || val.length > 12) {
+        alert("请输入6-12之间正确的长度");
+        return false; //阻止页面刷新
+      }
+    };
+    // 表单重置事件
+    myForm.onreset = function () {
+      // 终止重置事件
+      return false;
+    };
+  </script>
+</html>
