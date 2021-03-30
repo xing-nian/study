@@ -12,6 +12,18 @@ body{
     background-color: #efefef;
     height: 25px;
     width: 870px;
+    padding-left: 300px;
+}
+.nav-city:hover  .city-option-box{
+  display: block;
+}
+.nav-city{
+  color: #999;
+  font-size: 13px;
+}
+.nav-change{
+  color: green;
+  font-size: 13px;
 }
 .top-nav-right{
     height: 25px;

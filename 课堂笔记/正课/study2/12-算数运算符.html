@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>算数运算符</title>
+</head>
+<body>
+    
+</body>
+<script>
+    //  + - * /  加, 减, 乘, 除.
+    var num1 = 10;
+    var num2 = 2;
+    var sum = num1+num2;
+
+    // % 求余运算符 余数 3/2 = 1...1
+    console.log(10 / 3);
+    console.log(10 % 3);
+    console.log(10 % 2);
+    // 如何使用 求余运算符来判断一个数是否是整数或者是奇数
+   
+  // ++  -- 递增 递减运算符
+ var x = 20;
+ ++x;  //x自增之后再参加其他运算
+ console.log(x); //21
+
+ var y = 20;
+ var z = y++  // 表示y现参与运算 再自增1
+ console.log(z); //20
+ console.log(y); //21
+
+ var a = 5;
+ var b = a++ + ++a; // 5 + 7
+ console.log(b);
+
+ var c = 10 ;
+ var d = c++ + ++c -(c-- - --c); 10 + 12 -(12 - 10)
+ console.log(d);
+
+ var num3 = 1;
+//  console.log(num3++); //1
+ console.log(++num3); //2
+</script>
+</html>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>数据类型</title>
+</head>
+<body>
+    
+</body>
+<script>
+    【基本数据类型/简单类型】
+    1.字符串类型 string  定义文本信息 用 "" ' '包裹
+    可以使用转义符
+    \',单引号
+    \'',双引号
+    var uname = '李\'四\''
+     console.log(uname)
+
+    //2. 数字类型 number  可以进行数学运算
+      var price = 168;
+
+    //3.布尔类型  boolean  真(true)和假(flase)
+    var isMale = true;
+
+    // 4. undefined  未定义  变量未赋值时
+      var y;
+    
+    // 5. null 空值 空对象  不存在
+    var box = document.getElementById('box'); 
+    // 查找页面中的box
+    console.log(box);
+
+
+    // 【复杂数据类型/引用类型】
+    // 1.对象 用{}包裹
+    var num = "李四",age = 18, isMale = true;
+    var person = {
+        // 属性： 值
+        uname:"lisi",
+        age:18,
+        isMale:true
+    }
+    var miTu = {
+        imageUrl:'null',
+        memo:"米兔智能故事机 白色",
+        memo2:"能说会道，好玩伴",
+        price:169,
+    }
+    2. 数组 一组数据的集合 用[]包裹
+    元素 ->数据
+    索引(编号) 从0开始，通过索引访问数组中的元素
+
+    var arr = ["张三","李四","刘晓华",1,2,3]
+    arr[3]
+    console.log(arr[3])
+
+
+    var pro2 = [
+       {
+           imgurl:"",
+           name:"小米11 Ultra",
+           memo:"1.12 GN2 | 2K 四曲面屏",
+           price:1999,
+       },
+       {
+           imgurl:"",
+           name:"小米10 Ultra",
+           memo:"1.12 GN2 | 2K 四曲面屏",
+           price:2999,
+       },
+       {
+           imgurl:"",
+           name:"小米8 Ultra",
+           memo:"1.12 GN2 | 2K 四曲面屏",
+           price:3999,
+       },
+       {
+           imgurl:"",
+           name:"小米7 Ultra",
+           memo:"1.12 GN2 | 2K 四曲面屏",
+           price:4999,
+       }
+    ];
+    // 获取到第一个产品的价格
+    var pro1 = pro2[0];
+    console.log(pro1);
+</script>
+</html>
