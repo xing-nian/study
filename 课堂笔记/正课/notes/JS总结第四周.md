@@ -162,3 +162,125 @@ if (条件表达式) {
       }
 ```
 
+# 日期：3月31号
+
+### 判断变量类型
+
+```
+typeof 属性 来判断变量类型
+ var x = 10 ;
+    console.log(typeof x); //number
+
+    var y = "yellow" ;
+    console.log(typeof y); //string
+
+    var z = true;
+    console.log(typeof z); //boolean
+
+    var a;
+    console.log(typeof a); //undefined
+
+    var box =document.getElementById('box');
+    console.log(box);   // null
+    console.log(typeof box); //object
+    
+    //isNaN()检测数据是否是NaN   NaN:  NOT A NUMBER 不是一个数字
+    var res =  isNaN(x);
+    console.log(res); //true
+
+    console.log(isNaN(10)); // false
+```
+
+### 隐式类型转换
+
+```
+     var x = "10";
+     var y = 10;
+     var sum = x + y    //此时 + 是一个连接符（拼接符）
+     console.log(sum); // 1010
+
+    //  对一个纯数字的字符串乘 除以一 或者减0 都可以将其转换为number.
+     console.log(typeof(x * 1));  //number
+     console.log(typeof(x / 1));  //number
+     console.log(typeof(x - 0));  //number
+```
+
+### 六个假值
+
+
+
+##### "", 0 , undefined, null ,false ,NaN
+
+```
+ 1.
+     if ("") {
+        alert ("这不科学！");
+     }
+ 2.   
+     if (0){
+         alert ("确实");
+     }
+ 3.   
+        if ( undefined){
+          alert ("确实");
+       }
+ 4.
+        if (null){
+          alert ("确实");
+       }
+ 5.      
+       if (false){
+           alert("确实")
+       }
+ 6.      
+       var x = "hello" * 1 ;
+         console.log(x);   // NaN  NOT A NUMBER 不是一个数字
+
+         if (x) {
+           alert("确实")
+         }
+```
+
+### 判断用户输入的是否是数字
+
+```
+var age = prompt("请输入年龄");
+    console.log(typeof age);
+    age*=1;
+    if (isNaN(age) || age == 0) {   // isNaN(age)来判断age输入的不是一个数字，则请用户输入正确的数字
+     alert("请输入正确的年龄");
+    } else {
+         var res = 2021-age;
+            alert(res);
+    }
+```
+
+### for 循环
+
+
+
+```
+for (var i = 0 ; i<5; i++){
+        //  重复执行的代码
+     }
+ 循环逻辑：     
+     
+     var i = 0
+     if (i < 5)  执行花括号代码
+     i++    第1次
+
+     if (i < 5)  执行花括号代码
+     i++      2
+
+     if (i < 5)  执行花括号代码
+     i++      3
+
+     if (i < 5)  执行花括号代码
+     i++      4
+
+     if (i < 5)  执行花括号代码
+     i++      5
+
+     if (5 < 5)  不符合条件 终止循环;
+```
+

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>判断变量类型</title>
+</head>
+<body>
+    
+</body>
+<script>
+    var x = 10 ;
+    console.log(typeof x); //number
+
+    var y = "yellow" ;
+    console.log(typeof y); //string
+
+    var z = true;
+    console.log(typeof z); //boolean
+
+    var a;
+    console.log(typeof a); //undefined
+
+    var box =document.getElementById('box');
+    console.log(box);   // null
+    console.log(typeof box); //object
+
+    var arr = [1,2,3];
+    console.log(typeof arr);  //object
+    console.log('------------');
+    // 测试 左边的arr对象不属于Array
+    console.log(arr instanceof Array); //true
+    console.log('----------');
+
+    var obj = {
+        name:'jon',
+        age:18,
+    };
+   console.log(typeof obj); //object
+   console.log(obj instanceof Array); //false
+
+   var res = prompt("请输入年龄")
+   console.log(typeof res);
+</script>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>判断用户输入的是否是数字</title>
+  </head>
+  <body></body>
+  <script>
+    var arr = prompt("请输入一个数字");
+    console.log(typeof (x-0));
+    if (isNaN(arr)==true) {
+      alert("您输入了一个NaN");
+    } else {
+      alert("输入错误，请重新输入");
+    }
+
+    var age = prompt("请输入年龄");
+    console.log(typeof age);
+    age*=1;
+    if (isNaN(age) || age == 0) {
+            alert("请输入正确的年龄");
+    } else {
+         var res = 2021-age;
+            alert(res);
+    }
+
+    //计算俩人年龄差
+    // var age1 = prompt("请输入第一个人的年龄");
+    // var age2 = prompt("请输入第二个人的年龄");
+    // age1 *= 1;
+    // age2 *= 1;
+    // if (isNaN(age1) || isNaN(age2)) {
+    //      alert("请输入正确的年龄");
+    // } else {
+    //     var res1= age1-age2;
+    //     if(res1>=0)
+    //     alert(1*res1);
+    //     if(res1<0)
+    //     alert(-1*res1);
+    // }
+
+    
+  </script>
+</html>

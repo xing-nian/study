@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>隐式类型转换</title>
+</head>
+<body>
+    
+</body>
+<script>
+     var x = "10";
+     var y = 10;
+     var sum = x + y    //此时 + 是一个连接符（拼接符）
+     console.log(sum); // 1010
+
+    //  对一个纯数字的字符串乘 除以一 或者减0 都可以将其转换为number.
+     console.log(typeof(x * 1));  //number
+     console.log(typeof(x / 1));  //number
+     console.log(typeof(x - 0));  //number
+</script>
+</html>

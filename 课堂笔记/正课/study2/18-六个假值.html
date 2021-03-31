@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>六个假值</title>
+</head>
+<body>
+    
+</body>
+<script>
+     "", 0 , undefined, null ,false ,NaN
+     if ("") {
+        alert ("这不科学！");
+     }
+     
+     if (0){
+         alert ("确实");
+     }
+        if ( undefined){
+          alert ("确实");
+       }
+
+        if (null){
+          alert ("确实");
+       }
+       if (false){
+           alert("确实")
+       }
+
+    var x = "hello" * 1 ;
+    console.log(x);   // NaN  NOT A NUMBER 不是一个数字
+
+    if (x) {
+        alert("确实")
+    }
+
+    //isNaN()检测数据是否是NaN
+    var res =  isNaN(x);
+    console.log(res); //true
+
+    console.log(isNaN(10)); // false
+</script>
+</html>

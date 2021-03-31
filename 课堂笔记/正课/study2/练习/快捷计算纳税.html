@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>纳税计算</title>
+  </head>
+  <body></body>
+  <script>
+    //  月薪5000开始 年薪60000开始计税
+    var nx = prompt("请输入您的年薪");
+    if (isNaN(nx)) {
+      alert("请输入正确的金额");
+    } else {
+      nxj = nx - 60000;
+      alert("您需要缴纳的税款为");
+      if (nxj <= 0) {
+        alert(0);
+      }
+      if (nxj > 0 && nxj <= 36000) {
+        yjj = 0.03 * nxj;
+        alert(yjj);
+      }
+      if (nxj > 36000 && nxj <= 144000) {
+        yjj = 0.1 * nxj;
+        alert(yjj-2520);
+      }
+      if (nxj > 144000 && nxj <= 300000) {
+        yjj = 0.2 * nxj;
+        alert(yjj-16920);
+      }
+      if (nxj > 300000 && nxj <= 420000) {
+        yjj = 0.25 * nxj;
+        alert(yjj-31920);
+      }
+      if (nxj > 420000 && nxj <= 660000) {
+        yjj = 0.3 * nxj;
+        alert(yjj-52920);
+      }
+      if (nxj > 660000 && nxj <= 960000) {
+        yjj = 0.35 * nxj;
+        alert(yjj-85920);
+      }
+      if (nxj > 960000) {
+        yjj = 0.45 * nxj;
+        alert(yjj-181920);
+      }
+    }
+  </script>
+</html>
