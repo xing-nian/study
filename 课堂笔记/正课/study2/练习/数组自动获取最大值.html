@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>数组自动获取最大值</title>
+</head>
+<body>
+    
+</body>
+<script>
+    //   
+    //  比固定值45大的数
+    //   var x = 45;
+    //   var arr = [45,6,7,9,21,10,45,78,34,65,2,7,8]
+    //   for(var i=0;i<arr.length; i++){
+    //      
+    //       var y = arr[i];
+         
+    //       if (y>=x){
+    //           console.log(y);
+    //       }
+    //   }
+
+    // 从数组中找出最大值
+      var x = 0;
+      var arr = [45,6,456,21,10,451244,74568,34,41265,2456,7,8456]
+      for(var i=0;i<arr.length; i++){
+          i*= 1 ;
+          var y = arr[i];
+          if (y>=x){
+            var x = y;
+          }
+      }
+      console.log(x);
+      alert(x)
+</script>
+</html>

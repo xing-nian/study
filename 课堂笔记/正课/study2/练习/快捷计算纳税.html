@@ -9,12 +9,13 @@
   <body></body>
   <script>
     //  月薪5000开始 年薪60000开始计税
-    var nx = prompt("请输入您的年薪");
-    if (isNaN(nx)) {
-      alert("请输入正确的金额");
+    var nx = prompt("请输入您的年薪(元)");
+    nx *= 1
+    if (isNaN(nx) ) {
+      alert("请输入正确的金额(元)");
     } else {
-      nxj = nx - 60000;
-      alert("您需要缴纳的税款为");
+      nxj = nx - 60000;  //nxj 为年纳税金,nx 为年薪
+      alert("您需要缴纳的税款为(元)");
       if (nxj <= 0) {
         alert(0);
       }

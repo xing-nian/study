@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>唯品会数据遍历</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        ul{font-size: 0;
+            list-style: none;
+            text-align: center;
+            margin-left: 300px;
+            width: 1400px;
+        }
+        li{
+            float: left;
+            width: 255px;
+            height: 357px;
+            margin: 20px 20px;
+           border: 1px solid #FF2ABF;
+           padding-bottom: 35px;
+            
+        }
+      img{
+          width: 255px;
+          height: 320px;
+      }
+        p{
+            font-size: 10px;
+        }
+        a{
+            text-decoration: none;
+            color: #000;
+        }
+       
+       #tmj{
+           font-size: 23px;
+           font-weight: 700;
+       }
+       #yj{
+           font-size: 14px;
+           color: #ccc;
+           /* 给文本添加修饰线 */
+           text-decoration: line-through;
+       }
+       #zk{
+        font-size: 14px;
+           color: #ccc;
+       }
+       p{
+        
+           width: 200px;
+           margin: 10px auto;
+           font-size: 12px;
+           color: #666;
+       
+       }
+       #jb{
+        background-image:linear-gradient(to right, #FF2ABF,#CF56FF) ;
+           color: white;
+           border-radius: 8px;
+           display: inline-block;
+           width: 45px;
+           height: 16px;
+           text-align: center;
+           font-size: 12px;
+       }
+    </style>
+</head>
+<body>
+    
+</body>
+<script src="goodList2.js"></script>
+<script>
+    
+    document.write(`<ul>`)
+    for(var i=0; i<productList.length;i++){
+        var x = productList[i];
+        document.write(`
+        <li>
+            <img src="${x.smallImage}" alt="">
+            <span id="jb">特卖价</span>
+            <span id="tmj"><a href="">${x.price.salePrice+'元'}</a></span>&nbsp;
+            <span id="yj">${x.price.marketPrice+'元'}</span>&nbsp;
+            <span id="zk">${x.price.saleDiscount+'元'}</span>
+            <p><a href="">${x.title}</a></p>
+            
+            
+            `)
+    }
+    document.write(`<ul>`)
+</script>
+</html>

@@ -28,10 +28,10 @@
 <body>
    <div>
        <div class="jsq">工资计算器</div>
-       <input type="text" placeholder="基本工资"><br>
-       <input type="text" placeholder="绩效工资"><br>
-       <input type="text" placeholder="奖金"><br>
-       <input type="button" value="计算" style="background-color: #99CC31; outline: none; border: none;"><br>
+       <input type="text" placeholder="基本工资" id="jb"><br>
+       <input type="text" placeholder="绩效工资" id="jx"><br>
+       <input type="text" placeholder="奖金" id="jj"><br>
+       <input  id="js" type="button" value="计算" style="background-color: #99CC31; outline: none; border: none;"><br>
 
        <p>总工资：</p><hr>
 
@@ -47,6 +47,14 @@
     
 </body>
  <script>
-   恭喜你不行了！！！
+   var jb = document.getElementById("jb")
+   var jx = document.getElementById("jx")
+   var jj = document.getElementById("jj")
+
+   js.onclick=function(){
+       
+    //
+     jj.innerHTML = jx.value;
+   }
 </script>
 </html>

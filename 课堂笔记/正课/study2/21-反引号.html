@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>反引号</title>
+</head>
+<body>
+    
+</body>
+<script>
+      字符串
+    var str = "hello";
+    var str2 = "world";
+    // ``反引号
+    var imgUrl = "https://www.baidu.com/img/dong_528d34b686d4889666f77c62b9a65857.gif"
+    // document.write('<img src="">');  //错误
+    document.write('<b>hello</b>')
+    // 假设无法拿到路径只能拿到路径对应的代号 imgUrl
+    // 如下 拼接字符串   +连接符
+    document.write('<img src ="'+imgUrl+'">')
+    // 通过反引号实现
+    document.write(`<img src ="${imgUrl}">`);
+    
+
+    var product = {
+        pName:"小米11",
+        price:1666
+    }
+// 要求：在页面上输出product 的pName值和price值
+document.write(`<h3>${product.pName}</h3><p>${product.price}</p>`)
+
+document.write('<h3>'+product.pName+'</h3><p>'+product.price+'</p>')
+</script>
+</html>

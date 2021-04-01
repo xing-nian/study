@@ -284,3 +284,116 @@ for (var i = 0 ; i<5; i++){
      if (5 < 5)  不符合条件 终止循环;
 ```
 
+# 日期：3月32号
+
+### 反引号
+
+```
+``反引号
+ var imgUrl = "https://www.baidu.com/img/dong_528d34b686d4889666f77c62b9a65857.gif"
+    // document.write('<img src="">');  //错误
+    document.write('<b>hello</b>')
+    // 假设无法拿到路径只能拿到路径对应的代号 imgUrl
+    // 如下 拼接字符串   +连接符
+    document.write('<img src ="'+imgUrl+'">')
+    // 通过反引号实现
+    document.write(`<img src ="${imgUrl}">`);
+    
+```
+
+### 数组
+
+```
+  数组array 是一组数据的集合 []
+     数据  元素
+     索引 从0开始
+     var arr =['a','b','c','d'];
+     
+
+     根据索引获取数组中的元素
+     var item = arr[2];
+     
+     console.log(item);
+
+    根据索引修改数组中的数据
+    arr[1] = 'b1';
+    console.log(arr);
+
+    添加元素
+    arr[4] = 'f';
+    arr[6] = 'g';
+
+    console.log(arr[5]);  //undefined
+
+    数组的长度 (元素的个数 )length属性
+    console.log(arr.length); //7
+```
+
+### 遍历数组
+
+```
+   var arr = [122,133,144,155,166,177];
+   for(var i =0; i<arr.length;i++){
+    console.log(arr[i]+'元')
+        }
+```
+
+### 遍历数据
+
+```
+ var product =[
+    {
+        imgUrl:'1.jpg',
+        name:'小米0',
+        desc:'新一代智能手机',
+        price:199
+        
+    }, {
+        imgUrl:'1.jpg',
+        name:'小米2',
+        desc:'新一代智能手机',
+        price:19
+    },
+    {
+        imgUrl:'1.jpg',
+        name:'小米3',
+        desc:'新一代智能手机',
+        price:1999
+    }, {
+        imgUrl:'1.jpg',
+        name:'小米4',
+        desc:'新一代智能手机',
+        price:199999
+    }, {
+        imgUrl:'1.jpg',
+        name:'小米5',
+        desc:'新一代智能手机',
+        price:19954
+    }, {
+        imgUrl:'1.jpg',
+        name:'小米6',
+        desc:'新一代智能手机',
+        price:19994
+
+    }, {
+        imgUrl:'1.jpg',
+        name:'小米7',
+        desc:'新一代智能手机',
+        price:19997
+    }
+    ]
+    document.write(`<ul>`)
+    for(i=0; i<product.length;i++){
+        console.log(product[i].name);
+        document.write(`
+        <li>
+            <img src="${product[i].imgUrl}" alt="">
+            <h3>${product[i].name}</h3>
+            <h3>${product[i].price}</h3>
+            <p>${product[i].desc}</p>
+        </li>
+            `)
+    }
+    document.write(`<ul>`)
+```
+

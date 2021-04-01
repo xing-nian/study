@@ -107,12 +107,14 @@
 
     var res5 = prompt("请输入您的体重(kg)");
     var res6 = prompt("请输入您的身高(m)");
+    res5 *=1;
+    res6 *=1;
     var x = (res5/res6/res6)
     if(isNaN(res5) || isNaN(res6)){
-         alert("请输入正确的数字")
+         alert("请输入正确的数字");
     }
     if (res5<=0 || res6<=0){
-      alert("倒着长也不可能吧！")
+      alert("倒着长也不可能吧！");
     }
     if (x<18.5 && x>0) {
       alert("瘦骨如柴！！");

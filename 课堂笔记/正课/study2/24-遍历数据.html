@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>遍历数据</title>
+    <style>
+        ul{
+            list-style: none;
+        }
+    </style>
+</head>
+<body>
+     <ul>
+         <li>
+             <img src="" alt="">
+             <h3></h3>
+             <p></p>
+         </li>
+         <li>
+            <img src="" alt="">
+            <h3></h3>
+            <p></p>
+        </li>
+        <li>
+            <img src="" alt="">
+            <h3></h3>
+            <p></p>
+        </li>
+        <li>
+            <img src="" alt="">
+            <h3></h3>
+            <p></p>
+        </li>
+     </ul>
+</body>
+<script>
+
+    var product =[
+    {
+        imgUrl:'1.jpg',
+        name:'小米0',
+        desc:'新一代智能手机',
+        price:199
+        
+    }, {
+        imgUrl:'1.jpg',
+        name:'小米2',
+        desc:'新一代智能手机',
+        price:19
+    },
+    {
+        imgUrl:'1.jpg',
+        name:'小米3',
+        desc:'新一代智能手机',
+        price:1999
+    }, {
+        imgUrl:'1.jpg',
+        name:'小米4',
+        desc:'新一代智能手机',
+        price:199999
+    }, {
+        imgUrl:'1.jpg',
+        name:'小米5',
+        desc:'新一代智能手机',
+        price:19954
+    }, {
+        imgUrl:'1.jpg',
+        name:'小米6',
+        desc:'新一代智能手机',
+        price:19994
+
+    }, {
+        imgUrl:'1.jpg',
+        name:'小米7',
+        desc:'新一代智能手机',
+        price:19997
+    }
+    ]
+    document.write(`<ul>`)
+    for(i=0; i<product.length;i++){
+        console.log(product[i].name);
+        document.write(`
+        <li>
+            <img src="${product[i].imgUrl}" alt="">
+            <h3>${product[i].name}</h3>
+            <h3>${product[i].price}</h3>
+            <p>${product[i].desc}</p>
+        </li>
+            `)
+    }
+    document.write(`<ul>`)
+        
+
+
+       
+</script>
+</html>
