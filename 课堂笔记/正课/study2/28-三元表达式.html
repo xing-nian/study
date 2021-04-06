@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>三元表达式</title>
+</head>
+<body>
+    
+</body>
+<script>
+    // 三目运算符
+
+    var age = 17
+    if(age >= 18){
+        alert('已成年');
+    }else{
+        alert('未成年');
+    }
+
+    var age = 20;
+    age >= 18 ? alert('已成年') :alert('未成年')
+    /*
+     a ? b : c
+     a  表示条件表达式
+     b  表示条件成立的结果
+     c  表示条件不成立的结果
+    */
+//    var num = 0
+//    num > 0  ?  str = 'hello' : str ='world';
+//    alert(str);
+
+
+//    var a= 10 , b=20;
+//    a >= b  ?  alert('a')  : alert('b');
+
+   var a= 105, b=20000, c=3550;
+    var max = a >= b ? (a>=c ? a : c) : (b>=c ? b : c);
+    alert(max);
+</script>
+</html>

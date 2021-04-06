@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>双层for循环</title>
+    <style>
+        td{
+            border: 1px solid red;
+        }
+    </style>
+</head>
+<body>
+    
+</body>
+<script>
+    // for( var i = 0; i<5 ; i++){
+    //      console.log("内层循环开始");
+    //      for(var j = 0 ; j< 5; j++){
+    //          console.log('i ='+i+',j='+j);
+    //      }
+    //      console.log("内层循环结束");
+    // }
+    // var shizi =x+'*'+y+'=';
+    //      var arr =5
+    //      console.log(shizi+ arr);
+
+    //99 乘法
+    //  for(var x = 1; x<=9 ; x++){
+    //     for(var y =1; y<=x; y++){ 
+    //         var str=  + x + '*' + y+ '=' + x*y + '\t' ;
+    //         var str = str + '\n';
+    //          console.log(str);
+           
+    //     }
+         
+    //  }
+     // 输出到页面上 
+     document.write('<table>')
+        for(var x = 1; x<=9 ; x++){
+            document.write('<tr>')
+           for(var y =1; y<=x; y++){ 
+            document.write(`<td>${x}*${y}=${x*y}</td>`)
+             }
+             document.write('</tr>')
+    }
+    document.write('</table>')
+</script>
+</html>

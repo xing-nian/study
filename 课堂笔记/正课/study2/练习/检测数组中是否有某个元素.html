@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>检测数组中是否有某个元素</title>
+</head>
+<body>
+    
+</body>
+<script>
+    //       var arr = ['j','f','a','k','l','a'];
+    //       var text =prompt("请输入你需要检测的元素");
+    //       for(i=0;i<arr.length;i++){
+    //           if(arr[i]===text){
+    //           alert("数组中存在该元素");
+    //           break;
+    //           }
+    //       }
+    //     //   如果for循环正常结束,说明数组中不存在该元素
+    //    if( i == arr.length){
+    //        alert("数组中没有该元素");
+    //    }
+
+    var arr = ['j','f','a','k','l','a'];
+    var text =prompt("请输入你需要检测的元素");
+    var flag = true; //布尔值
+    for(i=0;i<arr.length;i++){
+             if(arr[i]===text){
+             flag= false;
+             alert("数组中存在该元素");
+             break;
+             }
+         }
+     if(flag == true){
+         alert('数组众不存在该元素')
+     }
+</script>
+</html>

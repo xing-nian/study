@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>对象</title>
+</head>
+<body>
+    
+</body>
+<script>
+    var obj = {
+        uname :"jon",
+        age: 18,
+        sex:'男',
+    }
+    // 获取属性值
+    console.log(obj.age);
+    console.log(obj);
+    //修改属性值
+    obj.age = 19;
+
+    // 删除属性值
+    delete obj.age;
+
+    var car = {
+        name: '超吃惊',
+        color:'white',
+        model:'911',
+    }
+
+    // 访问属性的方式 :  对象. 属性值   对象["属性名"]
+    console.log(car['color'])
+    car['color'] = 'red';
+    console.log(car['color'])
+    console.log(car)
+</script>
+</html>

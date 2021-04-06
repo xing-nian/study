@@ -23,6 +23,7 @@
             margin: 20px 20px;
            border: 1px solid #FF2ABF;
            padding-bottom: 35px;
+           position: relative;
             
         }
       img{
@@ -69,6 +70,12 @@
            text-align: center;
            font-size: 12px;
        }
+       #logo{
+           position: absolute;
+           top: 10px;
+           left: 10px;
+          
+       }
     </style>
 </head>
 <body>
@@ -82,11 +89,13 @@
         var x = productList[i];
         document.write(`
         <li>
+            <img id=logo src="${x.logo}" alt="" style=" width: 60px;
+           height: 30px;">
             <img src="${x.smallImage}" alt="">
             <span id="jb">特卖价</span>
-            <span id="tmj"><a href="">${x.price.salePrice+'元'}</a></span>&nbsp;
-            <span id="yj">${x.price.marketPrice+'元'}</span>&nbsp;
-            <span id="zk">${x.price.saleDiscount+'元'}</span>
+            <span id="tmj"><a href="">${x.price.salePrice+'元 '}</a></span>&nbsp;
+            <span id="yj">${x.price.marketPrice+'元 '}</span>&nbsp;
+            <span id="zk">${x.price.saleDiscount+''}</span>
             <p><a href="">${x.title}</a></p>
             
             

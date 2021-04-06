@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>兔子问题</title>
+</head>
+<body>
+    
+</body>
+<script>
+
+    var year =prompt("请输入年份");
+    if( isNaN(year*1)){
+           alert('请输入正确的年份')
+    }else{
+        //年份转换为月份
+        var month = year*12;
+        // 定义初始的 幼兔 小兔 成兔数量
+        var youtu = 1 , xiaotu = 0, chengtu = 0 ;
+        for(var i= 1; i<= month; i++){
+            var now_youtu = xiaotu + chengtu ;
+            var now_xiaotu = youtu ;
+            var now_chengtu = xiaotu + chengtu;
+            var youtu =now_youtu;
+            var xiaotu = now_xiaotu;
+            var chengtu = now_chengtu;
+        }
+        console.log("幼兔:"+ now_youtu,"小兔:"+now_xiaotu ,"成兔:"+ now_chengtu)
+    }
+</script>
+</html>
