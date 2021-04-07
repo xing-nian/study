@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>求长方形对角线</title>
+  </head>
+  <body></body>
+  <script>
+    var x = prompt("请输入长方形的宽");
+    if (isNaN(x)) {
+      alert("请输入正确的格式");
+    }
+    var y = prompt("请输入长方形的高");
+    if (isNaN(y)) {
+      alert("请输入正确的格式");
+    } else {
+      var z = Math.abs(Math.sqrt(Math.pow(x, 2) + Math.pow(y, 2)));
+      alert("长方形的对角线长度为 " + z);
+    }
+  </script>
+</html>

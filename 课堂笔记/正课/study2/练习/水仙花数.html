@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>水仙花数</title>
+  </head>
+  <body>
+    水仙花数也称为超完全数字不变数、自幂数、阿姆斯壮数、阿姆是特朗数。
+    水仙花数是指一个三位数，每个位数上数字的3次幂之和等于数字它本身。
+    水仙花数是自幂数的一种，三位的三次自幂数才叫做水仙花数；三位的水仙花数总够有4个：153,370,371,407
+  </body>
+  <script>
+    for (i = 100; i <= 999; i++) {
+      var x = i % 10; //个位数    parseInt 数字取整
+      var y = parseInt(i / 10) % 10; //十位数
+      var z = parseInt(i / 100); //百位数
+
+      if (x * x * x + y * y * y + z * z * z == i) {
+        console.log(i);
+      }
+    }
+  </script>
+</html>

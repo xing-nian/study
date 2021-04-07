@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>值类型和引用类型</title>
+</head>
+<body>
+    <img src="存储方式.png" alt="">
+</body>
+<script>
+    // 值类型 ： number  string  boolean  null  undefined    存储在栈中
+    // 引用类型 ： array  object    存储在堆中
+
+    var str = 'hello';
+    var str2 = str;
+    str = 'world';
+    console.log(str2);
+
+    var arr = [1,3,5,6];
+    var arr2 = arr ;
+    arr[0] = 100;
+    console.log(arr2);
+
+    /*
+    值类型:存储时,变量中存储得是值本身 ,存储在栈中.
+    引用类型:在存储时,变量中存储得失 指针地址 存储在栈中 ,而值存储在堆中.
+
+    栈                                   堆
+    str    'hello'-->'world'
+    str 2  'hello'
+
+    arr  指针地址1                         [1,3,5,6]
+    arr2 指针地址1
+    
+    */
+</script>
+</html>

@@ -36,12 +36,26 @@
         // console.log(num);
 
         //  珠穆拉玛峰
-        var y= 0
-        for( var x = 0.00001; x<=8848; x*=2){
-                  y++
-        }
-        console.log(y);
+        // var y= 0
+        // for( var x = 0.00001; x<=8848; x*=2){
+        //           y++
+        // }
+        // console.log(y);
 
+        // var y = 0 ;
+        // var x = 0.00001;
+        // while(x<=8848){
+        //   y++;
+        //   x*=2;
+        // }
+        // console.log(y);
+
+        // 输入正确的工资
+        var gongzi = prompt('请输入工资')
+        while(isNaN(gongzi*1)){
+          alert('请输入正确的数字');
+          gongzi=prompt('请输入工资');
+        }
 
          </script>
 </html>

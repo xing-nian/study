@@ -135,3 +135,104 @@
                   }
 ```
 
+# 日期：4月7号
+
+### for in 遍历数组
+
+```
+     var arr = ['a','b','c','d'];
+      for(var i in arr){
+      console.log(i);// i 索引
+      }
+```
+
+### while循环
+
+```
+for(var i = 0; i< 10; i++){
+
+ //先判断，后执行   
+  }
+  var  j = 0;
+  while(j<10){
+      console.log(j);
+      j++
+  };
+
+
+ //先执行后判断  ,至少会执行一次
+   var a = 0;
+   do{
+       console.log(a);
+       a++
+   }while(a<10)            
+```
+
+### 值类型和引用类型
+
+```
+ // 值类型 ： number  string  boolean  null  undefined    存储在栈中
+ // 引用类型 ： array  object    存储在堆中
+ // 值类型:存储时,变量中存储得是值本身 ,存储在栈中.
+ // 引用类型:在存储时,变量中存储得失 指针地址 存储在栈中 ,而值存储在堆中.
+ 
+    栈                                       堆
+    str    'hello'-->'world'
+    str 2  'hello'
+
+    arr  指针地址1                         [1,3,5,6]
+    arr2 指针地址1
+
+```
+
+### 类型转换
+
+```
+1.转换为布尔值  Boolean()
+
+2.转换为number类型    
+(1)Number() 如果不是纯数字的字符串, 转换后是NaN
+(2)parseInt() 整形  parseFloat() 浮点型
+从第一位开始到第一位非数字的字符结束,提取出来字符串中开头位置的数字.
+
+3.转换为字符串 toString()
+例如：num.toString();
+
+     
+```
+
+### Math对象
+
+```
+    Math.round() 四舍五入方法
+    console.log(Math.round(num2));
+
+    Math.ceil() 向上求整
+    console.log(Math.ceil(num2));  
+
+    Math.floor() 向下求整
+    console.log(Math.floor(num2)); 
+
+    Math.abs() 求绝对值
+    console.log(Math.abs(num3)); 
+
+    Math.max()  Math.min() 求最大值 最小值
+    console.log(Math.max(100,62,55,33)); 
+    console.log(Math.min(100,62,55,33)); 
+
+    Math.pow()幂
+    console.log(Math.pow(5,3)); 
+    
+    Math.sqrt() 开平方
+    console.log(Math.sqrt(25)); 
+
+    Math.PI   π = 3.1415926
+    console.log(Math.PI); 
+
+    正切tan  正弦sin   余弦cos
+      console.log(Math.tan(Math.PI/4)); 
+
+    Math.random() 随机数 [0  1) 包含0,不包含1
+     console.log(Math.random());
+```
+

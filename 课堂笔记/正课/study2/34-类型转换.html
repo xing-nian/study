@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>类型转换</title>
+</head>
+<body>
+    
+</body>
+<script>
+    // false  0  null  undefined  NaN  ''
+ // 1.转换为布尔值  Boolean()
+    Boolean(0);
+    var res = Boolean(0);
+    console.log(res);
+    console.log(typeof(res));
+
+// 2.转换为number类型
+//   (1) Number() 如果不是纯数字的字符串, 转换后是NaN
+var  x = '1200',y = '1200a', a ='1200.98元';
+// var res2 = Number(x);
+// var res3 = Number(y);
+// console.log(typeof(res2));
+// console.log(res2);
+// console.log(typeof res3);
+// console.log(res3);
+//   (2)parseInt() 整形  parseFloat() 浮点型
+// 从第一位开始到第一位非数字的字符结束,提取出来字符串中开头位置的数字.
+var res3 = parseInt(y);
+console.log(res3);
+var res4 = parseFloat(a);
+console.log(res4);
+
+// 3.转换为字符串 toString()
+var num = 100,flag =true;
+var res5 = num.toString();
+var res6 = flag.toString();
+console.log(res5);
+console.log(typeof res5);
+console.log(res6);
+console.log(typeof res6);
+</script>
+</html>

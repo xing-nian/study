@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>遍历对象</title>
+    <title>检验属性是否存在</title>
 </head>
 <body>
     
@@ -17,13 +17,13 @@
         price:'123万',
         from:'德国'
     }
+    var arr =prompt('输入属性名')
   // for  in   遍历对象
   for(var key in car){
-      // key : 代表属性名
-      // car : 代表对象
-      // car.key  遍历对象时，不能使用  对象，属性名  访问属性  ,只能用  对象[key]来访问
-      // console.log(key); 
-      console.log(key + ':'+ car[key]);  
+   var x= key + ':'+ car[key];
+      console.log(x); 
+      
       }
+      arr in car == true ? alert('存在该属性') :alert('不存在该属性');
 </script>
 </html>
