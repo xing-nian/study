@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data日期对象</title>
+</head>
+<body>
+    
+</body>
+<script>
+    // 获取日期对象（当前系统的标准时间）
+     var d =new Date();
+     console.log(d);
+
+     //获取年份
+     var year = d.getFullYear();
+     console.log(year);
+    // 获取月份  注意：月份是从0开始计算；
+     var month = d.getMonth() + 1;
+     if(month<10){
+         month="0"+month;
+     }
+     console.log(month);
+    //  日
+    var date = d.getDate();
+    if(date<10){
+        date="0"+date;
+     }
+    console.log(date);
+    // 星期 星期一 - 星期六： 1-6   星期日：0
+    var week = d.getDay()
+    if (week == 0){
+        var week ='星期日';
+    };
+    if (week == 1){
+        var week ='星期一';
+    };
+    if (week == 2){
+        var week ='星期二';
+    };
+    if (week == 3){
+        var week ='星期三';
+    };
+    if (week == 4){
+        var week ='星期四';
+    };
+    if (week == 5){
+        var week ='星期五';
+    };
+    if (week == 6){
+        var week ='星期六';
+    };
+    console.log(week);
+    // 时
+    var h = d.getHours();
+    if(h<10){
+        h="0"+h;
+     }
+    console.log(h);
+    // 分
+    var m = d.getMinutes();
+    m<10 ?m = '0'+m :m ;
+    console.log(m);
+    // 秒
+    var s = d.getSeconds();
+    s<10 ? s ='0'+s :s ;
+    console.log(s);
+    var sj = year+'-'+month+'-'+date+' '+h+ ':'+ m +':'+ s +"  "+week;
+    console.log(sj);
+    document.write(sj);
+</script>
+</html>

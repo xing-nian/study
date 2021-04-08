@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>深拷贝</title>
+</head>
+<body>
+    
+</body>
+<script>
+    
+    var obj = {
+        name: 'Jon',
+        age:18,
+        isMale:true,
+        hobbies:['吃饭','睡觉','打豆豆']
+    }
+    var obj2 = {};
+    obj2.hobbies = [];
+    for (var key in obj){
+        if(obj[key] instanceof Array){
+            obj2[key]= [];
+            for(var i = 0 ;i<obj[key].length;i++){
+                obj2[key][i]=obj[key][i];
+            }
+        }else{
+                obj2[key]=obj[key]
+            
+        }
+    
+        }
+    
+        obj.hobbies[0]='sport'
+        console.log(obj2);
+
+            // var arr = [];
+            // console.log(typeof arr);
+            // console.log(typeof obj);
+            // console.log(arr instanceof Array);
+            // console.log(obj instanceof Array);
+</script>
+</html>

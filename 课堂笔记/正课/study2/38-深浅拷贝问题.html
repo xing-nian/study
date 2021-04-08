@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>深浅拷贝问题</title>
+</head>
+<body>
+    
+</body>
+<script>
+    // 值类型和引用类型
+    // 值类型：在存储的时候，变量存储的是值本身，存储在栈内存中
+    // 引用类型：在存储时，变量存储的是指针地址，指针地址存储在栈中，而值存储在堆内存中.
+ 
+    // 深浅拷贝只针对引用类型，值类型不存在深浅拷贝问题。
+    // 什么是深拷贝？ 什么是浅拷贝？
+    // var car1 ={
+    //     name:'保驰捷',
+    //     color:'red',
+    //     model:'911',
+    //     price:'110万'
+
+    // }
+    // 浅拷贝 :只拷贝指针地址  浅复制只会将对象的各个属性进行依次复制，并不会进行递归复制
+    // var car2 = car1;
+    // console.log(car2);
+    // car1['from']='德国';
+    // console.log(car2);
+    // 深拷贝 :不仅将原对象的各个属性逐个复制出去，而且将原对象各个属性所包含的对象也依次采用深复制的方法递归复制到新对象上。这就不会存在上面 obj 和 shallowObj 的 arr 属性指向同一个对象的问题。
+    // var car2 = {};
+    // for (var key in car1){
+    //     // car2.name = "保驰捷"
+    //     // car2.color = "red"
+    //     car2[key] = car1[key];
+        
+    // }
+    // car1['from']='德国';
+    // console.log(car2);
+
+    var arr2 = [];
+    var arr1 = ['a','b','c'];
+    for(i=0;i<arr1.length;i++){
+        arr2[i] = arr1[i];
+    }
+    console.log(arr1);
+    arr1[0]= '2';
+    console.log(arr2);
+</script>
+</html>

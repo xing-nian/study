@@ -11,26 +11,41 @@
 </body>
 <script>
           
-          var arr = [];
-          var x =parseInt(Math.random()*11)+10;
-          alert('会是那六个数呢？')
-          for(i=1; i<=6 ; i++){
-          arr.push(x)
-          var x= parseInt(Math.random()*11)+10;
-        //   for(e=1;e++;){
-        //     var x= parseInt(Math.random()*11)+10;
-        //     if(x == x){
-        //         continue;
-        //     }
-        //     else{
-        //         var x = x;
-        //         break;
-        //     }
-        //   }
-          }
-         alert(arr)
-         console.log(arr); 
+//           var arr = [];
+//           var x =parseInt(Math.random()*11)+10;
+//           alert('会是那六个数呢？')
+//           for(i=1; i<=6 ; i++){
+//           var x= parseInt(Math.random()*11)+10;
+//           var flag = true; //布尔值
+//            for(e=0;e<arr.length;e++){
 
+// }
+
+//          alert(arr)
+//          console.log(arr); 
+
+
+         var arr = [];
+         var x =parseInt(Math.random()*11)+10;
+         alert('会是那六个数呢？')
+         var i = 0;
+         var e = 0;
+         while(i<6){
+          var x= parseInt(Math.random()*11)+10;
+          var flag = true; //布尔值
+          for(e=0;e<arr.length;e++)
+             if(arr[e]=== x){
+             flag= false;
+             i--;
+             break;
+             }
+         if(flag == true){
+          arr[arr.length]= x;
+     }
+          i++;
+         }
+         alert(arr)
+//          console.log(arr); 
           
 </script>
 </html>
