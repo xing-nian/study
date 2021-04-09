@@ -308,7 +308,7 @@ for(var i = 0; i< 10; i++){
    var ms = Date.parse(d);
    
 // 例如：计算现在到2021-5-1 00:00:00 的倒计时
-var d2 = new Date('2021-5-1 00:00:00')
+   var d2 = new Date('2021-5-1 00:00:00')
         // console.log(d2);
         var ms2 = d2.getTime();
         console.log(ms2);
@@ -432,6 +432,65 @@ var str = '天朗气清 我很不好';
     /*
      slice   substr  split  replace  toUpperCase  toLowerCase  indexOf
     */
+
+```
+
+### 日期：4月9号
+
+### 数组对象
+
+```
+ //1. 新增元素
+    // 后面追加
+    arr.push('f');
+
+    // 前面添加
+    arr.unshift('0')
+
+ //2. 删除元素
+    //后面删除
+    arr.pop()        //删除后面一个元素
+    // 从前面删除
+    arr.shift()      //删除前面一个元素
+
+    arr.splice(2,1)  //从某个位置删除几位
+
+    arr.splice(2,1, 'y','z','s') //从某个位置删除几位元素并添加某些元素
+    console.log(arr);
+
+    var arr1 = ['border','left','color']
+    // 以指定字符将数组中元素拼接成字符串
+    arr1.join('-');
+    console.log(arr1.join('-'));
+
+ //3. 颠倒数组中的元素
+        arr.reverse();
+       console.log(arr);
+
+ //4. 合并数组
+    var arr1 = [1,2,3];
+    var arr2 = [4,5,6];
+    var arr3 = [7,8,9];
+    console.log(arr1.concat(arr2,arr3));
+    console.log(arr1);
+
+ //5. 排序
+    var arr1 = [3, 1, 4, 6, 8, 7, 2, "a", "f", "b"];
+    console.log(arr1.sort());
+
+    arr1.sort(function (a, b) {
+      if (a < b) {
+        //a>b升序   a<b 降序
+        return 1; //换位
+      } else {
+        return -1; //不换位
+      }
+    });
+     console.log(arr1);
+
+ //6.截取数组中的元素 包含开始 不包含结束位置
+    console.log(arr.slice(2,4));
+
 
 ```
 
