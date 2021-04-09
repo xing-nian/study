@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>价格排序</title>
+</head>
+<body>
+    
+</body>
+<script>
+     var arr = [
+         {
+             naem:'苹果',
+             price:3.5
+         }, {
+             naem:'香蕉',
+             price:4.5
+         }, {
+             naem:'西瓜',
+             price:8.5
+         }, {
+             naem:'橘子',
+             price:3.2
+         }, {
+             naem:'阿拉丁',
+             price:0.5
+         },
+     ]
+     
+     arr.sort(function (a , b) {
+         
+      if (a.price < b.price) {
+        //a>b升序   a<b 降序
+        return 1; //换位
+      } else {
+        return -1; //不换位
+      }
+    });
+    console.log(arr);
+</script>
+</html>

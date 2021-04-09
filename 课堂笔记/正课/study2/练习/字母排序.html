@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>字母排序</title>
+</head>
+<body>
+    
+</body>
+<script>
+       var arr = ['e','a','u','P','Z','z','y','i','B']
+    //    按照小写进行排序
+    console.log(arr.sort());
+    arr.sort(function(a,b){
+        a = a.toLocaleLowerCase();
+        b = b.toLocaleLowerCase();
+        if (a > b){
+            return 1 ;
+        }else{
+            return -1 ;
+        }
+    });
+       
+</script>
+</html>

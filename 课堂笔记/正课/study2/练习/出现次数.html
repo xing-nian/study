@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>出现次数最多的字符</title>
+</head>
+<body>
+    
+</body>
+<script>
+    // var  str = 'qwssweqatsssrw';
+    // var  arr = [];
+    // for(var i= 0; i<str.length; i++){
+        //判断arr中是否存在某个元素
+    //     var flag = true;
+    //     for(var j = 0 ; j<arr.length; j++){
+    //         var obj = arr[j].code;
+            
+    //         if(obj == str[i]){
+    //             // 数组中是否存在该元素
+    //             arr[j].num++;
+    //             flag =false;
+    //             break;
+    //         }
+    //         }
+    //        //验证完毕，如果flag的值没有发生改变
+    //        //说明数组中不存在该元素
+    //        //此时往数组中添加对象，如:{code : 'q' ,num: 1}
+    //         if(flag){
+    //             arr.push({code:str[i],num:1})
+    //         }
+    //     }
+    //     arr.sort(function (a, b) {
+    //   if (a.num < b.num) {
+    //     //a>b升序   a<b 降序
+    //     return 1; //换位
+    //   } else {
+    //     return -1; //不换位
+    //   }
+    // });
+    //  console.log(arr);
+
+   
+    var arr = [1,2,3,4,5,6,7,8,9,0]
+//要求:从数组中随机抽出6个【不重复】的数
+for(var i = 0; i < 6;i++){
+//随机一个索引[e arr.length-1]
+var index = Math.floor(Math.random()*arr.length)
+var item = arr[index];
+document.write(`<span>${item}</span>`);
+// 为了避免下次又取到该元素item删除它
+arr.splice( index,1); 
+}
+
+   
+</script>
+</html>

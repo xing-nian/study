@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>驼峰命名转换</title>
+</head>
+<body>
+    border-left-color --> borderLeftColor
+</body>
+<script>
+     var str = prompt('请输入要转为驼峰命名法的字符串')
+     console.log(str.split('-'));
+     var str1 =str.split('-')
+     for(i=1 ;i<str1.length;i++){
+       
+        str1[i]=str1[i][0].toUpperCase()+str1[i].slice(1); //从第二个值 首字符转为大写 +索引从第二个字符开始的字符串
+        
+    }
+     
+     console.log(str1);
+     var str =str1.toString()
+     str = str.replace(/,/g,"");
+     console.log(str);
+     alert('转换结果为  '+str)
+</script>
+</html>

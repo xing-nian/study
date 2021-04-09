@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>凤凰替换星星</title>
+</head>
+<body>
+    
+</body>
+<script>
+    var str ='粉红墙上画凤凰 粉红墙上画凤凰，凤凰画在粉红墙。红凤凰、粉凤凰，红粉凤凰、花凤凰。'
+    // str = str.replace(/凤凰/g,'**') //直接替换
+    var  s = '粉红墙'
+    
+    while(str.indexOf(s) !== -1){  //如果返回的值是-1 说明字符串中没有某些字符
+       var s2 = '';
+      //  根据s的长度来替换*
+       for (var i = 0; i< s.length;i++){
+         s2+="*";
+       }
+      str = str.replace(s,s2);
+    }
+    console.log(str);
+</script>
+</html>

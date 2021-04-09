@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>判断字符出现的次数最多</title>
+</head>
+<body>
+    
+</body>
+<script>
+    var str = 'weqweqweq';
+    var arr = str.split('');
+    // 给对象obj 添加属性 ,先判断obj忠实粉又该属性 如果没有,设置为1,如若已有自增1
+    var obj ={};
+    for(i= 0; i<arr.length; i++){
+        if(obj[arr[i]] ===undefined){
+            obj[arr[i]] = 1;
+        }else{
+            obj[arr[i]]+= 1;
+        }
+    }
+    
+    var num = 0;
+    var zimu ='';
+    for(var key in obj){
+        if(obj[key]>num){
+           num = obj[key]
+           zimu =key;
+           console.log('出现最多次数:'+num+'  字符是:'+ key);
+        }
+    }
+    // 把最大值相等的也挑出来
+    // var obj2 = {};
+    // for(var key in obj2){
+    //     if(obj2[key] == num){
+    //         obj2[key] =obj[key];
+           
+    //     }
+    // }
+//     console.log('出现最多次数:'+num+'  字符是:'+obj2[key]);
+// </script>
+
+</html>
