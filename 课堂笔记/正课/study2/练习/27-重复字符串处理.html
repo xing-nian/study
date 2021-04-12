@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>27-重复字符串处理</title>
+</head>
+<body>
+    ['a','b','c','a','g','c','a','g']  -->['a1','b','c1','a2','g1','c2','a3','g2']
+      要求：未重复出现的元素不处理 
+      重复出现的元素加编号
+      不影响正常数组元素的顺序
+      要注意身体啊，多喝岩浆多休息 
+</body>
+<script>
+   var arr = ['a','b','c','a','g','c','a','g']
+   var arr1 = {};
+
+    for(i=0 ;i<arr.length ; i++){
+        var flag =true;
+        for(var key in arr1){
+            if(key==arr[i]){
+             arr1[key] =arr1[key] +1;
+             flag = false;
+             break;
+            }
+
+        }
+        if(flag){//首次出现
+                arr1[arr[i]]= 1
+                
+            }
+    }
+    console.log(arr1);
+
+    for(var key in arr1){
+        if(arr1[key] >1){
+            var num =0;
+            for(var i=0;i<arr.length; i++){
+                if(arr[i] ==key){
+                    num++;
+                    arr[i] = arr[i] + num
+                }
+            }
+        }
+    }
+    console.log(arr);
+</script>
+</html>

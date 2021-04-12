@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>打乱数组</title>
+</head>
+<body>
+    
+</body>
+<script>
+     var arr1 = [ 'a','c','b','a','a','b'];
+     var arr2 = [];
+     var count =arr1.length
+     for(var i=0; i<count;i++){
+      var randomIndex = Math.floor(Math.random( )*arr1.length);
+      var item = arr1[randomIndex];
+       arr2.push(item);
+       arr1.splice(randomIndex,1);
+       }
+      console.log(arr2);
+
+</script>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>回文字符串的判定</title>
+</head>
+<body>
+    
+</body>
+<script>
+    var s = '上海自来水来自海上';
+var len = s.length;
+var mid = parseInt(len/2);
+var flag = true;
+ 
+for (let i = 0; i < mid; i++) {
+  let head = s[i];
+  let tail = s[len - i - 1];
+	
+  if (head !== tail) {
+    flag = false;
+    alert('不是回文字符串')
+    break;
+    
+  }
+}
+ if(flag){
+   alert('是回文字符串')
+ }
+console.log(flag);
+
+</script>
+</html>

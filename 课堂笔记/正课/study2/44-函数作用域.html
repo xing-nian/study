@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>函数作用域</title>
+</head>
+<body>
+    
+</body>
+<script>
+    //    作用域   全局作用域和 局部作用域   局部指的是函数体内部
+    var y = 20 ;  //全局作用域  在任何地方都可以使用
+
+    function fun1(){
+        var x = 10;  //局部作用域   只能在当前函数体内使用
+        console.log(x+y);
+    }
+fun1();
+console.log(x+y);   // 局部 放在全局 未定义
+</script>
+</html>

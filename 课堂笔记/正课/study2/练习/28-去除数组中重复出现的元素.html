@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>去除数组中重复出现的元素</title>
+</head>
+<body>
+    
+</body>
+<script>
+    // indexOf 检测方法
+    // 
+    // var arr1 = [];
+    
+    // for(i=0 ; i<arr.length ; i++){
+    //     for(var k in arr){
+    //         //该元素在arr1内部不存在才允许追加
+    //         if(arr1.indexOf(arr[i])==-1){
+    //             arr1.push(arr[i]);
+    //         }
+    //     }
+    // }
+    // console.log(arr1)
+
+//     var arr  = ['a','b','a','c','b'];
+//     var arr1 = []
+//     var flag =true;
+//     for(i=0; i<arr.length ; i++){
+//         for(var k in arr){
+//             if(arr1[k-] == arr[i]){
+//                 flag = false;
+//                 break;
+//             }
+//         }
+//         if(flag){
+//             arr1.push(arr[i])
+//         }
+//     }
+//    console.log(arr1);
+
+//   删除方法
+   var arr1 = [ 'a' , 'c' , 'b ' , 'a' , 'a' ,'a', 'j', 'k ' ];
+       for(var i=0;i<arr1.length;i++){
+         var item1 = arr1[i];
+          for(var j=i+1;j<arr1.length;j++){
+            var item2 = arr1[j];
+             if ( item1 === item2) {
+        //删除元素
+             arr1.splice(j,1);j--;
+         }
+       }
+     }
+         console.log( arr1);
+          
+</script>
+</html>

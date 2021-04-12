@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>冒泡排序</title>
+</head>
+<body>
+    
+</body>
+<script>
+      
+        // [10 , 2 , 6 , 9 , 11 ,5]    length -1
+        // 升序  从小到大
+
+        // 冒泡排序 ： 比较相邻元素，如果第一个元素比第二个元素大，就交换两者的位置
+
+        /*
+        第一轮   5
+        10 vs 2   交换位置   [2,10,6,9,11,5]
+        10 vs 6   交换位置   [2,6,10,9,11,5]
+        10 vs 9   交换位置   [2,6,9,10,11,5]
+        10 vs 11  不交换位置 [2,6,9,10,11,5]
+        11 vs 5   交换位置   [2,6,9,10,5,11]  
+        结论: 最大值就位
+
+        第二轮   4
+        2 vs 6    [2,6,9,10,5,11]
+        6 vs 9    [2,6,9,10,5,11]
+        9 vs 10   [2,6,9,10,5,11]
+        10 vs 5   [2,6,9,5,10,11]
+        10 vs 11   本次可以删除
+
+        第三轮    3
+        2 vs 6    [2,6,9,5,10,11]
+        6 vs 9    [2,6,9,5,10,11]
+        9 vs 5    [2,6,5,9,10,11]
+        9 vs 10    本次可以删除
+
+        第四轮    2
+         2 vs 6    [2,6,5,9,10,11]
+         6 vs 5    [2,5,6,9,10,11]
+         6 vs 9     本次可以删除
+
+        第五轮    1
+        2 vs 5      [2,5,6,9,10,11]
+       
+        外层循环控制   轮次
+        内层循环控制   每轮的比较次数
+         
+        */ 
+
+        // 交换两个变量的值
+        // var a = 10;
+        // var b = 20;
+        // var c = a
+        //  a = b ;
+        //  b = c ;
+
+        var arr= [10 , 2 , 6 , 9 , 11 ,5]
+        for(var i = 0 ;i<arr.length-1;i++){
+            for(var j = 0;j<arr.length-1-i;j++){
+                if(arr[j] > arr[j+1]){
+                    //交换两个元素位置
+                    var temp = arr[j];
+                    arr[j] = arr[j+1];
+                    arr[j+1] = temp;
+                }
+            }
+        }
+          
+        console.log(arr);
+        
+</script>
+</html>

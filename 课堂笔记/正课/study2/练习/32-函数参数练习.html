@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>函数参数</title>
+</head>
+<body>
+    
+</body>
+<script>
+      // 1. 求任意两个数之间的随机整数
+      // [1 8 ]  [9 15]
+
+    //   function fun1(a,b){
+    //     num=  Math.floor(Math.random()*(b-a+1)+a)
+    //     console.log(num);
+    //   }
+    //   fun1(23,50);
+      
+
+      //2.[1,2,3,2,3,4,5,1]
+
+      //2.数组去重..
+      function fun2(x){
+           
+           for(var i =0; i<x.length; i++){
+               var item = x[i];
+               for(var j =i+1 ; j<x.length ;j++){
+                   var item2 = x[j]
+                   if(item == item2){
+                       x.splice(j,1);
+                       j--;
+                   }
+               }
+           }
+           console.log(x);
+      }
+fun2([1,5,2,3,4,7,9,2,3,4]);
+</script>
+</html>

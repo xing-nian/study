@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>循环排列</title>
+</head>
+<body>
+    思考： 用循环的方式 对数组中元素进行排序 [10,6,2,5,9,11,14,12]
+    var arr = [45,6,456,21,10,451244,74568,34,41265,2456,7,8456];
+    var x = arr[0];
+    for(var i=1;i<arr.length; i++){
+        var y = arr[i];
+        if (y>x){
+          var x = y;
+        }
+    }
+</body>
+<script>
+//    var  arr = [10,6,2,5,9,11,14,12];
+//   逻辑错误 //
+//    for(i =0 ; i<arr.length; i++){
+//         var x = arr[0];
+//        var y = arr[1]
+       
+//        if (y>x){
+//           arr.push(y);
+//           arr.splice(1,1)
+         
+//           }
+//           if(x>y){
+//             arr.push(x);
+//           arr.splice(0,1)
+//           }
+//    }
+//    console.log(arr);
+
+var  arr = [10,6,2,5,9,11,14,12];
+//  for(i=arr.length-1;i>=0;i--){
+//     for(j=0;j<i;j++){ 
+//         if(arr[j+1]>arr[j]) {
+//             change=arr[j+1];
+//             arr[j+1]=arr[j];
+//             arr[j]=change
+//         }
+//     }
+// };
+// console.log(arr);   //降序
+
+ for(i=arr.length-1;i>=0;i--){
+    for(j=0;j<i;j++){ 
+        if(arr[j+1]<arr[j]){
+            change=arr[j+1];
+            arr[j+1]=arr[j];
+            arr[j]=change
+            }
+        }
+    };
+    console.log(arr); //升序  
+</script>
+</html>

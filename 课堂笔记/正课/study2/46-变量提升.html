@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>变量提升</title>
+</head>
+<body>
+    
+</body>
+<script>
+    把变量的声明提升到使用之前
+    console.log(str);   // undefined
+    var str = 'hello';
+    等同于
+    var str;
+    console.log(str);
+    str = 'hello';
+
+var x =300;
+    function fun1(){
+        
+        console.log(x);   //undefined    
+        var x =3000;
+    }
+    fun1();
+</script>
+</html>
