@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>设置标签的属性</title>
+    <style>
+        .box{
+            width: 100px;
+            height: 100px;
+            border: 1px solid red;
+
+        }
+        .active{
+            width: 100px;
+            background-color: green;
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <a href="https://www.baidu.com" id="link" class="">百度</a>
+    <img src="" id="pic" alt="">
+    <input type="text" value="" placeholder="请输入用户名"><br>
+    <input type="checkbox" name="fruit" id=""  checked>苹果<br>
+    <input type="checkbox" name="fruit" id="" >苹果1<br>
+    <input type="checkbox" name="fruit" id="" >苹果2<br>
+
+    <select name="" id="sele">
+        <option value="" selected>选项1</option>
+        <option value="">选项2</option>
+        <option value="">选项3</option>
+        <option value="">选项4</option>
+    </select><br>
+
+    <div class="box">你好</div>
+</body>
+<script>
+     var a = document.getElementById('link');
+     var img =document.getElementById('pic');
+     var checkboxs = document.getElementsByName('fruit')
+     var select = document.getElementById('sele')
+     var div = document.getElementsByClassName('box')[0];
+    //  获取标签属性  ele.属性
+    console.log(a.href);
+    a.href = "https://www.sina.com.cn"
+    img.src ='存储方式.png'
+    img.style.width = '100px'
+
+    // checked 属性  通过true/false控制 勾选状态
+    console.log(checkboxs[0].checked);  // true
+    console.log(checkboxs[0].checked);  // false
+    checkboxs[2].checked = true;
+    select[2].selected = true;
+
+
+    // 类型
+    div.className = "active";
+    div.className = 'box active'
+</script>
+</html>

@@ -11,18 +11,18 @@
 </body>
 <script>
     // indexOf 检测方法
-    // 
-    // var arr1 = [];
+    var arr = [ 'a' , 'c' , 'b ' , 'a' , 'a' ,'a', 'j', 'k ' ];
+    var arr1 = [];
     
-    // for(i=0 ; i<arr.length ; i++){
-    //     for(var k in arr){
-    //         //该元素在arr1内部不存在才允许追加
-    //         if(arr1.indexOf(arr[i])==-1){
-    //             arr1.push(arr[i]);
-    //         }
-    //     }
-    // }
-    // console.log(arr1)
+    for(i=0 ; i<arr.length ; i++){
+        for(var k in arr){
+            //该元素在arr1内部不存在才允许追加
+            if(arr1.indexOf(arr[i])==-1){
+                arr1.push(arr[i]);
+            }
+        }
+    }
+    console.log(arr1)
 
 //     var arr  = ['a','b','a','c','b'];
 //     var arr1 = []
@@ -41,18 +41,18 @@
 //    console.log(arr1);
 
 //   删除方法
-   var arr1 = [ 'a' , 'c' , 'b ' , 'a' , 'a' ,'a', 'j', 'k ' ];
-       for(var i=0;i<arr1.length;i++){
-         var item1 = arr1[i];
-          for(var j=i+1;j<arr1.length;j++){
-            var item2 = arr1[j];
-             if ( item1 === item2) {
-        //删除元素
-             arr1.splice(j,1);j--;
-         }
-       }
-     }
-         console.log( arr1);
+  //  var arr1 = [ 'a' , 'c' , 'b ' , 'a' , 'a' ,'a', 'j', 'k ' ];
+  //      for(var i=0;i<arr1.length;i++){
+  //        var item1 = arr1[i];
+  //         for(var j=i+1;j<arr1.length;j++){
+  //           var item2 = arr1[j];
+  //            if ( item1 === item2) {
+  //       //删除元素
+  //            arr1.splice(j,1);j--;
+  //        }
+  //      }
+  //    }
+  //        console.log( arr1);
           
 </script>
 </html>

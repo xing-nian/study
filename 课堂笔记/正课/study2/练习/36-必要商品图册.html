@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>必要商品图册</title>
+    <style>
+       
+        ul{
+            list-style: none;
+        }
+        li{
+            display: block;
+            position: relative;
+            left: 1000px;
+            top: -335px;
+        }
+        img{
+            width: 80px;
+            height: 80px;
+            margin: 5px 0;
+           box-sizing: border-box;
+           border: 1px solid #ccc;
+        }
+        #pic1{
+            width: 460px;
+            height: 460px;
+            position: relative;
+            left: 560px;
+            top: 155px;
+        }
+        
+            
+        
+    </style>
+</head>
+<body>
+      <div>
+          <img id="pic1" src="http://bfs.biyao.com/group1/M00/72/78/rBACW11sxDWAViODABvmZdliW1c154_800x800.jpg" alt="">
+          <ul>
+              <li><img id="li1" src="http://bfs.biyao.com/group1/M00/72/78/rBACW11sxDWAViODABvmZdliW1c154_800x800.jpg" alt=""></li>
+              <li><img id="li2" src="http://bfs.biyao.com/group1/M00/72/78/rBACW11sxDmAZ2btAA--rHIGjQY677_800x800.jpg" alt=""></li>
+              <li><img id="li3" src="http://bfs.biyao.com/group1/M00/72/78/rBACW11sxD6AQnRxABhOVbyyEHA069_800x800.jpg" alt=""></li>
+              <li><img id="li4" src="http://bfs.biyao.com/group1/M00/72/78/rBACW11sxEOAHAZrABlQOBlclAc274_800x800.jpg" alt=""></li>
+              <li><img id="li5" src="http://bfs.biyao.com/group1/M00/72/78/rBACW11sxEeAVUQpAA9CTXhk6D4870_800x800.jpg" alt=""></li>
+          </ul>
+      </div>
+</body>
+<script>
+        var pic1 = document.getElementById('pic1');
+        var li1 = document.getElementById('li1');
+        var li2 = document.getElementById('li2');
+        var li3 = document.getElementById('li3');
+        var li4 = document.getElementById('li4');
+        var li5 = document.getElementById('li5');
+
+        li1.onclick = function(){
+            pic1.src ='http://bfs.biyao.com/group1/M00/72/78/rBACW11sxDWAViODABvmZdliW1c154_800x800.jpg'
+            li1.style.border='1px solid #000';
+            li2.style.border='1px solid #ccc';
+            li3.style.border='1px solid #ccc';
+            li4.style.border='1px solid #ccc';
+            li5.style.border='1px solid #ccc';
+        }
+        li2.onclick = function(){
+            pic1.src ='http://bfs.biyao.com/group1/M00/72/78/rBACW11sxDmAZ2btAA--rHIGjQY677_800x800.jpg'
+            li1.style.border='1px solid #ccc';
+            li2.style.border='1px solid #000';
+            li3.style.border='1px solid #ccc';
+            li4.style.border='1px solid #ccc';
+            li5.style.border='1px solid #ccc';
+        }
+        li3.onclick = function(){
+            pic1.src ='http://bfs.biyao.com/group1/M00/72/78/rBACW11sxD6AQnRxABhOVbyyEHA069_800x800.jpg'
+            li1.style.border='1px solid #ccc';
+            li2.style.border='1px solid #ccc';
+            li3.style.border='1px solid #000';
+            li4.style.border='1px solid #ccc';
+            li5.style.border='1px solid #ccc';
+        }
+        li4.onclick = function(){
+            pic1.src ='http://bfs.biyao.com/group1/M00/72/78/rBACW11sxEOAHAZrABlQOBlclAc274_800x800.jpg'
+            li1.style.border='1px solid #ccc';
+            li2.style.border='1px solid #ccc';
+            li3.style.border='1px solid #ccc';
+            li4.style.border='1px solid #000';
+            li5.style.border='1px solid #ccc';
+        }
+        li5.onclick = function(){
+            pic1.src ='http://bfs.biyao.com/group1/M00/72/78/rBACW11sxEeAVUQpAA9CTXhk6D4870_800x800.jpg'
+            li1.style.border='1px solid #ccc';
+            li2.style.border='1px solid #ccc';
+            li3.style.border='1px solid #ccc';
+            li4.style.border='1px solid #ccc';
+            li5.style.border='1px solid #000';
+        }
+</script> 
+</html>

@@ -187,3 +187,290 @@ function fun1(a,b){   //形参
      //函数体外部不能直接使用sum
 ```
 
+# 4月12号
+
+### DOM选择器
+
+```
+<body>
+    <button>按钮1</button>
+    <button>按钮2</button>
+    <h1 class="title">标题1</h1>
+    <h2 class="title2">标题2</h2>
+    <p id="txt1">一段文本</p>
+    <p id="txt2">一段文本</p>
+    <input type="text" name="username" />
+  </body>
+  <script>
+    //  通过标签名查找元素   Element 元素 TagName 标签名称
+    //   结果是一个集合 (伪数组),要访问具体元素  通过索引访问
+    var btn = document.getElementsByTagName("button");
+    console.log(btn[1]);
+
+    // 一个元素返回的也是集合
+    var h1 = document.getElementsByTagName("h1");
+    console.log(h1[0]);
+
+    // 通过类名查找元素   ClassName 类名
+    // 结果是一个集合  通过索引访问
+    var h = document.getElementsByClassName("title");
+    console.log(h[0]);
+
+    // 通过id来查找元素  id唯一性
+    //  结果是具体的元素
+    var p1 = document.getElementById("txt1");
+    console.log(p1);
+
+    // 通过name属性查找元素
+    // 结果是一个集合
+    var input = document.getElementsByName('username')[0];
+    console.log(input);
+  </script>
+```
+
+### DOM选择器2
+
+```
+<body>
+     <div class="box">
+         <p id = 'txt'>hello</p>
+     </div>
+</body>
+<script>
+    // 嵌套
+    var div = document.getElementsByClassName('box')[0];
+    var p = div.getElementsByTagName('p')[0];
+    console.log(p);
+
+    // 注意: 如果根据id 查找元素,只能使用document调用getElementById()
+    // var p2 = div.getElementById('txt');
+    // console.log(p2);  //报错 无法调用
+</script>
+```
+
+### 对象的方法
+
+```
+<script>
+    var student = {
+        name : 'jon',
+        sex : '男',
+        age:18,
+        // 方法(函数):表示对象的动态行为
+        eat:function(food){
+            console.log('Jon喜欢吃' + food);
+        },
+        hoddies:['a','bc','d']
+    }
+    // 访问对象的属性   .  []
+    student.name 
+    student['name']
+
+    // 访问对象的函数
+    student.eat('水果')
+    student['eat']('肉')
+
+    // Math
+    Math.max(1,2,3,4);
+    Math.PI
+    // 定义函数
+    function fun1(){
+
+    }
+    var fun2 = function(){
+
+    }
+</script>
+```
+
+### 修改DOM样式
+
+```
+.box{
+    width: 200px;
+    height: 200px;
+    background-color: red;
+}
+
+</style>
+<body>
+     <div class="box">
+        <button id = 'btn'>按钮</button>
+     </div>
+</body>
+<script>
+    // var box = document.getElementsByClassName(box)
+    // var btn= box.getElementsByTagName('button')[0];
+
+    var btn = document.getElementById('btn');
+    // 通过js给btn添加样式
+    btn.style.color = 'red';
+    // 带 - 的样式 转换为 驼峰型
+    btn.style.borderLeft ='1px solid red';
+    btn.style.fontSize = '20px'
+```
+
+### 设置样式
+
+```
+<body>
+     <div id="box">hello</div>
+     <div id="nav">world</div>
+</body>
+<script>
+    // 封装一个方法  功能：给指定元素设置样式   参数1：指定元素   参数2：样式
+
+    // 是否要传参 ，传几个参数
+
+    // 是否有返回值 ，返回什么
+
+    function setStyle(eleObj,styleSheet){
+          for(var key in styleSheet){
+          eleObj.style[key] =styleSheet[key];
+          }
+    }
+    //setStyle()
+    var box = document.getElementById('box');
+    //  宽  高   背景色   字体大小   字体颜色
+    var  styleObj= {
+        width:'200px',
+        height:'200px',
+        backgroundColor:'red',
+        fontSize:'18px',
+        color:'#333'
+    }
+    setStyle(box,styleObj);
+
+    var box = document.getElementById('nav');
+    var  styleObj1= {
+        width:'100px',
+        height:'100px',
+        backgroundColor:'pink',
+        fontSize:'12px',
+        color:'#333'
+    }
+    setStyle(nav,styleObj1);
+</script>
+```
+
+### 内容节点
+
+```
+<body>
+    <h1 id="title">hello</h1>
+    <h2>你好</h2>
+    <h3><em>world</em></h3>
+</body>
+<script>
+     var h1 = document.getElementById('title');
+     var h2 = document.getElementsByTagName('h2')[0];
+     var h3 = document.getElementsByTagName('h3')[0];
+    //  设置标签的文本内容
+    h1.innerText = '你好';
+    // 获取标签的文本内容
+    console.log(h2.innerHTML);
+    console.log(h2.innerText);
+    // 可以解析标签 设置标签中的内容
+    h3.innerHTML ='<em>world</em>';
+    console.log(h3.innerHTML);
+
+</script>
+```
+
+### 设置标签的属性
+
+```
+ <style>
+        .box{
+            width: 100px;
+            height: 100px;
+            border: 1px solid red;
+
+        }
+        .active{
+            width: 100px;
+            background-color: green;
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <a href="https://www.baidu.com" id="link" class="">百度</a>
+    <img src="" id="pic" alt="">
+    <input type="text" value="" placeholder="请输入用户名"><br>
+    <input type="checkbox" name="fruit" id=""  checked>苹果<br>
+    <input type="checkbox" name="fruit" id="" >苹果1<br>
+    <input type="checkbox" name="fruit" id="" >苹果2<br>
+
+    <select name="" id="sele">
+        <option value="" selected>选项1</option>
+        <option value="">选项2</option>
+        <option value="">选项3</option>
+        <option value="">选项4</option>
+    </select><br>
+
+    <div class="box">你好</div>
+</body>
+<script>
+     var a = document.getElementById('link');
+     var img =document.getElementById('pic');
+     var checkboxs = document.getElementsByName('fruit')
+     var select = document.getElementById('sele')
+     var div = document.getElementsByClassName('box')[0];
+    //  获取标签属性  ele.属性
+    console.log(a.href);
+    a.href = "https://www.sina.com.cn"
+    img.src ='存储方式.png'
+    img.style.width = '100px'
+
+    // checked 属性  通过true/false控制 勾选状态
+    console.log(checkboxs[0].checked);  // true
+    console.log(checkboxs[0].checked);  // false
+    checkboxs[2].checked = true;
+    select[2].selected = true;
+
+
+    // 类型
+    div.className = "active";
+    div.className = 'box active'
+</script>
+```
+
+### 点击事件
+
+```
+<style>
+        #next{
+            display: inline-block;
+            width: 60px;
+            height: 40px;
+            background-color: #667;
+            color: red;
+            line-height: 40px;
+            text-align: center;
+            cursor: pointer;
+            }
+    </style>
+</head>
+<body>
+    <button id="btn" >按钮</button><br>
+    <span id="next">&gt;</span>
+</body>
+<script>
+    //  获取元素
+    var btn = document.getElementById('btn');
+    // 绑定点击事件  onclick
+    btn.onclick = function(){
+        alert('hello');
+
+    }
+    btn.style.cursor='pointer'
+    var span =document.getElementById('next');
+    span.onclick =function(){
+        alert('我很不好!认真的')
+    }
+
+
+</script>
+```
+

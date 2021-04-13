@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>简易版轮播图</title>
+    <style>
+        img{
+            width: 500px;
+        }
+    </style>
+</head>
+<body>
+    
+    <img  src="" alt="">
+    <button id="btn">下一张</button>
+    <button id="btn1">上一张</button>
+</body>
+<script>
+    var pic = ['a.webp','b.jpg','c.webp','d.webp'];
+    var img = document.getElementsByTagName('img')[0];
+    var btn = document.getElementById('btn');
+    var btn1 = document.getElementById('btn1');
+    var num = 0
+    // 默认显示0.jpg
+    img.src = './img/'+ pic[num];
+    // 绑定点击事件
+    btn.onclick = function(){
+      
+      num++;
+      console.log(num);
+      if(num == 4){
+          num =0;
+      }
+      img.src = './img/'+ pic[num];
+    }
+    btn1.onclick = function(){
+      num--;
+      console.log(num);
+      if(num < 0){
+          num =3;
+      }
+      img.src = './img/'+ pic[num];
+    }
+</script>
+</html>

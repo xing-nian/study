@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>修改DOM样式</title>
+</head>
+<style> 
+.box{
+    width: 200px;
+    height: 200px;
+    background-color: red;
+}
+
+</style>
+<body>
+     <div class="box">
+        <button id = 'btn'>按钮</button>
+     </div>
+</body>
+<script>
+    // var box = document.getElementsByClassName(box)
+    // var btn= box.getElementsByTagName('button')[0];
+
+    var btn = document.getElementById('btn');
+    // 通过js给btn添加样式
+    btn.style.color = 'red';
+    // 带 - 的样式 转换为 驼峰型
+    btn.style.borderLeft ='1px solid red';
+    btn.style.fontSize = '20px'
+    
+</script>
+</html>

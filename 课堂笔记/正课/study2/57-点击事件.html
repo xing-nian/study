@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>点击事件</title>
+    <style>
+        #next{
+            display: inline-block;
+            width: 60px;
+            height: 40px;
+            background-color: #667;
+            color: red;
+            line-height: 40px;
+            text-align: center;
+            cursor: pointer;
+            }
+    </style>
+</head>
+<body>
+    <button id="btn" >按钮</button><br>
+    <span id="next">&gt;</span>
+</body>
+<script>
+    //  获取元素
+    var btn = document.getElementById('btn');
+    // 绑定点击事件  onclick
+    btn.onclick = function(){
+        alert('hello');
+
+    }
+    btn.style.cursor='pointer'
+    var span =document.getElementById('next');
+    span.onclick =function(){
+        alert('我很不好!认真的')
+    }
+
+
+</script>
+</html>

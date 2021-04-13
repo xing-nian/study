@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DOM选择器</title>
+  </head>
+  <body>
+    <button>按钮1</button>
+    <button>按钮2</button>
+    <h1 class="title">标题1</h1>
+    <h2 class="title2">标题2</h2>
+    <p id="txt1">一段文本</p>
+    <p id="txt2">一段文本</p>
+    <input type="text" name="username" />
+  </body>
+  <script>
+    //  通过标签名查找元素   Element 元素 TagName 标签名称
+    //   结果是一个集合 (伪数组),要访问具体元素  通过索引访问
+    var btn = document.getElementsByTagName("button");
+    console.log(btn[1]);
+    
+    // 一个元素返回的也是集合
+    var h1 = document.getElementsByTagName("h1");
+    console.log(h1[0]);
+
+    // 通过类名查找元素   ClassName 类名
+    // 结果是一个集合  通过索引访问
+    var h = document.getElementsByClassName("title");
+    console.log(h[0]);
+
+    // 通过id来查找元素  id唯一性
+    //  结果是具体的元素
+    var p1 = document.getElementById("txt1");
+    console.log(p1);
+
+    // 通过name属性查找元素
+    // 结果是一个集合
+    var input = document.getElementsByName('username')[0];
+    console.log(input);
+  </script>
+</html>

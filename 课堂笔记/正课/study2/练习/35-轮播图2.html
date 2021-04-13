@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>小米轮播图</title>
+    <style>
+      img{
+          width: 1000px;
+          height: 460px;
+          position: relative;
+          left: 300px;
+          top: 100px;
+      }
+      #btn{
+        position: relative;
+        left: -705px; ;
+        top: -125px;
+        width: 41px;
+        height: 69px;
+        outline: none;
+        border:none;
+        cursor: pointer;
+        font-size: 35px;
+        background-color: transparent;
+        color: #ccc;
+      }
+      #btn1{
+        position: relative;
+        left: 209px; ;
+        top: -125px;
+        width: 41px;
+        height: 69px;
+        outline: none;
+        border:none;
+        cursor: pointer;
+        font-size: 35px;
+        background-color: transparent;
+        color:#ccc;
+        
+      }
+      #btn2{
+          height: 12px;
+          width: 12px;
+          border-radius: 7.5px;
+          position: relative;
+          left: 100px;
+          top: 80px;
+          border: 2px solid #333;
+          outline: none;
+          cursor: pointer;
+          padding: 2px;
+          background-color: gray;
+          margin: 0px 5px;
+      }
+      #btn3{
+          height: 12px;
+          width: 12px;
+          border-radius: 7.5px;
+          position: relative;
+          left: 100px;
+          top: 80px;
+          border: 2px solid #333;
+          outline: none;
+          cursor: pointer;
+          padding: 2px;
+          background-color: gray;
+          margin: 0px 5px;
+      }
+      #btn4{
+          height: 12px;
+          width: 12px;
+          border-radius: 7.5px;
+          position: relative;
+          left: 100px;
+          top: 80px;
+          border: 2px solid #333;
+          outline: none;
+          cursor: pointer;
+          padding: 2px;
+          background-color: gray;
+          margin: 0px 5px;
+      }
+      #btn5{
+          height: 12px;
+          width: 12px;
+          border-radius: 7.5px;
+          position: relative;
+          left: 100px;
+          top: 80px;
+          border: 2px solid #333;
+          outline: none;
+          cursor: pointer;
+          padding: 2px;
+          background-color: gray;
+          margin: 0px 5px;
+      }
+      #btn:hover{
+          color: white;
+          background-color:rgba(20,20,20,0.3);
+          font-size: 40px;
+      }
+      #btn1:hover{
+          color: white;
+          background-color:rgba(20,20,20,0.3);
+          font-size: 40px;
+      }
+      #btn2:hover{
+          background-color: white;
+      }
+      #btn3:hover{
+          background-color: white;
+      }
+      #btn4:hover{
+          background-color: white;
+      }
+      #btn5:hover{
+          background-color: white;
+      }
+    </style>
+</head>
+<body>
+    <div>
+    <img  src="" alt="">
+    <button id="btn">&lt;</button>
+    <button id="btn1">&gt;</button>
+    <button id="btn2"></button>
+    <button id="btn3"></button>
+    <button id="btn4"></button>
+    <button id="btn5"></button>
+    </div>
+
+</body>
+<script>
+    var pic = ['a.webp','b.jpg','c.webp','d.webp'];
+    var img = document.getElementsByTagName('img')[0];
+    var btn = document.getElementById('btn');
+    var btn1 = document.getElementById('btn1');
+    var btn2 = document.getElementById('btn2');
+    var btn3 = document.getElementById('btn3');
+    var btn4 = document.getElementById('btn4');
+    var btn5 = document.getElementById('btn5');
+    var num ;
+    num = 0 ;
+    // 默认显示0.jpg
+    img.src = './img/'+ pic[num];
+    // 绑定点击事件
+    btn.onclick = function fun1(){
+      num++;
+     
+      if(num >= 4){
+          num =0;
+      }
+      img.src = './img/'+ pic[num];
+      
+      return num ;
+      
+    }
+    
+    
+    // 点击绑定事件
+    btn1.onclick = function(){
+      num--;
+     
+      if(num <0){
+          num =3;
+      }
+      img.src = './img/'+ pic[num];
+      return num ;
+    }
+   
+    // 点击绑定事件
+    btn2.onclick = function(){
+        num = 0;
+        img.src = './img/'+ pic[num];
+        
+        if(num==0){
+         btn2.style.backgroundColor='white';
+         btn3.style.backgroundColor='gray';
+         btn4.style.backgroundColor='gray';
+         btn5.style.backgroundColor='gray';
+    }
+        
+    
+       
+    }
+    // 点击绑定事件
+    btn3.onclick = function(){
+        num = 1;
+        img.src = './img/'+ pic[num];
+        if(num==1){
+         btn2.style.backgroundColor='gray';
+         btn3.style.backgroundColor='white';
+         btn4.style.backgroundColor='gray';
+         btn5.style.backgroundColor='gray';
+    }
+        
+    }
+    // 点击绑定事件
+    btn4.onclick = function(){
+        num = 2;
+        img.src = './img/'+ pic[num];
+        if(num==2){
+         btn2.style.backgroundColor='gray';
+         btn3.style.backgroundColor='gray';
+         btn4.style.backgroundColor='white';
+         btn5.style.backgroundColor='gray';
+       } 
+    }
+    // 点击绑定事件
+    btn5.onclick = function(){
+        num =3;
+        img.src = './img/'+ pic[num];
+        if(num==3){
+         btn2.style.backgroundColor='gray';
+         btn3.style.backgroundColor='gray';
+         btn4.style.backgroundColor='gray';
+         btn5.style.backgroundColor='white';
+        }
+    }
+    
+    
+    console.log(num);
+</script>
+</html>
