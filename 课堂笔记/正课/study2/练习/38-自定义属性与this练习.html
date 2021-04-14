@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>自定义属性与this练习</title>
+</head>
+<body>
+    <h1 id='title'> hello world </h1>
+    <div>
+        <button data-color="red"  >红色</button>
+        <button data-color="green" >绿色</button>
+        <button data-color="blue" >蓝色</button>
+        <button data-color="yellow" >黄色</button>
+    </div>
+</body>
+<script>
+     
+     
+     var h = document.getElementById('title');
+     var btns = document.getElementsByTagName('button');
+     for(i=0; i<btns.length ;i++){
+        btns[i].onclick = function(){
+        // h.style.color = this.getAttribute('data-color');
+        h.style.color = this.dataset.color;
+     }
+     }
+   
+</script>
+</html>

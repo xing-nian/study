@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>事件函数内部的this指向</title>
+</head>
+<body>
+    <button id="btn">开关</button>
+    <div id="box">hello</div>
+</body>
+<script>
+  var btn =document.getElementById('btn');
+  var div =document.getElementById('box');
+//   绑定点击事件
+btn.onclick = function(){ //内部的this指向当前绑定事件的DOM对象
+    console.log(this);    //button
+}
+btn.click()                //谁调用function this就指向谁
+
+div.onclick = function(){
+    console.log(this);  //div
+}
+
+var obj = {
+    eat:function(){
+        console.log('吃饭');
+    }
+}
+obj.eat();
+obj.say = function(){
+    console.log('hello');
+}
+obj.say();
+</script>
+</html>

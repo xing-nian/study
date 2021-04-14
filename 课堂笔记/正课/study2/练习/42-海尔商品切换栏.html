@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>tab栏切换</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+
+        }
+        ul{
+            list-style: none;
+            margin-bottom: 30px;
+        }
+        .box{
+            width: 1010px;
+            margin: 50px auto;
+            
+            
+        }
+        .tab-nav ul{
+            width: 1000px;
+            height: 60px;
+            
+        }
+        .tab-nav ul li{
+            float: left;
+            
+            border-right: 2px solid #fff;
+            line-height: 60px;
+            width: 250px;
+            background-color: #dadada;
+            text-align: center;
+            box-sizing: border-box;
+            cursor: pointer;
+
+        }
+        .tab-content{
+            position: relative;
+            height: 400px;
+        }
+        .tab-content div{
+            width: 1000px;
+            height: 400px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            
+            
+            display: none;
+        }
+        img{
+            cursor: pointer;
+        }
+        #zz1{
+            position: relative;
+            left: 113px;
+            top: -375px;
+        }
+        #zz2{
+            position: relative;
+            left: 363px;
+            top: -373px;
+        }
+        #zz3{
+            position: relative;
+            left: 612px;
+            top: -374px;
+        }
+        #zz4{
+            position: relative;
+            left: 867px;
+            top: -375px;
+        }
+    </style>
+</head>
+<body>
+      <div class="box">
+          <div class="tab-nav">
+            <ul>
+                <li class="tab-nav-item">商城活动</li>
+                <li class="tab-nav-item">品牌活动</li>
+                <li class="tab-nav-item">海尔社区</li>
+                <li class="tab-nav-item">新浪微博</li>
+            </ul>
+          </div>
+          <div class="tab-content">
+             <div class="tab-con-item"><img src="./images1/1.png" alt=""><img  id="zz1" src="./images1/4.png" alt=""></div>
+             <div class="tab-con-item"><img src="./images1/2.png" alt=""><img  id="zz2" src="./images1/4.png" alt=""></div>
+             <div class="tab-con-item"><img src="./images1/3.png" alt=""><img  id="zz3" src="./images1/4.png" alt=""></div>
+             <div class="tab-con-item"><img src="./images1/1.png" alt=""><img  id="zz4" src="./images1/4.png" alt=""></div>
+          </div>
+      </div>
+</body>
+<script>
+    var  tab_nav_items = document.getElementsByClassName('tab-nav-item');
+    var  tab_con_items = document.getElementsByClassName('tab-con-item');
+
+    // 初始状态下显示
+    tab_con_items[0].style.display='block';
+    tab_nav_items[0].style.backgroundColor= '#B4B4B4'
+    tab_nav_items[0].style.color= 'white'
+    // 记录显示con的索引值
+    var x = 0;
+    for(var i =0; i<tab_nav_items.length;i++){
+        // 给每一个nav添加 index属性 记录索引
+        tab_nav_items[i].index = i;
+        // 创建点击事件
+         tab_nav_items[i].onclick= function(){
+            //  隐藏之前的内容
+            tab_con_items[x].style.display='none';
+            tab_nav_items[x].style.backgroundColor= '#dadada'
+            tab_nav_items[x].style.color= '#000'
+            // 以nav的 索引 找对应的con
+            tab_con_items[this.index].style.display='block';
+            tab_nav_items[this.index].style.backgroundColor= '#B4B4B4'
+            tab_nav_items[this.index].style.color= 'white'
+            x = this.index;
+
+        }
+        
+    }
+
+</script>
+</html>

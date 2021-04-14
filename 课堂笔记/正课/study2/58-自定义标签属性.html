@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>自定义标签属性</title>
+</head>
+<body>
+    <a href="https://baidu.com" id="a" x ="1"></a>
+    
+    <select name="" id="">
+        <option value="" provid='10' cityid='1' data-areaid='9'>东</option>
+        <option value="" id="xi">西</option>
+        <option value="">南</option>
+        <option value="">北</option>
+    </select>
+</body>
+<script>
+    var a = document.getElementById('a');
+    // a.href
+    // console.log(a.x);  //undefined
+    var xi =document.getElementById('xi');
+    var options = document.getElementsByTagName('option');
+
+    // 获取自定义属性值
+   var res = a.getAttribute('x');
+   console.log(res);
+
+    //设置自定义标签属性值    
+    a.setAttribute('x',100);
+
+    xi.setAttribute('provid','10')
+
+    var area = options[0].getAttribute('data-areaid');
+    console.log(area);
+
+    // 只针对data-开头的自定义标签属性
+    options[0].dataset.areaid =90 ;
+    
+</script>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>模拟拖动效果</title>
+    <style>
+         #box{
+             width: 150px;
+             height: 400px;
+             border: 1px solid #333;
+             margin: 0 800px;
+         }
+    </style>
+</head>
+<body>
+    <div id="box">
+         泪目
+    </div>
+    
+</body>
+<script>
+    var box = document.getElementById('box');
+
+    var flag = false;
+
+    box.onmousedown = function(){
+        // 鼠标按下，可以开始拖动
+         flag = true;
+    }
+    box.onmouseup = function(){
+        //鼠标松开   停止拖动
+        flag = false;
+    }
+    box.onmousemove = function(){
+        if(flag) {
+            //把获取到的鼠标位置赋值给box
+            console.log('此时可以拖动目录了');
+        }
+        
+    }
+</script>
+</html>

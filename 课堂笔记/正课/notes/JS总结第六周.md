@@ -187,7 +187,7 @@ function fun1(a,b){   //形参
      //函数体外部不能直接使用sum
 ```
 
-# 4月12号
+# 4月13号
 
 ### DOM选择器
 
@@ -472,5 +472,132 @@ function fun1(a,b){   //形参
 
 
 </script>
+```
+
+# 4月14号
+
+### 自定义标签属性
+
+```
+<body>
+    <a href="https://baidu.com" id="a" x ="1"></a>
+    <select name="" id="">
+        <option value="" provid='10' cityid='1' data-areaid='9'>东</option>
+        <option value="" id="xi">西</option>
+        <option value="">南</option>
+        <option value="">北</option>
+    </select>
+</body>
+<script>
+    var a = document.getElementById('a');
+    // a.href
+    // console.log(a.x);  //undefined
+    var xi =document.getElementById('xi');
+    var options = document.getElementsByTagName('option');
+
+    // 1.获取自定义属性值
+   var res = a.getAttribute('x');
+   console.log(res);
+
+    // 2.设置自定义标签属性值    
+    a.setAttribute('x',100);
+
+    xi.setAttribute('provid','10')
+
+    var area = options[0].getAttribute('data-areaid');
+    console.log(area);
+
+    // 3.只针对data-开头的自定义标签属性 //data-areaid 
+    options[0].dataset.areaid =90 ;
+    
+</script>
+```
+
+### 事件函数内部的this指向
+
+```
+<script>
+  var btn =document.getElementById('btn');
+  var div =document.getElementById('box');
+//   绑定点击事件
+btn.onclick = function(){ //内部的this指向当前绑定事件的DOM对象
+    console.log(this);    //button
+}
+btn.click()               //谁调用function this就指向谁
+
+div.onclick = function(){
+    console.log(this);  //div
+}
+
+var obj = {
+    eat:function(){
+        console.log('吃饭');
+    }
+}
+obj.eat();
+obj.say = function(){
+    console.log('hello');
+}
+obj.say();
+</script>
+```
+
+### DOM对象的属性
+
+```
+<body>
+    <button id="btn">按钮</button>
+</body>
+<script>
+    // DOM对象 也是一个对象{}
+    var btn = document.getElementById('btn');
+    btn.innerHTML = '按钮1';
+    btn.style.color = 'red';
+    //给DOM对象添加属性
+    btn.x =1;
+    // 遍历DOM对象 属性
+    for(var k in btn){
+        // console.log(k);
+    }
+    // console.log(btn);
+    // 可以打印输出 DOM对象的所有属性及方法
+    console.dir(btn);
+```
+
+### 事件
+
+```
+ /*
+       窗口事件
+       onload 当网页加载完毕的时候触发 
+       onscroll 滚动窗口时触发
+    */  
+    /*
+       鼠标事件
+       onclick  点击事件
+       ondblclick  双击事件
+       onmouseover  onmouseout  鼠标移入 鼠标移出
+       onmouserenter  onmouseleave  鼠标移入移出
+       onmousemove  鼠标移动
+       onmousedown  鼠标按下
+       onmouseup    鼠标抬起
+       oncontextmenu  鼠标右键
+       onselectstarts 鼠标开始选中
+    */    
+    /*
+      键盘事件
+        onkeydown    键盘按下
+        onkeyup      键盘松开
+        onkeypress   键盘按下
+    */    
+    /*
+       表单事件
+       onsubmit  当提交表单是触发
+       onreset   当重置表单时触发
+       onfocus   获取焦点时触发
+       onblur    失去焦点时触发
+       oninput   当输入内容时触发
+       onchange  当表单元素发生改变时触发
+    */  
 ```
 

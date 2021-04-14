@@ -40,7 +40,7 @@
         color:#ccc;
         
       }
-      #btn2{
+      #btn2,#btn3,#btn4,#btn5{
           height: 12px;
           width: 12px;
           border-radius: 7.5px;
@@ -54,48 +54,7 @@
           background-color: gray;
           margin: 0px 5px;
       }
-      #btn3{
-          height: 12px;
-          width: 12px;
-          border-radius: 7.5px;
-          position: relative;
-          left: 100px;
-          top: 80px;
-          border: 2px solid #333;
-          outline: none;
-          cursor: pointer;
-          padding: 2px;
-          background-color: gray;
-          margin: 0px 5px;
-      }
-      #btn4{
-          height: 12px;
-          width: 12px;
-          border-radius: 7.5px;
-          position: relative;
-          left: 100px;
-          top: 80px;
-          border: 2px solid #333;
-          outline: none;
-          cursor: pointer;
-          padding: 2px;
-          background-color: gray;
-          margin: 0px 5px;
-      }
-      #btn5{
-          height: 12px;
-          width: 12px;
-          border-radius: 7.5px;
-          position: relative;
-          left: 100px;
-          top: 80px;
-          border: 2px solid #333;
-          outline: none;
-          cursor: pointer;
-          padding: 2px;
-          background-color: gray;
-          margin: 0px 5px;
-      }
+     
       #btn:hover{
           color: white;
           background-color:rgba(20,20,20,0.3);
@@ -133,24 +92,29 @@
 
 </body>
 <script>
+    // 获取元素
     var pic = ['a.webp','b.jpg','c.webp','d.webp'];
     var img = document.getElementsByTagName('img')[0];
     var btn = document.getElementById('btn');
     var btn1 = document.getElementById('btn1');
+
     var btn2 = document.getElementById('btn2');
     var btn3 = document.getElementById('btn3');
     var btn4 = document.getElementById('btn4');
     var btn5 = document.getElementById('btn5');
+
+   
+    // 默认显示0.jpg
     var num ;
     num = 0 ;
-    // 默认显示0.jpg
     img.src = './img/'+ pic[num];
     // 绑定点击事件
     btn.onclick = function fun1(){
+        // 恢复上一个小按钮的样式
       num++;
      
-      if(num >= 4){
-          num =0;
+      if(num >= pic.length){
+          num = 0;
       }
       img.src = './img/'+ pic[num];
       
@@ -164,12 +128,13 @@
       num--;
      
       if(num <0){
-          num =3;
+          num = pic.length-1;
       }
       img.src = './img/'+ pic[num];
       return num ;
+      
     }
-   
+    btn2.style.backgroundColor='white';
     // 点击绑定事件
     btn2.onclick = function(){
         num = 0;
