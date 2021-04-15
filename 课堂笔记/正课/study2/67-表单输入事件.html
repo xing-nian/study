@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>表单输入事件</title>
+    <style>
+        #btn{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <input type="text" id="uname" placeholder="请输入">
+    <span id="btn"></span>
+</body>
+<script>
+    var uname = document.getElementById('uname');
+    var btn = document.getElementById('btn');
+    // 输入内容时触发输入事件
+    uname.oninput = function(){
+        // console.log(uname.value);
+        if (uname.value.length <6 && uname.value.length>0) {
+            btn.style.display= 'inline';
+            btn.innerHTML= '长度小于6位'
+        }
+        if (uname.value.length>=6 &&uname.value.length<=12 || uname.value.length == 0) {
+            btn.style.display= 'none';
+           
+        }
+        if (uname.value.length >12) {
+            btn.style.display= 'inline';
+            btn.innerHTML= '长度大于12位'
+            
+        }
+       
+    }
+    
+</script>
+</html>

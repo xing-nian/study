@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #btn{
+            width: 400px;
+             height: 280px;
+             background-color: pink;
+             border-radius: 5px;
+             position:absolute;
+             left: calc(50% - 200px);
+             top: calc(50% - 140px);
+        }
+    </style>
+</head>
+<body>
+    <div id="btn">开关</div>
+</body>
+<script>
+      
+       var btn = document.getElementById('btn')
+       var flag = true
+       btn.onclick = function(){
+        //     if(flag == true){
+        //         btn.style.backgroundColor= '#000'
+        //         flag = false;
+        //     }
+        //     else {
+        //         btn.style.backgroundColor= 'pink'
+        //         flag = true;
+        //    }
+        this.style.backgroundColor = flag ? '#000' : 'pink';
+        flag = !flag 
+       }
+     
+</script>
+</html>

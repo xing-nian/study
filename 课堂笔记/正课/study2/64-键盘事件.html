@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>键盘事件</title>
+</head>
+<body>
+    
+</body>
+<script>
+    // onkeydown 键盘按下
+    // onkeyup   键盘松开
+    // onkeypess 键盘按下松开
+    // 绑定在文档对象document上  或者 表单元素上
+    document.onkeydown = function(){
+        console.log('键盘按下');
+    }
+    document.onkeyup = function(){
+        console.log('键盘松开');
+    }
+    // keypress 无法识别某些功能键,如 ctrl alt shift
+    document.onkeypress = function(){
+        console.log('键盘按下松开');
+    }
+</script>
+</html>

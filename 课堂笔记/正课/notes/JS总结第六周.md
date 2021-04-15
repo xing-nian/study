@@ -130,7 +130,7 @@
     fun2();
 ```
 
-### 变量提升（js的问题）
+### 变量提升（js的缺陷）
 
 ```
  把变量的声明提升到使用之前(不会报错！)
@@ -599,5 +599,202 @@ obj.say();
        oninput   当输入内容时触发
        onchange  当表单元素发生改变时触发
     */  
+```
+
+# 4月15号
+
+### 窗口事件
+
+```
+ /* 溢出内容隐藏 hidden */
+  /*无论是否有溢出时 都有滚动条 scroll  */
+  /* 当有溢出内容时,出现滚动条 auto */
+   overflow: auto;
+   
+<script>
+        window.onload = function(){   //文档加载完毕时会触发
+            var btn =document.getElementById('btn');
+        console.log(btn);
+        btn.onclick = function(){
+            alert('hello');
+        };
+        var box1 = document.getElementById('box1')
+        box1.onscroll = function(){   //滚动窗口时触发
+        console.log('box1在滚动');
+    }
+    }
+   
+</script>
+```
+
+### 键盘事件
+
+```
+    // onkeydown 键盘按下
+    // onkeyup   键盘松开
+    // onkeypess 键盘按下松开
+    // 绑定在文档对象document上  或者 表单元素上
+    document.onkeydown = function(){
+        console.log('键盘按下');
+    }
+    document.onkeyup = function(){
+        console.log('键盘松开');
+    }
+    // keypress 无法识别某些功能键,如 ctrl alt shift
+    document.onkeypress = function(){
+        console.log('键盘按下松开');
+    }
+```
+
+### 表单事件
+
+```
+//表单提交事件
+   myform.onsubmit = function(){
+        // 在表单提交信息之前 验证表单信息格式
+
+        // 获取用户输入的值
+         var username = uname.value
+         if (username.length < 6 || username.length > 12) {
+             alert('格式错误')
+             return; //终止提交
+         }
+     }
+  //  表单重置事件
+    myform.onreset = function(){
+        return false  //禁止重置
+    }   
+```
+
+### 表单的change事件
+
+```
+<body>
+     <input type="text" id="uname"><br>
+     <input type="checkbox" id="checkbox" checked>同意<br>
+     <select name="" id="address">
+         <option >郑州</option>
+         <option >开封</option>
+         <option >新乡</option>
+         <option >洛阳</option>
+     </select>
+
+</body>
+<script>
+     var uname = document.getElementById('uname')
+     var checkbox = document.getElementById('checkbox');
+     var address = document.getElementById('address')
+
+     //onchange 事件在文本框上使用不合适
+     uname.onchange =function(){
+         console.log(this.value);
+     }
+
+     checkbox.onchange = function(){
+        //  this.checked 获取当前勾选的状态
+         if (this.checked == true) {
+             console.log('在原来总价基础上 + 当前勾选商品的价格');
+         }else{//取消勾选
+            console.log('在原来总价基础上 - 当前取消勾选商品的价格');
+         }
+     }
+
+     address.onchange = function(){
+        
+         console.log(this.selectedIndex);//所选option的索引
+
+        //  当option 没有设置value属性时 ， 获取到的是option标签的文本内容
+        // 如果option设置value属性 获取到的是option的value属性值；
+         console.log(this.value);
+     }
+
+</script>
+```
+
+### 表单输入事件
+
+```
+<style>
+        #btn{
+            display: none;
+        }
+ </style>
+</head>
+<body>
+    <input type="text" id="uname" placeholder="请输入">
+    <span id="btn"></span>
+</body>
+<script>
+    var uname = document.getElementById('uname');
+    var btn = document.getElementById('btn');
+    // 输入内容时触发输入事件
+    uname.oninput = function(){
+        // console.log(uname.value);
+        if (uname.value.length <6 && uname.value.length>0) {
+            btn.style.display= 'inline';
+            btn.innerHTML= '长度小于6位'
+        }
+        if (uname.value.length>=6 &&uname.value.length<=12 ||                         uname.value.length == 0) {
+            btn.style.display= 'none';
+           
+        }
+        if (uname.value.length >12) {
+            btn.style.display= 'inline';
+            btn.innerHTML= '长度大于12位'
+        }
+       
+    }
+    
+</script>
+```
+
+### 焦点事件
+
+```
+<body>
+     <input type="text" id="inp">
+</body>
+<script>
+    var inp = document.getElementById('inp');
+    // 获取焦点
+    inp.onfocus = function(){
+        console.log('获取焦点了');
+    }
+
+    // 失去焦点
+    inp.onblur = function(){
+        console.log('失去焦点了');
+    }
+```
+
+### 普通元素使用焦点事件
+
+```
+<style>
+      #box {
+        width: 200px;
+        height: 30px;
+        border: 1px solid #333;
+        line-height: 30px;
+        padding-left: 15px;
+        border-radius: 5px;
+        margin: 50px auto;
+        outline: none;
+      }
+    </style>
+  </head>
+  <body>
+    <!--添加 tabindex 属性可以让元素拥有焦点事件 -->
+    <div id="box" tabindex="1"></div>
+  </body>
+  <script>
+    var div = document.getElementById("box");
+    div.onfocus = function () {
+      console.log("获取焦点");
+    };
+    div.onblur = function () {
+      console.log("失去焦点");
+    };
+  </script>
 ```
 

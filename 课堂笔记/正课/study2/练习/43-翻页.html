@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            position: relative;
+            left: 700px;
+            top:300px ;
+        }
+        div ul {
+            list-style: none;
+            font-size: 0;
+            width: 290px;
+
+        }
+        div ul li{
+            height: 25px;
+            display: inline-block;
+            box-sizing: border-box;
+            border: 1px solid #000;
+            width: 50px;
+            font-size: 10px;
+            border-left: none;
+            text-align: center;
+            line-height: 25px;
+        }
+        div ul li:nth-child(1){
+            border-left:1px solid #000 ;
+        }
+        #next{
+            width: 50px;
+            height: 25px;
+            position: relative;
+            left: 991px;
+            top: 353px;
+            border: 1px solid #000;
+            z-index: 5;
+            background-color: skyblue;
+            color: white;
+            cursor: pointer;
+            text-align: center;
+        }
+        #prev{
+            width: 50px;
+            height: 25px;
+            position: relative;
+            left: 687px;
+            top: 326px;
+            border: 1px solid #000;
+            z-index: 5;
+            background-color: skyblue;
+            color: white;
+            cursor: pointer;
+            text-align: center;
+        }
+        #lit{
+            width: 280%;
+        }
+    </style>
+</head>
+<body>
+    <div id="next">按钮1</div>
+    <div id="prev">按钮2</div>
+    <div id="lit">
+        <ul>
+            <li >1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+            <li>5</li>
+        </ul>
+    </div>
+</body>
+<script>
+      var next = document.getElementById('next');
+      var prev = document.getElementById('prev');
+      var lis  =document.getElementsByTagName('li');
+      var num = 0;
+      lis[0].style.backgroundColor='green';
+
+      next.onclick = function(){
+        lis[num].style.backgroundColor='white';
+        num++;
+        if(num>4){
+            
+            num=4;
+            
+        }
+
+        lis[num].style.backgroundColor='green';
+       
+      }
+      prev.onclick = function(){
+        lis[num].style.backgroundColor='white';
+        num--;
+        if(num<0){
+           
+            num=0;
+           
+        }
+        lis[num].style.backgroundColor='green';
+      }
+</script>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>表单的change事件</title>
+</head>
+<body>
+     <input type="text" id="uname"><br>
+     <input type="checkbox" id="checkbox" checked>同意<br>
+     <select name="" id="address">
+         <option >郑州</option>
+         <option >开封</option>
+         <option >新乡</option>
+         <option >洛阳</option>
+     </select>
+
+</body>
+<script>
+     var uname = document.getElementById('uname')
+     var checkbox = document.getElementById('checkbox');
+     var address = document.getElementById('address')
+
+     //onchange 事件在文本框上使用不合适
+     uname.onchange =function(){
+         console.log(this.value);
+     }
+
+     checkbox.onchange = function(){
+        //  this.checked 获取当前勾选的状态
+         if (this.checked == true) {
+             console.log('在原来总价基础上 + 当前勾选商品的价格');
+         }else{//取消勾选
+            console.log('在原来总价基础上 - 当前取消勾选商品的价格');
+         }
+     }
+
+     address.onchange = function(){
+        
+         console.log(this.selectedIndex);//所选option的索引
+
+        //  当option 没有设置value属性时 ， 获取到的是option标签的文本内容
+        // 如果option设置value属性 获取到的是option的value属性值；
+         console.log(this.value);
+     }
+
+</script>
+</html>

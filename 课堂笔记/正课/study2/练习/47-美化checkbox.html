@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>美化checkbox</title>
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+        input{
+            display: none;
+           
+        }
+        #s_box{
+            width: 60px;
+            height: 24px;
+            padding: 0 10px;
+            border-radius: 12px;
+            border: 1px solid #d0d0d0;
+            line-height: 24px;
+            text-align: right;
+            color: #d0d0d0;
+            font-size: 14px;
+            position: relative;
+
+            
+        }
+        #s_cir{
+            height: 16px;
+            width: 16px;
+            border-radius: 10px;
+            background-color: #aaa;
+            position: absolute;
+            left: 5px;
+            top: calc(50% - 8px) ;
+            transition: all 0.3s;
+        }
+       #lab .active{
+            background-color: #5fb878;
+            border-color:#5fb878 ;
+            color: #fff;
+            text-align: left;
+        }
+        #lab .active #s_cir{
+            background-color: #fff;
+            left: calc(60px - 5px - 16px);
+        }
+    </style>
+</head>
+<body>
+        <label  id="lab">
+            <input type="checkbox" id="ckeckInp" >
+            <div id="s_box">
+                <div id="s_cir"></div>
+                OFF
+            </div>
+        </label>
+
+       
+</body>
+<script>
+    var inp = document.getElementById('ckeckInp');
+    var s_box =document.getElementById('s_box')
+    inp.onchange =function(){
+        // 判断input的选中状态来决定样式
+        if (this.checked) {//选中
+           s_box.className='active';
+           s_box.innerHTML = '<div id="s_cir"></div>ON'
+        }else{
+            s_box.className='';  
+            s_box.innerHTML = '<div id="s_cir"></div>OFF'      
+        }
+    }
+</script>
+</html>
