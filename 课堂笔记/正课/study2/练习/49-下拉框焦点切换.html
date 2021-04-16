@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>下拉框焦点切换</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #inp{
+            height: 30px;
+            width: 400px;
+            outline: none;
+        }
+       #box{
+            position: relative;
+            left: 500px;
+            top: 300px;
+           
+        }
+        h5{
+            padding-left: 5px;
+            color: #999;
+            line-height: 30px;
+        }
+        h5:hover{
+            background-color: #F6F6F6;
+        }
+        #box1{
+            width: 402px;
+            height: 230px;
+            border: 1px solid #ccc;
+            position: absolute;
+            top: 40px;
+            left: 0px;
+            display: none;
+            border-radius: 5px;
+        }
+        ul{
+            list-style: none;
+        }
+        li{
+            height: 40px;
+            line-height: 40px;
+            padding-left: 5px;
+        }
+        li:hover{
+            background-color: #F6F6F6;
+
+        }
+        .sele{
+            color: #ccc;
+        }
+        #box1 ul.active{
+            background-color: #66AA80;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <div id="box">
+    <input type="text" id="inp" placeholder="请选择" value="">
+     <div id="box1" tabindex="1">
+        <h5 class="sele">请选择</h5>
+        <ul>
+            <li class="item ">南京</li>
+            <li class="item active">北京</li>
+            <li class="item">深圳</li>
+            <li class="item">上海</li>
+            <li class="item">广州</li>
+        </ul>
+     </div>
+    </div>
+</body>
+<script>
+     var inp = document.getElementById('inp');
+     var item = document.getElementsByClassName('item');
+     var box1 = document.getElementById('box1')
+     var h =  document.getElementsByClassName('h3');
+    
+      // 获取焦点
+    inp.onfocus = function () {
+    //   console.log("获取焦点了");
+     box1.style.display = 'block';
+     inp.placeholder = '';
+    };
+
+    // 失去焦点
+    inp.onblur = function () {
+    //   console.log("失去焦点了");
+    box1.style.display = 'none'
+    inp.placeholder = '请选择';
+    };
+   
+    // 设置h3的文本
+    // var x =1 ； 记录背景为绿色的
+    
+</script>
+</html>

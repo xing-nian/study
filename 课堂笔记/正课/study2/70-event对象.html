@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>event对象</title>
+</head>
+<body>
+    
+</body>
+<script>
+    // 事件对象 event
+    // 当事件触发时就能获取到event对象
+
+    // e.key 按键标识   e.keyCode (ASCII码)
+    document.onkeydown = function(e){
+        // console.log(e);
+        // console.log(e.key);
+        // console.log(e.keyCode);
+        // onkeydown只能识别大写
+    }
+    document.onkeypress = function(e){
+        console.log(e);
+        console.log(e.key);
+        console.log(e.keyCode);
+    }
+    /*
+       clientX /clientY 事件触发时鼠标到【浏览器可视区域】左上角距离
+       pageX /pageY    事件触发时鼠标到【HTML页面】左上角距离
+       screenX/screenY 事件触发时鼠标到【显示器】左上角距离
+    */ 
+    document.onclick = function(e){
+        console.log(e);
+    }
+</script>
+</html>

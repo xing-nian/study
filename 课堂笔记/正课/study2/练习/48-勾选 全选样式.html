@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>勾选 全选样式</title>
+</head>
+<body>
+      <input type="checkbox" id="qx" >水果<br>
+      <input type="checkbox" class="dx">苹果·<br>
+      <input type="checkbox" class="dx">西瓜<br>
+      <input type="checkbox" class="dx">蓝莓<br>
+      
+</body>
+<script>
+     var qx = document.getElementById('qx') ;
+     var dx = document.getElementsByClassName('dx');
+  
+     qx.onclick = function(){
+        
+        // console.log(qx.checked);
+        for(i=0; i< dx.length; i++){
+            dx[i].checked = qx.checked;
+        }
+     }
+     var all = dx.length;
+     for(i=0 ; i<dx.length ; i++){
+         dx[i].onclick = function(){
+             var num =0;
+            for(i=0 ; i<dx.length ; i++){
+                if(dx[i].checked){
+                    num++
+                }
+            }
+            if(num == all){
+                qx.checked = true;
+            }
+            if(num !==all){
+                qx.checked = false;
+            }
+         }
+     }
+</script>
+</html>

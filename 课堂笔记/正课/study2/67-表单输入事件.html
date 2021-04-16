@@ -20,7 +20,7 @@
     var btn = document.getElementById('btn');
     // 输入内容时触发输入事件
     uname.oninput = function(){
-        // console.log(uname.value);
+        console.log(uname.value);
         if (uname.value.length <6 && uname.value.length>0) {
             btn.style.display= 'inline';
             btn.innerHTML= '长度小于6位'
@@ -36,6 +36,6 @@
         }
        
     }
-    
+    //   
 </script>
 </html>

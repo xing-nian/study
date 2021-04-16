@@ -781,8 +781,8 @@ obj.say();
         margin: 50px auto;
         outline: none;
       }
-    </style>
-  </head>
+  </style>
+
   <body>
     <!--添加 tabindex 属性可以让元素拥有焦点事件 -->
     <div id="box" tabindex="1"></div>
@@ -794,6 +794,93 @@ obj.say();
     };
     div.onblur = function () {
       console.log("失去焦点");
+    };
+  </script>
+```
+
+# 4月16号
+
+### event对象
+
+```
+<script>
+    // 事件对象 event
+    // 当事件触发时就能获取到event对象
+
+    // e.key 按键标识   e.keyCode (ASCII码)
+    document.onkeydown = function(e){
+        // console.log(e);
+        // console.log(e.key);
+        // console.log(e.keyCode);
+        // onkeydown只能识别大写
+    }
+    document.onkeypress = function(e){
+        console.log(e);
+        console.log(e.key);
+        console.log(e.keyCode);
+    }
+    /*
+       clientX /clientY 事件触发时鼠标到【浏览器可视区域】左上角距离
+       pageX /pageY    事件触发时鼠标到【HTML页面】左上角距离
+       screenX/screenY 事件触发时鼠标到【显示器】左上角距离
+    */ 
+    document.onclick = function(e){
+        console.log(e);
+    }
+</script
+```
+
+### 元素的偏移量
+
+```
+<script>
+    var div1 = document.getElementById('content');
+    var div2 = document.getElementById('box');
+    
+    // offsetTop /offsetLeft 获取  元素到达html文档顶部的偏移量
+    console.log(div1.offsetTop,div1.offsetLeft);
+    console.log(div2.offsetTop,div2.offsetLeft);
+</script>
+```
+
+### 偏移量的参照对象
+
+```
+<script>
+ // 如果存在定位 偏移量 以离他最近的带有定位属性的父元素为参照
+var parent = document.getElementById('parent');
+var child = document.getElementById('child');
+console.log(child.offsetTop,child.offsetLeft);
+console.log(child.offsetParent);
+</script>
+```
+
+### 元素宽高
+
+```
+<script>
+
+var parent = document.getElementById('parent');
+var child = document.getElementById('child');
+
+console.log(child.offsetHeight,child.offsetWidth);
+// offsetHeight/offsetWidth = width(content区域)+ padding +border
+// 只读
+</script>
+```
+
+### 滚动高度
+
+```
+<script>
+    var btn = document.getElementById("btn");
+    btn.onclick = function () {
+      // 兼容写法
+      // scrollTop
+      //   var st =  document.documentElement.scrollTop || document.body.scrollTop;
+      //  document.scrollingElement 获取滚动元素
+      var st;
+      console.log(st);
     };
   </script>
 ```
