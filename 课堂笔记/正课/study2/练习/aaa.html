@@ -5,17 +5,126 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        *{
+    margin:0;
+    padding:0;
+}
+.wrap{
+    width: 600px;
+    height: 360px;
+    margin:100px;
+}
+#small,#big{
+    width: 298px;
+    height: 358px;
+    border:1px solid #ccc;
+    float:left;
+}
+#small{
+    text-align:center;
+    position: relative;
+}
+#small img{
+    width: 285px;
+    height:346px;
+    margin-top:6px;
+}
+#move{
+    width: 150px;
+    height: 150px;
+    /*background:rgba(255,255,255,.5);*/
+    background:#fff;
+    opacity:.5;
+    filter:alpha(opacity=50);
+    position: absolute;
+    top: 0;
+    left: 0;
+    cursor:move;
+    display:none;
+}
+#big{
+    position:relative;
+    overflow:hidden;
+    display:block;
+}
+#big img{
+    position:absolute;
+    top:0;
+    left:0;
+}
+
+</style>
 </head>
 <body>
-    
+     <body style="height:2000px;"><!--这里写height,是为了测试带滚动条时的BUG-->
+        <div class="wrap" id="wrap">
+            <div id="small">
+                <img src="https://img-pre.ivsky.com/img/tupian/pre/202009/21/pubu-002.jpg" alt="">
+                  <div id="move"></div>
+
+                </div>
+                <div id="big">
+                <img src="https://img-pre.ivsky.com/img/tupian/pre/202009/21/pubu-002.jpg" alt="">
+            </div>
+
+        </div>
+        </body>
+
 </body>
 <script>
-    var arr = [1,2,3,4,2,1,6,7,4]
-    for(var i = 0; i<arr.length; i++) {
-        var a = arr[i];
-        for(var j = i+1; j<arr.length; i++){
-            var a
-        }
-    }
+   //1.
+var oWrap = document.getElementById('wrap');
+var smallDiv = document.getElementById('small');
+var move = document.getElementById('move');
+var bigDiv = document.getElementById('big');
+
+//2.
+smallDiv.onmousemove = function(ev) {
+    var oEvent = ev || event;
+    var iScrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+    var iScrollLeft = document.documentElement.scrollLeft || document.body.scrollLeft;
+    var disX = oEvent.clientX + iScrollLeft - move.offsetWidth / 2 - oWrap.offsetLeft;
+    var disY = oEvent.clientY + iScrollTop - move.offsetHeight / 2 - oWrap.offsetTop;
+//  console.log(oWrap.offsetLeft)
+    if (disX < 0) {
+        disX = 0;
+    } else if (disX > smallDiv.offsetWidth - move.offsetWidth) {
+        disX = smallDiv.offsetWidth - move.offsetWidth;
+        
+    };
+    if (disY < 0) {
+        disY = 0;
+    } else if (disY > smallDiv.offsetHeight - move.offsetHeight) {
+        disY = smallDiv.offsetHeight - move.offsetHeight;
+    };
+    move.style.left = disX + 'px';
+    move.style.top = disY + 'px';
+    /*算出move块在X轴的移动距离与总的移动距离的比例*/
+    var _pageX = disX / (smallDiv.offsetWidth - move.offsetWidth);
+        console.log(_pageX)   /*这是一个0~1之间的数*/
+    /*算出move块在Y轴的移动距离与总的移动距离的比例*/
+    var _pageY = disY / (smallDiv.offsetHeight - move.offsetHeight);
+    /*求出大图片在X轴的移动距离*/
+    var mX = _pageX * (bigDiv.children[0].offsetWidth - bigDiv.offsetWidth);
+    /*求出大图片在Y轴的移动距离*/
+    
+    var mY = _pageY * (bigDiv.children[0].offsetHeight - bigDiv.offsetHeight);
+    bigDiv.children[0].style.left = -mX + 'px';
+    bigDiv.children[0].style.top = -mY + 'px';
+};
+
+//3.
+smallDiv.onmouseover = function(ev) {
+    bigDiv.style.display = 'block';
+    move.style.display = 'block';
+    smallDiv.onmousemove(); //兼容IE
+};
+
+smallDiv.onmouseout = function() {
+    bigDiv.style.display = 'none';
+    move.style.display = 'none';
+};
+
 </script>
 </html>

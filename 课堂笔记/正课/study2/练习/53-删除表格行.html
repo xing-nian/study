@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <table>
+        <tr>
+            <td>姓名</td>
+            <td>年龄</td>
+            <td>操作</td>
+        </tr>
+        <tr>
+            <td>张1</td>
+            <td>19</td>
+            <td><button>删除</button></td>
+    </tr>
+        <tr>
+            <td>张2</td>
+            <td>19</td>
+            <td><button>删除</button></td>
+        </tr>
+        <tr>
+            <td>张3</td>
+            <td>19</td>
+            <td><button>删除</button></td>
+        </tr>
+        <tr>
+            <td>张4</td>
+            <td>19</td>
+            <td><button>删除</button></td>
+        </tr>
+    </table>
+</body>
+<script>
+    var del = document.getElementsByTagName('button');
+    var tbody = document.getElementsByTagName('tbody')[0];
+    
+        
+        for(var i =0 ;i<del.length; i++){
+           
+            del[i].onclick = function(){
+            tbody.removeChild(this.parentNode.parentNode)
+
+            
+        }
+    }
+</script>
+</html>
