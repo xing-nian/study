@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>事件流</title>
+    <style>
+        #box{
+            width: 400px;
+            height: 400px;
+            background-color: red;
+        }
+        #small{
+            width: 200px;
+            height: 200px;
+            background-color: skyblue;
+        }
+        h3{
+            width: 100px;
+            height: 100px;
+            background-color: gold;
+        }
+    </style>
+</head>
+<body>
+    <div id="box">
+        <div id="small">
+            <h3 id="txt">北路</h3>
+        </div>
+    </div>
+</body>
+<script>
+    var box = document.getElementById('box');
+    var small = document.getElementById('small');
+    var txt = document.getElementById('txt');
+
+    // 事件流:当一个节点产生一个事件时,该事件会在该节点与根节点之间按照特定顺序传播,所经过的节点都会收到该事件,这个过程就称为DOM事件流
+    /*
+        事件流分为三个阶段:
+          1.捕获阶段(俗称挖洞)：从根节点 --》 目标节点，向下捕获
+          2.目标阶段
+          3.冒泡阶段
+
+    */ 
+     
+    // DOM0级事件  只有冒泡阶段
+    // box.onclick = function(){
+    //     console.log('box');
+    // }
+    // small.onclick = function(){
+    //     console.log('small');
+    // }
+    // txt.onclick = function(){
+    //     console.log('txt');
+    // }
+    // document.documentElement.onclick= function(){
+    //     console.log('html');
+    // }
+    // document.onclick=function(){
+    //     console.log('documen');
+    // }
+
+    // 事件监听
+    txt.addEventListener('click',function(){
+        console.log('txt');
+    })
+    small.addEventListener('click',function(){
+        console.log('small');
+    })
+    // 参数3：true表示事件处理函数在【捕获阶段】调用
+    // 默认是false，表示事件处理函数在【冒泡阶段】调用
+    box.addEventListener('click',function(){
+        console.log('document');
+    },true)
+    document.addEventListener('click',function(){
+        console.log('document');
+    })
+</script>
+</html>

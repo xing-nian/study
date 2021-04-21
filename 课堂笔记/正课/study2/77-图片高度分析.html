@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>56-图片高度分析</title>
+</head>
+<body>
+      <div>
+          <img src="https://hbimg.huabanimg.com/9302c9e5da1704dede31fd15d16099b15f51356a1c91d-e5PvUY_/fw/480/format/webp?w_h=236x157" alt="" id="img">
+      </div>
+</body>
+<script>
+    var img = document.getElementById('img');
+    console.log(img.offsetHeight);
+
+    setTimeout(function(){
+        console.log(img.offsetHeight);
+    },2000)
+
+    /*
+    图片加载需要时间 ,代码在获取图片高度时,图片还没有加载完毕 ,所以得到的高度为零
+    
+    解决方式:给img 加 height
+   */ 
+</script>
+</html>

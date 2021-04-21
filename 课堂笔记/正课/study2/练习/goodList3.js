@@ -1,4 +1,4 @@
-var goodList=[{
+var goodList3=[{
 	"Id": 1850,
 	"title": "精铜方形冷热旋转厨房龙头",
 	"priceStr": "369",

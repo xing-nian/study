@@ -18,7 +18,7 @@
       
        img{
         width: 350px;
-        /* height: auto; */
+        height: auto;
         float: left;
         break-inside: avoid;
         box-sizing: border-box;
@@ -39,6 +39,8 @@
       判断这5列  那一列高度最低
       img.ooffsetTop
     */ 
+    
+
     document.write("<section class='flow-box'>")
         for(var i=0; i<list.length;i++){
         // console.log(goodList3[i].title);
@@ -54,30 +56,7 @@
             `)
     }
         document.write("</section>")
-       var col = document.getElementsByClassName('col')
-          
-        for(var i=0; i<list.length;i++){
-        // console.log(goodList3[i].title);
-        var minH = col[0].offsetHeight;//纪录最低高度
-        var colnum = 0 ;           //记录高度最低的列
-        for(var j=0; j<col.length; j++){
-        
-         if (col[j].offsetHeight< minH) {
-             minH=col[j].offsetHeight;
-             colnum = j;
-         }
-        }
-        console.log(minH,colnum);
-        
-        // 创建新节点
-        var imgNode = document.createElement('img');
-        imgNode.src = list[i].img;
-        // 从路径中解析高度
-         img.style.height = list[i].img.split('?')[1].split('x')[1]+'px';
 
-        // 插入节点
-        col[colnum].appendChild(imgNode)
-    }
       
 </script>
 </html>

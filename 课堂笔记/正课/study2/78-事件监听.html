@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>事件监听</title>
+</head>
+<body>
+    <button id="btn">按一下</button>
+</body>
+<script>
+    //   var btn =document.getElementById('btn')
+    //   DOM 0级事件 多次绑定相同的事件会覆盖
+    //   btn.onclick = function(){
+    //       console.log('hello');
+    //   }
+    //   btn.onclick = function(){
+    //       console.log('我不好');
+    //   }
+    // btn.onclick = null;
+    
+    // DOM 2级事件多次绑定相同的事件不会被覆盖,会依次执行
+    // addEventListener()  
+    // 参数1：事件类型
+    // 参数2：事件处理函数
+    // btn.addEventListener("click",function(){
+    //     console.log('天气不好!');
+    // });
+    // btn.addEventListener("click",function(){
+    //     console.log('下雨天!');
+    // });
+
+  var fn1 = function(){
+      console.log('三秋');
+  }
+  btn.addEventListener('click',fn1);
+
+//移出事件removeEventListener() 不能移除匿名函数
+  
+
+  setTimeout(function(){
+    btn.removeEventListener('click',fn1);
+  },5000)
+
+
+/*
+   DOM事件处理分为四个级别: DOM0,DOM0,DOM2,DOM3
+   DOM0级: 特点是简单,跨浏览器,兼容好 . 缺点:多次绑定会覆盖
+   DOM2级:DOM2级是以一种更符合逻辑的方式规范了DOM事件,多次绑定相同的事件不会被覆盖,
+   会依次执行.缺点:兼容性不好.
+*/   
+</script>
+</html>

@@ -198,12 +198,7 @@ var list=[{
 	"author": "浮歌パ",
 	"target": "AAA未分类",
 	"img": "https://hbimg.huabanimg.com/bd1d2357bc3170ec63c8cb3e44ca2683b5dfeed0447e2-xYvpgE_/fw/480/format/webp?w_h=236x315"
-}, {
-	"avt": "https://hbimg.huabanimg.com/8c693663c224d00194416cee875b0951006773572afbe-r9lNNp_sq75sf/format/webp",
-	"author": "Sally丽",
-	"target": "无线首页",
-	"img": "https://hbimg.huabanimg.com/4fd8153e92741d8126637fa0ee3f2963801225d65682eb-E0adFe_/fw/480/format/webp?w_h=236x6623"
-}, {
+},  {
 	"avt": "https://hbimg.huabanimg.com/c79ee10120c4052f04aed1cb59cfdb44ff7cbca5ea56-eCJZnd_sq75sf/format/webp",
 	"author": "渐默",
 	"target": "整套",
