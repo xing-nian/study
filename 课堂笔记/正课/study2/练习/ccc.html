@@ -1,0 +1,56 @@
+<input type="button" οnclick="delAll()" value="批量删除" />
+ <input type="button" οnclick="che()" value="全选/反选" />
+        <table border="1" cellspacing="0" cellpadding="0" class="bg">
+            <tr>
+                <td><input type="checkbox" οnclick="cheAll()" id="che"></td>
+                <td>姓名</td>
+                <td>性别</td>
+                <td>生日</td>
+                <td>住址</td>
+                <td>操作</td>
+            </tr>
+<td><input type="checkbox" οnclick="id="che"></td>
+                <td>姓名</td>
+                <td>性别</td>
+                <td>生日</td>
+                <td>住址</td>
+                <td>操作</td>
+            </tr>
+        </table>
+
+
+   <script>
+   
+//全选
+   function cheAll(){
+            var cek = $("#che")[0].checked;
+            var ck = $("input[name='ck']");
+            for(var i = 0; i < ck.length; i++){
+                ck[i].checked = cek;
+            }
+        }
+
+//反选
+        function che(){
+            var cks = document.getElementsByName("ck");
+            for(var i = 0; i < cks.length; i++) {
+                cks[i].checked = !cks[i].checked;
+            }
+        }
+
+//批量删除
+        function delAll(){
+            var ck = $("input:checked[name='ck']");
+            if(ck.length == 0){
+                alert("请选择,然后进行删除");
+                return;
+            }
+            var f=confirm("确认删除!!");
+            if(!f){
+                return;
+            }
+            for(var i = 0; i < ck.length; i++){
+                ck[i].parentNode.parentNode.remove();
+            }
+        }
+    </script>

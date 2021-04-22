@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>添加新元素</title>
+</head>
+<body>
+    <ul id="list">
+        <li>old-1</li>
+        <li>old-2</li>
+        <li>old-3</li>
+        <li>old-4</li>
+    </ul>
+    <button id="add">添加新元素</button>
+</body>
+<script>
+     var list = document.getElementById('list');
+     var lis =document.getElementsByTagName('li');
+     var add = document.getElementById('add');
+
+    // 传统方式给li绑定点击事件
+     for(var i = 0;i<lis.length;i++){
+         lis[i].onclick = function(){
+             this.style.color = 'red';
+         }
+     }
+     add.onclick = function(){
+        //  方式1
+        // innerHTML会覆盖之前的节点,之前的节点事件无法触发
+        // list.innerHTML += '<li>new-1</li>';
+         //  方式2
+        //  不会影响之前的节点,但需要单独给新节点绑定事件
+         var node = document.createElement('li');
+         node.innerHTML='new-1';
+
+         node.onclick = function(){
+             this.style.color= 'red';
+         }
+
+         list.appendChild(node);
+     }
+</script>
+</html>

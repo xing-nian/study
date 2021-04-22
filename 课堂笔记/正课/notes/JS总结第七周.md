@@ -226,3 +226,137 @@ e.cancelBubble = true;  //IE兼容使用使用
 </script>
 ```
 
+# 4月22号
+
+### 添加新元素
+
+```
+<body>
+    <ul id="list">
+        <li>old-1</li>
+        <li>old-2</li>
+        <li>old-3</li>
+        <li>old-4</li>
+    </ul>
+    <button id="add">添加新元素</button>
+</body>
+<script>
+     var list = document.getElementById('list');
+     var lis =document.getElementsByTagName('li');
+     var add = document.getElementById('add');
+
+    // 传统方式给li绑定点击事件
+     for(var i = 0;i<lis.length;i++){
+         lis[i].onclick = function(){
+             this.style.color = 'red';
+         }
+     }
+     add.onclick = function(){
+        //  方式1
+        // innerHTML会覆盖之前的节点,之前的节点事件无法触发
+        // list.innerHTML += '<li>new-1</li>';
+        //  方式2
+        //  不会影响之前的节点,但需要单独给新节点绑定事件
+         var node = document.createElement('li');
+         node.innerHTML='new-1';
+
+         node.onclick = function(){
+             this.style.color= 'red';
+         }
+
+         list.appendChild(node);
+     }
+```
+
+### 添加新元素(事件委托)
+
+```
+<body>
+    <ul id="list">
+        <li>old-1</li>
+        <li>old-2</li>
+        <li>old-3</li>
+        <li>old-4</li>
+    </ul>
+    <button id="add">添加新元素</button>
+</body>
+<script>
+    var list = document.getElementById('list');
+    var add = document.getElementById('add');
+    // 事件委托
+    // 优点： 当新增元素节点时 无需再次对其绑定事件
+    list.onclick = function(e){
+        if (e.target.nodeName=="LI") {
+            e.target.style.color = 'red';
+        }
+    }
+    add.onclick = function(){
+        // 方式1
+        // list.innerHTML+="<li>new-1</li>";
+
+        // 方式2
+        var node = document.createElement('li');
+        node.innerHTML = 'new-1';
+        list.appendChild(node);
+    }
+</script>
+```
+
+### 占位图
+
+```
+示例：
+<body>
+ <p>ps1</p>
+    <p>ps2</p>
+    <p>ps3</p>
+    <p>ps4</p>
+    <p>ps5</p>
+    <p>ps6</p>
+    <p>ps7</p>
+    <p>ps8</p>
+    <p>ps9</p>
+    <p>ps10</p>
+    <p>ps11</p>
+    <p>ps12</p>
+    <p>ps13</p>
+    <p>ps14</p>
+    <p>ps15</p>
+    <p>ps16</p>
+    <p>ps17</p>
+    <p>ps18</p>
+    <p>ps19</p>
+    <p>ps20</p>
+    <p>ps21</p>
+    <p>ps22</p>
+    <p>ps23</p>
+    <p>ps24</p>
+    <p>ps25</p>
+   <img src="http://cms-bucket.ws.126.net/2021/0422/1ce1a298j00qrxu21003tc000fa007lc.jpg?      imageView&thumbnail=453y225&quality=85&type=webp"    
+   alt="" data-src="https://www.baidu.com/img/PCtm_d9c8750bed0b3c7d089fa7d55720d6cf.png">
+    <p>ps26</p>
+    <p>ps27</p>
+    <p>ps28</p>
+    <p>ps29</p>
+    <p>ps30</p>
+    <p>ps31</p>
+    <p>ps32</p>
+    <p>ps33</p>
+    <p>ps34</p>
+</body>
+<script>
+       var img= document.getElementsByTagName('img')[0];
+       window.onscroll = function(){
+           // 获取页面向上滚动的高度
+            var sTop = document.body.scrollTop || document.documentElement.scrollTop;
+            var wHeight = window.innerHeight
+        if (img.offsetTop <= sTop + wHeight -100 && img.flag == undefined){
+              // 此时应该加载真正的图片
+            img.src= img.dataset.src;
+            img.flag = true;
+       }
+       }
+  
+  </script>
+```
+

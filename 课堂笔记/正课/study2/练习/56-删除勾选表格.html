@@ -1,0 +1,101 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>yiqi</title>
+   <style>
+        table{
+        width: 120px;
+    
+        border: 1px solid #000;
+        /* 合并边框  collapse 合并*/
+        border-collapse: collapse;
+        
+        text-align: center;
+    }
+    td{
+        border: 1px solid #000;
+    }
+    thead tr td{
+        font-weight: 700;
+    }
+   </style>
+</head>
+<body>
+      <table>
+         <thead>
+            <tr>
+                <td>选择</td>
+                <td>名称</td>
+            </tr>
+         </thead>
+          <tr>
+              <td><input type="checkbox" class="dx" checked></td>
+              <td>苹果</td>
+
+          </tr>
+          <tr>
+            <td><input type="checkbox" class="dx"></td>
+            <td>香蕉</td>
+            
+        </tr>
+        <tr>
+            <td><input type="checkbox" class="dx"></td>
+            <td>橘子</td>
+           
+        </tr>
+      </table>
+
+      <input type="checkbox" id="qx" >全选<br>
+     <button >删除所选</button><br>
+</body>
+<script> 
+
+     var qx = document.getElementById('qx') ;
+     var dx = document.getElementsByClassName('dx');
+    
+     var total = document.getElementById('total') ;
+     var btn = document.getElementsByTagName('button')
+    // 点击全选
+     qx.onclick = function(){
+        // console.log(qx.checked);
+        for(i=0; i< dx.length; i++){
+            dx[i].checked = qx.checked;
+        }
+     }
+    //  设置全选按钮的选择状态
+     var all = dx.length;
+   
+     for(i=0 ; i<dx.length ; i++){
+         dx[i].onclick = function(){
+             var num =0;
+             this.index=i
+            for(i=0 ; i<dx.length ; i++){
+                
+                if(dx[i].checked){
+                    num++
+                  
+                }
+            }
+            if(num == all){
+                qx.checked = true;
+            }
+            if(num !==all){
+                qx.checked = false;
+            }
+         }
+     }
+     
+        btn.addEventListener("click",function(e){
+        console.log('天气不好!');
+        for(j = 0 ; j<dx.length ; j++){
+            if(dx[i].checked){
+                console.log(this);
+                btn.chlidren[1].removeChild(e.target.parentNode.parentNode)
+                  }
+         }
+    });
+</script>
+</html> -->

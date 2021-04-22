@@ -10,26 +10,47 @@
             margin: 0;
             height: 0;
         }
-        .flow-box{
-            column-count: 5;
-            column-gap: 2px;
-            width: 100%;
+       
+        #wrap{
+            width: 1230px;
+            margin: 0 auto;
         }
-      
-       img{
-        width: 350px;
-        /* height: auto; */
-        float: left;
-        break-inside: avoid;
-        box-sizing: border-box;
-        margin: 10px;
-        /* height: 200px; */
+        .col{
+            float: left;
+            width: 236px;
+            box-sizing: border-box;
+            margin: 5px;
+        }
+        .item{
+            width: 236px;
+            border-radius: 10px;
+        }
+       .item.pic{
+           width: 236px;
+           height: auto;
+       }
+       .item.author.a-pic{
+           width: 236px;
        }
        
     </style>
 </head>
 <body>
-    
+  <div id="wrap">
+    <div class="col">
+        <!-- <div class="item">
+            <img class="pic" src="https://hbimg.huabanimg.com/727247ec735e91113937d8099caa0e4c809d92b5112b7c-MQAXQO_/fw/480/format/webp?w_h=236x334" alt="">
+            <div class="author">
+                <img class= 'a-pic' src="https://hbimg.huabanimg.com/50ddfee531e691867c032ebe0c744e869da8a26f3043-Pn8ziQ_sq75sf/format/webp" alt="">
+                <p class= 'a-name'>APP_双11皮肤</p>
+            </div>
+        </div> -->
+    </div>
+    <div class="col"></div>
+    <div class="col"></div>
+    <div class="col"></div>
+    <div class="col"></div>
+  </div>
 </body>
 <script src="./homework.js"></script>
 <script>
@@ -39,45 +60,42 @@
       判断这5列  那一列高度最低
       img.ooffsetTop
     */ 
-    document.write("<section class='flow-box'>")
-        for(var i=0; i<list.length;i++){
-        // console.log(goodList3[i].title);
-        document.write(`
-        <div class='col'>
-            
-            <img src="${list[i].img}">
-           
-           
-            
-        </div>
-            
-            `)
-    }
-        document.write("</section>")
-       var col = document.getElementsByClassName('col')
-          
-        for(var i=0; i<list.length;i++){
-        // console.log(goodList3[i].title);
-        var minH = col[0].offsetHeight;//纪录最低高度
-        var colnum = 0 ;           //记录高度最低的列
-        for(var j=0; j<col.length; j++){
-        
-         if (col[j].offsetHeight< minH) {
-             minH=col[j].offsetHeight;
-             colnum = j;
-         }
-        }
-        console.log(minH,colnum);
-        
-        // 创建新节点
-        var imgNode = document.createElement('img');
-        imgNode.src = list[i].img;
-        // 从路径中解析高度
-         img.style.height = list[i].img.split('?')[1].split('x')[1]+'px';
+  
+    var col = document.getElementsByClassName('col');
 
-        // 插入节点
-        col[colnum].appendChild(imgNode)
+// 遍历数据 
+for(var i=0; i<list.length;i++){
+    // 判断哪一列高度最低
+    // 假设 第0列 最低
+    var minH = col[0].offsetHeight;
+    var colNum = 0;
+    for(var j=0;j<col.length;j++){
+        if (col[j].offsetHeight < minH) {
+            minH = col[j].offsetHeight;
+            colNum = j;
+        }
     }
+    // 创建新节点 img
+    var itemNode = document.createElement('div');
+    itemNode.className ='item';
+    itemNode.innerHTML = `
+    <img class="pic" src="${list[i].img}" alt="" style='height:${h}'>
+            <div class="author">
+                <img class= 'a-pic' src="${list[i].avt}" alt="">
+                <p class= 'a-name'>${list[i].author}</p>
+            </div>
+    `
+
+    
+   
+    //"https://hbimg.huabanimg.com/bed5347494beef22486804ed180ccc660a06c12f12abb1-5bdChZ_/fw/480/format/webp?w_h=236x1788"
+    var h = list[i].img.split('?')[1].split('x')[1] ;
+    // 已知 img实际高度（h） ，实际宽度(w)，页面上设置的图片宽度(w1)，求页面设置的图片高度(h1)  h / h1 = w / w1
+
+    // 插入节点
+    col[colNum].appendChild(itemNode);
+}
+
       
 </script>
 </html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script src="city_code.js"></script>
+<script>
+    //省份
+    // for(var i=0; i<data.length; i++){
+    //     console.log(data[i].name);
+
+    // }
+    // 市区
+    var citys = data[2].city;
+    // for(var i=0 ; i<citys.length; i++){
+    //     console.log(citys[i].name);
+    // }
+
+    // 区  河北省-2  石家庄市-0
+    var areas= citys[0].area
+    for(var i=0 ; i<areas.length; i++){
+        console.log(areas[i].name);
+    }
+</script>
+</html>

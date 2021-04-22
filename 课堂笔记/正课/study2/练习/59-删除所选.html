@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table{
+        width: 120px;
+    
+        border: 1px solid #000;
+        /* 合并边框  collapse 合并*/
+        border-collapse: collapse;
+        
+        text-align: center;
+       }
+       td{
+           border: 1px solid #000;
+       }
+       thead tr td{
+           font-weight: 700;
+       }
+       </style>
+</head>
+<body>
+    <table id="btn">
+        
+           <tr>
+               <td>选择</td>
+               <td>名称</td>
+           </tr>
+        
+         <tr>
+             <td><input type="checkbox" class="dx" ></td>
+             <td>苹果</td>
+
+         </tr>
+         <tr>
+           <td><input type="checkbox" class="dx"></td>
+           <td>香蕉</td>
+           
+       </tr>
+       <tr>
+           <td><input type="checkbox" class="dx"></td>
+           <td>橘子</td>
+          
+       </tr>
+       <tr>
+        <td><input type="checkbox" class="dx"></td>
+        <td>橘子</td>
+       
+    </tr>
+    <tr>
+        <td><input type="checkbox" class="dx"></td>
+        <td>橘子</td>
+       
+    </tr>
+     </table>
+     <button id="del" >删除所选</button><br>
+</body>
+<script>
+    var btn = document.getElementById('btn');
+    var del = document.getElementById('del');
+
+    var arr = [];
+    btn.onclick = function(e){
+        if (e.target.className == 'dx') {
+            var tr = e.target.parentNode.parentNode;
+
+            if (e.target.checked) { // 勾选
+                arr.push(tr);//添加到数组中
+                // console.log(arr);
+            }else{
+             var x = arr.indexOf(tr)
+             console.log(x);
+             arr.splice(x,1);
+            }
+        }
+    }
+    // 删除按钮
+    del.onclick=function(){
+      
+        console.log(arr);
+        for(var i = arr.length-1;i>=0;i--){
+            
+            btn.children[0].removeChild(arr[i]); 
+          
+        }
+        arr = [];
+    }
+</script>
+</html>

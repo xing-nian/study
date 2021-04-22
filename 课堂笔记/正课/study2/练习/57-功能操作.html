@@ -1,0 +1,107 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>yiqi</title>
+    <style>
+      table,
+      th,
+      td {
+        border: 1px solid #333;
+      }
+      th{
+        height: 40px;
+      }
+      table {
+        border-collapse: collapse;
+        text-align: center;
+        width: 600px;
+        user-select: none;
+        
+      }
+      #xm,#sjh,#xg,#qx{
+          display: none;
+      }
+      #xm,#sjh{
+          outline: none;
+          margin-right: 5px;
+      }
+    </style>
+</head>
+<body>
+    <table>
+        <tr>
+            <td >姓名</td>
+            <td >手机号</td>
+            <td>操作</td>
+        </tr>
+        <tr>
+            <td class="xm1">张1</td>
+            <td class="sjh1">1456456789</td>
+            <td><button class="del">删除</button><button class="re">修改</button></td>
+    </tr>
+        <tr>
+            <td class="xm1">张2</td>
+            <td class="sjh1">1945645678</td>
+            <td><button class="del">删除</button><button class="re">修改</button></td>
+        </tr>
+        <tr>
+            <td class="xm1">张3</td>
+            <td class="sjh1">1956456789</td>
+            <td><button class="del">删除</button><button class="re">修改</button></td>
+        </tr>
+        <tr>
+            <td class="xm1">张4</td>
+            <td class="sjh1">1456456459</td>
+            <td><button class="del">删除</button><button class="re">修改</button></td>
+        </tr>
+    </table>
+    <input id="xm" type="text"><input id="sjh" type="text"> <button id="xg">确认修改</button> <button id="qx">取消</button>
+</body>
+<script>
+    var del = document.getElementsByClassName('del');
+    var tbody = document.getElementsByTagName('tbody')[0];
+    var re  = document.getElementsByClassName('re');
+    var xm1 = document.getElementsByClassName('xm1');
+    var sjh1 = document.getElementsByClassName('sjh1');
+    var xm = document.getElementById('xm');
+    var sjh = document.getElementById('sjh');
+    var xg = document.getElementById('xg');
+    var qx = document.getElementById('qx');
+        
+        for(var i =0 ;i<del.length; i++){
+           
+            del[i].onclick = function(){
+                
+                if (confirm('确定要删除吗?') == true) {
+                    tbody.removeChild(this.parentNode.parentNode)
+                }else{
+                    alert('取消删除')
+                }
+        }
+            re[i].onclick = function(){
+                
+                xm.style.display= 'inline-block';
+                sjh.style.display= 'inline-block';
+                xg.style.display= 'inline-block';
+                qx.style.display= 'inline-block';
+                xm.innerHTML = xm1[i].innerHTML;
+                sjh.innerHTML = sjh1[i].innerHTML;
+                
+            }
+            xg.onclick = function(){
+                xm1[i].innerHTML = xm.innerHTML;
+                sjh1[i].innerHTML = sjh.innerHTML;
+            }
+            qx.onclick = function(){
+                xm.style.display= 'none';
+                sjh.style.display= 'none';
+                xg.style.display= 'none';
+                qx.style.display= 'none';
+            }
+    }
+    
+</script>
+</html> -->
