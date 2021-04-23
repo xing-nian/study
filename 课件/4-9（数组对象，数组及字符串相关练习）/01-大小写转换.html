@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>大小写转换</title>
+</head>
+<body>
+    
+</body>
+<script>
+    var str = "jAVAsCRIPT";  // JavaScript
+    var res = '';
+    for(var i = 0; i < str.length;i++){
+        var code = str[i];
+        // 判断 code转换之前与转换之后的小写是否一致
+        if (code === code.toLowerCase()) {// 如果一致，说明code本身是小写
+            res = res + code.toUpperCase()
+        } else {// 否则，说明code原本是大写
+            res = res + code.toLowerCase()
+        }
+    }
+    console.log(res);
+
+    // var str1 = 'abcABC';
+    // console.log(str1.toLowerCase());
+    // console.log(str1);
+    
+    
+</script>
+</html>

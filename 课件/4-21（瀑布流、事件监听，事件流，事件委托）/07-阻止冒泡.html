@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>阻止冒泡</title>
+        <style>
+            #box {
+                width: 400px;
+                height: 400px;
+                background-color: red;
+            }
+            #small {
+                width: 200px;
+                height: 200px;
+                background-color: skyblue;
+            }
+            h3 {
+                width: 100px;
+                height: 100px;
+                background-color: goldenrod;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="box">
+            <div id="small">
+                <h3 id="txt"></h3>
+            </div>
+        </div>
+    </body>
+    <script>
+        var box = document.getElementById("box");
+        var small = document.getElementById("small");
+        var txt = document.getElementById("txt");
+        txt.addEventListener("click", function (e) {
+            console.log("txt");
+            // e.stopPropagation(); //阻止冒泡
+            e.cancelBubble = true; //IE使用
+        });
+
+        small.addEventListener("click", function () {
+            console.log("small");
+        });
+
+        box.addEventListener("click", function () {
+            console.log("box");
+        });
+    </script>
+</html>

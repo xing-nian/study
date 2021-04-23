@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        ul{
+            list-style: none;
+        }
+        .box{
+            width: 800px;
+            margin: 50px auto;
+            border: 1px solid #333;
+        }
+        .tab-nav ul{
+            width: 800px;
+            height: 60px;
+            border-bottom: 1px solid #333;
+        }
+        .tab-nav ul li{
+            float: left;
+            line-height: 60px;
+            padding: 0px 20px;
+            border-right: 1px solid #333;
+        }
+        .tab-content{
+            height: 400px;
+            position: relative;
+        }
+        .tab-content div{
+            width: 800px;
+            height: 400px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            /* background-color: aqua; */
+            /* 隐藏 */
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <div class="tab-nav">
+            <ul>
+                <li class="tab-nav-item">tab1</li>
+                <li class="tab-nav-item">tab2</li>
+                <li class="tab-nav-item">tab3</li>
+                <li class="tab-nav-item">tab4</li>
+            </ul>
+        </div>
+        <div class="tab-content">
+            <div class="tab-con-item">内容1</div>
+            <div class="tab-con-item">内容2</div>
+            <div class="tab-con-item">内容3</div>
+            <div class="tab-con-item">内容4</div>
+        </div>
+    </div>
+</body>
+<script>
+    var navs = document.getElementsByClassName('tab-nav-item');
+    var cons = document.getElementsByClassName('tab-con-item');
+
+    // 初始状态
+    cons[0].style.display = 'block';
+    var x = 0; //记录显示con的索引
+    for(var i=0;i<navs.length;i++){
+        // 给每一个 nav 添加 index属性，记录索引
+        navs[i].index = i;
+
+        navs[i].onclick = function(){
+            // 隐藏之前的con
+            cons[x].style.display = 'none';
+
+            // 以 nav的 索引，找对应的 con
+            cons[this.index].style.display = 'block';
+
+            x = this.index;
+        }
+    }
+
+</script>
+</html>

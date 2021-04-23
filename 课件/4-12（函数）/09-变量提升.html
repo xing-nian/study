@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>变量提升</title>
+</head>
+<body>
+    
+</body>
+<script>
+    // 变量提升：把变量的声明提升到使用之前
+    // console.log(str); //undefined
+    // var str = 'hello';
+
+    // var str;
+    // console.log(str);
+    // str = 'hello';
+
+    var x = 300;
+    function fun1(){
+        console.log(x); //? undefined 
+        var x = 3000;    
+    }
+    fun1()
+
+
+</script>
+</html>

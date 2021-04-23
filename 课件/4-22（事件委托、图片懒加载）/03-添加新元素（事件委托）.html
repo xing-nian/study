@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>添加新元素</title>
+</head>
+<body>
+    <ul id="list">
+        <li>old-1</li>
+        <li>old-2</li>
+        <li>old-3</li>
+        <li>old-4</li>
+
+    </ul>
+    <button id="add">添加新元素</button>
+</body>
+<script>
+    var list = document.getElementById('list');
+    var add = document.getElementById('add');
+    // 事件委托
+    // 优点： 当新增元素节点时 无需再次对其绑定事件
+    list.onclick = function(e){
+        if (e.target.nodeName=="LI") {
+            e.target.style.color = 'red';
+        }
+    }
+
+    add.onclick = function(){
+        // 方式1
+        // list.innerHTML+="<li>new-1</li>";
+
+        // 方式2
+        var node = document.createElement('li');
+        node.innerHTML = 'new-1';
+        list.appendChild(node);
+    }
+
+
+</script>
+</html>

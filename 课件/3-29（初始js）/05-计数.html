@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>计数</title>
+</head>
+<body>
+    <div class="box">
+        <button id="reduce">-</button>
+        <button id="num">1</button>
+        <button id="add">+</button>
+    </div>
+</body>
+<script>
+    var reduce = document.getElementById('reduce');
+    var num = document.getElementById('num');
+    var add = document.getElementById('add');
+
+    var x = 1;
+    // 1.点击加号
+    add.onclick = function(){
+        // 每次递增1
+        x++;
+        // x = x+1;
+        // 修改num标签的文本节点
+        num.innerText = x;
+    }
+
+    // 2.点击减号
+    reduce.onclick = function(){
+        // 每次递减1
+        x--;  //x = x - 1;
+        // 修改num标签的文本节点
+        if (x < 0) {
+            num.innerText = "0";
+            x = 0;
+        } else {
+            num.innerText = x;
+        }    
+    }
+
+</script>
+</html>

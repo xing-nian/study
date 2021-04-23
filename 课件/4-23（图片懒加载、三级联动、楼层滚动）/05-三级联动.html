@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <select name="" id="sheng"></select>
+        <select name="" id="shi"></select>
+        <select name="" id="qu"></select>
+    </body>
+    <script src="./city_code.js"></script>
+    <script>
+        // 获取元素
+        var shengSele = document.getElementById("sheng");
+        var shiSele = document.getElementById("shi");
+        var quSele = document.getElementById("qu");
+
+        // 初始状态
+        // 插入省  遍历 data数组
+        for (var i = 0; i < data.length; i++) {
+            var opt = document.createElement("option");
+            opt.innerHTML = data[i].name;
+            shengSele.appendChild(opt);
+        }
+
+        // 插入市  遍历 city数组
+        var shengId = 0;
+        for (var i = 0; i < data[shengId].city.length; i++) {
+            var opt = document.createElement("option");
+            opt.innerHTML = data[shengId].city[i].name;
+            shiSele.appendChild(opt);
+        }
+
+        // 插入区   遍历 area数组
+        var shiId = 0;
+        for (var i = 0; i < data[shengId].city[shiId].area.length; i++) {
+            var opt = document.createElement("option");
+            opt.innerHTML = data[shengId].city[shiId].area[i].name;
+            quSele.appendChild(opt);
+        }
+
+        // 选择不同的省份
+        shengSele.onchange = function () {
+            // 能不能知道当前用户选择的是哪个省份？
+            // shengSele.selectedIndex // 用户选择option的索引
+            shengId = shengSele.selectedIndex;
+
+            // 清除市
+            shiSele.innerHTML = "";
+            // 清除区
+            quSele.innerHTML = "";
+
+            if (data[shengId].city) { //判断是否存在city
+                // 更新市
+                for (var i = 0; i < data[shengId].city.length; i++) {
+                    var opt = document.createElement("option");
+                    opt.innerHTML = data[shengId].city[i].name;
+                    shiSele.appendChild(opt);
+                }
+
+                
+
+                // 更新区
+                for (
+                    var i = 0;
+                    i < data[shengId].city[shiId].area.length;
+                    i++
+                ) {
+                    var opt = document.createElement("option");
+                    opt.innerHTML = data[shengId].city[shiId].area[i].name;
+                    quSele.appendChild(opt);
+                }
+            }
+        };
+
+        // 选择不同的城市
+        shiSele.onchange = function () {
+            // 能不能获取到用户当前选择的是哪个城市？
+            // console.log(shiSele.selectedIndex);
+            // 清除区
+            quSele.innerHTML = "";
+            // 更新区
+            for (
+                var i = 0;
+                i < data[shengId].city[shiSele.selectedIndex].area.length;
+                i++
+            ) {
+                var opt = document.createElement("option");
+                opt.innerHTML =
+                    data[shengId].city[shiSele.selectedIndex].area[i].name;
+                quSele.appendChild(opt);
+            }
+        };
+    </script>
+</html>

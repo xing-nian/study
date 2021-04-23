@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BMI指数</title>
+</head>
+<body>
+    
+</body>
+<script>
+    var weight = prompt('请输入你的体重');
+    weight*=1;
+    if (isNaN(weight) || weight <= 0) {
+        alert('请输入正确的体重数据')
+    } else {
+        var height = prompt('请输入你的身高');
+        height*=1;
+        if (isNaN(height) || height <= 0) {
+            alert('请输入正确的身高数据')
+        } else {
+            // 计算BMI = weight / (height * height)
+            var BMI = weight / (height * height);
+            // 根据 BMI 判断用户的身体状况
+            if (BMI < 18.5) {
+                alert('偏瘦')
+            }else if (BMI < 24) {
+                alert('正常范围')
+            }else if (BMI < 27) {
+                alert('过重')
+            }else if (BMI < 30) {
+                alert('轻度肥胖')
+            }else if (BMI < 35) {
+                alert('中度肥胖')
+            }else{
+                alert('重度肥胖')
+            }
+        }
+    }
+
+
+</script>
+</html>

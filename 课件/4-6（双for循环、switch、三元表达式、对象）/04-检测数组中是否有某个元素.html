@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    // var arr = ['j','f','a','k','l','a','d'];
+    // // 问 数组中是否存在 'a'、 'c'  'd'这个元素
+    // var str = 'l';
+    // for(var i = 0; i < arr.length; i++){
+    //     var item = arr[i];
+    //     if (str === item) {
+    //         alert('有该元素');
+    //         break; // 终止循环
+    //     }
+    // }
+    // // 如果for循环正常结束，说明数组中不存在该元素
+    // if (i == arr.length) {
+    //     alert('没有该元素')
+    // }
+
+    var arr = ['j','f','a','k','l','a','d'];
+    var str = 'c';
+    var flag = false;  //布尔值
+    for(var i = 0; i < arr.length; i++){
+        var item = arr[i];
+        if (str === item) {
+            flag = true;
+            alert('有');
+            break;
+        }
+    }
+
+    // if (flag == false) {
+    //     alert('没有')
+    // }
+    if (!flag) {
+        alert('没有')
+    }
+
+
+
+</script>
+</html>

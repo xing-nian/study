@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>算数运算符</title>
+</head>
+<body>
+    
+</body>
+<script>
+    // + - * /  加，减，乘，除(商)
+    var num1 = 10;
+    var num2 = 2;
+    var sum = num1 + num2;
+
+    // % 求余运算符  余数  3/2 = 1....1
+    console.log(10 / 3);
+    console.log(10 % 3);  //1
+    console.log(10 % 2);  //0
+    // 如何使用 % ，判断一个数是否是偶数
+
+    // ++  -- 递增 递减运算符
+    var x = 20;
+    ++x; // x自增1之后，再参与其他运算
+    console.log(x); //21
+
+    var y = 20;
+    var z = y++;  // y 参与运算后，y的值再自增1
+    console.log(z); //20
+    console.log(y); //21
+
+    // 问？
+    var a = 5;
+    var b = a++ + ++a; //12    5 + 7
+
+    var c = 10;
+    // var d = c++ + ++c - (c-- - --c);   //20   10 + 12 - (12 - 10)  
+    var d = c++ + ++c - c-- + --c;
+    console.log(d);
+
+    var num = 1;
+    // console.log(num++); //1 
+    // console.log(++num); //2
+
+    // var res2 = ++num + ++num + num--
+    var res2 = --num - num-- + ++num + num++
+    console.log(res2);
+</script>
+</html>

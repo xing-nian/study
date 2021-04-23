@@ -1,0 +1,179 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+a{
+    text-decoration: none;
+}
+ul{
+    list-style: none;
+}
+input{
+    border: none;
+    outline: none;
+    background-color: transparent;
+}
+/* 清除浮动 */
+.clearfix::before,
+.clearfix::after{
+    content: "";
+    display: table;
+}
+.clearfix::after{
+    clear: both;
+}
+.clearfix{
+    *zoom: 1;
+}
+
+/* 1.头部导航 */
+.header .nav ul.left-nav{
+    float: left;
+    padding-left: 24px;
+}
+.header .nav ul.right-nav{
+    float: right;
+    padding-right: 24px;
+}
+.header .nav ul.left-nav>li,
+.header .nav ul.right-nav>li{
+    float: left;
+    height: 60px;
+    line-height: 60px;
+    margin-right: 31px;
+}
+#logoin-btn{
+    margin-right: 0;
+    
+}
+#logoin-btn a{
+    color: #fff;
+    background-color: #4e6ef2;
+    /* padding: 5px 11px 7px; */
+    border-radius: 5px;
+    display: inline-block;
+    width: 48px;
+    height: 24px;
+    line-height: 24px;
+    text-align: center;
+}
+.header .nav li a{
+    font-size: 13px;
+    color: #222;
+    display: block;
+}
+/* 鼠标悬停在导航选项上时，a标签的文本颜色改变 */
+.header .nav li:hover>a{
+    color: #4e6ef2;
+}
+/* 更多选项显示隐藏的下拉列表 */
+.header .more{
+    position: relative;
+}
+.header .more div.more-list{
+    position: absolute;
+    top: 45px;
+    right: -13px;
+    width: 304px;
+    height: 223px;
+    border-radius: 12px;
+    box-shadow: 0 0 10px #ccc;
+    background-color: #fff;
+    padding: 16px;
+    /* 隐藏 */
+    display: none;
+}
+.header .more:hover div.more-list{
+    display: block;
+} 
+
+.more div.more-list li{
+    float: left;
+    line-height: 12px;
+    width: 53px;
+    margin-right: 20px;
+    margin-bottom: 25px;
+    text-align: center;
+}
+.more div.more-list ul li:nth-child(4n){
+    margin-right: 0;
+}
+div.more-list li img{
+    width: 44px;
+    border: 1px solid #eee;
+    border-radius: 15px;
+    margin-bottom: 8px;
+}
+div.more-list .row:last-child{
+    line-height: 0px;
+    text-align: center;   
+}
+div.more-list .row:last-child a{
+    color: #ccc;
+}
+div.more-list .row:last-child a:hover{
+    color: #4e6ef2;
+}
+
+/* 中间 main 区域样式 */
+.main .container{
+    width: 654px;
+    margin: 0px auto;
+}
+.container .row1{
+    text-align: center;
+}
+.container .row1 img{
+    width: 270px;
+}
+
+.container .row2{
+
+}
+.container .row2 .search-input,
+.container .row2 .search-btn{
+    float: left;
+    height: 44px;
+}
+.container .row2 .search-input{
+    width: 546px;
+    border: 2px solid #ccc;
+    border-right: none;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    padding: 8px 16px 12px 16px;
+}
+.container .row2 .search-input input{
+    width: 480px;
+    height: 16px;
+}
+.container .row2 .search-input .camer{
+    display: inline-block;
+    width: 24px;
+    height: 20px;
+    background-image: url(../img/d.png);
+    background-position: 0 -51px;
+    /* position: relative;
+    top: 3px;
+    right: -31px; */
+    vertical-align: middle;
+}
+.container .row2 .search-input .camer:hover{
+    background-position: 0 -75px;
+}
+.container .row2 .search-btn{
+    width: 108px;
+    background-color: #4e6ef2;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    
+    text-align: center;
+    line-height: 44px;
+}
+.container .row2 .search-btn input{
+    color: #fff;
+    font-size: 17px;
+}
+
+

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>乘法口诀表</title>
+        <style>
+            table{
+                border-collapse: collapse;
+            }
+            table,td{
+                border: 1px solid #ccc;
+            }
+            td{
+                padding: 0 10px;
+            }
+        </style>
+    </head>
+    <body></body>
+    <script>
+// 乘法口诀
+    /*
+    外层循环的i 表示乘数1
+    内层循环的j 表示乘数2
+
+    1*1=1
+    2*1=2  2*2=4
+    3*1=3  3*2=6  3*3=9
+    4*1=4  4*2=8  4*3=12  4*4=16
+    
+    */
+        // var str = "";
+        // for (var i = 1; i <= 9; i++) {
+        //     for (var j = 1; j <= i; j++) {
+        //         str = str + i + '*' + j + '=' + i*j + '\t' 
+        //     }
+        //     str = str + '\n'; //换行
+        // }
+        // console.log(str);
+
+
+        // 输出到页面上
+        document.write('<table>');
+            for(var i = 1; i <= 9; i++){
+                document.write('<tr>')
+                for(var j = 1; j <= i;j++){
+                    document.write(`<td>${i}*${j}=${i*j}</td>`);
+                }
+                document.write('</tr>');
+            }
+        document.write('</table>');
+    </script>
+</html>

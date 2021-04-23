@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <button>按钮1</button>
+        <button>按钮2</button>
+        <button>按钮3</button>
+        <button>按钮4</button>
+        <button>按钮5</button>
+        <button>按钮6</button>
+        <button>按钮7</button>
+        <button>按钮8</button>
+        <button>按钮9</button>
+        <button>按钮10</button>
+    </div>
+</body>
+<script>
+    /*
+        在事件函数内部不能访问 i 
+        原因：for循环在进入页面的瞬间执行完毕 （i 的值不符合循环条件） 
+    
+    
+    */
+
+    // 点击某个按钮 只有该按钮的文字颜色变红
+    // var btns = document.getElementsByTagName('button');
+    // // 给每个按钮绑定点击事件
+    // for(var i=0;i<btns.length;i++){
+    //     btns[i].onclick = function(){
+    //         // 把所有按钮的颜色都变黑
+    //         for(var j=0;j<btns.length;j++){
+    //             btns[j].style.color = 'black';
+    //         }
+
+    //         // 修改当前点击按钮的颜色
+    //         this.style.color = 'red';
+    //     }
+    // }
+
+
+    /*
+        比如
+        当前为red的btn    点击
+        1                   5
+        5                   2
+        2                   0
+        0                   3
+        想办法把之前点击的按钮索引记录下来
+    */
+
+
+    var btns = document.getElementsByTagName('button');
+
+    // 默认状态下，第一个按钮的元素为red
+    btns[0].style.color = 'red';
+    var x = 0;
+    for(var i=0;i<btns.length;i++){
+        // 给每一个按钮新增一个属性 index，表示按钮的索引
+        btns[i].index = i;
+
+        btns[i].onclick = function(){
+            // 还原之前的btn颜色
+            btns[x].style.color = 'black';
+
+            // 改变当前按钮的颜色
+            this.style.color = 'red';
+
+            // 记录红色按钮的索引
+            x = this.index;
+        }
+    }
+</script>
+</html>

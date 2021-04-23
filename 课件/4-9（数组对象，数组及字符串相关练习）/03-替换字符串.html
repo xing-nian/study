@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>替换字符串</title>
+</head>
+<body>
+    
+</body>
+<script>
+    var str = "粉红墙上画凤凰 粉红墙上画凤凰，凤凰画在粉红墙。红凤凰、粉凤凰，红粉凤凰、花凤凰。" ;
+    var s = '凤凰'
+    while(str.indexOf(s) !== -1){ //如果 indexOf() 返回的值是 -1 说明字符串中没有某些字符
+        var s2 = "";
+        // 根据 s的长度，决定*的数量
+        for(var i = 0; i < s.length;i++){
+            s2+="*";
+        }
+        str = str.replace(s,s2);
+    }
+    console.log(str);
+
+</script>
+</html>

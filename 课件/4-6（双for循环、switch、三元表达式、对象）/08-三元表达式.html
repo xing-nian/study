@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>三元表达式</title>
+</head>
+<body>
+    
+</body>
+<script>
+// 三目运算符
+    // var age = 17;
+    // if(age >= 18){
+    //     alert('已成年')
+    // }else{
+    //     alert('未成年')
+    // }
+
+    // var age = 27;
+    // // 根据条件调用函数
+    // age >= 18 ? alert('已成年') : alert('未成年');
+
+    /*
+        a ? b : c
+        a 表示条件表达式
+        b 表示条件成立为结果1
+        c 表示条件不成立为结果2
+    
+    */
+
+    // var num = 2;
+    // var str = '';
+    // // 如果 num > 0,str="hello";否则 str='world';
+    // // if (num > 0) {
+    // //     str = 'hello';
+    // // } else {
+    // //     str = 'world';
+    // // }
+    // // 根据条件给某个变量赋值
+    // str = num > 0 ? 'hello' : 'world';
+    // console.log(str);
+
+    // 求两个数之间的最大值
+    // var a = 10,b = 5;
+    // // var max = a>b ? a : b;
+    // var max = a<b ? b : a;
+    // console.log(max);
+
+    // 求三个数之间的最大值
+    var a = 10,b = 20,c = 2;
+    // var x = a > b ? a : b;
+    // var max = x > c ? x : c;
+    // console.log(max);
+
+    var max = a > b ? (a > c ? a : c) : (b > c ? b : c);
+    console.log(max);
+
+    // var max = 0;
+    // if (a > b) {
+    //     if (a > c) {
+    //         max = a;
+    //     } else {
+    //         max = c
+    //     }
+    // } else {
+    //     if (b > c) {
+    //         max = b;
+    //     } else {
+    //         max = c;
+    //     }
+    // }
+
+
+
+</script>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        img{
+            height: 200px;
+        }
+    </style>
+</head>
+<body>
+    <div id="box">
+        <img src="https://hbimg.huabanimg.com/0bba39066d05747da6f2ce41e8b1e77e9b9bbc4c6595da-6Go5bv_/fw/480/format/webp?w_h=236x1829" alt="" id="img">
+    </div>
+</body>
+<script>
+    var img = document.getElementById('img');
+    var box = document.getElementById('box');
+
+    // console.log(img.offsetHeight);
+    console.log(box.offsetHeight);
+
+    // setTimeout(function(){
+    //     console.log(img.offsetHeight);
+    // },5000)
+
+    /*
+        图片加载需要时间，代码在获取图片高度时，图片还没有加载完毕，所以得到的高度为0
+        解决方式：给 img 加height
+    */
+</script>
+</html>

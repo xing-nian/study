@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>节点方法</title>
+</head>
+<body>
+    <ul id="list">
+        <li class="active">1<span>hello</span></li>
+        <li>111</li>
+    </ul>
+</body>
+<script>
+    var ul = document.getElementById('list');
+    /*
+        createElement() 创建新节点
+        appendChild() 添加子节点
+        removeChild() 删除节点
+        insertBefore() 在某个元素之前插入节点
+        replaceChild() 替换节点
+        cloneNode() 克隆节点
+    */
+
+    // 1.创建新节点
+    var newLi = document.createElement('li');
+    // 设置节点内容
+    newLi.innerHTML = '2';
+    // 2.插入/添加节点(末尾追加)
+    // ul.appendChild(newLi);
+
+    // 3.替换节点
+    // ul.replaceChild(newLi,ul.firstElementChild);
+
+    // 4.在某个元素之前插入节点
+    // ul.insertBefore(newLi,ul.children[0]);
+
+    // 5.克隆节点
+    // 默认值：false 只克隆当前这个节点 ；true 克隆该节点及内部的所有内容
+    var li = ul.children[0].cloneNode(true);
+    console.log(li);
+
+    // 6.删除节点
+    ul.removeChild(ul.children[1]);
+
+
+
+</script>
+</html>

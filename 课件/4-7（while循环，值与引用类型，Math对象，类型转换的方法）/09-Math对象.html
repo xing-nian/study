@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Math对象</title>
+</head>
+<body>
+    
+</body>
+<script>
+    var num1 = 2.98,num2 = 2.19,num3 = -1.99;
+    // 四舍五入
+    // console.log(Math.round(num2));
+
+    // 向上求整
+    // console.log(Math.ceil(num2));
+
+    // 向下求整
+    // console.log(Math.floor(num1));
+
+    // 求绝对值
+    // console.log(Math.abs(num3));
+
+    // 求最大值，最小值
+    // console.log(Math.max(100,300,102,34,55,678,82,129,129));
+    // console.log(Math.min(100,300,102,34,55,678,82,129,129));
+
+    // 幂  2的4次方
+    // console.log(Math.pow(2,4));
+
+    // 开平方
+    // console.log(Math.sqrt(16));
+
+    // π = 3.14159 圆周率
+    // console.log(Math.PI);
+
+    // 正切tan  正弦sin  余弦cos
+    // console.log(Math.tan(Math.PI/4));
+
+    // 随机数 [0  1)  包含0，不包含1
+    console.log(Math.random());
+
+    // 求 0-10之间的随机整数 [0  9]  [0  10]
+    // [0 10)
+    // Math.floor(Math.random() *10)
+    console.log(parseInt(Math.random() * 10));
+
+    // [0 10]
+    // Math.ceil(Math.random() *10)
+    // parseInt(Math.random() * 11)
+
+    // 求[32 78]之间的随机整数 78-32 = 46  [0 46) + 32  [0 78]
+    var a = 32,b= 78;
+    // Math.ceil(Math.random()*(b-a)) + a;
+    Math.floor(Math.random()*(b-a+1)) + a;  // [0 47) [0 46] + 32
+    
+    
+</script>
+</html>

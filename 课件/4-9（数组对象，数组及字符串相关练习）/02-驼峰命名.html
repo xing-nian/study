@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>驼峰命名</title>
+</head>
+<body>
+    
+</body>
+<script>
+    var str = 'border-left-color'; //borderLeftColor
+
+    // 切割字符串 返回数组
+    var strArr = str.split('-');  //['boder','left','color']
+    var res = strArr[0];
+    for(var i = 1; i < strArr.length; i++){
+        var item = strArr[i];
+        // 替换单词首字母 为大写
+        var newItem = item.replace(item[0],item[0].toUpperCase());
+        res = res + newItem;
+    }
+    console.log(res);
+
+    // var str1 = 'left';
+    // console.log(str1.replace('l',"L"));
+    // console.log(str1);
+
+
+</script>
+</html>

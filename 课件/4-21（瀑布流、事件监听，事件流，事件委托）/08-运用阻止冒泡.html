@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+        #wrap{
+            width: 200px;
+            margin: 50px auto 0;
+            position: relative;
+        }
+        #title{
+            margin: 0;
+            width: 200px;
+            height: 50px;
+            line-height: 50px;
+            padding: 0 10px;
+            border: 1px solid #333;
+        }
+        #content{
+            padding: 10px 0;
+            width: 200px;
+            height: 300px;
+            border: 1px solid #333;
+            position: absolute;
+            top: 60px;
+            left: 0;
+            display: none;
+        }
+        li{
+            line-height: 40px;
+            margin: 5px 0;
+            background-color: #d0d0d0;
+        }
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <h3 id="title">请选择</h3> 
+        <div id="content">
+            <ul>
+                <li data-id="0">item1</li>
+                <li data-id="1">item2</li>
+                <li data-id="2">item3</li>
+                <li data-id="3">item4</li>
+            </ul>
+        </div>
+    </div>
+</body>
+<script>
+    var wrap = document.getElementById('wrap');
+    var content = document.getElementById('content');
+    var lis = content.children[0].children;
+    var h3 = document.getElementById('title');
+
+    wrap.addEventListener('click',function(e){
+        content.style.display = 'block';
+
+        // if(e.target.id == 'title'){//点击h3
+
+        // }
+
+        // if (e.target.nodeName == 'LI') {
+            
+        // }
+    });
+
+    // 传统事件绑定
+    // for(var i=0;i<lis.length;i++){
+    //     lis[i].addEventListener('click',function(e){
+    //         content.style.display = 'none';
+    //         e.stopPropagation();//阻止冒泡
+    //     })
+    // }
+
+    // 默认
+    var x = 0; //记录背景为pink的li
+    content.children[0].children[x].style.backgroundColor = 'pink';
+
+    // 运用事件委托
+    // content.onclick = function(e){
+    //     if (e.target.nodeName == 'LI') {
+    //         // 复原之前点击的li
+    //         content.children[0].children[x].style.backgroundColor = '#d0d0d0';
+    //         // 改变当前点击的li
+    //         e.target.style.backgroundColor = 'pink';
+    //         // console.dir(e.target);
+    //         x = e.target.dataset.id;
+
+    //         // 修改h3的文本内容
+    //         h3.innerHTML = e.target.innerHTML;
+    //         content.style.display = 'none';
+    //     }
+    //     e.stopPropagation();//阻止冒泡
+    // }
+
+
+
+</script>
+</html>

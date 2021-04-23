@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    // 1.求任意两个数之间的随机整数
+    // [1 8]  [9-15]  [23 50]
+
+    // Math.floor(Math.random()*(50-23+1))+23
+
+    // 1.要不要定义形参  形参相当于定义在函数体内部的局部变量
+    // 2.定义几个形参
+    function fun1(min,max){
+        var res = Math.floor(Math.random()*(max-min+1))+min;
+        console.log(res);
+    }
+    fun1(23,50);
+    fun1(9,15);
+
+    // 2.[1,2,1,4,2,3,6,1]
+    function fun2(arr){
+        for(var i=0;i<arr.length;i++){
+            var item = arr[i];
+            for(var j=i+1;j<arr.length;j++){
+                var item2 = arr[j];
+                if (item == item2) {
+                    arr.splice(j,1);
+                    j--;
+                }
+            }
+        }
+        console.log(arr);
+    }
+    fun2([1,2,1,4,2,3,6,1]);
+    fun2(['a','b','c','a','d','c'])
+
+
+</script>
+</html>

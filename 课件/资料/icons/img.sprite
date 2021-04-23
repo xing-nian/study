@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SpriteFile xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" CssFileName="../images" ImageName="img" IsPhone="false" xmlns="CssSprite">
+  <SpriteList>
+    <Sprite Path="QQ图片20210316193855.png" LocationX="0" LocationY="338" />
+    <Sprite Path="QQ图片20210316193851.png" LocationX="0" LocationY="287" />
+    <Sprite Path="QQ图片20210316193900.png" LocationX="0" LocationY="390" />
+    <Sprite Path="QQ图片20210316193838.png" LocationX="0" LocationY="0" />
+    <Sprite Path="QQ图片20210316193819.png" LocationX="0" LocationY="93" />
+    <Sprite Path="QQ图片20210316193847.png" LocationX="0" LocationY="236" />
+    <Sprite Path="QQ图片20210316193843.png" LocationX="0" LocationY="185" />
+  </SpriteList>
+</SpriteFile>

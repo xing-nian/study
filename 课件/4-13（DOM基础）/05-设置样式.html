@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="box">hello</div>
+    <div id="nav">world</div>
+</body>
+<script>
+    // 封装一个方法   功能： 给指定元素设置样式   参数1：指定元素  参数2：样式表
+    // 是否要传参，传几个参数
+    // 是否有返回值，返回什么
+
+    function setStyle(eleObj,styleSheet){
+        // box.style.color = 'blue';
+        // eleObj.style.width = ''
+        // eleObj.style.height = ''
+        // eleObj.styleObj.backgroundColor = ''
+        // eleObj.styleObj.fontSize = ''
+        // eleObj.styleObj.color =''
+
+        for(var key in styleSheet){
+            eleObj.style[key] = styleSheet[key];
+        }
+    }
+
+    var box = document.getElementById('box');
+    // 宽  高  背景色  字体大小  字体颜色
+    var styleObj = {
+        width: "200px",
+        height: "200px",
+        backgroundColor: 'red',
+        fontSize: '18px',
+        color: '#333'
+    }
+    setStyle(box,styleObj);
+
+    var nav = document.getElementById('nav');
+    // var styleObj2 = {
+    //     width:'100px',
+    //     height:'100px',
+    //     lineHeight:'100px',
+    //     textAlign:'center',
+    //     backgroundColor: 'pink',
+    // }
+    setStyle(nav,{
+        width:'100px',
+        height:'100px',
+        lineHeight:'100px',
+        textAlign:'center',
+        backgroundColor: 'pink',
+    });
+
+
+
+</script>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>放大镜分析</title>
+        <style>
+            /* 原图大小是：1280 * 800 */
+            #small,
+            #big {
+                width: 320px;
+                height: 200px;
+            }
+            #box {
+                border: 2px solid red;
+                width: 100px;
+                height: 100px;
+                overflow: hidden;
+            }
+        </style>
+    </head>
+    <body>
+        <img src="./images/jay.jpg" alt="" id="small" />
+        <div id="box">
+            <img src="./images/jay.jpg" alt="" id="big" />
+        </div>
+    </body>
+    <script>
+        var small = document.getElementById("small");
+        var big = document.getElementById("big");
+
+        // 鼠标在小图中移动
+        small.onmousemove = function (e) {
+            // 计算 鼠标在 小图上移动了多少？
+            // 鼠标的坐标（相对于浏览器） -  小图的偏移量
+            var x = e.clientX - small.offsetLeft;
+            var y = e.clientY - small.offsetTop;
+            console.log(x, y);
+
+            // 临界值判断
+            // x 0-220
+            // y 0-100
+            if (x >= 320 - 100) {
+                x = 220;
+            }
+            if (y >= 200 - 100) {
+                y = 100;
+            }
+
+            // 大图 : 小图   1:1
+            // 鼠标在小图上移动1px，大图移动-1px
+            big.style.marginLeft = -x + "px";
+            big.style.marginTop = -y + "px";
+        };
+    </script>
+</html>

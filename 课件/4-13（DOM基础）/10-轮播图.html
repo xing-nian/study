@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>简易版轮播图</title>
+    <style>
+        img{
+            width: 800px;
+        }
+    </style>
+</head>
+<body>
+    <img src="" alt="">
+    <button id="btn">下一张</button>
+</body>
+<script>
+    /*
+        默认显示第一张 a.webp
+        点击【下一张】  切换图片
+        第一次点击    b.jpg
+        第二次点击    c.webp
+        第三次点击    d.webp
+        第四         a.webp
+
+    */
+    var img = document.getElementsByTagName('img')[0];
+    var btn = document.getElementById('btn');
+
+    var arr = ['a.webp','b.jpg','c.webp','d.webp'];
+    var num = 0; // 记录当前是那张图片
+
+    // 默认显示 a.webp
+    img.src = './images/' + arr[num];
+
+    // 绑定点击事件
+    btn.onclick = function(){
+        num++; //1 2 3 0
+        if (num == arr.length) {
+            num = 0;
+        }
+        img.src = './images/' + arr[num];
+    }
+    
+
+</script>
+</html>

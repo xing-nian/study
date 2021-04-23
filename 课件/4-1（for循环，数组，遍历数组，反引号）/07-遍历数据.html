@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>遍历数据</title>
+        <style>
+            ul{
+                list-style: none;
+                margin: 0;
+                padding: 0;
+            }
+            li{
+                float: left;
+                width: 200px;
+                height: 300px;
+                border: 1px solid #333;
+            }
+        </style>
+    </head>
+
+    <body>
+        <!-- <ul>
+        <li>
+            <img src="" alt="">
+            <h3></h3>
+            <p></p>
+        </li>
+        <li>
+            <img src="" alt="">
+            <h3></h3>
+            <p></p>
+        </li>
+        <li>
+            <img src="" alt="">
+            <h3></h3>
+            <p></p>
+        </li>
+    </ul> -->
+    </body>
+    <script>
+        // var product = {
+        //     imgUrl: '1.jpg',
+        //     name: '小米10',
+        //     desc: '新一代智能手机',
+        //     price: 1999
+        // }
+        var proList = [
+            {
+                imgUrl: "1.jpg",
+                name: "小米10",
+                desc: "新一代智能手机",
+                price: 1999,
+            },
+            {
+                imgUrl: "1.jpg",
+                name: "小米11",
+                desc: "新一代智能手机",
+                price: 2999,
+            },
+            {
+                imgUrl: "1.jpg",
+                name: "小米12",
+                desc: "新一代智能手机",
+                price: 3999,
+            },
+            {
+                imgUrl: "1.jpg",
+                name: "小米7",
+                desc: "新一代智能手机",
+                price: 999,
+            },
+            {
+                imgUrl: "1.jpg",
+                name: "小米8",
+                desc: "新一代智能手机",
+                price: 2199,
+            },
+            {
+                imgUrl: "1.jpg",
+                name: "小米6",
+                desc: "新一代智能手机",
+                price: 799,
+            },
+        ];
+
+        // 要求 在控制台打印输出 每一条数据的 name属性值
+        document.write("<ul>");
+        for (var i = 0; i < proList.length; i++) {
+            var obj = proList[i];
+            // console.log(obj.name);
+            document.write(`
+            <li>
+                <img src="${obj.imgUrl}" alt="">
+                <h3>${obj.name}</h3>
+                <p class="desc">${obj.desc}</p>
+                <p class="price">${obj.price}</p>
+            </li>
+        `);
+        }
+
+        document.write("</ul>");
+    </script>
+</html>

@@ -1,0 +1,94 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* 
+        盒模型：content-box： 元素的width = width + 左右padding + 左右border
+        border-box： 元素的width = width
+    */
+}
+a{
+    text-decoration: none;
+}
+ul{
+    list-style: none;
+}
+.menu-box{
+    width: 160px;
+    margin: 50px auto;
+
+    position: relative;
+}
+
+.top{
+    height: 25px;
+    width: 160px;
+    border: 1px solid #999999;
+    border-radius: 3px;
+    line-height: 23px;
+}
+.left,
+.right{
+    float: left;
+}
+.left{
+    width: 133px;
+    padding: 0 8px;
+    font-size: 13px;
+}
+.right{
+    width: 25px;
+    height: 23px;
+    background-color: #aaaaaa;
+    border-top-right-radius: 2px;
+    border-bottom-right-radius: 2px;
+
+    position: relative;
+}
+.right::before{
+    content: "";
+    width: 0;
+    height: 0;
+    border: 5px solid transparent;
+    border-top-color: #fff;
+    position: absolute;
+    top: 9px;
+    left: 8px;
+}
+
+ul.menu-list{
+    border: 1px solid #999;
+    border-radius: 3px;
+    border-top: none;
+    padding: 1px;
+
+    position: absolute;
+    top: 24px;
+    left: 0;
+
+    display: none;
+}
+
+ul.menu-list li a{
+    display: block;
+    width: 156px;
+    height: 24px;
+    line-height: 24px;
+    padding-left: 8px;
+    color: #008073;
+    font-size: 13px;
+}
+ul.menu-list li a:hover{
+    color: #fff;
+    background-color: #aaa;
+}
+
+.menu-box:hover .menu-list{
+    display: block;
+}
+.menu-box:hover .right::before{
+    transform: rotate(180deg);
+    top: 4px;
+}
+
+

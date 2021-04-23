@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #switch{
+            width: 200px;
+            height: 200px;
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+    <div id="switch"></div>
+</body>
+<script>
+    var div = document.getElementById('switch');
+    var flag = false;
+    div.onclick = function(){
+        // if (flag == false) {
+        //     // 黄色
+        //     this.style.backgroundColor = 'yellow';
+        //     flag = true;
+        // }else{
+        //     // 红色
+        //     this.style.backgroundColor = 'red';
+        //     flag = false;
+        // }
+        
+        this.style.backgroundColor = flag ? "red" : "yellow";
+        flag = !flag;
+    }
+
+</script>
+</html>

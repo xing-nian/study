@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="title">hello world</h1>
+    <div id="btns">
+        <button data-color="red">红色</button>
+        <button data-color="green">绿色</button>
+        <button data-color="blue">蓝色</button>
+        <button data-color="yellow">黄色</button>
+    </div>
+</body>
+<script>
+    var h1 = document.getElementById('title');
+    var btns = document.getElementsByTagName('button');
+
+    for(var i=0;i<btns.length;i++){
+        // 通过for循环给每个按钮绑定点击事件
+        btns[i].onclick = function(){
+            // this指向当前点击的button
+            // h1.style.color = this.getAttribute('data-color');
+            h1.style.color = this.dataset.color;
+        }
+    }
+
+
+</script>
+</html>

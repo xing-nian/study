@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <select name="" id="sheng">
+
+    </select>
+    <select name="" id="shi">
+
+    </select>
+    <select name="" id="qu"></select>
+</body>
+<script src="./city_code.js"></script>
+<script>
+    var shengSele = document.getElementById('sheng');
+    var shiSele = document.getElementById('shi');
+    var quSele = document.getElementById('qu');
+
+
+    // 插入省 遍历 data这个数组
+    for(var i=0;i<data.length;i++){
+        var option = document.createElement('option');
+        option.innerHTML = data[i].name;
+        shengSele.appendChild(option);
+    }
+
+    // 插入城市 假设 选择的省份是：河北省  
+    // 遍历 data[shengId].city --> city数组
+    var shengId = 2; //记录当前选择的省份id
+    for(var i=0;i<data[shengId].city.length;i++){
+        var option = document.createElement('option');
+        option.innerHTML = data[shengId].city[i].name;
+        shiSele.appendChild(option);
+    }
+
+    // 插入区域 假设 选择的城市是：唐山
+    // 需要获取：shengId, shiId
+    // 遍历 data[shengId].city[shiId].area --> area数组
+    var shiId = 1;
+    for(var i=0;i<data[shengId].city[shiId].area.length;i++){
+        var option = document.createElement('option');
+        option.innerHTML = data[shengId].city[shiId].area[i].name;
+        quSele.appendChild(option);
+    }
+
+
+
+</script>
+</html>

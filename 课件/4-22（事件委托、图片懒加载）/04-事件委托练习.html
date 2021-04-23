@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        ul{
+            list-style: none;
+            width: 300px;
+            padding: 10px 15px;
+            background-color: skyblue;
+        }
+        li{
+            margin: 5px;
+            background-color: azure;
+        }
+        h3{
+            margin-bottom: 10px;
+            background-color: bisque;
+            width: 60px;
+        }
+        p{
+            background-color: bisque;
+            width: 60px;
+        }
+    </style>
+</head>
+<body>
+    <ul id="list">
+        <li>
+            <h3>苹果</h3>
+            <p>￥3</p>
+        </li>
+        <li>
+            <h3>香蕉</h3>
+            <p>￥2</p>
+        </li>
+        <li>
+            <h3>橘子</h3>
+            <p>￥5</p>
+        </li>
+        <li>
+            <h3>葡萄</h3>
+            <p>￥10</p>
+            <a href=""></a>
+            <div>
+                
+            </div>
+        </li>
+    </ul>
+</body>
+<script>
+    var list = document.getElementById('list');
+    list.onclick = function(e){
+        console.dir(e.target);
+        if (e.target.nodeName == "LI") {
+            e.target.style.backgroundColor = 'red';
+        }
+        // if(e.target.nodeName == "H3" || e.target.nodeName == "P"){
+        //     e.target.parentNode.style.backgroundColor = 'red';
+        // }
+
+        if(e.target.parentNode.nodeName == "LI"){
+            e.target.parentNode.style.backgroundColor = 'red';
+        }
+    }
+</script>
+</html>

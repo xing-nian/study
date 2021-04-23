@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>拖动效果</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #wrap{
+            width: 120px;
+            height: 200px;
+            border: 1px solid #333;
+            position: fixed;
+            top: 200px;
+            left: calc(100% - 200px);
+            /* 禁止用户选中文本 */
+            user-select: none;
+        }
+        #title{
+            height: 60px;
+            line-height: 60px;
+            text-align: center;
+            border-bottom: 1px solid #333;
+            cursor: move;
+
+        }
+
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <div id="title">目录</div>
+        <div id="content">内容</div>
+    </div>
+</body>
+<script>
+    var title = document.getElementById('title');
+    var wrap = document.getElementById('wrap');
+
+    var flag = false;
+    // 鼠标在 目录 区域按下，表示可以开始拖动
+    var startX,startY,eleStartX,eleStartY;
+    title.onmousedown = function(e){
+        flag = true;
+        // 鼠标按下时的坐标
+        startX = e.clientX;
+        startY = e.clientY;
+        // 元素的偏移量
+        eleStartX = wrap.offsetLeft;
+        eleStartY = wrap.offsetTop;
+    }
+
+    // 鼠标移动
+    var moveW, moveH;
+    document.onmousemove = function(e){
+        // 计算鼠标移动的距离(鼠标移动时的坐标 - 鼠标按下时的起始坐标)
+        moveW = e.clientX - startX;
+        moveH = e.clientY - startY;
+
+        if (flag) { //鼠标已经在 title区域 按下
+            // 元素最终的偏移量(鼠标按下时元素起始的偏移量 + 鼠标移动距离)
+            var x = eleStartX + moveW;
+            var y = eleStartY + moveH;
+
+            // 判断 wrap元素 x，y的临界值
+            if (x <= 0) {
+                x = 0;
+            }
+            if (y <= 0) {
+                y = 0;
+            }
+            // window.innerWidth  innerHeight 浏览器窗口的宽度 高度
+            if (x >= window.innerWidth - wrap.offsetWidth - 20) {
+                x = window.innerWidth - wrap.offsetWidth - 20;
+            }
+            if (y >= window.innerHeight - wrap.offsetHeight) {
+                y = window.innerHeight - wrap.offsetHeight;
+            }
+
+            wrap.style.left = x + 'px';
+            wrap.style.top = y + 'px';
+        }
+    }
+
+    // 鼠标在 文档 区域松开，表示可以结束拖动
+    document.onmouseup = function(){
+        flag = false;
+    }
+
+
+</script>
+</html>

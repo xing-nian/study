@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>背景图</title>
+    <style>
+        body{
+            margin: 0;
+        }
+        .div1{
+            width: 210px;
+            height: 140px;
+            border: 5px solid yellow;
+            background-image: url(./img/1.jpg);
+        }
+        .div2{
+            width: 400px;
+            height: 150px;
+            border: 5px solid yellow;
+            background-image: url(./img//1.jpg);
+            /* 1.background-repeat 背景平铺 */
+            /* 
+                no-repeat： 不平铺
+                repeat-x： 只沿x轴方向平铺
+                repeat-y： 只沿y轴方向平铺
+            */
+            background-repeat: no-repeat;
+
+            /* 2.background-size 背景图片尺寸 */
+            /* 
+                参数1：指的是宽
+                参数2：指的是高
+                如果只写一个参数，高度默认是 auto，根据宽度等比例缩放。
+
+                百分数 参照容器的宽高
+
+                cover: 背景图等比例缩放后，可以将盒子填充满，但有可能背景图不能完全展示。
+                contain: 背景图等比例缩放后，盒子水平方向或者垂直方向会填充满，图片可以完全展示
+            */
+            /* background-size: 400px 150px; */
+            /* background-size: 50% 100%; */
+            background-size: 400px;
+        }
+        .div3{
+            width: 400px;
+            height: 100px;
+            border: 5px solid yellow;
+            background-image: url(./img//1.jpg);
+            background-repeat: no-repeat;
+            background-size: contain;
+            /* background-size: 200px 50px; */
+
+            /* 3.背景图定位 */
+            /* 百分比：参考容器尺寸减去背景图尺寸进行换算 */
+            background-position: 50% 50%;
+
+            /* 方位名词：top bottom left right center */
+            /* background-position: center center; */
+            /* background-position: right bottom; */
+            
+        }
+        .div4{
+            width: 400px;
+            height: 100px;
+            border: 5px solid yellow;
+            background-image: url(./img//1.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        .div5{
+            height: 120px;
+            background-image: url(./img/bg.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+            /* background-size: auto 120px; */
+            background-position: center center;
+        }
+        /* 
+            
+        */
+    </style>
+</head>
+<body>
+    <div class="div1"></div>
+    <div class="div2"></div>
+    <div class="div3"></div>
+    <div class="div4"></div>
+    <div class="div5"></div>
+</body>
+</html>

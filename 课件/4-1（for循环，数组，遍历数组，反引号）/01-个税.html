@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    var gongzi = prompt('请输入你的月工资');
+    gongzi*=1; //gongzi = gongzi * 1
+
+    var shuiLv = 0;
+    var kouChuShu = 0;
+    if (isNaN(gongzi)) {
+        alert('请输入正确的工资');
+    } else {
+        // 年收入
+        var year = gongzi * 12;
+        // 年应纳税所得额
+        var suoDeE = year - 5000 * 12;
+        // 根据年应纳税所得额 判断税率及速算扣除数应该是多少
+        // 个税 = 应纳税所得额 * 税率 - 速算扣除数
+        if (suoDeE < 0) {
+            alert('不用交税');
+        }else{
+            if (suoDeE <= 36000) {
+                shuiLv = 0.03;
+                kouChuShu = 0;
+            }else if (suoDeE <= 144000) {
+                shuiLv = 0.1;
+                kouChuShu = 2520;
+            }else if(suoDeE <= 300000){
+                shuiLv = 0.2;
+                kouChuShu = 16920;
+            }else if(suoDeE <= 420000){
+                shuiLv = 0.25;
+                kouChuShu = 31920;
+                
+            }else if(suoDeE <= 660000){
+                shuiLv = 0.3;
+                kouChuShu = 52920;    
+            }else if(suoDeE <= 960000){
+                shuiLv = 0.35;
+                kouChuShu = 85920;
+            }else{
+                shuiLv = 0.45;
+                kouChuShu = 181920;
+            }
+            var geShui = suoDeE * shuiLv - kouChuShu;
+            alert(geShui);
+        }
+
+    }
+
+</script>
+</html>

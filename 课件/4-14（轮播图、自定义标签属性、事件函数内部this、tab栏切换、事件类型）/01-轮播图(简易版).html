@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>轮播图</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        ul{
+            list-style: none;
+        }
+        .box{
+            width: 1000px;
+            height: 375px;
+            margin: 50px auto;
+            position: relative;
+        }
+        img{
+            width: 1000px;
+        }
+        #next,#prev{
+            width: 41px;
+            height: 69px;
+            background-image: url(./images/icon-slides.png);
+            position: absolute;
+            top: calc(50% - 34.5px);
+        }
+        #next{
+            background-position: -125px 0;
+            right: 0;
+        }
+        #prev{
+            background-position: -83px 0;
+            left: 0;
+        }
+        #dots{
+            /* width: 100px; */
+            height: 20px;
+            /* background-color: pink; */
+            position: absolute;
+            right: 30px;
+            bottom: 15px;
+        }
+        #dots li{
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            border: 2px solid #ccc;
+            background-color: #333;
+            float: left;
+            margin-right: 10px;
+        }
+        #next:hover{
+            background-position: -41px 0;
+        }
+        #prev:hover{
+            background-position: 0 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <img src="./images/a.webp" alt="" id="img">
+        <div id="next"></div>
+        <div id="prev"></div>
+        <ul id="dots">
+            <li class="item"></li>
+            <li class="item"></li>
+            <li class="item"></li>
+            <li class="item"></li>
+        </ul>
+    </div>
+</body>
+<script>
+    // 获取元素
+    var img = document.getElementById('img');
+    var next = document.getElementById('next');
+    var prev = document.getElementById('prev');
+    var lis = document.getElementsByClassName('item'); //集合
+
+    var arr = ['a.webp','b.jpg','c.webp','d.webp'];
+    var x = 0; //记录图片的索引
+    // 默认第一个li的样式
+    lis[0].style.borderColor = '#333';
+    lis[0].style.backgroundColor = '#fff';
+
+    // 点击next
+    next.onclick = function(){
+        // 恢复上一个li的样式
+        lis[x].style.borderColor = '#ccc';
+        lis[x].style.backgroundColor = '#333';
+        x++;
+        if (x == arr.length) {
+            x = 0;
+        }
+        img.src = './images/' + arr[x];
+        lis[x].style.borderColor = '#333';
+        lis[x].style.backgroundColor = '#fff';
+
+        // console.log(img.src);
+    }
+    // 点击prev
+    prev.onclick = function(){
+        // 恢复上一个li的样式
+        lis[x].style.borderColor = '#ccc';
+        lis[x].style.backgroundColor = '#333';
+        x--;
+        if(x == -1){
+            x = arr.length - 1;
+        }
+        img.src = './images/' + arr[x];
+        lis[x].style.borderColor = '#333';
+        lis[x].style.backgroundColor = '#fff';
+    }
+
+</script>
+</html>
