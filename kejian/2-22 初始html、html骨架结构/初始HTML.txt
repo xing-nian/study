@@ -1,0 +1,27 @@
+一、前端技术概况：
+1.HTML +CSS
+2.JavaScript （简称JS）
+3.jQuery
+4.Nodejs
+5.框架：Vue，React，小程序
+
+二、网页的组成：网页主要由：文字，图片，超链接，音频，视频等元素组成。
+网页其实就是一个 html类型的文件
+
+三、VSCode下载地址：
+https://link.zhihu.com/?target=https%3A//code.visualstudio.com/download
+VSCode安装
+VSCode 汉化插件：Chinese
+
+
+四、新建html文件的步骤：
+1.新建一个文件夹
+2.把文件夹拖拽到VSCode上，通过这种方式打开文件夹
+3.新建文件，注意文件后缀为 html
+
+
+五、html概念及骨架结构
+
+
+
+

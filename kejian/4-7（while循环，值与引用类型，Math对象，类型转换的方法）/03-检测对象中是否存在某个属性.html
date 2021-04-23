@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>检测对象中是否存在某个属性</title>
+</head>
+<body>
+    
+</body>
+<script>
+    var p = {
+        name:'Jon',
+        age:18,
+        sex:'男',
+        tel:'1342567890',
+        weight:'70kg'
+    }
+
+    // 检测开始之前声明一个变量（银针）
+    var flag = 1;
+    for(var key in p){
+        if(key == 'age'){
+            alert('有');
+            flag = 2; // flag 值发生改变，说明有该属性
+            break; // 终止循环
+        }
+    }
+    // 经历循环之后，如果flag值没有发生改变，说明没有该属性
+    if (flag === 1) {
+        alert('没有')
+    }
+
+
+
+
+</script>
+</html>

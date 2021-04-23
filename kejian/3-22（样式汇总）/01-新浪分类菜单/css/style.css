@@ -1,0 +1,77 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+a{
+    text-decoration: none;
+}
+ul,ol{
+    list-style: none;
+}
+.clearfix::before,
+.clearfix::after{
+    content: "";
+    display: table;
+}
+.clearfix::after{
+    clear: both;
+}
+.clearfix{
+    *zoom: 1;
+}
+
+.tab-menu{
+    width: 360px;
+    height: 36px;
+    border: 1px solid #dbdee1;
+    margin: 50px auto;
+    background-image: url(../img/bg1px.png);
+    background-position: 0 -33px;
+    background-repeat: repeat-x;
+    /* 让.tab-content 相对于 .tab-menu 进行定位 */
+    position: relative;
+}
+/* 选项卡的样式 */
+li.tab-item{
+    float: left;
+    height: 35px;
+    line-height: 35px;
+    padding: 0 13px;
+    margin-top: -1px;
+    margin-left: -1px;
+}
+/* 鼠标悬停在 li 上 */
+li.tab-item:hover{
+    border-top: 3px solid #ff8400;
+    border-left: 1px solid #dbdee1;
+    border-right: 1px solid #dbdee1;
+    background-color: #fff;
+    /* 原本盒模型中的 padding:0 13px */
+    padding: 0 12px;
+    line-height: 29px;
+    height: 36px;
+}
+.tab-menu ul li:first-child:hover{
+    border-left-color: transparent;
+}
+.tab-item a.tab-title{
+    color: #000;
+    font-size: 16px;
+    font-family: "Microsoft Yahei";
+}
+
+/* 选项卡对应的内容区域 */
+li.tab-item div.tab-content{
+    display: none;
+    position: absolute;
+    left: 0px;
+    top: 35px;
+    width: 360px;
+    height: 241px;
+    background-color: pink;
+}
+
+li.tab-item:hover div.tab-content{
+    display: block;
+}

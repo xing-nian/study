@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>焦点事件</title>
+</head>
+<body>
+    <input type="text" id="inp">
+</body>
+<script>
+    var inp = document.getElementById('inp');
+
+    // 获取焦点
+    inp.onfocus = function(){
+        console.log('获取焦点了');
+    }
+
+    // 失去焦点
+    inp.onblur = function(){
+        console.log('失去焦点了');
+    }
+
+
+
+</script>
+</html>

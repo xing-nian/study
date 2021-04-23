@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: #333;
+        }
+        div.map{
+            width: 747px;
+            height: 617px;
+            background-image: url(./img/map.png);
+            margin: 0px auto;
+
+            position: relative;
+        }
+        /* 把公共样式抽离出来，优化代码 */
+        span.area{
+            background-color: tomato;
+            position: absolute;
+            font-size: 0;
+            width: 8px;
+            height: 8px;
+
+            border-radius: 50%;
+            box-shadow: 0px 0px 10px tomato;
+        }
+        span.bj{
+            top: 240px;
+            right: 170px;
+        }
+        span.tb{
+            bottom: 106px;
+            right: 80px;
+        }
+        span.gz{
+            bottom: 79px;
+            right: 176px;
+        }
+    </style>
+</head>
+<body>
+    <div class="map">
+       <span class="bj area">北京</span>
+       <span class="tb area">台北</span>
+       <span class="gz area">广州</span>
+    </div>
+</body>
+</html>

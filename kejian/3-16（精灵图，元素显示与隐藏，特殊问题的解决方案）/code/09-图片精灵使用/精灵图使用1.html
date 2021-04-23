@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>精灵图使用1</title>
+    <style>
+        /* 可以把公共样式抽离出来 */
+        .icon1{
+            width: 144.285px;
+            height: 144.285px;
+            background-image: url(./icons.jpg);
+            /* 默认展示第一个小图标 */
+            /* background-position: 0 0; */
+        }
+        .r3-c4{
+            /* 第三行第四列的图标 */
+            /* background-position: 参数1表示x轴  参数2表示y轴 */
+            background-position: -432.857px -288.57px;
+        }
+        .r1-c5{
+            background-position: -577.14px 0;
+        }
+    </style>
+</head>
+<body>
+    <!-- 
+        1.为什么要使用精灵图（雪碧图 css sprites）?
+        一个网页中往往会应用到很多小的背景图像作为修饰，当网页中的图像过多时，服务器会频繁的发送和接收请求，造成服务器压力过大，降低页面加载速度。
+
+        2.精灵图的核心：
+        1> 将网页中的一些小背景图像整合到一张大图上（即 ：雪碧图）。
+        2> 通过 背景图片的定位（background-position）,在不同地方展示雪碧图中的小图标。
+     -->
+
+     <div class="icon1"></div>
+     <div class="r3-c4 icon1"></div>
+     <div class="r1-c5 icon1"></div>
+</body>
+</html>

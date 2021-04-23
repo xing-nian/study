@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>自定义下拉列表</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        ul{
+            list-style: none;
+        }
+        .box{
+            width: 300px;
+            margin: 50px auto 0px;
+            /* 轮廓线 */
+            outline: none;
+        }
+        h3{
+            width: 300px;
+            border: 1px solid #dcdcdc;
+            line-height: 40px;
+            padding: 0px 10px;
+            font-size: 16px;
+            font-weight: normal;
+            border-radius: 5px;
+            
+        }
+        ul.list{
+            width: 300px;
+            border: 1px solid #dcdcdc;
+            border-radius: 5px;
+            padding: 5px 0px;
+            margin-top: 10px;
+            /* 默认隐藏 */
+            display: none;
+
+        }
+        .item{
+            padding: 0px 10px;
+            line-height: 40px;
+        }
+        .item:hover{
+            background-color: #dcdcdc;
+        }
+        .sele{
+            color: #ccc;
+        }
+        /* 选中时 的样式 */
+        ul.list .active{
+            background-color: #5fb878;
+            color: #fff;
+        }
+
+    </style>
+
+<script>
+    window.onload = function(){
+        var h3 = document.getElementById('title');
+        var ul = document.getElementsByClassName('list')[0];
+        var lis = document.getElementsByClassName('item');
+        var box = document.getElementsByClassName('box')[0];
+
+        // 点击h3
+        h3.onclick = function(){
+            // 显示 ul
+            ul.style.display = 'block';
+            // 设置h3边框颜色
+            h3.style.borderColor = '#333';
+            console.log('-----');
+        }
+
+        // box失去焦点
+        box.onblur = function(){
+            // 隐藏ul
+            ul.style.display = 'none';
+            // 恢复h3边框颜色
+            h3.style.borderColor = '#dcdcdc';
+        }
+
+        var x = 1; //记录背景为绿色的li
+
+
+        // 给每一个li绑定点击事件
+        for(var i=0;i<lis.length;i++){
+            // 自定义属性，表示li的索引
+            lis[i].index = i;
+            lis[i].onclick = function(){
+                // 恢复之前的li(去除active类名)
+                lis[x].className = 'item';
+
+                // 设置当前的li(添加active类名)
+                this.className = 'item active';
+                x = this.index;//记录背景为绿色的li
+
+                // 设置h3的文本
+                h3.innerHTML = this.innerHTML;
+                // 隐藏ul
+                ul.style.display = 'none'
+            }
+        }
+
+    }
+</script>
+</head>
+<body>
+    <div class="box" tabindex="1">
+        <!-- 普通元素获取焦点事件  tabindex="1"-->
+        <h3 id="title">浙江省</h3>
+        <ul class="list">
+            <li class="item sele">请选择省</li>
+            <li class="item active">浙江省</li>
+            <li class="item">江西省</li>
+            <li class="item">福建省</li>
+        </ul>
+    </div>
+</body>
+
+</html>

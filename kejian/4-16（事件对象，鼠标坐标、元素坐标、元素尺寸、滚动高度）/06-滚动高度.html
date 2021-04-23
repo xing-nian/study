@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>滚动高度</title>
+</head>
+<body>
+    <div>
+        <p>p-1</p>
+        <p>p-2</p>
+        <p>p-3</p>
+        <p>p-4</p>
+        <p>p-5</p>
+        <p>p-6</p>
+        <p>p-7</p>
+        <p>p-8</p>
+        <p>p-9</p>
+        <p>p-10</p>
+        <p>p-11</p>
+        <p>p-12</p>
+        <p>p-13</p>
+        <p>p-14</p>
+        <p>p-15</p>
+        <p>p-16</p>
+        <p>p-17</p>
+        <p>p-18</p>
+        <p>p-19</p>
+        <p>p-20</p>
+        <p>p-21</p>
+        <p>p-22</p>
+        <p>p-23</p>
+        <p>p-24</p>
+        <p>p-25</p>
+        <p>p-26</p>
+        <p>p-27</p>
+        <p>p-28</p>
+        <p>p-29</p>
+        <p>p-30</p>
+        <p>p-31</p>
+        <p>p-32</p>
+        <p>p-33</p>
+        <p>p-34</p>
+        <p>p-35</p>
+        <p>p-36</p>
+        <p>p-37</p>
+        <p>p-38</p>
+        <p>p-39</p>
+        <p>p-40</p>
+        <p>p-41</p>
+        <p>p-42</p>
+        <p>p-43</p>
+        <p>p-44</p>
+        <p>p-45</p>
+        <p>p-46</p>
+        <p>p-47</p>
+        <p>p-48</p>
+        <p>p-49</p>
+        <p>p-50</p>
+    </div>
+    <button id="btn">按钮</button>
+    <div>
+        <h4>h4-1</h4>
+        <h4>h4-2</h4>
+        <h4>h4-3</h4>
+        <h4>h4-4</h4>
+        <h4>h4-5</h4>
+        <h4>h4-6</h4>
+        <h4>h4-7</h4>
+        <h4>h4-8</h4>
+        <h4>h4-9</h4>
+        <h4>h4-10</h4>
+        <h4>h4-11</h4>
+        <h4>h4-12</h4>
+        <h4>h4-13</h4>
+        <h4>h4-14</h4>
+        <h4>h4-15</h4>
+        <h4>h4-16</h4>
+        <h4>h4-17</h4>
+        <h4>h4-18</h4>
+        <h4>h4-19</h4>
+        <h4>h4-20</h4>
+        <h4>h4-21</h4>
+        <h4>h4-22</h4>
+        <h4>h4-23</h4>
+        <h4>h4-24</h4>
+        <h4>h4-25</h4>
+        <h4>h4-26</h4>
+        <h4>h4-27</h4>
+        <h4>h4-28</h4>
+        <h4>h4-29</h4>
+        <h4>h4-30</h4>
+        <h4>h4-31</h4>
+        <h4>h4-32</h4>
+        <h4>h4-33</h4>
+        <h4>h4-34</h4>
+        <h4>h4-35</h4>
+        <h4>h4-36</h4>
+        <h4>h4-37</h4>
+        <h4>h4-38</h4>
+        <h4>h4-39</h4>
+        <h4>h4-40</h4>
+        <h4>h4-41</h4>
+        <h4>h4-42</h4>
+        <h4>h4-43</h4>
+        <h4>h4-44</h4>
+        <h4>h4-45</h4>
+        <h4>h4-46</h4>
+        <h4>h4-47</h4>
+        <h4>h4-48</h4>
+        <h4>h4-49</h4>
+        <h4>h4-50</h4>
+    </div>
+</body>
+<script>
+    var btn = document.getElementById('btn');
+    btn.onclick = function(){
+        // 兼容写法
+        // scrollTop
+        // var st = document.documentElement.scrollTop || document.body.scrollTop;
+
+        // document.scrollingElement  获取滚动元素
+        var st = document.scrollingElement.scrollTop
+        console.log(st);
+    }
+</script>
+</html>

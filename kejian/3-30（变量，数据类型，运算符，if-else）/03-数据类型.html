@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>数据类型</title>
+    </head>
+    <body></body>
+    <script>
+        // 【基本数据类型/简单类型】
+        // 1. 字符串类型 string   定义文本信息    用"" ''包裹
+        // 可以使用转义符
+        // \' ,单引号
+        // \" ,双引号
+        var uname = '张"三"';
+        console.log(uname);
+        // 注意：双引号/单引号 中如果要嵌套 双引号/单引号，要使用转义符
+
+        // 2. 数值类型 number  可以进行数学运算
+        var price = 168;
+
+        // 3. 布尔类型 boolean  真（true）和假（flase）
+        var isMale = true;
+
+        // var res = confirm('确定删除？');
+        // console.log(res);
+
+        // 4. undefined  未定义 变量未赋值
+        var y;
+        console.log(y); // undefined
+
+        // 5. null  空值 空对象  不存在
+        var box = document.getElementById("box"); //查找页面中id为box的元素
+        console.log(box);
+
+        // 【复杂数据类型/引用类型】
+        // 1.对象 用{}包裹
+        var uname = "张三",
+            age = 18,
+            isMale = true;
+        var person = {
+            // 属性:值,
+            uname: "张三",
+            age: 18,
+            isMale: true,
+            hobbies:['吃','睡','打游戏']
+        };
+        var product = {
+            imgUrl: "http://www.baidu.jpg",
+            pName: "米兔",
+            price: "199元",
+            desc: "智能米兔机器...",
+        };
+        // 对象.属性名  获取属性值
+        // .  的
+        console.log(product.price);
+
+        // 2.数组  一组数据的集合  用 [] 包裹
+        // 元素->数据
+        // 索引(编号) 从0开始  通过索引访问数组中的元素
+        var arr = ["张旭辉", "陈小波", "张和铖", "刘雨", "安东昊"];
+        console.log(arr[2]);
+
+        // var mi1 = {
+        //     imgUrl:"http://www.baidu.jpg" ,
+        //     pName:"米兔",
+        //     price:"199元",
+        //     desc:"智能米兔机器..."
+        // }
+        // var m2 = {
+
+        // }
+        // var arr2 = [mi1,m2]
+
+        var productArr = [
+            {
+                imgUrl: "http://www.baidu.jpg",
+                pName: "米兔1",
+                price: "199元",
+                desc: "智能米兔机器...",
+            },
+            {
+                imgUrl: "http://www.baidu.jpg",
+                pName: "米兔2",
+                price: "299元",
+                desc: "智能米兔机器...",
+            },
+            {
+                imgUrl: "http://www.baidu.jpg",
+                pName: "米兔3",
+                price: "399元",
+                desc: "智能米兔机器...",
+            },
+        ];
+        // 获取第一个产品的价格
+        var pro1 = productArr[0];
+        console.log(pro1);
+        var pro1_price = pro1.price;
+        console.log(pro1_price);
+
+
+    </script>
+</html>

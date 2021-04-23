@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        
+        #wrap{
+            width: 1230px;
+            margin: 0 auto;
+        }
+        .col-item{
+            float: left;
+            width: 246px;
+            /* border: 1px solid #333; */
+            
+            background-color: pink;
+        }
+        img{
+            /* 118px */
+            width: 236px;
+            margin: 5px 0;
+        }
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <div class="col-item">
+            
+        </div>
+        <div class="col-item">
+            
+        </div>
+        <div class="col-item">
+            
+        </div>
+        <div class="col-item">
+            
+        </div>
+        <div class="col-item">
+            
+        </div>
+    </div>
+</body>
+<script src="./homework.js"></script>
+<script>
+    var colItems = document.getElementsByClassName('col-item');
+
+    // 遍历数据 
+    for(var i=0; i<list.length;i++){
+        // 判断哪一列高度最低
+        // 假设 第0列 最低
+        var minH = colItems[0].offsetHeight;
+        var colNum = 0;
+        for(var j=0;j<colItems.length;j++){
+            if (colItems[j].offsetHeight < minH) {
+                minH = colItems[j].offsetHeight;
+                colNum = j;
+            }
+        }
+        // 创建新节点 img
+        var imgNode = document.createElement('img');
+        // 设置img的src属性
+        imgNode.src = list[i].img;
+        // 设置img的height  从路径中解析出高度
+        //"https://hbimg.huabanimg.com/bed5347494beef22486804ed180ccc660a06c12f12abb1-5bdChZ_/fw/480/format/webp?w_h=236x1788"
+        imgNode.style.height = list[i].img.split('?')[1].split('x')[1] + 'px';
+        // 已知 img实际高度（h） ，实际宽度(w)，页面上设置的图片宽度(w1)，求页面设置的图片高度(h1)  h / h1 = w / w1
+
+        // 插入节点
+        colItems[colNum].appendChild(imgNode);
+    }
+
+</script>
+</html>

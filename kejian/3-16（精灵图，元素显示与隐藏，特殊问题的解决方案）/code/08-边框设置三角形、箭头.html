@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>边框设置三角形、箭头</title>
+    <style>
+        /* 看原理： */
+        .tip1{
+            width: 0;
+            height: 0;
+            border-top: 20px solid red;
+            border-right: 20px solid yellow;
+            border-bottom: 20px solid green;
+            border-left: 20px solid blue;
+        }
+        /* 等腰直角三角形 */
+        .tip2{
+            width: 0;
+            height: 0;
+            border-top: 20px solid red;
+            border-right: 20px solid transparent;
+            border-bottom: 20px solid transparent;
+            border-left: 20px solid transparent;
+        }
+        /* 看原理： */
+        .tip3{
+            width: 0;
+            height: 0;
+            border-top: 80px solid red;
+            border-right: 40px solid green;
+            border-bottom: 0px solid yellow;
+            border-left: 0px solid blue;
+        }
+        /* 直角三角形 */
+        .tip4{
+            width: 0;
+            height: 0;
+            border-top: 80px solid transparent;
+            border-right: 40px solid green;
+            border-bottom: 0px solid yellow;
+            border-left: 0px solid blue;
+        }
+        .tip5{
+            width: 30px;
+            height: 30px;
+            border: 3px solid #333;
+            border-top: none;
+            border-left: none;
+            /* 旋转 */
+            transform: rotate(-45deg);
+        }
+    </style>
+</head>
+<body>
+    <!-- 三角形 -->
+    <div class="tip1"></div>
+    <div class="tip2"></div>
+    <div class="tip3"></div>
+    <div class="tip4"></div>
+    <!-- 箭头 -->
+    <div class="tip5"></div>
+</body>
+</html>

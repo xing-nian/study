@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>普通元素使用焦点事件</title>
+    <style>
+        #box{
+            width: 200px;
+            height: 50px;
+            border: 1px solid #333;
+            line-height: 50px;
+            padding-left: 15px;
+            border-radius: 5px;
+            margin: 50px auto;
+            /* 轮廓线 */
+            outline: none;
+        }
+    </style>
+</head>
+<body>
+    <!-- 添加 tabindeex 属性可以让普通元素拥有焦点事件 -->
+    <div id="box" tabindex="1">请选择城市</div>
+</body>
+<script>
+    var div = document.getElementById('box');
+
+    div.onfocus = function(){
+        console.log('获取焦点');
+    }
+    div.onblur = function(){
+        console.log('失去焦点');
+    }
+
+</script>
+</html>

@@ -1,0 +1,51 @@
+<!-- 1.楼层滚动
+元素顶部在窗口中线之上   元素底部不超过窗口中线
+
+2.三级联动
+不使用select标签 -->
+
+
+<html>
+  <head>
+<style>
+  #list{
+          	height:500px;
+	background-color:gold;
+}
+  #list1{
+          	height:800px;
+	background-color:skyblue;
+}
+ #list2{
+          	height:1500px;
+	background-color:pink;
+}
+ #list3{
+          	height:200px;
+	background-color:green;
+}
+</style>
+</head>
+   <body>
+     <div id = 'list'></div>
+     <div id = 'list1'></div>
+     <div id = 'list2'></div>
+     <div id = 'list3'></div>
+   </body>
+<script>
+         var list3 = document.getElementById('list3');
+        
+         window.onscroll = function(){
+        var s_t = document.body.scrollTop||document.documentElement.scrollTop; //页面滚动高度 (兼容写法)
+         var w_h=window.innerHeight;
+         console.log(s_t);
+         console.log(w_h);
+         console.log(list3.offsetTop+list3.offsetHeight);
+        if(list3.offsetTop+list3.offsetHeight-w_h-s_t<=50 ){
+              alert('触底了');
+ }
+}
+   
+
+</script>
+</html>

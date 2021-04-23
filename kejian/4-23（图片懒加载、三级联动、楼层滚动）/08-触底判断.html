@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box{
+            height: 2000px;
+            background-color: aqua;
+        }
+    </style>
+</head>
+<body>
+    <div id="box"></div>
+</body>
+<script>
+    window.onscroll = function(){
+        var s_t = document.scrollingElement.scrollTop;
+        var w_h = window.innerHeight;
+        var b_h = document.body.offsetHeight;
+
+        if (b_h - s_t - w_h <= 50) {
+            console.log('已经触底了');
+        }else{
+            console.log('不在触底区域');
+        }
+    }
+</script>
+</html>

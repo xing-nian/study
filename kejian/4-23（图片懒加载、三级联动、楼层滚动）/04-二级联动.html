@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>二级联动</title>
+</head>
+<body>
+    <select name="" id="sheng">
+        <!-- <option >qqq</option> -->
+    </select>
+    <select name="" id="shi"></select>
+</body>
+<script src="./city_code.js"></script>
+<script>
+    var shengSele = document.getElementById('sheng');
+    var shiSele = document.getElementById('shi');
+
+    // 插入省
+    var shengID = 0;
+    for(var i=0;i<data.length;i++){
+        var option = document.createElement('option');
+        option.innerHTML = data[i].name;
+
+        if(data[i].name == "河南省"){
+            option.selected = true;
+            shengID = i;
+        }
+        // 绑定属性，记录省份id
+        // option.value = i;
+        shengSele.appendChild(option);
+    }
+
+    // 初始状态 
+    for(var i=0;i<data[shengID].city.length;i++){
+        var option = document.createElement('option');
+        option.innerHTML = data[shengID].city[i].name;
+        shiSele.appendChild(option);
+    }
+
+    // 下拉框更换选项时：
+    shengSele.onchange = function(){
+        // selectedIndex 获取到当前选择的option索引
+        // console.log(shengSele.value); //获取省份id
+        shengID = shengSele.selectedIndex;
+        // 先清除（原来所选省份对应的）城市
+        shiSele.innerHTML = '';
+
+        // 插入城市
+        for(var i=0;i<data[shengID].city.length;i++){
+            var option = document.createElement('option');
+            option.innerHTML = data[shengID].city[i].name;
+            shiSele.appendChild(option);
+        }
+
+    }
+
+</script>
+</html>

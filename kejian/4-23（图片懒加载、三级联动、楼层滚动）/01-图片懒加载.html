@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box{
+            height: 1500px;
+        }
+        #box2{
+            height: 1000px;
+        }
+    </style>
+</head>
+<body>
+    <div id="box"></div>
+    <img id="lazy" src="./lazy.png" alt="" data-src="http://bfs.biyao.com/group1/M00/09/10/rBACYV3rGHCABzPyAAK2q5PCToc834_360x360.jpg">
+    <div id="box2"></div>
+</body>
+<script>
+    var img = document.getElementById('lazy');
+
+    window.onscroll = function(){
+        var s_t = document.scrollingElement.scrollTop;
+        var w_h = window.innerHeight;
+        var img_offsetT = img.offsetTop;
+        if (img_offsetT <= s_t+w_h - 100 && img.isLoad == undefined) {
+            img.src = img.dataset.src;
+            img.isLoad = true;
+        }
+    }
+
+</script>
+</html>

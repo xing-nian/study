@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>事件委托</title>
+</head>
+<body>
+    <div id="wrap">
+        <button>按钮1</button>
+        <button>按钮2</button>
+        <button>按钮3</button>
+        <button>按钮4</button>
+        <button>按钮5</button>
+        <button>按钮6</button>
+        <button>按钮7</button>
+        <button>按钮8</button>
+        <button>按钮9</button>
+        <button>按钮10</button>
+    </div>
+</body>
+<script>
+
+    var wrap = document.getElementById('wrap');
+
+    // 只注册一次
+    // 把点击事件委托给 button 的父元素 wrap
+    wrap.onclick = function(e){
+        // e.target 获取触发事件的目标节点
+        console.log(e.target);
+        e.target.style.color = 'red';
+    }
+
+    // 事件委托：利用事件冒泡的原理
+    // 优点：减少事件的注册，节省内存空间。
+
+
+</script>
+</html>

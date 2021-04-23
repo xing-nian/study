@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box{
+            width: 1200px;
+            font-size: 0;
+        }
+        img{
+            width: 230px;
+            height: 230px;
+            margin: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div id="box">
+        <!-- <img src="" alt=""> -->
+    </div>
+</body>
+<script src="./goodList.js"></script>
+<script>
+    var box = document.getElementById('box');
+
+    for(var i=0;i<goodList.length;i++){
+        var imgNode = document.createElement('img');
+        imgNode.src = './lazy.png';
+        imgNode.dataset.src = goodList[i].imageUrl;
+        box.appendChild(imgNode);
+    }
+
+    var imgs = box.getElementsByTagName('img');
+   
+
+    function fn(){
+        var s_t = document.scrollingElement.scrollTop;
+        var w_h = window.innerHeight;
+        for(var i=0;i<imgs.length;i++){
+            // 获取图片距离页面顶部的高度
+            var img_t = imgs[i].offsetTop;
+            // console.log(img_t);
+            // console.log(s_t+w_h-200);
+            // 判断 图片是否要进入可是区域内 且是第一次出现
+            if (img_t <= s_t+w_h-100 && imgs[i].isLoad==undefined) {
+                imgs[i].src = imgs[i].dataset.src;
+                imgs[i].isLoad = true;
+            }
+        }
+    }
+    // 进入页面先执行一次
+    fn();
+    // 页面滚动时触发
+    window.onscroll = fn;
+
+</script>
+</html>

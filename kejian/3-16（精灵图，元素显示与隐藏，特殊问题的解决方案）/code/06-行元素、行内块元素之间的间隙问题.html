@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>行元素、行内块元素之间的间隙问题</title>
+        <style>
+            span {
+                background-color: skyblue;
+            }
+            #box2 span:nth-child(n+2){
+                /* 第二种方式：使用margin-left 让元素向左移 */
+                margin-left: -5px;
+            }
+
+            /* 第三种方式：先设置父元素的font-size:0px,然后再设置子元素的font-size （推荐使用此种方式）*/
+            #box3{
+                font-size: 0;
+            }
+            #box3 span{
+                font-size: 16px;
+            }
+
+            /* 第四种方式：让子元素浮动。 */
+            #box4{
+                height: 20px;
+            }
+            #box4 span{
+                float: left;
+            }
+        </style>
+    </head>
+    <body>
+        <!-- 间隙问题是由于换行产生的。 -->
+        <!-- 第一种方式：元素与元素之间紧挨着，不敲换行符。 -->
+        <div id="box1">
+            <span>第一项</span><span>第二项</span><span>第三项</span>
+        </div>
+        <div id="box2">
+            <span>第一项</span>
+            <span>第二项</span>
+            <span>第三项</span>
+        </div>
+        <div id="box3">
+            <span>第一项</span>
+            <span>第二项</span>
+            <span>第三项</span>
+        </div>
+        <div id="box4">
+            <span>第一项</span>
+            <span>第二项</span>
+            <span>第三项</span>
+        </div>
+    </body>
+</html>

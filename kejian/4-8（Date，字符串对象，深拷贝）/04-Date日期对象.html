@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Date日期对象</title>
+</head>
+<body>
+    
+</body>
+<script>
+    // 获取日期对象（当前系统的标准时间）
+    var d = new Date();
+    console.log(d);
+
+    // 获取年份
+    var year = d.getFullYear();
+    console.log(year);
+    // 获取月份 注意：月份是从0开始计算
+    var month = d.getMonth() + 1;
+    console.log(month);
+    // 日
+    var date = d.getDate();
+    console.log(date);
+    // 星期  星期一 - 星期六 1-6  注意：星期日 0
+    var week = d.getDay();
+    console.log(week);
+    // 时
+    var h = d.getHours();
+    console.log(h);
+    // 分
+    var m = d.getMinutes();
+    console.log(m);
+    // 秒
+    var s = d.getSeconds();
+    console.log(s);
+
+    // 问：如何在页面上显示 “2021-04-08 11:27 星期四” 这种格式的日期时间
+
+
+</script>
+</html>

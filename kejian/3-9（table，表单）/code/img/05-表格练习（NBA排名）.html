@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NBA排名</title>
+    <style>
+        table{
+            width: 300px;
+            /* background-color: blue; */
+            /* 合并边框 */
+            border-collapse: collapse;
+            text-align: center;
+        }
+        td{
+            height: 36px;
+        }
+        /* 后代选择器 */
+        thead td{
+            border-bottom: 1px solid #d4d4d4;
+        }
+        .bg-color{
+            background-color: #f8f8f8;
+        }
+
+    </style>
+</head>
+<body>
+    <!-- cellspacing="0" -->
+    <table>
+        <thead>
+            <tr class="bg-color">
+                <td>名次</td>
+                <td>球员</td>
+                <td>球队</td>
+                <td>场均</td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>特纳</td>
+                <td>步行者</td>
+                <td>3.4</td>
+            </tr>
+            <tr class="bg-color">
+                <td>2</td>
+                <td>特纳</td>
+                <td>步行者</td>
+                <td>3.4</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>特纳</td>
+                <td>步行者</td>
+                <td>3.4</td>
+            </tr>
+            <tr class="bg-color">
+                <td>4</td>
+                <td>特纳</td>
+                <td>步行者</td>
+                <td>3.4</td>
+            </tr>
+            <tr>
+                <td>5</td>
+                <td>特纳</td>
+                <td>步行者</td>
+                <td>3.4</td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr class="bg-color">
+                <!-- 列合并 -->
+                <td colspan="4">查看更多&gt;&gt;</td>
+            </tr>
+        </tfoot>
+    </table>
+</body>
+</html>

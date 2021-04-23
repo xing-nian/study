@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<!-- 树状结构 -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>css样式</title>
+    <style>
+        /* 1.找对象；2.加样式 */
+        /* div---标签选择器：根据标签名查找元素 */
+        /* .header---类选择器：根据类名查找元素 */
+        .header{
+            /* 高度，px：像素（单位） */
+            /* height: 200px; */
+            background-color: #f8f8f9;
+        }
+        h1{
+            /* 如何实现 一个小的矩形在一个大的矩形中水平居中？ */
+            /* 定宽居中的原理：设定width，搭配margin左右为 auto */
+            /* 宽度 */
+            width: 800px;
+            /* margin:外边距，上下外边距：0px ,左右：auto*/
+            margin: 0px auto;
+            /* background-color: aquamarine; */
+
+        }
+        .content{
+            width: 800px;
+            margin: 0px auto;
+
+            /* background-color: bisque; */
+            /* height: 100px; */
+        }
+        .logo-pic{
+            width: 40px;
+        }
+        .logo{
+            /* 
+                div:原本属于块元素，会独占一行；
+                此时，display: inline-block;将div转换成了行内块元素，不会独占一行
+             */
+            display: inline-block;
+        }
+        .bs-name{
+            display: inline-block;
+        }
+        .news-content{
+            width: 600px;
+            margin: 0 auto;
+            /* background-color: blanchedalmond; */
+        }
+        .news-pic{
+            /* background-color: blue; */
+            /* 文本对齐方式，center：居中 */
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <!-- class选择器的命名规范：以英文字母开头，可包含英文字母，数字，- ， -->
+    <div class="header">
+        <h1>卷土重来？特朗普“复出”演讲：炮轰拜登，暗示将参加下届大选，变异病毒在美蔓延迅速，福奇再发警告｜早报</h1>
+        <div class="content">
+            <div class="logo">
+                <!-- target:目标，_blank:表示在新的窗口打开链接的页面 -->
+                <a href="https://author.baidu.com/home?from=bjh_article&app_id=1572595784300706" target="_blank">
+                    <img src="logo.jpg" class="logo-pic">
+                </a>
+            </div>
+            <div class="bs-name">
+                <h6><a href="https://author.baidu.com/home?from=bjh_article&app_id=1572595784300706">第一财经</a>
+                </h6>
+                <!-- &nbsp;  表示一个空格 -->
+                <p class="time">发布时间：03-01&nbsp;&nbsp;12:24&nbsp;&nbsp;&nbsp;&nbsp;第一财经官方帐号</p>
+            </div>
+        </div>
+    </div>
+    <div class="news-content">
+        <div class="news-pic"><img src="news.jpg" alt=""></div>
+        <h2>特朗普暗示将参加2024年大选</h2>
+        <p>美国新冠肺炎疫情从今年一月以来有所缓和，包括纽约市、蒙大拿州、艾奥瓦州、北达科他州在内的多个州和地区正逐渐放松疫情管控措施。</p>
+        <p>新冠追踪项目的数据显示，美国新增确诊病例为7.1万例。相比之下，1月份，每日新增病例超过22.5万例。美国单日新增新冠死亡病例1822例。</p>
+        <h2>变异病毒在美蔓延迅速 福奇：美国疫情形势仍非常危险</h2>
+        <p>美国疾病控制与预防中心(CDC)负责人2月26日表示，自1月初以来，美国报告的新冠确诊病例减少的趋势可能会趋于平缓，这是一个令人担忧的转变，因为高度传染性变异可能会加剧感染。</p>
+        <div class="news-pic"><img src="news2.jpg" alt=""></div>
+    </div>
+
+
+
+</body>
+</html>

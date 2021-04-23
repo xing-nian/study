@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>表单输入事件</title>
+    <style>
+        #msg{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <input type="text" id="uname">
+    <span id="msg"></span>
+</body>
+<script>
+    var uname = document.getElementById('uname');
+    var span = document.getElementById('msg');
+
+    // 输入内容时触发输入事件
+    uname.oninput = function(){
+        console.log(uname.value.length);
+
+        if(uname.value.length < 6 && uname.value.length > 0){
+            // 显示span
+            span.style.display = 'inline';
+            // 设置文本内容
+            span.innerHTML = '长度小于6位';
+        }
+        if(uname.value.length <= 12 && uname.value.length >= 6 || uname.value.length == 0){
+            // 隐藏span
+            span.style.display = 'none';
+        }
+        if(uname.value.length > 12){
+            // 显示span
+            span.style.display = 'inline';
+            // 设置文本内容
+            span.innerHTML = '长度大于12位';
+        }
+
+    }
+</script>
+</html>

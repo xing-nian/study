@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM对象的属性</title>
+</head>
+<body>
+    <button id="btn">按钮</button>
+</body>
+<script>
+    // DOM对象 也是一个对象{}
+    var btn = document.getElementById('btn');
+    // DOM对象的属性
+    btn.innerHTML = '按钮1';
+    btn.style.color = 'red';
+
+    btn.x = 1; //给DOM对象 添加新的属性 x
+
+    // 遍历对象
+    for(var key in btn){
+        // console.log(key);
+    }
+    // console.log(btn);
+    console.dir(btn); // 可以打印输出 DOM对象的所有属性及方法
+
+
+    // var btnObj = {
+    //     innerHTML:"",
+    //     style:{
+    //         color:"red",
+    //         width:"100px",
+    //         backgroundColor:"#ccc"
+    //     }
+    // }
+
+
+
+
+</script>
+</html>

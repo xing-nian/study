@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>行高百分比及倍数</title>
+    <style>
+        p{
+            margin: 0;
+        }
+        .div1{
+            background-color: skyblue;
+            font-size: 20px;
+            /* 300% 是以font-size为依据，计算出来为 20px * 300%  = 60px */
+            line-height: 300%;    
+        }
+        .div2{
+            background-color: pink;
+            font-size: 20px;
+            /* 3倍 也是以font-size为依据，计算出来为 20px * 3  = 60px  */
+            line-height: 3;
+        }
+    </style>
+</head>
+<body>
+    <div class="div1">
+        <p>行高设置为百分比</p>
+    </div>
+
+    <div class="div2">
+        <p>行高设置为倍数</p>
+    </div>
+</body>
+</html>

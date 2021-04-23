@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>元素宽高设置百分比</title>
+    <style>
+        /* 案例1：从根标签html开始，到具体的子元素，全部全部都具有百分比高度，这样，就都能够获取到高度信息； */
+        /* html和body的高度都要为100%，此时给div1的height：100%，才能生效 */
+        html,body{
+            /* height: 100%; */
+        }
+        body{
+            margin: 0;
+            background-color: bisque;
+
+            /* height: 300px; */
+        }
+        .div1{
+            height: 100%;
+            background-color: aqua;
+        }
+        /* 案例二：给父元素设置具体的宽高，然后子元素的宽高百分比才能生效 */
+        .div2{
+            height: 200px;
+            width: 200px;
+            background-color: pink;
+        }
+        h1{
+            margin: 0;
+            height: 100%;
+            width: 50%;
+            background-color: powderblue;
+        }
+
+        /* 案例三：通过定位，可以实现子元素的宽高与父元素的宽高保持一致 */
+        .div3{
+            height: 300px;
+            border: 5px solid #333;
+            position: relative;
+        }
+        .item{
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(244, 0, 0, .5);
+        }
+
+        /* 总结：子元素设置的宽高百分比，是相对于父元素的实际宽高 */
+    </style>
+</head>
+<body>
+    <div class="div1"></div>
+    <div class="div2">
+        <h1>标题</h1>
+    </div>
+
+    <div class="div3">
+        <div class="item"></div>
+    </div>
+</body>
+</html>

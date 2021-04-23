@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>回文字符串</title>
+</head>
+<body>
+    
+</body>
+<script>
+    // 1.字符串分割成数组 
+    // 2.把数组中元素拼接成字符串
+    // 3.比较颠倒后的字符串 == 原字符串
+    /*
+        aa
+        2   1
+
+        ava
+        3   1
+
+        abba
+        4   2
+
+
+        abcba
+        5   2
+
+        abccba
+        6   3
+
+        abcdcba
+        7   3
+
+        字符串两端进行比较
+    
+    */
+
+    var str = 'acdeca';
+    var start = 0;
+    var end = str.length-1
+    var flag = true;
+    for(var i=0;i<Math.floor(str.length/2);i++){
+        var item1 = str[start];
+        var item2 = str[end];
+        if (item1 !== item2) {
+            flag=false;
+            alert('不是回文字符串');
+            break;
+        }
+        start++;
+        end--;
+    }
+    if (flag) {
+        alert('是回文字符串')
+    }
+</script>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM选择器（2）</title>
+</head>
+<body>
+    <div class="box">
+        <p id="txt">hello</p>
+    </div>
+</body>
+<script>
+    // 嵌套
+    var div = document.getElementsByClassName('box')[0];
+    var p = div.getElementsByTagName('p')[0];
+    console.log(p);
+
+
+    // 注意：如果根基id查找元素，只能使用 document调用getElementById()
+    // var p2 = div.getElementById('txt');
+    // console.log(p2);  //报错
+
+</script>
+</html>

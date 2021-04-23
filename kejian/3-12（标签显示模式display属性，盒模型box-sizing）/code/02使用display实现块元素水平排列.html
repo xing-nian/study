@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>练习</title>
+    <style>
+        .content{
+            width: 1000px;
+            height: 400px;
+            background-color: #ccc;
+
+            font-size: 0;
+        }
+        .small-box{
+            width: 192px;
+            height: 180px;
+            display: inline-block;
+            margin-right: 10px;
+
+            font-size: 20px;
+        }
+        /* 奇数：odd  偶数：even */
+        .content div:nth-child(odd){
+            background-color: pink;
+        }
+        .content div:nth-child(even){
+            background-color: powderblue;
+        }
+        .content div:nth-child(5){
+            margin-right: 0;
+        }
+        .content div:nth-child(10){
+            margin-right: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="content">
+        <div class="small-box">我的文字大小为20px</div>
+        <div class="small-box">我的文字大小为20px</div>
+        <div class="small-box">我的文字大小为20px</div>
+        <div class="small-box">我的文字大小为20px</div>
+        <div class="small-box">我的文字大小为20px</div>
+        <div class="small-box">我的文字大小为20px</div>
+        <div class="small-box">我的文字大小为20px</div>
+        <div class="small-box">我的文字大小为20px</div>
+        <div class="small-box">我的文字大小为20px</div>
+        <div class="small-box">我的文字大小为20px</div>
+    </div>
+    
+</body>
+</html>

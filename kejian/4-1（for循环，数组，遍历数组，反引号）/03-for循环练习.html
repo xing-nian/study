@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>for循环练习</title>
+</head>
+<body>
+    
+</body>
+<script>
+    // 阶乘
+    // 1*2*3*4*5*6*7*8*9*10
+    var res = 1;
+    for(var i = 2;i <= 10;i++){
+        // res = res * i
+        res*=i;
+    }
+    // 10*9*8*7*6*5*4...*1
+    // var res2 = 10;
+    // for(var i = 9; i >= 1;i--){
+    //     res2*=i;
+    // }
+
+    // 8848m   0.01mm  问对折多少次
+    // 0.01 * 2^n >= 8848   1000  
+    
+    // var height = 0.00001;
+    // for(var i = 1; ;i++){
+    //     height = height * 2;
+    //     if (height >= 8848) {
+    //         console.log(i); //对折次数
+    //         break;  //终止循环
+    //     }
+    // }
+
+    // 死循环，程序中不能出现死循环
+    // for(var i = 0; i>=0;i++){
+
+    // }
+
+    // var count = 0;  //记录对折次数
+    // for(var i = 0.00001; i<=8848;i*=2){
+    //     count+=1;
+    // }
+    // console.log(count);
+
+    var count = -1;
+    for(var i = 0.00001; i <= 8848 * 2; i*=2){
+        count+=1
+    }
+    console.log(count);
+
+
+
+
+
+</script>
+</html>

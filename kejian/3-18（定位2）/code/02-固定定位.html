@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>固定定位</title>
+    <style>
+        body{
+            margin: 0;
+            height: 3000px;
+        }
+        .nav{
+            height: 60px;
+            background-color: #ccc;
+            text-align: center;
+            line-height: 60px;
+        }
+        .toolbar{
+            width: 50px;
+            height: 200px;
+            border: 1px solid #333;
+
+            /* 固定定位 */
+            position: fixed;
+            right: 80px;
+            bottom: 80px;
+
+            /* 
+                1> 以浏览器可视窗口为参照，与父元素有无定位无关。
+                2> 固定定位的元素会脱离标准文档流，不占据原来空间，元素性质发生改变。
+             */
+        }
+    </style>
+</head>
+<body>
+    <div class="nav">导航条</div>
+    <div class="toolbar">我是固定不动的</div>
+</body>
+</html>

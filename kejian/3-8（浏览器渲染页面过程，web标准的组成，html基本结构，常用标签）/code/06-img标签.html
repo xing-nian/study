@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>img标签</title>
+    <style>
+        img{
+            width: 101px;
+            /* height: 50px; */
+        }
+    </style>
+</head>
+<body>
+    <!-- 
+        1. img ：图片标签,单标签。
+           src属性：指定图片资源所在的路径。
+           alt属性：alter 替换，作用：1> 当图片无法正常展示时，显示alt定义的文本信息；2> 给搜索引擎提供关键字信息。
+           title属性：当鼠标悬停在img上时，显示的提示文本。
+           
+        2. 给 img 设置宽高： 建议只设置 width 和 height中的一个，让另一个自适应。
+        目的：防止图片失真（变形）。
+
+        3. 相对路径
+           ../  表示后退一级
+     -->
+     <img src="baidu.png" alt="前往百度首页" title="百度">
+     <img src="imgs/huge.jpg" alt="">
+     <img src="../phone.jpg" alt="">
+     <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/431e5fd6bfd1b67d096928248be18303.jpg?thumb=1&w=2452&h=240&f=webp&q=90" alt="">
+</body>
+</html>

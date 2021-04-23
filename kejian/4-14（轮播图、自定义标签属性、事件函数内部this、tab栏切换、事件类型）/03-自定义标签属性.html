@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>自定义标签属性</title>
+</head>
+<body>
+    <a href="https://www.baidu.com" id="a" x="1">百度</a>
+    <select name="" id="area">
+        <option value="" provid="10" ciytid="1" data-areaid='9'>经开区</option>
+        <option value="" id="dongQu">东区</option>
+        <option value="">中原区</option>
+        <option value="">二七区</option>
+    </select>
+</body>
+<script>
+
+    var a = document.getElementById('a');
+    // a.href
+    // console.log(a.x);  // undefined
+    var dongQu = document.getElementById('dongQu');
+    var options = document.getElementsByTagName('option');
+
+    // 获取自定义标签属性值
+    var res = a.getAttribute('x');
+    console.log(res);
+
+    // 设置自定义标签属性值
+    a.setAttribute('x',100);
+
+    dongQu.setAttribute('provID',10);
+
+    var areaid = options[0].getAttribute('data-areaid');
+    console.log(areaid);
+
+    // 针对 data- 开头的自定义标签属性
+    console.log(options[0].dataset.areaid);
+    options[0].dataset.areaid = 90;
+
+
+</script>
+</html>
