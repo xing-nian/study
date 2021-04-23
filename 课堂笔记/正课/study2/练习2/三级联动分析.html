@@ -7,25 +7,60 @@
     <title>Document</title>
 </head>
 <body>
-    
+    <select name="" id="sheng"></select>
+   
+    </select>
+
+
+    <select name="" id="shi"></select>
+   
+    </select>
+
+    <select name="" id="qu"></select>
+   
+    </select>
 </body>
 <script src="city_code.js"></script>
 <script>
+        var sheng =document.getElementById('sheng')
+        var shi =document.getElementById('shi')
+        var qu =document.getElementById('qu')
     //省份
-    // for(var i=0; i<data.length; i++){
-    //     console.log(data[i].name);
+    for(var i=0; i<data.length; i++){
+        var option = document.createElement('option')
+        option.innerHTML = data[i].name;
+        sheng.appendChild(option)
+   
 
-    // }
-    // 市区
-    var citys = data[2].city;
-    // for(var i=0 ; i<citys.length; i++){
-    //     console.log(citys[i].name);
-    // }
-
-    // 区  河北省-2  石家庄市-0
-    var areas= citys[0].area
-    for(var i=0 ; i<areas.length; i++){
-        console.log(areas[i].name);
     }
+   
+
+
+    var shengId = 3;
+    // 市区
+   
+    for(var i=0; i<data[shengId].city.length; i++){
+    var option = document.createElement('option')
+        option.innerHTML = data[shengId].city[i].name;
+        shi.appendChild(option)
+    }
+   
+
+
+
+    // // 区县
+    // document.write('<select name="" id="">')
+    // document.write('<option value="">请选择</option>')
+    // for(var i=0; i<data.length; i++){
+    // for(var j=0 ;j< data[i].city.length; j++){
+    //     var citys = data[i].city;
+    // for(var k=0 ;k< data[i].city[j].area.length; k++){ 
+    //  document.write(`<option value="">${data[i].city[j].area[k].name}</option>`)
+    // }
+    // }
+    // }
+    // document.write('</select>')
+
+    
 </script>
 </html>

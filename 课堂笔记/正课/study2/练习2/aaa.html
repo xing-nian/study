@@ -8,9 +8,11 @@
     <style>
         *{
             margin: 0;
-            height: 0;
+            padding: 0;
         }
-       
+        body{
+            background-color: #f5f5f5;
+        }
         #wrap{
             width: 1230px;
             margin: 0 auto;
@@ -18,39 +20,62 @@
         .col{
             float: left;
             width: 236px;
-            box-sizing: border-box;
             margin: 5px;
         }
         .item{
             width: 236px;
             border-radius: 10px;
+            background-color: #fff;
+            overflow: hidden;
+            margin-bottom: 15px;
         }
-       .item.pic{
-           width: 236px;
-           height: auto;
-       }
-       .item.author.a-pic{
-           width: 236px;
-       }
-       
+        .item .pic{
+            width: 236px;
+        }
+        .item h4{
+            font-weight: normal;
+            font-size: 18px;
+            line-height: 30px;
+            padding-left: 20px;
+            height: 30px;
+            margin-bottom: 10px;
+        }
+        .item .author{
+            padding-left: 20px;
+            padding-bottom: 15px;
+        }
+        .item .author .a-pic{
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            vertical-align: middle;
+        }
+        .item .author .a-name{
+            display: inline-block;
+            margin-left: 15px;
+        }
+
+
+    
     </style>
 </head>
 <body>
-  <div id="wrap">
-    <div class="col">
-        <!-- <div class="item">
-            <img class="pic" src="https://hbimg.huabanimg.com/727247ec735e91113937d8099caa0e4c809d92b5112b7c-MQAXQO_/fw/480/format/webp?w_h=236x334" alt="">
-            <div class="author">
-                <img class= 'a-pic' src="https://hbimg.huabanimg.com/50ddfee531e691867c032ebe0c744e869da8a26f3043-Pn8ziQ_sq75sf/format/webp" alt="">
-                <p class= 'a-name'>APP_双11皮肤</p>
-            </div>
-        </div> -->
+    <div id="wrap">
+        <div class="col">
+            <!-- <div class="item">
+                <img src="https://hbimg.huabanimg.com/0bba39066d05747da6f2ce41e8b1e77e9b9bbc4c6595da-6Go5bv_/fw/480/format/webp?w_h=236x1829" alt="" class="pic">
+                <h4 class="p-target">vi</h4>
+                <div class="author">
+                    <img src="https://hbimg.huabanimg.com/6d39f844d7bc61fd50f699d1ac04b7b6b1ab4672901-FyVF7O_sq75sf/format/webp" alt="" class="a-pic">
+                    <p class="a-name">zhaQjeOe</p>
+                </div>
+            </div> -->
+        </div>
+        <div class="col"></div>
+        <div class="col"></div>
+        <div class="col"></div>
+        <div class="col"></div>
     </div>
-    <div class="col"></div>
-    <div class="col"></div>
-    <div class="col"></div>
-    <div class="col"></div>
-  </div>
 </body>
 <script src="./homework.js"></script>
 <script>
@@ -75,26 +100,24 @@ for(var i=0; i<list.length;i++){
             colNum = j;
         }
     }
-    // 创建新节点 img
-    var itemNode = document.createElement('div');
-    itemNode.className ='item';
-    itemNode.innerHTML = `
-    <img class="pic" src="${list[i].img}" alt="" style='height:${h}'>
+     // 创建新节点
+     var itemNode = document.createElement('div');
+        itemNode.className = 'item';
+        // 获取图片高度
+        var h = list[i].img.split('?')[1].split('x')[1];
+        // console.log(h);
+        itemNode.innerHTML = `
+            <img src="${list[i].img}" alt="" class="pic" style="height:${h}px">
+            <h4 class="p-target">${list[i].target}</h4>
             <div class="author">
-                <img class= 'a-pic' src="${list[i].avt}" alt="">
-                <p class= 'a-name'>${list[i].author}</p>
+                <img src="${list[i].avt}" alt="" class="a-pic">
+                <p class="a-name">${list[i].author}</p>
             </div>
-    `
+        `
+        // 插入节点
+        col[colNum].appendChild(itemNode);
 
-    
-   
-    //"https://hbimg.huabanimg.com/bed5347494beef22486804ed180ccc660a06c12f12abb1-5bdChZ_/fw/480/format/webp?w_h=236x1788"
-    var h = list[i].img.split('?')[1].split('x')[1] ;
-    // 已知 img实际高度（h） ，实际宽度(w)，页面上设置的图片宽度(w1)，求页面设置的图片高度(h1)  h / h1 = w / w1
-
-    // 插入节点
-    col[colNum].appendChild(itemNode);
-}
+    }
 
       
 </script>

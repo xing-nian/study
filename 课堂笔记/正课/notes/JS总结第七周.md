@@ -360,3 +360,99 @@ e.cancelBubble = true;  //IE兼容使用使用
   </script>
 ```
 
+# 4月23号
+
+### 案例：返回顶部
+
+```
+<style>
+        #goback{
+            width: 100px;
+            height: 100px;
+            position: fixed;
+            bottom: 100px;
+            right: 50px;
+            display: none;
+        }
+        div{
+            height: 3000px;
+        }
+    </style>
+</head>
+<body>
+   <div> 
+  
+ 
+</div>
+<button id="goback">返回顶部</button>
+</body>
+<script>
+     var goback = document.getElementById('goback');
+
+    //  假设页面向上滚动的高度大于等于1000px goback显示 否则隐藏
+     window.onscroll = function(){
+         var scrollTop= document.body.scrollTop || document.documentElement.scrollTop;
+
+         if(scrollTop >=1000){
+             goback.style.display = 'block';
+         }else{
+            goback.style.display = 'none';
+         }
+     }
+    //  返回顶部
+     goback.onclick = function(){
+         document.body.scrollTop = 0;
+         document.documentElement.scrollTop = 0;
+     }
+</script>
+```
+
+### 案例：元素触底
+
+```
+<style>
+        #nav{
+            height: 100px;
+            background-color: pink;
+        }
+        #banner{
+            height: 300px;
+            background-color: skyblue;
+        }
+        #list{
+            height: 1500px;
+            background-color: gold;
+        }
+        #footer{
+            height: 150px;
+            background-color: cadetblue;
+        }
+       
+    </style>
+</head>
+<body>
+    <div id="nav"></div>
+    <div id="banner"></div>
+    <div id="list"></div>
+    <div id="footer"></div>
+    <div id="light"></div>
+</body>
+<script>
+var list =document.getElementById('list')
+
+window.onscroll = function(){
+         var s_t= document.body.scrollTop || document.documentElement.scrollTop;//页面滚动       	高度 (兼容写法)
+         var w_h = window.innerHeight;    //窗口高度
+         var b_h = list.offsetHeight+list.offsetTop  //元素底部到页面顶部的高度 //元元素底部到页          面顶部的高度素自身高度 +元素页面顶部的高度 
+       
+         flag=true; //触底只执行一次
+         if(b_h -w_h -s_t  <= 100 &&b_h -w_h -s_t>=0){
+         if (flag) {
+            console.log('触底区域');
+            flag = false;
+        }
+       }
+      }
+</script>
+```
+

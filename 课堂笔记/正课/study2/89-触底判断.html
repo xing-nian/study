@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>触底判断</title>
+</head>
+<style>
+    #box{
+        height: 2000px;
+        background-color: skyblue;
+    }
+</style>
+<body>
+    <div id="box"></div>
+</body>
+<script>
+ 
+    window.onscroll = function(){
+         var st= document.body.scrollTop || document.documentElement.scrollTop;//页面滚动高度 (兼容写法)
+         var w_h = window.innerHeight;    //窗口高度
+         var b_h = document.body.offsetHeight;   //页面高度
+
+         if(b_h - st - w_h <=50){
+            alert('页面触底了')
+       }else{
+        console.log('不在触底区域');
+       }
+         }
+     
+</script>
+</html>

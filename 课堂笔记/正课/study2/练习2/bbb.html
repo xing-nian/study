@@ -1,119 +1,79 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>商品加减</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
 </head>
 <body>
-<ul id="list">
-<li>
-<input type="button" value="-">
-<strong>0</strong>
-<input type="button" value="+">
-单价：<em>12.5元</em>
-小计：<span>0元</span>
-</li>
-<li>
-<input type="button" value="-">
-<strong>0</strong>
-<input type="button" value="+">
-单价：<em>3.5元</em>
-小计：<span>0元</span>
-</li>
-<li>
-<input type="button" value="-">
-<strong>0</strong>
-<input type="button" value="+">
-单价：<em>2.5元</em>
-小计：<span>0元</span>
-</li>
-<li>
-<input type="button" value="-">
-<strong>0</strong>
-<input type="button" value="+">
-单价：<em>10元</em>
-小计：<span>0元</span>
-</li>
-<li>
-<input type="button" value="-">
-<strong>0</strong>
-<input type="button" value="+">
-单价：<em>15元</em>
-小计：<span>0元</span>
-</li>
-</ul>
-<p>
-商品合计共：<span>0件</span><br>
-商品总价为：<span>0元</span><br>
-其中最贵的商品单价为：<span>0元</span>
-</p>
+    <select name="" id="sheng"> 
+    </select>
+    <select name="" id="shi">
+    </select>
+    </select>
+    <select name="" id="qu">
+    </select>
 </body>
-<script type="text/javascript">
-var oUl = document.getElementById("list");
-var oLi = oUl.getElementsByTagName("li");
-var oP = document.getElementsByTagName("p")[0];
-var pSpan = oP.getElementsByTagName("span");
-
-
-for(var i=0;i<oLi.length;i++){
-calculate(oLi[i]);  
-}
-
-
-function calculate(oLi){
-var oBtn = oLi.getElementsByTagName("input");
-var oStrong = oLi.getElementsByTagName("strong")[0];
-var oEm = oLi.getElementsByTagName("em")[0];
-var oSpan = oLi.getElementsByTagName("span")[0];
-var number = parseInt(oStrong.innerHTML);
-var unit = parseFloat(oEm.innerHTML);
-oBtn[0].onclick = function(){
-number--;
-if(number<0){
-number=0;
-}
-oStrong.innerHTML = number;
-oSpan.innerHTML  = unit*number+'元';
-statistics();
-
-}
-oBtn[1].onclick = function(){
-number++;
-oStrong.innerHTML = number;
-oSpan.innerHTML  = unit*number+'元';
-statistics();  
-}
-}
-//底部的动态统计函数
-function statistics(){
-var oStrong = oUl.getElementsByTagName("strong");//数量
-var oSpan = oUl.getElementsByTagName("span");//单项小计
-var oEm = oUl.getElementsByTagName("em");//单价
-var amount_n = 0;//总数量（局部变量每次调用该函数均清空一次）
-var amount_p = 0;//总价
-/*最高单价  此处用局部数组来存储，最大值存在max_price[0];  最开始用一个全局数字变量存储最大值出现了一个bug：当将当前最大单价的这一项的数量减为0后，最大单价却不会变化为下一个次高的单价值.*/
-var max_price = [];
-for(var i=0;i<oLi.length;i++){
-amount_n+=parseInt(oStrong[i].innerHTML);
-amount_p+=parseFloat(oSpan[i].innerHTML);
-//当某一项数量不为0时才将其单价值存入数组中，如果不加此判断，那每次数组的最大值都将为所有项中的那个最高单价值
-
-if(parseInt(oStrong[i].innerHTML)){
-max_price[max_price.length] = parseFloat(oEm[i].innerHTML);
-}
-}
-//利用数组的sort方法对数组进行从大到小的排序
-max_price.sort(function(a,b){return b-a;});
-//当总数量为0时，最高单价也应归0
-if(amount_n==0){
-max_price[0] = 0;
-}
-pSpan[0].innerHTML = amount_n+'件';
-pSpan[1].innerHTML = amount_p+'元';
-pSpan[2].innerHTML = max_price[0]+'元';
-
+<script src="city_code.js"></script>
+<script>
+    // 获取元素
+        var sheng =document.getElementById('sheng')
+        var shi =document.getElementById('shi')
+        var qu =document.getElementById('qu')
+    // 初始状态
+    // 插入省   遍历data数组
+    // 封装省
+  function insertsheng(){
+    for(var i = 0; i<data.length; i++){
+        var opt  = document.createElement('option');
+        opt.innerHTML = data[i].name;
+        sheng.appendChild(opt);
+    }
+  }
+  insertsheng();//调用省
+    // 插入市
+    var  shengId = 0;
+    // 封装市
+    function insertshi(){
+        for(var i = 0 ; i<data[shengId].city.length; i++){
+        var opt = document.createElement('option');
+        opt.innerHTML = data[shengId].city[i].name;
+        shi.appendChild(opt);
+    }
+    }
+    insertshi();//调用市
+    // 插入区
+    var shiId = 0;
+    function insertqu(id){
+        for(var i = 0 ; i<data[shengId].city[id].area.length; i++){
+        var opt = document.createElement('option');
+        opt.innerHTML = data[shengId].city[id].area[i].name;
+        qu.appendChild(opt);
+    }
+    }
+    insertqu(shiId);
+    var  shengId = 0;
+    // 选择不同省
+    sheng.onchange = function(){
+        // 能不能知道当前用户选择的是哪个省份？
+        sheng.selectedIndex;   //用户选择option的索引
+        shengId = sheng.selectedIndex;
+        // 清除市
+        shi.innerHTML = ''
+        // 更新市
+        insertshi();
+        // 清除区
+        qu.innerHTML = '';
+        // 更新区
+       insertqu(shiId);
+//  选择不同的城市
+shi.onchange = function(){
+    // 能不能获取到当前用户选择的城市
+    // 清除区
+  insertqu(shi.selectedIndex);
 
 }
-
+ }
 </script>
 </html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>图片懒加载</title>
+    <style>
+        #box1{
+            width: 1200px;
+            
+        }
+        img{
+            width: 230px;
+            height: 230px;
+            margin: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div id="box">
+       
+    </div>
+  
+    
+</body>
+<script src="./goodList3.js"></script>
+<script>
+     var imgs = document.getElementsByTagName('img');
+    var box = document.getElementById('box')
+
+           for(var i =0 ;i<goodList3.length;i++){
+            var imgNode = document.createElement('img') 
+            imgNode.src ='https://img1.baidu.com/it/u=3743344166,3958191438&fm=26&fmt=auto&gp=0.jpg'
+            imgNode.dataset.src =goodList3[i].imageUrl
+            box.appendChild(imgNode);
+    }
+   var fn = function(){
+           // 获取页面向上滚动的高度
+            var s_t = document.body.scrollTop || document.documentElement.scrollTop;
+            var w_h = window.innerHeight
+            for(var i =0; i<imgs.length ; i++){
+                var img_t = imgs[i].offsetTop;
+                if (img_t<= s_t + w_h -200 && imgs[i].flag == undefined){
+              // 此时应该加载真正的图片
+            imgs[i].src= imgs[i].dataset.src;
+            imgs[i].flag = true;
+       }
+            }
+
+       }
+       fn();
+       window.onscroll = fn;
+</script>
+</html>

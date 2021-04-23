@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>元素触底</title>
+    <style>
+      #nav {
+        height: 100px;
+        background-color: pink;
+      }
+      #banner {
+        height: 300px;
+        background-color: skyblue;
+      }
+      #list {
+        height: 1500px;
+        background-color: gold;
+      }
+      #footer {
+        height: 150px;
+        background-color: cadetblue;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="nav"></div>
+    <div id="banner"></div>
+    <div id="list"></div>
+    <div id="footer"></div>
+    <div id="light"></div>
+  </body>
+  <script>
+    var list = document.getElementById("list");
+
+    window.onscroll = function () {
+      var s_t = document.body.scrollTop || document.documentElement.scrollTop; //页面滚动高度 (兼容写法)
+      var w_h = window.innerHeight; //窗口高度
+      var b_h = list.offsetHeight + list.offsetTop; //元素底部到页面顶部的高度 //元元素底部到页面顶部的高度素自身高度 +元素页面顶部的高度 =
+
+      flag = true;
+      if (b_h - w_h - s_t <= 100 && b_h - w_h - s_t >= 0) {
+        if (flag) {
+          console.log("触底区域");
+          flag = false;
+        }
+      }
+    };
+  </script>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>返回顶部</title>
+    <style>
+        #goback{
+            width: 100px;
+            height: 100px;
+            position: fixed;
+            bottom: 100px;
+            right: 50px;
+            display: none;
+        }
+       div{
+           height: 3000px;
+       }
+    </style>
+</head>
+<body>
+ 
+<div>
+</div>
+<button id="goback">返回顶部</button>
+</body>
+<script>
+     var goback = document.getElementById('goback');
+
+    //  假设页面向上滚动的高度大于等于1000px goback显示 否则隐藏
+     window.onscroll = function(){
+         var scrollTop= document.body.scrollTop || document.documentElement.scrollTop;
+
+         if(scrollTop >=1000){
+             goback.style.display = 'block';
+         }else{
+            goback.style.display = 'none';
+         }
+     }
+    //  返回顶部
+     goback.onclick = function(){
+         document.body.scrollTop = 0;
+         document.documentElement.scrollTop = 0;
+     }
+</script>
+</html>

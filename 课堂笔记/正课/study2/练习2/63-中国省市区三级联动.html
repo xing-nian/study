@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <select name="" id="sheng">
+        
+    </select>
+   
+    
+
+
+    <select name="" id="shi">
+       
+    </select>
+   
+    </select>
+
+    <select name="" id="qu">
+        
+    </select>
+  
+</body>
+<script src="city_code.js"></script>
+<script>
+    // 获取元素
+        var sheng =document.getElementById('sheng')
+        var shi =document.getElementById('shi')
+        var qu =document.getElementById('qu')
+
+    // 初始状态
+    // 插入省   遍历data数组
+    for(var i = 0; i<data.length; i++){
+        var opt  = document.createElement('option');
+        opt.innerHTML = data[i].name;
+        sheng.appendChild(opt);
+    }
+    // 插入市
+    var  shengId = 0;
+    for(var i = 0 ; i<data[shengId].city.length; i++){
+        var opt = document.createElement('option');
+        opt.innerHTML = data[shengId].city[i].name;
+        shi.appendChild(opt);
+    }
+
+    // 插入区
+    var shiId = 0;
+    for(var i = 0 ; i<data[shengId].city[shiId].area.length; i++){
+        var opt = document.createElement('option');
+        opt.innerHTML = data[shengId].city[shiId].area[i].name;
+        qu.appendChild(opt);
+    }
+   
+    var  shengId = 0;
+    // 选择不同省
+    sheng.onchange = function(){
+        // 能不能知道当前用户选择的是哪个省份？
+        sheng.selectedIndex;   //用户选择option的索引
+        shengId = sheng.selectedIndex;
+        // 清除市
+        shi.innerHTML = ''
+        // 更新市
+        for(var i =0;i<data[shengId].city.length;i++){
+            var opt = document.createElement('option');
+            opt.innerHTML = data[shengId].city[i].name;
+            shi.appendChild(opt);
+        }
+        // 清除区
+        qu.innerHTML = '';
+        // 更新区
+        for(var i =0; i<data[shengId].city[shiId].area.length;i++){
+            var opt = document.createElement('option');
+            opt.innerHTML = data[shengId].city[shiId].area[i].name;
+            qu.appendChild(opt);
+        }
+    }
+
+//  选择不同的城市
+shi.onchange = function(){
+    // 能不能获取到当前用户选择的城市
+  
+
+    // 清除区
+    qu.innerHTML = '';
+    for(var i =0; i<data[shengId].city[shi.selectedIndex].area.length;i++){
+        var opt = document.createElement('option');
+        opt.innerHTML = data[shengId].city[shi.selectedIndex].area[i].name;
+        qu.appendChild(opt);
+    }
+}
+
+
+// 适当封装
+// 获取元素
+//  var sheng =document.getElementById('sheng')
+//         var shi =document.getElementById('shi')
+//         var qu =document.getElementById('qu')
+//     // 初始状态
+//     // 插入省   遍历data数组
+//     // 封装省
+//   function insertsheng(){
+//     for(var i = 0; i<data.length; i++){
+//         var opt  = document.createElement('option');
+//         opt.innerHTML = data[i].name;
+//         sheng.appendChild(opt);
+//     }
+//   }
+//   insertsheng();//调用省
+//     // 插入市
+//     var  shengId = 0;
+//     // 封装市
+//     function insertshi(){
+//         for(var i = 0 ; i<data[shengId].city.length; i++){
+//         var opt = document.createElement('option');
+//         opt.innerHTML = data[shengId].city[i].name;
+//         shi.appendChild(opt);
+//     }
+//     }
+//     insertshi();//调用市
+//     // 插入区
+//     var shiId = 0;
+//     function insertqu(id){
+//         for(var i = 0 ; i<data[shengId].city[id].area.length; i++){
+//         var opt = document.createElement('option');
+//         opt.innerHTML = data[shengId].city[id].area[i].name;
+//         qu.appendChild(opt);
+//     }
+//     }
+//     insertqu(shiId);
+//     var  shengId = 0;
+//     // 选择不同省
+//     sheng.onchange = function(){
+//         // 能不能知道当前用户选择的是哪个省份？
+//         sheng.selectedIndex;   //用户选择option的索引
+//         shengId = sheng.selectedIndex;
+//         // 清除市
+//         shi.innerHTML = ''
+//         // 更新市
+//         insertshi();
+//         // 清除区
+//         qu.innerHTML = '';
+//         // 更新区
+//        insertqu(shiId);
+// //  选择不同的城市
+// shi.onchange = function(){
+//     // 能不能获取到当前用户选择的城市
+//     // 清除区
+//   insertqu(shi.selectedIndex);
+
+// }
+//  }
+
+
+
+
+
+
+ 
+</script>
+</html>
