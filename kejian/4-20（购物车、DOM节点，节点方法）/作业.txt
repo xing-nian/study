@@ -1,6 +1,0 @@
-1. 根据 goodList.js 中的数据，渲染页面，并实现购物车功能。
-2. 瀑布流 根据 homework.js 中的数据，渲染页面，实现瀑布流效果。
-   思路:往每一列插入元素时 看哪一列高度最小 则插入到哪一列
-
-注意：给img设置高度，从图片路径中提取数据（w_h=236x472） 
-"https://hbimg.huabanimg.com/3e43482c320e49046752e0e0917ea14fa2e6375b13e73c-QBoxOP_/fw/480/format/webp?w_h=236x472"
