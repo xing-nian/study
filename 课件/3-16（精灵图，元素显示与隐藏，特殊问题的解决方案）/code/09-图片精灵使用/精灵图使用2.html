@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>精灵图使用2</title>
+    <style>
+        /* 公共样式 */
+        .icon{
+            width: 70px;
+            height: 70px;
+            background-image: url(./icons.jpg);
+            /* background-size: 参数1表示背景图的宽 参数2表示背景图的高; */
+            /* 70 *7 = 490 */
+            /* background-size: 490px 490px; */
+            background-size: 700% 700%;
+        }
+        .r1c2{
+            background-position: -70px 0;
+        }
+        .r3c2{
+            background-position: -70px -140px;
+        }
+    </style>
+</head>
+<body>
+    <div class="icon r1c2"></div>
+    <div class="icon r3c2"></div>
+    <div class="icon r1c1"></div>
+</body>
+</html>

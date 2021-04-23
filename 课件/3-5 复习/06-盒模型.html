@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box1{
+            /* 
+                盒模型的组成：content（内容），padding（内边距），border（边框），margin（外边距）
+
+             */
+            
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+
+            /* 内边距：上右下左 （顺时针方向） */
+            padding: 10px 20px 30px 40px;
+        }
+
+        .child{
+            width: 200px;
+            height: 200px;
+            background-color: powderblue;
+
+             /* solid:表示的是边框的样式，实心的线条 */
+             /* border: 2px solid black; */
+
+             border-top: 2px solid black;
+        }
+        .parent{
+            background-color: red;
+            /* padding: 20px 20px 20px 20px; */
+            /* padding: 20px; */
+            /* 上下20px  左右30px */
+            /* padding: 20px 30px; */
+            /* 上：20px， 右：30px ，下：40px ，左：30px */
+            /* padding: 20px 30px 40px; */
+
+            padding-left: 20px;
+
+
+            /* margin: 20px 30px 40px; */
+            margin-top: 20px;
+        }
+    
+    </style>
+</head>
+<body>
+    <div class="box1">盒模型</div>
+    <div class="parent">
+        <div class="child"></div>
+    </div>
+</body>
+</html>

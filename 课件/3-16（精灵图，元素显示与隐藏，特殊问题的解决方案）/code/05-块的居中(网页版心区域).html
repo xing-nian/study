@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>块的居中</title>
+    <style>
+        body{
+            margin: 0;
+        }
+        .container{
+            background-color: #ccc;
+        }
+        .w{
+            /* 前提：定宽 */
+            width: 992px;
+            /* 关键：设置左右外边距为 auto（自动） */
+            margin: 0px auto;
+            background-color: tomato;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="w">版心区域</div>
+    </div>
+</body>
+</html>

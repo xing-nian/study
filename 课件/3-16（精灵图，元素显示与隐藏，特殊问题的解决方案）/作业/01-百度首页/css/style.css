@@ -1,0 +1,57 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+a{
+    text-decoration: none;
+}
+ul{
+    list-style: none;
+}
+/* 清除浮动 */
+.clearfix::before,
+.clearfix::after{
+    content: "";
+    display: table;
+}
+.clearfix::after{
+    clear: both;
+}
+.clearfix{
+    *zoom: 1;
+}
+
+/* 1.头部导航 */
+.header .nav ul.left-nav{
+    float: left;
+    padding-left: 24px;
+}
+.header .nav ul.right-nav{
+    float: right;
+    padding-right: 24px;
+}
+.header .nav li{
+    float: left;
+    height: 60px;
+    line-height: 60px;
+    margin-right: 31px;
+}
+#logoin-btn{
+    margin-right: 0;
+    
+}
+#logoin-btn a{
+    color: #fff;
+    background-color: #4e6ef2;
+    /* padding: 5px 11px 7px; */
+    border-radius: 5px;
+    display: inline-block;
+    width: 48px;
+    height: 24px;
+    line-height: 24px;
+    text-align: center;
+}
+.header .nav li a{
+    font-size: 13px;
+    color: #222;
+}

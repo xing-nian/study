@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>标签显示模式</title>
+    <style>
+        div{
+            background-color: #ccc;
+        }
+        div span:first-child{
+            width: 120px;
+            height: 30px;
+            background-color: aqua;
+            /* display: 显示  inline：行内  inline-block：行内块  block：块 */
+            display: inline-block;
+        }
+        h1{
+            background-color: pink;
+            width: 300px;
+            height: 100px;
+        }
+        h2{
+            background-color: powderblue;
+        }
+        /* 属性选择器 找到一个有type属性，且属性值等于button的input标签*/
+        input[type="button"]{
+            width: 200px;
+            height: 80px;
+        }
+    </style>
+</head>
+<body>
+    <!-- 
+        element：元素
+        1.行元素 inline（行内元素）:span  a  strong  em  i  sup  sub  del  label  
+          
+          1>布局：从左往右
+          2>特点：不独占一行（根据内容尽可能少的占用宽度），默认不能设置宽高
+           
+        2.块元素 block：div h1-h6  p  ul li ol dl dt dd table
+          1>布局：从上往下
+          2>特点：独占一行，默认可以设置宽高
+
+        3.行内块元素 inline-block: img input
+          1>布局：从左往右
+          2>特点：不独占一行（根据内容尽可能少的占用宽度），默认可以设置宽高
+     -->
+     <div>
+         <!-- span{我是第$个span}*5 -->
+         <span>我是第1个span</span>
+         <span>我是第2个span</span>
+         <span>我是第3个span</span>
+         <span>我是第4个span</span>
+         <span>我是第5个span</span>
+         <span>我是第1个span</span>
+         <span>我是第2个span</span>
+         <span>我是第3个span</span>
+         <span>我是第4个span</span>
+         <span>我是第5个span</span>
+         <span>我是第1个span</span>
+         <span>我是第2个span</span>
+         <span>我是第3个span</span>
+         <span>我是第4个span</span>
+         <span>我是第5个span</span>
+     </div>
+     <h1>标题标签，属于块元素</h1>
+     <h2>二级标题</h2>
+
+     <input type="text">
+     <input type="password">
+     <input type="button" value="普通按钮">
+
+     
+
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>元素显示模式</title>
+    <style>
+        div{
+            /* 设置背景颜色 */
+            background-color: aquamarine;
+            /* 设置高度 */
+            height: 400px;
+            /* 设置宽度 */
+            width: 800px;
+        }
+        main{
+            background-color: bisque;
+            width: 400px;
+            height: 100px;
+        }
+        span{
+            background-color: cornflowerblue;
+            width: 400px;
+            height: 200px;
+        }
+        img{
+            width: 400px;
+            
+        }
+        button{
+            background-color: crimson;
+            width: 200px;
+        }
+    </style>
+</head>
+<!-- 注释符号的快捷键： ctrl + / -->
+    <!-- 1.div,main,p,h1-h6   2.span,a,strong,em   3.img -->
+    <!-- 标签分为三类：1.块标签（块元素：block）2.行标签（行元素：inline） 3.行内块标签（行内块元素：inline-block） -->
+    <!-- 
+        【块元素的特征】：1> 独占一行
+                         2>可以设置宽高
+
+        【行元素的特征】：1>不独占一行（根据内容尽可能少的占用宽度）
+                        2>设置的宽高样式无法生效
+
+        【行内块元素的特征】：1>不独占一行（根据内容尽可能少的占用宽度）
+                            2>可以设置宽高
+     -->
+     
+    <div>块元素</div>
+    <main>我也是块标签</main>
+    <span>行元素</span>
+    <a href="http://www.baidu.com">百度(我也是行标签)</a>
+    <img src="img/1.png" alt="">
+
+    <button>按钮</button>
+</body>
+</html>

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>三星手机</title>
+    <style>
+        /* #box1: 表示的是 id选择器，注意：id选择器具有唯一性 */
+        #box1{
+            width: 330px;
+            height: 330px;
+            background-color: #f4f4f4;
+            /* 设置圆角半径 */
+            border-radius: 20px;
+            text-align: center;
+        }
+        span{
+           width: 37px;
+           height: 20px;
+           background-color: #2189ff;
+           /* display:设置元素显示模式，span原本是行元素，现在把它改为块元素 */
+           display: block;
+            
+            color: #fff;
+            font-size: 12px;
+            text-align: center;
+            /* line-height行高，当height = line-height，可以实现文字垂直居中 */
+            line-height: 20px;
+            border-radius: 10px;
+
+        }
+        #pic{
+            height: 160px;
+            margin-top: 29px;
+        }
+        img{
+            width: 140px;
+            
+            /* 添加过渡动画 */
+            transition: width 0.3s;
+        }
+        h1{
+            font-size: 16px;
+            margin: 25px 0 21px;
+        }
+        p{
+            font-size: 10px;
+            /* 过渡动画，all 指代transform和opacity */
+            transition: all 0.3s;
+        }
+        /* #box1:hover img  表示当鼠标悬停在box1 上时，修改img的样式 */
+        #box1:hover img{
+            width: 160px;
+        }
+        #box1:hover p{
+            /* 平移 */
+            transform: translateY(-20px);
+            /* 透明度 ,取值范围：0-1*/
+            opacity: 0;
+        }
+        #buy{
+            width: 90px;
+            height: 30px;
+            background-color: #333;
+            border-radius: 15px;
+            margin: 0 auto;
+            color: #fff;
+            font-size: 12px;
+            text-align: center;
+            line-height: 30px;
+            font-weight: 700;
+            opacity: 0;
+            /* 过渡动画 */
+            transition: all 0.3s;
+        }
+        #box1:hover #buy{
+            transform: translateY(-20px);
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+    <!-- 标签之间的关系：1）并列关系；2）嵌套关系 -->
+    <!-- id:唯一标识符 -->
+
+    <!-- 标签分类：块元素，行元素，行内块元素 -->
+    <div id="box1">
+        <span>NEW</span>
+        <div id="pic"><img src="sx.png" alt=""></div>
+        <h1>Galaxy S21 系列 5G</h1>
+        <p>12期免息 至高600元免息补贴</p>
+        <div id="buy">立即抢购</div>
+    </div>
+</body>
+</html>
