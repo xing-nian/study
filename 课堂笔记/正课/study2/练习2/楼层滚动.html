@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>楼层滚动</title>
+    <style>
+        ul{
+            list-style: none;
+        }
+         #floors li{
+             height: 2000px;
+         }
+         #nav{
+             position: fixed;
+             right: 50px;
+             bottom: 100px;
+             background-color: blue;
+         }
+         #nav li{
+             width: 200px;
+             line-height: 30px;
+             background-color: #fff;
+             margin:5px 0;
+             text-align: center;
+         }
+         #nav li.active{
+            background-color: #ccc;
+         }
+    </style>
+</head>
+<body>
+     <ul id="nav">
+         <li>1</li>
+         <li>2</li>
+         <li>3</li>
+         <li>4</li>
+     </ul>
+     <ul id="floors">
+         <li  style="background-color: palevioletred;"></li>
+         <li  style="background-color: rgb(216, 188, 112);"></li>
+         <li  style="background-color: rgb(112, 169, 216);"></li>
+         <li  style="background-color: rgb(216, 112, 112);"></li>
+     </ul>
+</body>
+<script>
+      var nav = document.getElementById('nav');
+      var floors = document.getElementById('floors');
+
+      var count = 0 //记录点击当前的楼层号
+    nav.children[count].className ='active'
+    //   导航选项影响楼层滚动
+    for(var i = 0; i<nav.children.length;i++){
+        // 给导航选项绑定属性记录索引
+        nav.children[i].index = i;
+        nav.children[i].onclick = function(){
+            // 页面滚动的高度 = 该楼层距离页面顶部的高度 -100px
+
+            // 找到对应楼层距离页面顶部的高度
+            var eleTop = floors.children[this.index].offsetTop
+            // 设置页面向上滚动的高度
+            document.scrollingElement.scrollTop = eleTop-100;
+
+            
+            // 回复原来
+            nav.children[count].className = "";
+            // 修改样式
+            this.className = "active"
+            count = this.index;
+        }   
+        }
+
+        // 2.楼层滚动影响导航选项
+        window.onscroll = function(){
+            // 获取窗口高度的一半
+            var w_h = window.innerHeight /2;
+            // 检测那个楼层模块占据窗口主区域
+            for(var i = 0 ; i<floors.children.length; i++){
+                // 楼层高度
+                var eleH = floors.children[i].offsetHeight;
+                // 楼层距离页面顶部的高度
+                var eleTop = floors.children[i].offsetTop;
+                var s_t = document.body.scrollTop || document.documentElement.scrollTop;
+                var w_h = window.innerHeight
+
+                if(s_t+w_h >= eleTop && s_t+w_h <= eleTop+eleH &&count !== i){
+                    // 还原之前选中的导航项
+                    nav.children[count].className = '';
+                    // 以i 为索引 找到对应的导航项，修改样式
+                    nav.children[i].className = "active";
+                    count = i;
+                    console.log('1');
+                }
+
+            }
+        }
+</script>
+</html>

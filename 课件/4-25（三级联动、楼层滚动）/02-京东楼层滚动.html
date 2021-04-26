@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        ul{
+            list-style: none;
+        }
+        .clearfix::before,
+        .clearfix::after{
+            display: table;
+            content: "";
+        }
+        .clearfix::after{
+            clear: both;
+        }
+        .clearfix::after{
+            *zoom: 1;
+        }
+
+        body{
+            background-color: #e0e0e0;
+        }
+        #nav{
+            width: 150px;
+            background-color: cornsilk;
+            position: fixed;
+            left: 20px;
+            bottom: 100px;
+        }
+        #nav li{
+            line-height: 40px;
+            background-color: #d0d0d0;
+            color: #fff;
+            margin: 5px;
+            text-align: center;
+        }
+        /* 选中样式 */
+        #nav li.active{
+            color: darkmagenta;
+        }
+        #floors{
+            width: 1200px;
+            margin: 0 auto;
+        }
+        .title{
+            text-align: center;
+            line-height: 40px;
+            border-bottom: 1px solid darkmagenta;
+        }
+        .list li{
+            float: left;
+            width: 290px;
+            margin: 5px;
+            text-align: center;
+            background-color: #fff;
+        }  
+        .list li img{
+            width: 290px;
+            /* 注意：图片一定要加高度 */
+            height: 290px;
+        } 
+        .list li h4{
+            line-height: 30px;
+            font-weight: 400;
+        }
+
+    </style>
+</head>
+<body>
+    <ul id="nav">
+        
+    </ul>
+    <ul id="floors">
+        <!-- <li class="item">
+            <h3 class="title">传统滋补</h3>
+            <ul class="list">
+                <li>
+                    <img src="" alt="">
+                    <h4>梨膏</h4>
+                </li>
+                <li>
+                    <img src="" alt="">
+                    <h4>花蜜</h4>
+                </li>
+            </ul>
+        </li>
+        <li>
+            <h3 class="title">传统滋补</h3>
+            <ul class="list">
+                <li>
+                    <img src="" alt="">
+                    <h4>梨膏</h4>
+                </li>
+                <li>
+                    <img src="" alt="">
+                    <h4>花蜜</h4>
+                </li>
+            </ul>
+        </li> -->
+    </ul>
+</body>
+<script src="./data.js"></script>
+<script>
+    var nav = document.getElementById('nav');
+    var floors = document.getElementById('floors');
+
+    // 1.遍历数据，插入标签内容
+    for(var i=0;i<data.length;i++){
+        // 插入导航项
+        nav.innerHTML += `<li data-index="${i}">${data[i].type}</li>`;
+
+        // 插入楼层
+        var html = `
+        <li class="item">
+            <h3 class="title">${data[i].type}</h3>
+            <ul class="list clearfix">
+        `
+        // 插入该楼层的商品列表
+        for(var j=0;j<data[i].goodList.length;j++){
+            html += `
+                <li>
+                    <img src="lazyload.gif" data-src="${data[i].goodList[j].imgUrl}" class="lazyImg">
+                    <h4>${data[i].goodList[j].title}</h4>
+                </li>
+            `
+        }
+
+        html+=`
+            </ul>
+        </li>
+        `
+
+        floors.innerHTML+=html;
+    }
+
+    // 2.图片懒加载
+    var lazyImgs = document.getElementsByClassName('lazyImg');
+    console.log(lazyImgs);
+
+    function lazyLoad(){
+        // 页面滚动高度
+        var s_t = document.scrollingElement.scrollTop;
+        // 窗口高度
+        var w_h = window.innerHeight;
+        for(var i=0;i<lazyImgs.length;i++){
+            // 图片距离页面顶部的高度
+            var eleTop = lazyImgs[i].offsetTop;
+
+            if (eleTop + 100 <= s_t + w_h && lazyImgs[i].isLoad == undefined) {
+                lazyImgs[i].src = lazyImgs[i].dataset.src;
+                lazyImgs[i].isLoad = true;//标记图片已经加载完成
+            }
+        }
+    }
+    lazyLoad();
+
+
+    // 3.导航影响楼层滚动
+    var count = 0; //记录楼层索引
+    nav.children[count].className = 'active';
+    nav.onclick = function(e){
+        if(e.target.nodeName == 'LI'){
+            // 恢复之前li的样式
+            nav.children[count].className = '';
+
+            // 设置当前选中li的样式
+            e.target.className = 'active';
+            count = e.target.dataset.index;
+            // 页面滚动
+            document.scrollingElement.scrollTop = floors.children[count].offsetTop - 100;
+        }
+    }
+
+    // 4.楼层滚动影响导航项
+    window.onscroll = function(){
+        var s_t = document.scrollingElement.scrollTop;
+        var w_h = window.innerHeight / 2;
+
+        // 检测哪个楼层出现在窗口可视区域内
+        for(var i=0;i<floors.children.length;i++){
+            var eleTop = floors.children[i].offsetTop;
+            var eleH = floors.children[i].offsetHeight;
+            if (eleTop <= s_t + w_h && s_t + w_h <= eleTop + eleH && count !== i) {
+                // 复原之前导航项的样式
+                nav.children[count].className = ''
+                // 修改导航项的样式
+                nav.children[i].className = 'active';
+                count = i;
+            }
+        }
+
+        // 图片懒加载
+        lazyLoad();
+    }
+    // 注意 DOM0级事件 会覆盖 ； DOM2级事件 不会覆盖
+
+</script>
+</html>

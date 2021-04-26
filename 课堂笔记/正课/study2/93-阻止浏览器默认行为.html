@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>阻止浏览器默认行为</title>
+  </head>
+  <body>
+    <a href="https://www.baidu.com">baidu</a>
+    adasd
+  </body>
+  <script>
+    var a = document.querySelector("a");
+    a.onclick = function (e) {
+      //阻止默认事件
+      //preventDefault()[dom标准写法(ie678不兼容)]
+      //ie678用returnValue
+      //或者利用return false也能阻止默认行为,没有兼容问题(只限传统注册方式)
+      e.preventDefault(); //阻止默认行为
+    };
+    
+    // document.onkeydown = function (e) {
+    //   if (e.ctrlKey && e.keyCode == 67) {
+    //     console.log("-----");
+    //     // ctrl + c 复制
+    //     e.preventDefault();
+    //     // return false;
+    //   }
+    // };
+    // document.oncontextmenu = function(e){
+    //     e.preventDefault();// 阻止用户点击右键
+    //      // return false;
+    // }
+    // 开始选中事件
+    document.onselectstart = function(e){
+        // e.preventDefault()
+        return false;
+    }
+  </script>
+</html>

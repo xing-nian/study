@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>三级联动唯品会样式</title>
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+            ul {
+                list-style: none;
+            }
+            .clearfix::before,
+            .clearfix::after {
+                display: table;
+                content: "";
+            }
+            .clearfix::after {
+                clear: both;
+            }
+            .clearfix::after {
+                *zoom: 1;
+            }
+            p#address {
+                text-align: center;
+                font-size: 20px;
+                line-height: 30px;
+                height: 30px;
+                font-weight: 700;
+            }
+            #wrap {
+                width: 600px;
+                margin: 0 auto;
+                position: relative;
+            }
+            #tab-list {
+                border: 1px solid #333;
+            }
+            #tab-list li {
+                border-right: 1px solid #333;
+                height: 40px;
+                line-height: 38px;
+                width: 80px;
+                float: left;
+                text-align: center;
+            }
+            /* 选中时的样式 selected */
+            #tab-list li.selected {
+                background-color: #ccc;
+            }
+            #tab-content {
+            }
+            ul.con-item {
+                position: absolute;
+                top: 60px;
+                left: 0;
+                padding: 10px 30px 10px 15px;
+                /* 隐藏 */
+                display: none;
+            }
+            ul.con-item li {
+                float: left;
+                width: 120px;
+                /* padding: 5px 10px; */
+            }
+            ul.con-item li a {
+                display: inline-block;
+                max-width: 80px;
+                padding: 5px 10px;
+                border: 1px solid transparent;
+                /* 单行文本显示省略号 */
+                overflow: hidden;
+                white-space: nowrap;
+                text-overflow: ellipsis;
+            }
+
+            ul.con-item li a:hover {
+                color: tomato;
+                border-color: tomato;
+            }
+            /* 选中li时的样式  active*/
+            ul.con-item li.active a {
+                background-color: tomato;
+                color: #fff;
+            }
+        </style>
+    </head>
+    <body>
+        <p id="address"></p>
+        <div id="wrap">
+            <div id="tab">
+                <ul id="tab-list" class="clearfix">
+                    <li>省份</li>
+                    <li>城市</li>
+                    <li>区域</li>
+                </ul>
+            </div>
+            <div id="tab-content">
+                <ul id="prov" class="con-item clearfix">
+                    <!-- <li>item-1</li>
+                <li>item-2</li>
+                <li>item-3</li>
+                <li>item-4item-4item-4</li>
+                <li>item-5</li>
+                <li>item-6</li>
+                <li>item-7</li>
+                <li>item-8</li>
+                <li>item-9</li>
+                <li>item-10</li> -->
+                </ul>
+                <ul id="city" class="con-item clearfix">
+                    <!-- <li>city-1</li>
+                <li>city-2</li>
+                <li>city-3</li>
+                <li>city-4</li>
+                <li>city-5</li>
+                <li>city-6</li>
+                <li>city-7</li>
+                <li>city-8</li>
+                <li>city-9</li>
+                <li>city-10</li> -->
+                </ul>
+                <ul id="area" class="con-item clearfix">
+                    <!-- <li>area-1</li>
+                <li>area-2</li>
+                <li>area-3</li>
+                <li>area-4</li>
+                <li>area-5</li>
+                <li>area-6</li>
+                <li>area-7</li>
+                <li>area-8</li>
+                <li>area-9</li>
+                <li>area-10</li> -->
+                </ul>
+            </div>
+        </div>
+    </body>
+    <script src="./city_code.js"></script>
+    <script>
+        /*
+        1. tab栏切换
+        2. 三级联动
+    */
+
+        var tabList = document.getElementById("tab-list"); //li 省份  城市  区域
+        var tabCon = document.getElementById("tab-content"); //ul 省份  城市  区域
+        var p = document.getElementById('address');
+
+        // 默认 省份 是选中的
+        var showIndex = 0; //记录 当前选中的 tabList中li 的索引
+        tabList.children[showIndex].className = "selected";
+        tabCon.children[showIndex].style.display = "block";
+        // 【tab栏切换】
+        for (var i = 0; i < tabList.children.length; i++) {
+            tabList.children[i].index = i;
+            tabList.children[i].onclick = function () {
+                // 恢复之前的
+                tabList.children[showIndex].className = "";
+                tabCon.children[showIndex].style.display = "none";
+
+                showIndex = this.index;
+                // 改变现在的
+                tabList.children[showIndex].className = "selected";
+                tabCon.children[showIndex].style.display = "block";
+            };
+        }
+
+        // 【三级联动】
+        // 初始化 数据展示
+        // 插入省
+        var shengId = 0;
+        for (var i = 0; i < data.length; i++) {
+            var li = document.createElement("li");
+            li.innerHTML = `<a>${data[i].name}</a>`;
+            li.iden = "sheng"; //标识
+            li.index = i; //索引
+            tabCon.children[0].appendChild(li);
+            if (i == 0) {
+                li.className = "active";
+            }
+        }
+
+        // 插入城市
+        var shiId = 0;
+        function bindCity() {
+            for (var i = 0; i < data[shengId].city.length; i++) {
+                var li = document.createElement("li");
+                li.innerHTML = `<a>${data[shengId].city[i].name}</a>`;
+                li.iden = "shi";
+                li.index = i;
+                tabCon.children[1].appendChild(li);
+            }
+        }
+        bindCity();
+
+        // 插入区域
+        var quId = 0
+        function bindArea() {
+            for (var i = 0; i < data[shengId].city[shiId].area.length; i++) {
+                var li = document.createElement("li");
+                li.innerHTML = `<a>${data[shengId].city[shiId].area[i].name}</a>`;
+                li.iden = "qu";
+                li.index = i;
+                tabCon.children[2].appendChild(li);
+            }
+        }
+        bindArea();
+
+        tabCon.onclick = function (e) {
+            console.log(e.target.nodeName);
+            if (e.target.nodeName === "A") {
+            
+                if (e.target.parentNode.iden == "sheng") { //点击省份li
+                    // 手动调用 tabList中第二个子元素的点击事件
+                    tabList.children[1].onclick(); 
+                    // 复原之前省份li的样式
+                    tabCon.children[0].children[shengId].className = '';
+                    // 修改当前点击li的样式
+                    tabCon.children[0].children[e.target.parentNode.index].className = 'active';
+                    
+                    // 清除市 清除区
+                    tabCon.children[1].innerHTML = "";
+                    tabCon.children[2].innerHTML = "";
+                    // 更新市 更新区
+                    shengId = e.target.parentNode.index;
+                    shiId = 0;
+                    bindCity();
+                    bindArea();
+                }
+                if (e.target.parentNode.iden == "shi") {//点击城市li
+                    // 手动调用 tabList中第三个子元素的点击事件
+                    tabList.children[2].onclick(); 
+                    // 复原之前省份li的样式
+                    tabCon.children[1].children[shiId].className = '';
+                    // 修改当前点击li的样式
+                    tabCon.children[1].children[e.target.parentNode.index].className = 'active';
+
+                    // 清除区
+                    tabCon.children[2].innerHTML = '';
+                    // 更新区
+                    shiId = e.target.parentNode.index;
+                    bindArea()
+                }
+                if (e.target.parentNode.iden == "qu") {//点击区域li
+                    
+                    // 获取省份 城市 区域 的innerText
+                    var shengStr = tabCon.children[0].children[shengId].innerText;
+
+                    // 复原之前省份li的样式
+                    tabCon.children[2].children[quId].className = '';
+                    // 修改当前点击li的样式
+                    tabCon.children[2].children[e.target.parentNode.index].className = 'active';
+                    quId = e.target.parentNode.index;
+                    
+                    var shiStr = tabCon.children[1].children[shiId].innerText;
+                    
+                    var quStr= e.target.innerText;
+                    console.log(shengStr,shiStr,quStr);
+                    p.innerHTML = shengStr + ' ' +shiStr + ' ' + quStr;
+                }
+            }
+        };
+    </script>
+</html>

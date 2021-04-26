@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <a href="https://www.baidu.com">百度</a>
+    <h3>你好</h3>
+</body>
+<script>
+    var a = document.querySelector('a');
+    a.onclick = function(e){
+        e.preventDefault(); //阻止默认行为
+    }
+    
+    
+    // document.onkeydown = function(e){
+    //     if (e.ctrlKey && e.keyCode == 67) {
+    //         console.log('-----');
+    //         //  ctrl + c 复制
+    //         // e.preventDefault();
+    //         return false;
+    //     }
+    //     // console.log(e);
+
+    // }
+
+    // // oncontextmenu  点击鼠标右键
+    // document.oncontextmenu = function(e){
+    //     // e.preventDefault(); // 阻止用户点击鼠标右键
+    //     return false;
+    // }
+
+    // onselectstart 开始选中事件
+    document.onselectstart = function(e){
+        e.preventDefault();
+    }
+</script>
+</html>

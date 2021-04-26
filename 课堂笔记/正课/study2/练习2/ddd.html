@@ -135,33 +135,52 @@
     }
     }
     insertqu(shiId);
-    var  shengId = 0;
+    var  shengId = 5;
     // 选择不同省
     sheng.onclick = function(e){
         tds[0].style.backgroundColor = '#fff';
         tds[1].style.backgroundColor = '#ccc';
         uls[0].style.display='none';
         uls[1].style.display='block';
+        e.target.style.backgroundColor='red';
         // 能不能知道当前用户选择的是哪个省份？
         console.log(e.target);   //用户选择li的索引
         shengId = sheng.selectedIndex;
+    }
+        shi.onclick = function(e){
+        tds[1].style.backgroundColor = '#fff';
+        tds[2].style.backgroundColor = '#ccc';
+        uls[1].style.display='none';
+        uls[2].style.display='block';
+        e.target.style.backgroundColor='red';
+        // 能不能知道当前用户选择的是哪个省份？
+        console.log(e.target);   //用户选择li的索引
+        }
+        qu.onclick = function(e){
+        
+        
+        e.target.style.backgroundColor='red';
+        // 能不能知道当前用户选择的是哪个省份？
+        console.log(e.target);   //用户选择li的索引
+        }
 
-        // 清除市
-        shi.innerHTML = ''
-        // 更新市
-        insertshi();
-        // 清除区
-        qu.innerHTML = '';
-        // 更新区
-       insertqu(shiId);
-//  选择不同的城市
-  shi.onclick = function(){
-    // 能不能获取到当前用户选择的城市
-    // 清除区
-  insertqu(shi.selectedIndex);
 
-}
- }
+//         // 清除市
+//         shi.innerHTML = ''
+//         // 更新市
+//         insertshi();
+//         // 清除区
+//         qu.innerHTML = '';
+//         // 更新区
+//        insertqu(shiId);
+// //  选择不同的城市
+//   shi.onclick = function(){
+//     // 能不能获取到当前用户选择的城市
+//     // 清除区
+//   insertqu(shi.selectedIndex);
+
+// }
+//  }
  
 </script>
 </html>

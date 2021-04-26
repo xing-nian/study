@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>递归练习</title>
+</head>
+<body>
+    
+</body>
+<script>
+    // var sum = 0;
+    // for(var i=1;i<=10;i++){
+    //     sum += i;
+    // }
+    // console.log(sum);
+
+
+    function fn(n){
+        if(n == 1){
+            return 1; //退出条件
+        }
+        return n+fn(n-1);
+    }
+    var sum = fn(10);
+    console.log(sum);
+    /*
+     10 + fn(9)
+     10 + 9 + fn(8)
+     10 + 9 + 8 + fn(7)
+     10 + 9 + 8 +....+ fn(1)
+     10 + 9 + 8 +....+ 1
+    
+    */
+
+
+
+</script>
+</html>

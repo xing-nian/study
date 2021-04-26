@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <style>
+           
+        </style>
+    </head>
+    <body>
+        <ul id="list">
+            <li>item1</li>
+            <li>item2</li>
+            <li>item3</li>
+            <li>item4</li>
+            <li>item5</li>
+        </ul>
+    </body>
+    <script>
+        // 点击 li，输出当前li的索引
+        var lis = document.querySelectorAll("#list li");
+        for (var i = 0; i < lis.length; i++) {
+            // 添加属性，记录li的索引
+            lis[i].index = i;
+            lis[i].onclick = function () {
+                console.log(this.index);
+            };
+        }
+    // 题目1：
+        // 使用闭包的方式：
+        for (var i = 0; i < lis.length; i++) {
+            (function (index) { //闭包
+                lis[i].onclick = function () {
+                    console.log(index);
+                };
+            })(i);
+        }
+
+        // for(var i=0; i<lis.length;i++){
+        //     function fn(index){ //形参 index 属于fn内部的局部变量  闭包
+        //         lis[index].onclick = function(){
+        //             console.log(index);
+        //         }
+        //     }
+        //     fn(i);
+        // }
+
+    // 题目2：
+        // var uname = 'window';
+
+        // var obj = {
+        //     uname:'jon',
+        //     age:18,
+        //     getName:function(){
+        //         console.log(this); //this指向obj对象
+        //         return function(){
+        //             console.log(this.uname); // 输出window ，this指向window对象
+        //         }
+        //     }
+        // }
+        // // obj.getName()();
+        // var fn = obj.getName();
+        // fn();
+        // this 指向谁？
+
+    // 题目3：
+        var uname = 'window';
+
+        var obj = {
+            uname:'jon',
+            age:18,
+            getName:function(){ //闭包
+                var that = this;  //this 指的是 obj
+                return function(){
+                    console.log(that.uname);  // 输出jon
+                }
+            }
+        }
+        // obj.getName()();
+        var fn = obj.getName();
+        fn();
+
+
+    </script>
+</html>

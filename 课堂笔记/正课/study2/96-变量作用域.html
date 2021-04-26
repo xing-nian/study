@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>变量作用域</title>
+</head>
+<body>
+    
+</body>
+<script>
+    //    函数会形成局部作用域（作用于区域）
+    //    全局变量： 在任何地方都可以访问    持久保持
+    //    局部变量： 只能在函数内部访问  在函数执行结束后  局部变量就会被浏览器收回，销毁。
+
+    // function fn(){
+    //     var x = 10;
+    //     console.log(x);
+    // }
+    // fn();
+    // console.log(x); // x is not defined
+    // 函数的作用域是在定义函数时确定的，与在哪调用无关
+    // function  fn(){
+    //     var  x =10;
+    //     fn2
+    // }
+    // function  fn2(){
+    //     console.log(x);  // x is not defined
+    // }
+    // fn()
+    
+    // function fn1(){
+    //     var x = 10;
+    //     console.log(x);//?10
+    //     fn2()
+    // }
+    // var x = 20;
+    // function fn2(){
+    //     console.log(x);//?20
+        
+    // }
+
+    // fn1();
+
+    function fn(a,b){ //a,b 形参也属于局部变量
+        return a+b;
+    }
+    var res = fn(10,20);
+    // console.log(a,b);
+
+</script>
+</html>

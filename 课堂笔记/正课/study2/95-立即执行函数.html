@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>立即执行函数</title>
+</head>
+<body>
+      
+</body>
+<script>
+    // // 声明
+    // function fn(){
+
+    // }
+    // //  调用
+    // fn()
+    
+    // 立即执行函数 IIFE  
+    (
+        function(x){
+    console.log('bukai '+x);
+        }
+    )(10)
+
+   var res = (
+        function(x,y){
+            console.log(this);
+            return x+y
+        }
+    )(10,20);
+
+    console.log(res);
+
+// 立即执行函数 this指向?  window
+</script>
+</html>

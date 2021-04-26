@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+            }
+            ul {
+                list-style: none;
+            }
+            .box {
+                width: 270px;
+                margin: 100px auto;
+            }
+            #list {
+                height: 42px;
+            }
+            #list li {
+                width: 44px;
+                height: 42px;
+                background-image: url(./star.png);
+                float: left;
+                /* background-color: aqua; */
+                padding: 0 5px;
+                background-repeat: no-repeat;
+                background-position: center center;
+            }
+            h3 {
+                text-align: center;
+                margin: 20px 0;
+            }
+            #list li.light {
+                background-image: url(./star1.png);
+            }
+        </style>
+    </head>
+    <body>
+        <div class="box">
+            <ul id="list">
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+            <h3>评分：<span id="score">0.0</span></h3>
+            <button id="cancel">取消</button>
+        </div>
+    </body>
+    <script>
+        var list = document.getElementById("list");
+        var score = document.getElementById("score");
+        var cancel = document.getElementById("cancel");
+        var starsLi = list.children;
+        var flag = false; //记录点击状态 （flase表示未点击）
+        for (var i = 0; i < starsLi.length; i++) {
+            starsLi[i].index = i;
+
+            // 鼠标移入
+            starsLi[i].onmouseenter = function () {
+
+                // (flag == false)  true
+                // !false    true
+                if (!flag) {
+                    for (var j = 0; j <= this.index; j++) {
+                        starsLi[j].className = "light";
+                    }
+                    // 更新评分
+                    score.innerHTML = (this.index + 1) * 2 + ".0";
+                }
+            };
+
+            // 鼠标移出
+            starsLi[i].onmouseleave = function () {
+                if (!flag) {
+                    this.className = "";
+                }
+            };
+
+            // 鼠标点击
+            starsLi[i].onclick = function () {
+                flag = true;
+            };
+        }
+
+        list.onmouseleave = function () {
+            if (!flag) {
+                for (var i = 0; i < starsLi.length; i++) {
+                    starsLi[i].className = "";
+                }
+                // 更新评分
+                score.innerHTML = "0.0";
+            }
+        };
+
+        // 点击取消按钮
+        cancel.onclick = function () {
+            for (var i = 0; i < starsLi.length; i++) {
+                starsLi[i].className = "";
+            }
+            // 更新评分
+            score.innerHTML = "0.0";
+            flag = false;
+        };
+    </script>
+</html>

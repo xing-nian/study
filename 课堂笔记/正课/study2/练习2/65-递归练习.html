@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    //  var sun = 0;
+    //  for(var i = 1; i<=10;i++){
+    //      sum++;
+    //  }
+    //  console.log(sum);
+
+
+     function fn(n){
+         if(n == 0){
+             return 0; //退出条件
+         }
+       return n + fn(n-1)
+     }
+     fn(10)
+     console.log(fn(10));
+</script>
+</html>

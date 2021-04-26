@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>楼层滚动</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        ul{
+            list-style: none;
+        }
+        #floors li{
+            height: 2000px;
+        }
+        #nav{
+            position: fixed;
+            right: 50px;
+            bottom: 100px;
+            background-color: blue;
+        }
+        #nav li{
+            width: 200px;
+            line-height: 30px;
+            background-color: #fff;
+            margin: 5px 0;
+            text-align: center;
+        }
+        #nav li.active{
+            background-color: #ccc;
+        }
+    </style>
+</head>
+<body>
+    <!-- 导航 -->
+    <ul id="nav">
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+    </ul>
+    <ul id="floors">
+        <li style="background-color: red;"></li>
+        <li style="background-color: yellow;"></li>
+        <li style="background-color: burlywood;"></li>
+        <li style="background-color: coral;"></li>
+    </ul>
+</body>
+<script>
+    var nav = document.getElementById('nav');
+    var floors = document.getElementById('floors');
+
+    var count = 0; //记录当前点击的楼层号
+    nav.children[count].className = "active";
+
+    // 1.导航选项影响楼层滚动
+    for(var i=0;i<nav.children.length;i++){
+        // 给导航选项绑定属性，记录索引
+        nav.children[i].index = i;
+        nav.children[i].onclick = function(){
+            // 页面滚动的高度 = 该楼层距离页面顶部的高度 - 100px
+
+            // 找到对应楼层距离页面顶部的高度
+            var eleTop = floors.children[this.index].offsetTop;
+            // 设置页面向上滚动的高度
+            document.scrollingElement.scrollTop = eleTop - 100;
+            // 恢复原来点击li的样式
+            nav.children[count].className = '';
+            // 修改样式
+            this.className = 'active';
+            count = this.index;
+        }
+    }
+
+    // 2.楼层滚动影响导航选项
+    window.onscroll = function(){
+
+        // 获取窗口高度的 1/2
+        var w_h = window.innerHeight / 2;
+        // 页面向上滚动的高度
+        var s_t = document.scrollingElement.scrollTop;
+
+        // 检测哪个楼层模块占据窗口主区域
+        // 什么样的条件下，该楼层占据窗口主区域
+        for(var i=0;i<floors.children.length;i++){
+            // 楼层高度
+            var eleH = floors.children[i].offsetHeight;
+            // 楼层距离页面顶部的高度
+            var eleTop = floors.children[i].offsetTop;
+
+            if(s_t + w_h >= eleTop && s_t + w_h <= eleTop + eleH && count !== i){
+
+                // 还原之前选中的导航项
+                nav.children[count].className = '';
+
+                // 以i为索引，找到对应的导航项，修改样式
+                nav.children[i].className = "active";
+                count = i;
+                console.log('进入一个新的楼层中');
+            }
+        } 
+    }
+
+</script>
+</html>

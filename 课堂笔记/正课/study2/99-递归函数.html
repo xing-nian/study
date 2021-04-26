@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>递归函数</title>
+</head>
+<body>
+    
+</body>
+<script>
+       // 递归函数 ： 函数内部自己调用自己
+       // 递归函数的作用：循环效果
+       // 注意： 递归函数内部一定要有退出函数 
+
+    // 死递归 
+      //  function fn(){
+      //     console.log('hello');
+      //     fn();
+      //  }
+
+      //  fn()
+      var num = 0
+      function fn1(){
+         console.log(num);
+         num++;
+         if (num>9) { //退出条件
+            return;
+         }
+         fn1()
+
+      }
+      fn1() 
+</script>
+</html>

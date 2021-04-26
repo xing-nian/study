@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        #con1 {
+            border: 1px solid #333;
+            width: 800px;
+            height: 40px;
+            line-height: 40px;
+            margin: 0 auto;
+            margin-top: 40px;
+        }
+        
+        #con1 li {
+            float: left;
+            width: 100px;
+            border-right: 1px solid #333;
+        }
+        
+        li {
+            text-align: center;
+        }
+        
+        #box {
+            width: 800px;
+            margin: 20px auto;
+            position: relative;
+        }
+        
+        #content1,
+        #content2,
+        #content3 {
+            background-color: beige;
+            overflow: hidden;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+        
+        #content1 li,
+        #content2 li,
+        #content3 li {
+            float: left;
+            width: 100px;
+            height: 60px;
+            line-height: 60px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            border: 1px solid beige;
+        }
+        
+        #content1 li:hover,
+        #content2 li:hover,
+        #content3 li:hover {
+            border-color: red;
+        }
+        
+        #pos {
+            height: 92px;
+            padding-top: 50px;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1 id="pos"></h1>
+    <ul id="con1">
+        <li id="sheng" class="tc">省份</li>
+        <li id="shi" class="tc">城市</li>
+        <li id="qu" class="tc">区域</li>
+    </ul>
+    <div id="box">
+        <ul id="content1" class="bc">
+
+        </ul>
+        <ul id="content2" class="bc">
+
+        </ul>
+        <ul id="content3" class="bc">
+
+        </ul>
+    </div>
+</body>
+<script src="city_code.js"></script>
+<script>
+    var content1 = document.getElementById("content1");
+    var content2 = document.getElementById("content2");
+    var content3 = document.getElementById("content3");
+
+    var sheng = document.getElementById("sheng");
+    var shi = document.getElementById("shi");
+    var qu = document.getElementById("qu");
+
+    var pos = document.getElementById("pos");
+
+
+    var tc = document.getElementsByClassName("tc");
+    var bc = document.getElementsByClassName("bc");
+
+    var shengId = 0;
+    var shiId = 0;
+    var str = "";
+    for (var i = 0; i < data.length; i++) {
+        var lis = document.createElement("li");
+        lis.innerHTML = data[i].name;
+        lis.dataset.num = i;
+        content1.appendChild(lis);
+    }
+
+    function shi1() {
+        for (var i = 0; i < data[shengId].city.length; i++) {
+            var lis = document.createElement("li");
+            lis.innerHTML = data[shengId].city[i].name;
+            lis.dataset.num = i;
+            content2.appendChild(lis);
+        }
+    }
+
+
+    function qu1() {
+        for (var i = 0; i < data[shengId].city[shiId].area.length; i++) {
+            var lis = document.createElement("li");
+            lis.innerHTML = data[shengId].city[shiId].area[i].name;
+            lis.dataset.num = i;
+            content3.appendChild(lis);
+        }
+    }
+
+
+
+
+
+    // bc[0].style.display = "block";
+
+    // var x = 0;
+    // for (var i = 0; i < tc.length; i++) {
+    //     tc[i].index = i;
+    //     tc[i].onclick = function() {
+    //         console.log("aaaaaaaaa");
+    //         bc[x].style.display = "none";
+    //         bc[this.index].style.display = "block";
+    //         x = this.index;
+    //     }
+    // }
+
+    content1.onclick = function(e) {
+        if (e.target.nodeName == 'LI') {
+            shengId = e.target.dataset.num;
+            str += e.target.innerHTML;
+
+            var lis = content1.getElementsByTagName("li");
+            for (var i = 0; i < lis.length; i++) {
+                lis[i].style.backgroundColor = "";
+            }
+            e.target.style.backgroundColor = "";
+            e.target.style.backgroundColor = "rgb(165, 56, 56)";
+            console.log(shengId);
+
+            content1.style.display = 'none';
+            content2.style.display = 'block';
+
+
+
+            // 改变颜色
+            // var x = 0;
+            // for (var i = 0; i < tc.length; i++) {
+            //     tc[i].index = i;
+            //     tc[i].onclick = function() {
+            //         tc[x].style.backgroundColor = ""
+            //         this.style.backgroundColor = "red";
+            //         x = this.index;
+            //     }
+            // }
+            content2.innerHTML = "";
+
+            shi1();
+
+        }
+    }
+    content2.onclick = function(e) {
+        if (e.target.nodeName == "LI") {
+            shiId = e.target.dataset.num;
+            str += e.target.innerHTML;
+            e.target.style.backgroundColor = "";
+            e.target.style.backgroundColor = "rgb(165, 56, 56)";
+            console.log(shiId);
+            content2.style.display = "none";
+            content3.style.display = "block";
+            content3.innerHTML = "";
+
+            qu1();
+
+        }
+    }
+    content3.onclick = function(e) {
+        str += e.target.innerHTML;
+        e.target.style.backgroundColor = "";
+        e.target.style.backgroundColor = "rgb(165, 56, 56)";
+        pos.innerHTML = str;
+        console.log(str);
+        str = "";
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    sheng.onclick = function() {
+        content1.style.display = "block";
+
+
+        content2.style.display = "none";
+        content3.style.display = "none";
+    }
+    shi.onclick = function() {
+        content2.style.display = "block";
+
+        content1.style.display = "none";
+        content3.style.display = "none";
+    }
+    qu.onclick = function() {
+        content3.style.display = "block";
+
+
+        content1.style.display = "none";
+        content2.style.display = "none";
+    }
+</script>
+
+</html>

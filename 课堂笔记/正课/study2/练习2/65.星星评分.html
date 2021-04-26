@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>星星评分</title>
+    <style>
+         .box{
+            width: 600px;
+            margin: 0 auto;
+        }
+        #warp{
+            width: 600px;
+            margin: 100px auto;
+            font-size: 0;
+        }
+       
+    </style>
+</head>
+<body>
+  <div class="box"> 
+    <div id="warp">
+        <img src="star.png" alt="">
+        <img src="star.png" alt="">
+        <img src="star.png" alt="">
+        <img src="star.png" alt="">
+        <img src="star.png" alt="">
+
+    </div>
+    <button id="cancel">取消</button>
+  </div>
+</body>
+<script>
+    var div = document.getElementById('warp');
+    var btn = document.getElementById('cancel');
+    
+    var flag =false; //标记是否点击过()
+    for(var i = 0;i< div.children.length ; i++){
+        // 给每一颗星星添加一个索引
+        div.children[i].index = i;
+           
+           div.children[i].onmouseenter = function(){
+            if(flag == false){
+                for(var j =0; j<=this.index;j++){
+                   div.children[j].src ='star1.png';
+               }
+            }
+
+           }
+        //    鼠标移出
+        div.children[i].onmouseleave = function(){
+            // 从哪颗星星上离开，就灭掉那个星星
+            
+            if (flag == false) {
+                this.src = "star.png";
+            }
+          
+        };
+           // 鼠标点击
+           div.children[i].onclick = function () {
+                flag = true;
+            };
+    }
+    div.onmouseleave = function(){
+        if(flag == false){
+            for(var i=0; i< div.children.length;i++){
+              div.children[i].src ='star.png';
+        }
+        }
+    };
+
+
+    //点击取消按钮
+    btn.onclick = function(){
+        for(var i =0; i<div.children.length; i++){
+            div.children[i].src = "star.png";
+        };
+        flag = false;
+    }
+    /*
+      enter leave(不支持冒泡)
+
+      over out(支持冒泡)
+    */ 
+</script>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM选择器补充</title>
+</head>
+<body>
+    <h3>hello</h3>
+      <ul id="list">
+          <li class="ltem">1</li>
+          <li class="ltem">2</li>
+          <li class="ltem">3</li>
+          <li class="ltem active"><h3>world</h3></li>
+          <li class="ltem">5</li>
+          
+      </ul>
+      <h3>world</h3>
+      <input type="text">
+</body>
+<script>
+    //querySelector() 查找满足选择器条件的第一个元素对象；
+//    var h3 = document.querySelector('h3')
+//    console.log(h3);
+//    // querySelectorAll()查找满足选择器条件的所有元素对象；
+//    var h3s = document.querySelectorAll('h3')
+//    console.log(h3s);
+
+
+//    var ul =document.querySelector('#list');
+//    console.log(ul);
+
+//    var lis =document.querySelectorAll('.ltem');
+//    console.log(lis);
+
+   var h3 = document.querySelector('.active h3')
+   console.log(h3);
+
+   var input = document.querySelector('[type = text]')
+   console.log(input);
+</script>
+</html>

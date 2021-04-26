@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+       body{
+        background-color: #efefef;
+       }
+       
+        ul{
+            width: 1800px;
+            margin-left: 150px;
+            list-style: none;
+            
+        }
+        #lit{
+            width: 400px;
+            height: 430px;
+            float: left;
+            background-color: #fff;
+            box-sizing: border-box;
+            margin: 5px;
+            
+        }
+        h1{
+            padding-left: 940px;
+            width: 1920px;
+            float: left;
+           background-color: #efefef;
+        }
+        p{
+            position: relative;
+            left: 90px;
+            font-weight: 700;
+            font-size: 18px;
+        }
+        #lis{
+            width: 100px;
+            height: 30px;
+            font-weight:700 ;
+            margin-bottom: 5px;
+            background-color: skyblue;
+            text-align: center;
+            line-height: 30px;
+            color: white;
+
+        }
+        #nav{
+            position: fixed;
+            left: -100px;
+            top: 150px;
+        }
+        img{
+            width: 400px;
+            height: 350px;
+        }
+    </style>
+</head>
+<body>
+
+</body>
+<script src="data.js"></script>
+<script>
+    var nav = document.getElementById('nav');
+    var imgs = document.getElementsByTagName('img');
+        document.write(`<ul id="nav">`)
+        // 遍历导航栏
+        for(var i=0; i<data.length;i++){
+        document.write(`<li id="lis">${data[i].type}<li>`);
+     }
+     document.write(`</ul>`)
+        // 遍历商品
+        for(var i=0; i<data.length;i++){
+        document.write(`<h1>${data[i].type}</h1><br>`);
+        document.write(`<ul>`);
+           
+        for(var j=0; j<data[i].goodList.length;j++){
+        document.write(`
+        
+        <li id ="lit">
+            <img src="404.jpeg" alt="" data-src="${data[i].goodList[j].imgUrl}"><br>
+            <p>${data[i].goodList[j].title}</p>
+        </li>
+    `)
+    }
+    document.write(`</ul><br>`)
+    }
+     // 懒加载   
+    var fn = function(){
+           // 获取页面向上滚动的高度
+            var s_t = document.body.scrollTop || document.documentElement.scrollTop;
+            var w_h = window.innerHeight
+            for(var i =0; i<imgs.length ; i++){
+                var img_t = imgs[i].offsetTop;
+                if (img_t<= s_t + w_h -200 && imgs[i].flag == undefined){
+              // 此时应该加载真正的图片
+            imgs[i].src= imgs[i].dataset.src;
+            imgs[i].flag = true;
+       }
+            }
+
+       }
+       fn();
+       window.onscroll = fn;
+
+      // 3.导航影响楼层滚动
+    var count = 0; //记录楼层索引
+    nav.children[count].className = 'active';
+    nav.onclick = function(e){
+        if(e.target.nodeName == 'LI'){
+            // 恢复之前li的样式
+            nav.children[count].className = '';
+
+            // 设置当前选中li的样式
+            e.target.className = 'active';
+            count = e.target.dataset.index;
+            // 页面滚动
+            document.scrollingElement.scrollTop = floors.children[count].offsetTop - 100;
+        }
+    }
+
+    // 4.楼层滚动影响导航项
+    window.onscroll = function(){
+        var s_t = document.scrollingElement.scrollTop;
+        var w_h = window.innerHeight / 2;
+
+        // 检测哪个楼层出现在窗口可视区域内
+        for(var i=0;i<floors.children.length;i++){
+            var eleTop = floors.children[i].offsetTop;
+            var eleH = floors.children[i].offsetHeight;
+            if (eleTop <= s_t + w_h && s_t + w_h <= eleTop + eleH && count !== i) {
+                // 复原之前导航项的样式
+                nav.children[count].className = ''
+                // 修改导航项的样式
+                nav.children[i].className = 'active';
+                count = i;
+            }
+        }
+}
+       
+</script>
+</html>
