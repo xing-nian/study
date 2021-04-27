@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>定时器和计时器</title>
+</head>
+<body>
+     <button id="btn">关闭</button>
+</body>
+<script>
+    var btn = document.querySelector('#btn')
+    //   延迟执行    单位 毫秒
+    var timer1 = setTimeout(function(){
+        alert('hello');
+    },5000)
+
+    btn.onclick =function(){
+        // 关闭定时器
+        clearTimeout(timer1)
+    }
+
+    //计时器  间隔执行  单位 毫秒
+    var x = 0 ;
+    var timer2 =setInterval(function(){
+        console.log(x+=1);
+        // 关闭计时器
+        btn.onclick =function(){
+        // 关闭定时器
+        clearInterval(timer2)
+    }
+        
+    },1000)
+</script>
+</html>

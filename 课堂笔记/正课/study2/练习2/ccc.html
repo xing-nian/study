@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+      <input type="text">
+      <button id="btn">发送验证码</button>
+</body>
+<script>
+     var btn =document.querySelector('#btn')
+     var timer2 = null;
+     var x = 00 ;
+     var y = 00;
+     var z = 00
+   btn.onclick = function(){
+    if (timer2 == null) {
+        timer2 =setInterval(function(){
+            x++;
+        btn.innerHTML =z+":"+y+":" +x ;
+        
+        // 关闭计时器
+        if(x == 0){
+
+            clearInterval(timer2);
+            timer = null
+            btn.innerHTML = "再次发送验证码";
+        }
+        
+    },1000)
+    }
+    
+   }
+</script>
+</html>

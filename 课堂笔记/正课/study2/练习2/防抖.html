@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>防抖</title>
+    <style>
+       #box{
+           width: 200px;
+           height: 200px;
+           background-color: red;
+           border: 1px solid red;
+           position: fixed;
+           left: 0;
+           top: 0;
+       }
+       .active{
+           background-color: skyblue;
+       }
+    </style>
+</head>
+<body>
+    
+    <div id="box"></div>
+</body>
+<script>
+   
+    var box =document.querySelector('#box')
+    document.onmousemove = function(e){
+        box.style.left = e.clientX - 100+'px'
+        box.style.top = e.clientY - 100+ 'px'
+    }
+    var flag = true ;
+    document.onmousemove = function(e){
+        if(flag){
+            flag = false;//关闭阀门
+            box.style.left = e.clientX - 100+'px';
+            box.style.top = e.clientY - 100+ 'px';
+            console.log('move');
+            setTimeout(function(){
+                flag = true; //开阀！
+            },1000)
+        }
+    }
+
+    //防抖
+    // var timer;
+    // document.onmousemove = function(e){
+
+
+    // }
+</script>
+</html>

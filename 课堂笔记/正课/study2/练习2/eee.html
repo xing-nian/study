@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+     
+      <button id="btn">00:00:00</button>
+    
+</body>
+<script>
+   
+     var btn =document.querySelector('#btn')
+     
+
+     
+     var x = 00 ;
+     var y = 00;
+     var z = 00;
+   
+     var timer2 =setInterval(function(){
+            x+=1;
+        // 关闭计时器
+       if(x >59){
+           y+=1
+           x=0
+       }
+       if(y>59){
+           z+=1;
+           y=0;
+       }
+       var sec = x<10 ? '0'+ x :x;
+       var min = y<10 ? '0'+ y :y;
+       var hou = z<10 ? '0'+ z :z;
+       btn.innerHTML =hou+":"+min+":" +sec ;
+        
+    },100)
+    
+    
+   
+  
+</script>
+</html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>67-递归深拷贝</title>
+</head>
+<body>
+    
+</body>
+<script>
+    var data = [
+        {
+            name:'河南省',
+            code:'000000',
+            city:[
+                {
+                    name:'郑州',
+                    code:'020',
+                    area:[
+                        {
+                            name:'经开区',
+                            code:'10000'
+                        },
+                        {
+                            name:'二七区',
+                            code:'10300'
+                        },
+                    ]
+                },
+                {
+                    name:'洛阳',
+                    code:'030',
+                    area:[
+                        {
+                            name:'经开区2',
+                            code:'10000'
+                        },
+                        {
+                            name:'二七区2',
+                            code:'10300'
+                        },
+                    ]
+                },
+            ]
+        },
+    ]
+    var data2 = []
+    function deepcopy(oldData,newData){
+    for(var key in oldData){
+        var val = oldData[key];
+        if (val instanceof Array) { //值是对象
+            newData[key]= [];   //开辟新空间
+            deepcopy(val,newData[key]);
+        }else if(val instanceof Object){ //值是对象
+            newData[key]= {} ;
+            deepcopy(val,newData[key]);
+
+        }else{  //值是简单数据类型
+            newData[key] = val;//递归结束
+        }
+    }
+}
+    deepcopy(data,data2);
+    console.log(data2);
+
+
+//     var arr = [1,2,3,4,[9,8,10]];
+
+//     var arr2 = [];
+//     for(var i = 0; i<arr.length; i++){
+//         if (arr[i] instanceof Array) {
+//             arr2[i]=[];
+//             for(var j =0; j<arr[i].length;j++){
+//                 arr2[i][j] = arr[i][j];
+//             }
+//             }else{
+//                 arr2[i]=arr[i];
+//         }
+//     }
+//    console.log(arr2);
+</script>
+</html>
