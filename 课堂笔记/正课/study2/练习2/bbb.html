@@ -4,76 +4,40 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>定时器</title>
 </head>
 <body>
-    <select name="" id="sheng"> 
-    </select>
-    <select name="" id="shi">
-    </select>
-    </select>
-    <select name="" id="qu">
-    </select>
+    <button id="btn1">开始</button>
+    <button id="num">0</button>
+     <button id="btn2">关闭</button>
 </body>
-<script src="city_code.js"></script>
 <script>
-    // 获取元素
-        var sheng =document.getElementById('sheng')
-        var shi =document.getElementById('shi')
-        var qu =document.getElementById('qu')
-    // 初始状态
-    // 插入省   遍历data数组
-    // 封装省
-  function insertsheng(){
-    for(var i = 0; i<data.length; i++){
-        var opt  = document.createElement('option');
-        opt.innerHTML = data[i].name;
-        sheng.appendChild(opt);
-    }
-  }
-  insertsheng();//调用省
-    // 插入市
-    var  shengId = 0;
-    // 封装市
-    function insertshi(){
-        for(var i = 0 ; i<data[shengId].city.length; i++){
-        var opt = document.createElement('option');
-        opt.innerHTML = data[shengId].city[i].name;
-        shi.appendChild(opt);
-    }
-    }
-    insertshi();//调用市
-    // 插入区
-    var shiId = 0;
-    function insertqu(id){
-        for(var i = 0 ; i<data[shengId].city[id].area.length; i++){
-        var opt = document.createElement('option');
-        opt.innerHTML = data[shengId].city[id].area[i].name;
-        qu.appendChild(opt);
-    }
-    }
-    insertqu(shiId);
-    var  shengId = 0;
-    // 选择不同省
-    sheng.onchange = function(){
-        // 能不能知道当前用户选择的是哪个省份？
-        sheng.selectedIndex;   //用户选择option的索引
-        shengId = sheng.selectedIndex;
-        // 清除市
-        shi.innerHTML = ''
-        // 更新市
-        insertshi();
-        // 清除区
-        qu.innerHTML = '';
-        // 更新区
-       insertqu(shiId);
-//  选择不同的城市
-shi.onchange = function(){
-    // 能不能获取到当前用户选择的城市
-    // 清除区
-  insertqu(shi.selectedIndex);
+    var btn1 = document.querySelector('#btn1')
+    var num = document.querySelector('#num')
+    var btn2 = document.querySelector('#btn2')
 
-}
- }
+    // 计时器  间隔执行  单位 毫秒
+    var x = 0 ;
+    var timer1 = null;
+    btn1.onclick =function(){
+        if (timer1 == null) {
+             // 开始定时器
+        var timer1 = setInterval(function(){
+        num.innerHTML= x+=1;
+        // 关闭计时器
+        btn2.onclick =function(){
+        // 关闭定时器
+        clearInterval(timer1)
+        timer1 =null
+    }
+        
+    },1000)
+        }
+       
+    }
+    
+
+
+    
 </script>
 </html>

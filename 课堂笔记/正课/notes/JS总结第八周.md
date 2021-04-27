@@ -242,3 +242,94 @@
       fn1() 
 ```
 
+# 4月27日
+
+### 定时器和计时器
+
+```
+<body>
+    <button id="btn">关闭</button>
+</body>
+<script>
+    var btn = document.querySelector('#btn')
+    //定时器   延迟执行操作    单位 毫秒
+    var timer1 = setTimeout(function(){
+        alert('hello');
+    },5000)
+
+    btn.onclick =function(){
+        // 关闭定时器
+        clearTimeout(timer1)
+    }
+
+    //计时器  间隔执行  单位 毫秒
+    var x = 0 ;
+    var timer2 =setInterval(function(){
+        console.log(x+=1);
+        // 关闭计时器
+        btn.onclick =function(){
+        // 关闭定时器
+        clearInterval(timer2)
+    }
+        
+    },1000)
+</script>
+```
+
+### 节流
+
+```
+<body>
+     <button id="btn">按钮</button>
+</body>
+<script>
+    var btn = document.querySelector('#btn');
+    // 节流：固定时间内，多次操作以第一次为准（只执行第一次操作）
+    //固定时间内不能触发第二次
+    var flag = true; //节流阀
+    btn.onclick = function(){
+        if (flag == true) {
+            flag = false;
+            console.log('发送请求');
+            setTimeout(function(){
+                flag= true;  //一秒后打开节流阀
+            },1000)
+        }
+        
+    }
+</script>
+```
+
+### 防抖
+
+```
+<style>
+       #box{
+           width: 200px;
+           height: 200px;
+           border: 1px solid red;
+       }
+       .active{
+           background-color: skyblue;
+       }
+  </style>
+</head>
+<body>
+    <button id="btn">切换</button>
+    <div id="box"></div>
+</body>
+<script>
+    var btn =document.querySelector('#btn')
+    var box =document.querySelector('#box')
+    //  防抖 ：多次操作以末次为准
+  var timer ;
+  btn.onclick = function(){   //多次点击按钮最后一次生效
+      clearTimeout(timer);
+     
+      timer= setTimeout(function(){
+       box.classList.toggle('active');
+      },1000) //末次操作一秒后执行
+  }
+</script>
+```
+

@@ -1,64 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>评分2</title>
-    <style>
-      ul {
-        list-style: none;
-      }
-      .box {
-        width: 27px;
-        margin: 100px auto;
-      }
-
-      #list {
-        height: 142px;
-      }
-      #list li {
-        width: 44px;
-        height: 42px;
-        background-image: url(./star.png);
-        float: left;
-        padding: 0 5px;
-        background-repeat: no-repeat;
-        background-position: center center;
-      }
-      #list li.light{
-          background-image: url(./star1.png);
-      }
-    </style>
-  </head>
-  <body>
-    <ul id="list">
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-    </ul>
-  </body>
-  <script>
-       var list = document.getElementById( 'list' );
-       var score = document.getElementById( 'score ' ) ;
-       var cancel = document.getElementById( 'cancel ' );
-       var starsLi = list.children;
-for(var i=0;i<starsLi.length;i++){
-starsLi[i].index = i;
-//鼠标移入
-starsLi[i].onmouseenter = function(){
-  for(var j=0;j<=this.index;j++){
-    starsLi[j].className = 'light';
-
-  }
-//   评分
-  score.innerHTML = (this.index+1)*2 + '.0';
-       
-  
-}
-}
-
-  </script>
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    #box{
+      width: 200px;
+      height: 200px;
+      position: relative;
+      background-color: palevioletred;
+      
+    }
+  </style>
+</head>
+<body>
+  <div id="box">2秒的盒子</div>
+</body>
+<script>
+    var left =0;
+    var box = document.querySelector('#box');
+    var timer1 =setInterval(function(){
+     
+      var res= left+=2.5;
+      box.style.left = res +'px'
+      if (left>497.5) {
+      clearInterval(timer1)
+     }  
+    console.log(left);
+      },10)
+      
+</script>
 </html>
