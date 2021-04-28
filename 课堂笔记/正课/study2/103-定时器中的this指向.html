@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>定时器中的this指向</title>
+</head>
+<body>
+    
+</body>
+<script>
+    /*
+    1.普通函数内部  this 指向window
+    2.事件函数内部 this指向绑定事件的DOM对象
+    3.对象的函数(方法) 内部的this 指向对象
+    4.定时器内部的this 指向window
+   
+    */  
+   window.setTimeout(function(){
+        console.log(this);
+   },1000)
+  
+</script>
+</html>

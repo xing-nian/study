@@ -41,13 +41,13 @@
     //  返回顶部
      goback.onclick = function(){
         let timer = setInterval(function () {
-            var distanceY = document.documentElement.scrollTop || document.body.scrollTop;//兼容
-            if (distanceY == 0){
+            var Y = document.documentElement.scrollTop || document.body.scrollTop;//兼容
+            if (Y == 0){
                 clearInterval(timer);
                 return;
             } 
-            var speed =10 //Math.ceil(distanceY/16);//speed这个值从高变低，那么scrollTop就减得从快到慢，上回到顶部的速度就先快后慢
-            document.documentElement.scrollTop= distanceY-speed;
+            var speed =30 //Math.ceil(Y/16);//speed这个值从高变低，那么scrollTop就减得从快到慢，上回到顶部的速度就先快后慢
+            document.documentElement.scrollTop= Y-speed;
      },10)
     }
 </script>

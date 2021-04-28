@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>返回固定位置动态效果</title>
+    <style>
+         #box{
+             height: 3000px;
+             background-color: powderblue;
+         }
+         button{
+             width: 100px;
+             height: 100px;
+             background-color: red;
+             position: absolute;
+             left: 100px;
+             top: 2900px;
+         }
+    </style>
+</head>
+<body>
+    <div id="box"></div>
+    <button id="btn">按钮</button>
+</body>
+<script>
+    /* 点击按钮  让页面滚动到指定位置1500px
+       如果  页面滚动高度(2500px) >1500px ,此时点击按钮应该 -；
+       如果  页面滚动高度(500px) <1500px ,此时点击按钮应该 +；
+    */ 
+   var  btn = document.querySelector('#btn')
+
+   btn.onclick = function(){
+    
+    let timer = setInterval(function () {
+        var Y = document.scrollingElement.scrollTop ;
+            var speed =20 //Math.ceil(Y/16);//speed这个值从高变低，那么scrollTop就减得从快到慢，上回到顶部的速度就先快后慢
+            if (Y<1500) {
+                document.scrollingElement.scrollTop= Y+speed;
+               if (Y >1470){
+                clearInterval(timer);
+               return;
+            } 
+            }
+            
+            if (Y>1500) {
+                document.scrollingElement.scrollTop= Y-speed;
+                if (Y < 1530){
+                clearInterval(timer);
+                return;
+            } 
+            }
+           
+            
+     },20)
+   }
+</script>
+</html>

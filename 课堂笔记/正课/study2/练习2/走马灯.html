@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #wrap{
+            width: 600px;
+            height: 600px;
+            margin: 10px auto;
+            position: relative;
+        }
+        #box{
+            width: 600px;
+            margin: 0 auto;
+        }
+        #wrap div{
+            width: 200px;
+            height: 200px;
+            border: 1px solid  red;
+            box-sizing: border-box;
+            text-align: center;
+            line-height: 198px;
+            position: absolute;
+            font-size: 20px;
+        }
+        .active{
+            border: 2px solid gold;
+            background-color: green;
+        }
+    </style>
+</head>
+<body>
+     <div id="wrap"></div>
+     <div>
+         <div id="box">
+             <button id="start">开始</button>
+             <button id="end">结束</button>
+         </div>
+     </div>
+</body>
+<script>
+     var wrap = document.querySelector('#wrap');
+     var start = document.querySelector('#start');
+     var end = document.querySelector('#end');
+
+    //  奖品设置
+    var goodlist = ['apple','华为','5元话费','谢谢参与','iPad','项链','911','桃木'];
+
+    for(var i = 0 ; i<goodlist.length; i++){
+        wrap.innerHTML += `<div>${goodlist[i]}</div>`
+    }
+    wrap.children[1].style.left = '200px';
+    wrap.children[2].style.left = '400px';
+    wrap.children[3].style.left = '400px';
+    wrap.children[3].style.top = '200px';
+    wrap.children[4].style.left = '400px';
+    wrap.children[4].style.top = '400px';
+    wrap.children[5].style.left = '200px';
+    wrap.children[5].style.top = '400px';
+    wrap.children[6].style.top = '400px';
+    wrap.children[7].style.top = '200px';
+
+    var x =0;
+    wrap.children[x].classList.add('active');
+    // var timer = null;
+    // start.onclick =function(){
+    //     if(timer == null){
+    //         timer =setInterval(function(){
+    //             wrap.children[x].classList.remove('active');
+    //             x++;
+    //             if(x>7){
+    //                 x=0;
+    //             }
+    //             wrap.children[x].classList.add('active');
+    //         },100)
+    //     }
+    // }
+    // end.onclick = function(){
+    //     clearInterval(timer);
+    //     timer = null
+    // }
+    var timer = null
+    function fn(){
+        wrap.children[x].classList.remove('active');
+        x++
+        if(x>7){
+            x=0;
+        }
+        wrap.children[x].classList.add('active');
+        
+        timer=  setTimeout(function(){
+            if(flag){
+                fn();
+            }
+  
+        },200);
+    
+}
+    var flag = true;
+    start.onclick = function(){
+        if (timer == null) {
+            flag =true
+        fn()
+        }
+        
+        
+    }
+    end.onclick =function(){
+        flag = false;
+        timer =null;
+    }
+</script>
+</html>

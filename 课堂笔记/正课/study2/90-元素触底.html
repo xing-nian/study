@@ -38,6 +38,7 @@
       var s_t = document.body.scrollTop || document.documentElement.scrollTop; //页面滚动高度 (兼容写法)
       var w_h = window.innerHeight; //窗口高度
       var b_h = list.offsetHeight + list.offsetTop; //元素底部到页面顶部的高度 //元元素底部到页面顶部的高度素自身高度 +元素页面顶部的高度 =
+      console.dir(scrollTop);
       
       flag = true;
       if (b_h - w_h - s_t <= 100 && b_h - w_h - s_t >= 0) {

@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #wrap{
+            width: 600px;
+            height: 600px;
+            margin: 10px auto;
+            position: relative;
+        }
+        #box{
+            width: 600px;
+            margin: 0 auto;
+        }
+        #wrap div{
+            width: 200px;
+            height: 200px;
+            border: 1px solid  red;
+            box-sizing: border-box;
+            text-align: center;
+            line-height: 198px;
+            position: absolute;
+            font-size: 20px;
+        }
+        .active{
+            border: 2px solid gold;
+            background-color: green;
+        }
+    </style>
+</head>
+<body>
+     <div id="wrap"></div>
+     <div>
+         <div id="box">
+             <button id="start">开始</button>
+             <button id="end">结束</button>
+         </div>
+     </div>
+</body>
+<script>
+     var wrap = document.querySelector('#wrap');
+     var start = document.querySelector('#start');
+     var end = document.querySelector('#end');
+
+    //  奖品设置
+    var goodlist = ['apple','华为','5元话费','谢谢参与','iPad','摩托罗拉','911','桃木'];
+    // 实际抽到的奖品
+    var arr =['5元话费','谢谢参与','摩托罗拉','谢谢参与','5元话费','摩托罗拉','谢谢参与','谢谢参与'];
+
+    for(var i = 0 ; i<goodlist.length; i++){
+        wrap.innerHTML += `<div>${goodlist[i]}</div>`
+    }
+    wrap.children[1].style.left = '200px';
+    wrap.children[2].style.left = '400px';
+    wrap.children[3].style.left = '400px';
+    wrap.children[3].style.top = '200px';
+    wrap.children[4].style.left = '400px';
+    wrap.children[4].style.top = '400px';
+    wrap.children[5].style.left = '200px';
+    wrap.children[5].style.top = '400px';
+    wrap.children[6].style.top = '400px';
+    wrap.children[7].style.top = '200px';
+
+    var x =0;
+    wrap.children[x].classList.add('active');
+   
+//  开始  由慢到快
+//  结束  由快到慢
+var flag = true;
+var timer = null
+var t =400 //初始时间
+// var isStop = false;
+var good ; //用户sm奖品
+function fn(){
+    //还原之前的奖项
+    wrap.children[x].classList.remove('active');
+    x++
+    if (x>7) {
+        x=0;
+    }
+    // 设置当前的奖项
+    wrap.children[x].classList.add('active');
+    //设置时间间隔
+    if (flag) {
+        t-=40;
+        if (t<=100) {
+            t=100;
+        }
+    }else{
+        t+=40;
+        if (t>=400) {
+            t =400;
+            // isStop = false;
+            // 判断  抽取的奖品和选中的奖品一致 ，停止转动
+            if (good == wrap.children[x].innerHTML) {
+               
+                timer = null;
+                return;
+                
+            }
+           
+        }
+    }
+
+    // setTimeout(fn,500)
+    timer= setTimeout(fn,t)
+   
+    
+}
+
+start.onclick =function(){
+    
+   if (timer == null) {
+    //    抽奖
+    var num =Math.floor(Math.random()*8);
+    good = arr[num];
+    alert('恭喜你抽到了'+good);
+    
+    flag =true;
+    fn();
+   }
+}
+end.onclick =function(){
+   flag = false;
+
+}
+</script>
+</html>

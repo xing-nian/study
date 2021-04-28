@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>闭包练习</title>
+</head>
+<body>
+     <div>
+          <button>按钮1</button><button>按钮2</button><button>按钮3</button><button>按钮4</button><button>按钮5</button>
+     </div>
+</body>
+<script>
+     var btns =document.querySelectorAll('button')
+     for(var i = 0; i<btns.length;i++){
+         (
+             function(x){
+                 btns[x].onclick =function(){
+                    setTimeout(function(){
+                     btns[x].style.color ='red';
+                   },3000)
+                 }
+             }
+         )(i)
+ }
+
+        
+     
+</script>
+</html>

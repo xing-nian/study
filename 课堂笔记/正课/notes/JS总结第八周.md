@@ -333,3 +333,23 @@
 </script>
 ```
 
+# 4月28日
+
+### 定时器中的this指向
+
+```
+<script>
+    /*
+    1.普通函数内部  this 指向window
+    2.事件函数内部 this指向绑定事件的DOM对象
+    3.对象的函数(方法) 内部的this 指向对象
+    4.定时器内部的this 指向window
+   
+    */  
+   window.setTimeout(function(){
+        console.log(this);
+   },1000)
+  
+</script>
+```
+

@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>抽奖</title>
+   <style>
+       #box{
+           width: 610px;
+           height: 610px;
+           position: relative;
+           left: 600px;
+           top: 200px;
+       }
+       .boxs{
+           width: 198px;
+           height: 198px;
+           border: 1px solid #000;
+           background-color: skyblue;
+           position: absolute;
+           text-align: center;
+           line-height: 200px;
+           box-sizing: border-box;
+          
+       }
+       .b1{
+           left: 0;
+           top: 0;
+       }
+       .b2{
+           left: 200px;
+           top: 0;
+       }
+       .b3{
+           left: 400px;
+           top: 0;
+       }
+       .b4{
+           left:400px;
+           top: 200px;
+       }
+       .btn{
+           position: absolute;
+           width: 200px;
+           height: 200px;
+           background-color: red;
+           text-align: center;
+           line-height: 200px;
+           left:200px;
+           top: 200px;
+       }
+       .b5{
+           left:400px;
+           top: 400px;
+       }
+       .b6{
+           left:200px;
+           top: 400px;
+       }
+       .b7{
+           left:0px;
+           top: 400px;
+       }
+       .b8{
+           left: 0px;
+           top: 200px;
+       }
+     #box #btn {
+    top: 100px;
+    left: 100px;
+    background-color: red;
+    color: yellow;
+}
+#end{
+    width: 200px;
+    height: 50px;
+    border: 1px solid gray;
+    text-align: center;
+    line-height: 50px;
+    position: absolute;
+    top: 600px;
+    left: 200px;
+    background-color: slateblue;
+}
+
+   </style>
+</head>
+<body>
+    <div id="box">
+          <div class="b1  boxs">iphoneX</div>
+          <div class="b2  boxs">华为p30</div>
+          <div class="b3  boxs">小米9</div>
+          <div class="b4  boxs">vivo x27</div>
+          <div class="b5  boxs">oppo FX</div>
+          <div class="b6  boxs">黑鲨</div>
+          <div class="b7  boxs">三星s10</div>
+          <div class="b8  boxs">谢谢参与！</div>
+          <div class="btn  ">开始抽奖</div>
+          <div id="end">结束</div>
+    </div>
+    
+</body>
+<script>
+     var box = document.getElementById('box');
+    var divs = box.getElementsByTagName('div');
+    var btn = document.getElementsByClassName('btn')[0];
+    var end = document.getElementById('end');
+    //var btn =   divs[divs.length-1];
+    var timer = null;
+    btn.onclick = function () {
+        var i = 0;
+        var count = 0; //记录转圈数
+        //点击开始，第一个div立刻切换样式
+        divs[i].style.border = "2px solid yellow";
+    
+        timer = setInterval(function(){
+            i++;
+            //当切换到最后一个时继续从第一个开始
+            if(i == 8){
+                i = 0;
+                count++;
+            }
+            if(i == 0){
+                //如果当前变色的是第一个，要让最后一个恢复样式
+                divs[7].style.border = "1px solid black";
+            }else{
+                //当前变颜色的上一个div恢复黑色边框
+                divs[i-1].style.border = "1px solid black";
+            }
+            // 每隔100毫秒让下一个div显示黄色边框   
+            divs[i].style.border = "2px solid yellow";
+            //当转够两圈并且 i 等于 中奖号就停止
+           end.onclick =function(){
+               
+               clearInterval(timer);
+           }
+    
+        }, 100);
+        
+        
+
+    }
+</script>
+</html>
