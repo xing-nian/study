@@ -80,6 +80,7 @@
      var item = document.getElementsByClassName('item');
      var box1 = document.getElementById('box1')
      var h =  document.getElementsByClassName('h3');
+     var ul =  document.querySelector('ul');
     
       // 获取焦点
     inp.onfocus = function () {
@@ -91,10 +92,15 @@
     // 失去焦点
     inp.onblur = function () {
     //   console.log("失去焦点了");
-    box1.style.display = 'none'
+    
     inp.placeholder = '请选择';
     };
    
+    ul.onclick =function(e){
+        console.log(e.target);
+        inp.value = e.target.innerHTML;
+         box1.style.display = 'none'
+    }
     // 设置h3的文本
     // var x =1 ； 记录背景为绿色的
     

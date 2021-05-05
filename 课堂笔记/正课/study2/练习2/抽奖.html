@@ -102,7 +102,7 @@
     
 </body>
 <script>
-     var box = document.getElementById('box');
+    var box = document.getElementById('box');
     var divs = box.getElementsByTagName('div');
     var btn = document.getElementsByClassName('btn')[0];
     var end = document.getElementById('end');
@@ -131,11 +131,11 @@
             // 每隔100毫秒让下一个div显示黄色边框   
             divs[i].style.border = "2px solid yellow";
             //当转够两圈并且 i 等于 中奖号就停止
-           end.onclick =function(){
-               
-               clearInterval(timer);
-           }
-    
+            end.onclick =function(){
+                
+                clearInterval(timer);
+            }
+     
         }, 100);
         
         

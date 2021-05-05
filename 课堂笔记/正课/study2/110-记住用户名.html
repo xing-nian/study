@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>110-记住用户名</title>
+</head>
+<body>
+    <input type="text" id="username">
+    <input type="password" id="psw">
+    <button id="submit">提交</button><br>
+    <input type="checkbox" id="remember">记住用户名
+
+</body>
+<script>
+
+
+    submit.onclick = function(){
+        if (remember.checked == true) {
+            console.log(psw.value);
+            //设置cookie
+            document.cookie = 'username=' + username.value ;
+            document.cookie = 'psw=' + psw.value;
+        }
+    }
+    if (document.cookie) {
+        var arr =document.cookie.split(';');
+
+        var obj = {};
+        for(var i =0 ; i<arr.length; i++){
+        var item =arr[i].split('=');
+        obj[item[0]] = item[1];
+    }
+        console.log(obj);
+        username.value =obj.username;
+        psw.value = obj.psw;
+        if (obj.username == '下次也不一定' && obj.psw == '123456') {
+            location.href = 'https://www.baibu.com'
+        }
+    }
+
+   
+</script>
+</html>
