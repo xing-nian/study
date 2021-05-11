@@ -41,11 +41,11 @@
       <div id="jgselect">
           按照价格区间查询：
           <input type="text" id="minp" placeholder="请输入最低价"> ~ <input type="text" id="maxp" placeholder="请输入最高价">
-          <input type="submit" value="查询">
+          <input type="button" value="查询" id="cx1">
     </div>
       <div id="mcselect">按照商品名称查询：
           <input type="text" placeholder="请输入名称" id="item"> 
-          <input type="submit" value="查询">
+          <input type="button" value="查询" id="cx2">
         </div>
   </body>
   <script type="text/javascript" src="./goodList3.js"></script>
@@ -53,51 +53,48 @@
       var minp = document.querySelector('#minp');
       var maxp = document.querySelector('#maxp');
       var item = document.querySelector('#item')
-      setData(goodList3);
-     document.write('<table>')
-     document.write('<thead><tr><th>序号</th><th>商品名称</th><th>商品图片</th><th>单价(元)</th></tr></thead>')
-     function setData (Data){
-      for(var i=0; i<Data.length;i++){
+      setDate(goodList3);
+     function setDate(data){
+      document.write('<table>')
+     document.write('<thead><tr><th>序号</th><th>商品名称</th><th>单价(元)</th></tr></thead>')
+
+     for(var i=0; i<data.length;i++){
         // console.log(goodList3[i].title);
         document.write(`
         <tr>
             <td>${i}</td>
-            <td>${Data[i].title}</td>
-            <td><img src="${Data[i].imageUrl}"</td>
-            <td class="price">￥${Data[i].priceStr}</td>
-           
-        </tr>
+            <td>${data[i].title}</td>
+            <td class="price">￥${data[i].priceStr}</td>
+         </tr>
             `)
     }
+        document.write(`</table>`)
      }
      
-        document.write(`</table>`)
-    // 4. filter(callback) 过滤 筛选  对数组中的元素进行过滤筛选 将满足条件的元素组成一个新数组
- 
-    // 筛选出
+    
+
+    cx1.onclick = function(){
+   
+    var newgoodList3 = goodList3.filter(function(ele){
+    ele.priceStr*=1; 
+    return ele.priceStr>= minp.value && ele.priceStr<= maxp.value;
+    })
+
+    setDate(newgoodList3);
+    console.log(newgoodList3);
+    }
+    
+    
+    // cx2.onclick = function(){
     // item.onchange = function(e){
     // var newgoodList3 = goodList3.filter(function(ele,i,array){
-    // return /ele.item.value/.test(ele)
+    //   if (ele.title == this.value) {
+    //     return true;
+    //   }
     // console.log(newgoodList3);
     // })
-    
-    // console.log(item.value);
     // }
-    maxp.onchange = function(e){
-         console.log(maxp.value);
-         return maxp.value;
-     }
-    minp.onchange = function(e){
-         console.log(minp.value);
-         return minp.value;
-     }
-
-     var newgoodList3= goodList3.filter(function(ele){
-     return ele.priceStr>minp.value && ele.priceStr<maxp.value
-     })
-    console.log(newgoodList3);
-    
-
+    // }
   
   </script>
-</html>
+<ml>

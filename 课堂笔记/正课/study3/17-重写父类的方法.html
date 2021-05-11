@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>重写父类的方法</title>
+</head>
+<body>
+    
+</body>
+<script>
+
+class Father{
+    constructor(price,num){
+    this.price = price;
+    this.num = num
+}
+getTotalPrice(){
+    return this.price * this.num
+}
+}
+// 通过 extend 关键字实现继承
+class Son extends Father{
+  constructor(price,num,discount){
+//super()调用父类的构造函数
+//注意：在子类的构造函数中，必须先使用super()调用父类的构造函数，才能访问this关键字
+//否则会报错
+    super(price,num)
+    this.discount = discount;
+  }
+  setJiFen(){
+      // super 作为对象，指向父类的原型对象
+      return super.getTotalPrice() /100; //每100元 积一分
+  }
+//   重写父类方法
+//   要求： 方法名保持一致 ， 参数列表保持一致 ，返回值保持一致。
+//   只是逻辑有所改变
+ getTotalPrice(){
+    return super.getTotalPrice() * this.discount;
+}
+}
+
+let s1 =new Son(100,5,0.88)
+var res =  s1.setJiFen()
+console.log(res);
+
+ var res2 = s1.getTotalPrice();
+ console.log(res2);
+</script>
+</html>

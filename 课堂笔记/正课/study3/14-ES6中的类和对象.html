@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ES6中的类和对象</title>
+</head>
+<body>
+    
+</body>
+<script>
+    // js语言的传统方式 是通过构造函数定义类，并生成对象
+    function Person(uname,age){
+        this.uname = uname;
+        this.age = age;
+    }
+    Person.prototype = {
+        cunstructor : Person,
+        eat:function(){
+            console.log('hello');
+        }
+    }
+
+    new Person('LI',17)
+    // ES6 引入了 Class(类) 这个概念
+    // class 关键字定义类
+    // new 关键字创建对象
+
+    class Animos{
+        // constructor 就是构造函数， 相当于上面的Person
+        // constructor方法是类的默认方法 ，通过new命令生成实例对象，自动调用该方法，并返回实例对象。
+        constructor(aname,type){
+            // 属性定义在构造函数内部
+            this.aname = aname;
+            this.type =type ;
+        }
+        // 构造函数的prototype属性，在ES6的类上继续存在。
+        // 事实上 类中所有的方法还是定义在了构造函数的原型对象上
+        // 注意 ： class 中的方法 ，不适用function关键字 ； 方法之间 不能用逗号“,”
+       jump(){
+           console.log('跳的真高');
+       }
+       }
+  let cat =  new Animos('NEIKO','猫科')
+  let dog = new Animos('旺财','汪科')
+  console.log(cat.jump == dog.jump);
+  console.dir(Animos);
+  console.dir(cat);
+  
+</script>
+</html>

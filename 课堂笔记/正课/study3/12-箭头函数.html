@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>箭头函数</title>
+</head>
+<body>
+     <button id="btn">按钮</button>
+</body>
+<script>
+    //   箭头函数  可以简化函数定义的语法结构
+    // function f1(){
+
+    // }
+    // let f2 = function(){
+
+    // }
+    // let f = (参数)=>{函数体} 
+    // f();
+
+    // function sum(a,b){
+    //     return a+b;
+
+    // }
+
+    // let sum = (a,b)=>{
+    //     return a+b;
+    // }
+    // console.log(sum(10,120));
+
+    // 1.在箭头函数中，如果函数体中只有一句代码，并且代码的执行结果就是函数的返回值
+    // 函数体大括号{} 可以省略
+    // let sum = (a,b)=>a+b;
+    // console.log(sum(3,27));
+
+    // 2.在箭头函数中，如果形参只有一个，形参外面的小括号() 也可以省略
+    // let num = a => alert(a);
+    // num('hello');
+
+    // 3.箭头函数内部this指向谁？
+    // 箭头函数内部的this 等于 函数定义位置中的this
+
+    // let f1 = ()=>{
+    //     console.log(this);
+    // }
+    // f1();
+
+    // let obj ={
+    //     uname:'张三',
+    //     eat: function(){
+    //         // eat函数内部this == obj
+    //         return food=>{
+    //             // 因为    this指向eat内部的this
+    //             console.log(this.uname + '喜欢吃' +food);
+    //         }
+    //     }
+    // }
+    // let fn1 = obj.eat();
+    // fn1('西瓜')
+
+    // 案例4
+
+   //因为obj是一个对象，对象是无法形成作用域的，
+   //所以eat相当于定义在了全局作用域中,因此箭头函数内部this指向window.
+//    let obj= {
+//    uname:'张三',eat : ()=>{
+//    console.log(this); //this指向window
+//    }
+//    }
+//     obj.eat()
+
+   btn.onclick= function(){
+      var timer = setTimeout(()=>{
+        this.style.color = 'red'; //this 指向btn
+       },2000)
+   }
+
+</script>
+</html>

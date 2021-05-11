@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ES6类的继承</title>
+</head>
+<body>
+    
+</body>
+<script>
+//1. js继承方法
+    // 父类
+//  function Father(price,num){
+//         this.price = price;
+//         this.num = num;
+//     }
+    
+//    Father.prototype.compute =function(){
+//        return this.price * this.num
+//    }
+  //    子类
+//    function Son(price,num){
+    //    实现属性继承
+//    Father.call(this.price,num)
+//    }
+//    实现方法继承
+//    Son.prototype = new Father();
+//    Son.prototype.constructor = Son;
+// 通过构造函数+原型链组合  实现继承
+
+
+
+// 2.ES6 类的继承
+class Father{
+    constructor(price,num){
+    this.price = price;
+    this.num = num
+}
+getTotalPrice(){
+    return this.price * this.num
+}
+}
+// 通过 extend 关键字实现继承
+class Son extends Father{
+  constructor(price,num,discount){
+//super()调用父类的构造函数
+//注意：在子类的构造函数中，必须先使用super()调用父类的构造函数，才能访问this关键字
+//否则会报错
+    super(price,num)
+    this.discount = discount;
+  }
+}
+
+var s1 = new Son(12,5,0.88);
+console.log(s1.price);
+console.log(s1.getTotalPrice());
+</script>
+</html>

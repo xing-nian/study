@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>var和let关键字</title>
+</head>
+<body>
+     
+</body>
+<script>
+    //   console.log(x); //变量提升  结果undefined
+    //   var x = 10;
+
+    //   //1.使用let关键字声明变量，不存在变量提升   
+    //   let y = 20; //Cannot access 'y' before initialization 初始化之前不能使用
+    //   console.log(y);
+
+    //   2.let声明的变量能形成块级作用域
+    // 变量只在它所在的代码块内生效
+    // {
+    //     let y = 20;
+    //     var a = 'hello';
+    //     console.log(y);
+    // }
+    // console.log(y); //y is not defined
+    //3. cnnonst 声明常量
+    // 常量：即 值不能改变
+    // 不存在变量提升，能形成块级作用域。
+   const z = 20;
+   console.log(z);
+   z=50;  //Assignment to constant variable. 不能去改变
+
+
+   //总结:let const var的区别
+   //1.是否有变量提升
+   //2.值是否能改变
+  //3.是否会形成块级作用域
+
+</script>
+</html>
