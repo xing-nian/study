@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>商品查询</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .wrap{
+            width: 800px;
+            margin: 20px auto;
+        }
+        table{
+            width: 800px;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        table,th,td{
+            border: 1px solid #333;
+        }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <div class="search">
+        <p>
+          按照价格查询: <input type="text" id="start-pric" /> --
+          <input type="text" id="end-pric" />
+          <button id="pric-btn">查询</button>
+        </p>
+        <p>
+          按照产品名称查询：<input type="text" id="proc-name" />
+          <button id="name-btn">查询</button>
+        </p>
+      </div>
+      <table>
+        <thead>
+          <tr>
+            <th>序号</th>
+            <th>名称</th>
+            <th>价格</th>
+          </tr>
+        </thead>
+        <tbody id="tbody">
+            
+        </tbody>
+      </table>
+    </div>
+  </body>
+  <script src="./goodList.js"></script>
+  <script>
+      var pricBtn = document.querySelector('#pric-btn');
+      var nameBtn = document.querySelector('#name-btn');
+      var startInp = document.querySelector('#start-pric');
+      var endInp = document.querySelector('#end-pric')
+      var procInp = document.querySelector('#proc-name')
+
+    // 封装一个方法，插入数据
+    // data参数 表示要插入的数据
+    function show(data){
+        var html = '';
+        data.forEach(function(item,i){
+            html+=`
+            <tr>
+                <td>${item.Id}</td>
+                <td>${item.title}</td>
+                <td>${item.priceStr}</td>
+            </tr>
+            `
+        })
+        tbody.innerHTML = html;
+    }
+    show(goodList)
+    // 1.按照价格区间查询
+    pricBtn.onclick = function(){
+        // 获取价格区间 
+        var sp = startInp.value*1;
+        var ep = endInp.value*1;
+        // 根据价格区间筛选数据，将满足条件的数据放入新数组中返回
+        var resArr = goodList.filter(function(item,i){
+            return item.priceStr*1 >= sp && item.priceStr*1 <= ep;
+        });
+        // 重新加载数据
+        show(resArr);
+    }
+
+    // 2.按照名称查询
+    nameBtn.onclick = function(){
+        // 获取输入的产品名称
+        var procName= procInp.value;
+        // 根据产品名 模糊查询
+        var resArr = goodList.filter(function(item,i){
+             return item.title.includes(procName)
+         });
+        //  重新加载数据
+         show(resArr);
+    }
+
+
+
+  </script>
+</html>

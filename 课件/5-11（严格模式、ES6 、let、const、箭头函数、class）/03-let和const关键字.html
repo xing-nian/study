@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>let 和 const</title>
+</head>
+<body>
+    <button>按钮1</button>
+    <button>按钮2</button>
+    <button>按钮3</button>
+    <button>按钮4</button>
+    <button>按钮5</button>
+</body>
+<script>
+    // console.log(x); // undefined
+    // var x = 10;
+    // var x; //变量提升的现象：将变量的声明放在脚本文件的最前面
+    // console.log(x);
+    // x = 10;
+
+    // 1.使用let关键字声明变量，不存在变量提升
+    // console.log(x); // Cannot access 'x' before initialization 在初始化之前不能访问x
+    // let x = 10;
+
+    let x = 10;
+    console.log(x);
+
+    // 2.let声明的变量能形成块级作用域
+    // 变量只在它所在的代码块内生效
+    {
+        let y = 20;
+        var a = 'hello'
+        console.log(y);
+    }
+    // console.log(y); //y is not defined
+    console.log(a);
+
+    // for(let i=0;i<5;i++){
+    //     console.log(i);
+    // }
+    // console.log(i);
+    let btns = document.querySelectorAll('button');
+    for(let i=0;i<btns.length;i++){
+        btns[i].onclick = function(){
+            btns[i].style.color = 'red';
+        }
+    }
+
+    // 3.const声明常量
+    // 常量：即值不能发生改变。
+    const b = 10;
+    // b = 20; // 报错 Assignment to constant variable.
+    
+    // const 声明的常量也会形成会计作用域
+    {
+        const c = 100;
+    }
+    // console.log(c);
+
+    // 总结： let const var的区别 
+    // 1.是否有变量提升
+    // 2.值是否能改变
+    // 3.是否会形成块级作用域
+
+</script>
+</html>

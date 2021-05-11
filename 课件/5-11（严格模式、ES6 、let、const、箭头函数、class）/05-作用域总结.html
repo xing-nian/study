@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    // 全局作用域 Global
+    // 用var定义的变量，如果在全局作用域中，称为全局变量
+    // 该变量会被绑定到 window上，作为window的属性
+    var a = 10;
+    if(a > 5){
+        var b = 20;
+    }
+
+    // 局部作用域 Local
+    // var let const 声明的变量如果在函数体内部，都属于局部变量
+    // 作用范围是：函数体内部。
+    function f1(){
+        var a1 = 1;
+        let b1 = 2;
+        const c1 = 3; 
+    }
+    f1();
+
+    // 块级作用域 Block
+    // let const 声明的变量可以形成块级作用域
+    {
+        let a2 = 100;
+    }
+
+    // 脚本作用域 Script
+    // 脚本作用域指针对 let const声明的变量
+    // 脚本作用域中let const声明 的变量不属于window的属性
+    // 不能通过 window.变量名 访问变量
+    let b2 = 200;
+
+
+</script>
+</html>

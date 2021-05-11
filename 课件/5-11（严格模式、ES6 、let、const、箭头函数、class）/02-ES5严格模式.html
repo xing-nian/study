@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>严格模式</title>
+</head>
+<body>
+    <div data-index="0"></div>
+</body>
+<script>
+    var e = document.querySelector('[data-index="0"]')
+    console.log(e);
+
+    // "use strict"  //整个脚本文件都应该使用严格模式
+    x = 10;
+    console.log(x);
+
+    function f1(){
+        console.log(this);  //window
+    }
+    f1();
+
+    (
+        function(){
+            "use strict" // 只在这个函数区域内使用严格模式
+            // 1.变量必须先声明
+            // y = 10;
+            // console.log(y);
+
+            // 2.普通函数内部this指向undefined
+            function f2(){
+                console.log(this);
+            }
+            f2();
+
+        }
+    )()
+
+    // 参考文档：http://www.ruanyifeng.com/blog/2013/01/javascript_strict_mode.html
+
+</script>
+</html>

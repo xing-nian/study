@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ES6中的类和对象</title>
+</head>
+<body>
+    
+</body>
+<script>
+    // js语言的传统方式是通过 构造函数 定义类并生成对象
+    function Person(uname,age){
+        this.uname = uname;
+        this.age = age;
+    }
+    Person.prototype= {
+        constructor:Person,
+        eat:function(){
+            console.log('hello');
+        }
+    }
+    new Person('Jon',18)
+
+    // ES6 引入了 Class(类)这个概念
+    // class 关键字定义类
+    // new 关键字创建对象
+
+    class Animat{
+        // constructor方法，就是构造函数，相当于Person
+        // constructor方法是类的默认方法，通过 new 命令生成实例对象时，自动调用该方法，并返回实例对象
+        constructor(aname,type){
+            // 属性定义在构造函数内部
+            this.aname = aname;
+            this.type = type;
+        }
+
+        // 构造函数的prototype属性，在ES6的类上继续存在
+        // 事实上，类中所有的方法还是定义在了构造函数的原型对象性上。
+        // 注意：class 中的方法，不使用function关键字； 方法之间不能用逗号","
+        jump(){
+            console.log('动物会跳跃');
+        }
+    }
+
+    let cat = new Animat('猫','猫科')
+    let dog = new Animat('狗','犬科')
+
+    console.log(cat.jump == dog.jump);
+    console.dir(Animat);
+    console.dir(cat);
+    // 依然遵循 对象的原型__proto 指向 构造函数的原型对象prototype
+    console.log(Animat.prototype == cat.__proto__); //true
+
+
+
+</script>
+</html>
