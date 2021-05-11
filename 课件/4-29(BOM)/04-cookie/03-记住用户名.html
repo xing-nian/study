@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>记住用户名</title>
+    </head>
+    <body>
+        <input type="text" id="username" />
+        <input type="text" id="psw" />
+        <button id="submit">提交</button><br />
+        <input type="checkbox" id="remember" />记住用户名
+    </body>
+    <script>
+        submit.onclick = function () {
+            if (remember.checked) {
+                console.log(psw.value);
+                // 设置cookie
+                document.cookie = "username=" + username.value;
+                document.cookie = "psw=" + psw.value;
+            }
+        };
+
+        console.log(document.cookie); //"username=jon; psw=123456"
+
+        if (document.cookie) { //如果存在cookie
+            
+            var arr = document.cookie.split(";"); //['username=jon','psw=123456']
+            var obj = {};
+            for (var i = 0; i < arr.length; i++) {
+                var item = arr[i].trim().split("="); //['username','jon']
+                obj[item[0]] = item[1];
+            }
+            console.log(obj);// {userbname:"jon",psw:'123456'}
+            // username.value = obj.username;
+            // psw.value = obj.psw;
+
+            if (obj.username == 'jon' && obj.psw == '1234') {
+                location.href = 'https://www.mi.com';
+            }
+        }
+    </script>
+</html>

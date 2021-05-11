@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box{
+            width: 300px;
+            height: 300px;
+            border: 2px solid #333;
+        }
+    </style>
+</head>
+<body>
+    <img src="./images/1.png" alt="" id="img">
+    <div id="box" draggable="true"></div>
+</body>
+<script>
+    /*
+        html标签中有属性draggable，用于控制标签是否能被拖拽
+        a标签和img标签的 draggable 属性值默认是true，允许被拖拽
+        其他大部分标签的 draggable 属性值默认时false。
+
+        拖拽事件：
+        1.dragstart  拖拽开始
+        2.dragover 拖拽元素到达指定容器上时，未松开鼠标
+        3.drop 放下拖拽元素
+    */
+    var img = document.querySelector('#img');
+    var box = document.getElementById('box');
+    img.ondragstart = function(e){
+        console.log('开始拖拽');
+        // dataTransfer 可以进行数据传输
+        // e.dataTransfer.setData('index',e.target.id)
+    }
+    box.ondragover = function(e){
+        console.log('已经到达box上');
+        // 默认情况下，执行dragover事件时，不允许进入 drop 事件内部。
+        e.preventDefault(); // 允许放下拖拽的元素
+    }
+    box.ondrop = function(e){
+        console.log('放下');
+        // var val = e.dataTransfer.getData('index')
+        // console.log(val);
+        box.appendChild(img)
+    }
+
+
+
+
+
+</script>
+</html>

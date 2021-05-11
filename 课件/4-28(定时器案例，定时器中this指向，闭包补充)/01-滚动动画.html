@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>滚动动画</title>
+        <style>
+            #box {
+                height: 3000px;
+                background-color: red;
+            }
+            #goback {
+                position: fixed;
+                right: 100px;
+                bottom: 100px;
+                width: 150px;
+                height: 150px;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="box"></div>
+        <button id="goback">返回顶部</button>
+    </body>
+    <script>
+        var goback = document.getElementById("goback");
+        var timer = null;
+        goback.onclick = function () {
+            // 路程 S
+            var scrollTop = document.scrollingElement.scrollTop;
+            // 假设 总时间300ms 定时器间隔时间20ms 计算V
+            var v = (scrollTop / 300) * 20;
+
+            if (timer == null) {
+                timer = setInterval(function () {
+                    scrollTop -= v;
+                    if (scrollTop <= 0) {
+                        scrollTop = 0;
+                        clearInterval(timer);
+                        timer = null;
+                    }
+                    document.scrollingElement.scrollTop = scrollTop;
+                }, 20);
+            }
+        };
+    </script>
+</html>

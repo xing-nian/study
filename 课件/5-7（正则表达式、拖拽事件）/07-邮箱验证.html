@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>邮箱验证</title>
+</head>
+<body>
+    <input type="text" placeholder="请输入qq邮箱" id="email">
+    <button id="submit">提交</button>
+</body>
+<script>
+    // 验证qq邮箱 
+    // \d 表示一个数字  
+    // . 字符 查找单个字符，除了换行和行结束符。
+    // 注意如果是正则表达式中的特殊字符，要是用转义符'\',将字符其转义为正常的
+    var reg = /^\d{6,12}@qq\.com/;
+    var reg2 = /^\d{6,12}@(qq|sina|163)\.com/
+    submit.onclick = function(){
+        if (reg2.test(email.value)) {
+            alert('格式正确')
+        } else {
+            alert('格式错误')
+        }
+    }
+
+    
+
+</script>
+</html>

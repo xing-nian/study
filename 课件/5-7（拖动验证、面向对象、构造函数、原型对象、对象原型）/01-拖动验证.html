@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>拖动验证</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            user-select: none;
+        }
+        .view{
+            width: 360px;
+            margin: 50px auto;
+        }
+        #imgBox{
+            height: 140px;
+            background-image: url(./images/a.png);
+            border-radius: 10px;
+            position: relative;
+        }
+        #slideBox{
+            height: 44px;
+            text-align: center;
+            line-height: 44px;
+            color: #d0d0d0;
+            box-shadow: 0 0 10px skyblue inset;
+            font-size: 20px;
+            letter-spacing: 10px;
+            border-radius: 22px;
+            position: relative;
+        }
+        #circle{
+            width: 55px;
+            height: 55px;
+            background-image: url(./images/arrow.png);
+            position: absolute;
+            top: -4px;
+            left: -5px;
+            z-index: 10;
+            transition: all .5s;
+        }
+        #blue{
+            height: 44px;
+            width: 44px;
+            background-image: linear-gradient(#222054,#2c647e);
+            position: absolute;
+            left: 0;
+            top: 0;
+            border-radius: 22px;
+            transition: all .5s;
+        }
+        #smallImg{
+            position: absolute;
+            left: 0;
+            transition: all .5s;
+        }
+    </style>
+</head>
+<body>
+    <div class="view">
+        <div id="imgBox">
+            <img src="./images/a1.png" alt="" id="smallImg">
+        </div>
+        <div id="slideBox">
+            向右滑动 开始验证
+            <div id="circle"></div>
+            <div id="blue"></div>
+        </div>
+    </div>
+</body>
+<script>
+    var arr = [{
+        big_img:"a.png",
+        small_img:"a1.png",
+        top:30,
+        left:111
+    },
+    {
+        big_img:"b.png",
+        small_img:"b1.png",
+        top:36,
+        left:90
+    },
+    {
+        big_img:"c.png",
+        small_img:"c1.png",
+        top:42,
+        left:174
+    },
+    {
+        big_img:"d.png",
+        small_img:"d1.png",
+        top:60,
+        left:83
+    },]
+
+    var randomNum = Math.floor(Math.random()*arr.length);
+    var item = arr[randomNum];
+    smallImg.src = `./images/${item.small_img}`;
+    smallImg.style.top = item.top + 'px';
+    imgBox.style.backgroundImage = `url(./images/${item.big_img})`
+
+    /*
+        1.鼠标在circle上按下的时候，可以开始拖动（鼠标的初始坐标）
+        2.鼠标移动的时候 计算鼠标移动的距离 = 鼠标移动时的坐标 - 鼠标的初始坐标
+        3.松开鼠标，结束拖动
+    */
+    var flag = false;
+    var ms_x; //记录鼠标按下时的初始坐标
+    circle.onmousedown = function(e){
+        flag = true;
+        ms_x = e.clientX;
+        // 取消过渡
+        circle.style.transition = 'all 0s';
+        blue.style.transition = 'all 0s';
+        smallImg.style.transition = 'all 0s'
+    }
+    var len;
+    document.onmousemove = function(e){
+        if (flag) {
+            // 计算鼠标移动的距离
+            len = e.clientX - ms_x;
+            if (len <= 0) {
+                len = 0
+            }
+            if (len >= 360-50) {
+                len = 360 -50
+            }
+            // 修改 圆的位置
+            circle.style.left = -5 + len + 'px';
+            // 修改蓝色div的width
+            blue.style.width = len + 44 + 'px';
+            // 修改smallImg的left
+            smallImg.style.left = len + 'px';
+        }
+    }
+
+    document.onmouseup = function(){
+        flag = false
+        // 判断是否到达指定位置
+        if (len > item.left - 5 && len < item.left +5) {
+            alert('ok');
+        }
+        // 复位
+        // 过渡
+        circle.style.transition = 'all .5s';
+        blue.style.transition = 'all .5s';
+        smallImg.style.transition = 'all .5s'
+
+        circle.style.left = '-5px';
+        blue.style.width = '44px';
+        smallImg.style.left = '0px';
+    }
+
+</script>
+</html>

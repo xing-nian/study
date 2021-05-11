@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>走马灯</title>
+        <style>
+            #wrap {
+                width: 600px;
+                height: 600px;
+                margin: 10px auto;
+                position: relative;
+            }
+            #box {
+                width: 600px;
+                margin: 0 auto;
+            }
+
+            #wrap div {
+                width: 200px;
+                height: 200px;
+                border: 1px solid orange;
+                box-sizing: border-box;
+                position: absolute;
+                text-align: center;
+                line-height: 198px;
+                font-size: 20px;
+                background-color: #e0e0e0;
+            }
+            /* 选中时的样式 */
+            #wrap div.active {
+                background-color: orange;
+                color: #fff;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="wrap"></div>
+        <div id="box">
+            <button id="start">开始</button>
+            <button id="end">结束</button>
+        </div>
+    </body>
+    <script>
+        var wrap = document.querySelector("#wrap");
+        var start = document.querySelector("#start");
+        var end = document.querySelector("#end");
+
+        // 奖品设置
+        var googList = [
+            "苹果",
+            "华为",
+            "5元话费",
+            "10元话费",
+            "谢谢参与",
+            "iPad",
+            "项链",
+            "保时捷",
+        ];
+
+        // 实际允许用户抽到的奖品
+        var arr = [
+            "5元话费",
+            "10元话费",
+            "谢谢参与",
+            "谢谢参与",
+            "10元话费",
+            "谢谢参与",
+            "谢谢参与",
+            "项链",
+        ];
+
+        // 插入奖品
+        for (var i = 0; i < googList.length; i++) {
+            wrap.innerHTML += `<div>${googList[i]}</div>`;
+        }
+
+        wrap.children[1].style.left = "200px";
+        wrap.children[2].style.left = "400px";
+        wrap.children[3].style.left = "400px";
+        wrap.children[3].style.top = "200px";
+        wrap.children[4].style.left = "400px";
+        wrap.children[4].style.top = "400px";
+        wrap.children[5].style.left = "200px";
+        wrap.children[5].style.top = "400px";
+        wrap.children[6].style.top = "400px";
+        wrap.children[7].style.top = "200px";
+
+        // 默认 第一个奖项被选中
+        var x = 0;
+        wrap.children[x].classList.add("active");
+
+        // 开始 由慢到快
+        // 结束 由快到慢
+        var flag = true; //加速与减速的依据
+        var timer = null;
+        var t = 400; //初始延迟时间
+        var good; //表示用户抽取的奖品名称
+        function fn() {
+            // 还原之前的奖项
+            wrap.children[x].classList.remove("active");
+            x++;
+            if (x > 7) {
+                x = 0;
+            }
+            // 设置当前的奖项
+            wrap.children[x].classList.add("active");
+
+            // 设置间隔时间
+            if (flag) {
+                //加速
+                t -= 40;
+                if (t <= 100) {
+                    t = 100;
+                }
+            } else {
+                //减速
+                t += 10;
+                if (t >= 400) {
+                    t = 400;
+                    // 判断 抽取的奖品 和 当前选中的奖品 一致时，停止转动。
+                    if (good == wrap.children[x].innerHTML) {
+                        timer = null;
+                        return; //跳出fn函数，结束转动
+                    }
+                }
+            }
+
+            timer = setTimeout(fn, t);
+        }
+
+        // 点击开始按钮
+        start.onclick = function () {
+            if (timer == null) {
+                // 抽奖
+                var num = Math.floor(Math.random() * 8);
+                good = arr[num];
+                console.log(good);
+
+                flag = true;
+                fn();
+            }
+        };
+        // 点击结束按钮
+        end.onclick = function () {
+            flag = false;
+        };
+    </script>
+</html>

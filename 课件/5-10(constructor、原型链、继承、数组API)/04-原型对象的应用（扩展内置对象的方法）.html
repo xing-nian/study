@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+  <script>
+    // // 字面量方式创建数组
+    // var arr = [];
+    // // 构造函数创建数组
+    // var arr1 = new Array();
+
+    // var str = "";
+    // var str2 = new String();
+
+    // var num = 1;
+    // var num2 = new Number(2);
+    // console.log(typeof str2);
+    // console.log(typeof num2);
+
+    // 数组求和
+
+    Array.prototype.sum = function () {
+      var s = 0;
+      for (var i = 0; i < this.length; i++) {
+        s += this[i];
+      }
+      return s;
+    };
+    
+    // 注意：不能使用这种方式扩展内置对象的方法
+    // Array.prototype = {
+    //   constructor:Array,
+    //   sums:function () {
+    //     var s = 0;
+    //     for (var i = 0; i < this.length; i++) {
+    //       s += this[i];
+    //     }
+    //     return s;
+    //   },
+    // };
+    var arr = new Array(1, 2, 3, 4, 5);
+    // var res = arr.sums();
+    // console.log(res);
+
+    console.dir(Array.prototype.constructor);
+
+    
+  </script>
+</html>

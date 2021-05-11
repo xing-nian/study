@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>原型链</title>
+</head>
+<body>
+    
+</body>
+<script>
+    function Person(uname,age){
+        this.uname = uname;
+        this.age = age;
+    }
+    Person.prototype = {
+        constructor:Person,
+        eat:function(food){
+            console.log(this.uname + '喜欢吃' + food);
+        },
+        speak:function(lang){
+            console.log(this.uname + '说' + lang) ;    
+        },
+        skill:function(){
+            console.log('他会计算机');
+        }
+    }
+
+    var p1 = new Person('Jon',18);
+    // p1.skill = function(){
+    //     console.log(this.uname + '会计算机');
+    // }
+    p1.skill()
+
+    console.dir(p1.__proto__); //指向 Person构造函数的原型对象
+    // 对象都有 __proto__ 属性
+    // 原型对象 也是对象，他也有 __proto__属性
+    console.dir(Person.prototype.__proto__); //指向 Object构造函数的原型对象
+    console.log(Object.prototype.__proto__); //指向 null
+
+    // 总结：
+    // 什么是原型链？
+    // 只要是对象，内部就有 __proto__属性，而__proto__指向原型对象。
+    // 通过 对象的 __proto__ 属性形成的链式查找机制，即原型链。
+
+    // 查找规则：
+    // 1. 当访问一个对象的属性或方法时，首先看该对象自身是否有该属性或方法
+    // 2. 如果没有就查找它的原型（即__proto__），看__proto__指向的原型对象上有没有
+    // 3. 如果还没有，继续查找，看原型对象的原型
+    // 4. 以此类推，直至找到 Object.prototype.__proto__ 为null为止。
+    
+</script>
+</html>

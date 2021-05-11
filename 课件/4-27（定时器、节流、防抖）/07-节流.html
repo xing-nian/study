@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>节流</title>
+</head>
+<body>
+    <button id="btn">按钮</button>
+</body>
+<script>
+    var btn = document.querySelector('#btn');
+    // 节流： 固定时间内 多次操作以首次为准(只执行第一次操作)
+    // 固定时间之内不能触发第二次
+    // 作用：降低代码执行频率
+    var flag = true; //节流阀
+    btn.onclick = function(){
+        if (flag == true) {
+            flag = false; //关闭阀门
+
+            console.log('发送请求');//假设这是点击后要执行的操作
+
+            setTimeout(function(){
+                flag = true; //1秒钟之后打开节流阀
+            },1000)
+        }
+    }
+
+</script>
+</html>

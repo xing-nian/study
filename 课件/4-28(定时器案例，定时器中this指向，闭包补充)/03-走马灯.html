@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>走马灯</title>
+        <style>
+            #wrap {
+                width: 600px;
+                height: 600px;
+                margin: 10px auto;
+                position: relative;
+            }
+            #box {
+                width: 600px;
+                margin: 0 auto;
+            }
+
+            #wrap div {
+                width: 200px;
+                height: 200px;
+                border: 1px solid orange;
+                box-sizing: border-box;
+                position: absolute;
+                text-align: center;
+                line-height: 198px;
+                font-size: 20px;
+                background-color: #e0e0e0;
+            }
+            /* 选中时的样式 */
+            #wrap div.active {
+                background-color: orange;
+                color: #fff;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="wrap"></div>
+        <div id="box">
+            <button id="start">开始</button>
+            <button id="end">结束</button>
+        </div>
+    </body>
+    <script>
+        var wrap = document.querySelector("#wrap");
+        var start = document.querySelector("#start");
+        var end = document.querySelector("#end");
+
+        // 奖品设置
+        var googList = [
+            "苹果",
+            "华为",
+            "5元话费",
+            "10元话费",
+            "谢谢参与",
+            "iPad",
+            "项链",
+            "保时捷",
+        ];
+
+        // 插入奖品
+        for (var i = 0; i < googList.length; i++) {
+            wrap.innerHTML += `<div>${googList[i]}</div>`;
+        }
+
+        wrap.children[1].style.left = "200px";
+        wrap.children[2].style.left = "400px";
+        wrap.children[3].style.left = "400px";
+        wrap.children[3].style.top = "200px";
+        wrap.children[4].style.left = "400px";
+        wrap.children[4].style.top = "400px";
+        wrap.children[5].style.left = "200px";
+        wrap.children[5].style.top = "400px";
+        wrap.children[6].style.top = "400px";
+        wrap.children[7].style.top = "200px";
+
+        // 默认 第一个奖项被选中
+        var x = 0;
+        wrap.children[x].classList.add("active");
+
+        // var timer = null;
+        // start.onclick = function(){
+        //     if (timer == null) {
+        //         timer = setInterval(function(){
+        //             // 复原之前选中的奖项
+        //             wrap.children[x].classList.remove('active');
+        //             x++;
+        //             if ( x > 7) {
+        //                 x = 0;
+        //             }
+        //             // 当前选中的奖项
+        //             wrap.children[x].classList.add('active');
+        //         },200)
+        //     }
+        // }
+
+        // end.onclick = function(){
+        //     clearInterval(timer);
+        //     timer = null;
+        // }
+
+        // 通过 setTimeout 实现
+        var flag = true; //表示是否开始切换奖项
+        var timer = null;
+        function fn() {
+            wrap.children[x].classList.remove("active");
+            x++;
+            if (x > 7) {
+                x = 0;
+            }
+            wrap.children[x].classList.add("active");
+
+            timer = setTimeout(function () {
+                if (flag) {
+                    fn();
+                }
+            }, 200);
+        }
+
+        start.onclick = function () {
+            if (timer == null) {
+                flag = true;
+                fn();
+            }
+            
+        };
+        end.onclick = function () {
+            flag = false;
+            clearTimeout(timer);
+            timer = null;
+        };
+    </script>
+</html>

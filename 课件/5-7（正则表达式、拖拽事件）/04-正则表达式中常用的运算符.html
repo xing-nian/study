@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>运算符</title>
+  </head>
+  <body></body>
+  <script>
+    // 1.边界符  ^  $  匹配开头 结尾
+    var reg = /ab/i; //表示包含字符串 ab  , i表示不区分大小写
+    // var reg = /^a/; //表示 以a开头
+    var str = 'Ab';
+    console.log(reg.test(str));
+
+    // var reg = /abc$/; //以abc结尾
+    // var str = 'qwebc';
+    // console.log(reg.test(str));
+
+    // var reg = /^abc$/; //精准匹配
+    // var str = 'abcaaabc';
+    // console.log(reg.test(str)); //false
+    // console.log(reg.test('abc')); //true
+
+    // 2. 字符集 [] 表示有一系列字符可供选择，只要匹配其中一个就行
+    // var reg = /[ab]/; //表示包含 a || b
+    // console.log(reg.test('boy')); // true
+
+    // var reg = /^[ab]/; // 以a开头 || 以b开头
+    // console.log(reg.test('ea boy'));
+
+    // var reg = /^[ab]$/; // a || b
+    // console.log(reg.test('b'));
+
+    // var reg = /^[a-zA-Z]/; //以字母开头
+    // var reg = /^[0-9]/; //以数字开头
+    // var reg = /^[^0-9]/; //不以数字开头  [] 内部的^ 表示取反
+    // console.log(reg.test('1a90p'));
+
+    // 3. 量词符号 * + ？ {}
+    // var reg = /a*/; //*表示 >= 0
+    // console.log(reg.test('zxc'));
+
+    // var reg = /a+/; //+表示 >= 1
+    // console.log(reg.test('zxca'));
+
+    // var reg = /a?/; //?表示 1 || 0
+    // console.log(reg.test('aaa'));
+
+    // var reg = /^[a-zA-Z0-9]{6,12}$/; //以数字、字母开头 长度为6-12
+    // console.log(reg.test('a123asd1234455666')); //false
+
+
+
+  </script>
+</html>

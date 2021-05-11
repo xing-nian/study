@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>计时器练习</title>
+    </head>
+    <body>
+        <h3 id="txt">0</h3>
+        <button id="start">开始</button>
+        <button id="end">结束</button>
+    </body>
+    <script>
+        var h3 = document.querySelector("#txt");
+        var start = document.querySelector("#start");
+        var end = document.querySelector("#end");
+
+        // var num = 0;
+        // var timer = null;
+        // start.onclick = function () {
+        //     if (timer == null) {
+        //         timer = setInterval(function () {
+        //             num += 1;
+        //             h3.innerHTML = num;
+        //         }, 1000);
+        //     }
+        // };
+
+        // end.onclick = function () {
+        //     clearInterval(timer); //关闭计时器
+        //     timer = null;
+        // };
+
+        var num = 0;
+        var timer;
+        start.onclick = function () {
+            clearInterval(timer);
+            timer = setInterval(function () {
+                num += 1;
+                h3.innerHTML = num;
+            }, 1000);
+        };
+
+        end.onclick = function () {
+            clearInterval(timer); //关闭计时器
+        };
+    </script>
+</html>

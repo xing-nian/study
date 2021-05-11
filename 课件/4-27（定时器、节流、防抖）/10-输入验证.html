@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>输入验证</title>
+</head>
+<body>
+    <input type="text" name="" id="username">
+</body>
+<script>
+    var username = document.getElementById('username');
+    // 防抖：多次操作 以末次为准
+    var timer;
+    username.oninput = function(){
+        clearTimeout(timer);
+        timer = setTimeout(function(){
+            console.log(username.value);
+        },200)
+    }
+
+</script>
+</html>

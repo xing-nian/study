@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    // ?
+    // 正则表达式表示字符串重复个数的运算符 * + ？{} ，默认都会选择贪婪模式
+    // 如果想要改变为懒惰模式，就在这些运算符后面加 ？号即可。
+    var str = 'aesd1234srwrqtras123425';
+    var reg = /a.*s/; // 贪婪模式，在所有满足条件的数据中，获取数据最长的那一个
+    var reg2 = /a.*?s/; // 非贪婪模式，在所有满足条件的数据中，获取数据最短的那一个
+    console.log(str.match(reg));
+    console.log(str.match(reg2));
+
+
+</script>;
+</html>

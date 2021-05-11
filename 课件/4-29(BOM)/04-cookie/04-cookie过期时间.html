@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="username">
+    <button id="save">持久存储</button>
+</body>
+<script>
+    save.onclick = function(){
+        // 获取当前日期时间
+        var d= new Date();
+        // 获取 60s 后的日期时间对象
+        d.setTime(d.getTime() + 60*1000);
+        // console.log(d);
+        // 将 日期时间对象 转换为 日期字符串
+        var dateStr = d.toUTCString();
+        // expires 字段 设置cookie过期时间
+        document.cookie = 'uname=' + username.value+';expires=' + dateStr;
+    }
+</script>
+</html>

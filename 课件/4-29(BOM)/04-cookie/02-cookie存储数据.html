@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="txt">0</button>
+    <button id="add">+</button>
+    <button id="save">保存</button>
+    <button id="read">读取</button>
+</body>
+<script>
+    add.onclick = function(){
+        txt.innerHTML = txt.innerHTML * 1 + 1;
+    }
+
+    // 回话级cookie ，随着浏览器窗口关闭而清除。
+    save.onclick = function(){
+        // 设置 cookie 以 '键=值' 的形式存储
+        document.cookie = `num1=${txt.innerHTML}`
+    }
+    read.onclick = function(){
+        // 读取 cookie
+        console.log(document.cookie);
+    }
+
+
+</script>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>秒表</title>
+</head>
+<body>
+    <h3 id="txt">00:00:00</h3>
+</body>
+<script>
+    var h3 = document.querySelector('#txt');
+    var hour = 0,min = 0,sec = 0;
+    var timer = setInterval(function(){
+        // 秒数递增
+        sec++;
+        // 判断秒数达到60，让分钟递增，秒数归0
+        if (sec > 59) {
+            min++;
+            sec = 0;
+        }
+        // 判断分钟达到60，让小时递增，分钟归0
+        if(min > 59){
+            hour++;
+            min = 0;
+        }
+
+        var secStr = sec < 10 ? '0' + sec : sec;
+        var minStr = min < 10 ? '0' + min : min;
+        var hourStr = hour < 10 ? '0' + hour : hour;
+
+        h3.innerHTML = hourStr + ":" + minStr + ":" + secStr;
+    },100)
+
+</script>
+</html>

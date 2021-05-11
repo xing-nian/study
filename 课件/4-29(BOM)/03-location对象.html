@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="btn1">跳转到百度</button>
+    <button id="btn2">跳转到小米</button>
+    <button id="btn3">刷新</button>
+</body>
+<script>
+    /*
+        location对象 :获取、设置浏览器的url信息
+    
+    */
+
+    btn1.onclick = function(){
+        // 设置页面跳转的地址(可以就退)
+        location.href = 'https://www.baidu.com';
+    }
+    btn2.onclick = function(){
+        // 替换地址 (不能后退)
+        location.replace('https://www.mi.com');
+    }
+    btn3.onclick = function(){
+        // 刷新
+        location.reload();
+    }
+
+
+</script>
+</html>

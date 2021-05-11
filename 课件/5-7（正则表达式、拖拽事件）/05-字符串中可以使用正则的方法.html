@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Documen字符串中可以使用正则的方法t</title>
+</head>
+<body>
+    
+</body>
+<script>
+    var str = '胡子担了一担螺蛳，驼予骑了一匹骡子。胡子的螺蛳撞了驼子的骡子，驼子的骡子踩了胡子的骡蛳。胡子要驼子赔胡子的螺蛳，驼子要胡子赔驼子的骡子。胡子骂驼子，驼子打胡子，螺蛳也爬到骡子头上去啃鼻子'
+    // var res = str.replace(/骡子/g,"**"); // g表示全局匹配
+    // console.log(res);
+
+    // search 方法 返回某个指定字符在字符串中第一次出现的位置
+    // var res = str.search(/骡子/);
+    // console.log(res);
+
+    // match 方法
+    // var res = str.match(/骡子/g);
+    // console.log(res);
+
+    var reg = /sina|163|qq/g;
+    var str = '1234sina.com,aaaqqw16453.com';
+    console.log(str.match(reg));
+
+    // var res = reg.exec(str);
+    // console.log(res);
+    // console.log(reg.exec(str));
+    // console.log(reg.exec(str));
+    var res;
+    while(res = reg.exec(str)){
+        console.log(res);
+    }
+
+    
+
+
+
+</script>
+</html>

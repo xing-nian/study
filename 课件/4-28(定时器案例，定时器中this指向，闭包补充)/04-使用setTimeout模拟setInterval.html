@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body></body>
+    <script>
+        var x = 0;
+
+        function fn() {
+            x++;
+            console.log(x);
+            if (x < 10) {
+                setTimeout(fn, 1000);
+            }
+        }
+        fn();
+
+        var y = 0;
+        function fn() {
+            y++;
+            if (y < 10) {
+                console.log(y);
+                setTimeout(fn,500)
+            }
+        }
+        fn();
+    </script>
+</html>

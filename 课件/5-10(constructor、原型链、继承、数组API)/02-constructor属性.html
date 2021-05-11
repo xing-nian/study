@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>constructor属性</title>
+</head>
+<body>
+    
+</body>
+<script>
+    // 原型对象（prototype）上有一个属性是： constructor
+    // 对象的原型（__proto__）上也有一个属性是：constructor
+    // constructor 属性指向的就是构造函数本身
+
+    // constructor 的作用？
+    // 它的作用就是用来记录对象产生于哪个构造函数，可以让原型对象重新指向原来的构造函数
+
+    function Person(uname,age){
+        this.uname = uname;
+        this.age = age;
+    }
+
+    // 以下这种方式，是在 Person.prototype 原本的基础上添加 eat speak 方法
+    // 对原有的结构不会造成影响：即对constructor属性的指向不会造成影响
+    // Person.prototype.eat = function(food){
+    //     console.log(this.uname + '喜欢吃' + food);
+    // }
+    // Person.prototype.speak = function(lang){
+    //     console.log(this.uname + '说' + lang) ;
+    // }
+    
+
+    //通过以下方式操作，会将原本 Person.prototype 覆盖掉
+    // 此方式改变了原本 constructor的指向
+    // Person.prototype = {
+    //     eat:function(food){
+    //         console.log(this.uname + '喜欢吃' + food);
+    //     },
+    //     speak:function(lang){
+    //         console.log(this.uname + '说' + lang) ;    
+    //     },
+    // }
+
+    // 如何让 constructor 重新指向 构造函数Person
+    Person.prototype = {
+        constructor:Person,
+        eat:function(food){
+            console.log(this.uname + '喜欢吃' + food);
+        },
+        speak:function(lang){
+            console.log(this.uname + '说' + lang) ;    
+        },
+    }
+
+    var p1 = new Person('Jon',18)
+    console.log(Person.prototype.constructor); //指向 构造函数Object  
+    console.dir(Person);
+    console.dir(p1);
+
+
+
+
+
+</script>
+</html>

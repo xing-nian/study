@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    function Person(uname,age,sex){
+        this.uname = uname;
+        this.age = age;
+        this.sex = sex;
+        this.speak = function(lang){
+            console.log(this.uname + '说' + lang);
+        }
+        // 构造函数内部 this 指向谁？new创建的对象
+    }
+    // 通过构造函数 new 一个对象
+    var p1 = new Person('张三',28,"男");
+    p1.speak("中文");
+
+    var p2 = new Person('Jon',18,'男');
+    p2.speak('English');
+
+    console.log(p1.speak == p2.speak); // false
+    /*
+        通过比较，发现：
+        每创建一个对象，系统就会开辟一块内存空间，存放对象。
+
+        同时，如果构造函数内部定义的有函数，因为函数属于复杂数据类型，
+        此时系统就会为函数开辟一块空间，存放函数。
+
+        这就意味着如果创建100个对象，系统就会开辟100块内存空间存放这100个函数，
+        此时就会造成内存浪费。
+
+        如何实现让所有对象共享一个相同的方法，从而节省内存空间？
+        解决方式： 使用构造函数的原型对象
+        把方法添加到构造函数的原型对象上，所有对象就可以共享这一个方法。
+    */
+
+</script>
+</html>

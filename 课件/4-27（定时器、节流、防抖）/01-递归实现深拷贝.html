@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    var data = [
+        {
+            name:'河南省',
+            code:'100000',
+            city:[
+                {
+                    name:"郑州",
+                    code:'11000',
+                    area:[
+                        {
+                            name:'经开区',
+                            code:"11100"
+                        },
+                        {
+                            name:'二七区',
+                            code:"11200"
+                        },
+                    ]
+                },
+                {
+                    name:"洛阳",
+                    code:'11000',
+                    area:[
+                        {
+                            name:'经开区2',
+                            code:"11110"
+                        },
+                        {
+                            name:'二七区2',
+                            code:"11210"
+                        },
+                    ]
+                },
+            ]
+        }
+    ]
+
+    var data2 = [];
+    function deepCopy(oldData,newData){
+        for(var key in oldData){
+            // 1.获取值
+            var val = oldData[key];
+            // 2.判断值类型
+            if(val instanceof Array){ //值是数组
+                newData[key] = []; //创建新数组，开辟新空间
+                deepCopy(val,newData[key]);
+                // for(var i=0;i<val.length;i++){
+                //     // newData[key][i] = val[i]; 
+                //     if (val[i] instanceof Array) {
+                //         []
+                //     }else if(val[i] instanceof Object){
+                //         {}
+                //     }else{
+                //         //直接赋值
+                //     }
+                // }
+
+            }else if(val instanceof Object){//值是对象
+                newData[key] = {};
+                deepCopy(val,newData[key]);
+
+            }else{//值是简单数据类型
+                newData[key] = val; //递归结束
+            }
+        }
+    }
+    deepCopy(data,data2);
+    
+    data[0].city[1].area[0].name = 'aaaaa';
+    console.log(data2);
+
+    // var arr = [];
+    // console.log(arr instanceof Object); //true  数组也属于对象
+
+
+
+
+
+    // var arr = [1,2,3,{name:"Jon",age:18}];
+    // var arr2 = [];
+    // for(var i=0;i<arr.length;i++){
+    //     if (arr[i] instanceof Object) {
+    //         arr2[i] = {};
+    //         for(var key in arr[i]){
+    //             arr2[i][key] = arr[i][key];
+    //         }
+
+    //     }else{
+    //         arr2[i] = arr[i];
+    //     }
+        
+    // }
+    
+    // arr2[3].age = 28;
+    // console.log(arr2);
+    // console.log(arr);
+
+    // var arr = [1,2,3,4,[9,8,10,{name:"Jon"}]];
+    // var arr2 = [];
+    // for(var i=0;i<arr.length;i++){
+    //     if (arr[i] instanceof Array) {
+    //         arr2[i] = [];
+    //         for(var j=0;j < arr[i].length;j++){
+    //             arr2[i][j] = arr[i][j];
+                
+    //         }
+    //     }else{
+    //         arr2[i] = arr[i];
+    //     }
+    // }
+
+
+</script>
+</html>

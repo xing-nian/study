@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        ul{
+            list-style: none;
+        }
+        .wrap{
+            width: 1000px;
+            margin: 50px auto;
+        }
+        #view{
+            width: 400px;
+            float: left;
+        }
+        #right{
+            background-image: url(./images/bg.png);
+            width: 463px;
+            height: 722px;
+            float: right;
+            position: relative;
+        }
+        #box{
+            width: 424px;
+            height: 624px;
+            position: absolute;
+            left: 20px;
+            top: 83px;
+        }
+        #box li{
+            width: 102px;
+            height: 149px;
+            margin-right: 4px;
+            margin-bottom: 7px;
+            float: left;
+            text-align: center;
+            line-height: 276px;
+            /* border: 1px solid greenyellow;
+            box-sizing: border-box; */
+        }
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <div id="view">
+            <!-- <img src="./images/9.png" alt="" index=8>
+            <img src="./images/6.png" alt="" index=5>
+            <img src="./images/10.png" alt="" index=9> -->
+        </div>
+        <div id="right">
+            <ul id="box">
+    
+            </ul>
+        </div>
+    </div>
+</body>
+<script>
+    var view = document.getElementById('view');
+    var box  = document.getElementById('box');
+    for(var i=0;i<16;i++){
+        var img = document.createElement('img');
+        img.src = `./images/${i+1}.png`;
+        img.index = i;
+        view.appendChild(img);
+
+        var li = document.createElement('li');
+        li.index = i;
+        box.appendChild(li);
+    }
+
+    // 拖拽开始
+    var dragEle; //保存拖拽的元素 img
+    view.ondragstart = function(e){
+        // console.log(e.target);
+        dragEle = e.target;
+    }
+    // 拖拽到容器上时
+    box.ondragover = function(e){
+        e.preventDefault();
+    }
+    // 放下拖拽元素
+    box.ondrop = function(e){
+        // console.log(e.target.index);
+        // 比较 拖拽元素img的索引  与 放下时容器li的索引
+        if (dragEle.index == e.target.index) {
+            e.target.appendChild(dragEle);
+        }
+    }
+
+
+</script>
+</html>

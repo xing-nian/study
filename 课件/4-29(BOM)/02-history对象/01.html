@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1</title>
+</head>
+<body>
+    <h1>第一个页面</h1>
+    <a href="./02.html">第二页</a>
+    <button id="btn">前进一级</button>
+</body>
+<script>
+    btn.onclick = function(){
+        // 前进一级
+        history.forward();
+    }
+
+    /*
+        history：浏览器的历史信息
+        go(num) 前进
+        go(-num) 后退
+        back() 后退一级   等价于  go(-1)
+        forward() 前进一级  等价于  go(1)
+    
+    
+    */
+</script>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>防抖</title>
+</head>
+<body>
+    <button id="btn">防抖</button>
+</body>
+<script>
+    var btn = document.getElementById('btn');
+
+
+    // 防抖：多次操作 以末次为准(只执行最后一次操作)
+    // 作用：降低代码执行频率
+    var timer;
+    btn.onclick = function(){
+        clearTimeout(timer);
+        timer = setTimeout(function(){
+            console.log('发送请求');//假设这是点击按钮要执行的操作
+        },1000)    
+    }
+
+
+</script>
+</html>

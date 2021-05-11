@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <ul>
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+            <li>5</li>
+        </ul>
+    </body>
+    <script>
+        // 闭包：闭包是一个函数，一个作用域可以访问一个函数内部的局部变量，局部变量所在的函数就是闭包函数
+
+        // function fn(){
+        //     var x = 10;
+        //     function fn2(){
+        //         console.log(x + 20);
+        //     }
+        //     return fn2;
+        // }
+        // var f = fn();
+        // f();
+
+        var lis = document.getElementsByTagName("li");
+        for (var i = 0; i < lis.length; i++) {
+            (function (x) {
+                setTimeout(function () {
+                    console.log(lis[x].innerHTML);
+                }, 5000);
+            })(i);
+        }
+        // i = 5
+    </script>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <style>
+            #box {
+                height: 4000px;
+                background-color: aquamarine;
+            }
+            #btn {
+                width: 100px;
+                height: 100px;
+                position: fixed;
+                left: 100px;
+                top: 200px;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="box"></div>
+        <button id="btn">按钮</button>
+    </body>
+    <script>
+        /*
+        点击按钮，让页面滚动到指定位置 1500px
+        如果 页面滚动高度(2500px) > 1500px,此时点击按钮应该 倒推  -;
+        如果 页面滚动高度(500px) < 1500px, 此时点击按钮应该 前进  +;
+    */
+
+        var btn = document.querySelector("#btn");
+        var timer = null;
+        btn.onclick = function () {
+            // 获取当前页面的滚动高度
+            var ST = document.scrollingElement.scrollTop;
+            // 计算路程
+            var S = Math.abs(ST - 1500);
+            // 计算速度
+            var V = (S / 300) * 20;
+
+            if (timer == null) {
+                timer = setInterval(function () {
+                    if (ST > 1500) {
+                        ST -= V;
+                        if (ST <= 1500) {
+                            ST = 1500;
+                            clearInterval(timer);
+                            timer = null;
+                        }
+                    } else {
+                        ST += V;
+                        if (ST >= 1500) {
+                            ST = 1500;
+                            clearInterval(timer);
+                            timer = null;
+                        }
+                    }
+
+                    document.scrollingElement.scrollTop = ST;
+                }, 20);
+            }
+        };
+    </script>
+</html>

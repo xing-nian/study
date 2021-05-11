@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>数组常用的API</title>
+  </head>
+  <body></body>
+  <script>
+    // 参考文档： https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array
+    // 1. Array.from(arrLike,callback) 把类数组转换为真正的数组  返回转换后的新数组
+    // var str = 'hello'
+    // // 参数1：要转换的数据（类数组）
+    // var arr = Array.from(str);
+    // console.log(arr instanceof Array);
+
+    // 参数2：回调函数 用来对每个元素进行操作，将处理好的值放入新的数组中
+    // [2,4,6,8,10]
+    // var arr = Array.from('12345',function(ele,i){
+    //     // console.log(ele + '的索引是：' + i);
+    //     return ele *2;
+    // })
+    // console.log(arr);
+
+    // 2. forEach(callback) 遍历数组
+    // 参数： 对遍历到的每个元素执行对应的操作。
+    // var arr = ['a','b','c'];
+    // arr.forEach(function(ele,i,array){
+    //     console.log(ele);
+    // })
+
+    // 3. map(callback)  返回一个新数组
+    // 对数组中的每个元素运行指定的函数，返回每次调用函数的结果，并将其组成一个新的数组
+    //  var arr = [1,2,3,4,5]
+    //  var arr1 = arr.map(function(ele){
+    //     return ele * 2;
+    //  });
+    //  console.log(arr1);
+
+    //  4.filter(callback) 过滤 筛选 对数组中的元素进行过滤筛选  将满足条件的元素组成新数组返回
+    // var arr = ['张三','王五','李四','王二麻子','张三丰','王小六'];
+    // // 筛选出所有姓王的名字
+    // var arr1 = arr.filter(function(ele,i,array){
+    //     return /^王/.test(ele)
+    // })
+    // console.log(arr1);
+
+    var arr = [
+      {
+        title: "苹果",
+        price: 10,
+      },
+      {
+        title: "香蕉",
+        price: 5,
+      },
+      {
+        title: "橘子",
+        price: 12,
+      },
+      {
+        title: "荔枝",
+        price: 18,
+      },
+      {
+        title: "提子",
+        price: 9,
+      },
+    ];
+    // // 筛选出 价格 大于 10 的元素
+    // var arr1 = arr.filter(function(ele){
+    //     return ele.price > 10 && ele.price < 15;
+    // })
+    // console.log(arr1);
+
+    // 5. some(callback) 查找数组是否有满足指定条件的元素 返回布尔值
+    // var isHas = arr.some(function (ele, i, array) {
+    //   return ele.price > 11;
+    // });
+    // console.log(isHas);
+
+    // 6. find(callback) 查找满足添加的第一个元素  返回该元素
+    //    findIndex(callback) 查找满足条件的第一个索引 返回该元素的索引
+    // var item = arr.find(function(ele,i,array){
+    //     return ele.price > 11;
+    // }) 
+    // console.log(item);
+
+    // 7. includes(ele) 判断数组中是否包含某个指定的元素。 返回布尔值
+    // 字符串也有这个方法
+    var arr3 = ['a','b','c']
+    var ishas = arr3.includes('c');
+    console.log(ishas);
+
+  </script>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>短信倒计时</title>
+    </head>
+    <body>
+        <input type="text" name="" id="tel" placeholder="请输入手机号" />
+        <button id="send">发送验证码</button>
+    </body>
+    <script>
+        var btn = document.querySelector("#send");
+        var num = 10;
+        var timer = null;
+        btn.onclick = function () {
+            // 开启计时器
+            if (timer == null) {
+                timer = setInterval(function () {
+                    btn.innerHTML = num + "秒";
+
+                    num--;
+                    if (num < 0) {
+                        clearInterval(timer);
+                        timer = null;
+                        num = 10;
+                        btn.innerHTML = "发送验证码";
+                    }
+                }, 1000);
+            }
+        };
+    </script>
+</html>

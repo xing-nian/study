@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>自定义动画</title>
+    <style>
+        body{
+            margin: 0;
+        }
+        #box{
+            width: 200px;
+            height: 200px;
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+    <div id="box"></div>
+    <button id="btn">开始</button>
+</body>
+<script>
+    var box = document.querySelector('#box');
+    var btn = document.getElementById('btn');
+
+    
+    var left = 0;
+    btn.onclick = function(){
+        btn.disabled = true;
+
+        var timer = setInterval(function(){
+            
+            left += 2.5; //500
+
+            if (left >= 500) {
+                left = 500;
+                clearInterval(timer);
+                btn.disabled = false;
+            }
+            box.style.marginLeft = left + 'px';
+        },10)
+    }
+
+    // 已知 目标路程 500px; 运动时间 2000ms; 
+    // 可以计算出来： 速度 500px / 2000ms  =  0.25px/ms
+    // 如果将间隔时间设置为 10ms , 那么 速度应该是 0.25 * 10 = 2.5px
+
+</script>
+</html>

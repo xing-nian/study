@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <div>
+            <button>按钮1</button>
+            <button>按钮2</button>
+            <button>按钮3</button>
+            <button>按钮4</button>
+            <button>按钮5</button>
+        </div>
+    </body>
+    <script>
+        // 点击按钮，3秒钟之后改变按钮的文本颜色
+        var btns = document.getElementsByTagName("button");
+        for (var i = 0; i < btns.length; i++) {
+            (function (x) {
+                btns[x].onclick = function () {
+                    // this.style.color = 'red';
+                    setTimeout(function () {
+                        console.log(x);
+                        // 定时器中的this指向的是 window
+                        btns[x].style.color = "red";
+                    }, 3000);
+                };
+            })(i);
+        }
+    </script>
+</html>

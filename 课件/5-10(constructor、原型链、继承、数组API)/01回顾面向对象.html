@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>回顾面向对象</title>
+</head>
+<body>
+    
+</body>
+<script>
+    // 1、构造函数  也是函数， 只是比较特殊
+    // (1)函数名 首字母 大写
+    // (2)构造函数内部 封装一些公共的属性
+    // (3)构造函数内部 this指向 实例化的对象(new 创建的对象)
+
+
+    function Person(uname,age){
+        this.uname = uname;
+        this.age = age;
+        this.speak = function(lang){
+            console.log(this.uname + '说' + lang);
+        }
+    }
+
+    Person.prototype.eat = function(food){
+        console.log(this.uname + '喜欢吃' + food);
+    }
+
+    var p1 = new Person('张三',20)
+    var p2 = new Person('李四',18)
+    p1.speak('中文');
+    p2.speak('英文');
+    console.log(p1.speak == p2.speak); //false
+    // 通过验证，发现 p1 和 p2 并非共享同一个speak方法
+
+    // 2、如何实现共享？
+    // 把公共的方法定义在 构造函数的原型对象上（prototype）
+    // 原型对象是什么？ 也是一个对象，它是构造函数的一个属性。
+    console.dir(Person)
+    console.log(p1.eat == p2.eat); //true
+
+    // 3、为什么 实例对象 能够方法 构造函数原型对象上的方法？
+    // 因为 每一个对象都有一个 __proto__属性，它指向构造函数的原型对象。
+    console.log(p1);
+    // console.log(p2);
+    console.log(p1.__proto__ == Person.prototype); //true
+
+
+
+
+</script>
+</html>

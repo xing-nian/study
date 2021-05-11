@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>原型链和构造函数组合实现继承</title>
+</head>
+<body>
+    
+</body>
+<script>
+    // 父类
+    function Father(uname,age,sex){
+        this.uname = uname;
+        this.age = age;
+        this.sex = sex;
+    }
+    Father.prototype = {
+        constructor:Father,
+        eat:function(food){
+            alert(this.uname + '喜欢吃' + food)
+        },
+        speak:function(lang){
+            alert(this.uname + '会说' + lang)
+        }
+    }
+
+    // 子类
+    function Son(uname,age,sex){
+        // 利用 call 方法，改变Father构造函数内的this指向
+        // 实现属性的继承
+        Father.call(this,uname,age,sex);
+    }
+
+    // 方法1： 此方法不可取
+    // Son.prototype 和 Father.prototype 会相互影响
+    // Son.prototype = Father.prototype;
+    // Son.prototype.skill = function(){
+    //     alert(this.uname + '会HTML');
+    // }
+
+    // 通过原型链实现方法的继承
+    // 正确的方式:
+    Son.prototype = new Father();
+    Son.prototype.constructor = Son;
+
+    // 扩展子类方法
+    Son.prototype.skill = function(){
+        alert(this.uname + '会HTML');
+    }
+
+    var f = new Father('张三丰',48,'男');
+    // f.eat('蔬菜');
+
+    var s = new Son('张三',18,'男');
+    s.speak('中文');
+
+    console.log(Father.prototype);
+
+
+</script>
+</html>
