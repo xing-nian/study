@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>正则表达式常用的运算符</title>
+</head>
+<body>
+   
+</body>
+<script>
+     //1.边界符  ^  $  匹配开头  结尾
+    //  var reg = /^a/; //表示以a开头
+    //  var reg = /ab/; //表示包含字符串ab
+    // var reg = /abc$/;//以abc结尾
+    // var str = 'Aa b abc'
+    // console.log(reg.test(str));
+
+    // var reg = /^abc$/;  //精准匹配 
+    // var str = 'abc';  
+    // console.log(reg.test(str));
+
+    //2.[]  只要匹配[]中 其中一个就行
+    // var reg = /[ab]/;   //包含 a 或者 b
+    // console.log(reg.test('boy'));
+
+    // var reg = /^[ab]/; // 以a或者以b开头；
+
+    // var reg = /^[ab]$/; // 精准匹配 a或者b
+
+    // var reg = /^[a-zA-Z]/; //以字母开头
+    // var reg = /^[0-9]/;  //以数字开头
+
+    // var reg = /^[^0-9]/;  //[]内部^表示取反  不以数字开头
+    // console.log(reg.test('ext'));
+
+    // 3.量词符号  * + ？ {}
+    // var reg = /a*/;  //*表示出现次数 >=0
+    // console.log(reg.test('zxc'));
+
+    // var reg = /a?/; //?表示出现 1 || 0false
+    // console.log(reg.test('abc'));
+
+    var reg = /^[a-zA-Z0-9]{6,12}$/; //表示以数字字母开头长度为6-12；
+    console.log(reg.test('a123456defghi'));//false
+
+    
+</script>
+</html>

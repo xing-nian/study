@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    ul{
+        list-style: none;
+    }
+    .wrap{
+        width: 1000px;
+        margin: 50px auto;
+    }
+    #view{
+        width: 400px;
+        float: left;
+
+    }
+    #box{
+        width: 300px;
+        height: 500px;
+        
+    }
+    #right{
+        background-image: url(./images4/bg.png);
+        width: 463px;
+        height: 722px;
+        float: right;
+        position: relative;
+    }
+    #box{
+        width: 424px;
+        height: 624px;
+        position: absolute;
+        left: 20px;
+        top: 83px;
+    }
+    #box li{
+        width: 82px;
+        height: 89px;
+        margin-top: 70px;
+        margin-left: 20px;
+        margin-right: 4px;
+        margin-bottom: 7px;
+        float: left;
+        /* border: 1px solid greenyellow;
+        box-sizing: border-box; */
+    }
+</style>
+</head>
+<body>
+    <div class="wrap">
+        <div id="view"> 
+            <img  src="./images4/1.png" alt="" class="img">
+            <img  src="./images4/2.png" alt="" class="img">
+            <img  src="./images4/3.png" alt="" class="img">
+            <img  src="./images4/4.png" alt="" class="img">
+            <img  src="./images4/5.png" alt="" class="img">
+            <img  src="./images4/6.png" alt="" class="img">
+            <img  src="./images4/7.png" alt="" class="img">
+            <img  src="./images4/8.png" alt="" class="img">
+            <img  src="./images4/9.png" alt="" class="img">
+            <img  src="./images4/10.png" alt="" class="img">
+            <img  src="./images4/11.png" alt="" class="img">
+            <img  src="./images4/12.png" alt="" class="img">
+            <img  src="./images4/13.png" alt="" class="img">
+            <img  src="./images4/14.png" alt="" class="img">
+            <img  src="./images4/15.png" alt="" class="img">
+            <img  src="./images4/16.png" alt="" class="img">
+        </div>
+        <div id="right">
+            <ul id="box">
+                <li ></li>
+                <li ></li>
+                <li ></li>
+                <li ></li>
+                <li ></li>
+                <li ></li>
+                <li ></li>
+                <li ></li>
+                <li ></li>
+                <li ></li>
+                <li ></li>
+                <li ></li>
+                <li ></li>
+                <li ></li>
+                <li ></li>
+                <li ></li>
+            </ul>
+        </div>
+    </div>
+</body>
+<script>
+    var img = document.querySelectorAll('img');
+    var box = document.querySelector('#box');
+    var view = document.querySelector('#view')
+    var li =document.querySelectorAll('li');
+     for(var i =0 ;i<16; i++){
+     img[i].index = i;
+     li[i].index = i;
+     
+    }
+    //拖拽开始
+    var dragEle;//保存拖拽的元素 img
+    view.ondragstart =function(e){
+        console.log(e.target);
+        dragEle = e.target
+    }
+    //拖拽到容器上
+    box.ondragover = function(e){
+        e.preventDefault();
+        
+    }
+    //放下拖拽元素
+    box.ondrop = function(e){
+        if (dragEle.index == e.target.index) {
+            e.target.appendChild(dragEle);
+        }
+        
+    }
+</script>
+</html>

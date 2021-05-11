@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>拖拽验证码</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #box{
+            position: relative;
+            left: 500px;
+            top: 200px;
+        }
+        #box1{
+            width: 350px;
+            height: 150px;
+            position: relative;
+        }
+        .img2{
+            position: absolute;
+            top: 30px;
+            left: 0;
+        }
+        #box2{
+            width: 360px;
+            height: 50px;
+            border: 1px solid skyblue;
+            border-radius: 50px;
+            position: relative;
+            top: -10px;
+        }
+        .img3{
+            position: absolute;
+            left: 0;
+            z-index: 10;
+        }
+        p{
+            position: absolute;
+            left: 80px;
+            top: 15px;
+            color: #ccc;
+            font-size: 20px;
+        }
+         #wrap{
+            width: 350px;
+            height: 50px;
+            position: absolute;
+            /* 禁止用户选中文本 */
+            user-select: none;
+        }
+       
+    </style>
+</head>
+<body>
+   <div id="box">
+    <div id="box1">
+        <img src="./images4/a.png" alt="">
+        <img class="img2" src="./images4/a1.png" alt=""> 
+    </div>
+    <div id="box2">
+        <div id="wrap"> 
+            <img class="img3" src="./images4/arrow.png" alt="">
+        </div>
+        <p>向 右 滑 动&emsp;开 始 验 证</p>
+    </div>
+   </div>
+   
+    
+</div>
+</body>
+<script>
+    var img2 = document.querySelector('.img2')
+    var img3 = document.querySelector('.img3')
+    var wrap = document.getElementById('wrap');
+    var flag = false;
+    // 鼠标在 目录 区域按下，表示可以开始拖动
+    var startX,startY,eleStartX,eleStartY;
+    img3.onmousedown = function(e){
+        flag = true;
+        // 鼠标按下时的坐标
+        startX = e.clientX;
+        // startY = e.clientY;
+        // 元素的偏移量
+        eleStartX = wrap.offsetLeft;
+        // eleStartY = wrap.offsetTop;
+    }
+
+    // 鼠标移动
+    var moveW, moveH;
+    document.onmousemove = function(e){
+        moveW = e.clientX - startX;
+        if (flag) { 
+            var x = eleStartX + moveW;
+            if (x <= 0) {
+                x = 0;
+            }
+            if (x >= 310) {
+                x = 310;
+            }
+           
+            if (x >= window.innerWidth - wrap.offsetWidth - 20) {
+                x = window.innerWidth - wrap.offsetWidth - 20;
+            }
+            img3.style.left = x + 'px';
+            img2.style.left = x + 'px';
+            if (x >=115 && x <=117) {
+                alert('验证成功')
+            }
+        }
+    }
+
+    // 鼠标在 文档 区域松开，表示可以结束拖动
+    document.onmouseup = function(){
+        
+        flag = false;
+        
+    }
+
+
+</script>
+</html>

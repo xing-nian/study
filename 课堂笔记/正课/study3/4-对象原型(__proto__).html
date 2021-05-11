@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>对象原型(__proto__)</title>
+</head>
+<body>
+</body>
+<script>
+     function Person(uname,age,sex){
+        this.uname = uname;
+        this.age = age;
+        this.sex = sex;
+     }
+     console.dir(Person)
+     // 将公共的函数定义到原型对象中去
+     Person.prototype.speak = function(lang){
+         console.log(this.uname + '在'+lang);
+     }
+     var P2 = new Person('jean',18,'女');
+    //  P2.speak = function(lang){
+    //  console.log(this.uname + '不在'+lang);
+    //  }
+     P2.speak('东北玩泥巴')
+     console.dir(P2);
+     console.log(Person.prototype == P2.__proto__);
+     /*
+     1.对象有一个属性 [__proto__], 该属性指向 构造函数的原型对象[prototype].
+        所以，实例对象p1,p2 可以访问prototype上的函数speak。
+
+     2.__proto__ 对象原型存在的意义：它为实例对象提供了一个查找机制（查找方向）。
+        
+        查找机制/查找规则： 先看 p1 本身有没有speak方法，
+        如果没有，就沿着__proto__查找 构造函数Person的原型对象上有没有speak函数。
+     */
+</script>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>通过构造函数和原型链组合实现继承</title>
+</head>
+<body>
+    
+</body>
+<script>
+    function Father(uname,age,sex){
+        this.uname = uname;
+        this.age = age;
+        this.sex = sex;
+    }
+    Father.prototype = {
+        constructor:Father,
+        eat:function(food){
+            alert(this.uname + '不喜欢吃' +food)
+        },
+        speak:function(lang){
+            alert(this.uname + ':' +lang)
+        }
+    }
+
+    function Son(uname,age,sex){
+        // 实现属性的继承
+        Father.call(this,uname,age,sex);
+
+    }
+    //不能使用该方法  不可取不能实现继承  Father，Son 会相互影响
+    // Son.prototype = Father.prototype
+
+    // 通过原型链方法实现的继承
+    // 正确的方式
+    Son.prototype = new Father();
+    Son.prototype.constructor = Son;
+    var s = new Son('离',17,'');
+    s.eat('土');
+
+    console.log(Father.prototype);
+</script>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+

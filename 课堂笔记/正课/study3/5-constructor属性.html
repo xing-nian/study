@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>constructor属性</title>
+</head>
+<body>
+    
+</body>
+<script>
+     // 原型对象（prototype）上有一个属性 ：constructor
+     // 原型对象（__proto__）上也有一个属性 ：constructor
+     //constructor 属性指向就是构造函数本身
+
+    //  constructor的作用？
+    //  它的作用就是用来记录对象产生于那个构造函数，可以让原型对象重新指向原来的构造函数
+
+
+     function Person(uname,age,sex){
+        
+        this.uname = uname;
+        this.age = age;
+        this.sex = sex;
+     }
+    //  // 将公共的函数定义到原型对象中去
+    //  Person.prototype.speak = function(lang){
+    //      console.log(this.uname + '学的'+lang);
+    //  }
+
+    //通过以下方式操作 ， 会将原本的Person.prototype 覆盖掉
+    //改变了 原本 constructor的指向
+
+    // 如何让constructor重新指向 构造函数Person
+     
+     Person.prototype = {
+        constructor:Person,
+         eat: function(lang){
+            console.log(this.uname + '学的'+lang);
+         },
+         speak:function(lang){
+            console.log(this.uname + '学的'+lang);
+         },
+     }
+     var p1 =new Person('bai',15,'nv')
+     p1.speak('hh')
+     console.log(Person.prototype.constructor); // 指向 构造函数 Object
+     console.dir(Person)
+</script>
+</html>

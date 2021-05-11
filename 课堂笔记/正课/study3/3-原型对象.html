@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>原型对象</title>
+</head>
+<body>
+    
+</body>
+<script>
+    //  原型对象是什么？ 就是一个对象  它属于构造函数的一个属性
+    //  原型对象的作用：共享方法，可以把公共的方法定义在原型对象上
+    //  公共的属性定义在构造函数中。
+     function Person(uname,age,sex){
+        this.uname = uname;
+        this.age = age;
+        this.sex = sex;
+     }
+     console.dir(Person)
+     // 将公共的函数定义到原型对象中去
+     Person.prototype.speak = function(lang){
+         console.log(this.uname + '学的'+lang);
+     }
+     var P1 = new Person('辉',20,'男')
+     var P2 = new Person('jean',18,'女');
+     P1.speak('东北方言')
+     P2.speak('甲骨文')
+
+     //公共的方法定义在原型对象上
+     //为什么 P1,P2能访问原型对象上的函数 speak?
+
+</script>
+</html>

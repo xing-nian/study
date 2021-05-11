@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>改变this指向的方法</title>
+</head>
+<body>
+    <div class="btns">
+        <button>按钮1</button>
+        <button>按钮2</button>
+        <button>按钮3</button>
+        <button>按钮4</button>
+        <button>按钮5</button>
+    </div>
+</body>
+<script>
+     /*
+       call()  apply()  bind()  都可以改变函数内部的this指向
+       call()  apply() 可以调用函数
+     
+     */
+    // function f1(){
+    //     console.log('hello');
+    // }
+    // f1();
+    // f1.call();
+    // f1.apply()
+
+    //2.改变函数内部的this指向
+    // var p1 = {
+    //     uname:'张三',
+    //     born:'1990',
+    //     address:'郑州'
+    // }
+    // var p2 = {
+    //     uname:'jean',
+    //     born:'2000',
+    //     address:'Canada',
+    //     getAge:function(data){
+    //         return data - this.born;
+    //     }
+    // }
+    // var p2_age = p2.getAge(2021);
+    // console.log(p2_age);
+
+    // 需求： 计算p1的年龄
+    //call()
+    // 参数1:改变this指向
+    // 参数2:调用函数正常要传递的参数
+    // var res = p2.getAge.call(p1,2021);
+    // console.log(res);
+   
+    //apply()
+    //与call()不同的是：apply()传递参数时的形式应该是数组
+    //    var res = p2.getAge.apply(p1,[2021])
+    //    console.log(res);
+
+   //bind()
+   //bind() 没有调用函数的功能，只能改变函数内部的this指向
+   //bind()会返回原函数改变this指向之后的一个新函数
+//    var f2 = p2.getAge.bind(p1,2021);
+//    var res = f2();
+//    console.log(res);
+
+//按钮点击5秒后 按钮变红
+var btns = document.querySelector('.btns')
+//事件委托实现
+ btns.onclick = function(e){
+    var timer1 = setTimeout(function(){
+        e.target.style.color = 'red';
+    },5000)
+ }
+
+//改变this实现
+// for(var i = 0 ; i<btns.children.length;i++){
+//     btns.children[i].onclick = function(){
+//         setTimeout(function(){
+//             //定时器内部的this指向window
+//             //需求 ：将定时器内部的this -->事件函数内部的this(当前的按钮)
+//             //解决方式 ： bind()
+//             this.style.color= 'red'
+//         }.bind(this),5000)
+//     }
+// }
+
+</script>
+</html>

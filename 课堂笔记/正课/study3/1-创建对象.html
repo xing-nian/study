@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>创建对象</title>
+</head>
+<body>
+    
+</body>
+<script>
+     //创建对象
+
+     //1. 字面量形式创建对象
+     var obj1 = {
+         uname : 'jon',
+         eat:function(){
+
+         }
+     }
+
+     //2. 使用构造函数Object ， new一个对象
+    var obj2 = new Object({name:'张三',age:18})
+
+
+    //3. 自定义构造函数, new 一个对象
+    //构造函数本身也是一个函数，只不过比较特殊
+    //(1)函数名称:首字母大写
+    //(2)构造函数内部封装的是对象的一些公共的属性和操作方法
+    //构造函数可以理解为我们所说的‘类’
+    //类是抽象出来的概念，可以把类当成一个模板
+    function Person(uname,age,sex){
+        
+        this.uname = uname;
+        this.age = age;
+        this.sex = sex;
+        this.speak = function(lang){
+            console.log(this.uname + '说' + lang);
+        }
+    }
+
+    //通过构造函数 new 一个对象
+    var P1 = new Person('李四',33,'未知');
+    P1.speak('English');
+
+    var P2 = new Person('jean',18,'女');
+    P2.speak('中文');
+
+
+
+    
+</script>
+</html>
