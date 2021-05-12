@@ -164,7 +164,7 @@ console.log('avzxczxdaad'.includes('d'));
    console.log(item);
 ```
 
-### 5月11日
+# 5月11日
 
 ### ES5严格模式
 
@@ -397,5 +397,108 @@ console.log(res);
  var res2 = s1.getTotalPrice();
  console.log(res2);
 
+```
+
+# 5月12日
+
+### 静态成员和实例成员
+
+```
+☆ 实例成员：构造函数内部通过 this添加的成员，称之为实例成员。实例成员只能通过实例化对象访问。
+☆ 静态成员 ：在构造函数上添加的成员，只能通过构造函数访问
+
+    //  ES6
+    class Student{
+        constructor(sname,sage){
+            // 实例
+            this.sname = sname;
+            this.sage = sage;
+        }
+        //☆ 静态属性 只能由类名访问
+        static sex = '男'
+        // 实例方法
+        study(){
+            alert('风和日丽')
+        }
+        //☆ 静态方法 只能由类名访问
+        static work(){
+            alert('上班摸鱼');
+        }
+    }
+    let s1 =new Student('li',19);
+    s1.sage =20;
+    console.log(s1.sage);
+    console.log(Student.sage);//undefined
+    s1.study();
+    // Student.study(); //Student.study is not a function
+
+    // console.log(s1.sex); //undefined
+    console.log(Student.sex);//男
+
+    // s1.work(); //报错  s1.work is not a function
+    Student.work();
+
+```
+
+### jQuery
+
+```
+1.官网下载： https://jquery.com/download/
+2.在线使用： https://code.jquery.com/jquery-3.6.0.min.js
+
+<!-- 本地引入jquery.js -->
+<script src="./jquery.js"></script>
+
+<!-- 引入在线 -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+```
+
+### jQuery选择器
+
+```
+1.jQuery 中的选择器与css选择器一致  $()调用
+2.css()  等同于行内样式
+
+-   一个属性样式
+    $('.box').css('width','200px')
+
+-   多个属性样式传递{} 对象
+-   $('.list li:first').css({color:'#fff'});
+    //第一个元素
+    
+-   $('.list li:last').css({color:'#fff'});
+    //最后一个元素
+    
+-   $('.list li:eq(1)').css({color:'blue'});
+    // :eq(index) 根据指定索引查找元素
+    
+-   $('.list li:gt(2)').css({fontSize:20})
+    // :gt(index) 找到大于指定索引的元素
+    
+    
+-   $('.nav li:even').css('color','red')
+-   $('.nav li:odd').css('color','blue')
+    // :even 偶数   :odd 奇数
+    
+-   $('.nav li:not(.active)').css('fontSize',20)
+    // :not() 除了指定元素以外
+```
+
+### jQuery属性操作
+
+```
+1.获取 ，设置 标签(自带)属性 prop()
+    console.log($('a').prop('href')); //获取属性值
+    $('a').prop('href','https://www.mi.com')//设置属性值
+
+2.获取，设置(自定义)标签属性 attr()
+    $('div').attr('data-color','red'); //设置自定义标签属性
+    console.log($('img').attr('data-src')); //获取自定义标签属性
+
+3.移出标签的属性 removeAttr()
+    $('img').removeAttr('data-src')
+    
+    $('a').removeAttr('href')
+    $('a').removeProp('href')
 ```
 

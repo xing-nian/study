@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery属性操作</title>
+</head>
+<body>
+    <a href="https://www.baidu.com">百度</a>
+    <div>hello</div>
+    <img src="lazyLoad.png" alt="懒加载" data-src="https://img2.baidu.com/it/u=3228549874,2173006364&fm=26&fmt=auto&gp=0.jpg" >
+</body>
+<script src="./jquery-3.6.0.min.js"></script>
+<script>
+    // 1. 获取、设置 标签(自带)属性 prop()
+    console.log($('a').prop('href'));  //获取属性值
+    $('a').prop('href','https://www.mi.com'); //设置属性值
+
+    // 2. 获取、设置 (自定义)标签属性 attr()
+    $('div').attr('data-color','red'); //设置自定义标签属性
+    console.log($('img').attr('data-src')); //获取自定义标签属性
+    // 移除标签的属性  removeAttr()
+    $('img').removeAttr('data-src')
+    $('a').removeAttr('href')
+
+    // 
+    // $('a').removeProp('href') // 无法移除
+    $('div').prop('index','1')
+    console.log($('div'));
+</script>
+</html>

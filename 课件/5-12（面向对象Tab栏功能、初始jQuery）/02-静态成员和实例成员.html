@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    // 实例成员： 构造函数内部通过 this 添加的成员，称之为实例成员。
+    // 实例成员只能通过实例化对象访问。
+    function Person(uname,age){
+        this.uname = uname;
+        this.age = age;
+    }
+    Person.prototype.eat = function(){
+        alert('喜欢吃水果')
+    }
+
+    let p1 = new Person('Jon',18)
+    console.log(p1.uname);
+    // console.log(Person.uname); // undefined
+    // p1.eat()
+    // Person.eat() // 报错Person.eat is not a function
+
+    // 静态成员：在构造函数上添加的成员，称之为静态成员
+    // 静态成员只能通过构造函数访问。
+    Person.sex = '男';
+    console.log(p1.sex); // undefined
+
+    Person.speak = function(){
+        alert('喜欢说英文');
+    }
+    // Person.speak()
+    // p1.speak(); // 报错p1.speak is not a function
+
+</script>
+<script>
+    // ES6
+    class Student{
+        constructor(sname,sage){
+            // 实例属性
+            this.sname = sname;
+            this.sage = sage;
+        }
+        // 静态属性  只能用类名访问
+        static sex = '男'
+
+        // 实例方法
+        study(){
+            alert('好好学习')
+        }
+
+        // 静态方法  只能由类名访问
+        static work(){
+            alert('努力工作')
+        }
+    }
+
+    let s1 = new Student('张三',28);
+    s1.sage = 20;
+    console.log(s1.sage);
+    // console.log(Student.sage); //undefined
+    // s1.study();
+    // Student.study() //报错
+
+    console.log(s1.sex); //undefined
+    console.log(Student.sex);
+
+    // s1.work(); //报错
+    Student.work();
+
+   
+
+
+
+
+
+</script>
+</html>

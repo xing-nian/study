@@ -1,0 +1,86 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+ul{
+    list-style: none;
+}
+h1,h2,h3,h4,h5,h6{
+    font-weight: 400;
+    font-size: 16px;
+}
+.clearfix::after,
+.clearfix::before{
+    content: '';
+    display: table;
+}
+.clearfix::after{
+    clear: both;
+}
+.clearfix{
+    *zoom: 1;
+}
+
+#tab{
+    width: 1000px;
+    margin: 20px auto;
+}
+/* 添加按钮 */
+.btn{
+    padding: 0 20px;
+    line-height: 50px;
+}
+.btn #add{
+    border: none;
+    outline: none;
+    width: 60px;
+    height: 30px;
+    border-radius: 3px;
+    color: #fff;
+    background-color: skyblue;
+}
+/* 选项卡 */
+#nav-list{
+    border-bottom: 1px solid #e0e0e0;
+}
+li.nav-item{
+    float: left;
+    height: 50px;
+    line-height: 50px;
+    padding: 0 15px;
+    border: 1px solid transparent;
+    border-bottom: none;
+}
+/* 选中li的样式 */
+#nav-list li.active{
+    border-color: #e0e0e0;
+}
+li.nav-item h3{
+    float: left;
+}
+li.nav-item span{
+    float: right;
+    width: 20px;
+    height: 20px;
+    line-height: 20px;
+    text-align: center;
+    border-radius: 3px;
+   
+    margin-left: 15px;
+    margin-top: 15px;
+}
+li.nav-item span:hover{
+    background-color: red;
+    color: #fff;
+}
+/* 内容 */
+#tab-con{
+    padding: 20px;
+}
+div.con-item{
+    display: none;
+}
+/* 选中时是显示的 */
+#tab-con div.con-active{
+    display: block;
+}

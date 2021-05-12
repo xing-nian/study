@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>静态成员和实例成员</title>
+</head>
+<body>
+    
+</body>
+<script>
+
+    // 实例成员：构造函数内部通过 this添加的成员，称之为实例成员
+    // 实例成员只能通过实例化对象访问。
+    function Person(uname,age){
+        this.uname = uname;
+        this.age = age;
+    }
+    Person.prototype.eat =function(){
+        alert('chi')
+    }
+    let p1 =new Person('jon',18)
+    console.log(p1.uname);
+    // console.log(Person.uname); //undefined
+    // p1.eat();
+    // Person.eat(); //Person.eat is not a function
+   
+    // 静态成员 ：在构造函数上添加的成员
+    // 只能通过构造函数访问
+    Person.sex = '男';
+    console.log(p1.sex); //undefined
+</script>
+<script>
+    //  ES6
+    class Student{
+        constructor(sname,sage){
+            // 实例属性
+            this.sname = sname;
+            this.sage = sage;
+        }
+        // 静态属性 只能由类名访问
+        static sex = '男'
+        // 实例方法
+        study(){
+            alert('风和日丽')
+        }
+        // 静态方法 只能由类名访问
+        static work(){
+            alert('上班摸鱼');
+        }
+    }
+    let s1 =new Student('li',19);
+    s1.sage =20;
+    console.log(s1.sage);
+    console.log(Student.sage);//undefined
+    s1.study();
+    // Student.study(); //Student.study is not a function
+
+    // console.log(s1.sex); //undefined
+    console.log(Student.sex);//男
+
+    // s1.work(); //报错  s1.work is not a function
+    Student.work();
+</script>
+</html>

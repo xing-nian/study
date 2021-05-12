@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery属性操作</title>
+</head>
+<body>
+    <a href="https://www.baidu.com">百度</a>
+    <div>hello</div>
+    <img src="1.png" alt="" data-src='2.png'>
+</body>
+<script src="./jquery.js"></script>
+<script>
+    // 1. 获取 ，设置 标签(自带)属性 prop()
+    console.log($('a').prop('href')); //获取属性值
+    $('a').prop('href','https://www.mi.com')//设置属性值
+
+    // 2.获取，设置(自定义)标签属性 attr()
+    $('div').attr('data-color','red'); //设置自定义标签属性
+    console.log($('img').attr('data-src')); //获取自定义标签属性
+
+    // 移出标签的属性 removeAttr()
+    $('img').removeAttr('data-src')
+    // $('a').removeAttr('href')
+    $('a').removeProp('href')
+
+</script>
+</html>

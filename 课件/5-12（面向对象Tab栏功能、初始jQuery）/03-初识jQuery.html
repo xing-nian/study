@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>初识jQuery</title>
+
+</head>
+<body>
+    <!-- 
+        1.官网下载：https://jquery.com/download/ 使用本地jQuery
+        2. 在线使用：https://code.jquery.com/jquery-3.6.0.min.js
+     -->
+
+     <h3>hello</h3>
+     <h3>hello</h3>
+     <h3>hello</h3>
+     <h3>hello</h3>
+     <h3>hello</h3>
+     <h3>hello</h3>
+     <h3>hello</h3>
+     <h3>hello</h3>
+     <h3>hello</h3>
+     <h3>hello</h3>
+
+     <div>item1</div>
+     <div>item2</div>
+     <div>item3</div>
+     <div>item4</div>
+     <div>item5</div>
+     <div>item6</div>
+     <div>item7</div>
+     <div>item8</div>
+     <div>item9</div>
+     <div>item10</div>
+</body>
+<!-- 引入本地 jQuery.js 文件 -->
+<!-- <script src="./jquery-3.6.0.min.js"></script>  -->
+<!-- 引入在线 jQuery.js 文件 -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+
+ $('h3').css({
+     color:'red'
+ })
+
+ $('div').click(function(){
+     $(this).animate({
+         marginLeft:500
+     },2000)
+ })
+
+</script>
+</html>

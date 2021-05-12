@@ -1,15 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>筛选查询</title>
-    
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
     <style>
-      img {
-        width: 100px;
-      }
-      table,
+         *{
+             margin: 0;
+             padding: 0;
+         }
+     table,
       th,
       td {
         border: 1px solid #333;
@@ -24,77 +25,76 @@
         user-select: none;
         margin-left: 50px;
       }
-      #jgselect{
-        margin: 20px 0px 0px 50px;
-        font-size: 14px;
-      }
-      #mcselect{
-        margin: 20px 0px 20px 50px;
-        font-size: 14px;
-      }
-      input{
-          outline: none;
+      p{
+          margin: 10px 0px 5px 50px;
       }
     </style>
-  </head>
-  <body>
-      <div id="jgselect">
-          按照价格区间查询：
-          <input type="text" id="minp" placeholder="请输入最低价"> ~ <input type="text" id="maxp" placeholder="请输入最高价">
-          <input type="button" value="查询" id="cx1">
-    </div>
-      <div id="mcselect">按照商品名称查询：
-          <input type="text" placeholder="请输入名称" id="item"> 
-          <input type="button" value="查询" id="cx2">
-        </div>
-  </body>
-  <script type="text/javascript" src="./goodList3.js"></script>
-  <script>
-      var minp = document.querySelector('#minp');
-      var maxp = document.querySelector('#maxp');
-      var item = document.querySelector('#item')
-      setDate(goodList3);
-     function setDate(data){
-      document.write('<table>')
-     document.write('<thead><tr><th>序号</th><th>商品名称</th><th>单价(元)</th></tr></thead>')
+</head>
+<body>
+     <div class=" search">
+         <p>
+              按照价格区间查询：<input type="text" id="start-p"> ~ <input type="text" id="end-p">
+              <button id="p-btn"> 查询</button>
+         </p>
+         <p>
+             按照产品名称查询：<input type="text" id="name-s"> 
+            <button id="n-btn"> 查询</button>
+       </p>
+     </div>
+     <table>
+         <thead>
+             <tr>
+                <th>序号</th>
+                <th>名称</th>
+                <th>价格</th>
+             </tr>
+         </thead>
+         <tbody id="tbody">
 
-     for(var i=0; i<data.length;i++){
-        // console.log(goodList3[i].title);
-        document.write(`
-        <tr>
-            <td>${i}</td>
-            <td>${data[i].title}</td>
-            <td class="price">￥${data[i].priceStr}</td>
-         </tr>
-            `)
-    }
-        document.write(`</table>`)
-     }
-     
-    
+         </tbody>
+     </table>
+</body>
+<script src="./goodList3.js"></script>
+<script>
+    var pricbtn = document.querySelector('#p-btn');
+    var namebtn = document.querySelector('#n-btn');
+    var startInp = document.querySelector('#start-p');
+    var endInp = document.querySelector('#end-p');
+    var nameInp = document.querySelector('#name-s');
+    // 封装方法 插入数据
+   function show(data){
+       var html = '';
+       data.forEach(function(item,i){
+             html += `
+             <tr>
+                <td>${item.Id}</td>
+                <td>${item.title}</td>
+                <td>${item.priceStr}</td>
+             </tr>
+             `
+       })
+       tbody.innerHTML = html;
+   }
+   show(goodList3);
 
-    cx1.onclick = function(){
-   
-    var newgoodList3 = goodList3.filter(function(ele){
-    ele.priceStr*=1; 
-    return ele.priceStr>= minp.value && ele.priceStr<= maxp.value;
-    })
+  //1.按照价格区间查询
+  pricbtn.onclick = function(){
+      var sp = startInp.value;
+      var ep = endInp.value;
+      var resArr = goodList3.filter(function(item,i){
+          item.priceStr*=1;
+          return item.priceStr >= sp && item.priceStr <=ep;
+      })
+      show(resArr);
+  }
+  //按照产品名称查询
+  namebtn.onclick = function(){
+      var np = nameInp.value;
+       var resArr = goodList3.filter(function(item){
+           return item.title.includes(np);
+      });
+      show(resArr);
+  }
 
-    setDate(newgoodList3);
-    console.log(newgoodList3);
-    }
-    
-    
-    // cx2.onclick = function(){
-    // item.onchange = function(e){
-    // var newgoodList3 = goodList3.filter(function(ele,i,array){
-    //   if (ele.title == this.value) {
-    //     return true;
-    //   }
-    // console.log(newgoodList3);
-    // })
-    // }
-    // }
-  
-  </script>
-<ml>
+</script>
+</html>
