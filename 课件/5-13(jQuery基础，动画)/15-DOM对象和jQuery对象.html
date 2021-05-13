@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM对象 和 jQuery对象</title>
+</head>
+<body>
+    <div id="box">hello</div>
+</body>
+<script src="./jquery-3.6.0.min.js"></script>
+<script>
+    // 1.DOM对象
+    // DOM对象只能访问原生DOM的API
+    let div = document.getElementById('box');
+    // div.html('world'); // 报错
+    // div.innerHTML = 'world'
+
+    // 2.jQuery 对象
+    // jQuery 对象只能访问jQuery中的API
+    let div1 = $('#box');
+    // div1.style.color = 'red'; //报错
+    // div1.css('color','red')
+
+    // 3.DOM对象 和 jQuery对象的相互转换
+    // (1) DOM对象 转换为 jQuery对象 
+    // 使用 $() 包装
+    $(div).html('world')
+
+    // (2) jQuery对象 转换为 DOM对象
+    // 使用 get(index) 方法 或者 [index]
+    div1.get(0).style.color = 'red';
+    div1[0].style.color = 'blue';
+
+
+</script>
+</html>

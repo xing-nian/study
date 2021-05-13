@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery节点操作</title>
+</head>
+<body>
+    <div class="wrap">
+        <ul class="list">
+            <li><a href="">链接-1</a></li>
+            <li><a href="">链接-2</a></li>
+            <li class="active"><a href="">链接-3</a></li>
+            <li><a href="">链接-4</a></li>
+            <li><a href="">链接-5</a></li>
+        </ul>
+    </div>
+</body>
+<script src="./jquery.js"></script>
+<script>
+    //  1.子节点 children()
+    $('.list').children().css({
+        borderBottom:"1px solid #e0e0e0"
+    })
+
+    // 2.父节点 parent()
+    console.log($('.list').parent());
+    // 注意：parents()获取所有祖先元素
+    console.log($('.list').parents());
+
+    // 3.兄弟节点
+    // 上一个兄弟节点  prev()
+    // 下一个兄弟节点  next()
+    $('.active').prev().css('color','red');
+    $('.active').next().css('color','skyblue');
+
+    // 所有同级兄弟节点 siblings()
+    $('.active').siblings().css('backgroundColor','gold');
+</script>
+</html>

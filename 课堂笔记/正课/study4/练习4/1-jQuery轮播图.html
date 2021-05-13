@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery轮播图</title>
+    <style>
+        .pic{
+            width: 800px;
+            height: 500px;
+            display: none;
+        }
+        view{
+            margin: 50px auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="view">
+        <img class="pic" src="../../study2/练习2/img/a.webp" alt="">
+        <img class="pic" src="../../study2/练习2/img/b.jpg" alt="">
+        <img class="pic" src="../../study2/练习2/img/c.webp" alt="">
+        <img class="pic" src="../../study2/练习2/img/d.webp" alt="">
+    </div>
+    <button id="next">下一张</button>
+</body>
+<script src="./jquery.js"></script>
+<script>
+   
+    $('.pic').eq(0).css('display','block');
+    let x = 0; //记录显示图片的索引
+    $('#next').click(function(){
+        $('.pic').eq(x).css('display','none');
+        x++;
+        if (x>3) {
+            x = 0;
+        }
+        $('.view img').eq(x).css('display','block')
+
+    })
+    //  let imgs =$('.view .pic') 
+    // $('next').click(function(){
+    //     $('.pic').index +=1;
+    //     //$('a').attr('href','http://www.baidu.com')
+    //     $('.pic').attr('src','../study2/练习2/img/'+ pic[$('.pic').index]); 
+    //     if($('.pic').index >3){
+    //     $('.pic').index = 0;
+    //     }
+    // })
+</script>
+</html>

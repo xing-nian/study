@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>animate动画</title>
+    <style>
+         .box ,.box2 ,.box3{
+             width: 300px;
+             height: 300px;
+             background-color: red;
+             margin-top: 50px;
+         }
+    </style>
+</head>
+<body>
+    <button id="start">开始移动</button>
+    <button id="start2">开始移动</button>
+    <button id="start3">开始移动</button>
+    <button id="end">停止</button>
+    <div class="box"></div>
+    <div class="box2"></div>
+    <div class="box3"></div>
+</body>
+<script src="./jquery.js"></script>
+<script src="./easing.js"></script>
+<script>
+    // 参数1 ：一组动画属性及终止
+    // 参数2 : 动画速度(时间)
+    // 参数3 : 动画效果(jQuery只提供了 linear swing 其他的需要插件支持)
+    // 参数4 : 动画结束后执行回调函数
+     $('#start').click (function(){
+         $('.box').animate({
+             marginLeft:500,
+             marginTop:300,
+            
+         },2000,'easeInBounce',function(){
+           
+         })
+     })
+     $('#start').click (function(){
+         $('.box').animate({
+             marginLeft:500,
+             marginTop:300,
+            
+         },2000,'easeInBack',function(){
+             
+         })
+     })
+     $('#start2').click (function(){
+         $('.box2').animate({
+             marginLeft:800,
+             marginTop:600,
+            
+         },2000,'easeInBounce',function(){
+            
+         })
+     })
+     $('#start3').click (function(){
+         $('.box3').animate({
+             marginLeft:100,
+             marginTop:800,
+            
+         },2000,'easeOutElastic',function(){
+            
+         })
+     })
+     $('#end').click(function(){
+          $('.box').stop();
+     })
+</script>
+</html>

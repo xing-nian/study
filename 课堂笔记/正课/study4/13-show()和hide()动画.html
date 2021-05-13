@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>show()和hide()动画</title>
+</head>
+<style>
+     .box{
+         width: 300px;
+         height: 300px;
+         background-color: red;
+     }
+</style>
+<body>
+    <button id="show">显示</button>
+    <button id="hide">隐藏</button>
+    <button id="toggle">显示或隐藏</button>
+    <button id="sd">隐藏然后显示</button>
+    <div class="box"></div>
+</body>
+<script src="./jquery.js"></script>
+<script>
+    $('#show').click(function(){
+        $('.box').show(2000)
+    })
+
+    $('#hide').click(function(){
+        $('.box').hide(2000)
+    })
+
+    $('#toggle').click(function(){
+        $('.box').toggle(2000)
+    })
+    
+
+    $('#sd').click(function(){
+        $('.box').hide(2000,function(){ 
+        $('.box').show(2000)
+    })
+    })
+</script>
+</html>

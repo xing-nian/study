@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>show() 和 hide() 方法</title>
+    <style>
+        .view{
+            width: 800px;
+            margin: 50px auto;
+        }
+        .view img{
+            width: 800px;
+            display: none;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="view">
+        <img src="./images/1.jpg" alt="">
+        <img src="./images/2.jpg" alt="">
+        <img src="./images/3.jpg" alt="">
+        <img src="./images/4.jpg" alt="">
+        <img src="./images/5.jpg" alt="">
+    </div>
+    <button id="next">下一张</button>
+
+</body>
+<script src="./jquery-3.6.0.min.js"></script>
+<script>
+    let imgs = $('.view img');
+    let x = 0;
+    // show() 设置元素显示
+    imgs.eq(x).show();
+
+    $('#next').click(function(){
+        x++;
+        if (x > imgs.length - 1) {
+            x = 0;
+        }
+        // hide() 设置元素隐藏
+        imgs.hide().eq(x).show()
+    })
+
+</script>
+</html>

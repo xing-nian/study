@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .pic{
+    width: 800px;
+    height: 500px;
+    display: none;
+}
+view{
+    margin: 50px auto;
+}
+</style>
+<body>
+    <div class="view">
+        <img class="pic" src="../../study2/练习2/img/a.webp" alt="">
+        <img class="pic" src="../../study2/练习2/img/b.jpg" alt="">
+        <img class="pic" src="../../study2/练习2/img/c.webp" alt="">
+        <img class="pic" src="../../study2/练习2/img/d.webp" alt="">
+    </div>
+    <button id="next">下一张</button>
+
+</body>
+<script src="../jquery.js"></script>
+<script>
+     let imgs = $('.view img');
+     let x = 0;
+    //  show() 设置元素显示 hide()设置元素隐藏
+     imgs.eq(x).show();
+
+     $('#next').click(function(){
+         x++
+         if (x>imgs.length - 1) {
+             x = 0 ;
+         }
+        imgs.hide().eq(x).show()
+     })
+</script>
+</html>

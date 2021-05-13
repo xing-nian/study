@@ -502,3 +502,385 @@ console.log(res);
     $('a').removeProp('href')
 ```
 
+# 5月13日
+
+### jQuery属性操作2
+
+```
+1. attr() 也可以操作标签自带的属性
+   $('a').attr('href','http://www.baidu.com')
+   
+2. attr可以设置多组属性  参数：传对象
+    $('a').attr({
+        href:'https://www.baidu.com',
+        title:'baidu'
+    })
+ 
+3. 获取input的选中状态
+   console.log($('#inp').prop('checked')); //false  true
+   console.log($('#inp').attr('checked'));  //undefined      checked
+   
+4. 设置，获取获取标签的内容
+    html() text()
+    console.log($('#txt').html());
+    console.log($('#txt').text());
+   html传参  代表设置标签的内容
+    $('#txt p').html('world') 
+    
+5.val() 获取，设置输入框中的值
+    console.log($('#uname').val());
+   
+6.class属性的操作
+  addClass()添加类 removeClass()删除类 toggleClass()类开关
+   $('#list li:eq(1)').addClass('active')
+   $('#list li:eq(0)').removeClass('active')
+   $('#list li:eq(2)').toggleClass('active')//有删无增
+```
+
+### jQuery链式调用
+
+```
+
+<body>
+    <a href="https://www.baidu.com">baidu</a>
+</body>
+<script src="./jquery.js"></script>
+<script>
+    // 链式调用
+    $('a')
+    .attr('href','https://www.mi.com')
+    .html('小米')
+    .css('color','red')
+</script>
+```
+
+### jQuery获取元素偏移量
+
+```
+ 1.offset()  返回的是一个对象{left:x,top:y}
+    //获取指定元素 对于视口的偏移量
+    console.log($('.child').offset().top);
+    
+ 2.position() 返回的是一个对象{left:x,top:y}
+    console.log($('.small').position());
+```
+
+### jQuery获取元素尺寸
+
+```
+1.width() = width
+    console.log($('.box').width());
+
+2.innerWidth() = width + padding
+    console.log($('.box').innerWidth());
+
+3.outerWidth() = width +padding + border + margin
+    console.log($('.box').outerWidth());
+
+4.获取浏览器可视区域宽高（不包含滚动条）
+    console.log($(window).innerWidth());
+    console.log($(window).outerWidth());
+```
+
+### jQuery获取滚动高度
+
+```
+获取滚动高度scrollTop方法
+let st = $('body').scrollTop()||$('html').scrollTop();
+console.log(st);//即为滚动高度
+```
+
+### jQuery过滤器
+
+```
+first() last()  eq() 从获取的元素集合中筛选出来指定的某一个元素
+  1.第一个
+ $('.list li').first().css({
+        color:'red',
+        fontSize:20
+    })  
+    
+  2.最后一个 
+ $('.list li').last().css({
+        color:'red',
+        fontSize:20
+    })
+    
+  3.负值表示倒数第几个元素
+$('.list li').eq(-2).css({
+        color:'red',
+        fontSize:20
+    })
+```
+
+### jQuery节点操作
+
+```
+1.子节点 children()
+    $('.list').children().css({
+        borderBottom:"1px solid #e0e0e0"
+    })
+
+2.父节点 parent()
+    console.log($('.list').parent());
+    // 注意：parents()获取所有祖先元素
+    console.log($('.list').parents());
+
+3.兄弟节点
+    // 上一个兄弟节点  prev()
+    // 下一个兄弟节点  next()
+    $('.active').prev().css('color','red');
+    $('.active').next().css('color','skyblue');
+
+4.所有同级兄弟节点 siblings()
+ $('.active').siblings().css('backgroundColor','gold');
+```
+
+### jQuery事件
+
+```
+1.$(this) 指的是jQuery对象
+$('button:eq(0)').click(function(){
+        $(this).css('color','red');
+    })
+    
+2.index()可以获取当前多点击元素的索引
+    let x = 0;
+    $('button:eq(0)').css('color','red');
+    $('button').click(function(){
+        $('button').eq(x).css('color','black');
+        $(this).css('color','red');
+        x = $(this).index(); 
+        console.log($(this).index()); 
+    })
+    
+3.on()
+    $('button:eq(0)').on('mouseenter',function(){
+        $(this).css('color','red')
+    }) 
+    
+4.one() 事件只执行一次
+    $('button:eq(1)').one('click',function () {
+        alert('点击我了')
+    })
+   
+5.鼠标的悬停事件 （存在冒泡）
+    $('.box').hover(function(e){
+        // 鼠标移入
+        $(this).css('color','#fff')
+    },function(){
+        // 鼠标离开
+        $(this).css('color','black')
+    })
+ 
+```
+
+### jQuery轮播图
+
+```
+<style>
+    .pic{
+    width: 800px;
+    height: 500px;
+    display: none;
+}
+view{
+    margin: 50px auto;
+}
+</style>
+<body>
+     <div class="view">
+        <img class="pic" src="../../study2/练习2/img/a.webp" alt="">
+        <img class="pic" src="../../study2/练习2/img/b.jpg" alt="">
+        <img class="pic" src="../../study2/练习2/img/c.webp" alt="">
+        <img class="pic" src="../../study2/练习2/img/d.webp" alt="">
+    </div>
+    <button id="next">下一张</button>
+
+</body>
+<script src="../jquery.js"></script>
+<script>
+     let imgs = $('.view img');
+     let x = 0;
+     
+ ☆☆// show() 设置元素显示 hide()设置元素隐藏
+     imgs.eq(x).show();
+     
+     $('#next').click(function(){
+         x++
+         if (x>imgs.length - 1) {
+             x = 0 ;
+         }
+        imgs.hide().eq(x).show()
+     })
+</script>
+```
+
+### show()和hide()动画
+
+```
+简介：.hide()/.show() 隐藏和显示元素
+使用.hide()/.show()会同时改变被选元素的高度、宽度和透明度，参数为duration（毫秒）或‘slow’/‘fast’，也可以不加参数，不加参数效果与display：none/block；效果一致。
+li：
+<style>
+     .box{
+         width: 300px;
+         height: 300px;
+         background-color: red;
+     }
+</style>
+<body>
+    <button id="show">显示</button>
+    <button id="hide">隐藏</button>
+    <button id="toggle">显示或隐藏</button>
+    <button id="sd">隐藏然后显示</button>
+    <div class="box"></div>
+</body>
+<script src="./jquery.js"></script>
+<script>
+    $('#show').click(function(){
+        $('.box').show(2000)
+    })  //显示
+
+    $('#hide').click(function(){
+        $('.box').hide(2000)
+    })  //隐藏
+
+    $('#toggle').click(function(){
+        $('.box').toggle(2000)
+    })  //显示或隐藏
+    
+
+    $('#sd').click(function(){
+        $('.box').hide(2000,function(){ 
+        $('.box').show(2000)
+    })
+    }) //隐藏然后显示
+</script>
+```
+
+### slideDown()动画和slideup()动画
+
+```
+简介： .slideUp()/.slideDown() 滑上和滑下
+使用.slideUp()/.slideDown()会使被选元素由页面上滑动出现或滑出页面，参数为duration（毫秒）或‘slow’/‘fast’。
+li：
+<style>
+        .box{
+            width: 300px;
+            height: 300px;
+            background-color: red;
+        }
+   </style>
+</head>
+<body>
+    <button id="show">隐藏</button>
+    <button id="hide">显示</button>
+    <button id="toggle">显示或隐藏</button>
+  
+    <div class="box"></div>
+</body>
+<script src="./jquery.js"></script>
+<script>
+    //  隐藏
+    $("#hide").click(function(){
+        $('.box').slideDown(2000)
+    })
+    // 显示
+    $("#show").click(function(){
+        $('.box').slideUp(2000)
+    })
+    // 显示或隐藏
+    $("#toggle").click(function(){
+        $('.box').slideToggle(2000)
+    })
+</script>
+```
+
+### fadeOut()动画和fadeIn()动画
+
+```
+简介：.fadeIn()/.fadeOut() 淡入和淡出
+使用.fadeIn()/.fadeOut()会改变被选元素的透明度，参数为duration（毫秒）或‘slow’/‘fast’。
+li：
+<style>
+        .box{
+            width: 300px;
+            height: 300px;
+            background-color: red;
+        }
+   </style>
+</head>
+<body>
+    <button id="show">显示</button>
+    <button id="hide">隐藏</button>
+    <button id="toggle">显示或隐藏</button>
+  
+    <div class="box"></div>
+</body>
+<script src="./jquery.js"></script>
+<script>
+    //  隐藏
+    $("#hide").click(function(){
+        $('.box').fadeOut(2000)
+    })
+    // 显示
+    $("#show").click(function(){
+        $('.box').fadeIn(2000)
+    })
+    // 显示或隐藏
+    $("#toggle").click(function(){
+        $('.box').fadeToggle(2000)
+    })
+</script>
+```
+
+### animate动画
+
+```
+1.参数1：一组动画属性及终止
+2.参数2：动画速度（时间）
+3.参数3：动画效果 （jQuery只提供了linear swing其他的需要插件支持） 
+4.参数4：动画结束后执行的回调函数
+5.下载插件地址：https://gsgd.co.uk/sandbox/jquery/easing/
+li:
+  $('#start').click(function(){
+        $('.box').animate({
+            marginLeft:500,
+            fontSize: 24
+        },2000,'easeInBounce',function(){
+            alert('动画完成后执行的函数')
+        })
+    })
+
+    $('#stop').click(function(){
+        // stop() 停止动画
+        $('.box').stop()
+    })
+
+```
+
+### DOM对象和jQuery对象转换
+
+```
+1. DOM只能访问原生DOM的API
+    let div = document.getElementById('box');
+    // div.html('world');//报错
+    // div.innerHTML = 'world'
+
+2. jQuert对象只能访问jQuert的API
+    let div1 = $('#box');
+    // div1.style.color = 'red'//报错
+    // div1.css('color','red')
+
+3.DOM对象和jQuery对象的相互转换：
+  (1)DOM对象转换为jQuery对象
+  ☆ 使用$()包装
+     $(div).html('world')
+
+  (2)jQuery对象 转换为DOM对象：
+  ☆ 使用get(index)方法 或者 [index]
+     div1.get(0).style.color = 'red';
+     div1[0].style.color = 'blue';
+```
+

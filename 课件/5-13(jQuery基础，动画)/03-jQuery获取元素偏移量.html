@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>获取元素偏移量</title>
+    <style>
+        *{
+            /* margin: 0; */
+            padding: 0;
+        }
+        .parent{
+            width: 300px;
+            height: 300px;
+            background-color: red;
+            margin: 100px;
+            overflow: hidden;
+        }
+        .child{
+            width: 100px;
+            height: 100px;
+            background-color: pink;
+            margin: 100px;    
+        }
+        .box{
+            width: 300px;
+            height: 300px;
+            background-color: skyblue;
+            position: relative;
+        }
+        .small{
+            width: 100px;
+            height: 100px;
+            background-color: blue;
+            position: absolute;
+            left: 50px;
+            top: 102px;
+        }
+    </style>
+</head>
+<body>
+    <div class="parent">
+        <div class="child"></div>
+    </div>
+
+    <div class="box">
+        <div class="small"></div>
+    </div>
+</body>
+<script src="./jquery-3.6.0.min.js"></script>
+<script>
+    // 1.offset()  返回的是一个对象 {left:x,top:y}
+    // 获取指定元素相对于视口的偏移量
+    console.log($('.child').offset().top);
+
+    // 2.position()
+    console.log($('.small').position().top);
+  
+
+</script>
+</html>

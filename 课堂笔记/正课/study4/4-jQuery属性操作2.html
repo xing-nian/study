@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery属性操作2</title>
+    <style>
+        .active{
+            color: red;
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+    <a>baidu</a>
+    <input type="checkbox" id="inp">同意
+    <div id="txt">
+        <p>hello</p>
+    </div>
+    <input type="text" value="jon" id="uname">
+
+    <ul id="list">
+        <li class="active">1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+    </ul>
+</body>
+<script src="./jquery.js"></script>
+<script>
+    // prop()  attr()
+    //1. attr() 也可以操作标签自带的属性
+    $('a').attr('href','http://www.baidu.com')
+
+    //2. attr可以设置多组属性  参数：传对象
+    $('a').attr({
+        href:'https://www.baidu.com',
+        title:'baidu'
+    })
+
+    // 3.获取input的选中状态
+    console.log($('#inp').prop('checked')); //false  true
+    console.log($('#inp').attr('checked'));  //undefined   checked
+
+    // 4.设置，获取获取标签的内容
+    // html() text()
+    console.log($('#txt').html());
+    console.log($('#txt').text());
+    // html传参  代表设置标签的内容
+    $('#txt p').html('world')
+
+    // 5.val() 获取，设置输入框中的值
+    console.log($('#uname').val());
+
+    // 6.class属性的操作
+    // addClass()  removeClass()  toggleClass()
+   $('#list li:eq(1)').addClass('active')
+   $('#list li:eq(0)').removeClass('active')
+   $('#list li:eq(2)').toggleClass('active')
+</script>
+</html>

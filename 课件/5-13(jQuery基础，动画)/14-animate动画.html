@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>动画</title>
+    <style>
+        .box{
+            width: 300px;
+            height: 300px;
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+    <button id="start">开始移动</button>
+    <button id="stop">停止动画</button>
+    <div class="box">hello</div>
+</body>
+<script src="./jquery-3.6.0.min.js"></script>
+<script src="./jquery.easing.1.3.js"></script>
+<script>
+    $('#start').click(function(){
+        // 参数1：一组动画属性及终止
+        // 参数2：动画速度（时间）
+        // 参数3：动画效果 （jQuery只提供了 linear swing其他的需要插件支持）
+        // 参数4：动画结束后执行的回调函数
+        $('.box').animate({
+            marginLeft:500,
+            fontSize: 24
+        },2000,'easeInBounce',function(){
+            alert('动画完成后执行的函数')
+        })
+    })
+
+    $('#stop').click(function(){
+        // stop() 停止动画
+        $('.box').stop()
+    })
+
+    //下载插件地址：https://gsgd.co.uk/sandbox/jquery/easing/
+</script>
+</html>

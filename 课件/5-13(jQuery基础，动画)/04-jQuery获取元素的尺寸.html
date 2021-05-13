@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>元素尺寸</title>
+    <style>
+        body{
+            height: 3000px;
+        }
+        .box{
+            width: 200px;
+            height: 200px;
+            background-color: red;
+            padding: 10px;
+            border: 1px solid #333;
+            margin: 10px;
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+</body>
+<script src="./jquery-3.6.0.min.js"></script>
+<script>
+    // 1. width()   = width
+    console.log($('.box').width());
+
+    // 2.innerWidth()  = width + padding
+    console.log($('.box').innerWidth());
+
+    // 3.outerWidth()  = width + padding + border
+    console.log($('.box').outerWidth());
+
+    // 获取浏览器可视区域宽高 （不包含滚动条）
+    console.log($(window).innerWidth());
+    // 包含滚动条
+    console.log($(window).outerWidth());
+
+    
+
+</script>
+    
+</html>

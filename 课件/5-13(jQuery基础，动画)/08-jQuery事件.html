@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>事件</title>
+    <style>
+        .box{
+            width: 300px;
+            height: 300px;
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+    <button>按钮1</button>
+    <button>按钮2</button>
+    <button>按钮3</button>
+    <button>按钮4</button>
+    <button>按钮5</button>
+    <div class="box">
+        hello
+    </div>
+</body>
+<script src="./jquery-3.6.0.min.js"></script>
+
+<script>
+    $('button:eq(0)').click(function(){
+        $(this).css('color','red'); //$(this) 指的是jQuery对象
+    })
+
+    let x = 0;
+    $('button:eq(0)').css('color','red');
+    $('button').click(function(){
+        $('button').eq(x).css('color','black');
+        $(this).css('color','red');
+        x = $(this).index(); 
+        console.log($(this).index()); //index()可以获取当前多点击元素的索引
+    })
+
+    // on()
+    $('button:eq(0)').on('mouseenter',function(){
+        $(this).css('color','red')
+    })
+
+
+    // one() 事件只执行一次
+    $('button:eq(1)').one('click',function () {
+        alert('点击我了')
+    })
+
+    // 鼠标的悬停事件 （存在冒泡）
+    $('.box').hover(function(e){
+        // 鼠标移入
+        $(this).css('color','#fff')
+    },function(){
+        // 鼠标离开
+        $(this).css('color','black')
+    })
+
+
+
+</script>
+</html>

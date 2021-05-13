@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>过滤器</title>
+</head>
+<body>
+    <ul class="list">
+        <li>item-1</li>
+        <li>item-2</li>
+        <li>item-3</li>
+        <li>item-4</li>
+        <li>item-5</li>
+    </ul>
+</body>
+<script src="./jquery-3.6.0.min.js"></script>
+<script>
+    // first() last() eq()  从获取的元素集合中筛选出来指定的某一个元素
+    $('.list li').first().css({
+        color:'red',
+        fontSize:20
+    })
+    $('.list li').last().css({
+        color:'red',
+        fontSize:20
+    })
+    // 负值表示倒数第几个元素
+    $('.list li').eq(-2).css({
+        color:'yellow',
+        fontSize:20
+    })
+
+</script>
+</html>
