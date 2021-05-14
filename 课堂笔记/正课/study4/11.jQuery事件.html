@@ -23,10 +23,10 @@
 </body>
 <script src="./jquery.js"></script>
 <script>
- $('button:eq(0)').click(function(){
-     $(this).css('color','red'); //$(this) 指的是jQuery对象
+//  $('button:eq(0)').click(function(){
+//      $(this).css('color','red'); //$(this) 指的是jQuery对象
 
- })
+//  })
     let x = 0;
     $('button:eq(0)').css('color','red');
     $('button').click(function(){
@@ -36,22 +36,22 @@
         console.log($(this).index());  //index()可以获取当前多点击元素的索引
     })
 
- on()
-$('button:eq(0)').on('mouseenter',function(){
-    $(this).css('color','red'); 
-})
+//  on()
+// $('button:eq(0)').on('mouseenter',function(){
+//     $(this).css('color','red'); 
+// })
 
-// one() 事件只执行一次
-$('button:eq(1)').one('click',function(){
-    alert('点击我了')
-})
-// 鼠标的悬停事件 (存在冒泡)
-$('.box').hover(function(){
-    // 鼠标移入
-    $(this).css('color','#fff')
-},function () {
-    // 鼠标移出
-    $(this).css('color','#000')
-})
+// // one() 事件只执行一次
+// $('button:eq(1)').one('click',function(){
+//     alert('点击我了')
+// })
+// // 鼠标的悬停事件 (存在冒泡)
+// $('.box').hover(function(){
+//     // 鼠标移入
+//     $(this).css('color','#fff')
+// },function () {
+//     // 鼠标移出
+//     $(this).css('color','#000')
+// })
 </script>
 </html>

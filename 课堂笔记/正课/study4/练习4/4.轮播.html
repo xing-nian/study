@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+.pic{
+    width: 800px;
+    height: 500px;
+    display: none;
+    position: absolute;
+    
+}
+.view{
+    width:1000px;
+    height: 600px;
+    margin: 50px auto;
+    position: relative;
+    top: 100px;
+    left: -300px;
+}
+button,input{
+    position: relative;
+    top: 500px;
+}
+
+</style>
+<body>
+    <div class="view">
+        <img class="pic" src="../../study2/练习2/img/a.webp" alt="">
+        <img class="pic" src="../../study2/练习2/img/b.jpg" alt="">
+        <img class="pic" src="../../study2/练习2/img/c.webp" alt="">
+        <img class="pic" src="../../study2/练习2/img/d.webp" alt="">
+        <div>
+            <button>1</button><button>2</button><button>3</button><button>4</button>
+        </div>
+        <input type="button" id="next" value="下一张">
+    </div>
+    
+
+</body>
+<script src="../jquery.js"></script>
+<script>
+     let imgs = $('.view img');
+     let x = 0;
+    //  show() 设置元素显示 hide()设置元素隐藏
+     imgs.eq(0).show();
+
+     $('#next').click(function(){
+         x++
+         if (x>imgs.length - 1) {
+             x = 0 ;
+         }
+        imgs.fadeOut(3000).stop(false,true).eq(x).fadeIn(3000)
+     })
+   $('button').click(function(){
+    imgs.fadeOut(3000).stop(false,true).eq($(this).index()).fadeIn(3000)
+   })
+</script>
+</html>

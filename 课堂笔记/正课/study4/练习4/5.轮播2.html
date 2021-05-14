@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>小米轮播图</title>
+    <style>
+      .view{
+        width: 1000px;
+        height: 400px;
+      }
+      img{
+          width: 1000px;
+          height: 460px;
+          position: relative;
+          left: 300px;
+          top: 100px;
+          display: none;
+      }
+      #btn{
+        position: relative;
+        left: 300px; 
+        top: -161px;
+        width: 41px;
+        height: 69px;
+        outline: none;
+        border:none;
+        cursor: pointer;
+        font-size: 35px;
+        background-color: transparent;
+        color: #ccc;
+      }
+      #btn1{
+        position: relative;
+        left: 1212px; 
+        top: -161px;
+        width: 41px;
+        height: 69px;
+        outline: none;
+        border:none;
+        cursor: pointer;
+        font-size: 35px;
+        background-color: transparent;
+        color:#ccc;
+        
+      }
+      .item{
+          height: 18px;
+          width: 18px;
+          border-radius: 9px;
+          position: relative;
+          left: 100px;
+          top: 80px;
+          border: 2px solid #333;
+          outline: none;
+          cursor: pointer;
+          padding: 2px;
+          background-color: gray;
+          margin: 0px 10px;
+          position: relative;
+          left: 600px;
+          top: 40px;
+      }
+     
+      #btn:hover{
+          color: white;
+          background-color:rgba(20,20,20,0.3);
+          font-size: 40px;
+      }
+      #btn1:hover{
+          color: white;
+          background-color:rgba(20,20,20,0.3);
+          font-size: 40px;
+      }
+      
+    </style>
+</head>
+<body>
+    <div>
+        <div class="view">
+            <img class="pic" src="../../study2/练习2/img/a.webp" alt="">
+            <img class="pic" src="../../study2/练习2/img/b.jpg" alt="">
+            <img class="pic" src="../../study2/练习2/img/c.webp" alt="">
+            <img class="pic" src="../../study2/练习2/img/d.webp" alt="">
+            <div>
+    
+    </div>
+    <button id="btn">&lt;</button>
+    <button id="btn1">&gt;</button>
+    <button class="item"></button>
+    <button class="item"></button>
+    <button class="item"></button>
+    <button class="item"></button>
+</body>
+<script src="../jquery.js"></script>
+<script>
+    let imgs = $('.pic');
+    let x = 0 ;
+   $('.pic').eq(x).css('display','block')
+   $('#btn1').click(function(){
+         x++
+         if (x>3) {
+             x = 0 ;
+         }
+        imgs.fadeOut().stop(false,true).eq(x).fadeIn()
+     })
+    $('#btn').click(function(){
+         x--
+         if (x<0) {
+             x = 3 ;
+         }
+        imgs.fadeOut().stop(false,true).eq(x).fadeIn()
+     })
+     $('.item').click(function(){
+    imgs.fadeOut(3000).stop(false,true).eq($(this).index()).fadeIn(3000)
+   })
+</script>
+</html>

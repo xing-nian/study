@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>无缝轮播</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        ul{
+            list-style: none;
+        }
+        #view{
+            position: relative;
+            width: 500px;
+            margin: 50px auto;
+            overflow: hidden;
+        }
+        .banner{
+            
+            font-size: 0;
+            
+        }
+        .banner img{
+            width: 500px;
+            
+        }
+        .circle{
+            width: 100px;
+            position: absolute;
+            left:calc(50%-50px);
+            bottom:20px
+        }
+        .circle li{
+            width: 10px;
+            height: 10px;
+            float: left;
+            border-radius: 50%;
+            background-color: #ccc;
+            margin-right: 10px;
+        }
+        #next,#prev{
+            width: 60px;
+            height: 30px;
+            line-height: 30px;
+            text-align: center;
+            background-color: #ccc;
+            color: #fff;
+            position: absolute;
+            top:calc(50%-15px);
+        }
+        #next{
+            right: 0;
+        }
+        #prev{
+            left: 0;
+        }
+        .active{
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+    <div id="view">
+        <div class="banner"></div>
+            <ul class="circle">
+            </ul>
+            
+          </div>
+          <button id="prev">&lt;</button>
+          <button id="next">&gt;</button>
+</body>
+<script src="../jquery.js"></script>
+<script>
+    let  pic = ['a.webp','b.jpg','c.webp','d.webp'];
+    for (let i = 0; i < pic.length; i++) {
+        let imgSrc = pic[i]
+        // 创建节点 并插入到对应的位置
+        $('<img>')
+        .attr('src','../../study2/练习2/img/'+imgSrc)
+        .appendTo($('.banner'));
+
+        $('<li>').appendTo('.circle')
+    }
+    
+    $('.banner').css({
+        width:(pic.length )*500
+    })
+    let page = 0;
+    $('.circle li').eq(0).addClass($('active'));
+    let flag = true;
+
+    function nextPage(){
+        $('.banner').animate({
+            marginLeft:-500
+        },500,function(){
+            $('.banner img').first().appendTo('.banner ')
+            $('.banner').css({
+                marginLeft:0
+            })
+        })
+    }
+    $('#next').click(nextPage)
+
+    $('#prev').click(function(){
+     $('.banner img').first().before($('.banner img'))
+     $('.banner').css({
+         marginLeft:-500
+     })
+     $('.banner').animate({
+         marginLeft :0
+     },500)
+    });
+   
+//    点击进度标记
+ $('.circle li').click(function(){
+     page = $(this).index()
+     $('.banner').animate({
+         marginLeft:-500*$(this).index()
+     },500)
+     $('.crlcle li').removeClass('active').eq(page).addClass('active')
+ })
+//  定时器 自动轮播
+// let timer = setInterval(nextPage,500)
+// $('#view').hover(function(){
+//  clearInterval(timer)
+// },function(){
+//     timer = setInterval(nextPage,500)
+// })
+</script>
+</html>

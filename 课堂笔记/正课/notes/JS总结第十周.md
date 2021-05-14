@@ -884,3 +884,106 @@ li:
      div1[0].style.color = 'blue';
 ```
 
+# 5月14日
+
+### jQuery节点操作
+
+```
+   (1).创建节点
+    let li = $('<li>')
+
+    li.html('新添加的li')
+
+   ( 2).插入节点
+    append() 往ul里添加一个li
+    $('#list').append(li);
+
+    appendTo() 把li放在ul中
+    li.appendTo($('#list'))
+
+   (3).before()  after() 在元素之前/之后插入
+   $('.active').before($('<li>')).html('aab')
+   $('.active').after($('<li>')).html('bba')
+
+    4.remove  把指定节点移出
+    $('.active').remove($('<li>'))
+```
+
+### each()方法
+
+```
+定义：each() 方法规定为每个匹配元素规定运行的函数。
+li:
+<body>
+    <ul id="list">
+        <li>item1</li>
+        <li>item2</li>
+        <li>item3</li>
+        <li>item4</li>
+        <li>item5</li>
+        <li>item6</li>
+        <li>item7</li>
+        <li>item8</li>
+        <li>item9</li>
+        <li>item10</li>
+    </ul>
+</body>
+<script src="./jquery.js"></script>
+<script>
+     $('#list li').each(function(i,ele){
+      ☆ i 是元素对应的索引 
+      ☆ ele 是DOM对象
+         
+        $(ele).click(function(){
+            console.log($(this).html());
+        })
+     })
+</script>
+```
+
+### 事件委托
+
+```
+<style>
+    .box span{
+        background-color: red;
+    }
+</style>
+<body>
+    <div class="box">
+        <p class="txt">
+            <span>hello</span>
+        </p>
+    </div>
+    
+    <ul class="list">
+        <li>item-1</li>
+        <li>item-2</li>
+        <li>item-3</li>
+        <li>item-4</li>
+        <li>item-5</li>
+    </ul>
+</body>
+<script src="./jquery.js"></script>
+<script>
+    // 1.如果给一个元素绑定多个事件类型
+    // $('.box').click(function(){})
+    // $('.box'). mouseover(function(){})
+
+    $('.box').on('click mouseover',function(e){
+        // even 对象的type属性 表示事件类型
+        if(e.type == 'click'){
+            console.log('触发点击事件');
+        }else{
+            console.log('触发移入事件');
+        }
+    })
+
+    // 2.  参数2 selector 用来过滤选定的元素，将事件绑定在选定的元素上
+    $('.box').on('click','span',function(){
+        console.log($(this));//指向span
+        $(this).css('color','skyblue')
+    })
+</script>
+```
+

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>tab切换栏</title>
+    <style>
+*{
+    margin: 0;
+    padding: 0;
+}
+#tab-nav{
+    width: 1000px;
+    height: 50px;
+    border: 1px solid #000;
+    position: relative;
+    top: 200px;
+    left: 400px;
+}
+  
+#nav-list{
+    list-style: none;
+    border-bottom: 1px solid #e0e0e0;
+}
+.nav-item{
+    float: left;
+    height: 50px;
+    line-height: 50px;
+    padding: 0 15px;
+    border-right: 1px solid #000;
+}
+
+
+#tab-con{
+    padding: 20px;
+}
+.con-item{
+    display: none;
+    border: 1px solid #000;
+    position: relative;
+    top: 200px;
+    left: 400px;
+}
+
+.color1{
+    background-color: skyblue;
+    height: 500px;
+    width: 1000px;
+}
+.color2{
+    background-color: red;
+    height: 500px;
+    width: 1000px;
+}
+.color3{
+    background-color: #515;
+    height: 500px;
+    width: 1000px;
+}
+    </style>
+</head>
+<body>
+    <!-- 1.选项卡 -->
+    <div id="tab-nav">
+        <ul id="nav-list" >
+            <li class="nav-item">
+                导航1
+            </li>
+            <li class="nav-item">
+               导航2
+            </li>
+            <li class="nav-item">
+                导航3
+            </li>
+        </ul>
+    </div>
+    <div class="con-item color1">内容1</div>
+    <div class="con-item color2">内容2</div>
+    <div class="con-item color3">内容3</div>
+</div>
+</body>
+<script src="../jquery.js"></script>
+
+ <script>
+     let x = 0;
+     $('.con-item:eq(0)').css('display','block');
+     $('.nav-item').click( function(){
+       $('.con-item').eq(x).css('display','none');
+       $('.con-item').eq($(this).index()).css('display','block');
+       x = $(this).index(); 
+     })
+ </script>
+</html>
