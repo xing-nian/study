@@ -1,0 +1,169 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+a:hover {
+    color: none;
+  }
+a {
+    text-decoration: none;
+  }
+.xfzyw{
+    width: 100%;
+    height: 25px;
+    background-color: black;
+    font-size: 11px;
+    color: white;
+    text-align: left;
+    padding-left: 40px;
+    outline: none;
+    cursor: pointer;
+    border: 0;
+}
+.xfzyw::after{
+    content: "";
+    width: 6px;
+    height: 6px;
+    border-left: 3px solid white;
+    border-top: 3px solid white;
+    transform: rotate(225deg);
+    position:absolute;
+    top: 8px;
+    left:130px;
+}
+.xfz-item{
+    float: left;
+    width: 337.75px;
+    height: 81px;
+    padding:0 50px;
+    position: relative;
+}
+.xfz-item>a{
+    width: 95.813px;
+    height: 24px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #c3172e;
+    line-height: 24px;
+    margin-bottom: 8px;
+    display: inline-block;
+}
+.xfz-item>a :hover .xfz-item>p {
+    color: rgba(0,0,0,1);
+}
+.xfz-item>p{
+    width: 337.75px;
+    height: 81px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #7f7f7f;
+}
+.xfz-con{
+    width: 100%;
+    height: 120px;
+    padding: 33px 0px;
+    box-sizing: border-box;
+    border-top: 1px solid #E5E5E5;
+    border-bottom: 1px solid #E5E5E5;
+    display: none;
+    
+}
+
+.xfz-active::after{
+    content: "";
+    width: 8px;
+    height: 8px;
+    border-top: 2px solid red;
+    border-right: 2px solid red;
+    
+    transform: rotate(45deg);
+    position:absolute;
+    top: 7px;
+    left:120px;
+}
+#dhl-top{
+    width: 100%;
+    height: 81px;
+    display: flex;
+    border-bottom: 1px solid #E5E5E5;
+    background-color: #F5F5F5;
+}
+#main-nav{
+    width: 100%;
+    height: 81px;
+    margin-left: 180px;
+}
+#logo{
+  display: inline-block;
+  margin: 30px 40px;
+
+}
+#nav-list{
+    list-style: none;
+    padding-left: 20px;
+    display: block;
+}
+.nav-lis{
+    float: left;
+    margin: 30px 20px;
+    font-size: 14px;
+    line-height: 24px;
+    cursor: pointer;
+}
+#dhl-right{
+    width: 450px;
+    height: 81px;
+    float: right;
+    margin: 30px 85px;
+    position: relative;
+}
+#dhl-right>i{
+    width: 32px;
+    height: 32px;
+    margin: 0px 18px;
+    cursor: pointer;
+}
+#dhl-right>span{
+    font-size: 12px;
+    line-height: 28px;
+    color: #000;
+    display: inline-block;
+    
+}
+#huawei-vmall{
+    border-radius: 15px;
+    border: solid 2px rgba(0,0,0,0.3);
+    padding: 0 24px;
+    display: inline-block;
+    cursor: pointer;
+}
+#huawei-vmall:hover{
+    border: solid 2px rgba(0,0,0,1);
+}
+#user-dl{
+    width: 220px;
+    height: 150px;
+    border: 1px solid #E8E8E8;
+    background-color: white;
+    line-height: 70px;
+    padding-left: 30px;
+    color: rgba(0,0,0,0.5);
+    font-size:15px;
+    position: absolute;
+    top: 50px;
+    left:-120px;
+    display: none;
+}
+#user:hover #user-dl{
+    display: block;
+}
+#user-dl>span:hover{
+    color: rgba(0,0,0,1);
+}
+hr{
+   background-color:#E8E8E8;
+   height:1px; 
+   width: 180px;
+   border:none;
+  
+}
