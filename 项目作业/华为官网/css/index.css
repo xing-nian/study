@@ -1,3 +1,4 @@
+/* 初始设置 */
 *{
     margin: 0;
     padding: 0;
@@ -8,6 +9,7 @@ a:hover {
 a {
     text-decoration: none;
   }
+/* 顶部消费者业务区域 */
 .xfzyw{
     width: 100%;
     height: 25px;
@@ -81,12 +83,14 @@ a {
     top: 7px;
     left:120px;
 }
+/* 顶部导航栏 */
 #dhl-top{
     width: 100%;
     height: 81px;
     display: flex;
     border-bottom: 1px solid #E5E5E5;
-    background-color: #F5F5F5;
+    
+    /* background-color: #F5F5F5; */
 }
 #main-nav{
     width: 100%;
@@ -102,6 +106,7 @@ a {
     list-style: none;
     padding-left: 20px;
     display: block;
+    
 }
 .nav-lis{
     float: left;
@@ -165,5 +170,103 @@ hr{
    height:1px; 
    width: 180px;
    border:none;
-  
+}
+/* .nav-lis-item{
+    width: 1920px;
+    height: 871px;
+    position: absolute;
+    top: 0;
+    background-color: skyblue;
+}
+.nav-lis-con{
+    width: 1920px;
+    height: 530px;
+    position: absolute;
+    top: 100px;
+    left:0px ;
+    
+} */
+/* 新商品区域 */
+#new-item{
+    width: 1920px;
+    height: 820px;
+    position: relative;
+    background-color:#EFEFEF ;
+    background-image: url(https://consumer.huawei.com/content/dam/huawei-cbg-site/greate-china/cn/mkt/plp/phones/banner/background.jpg);
+    background-position: right;
+    background-repeat: no-repeat;
+    background-size:contain;
+}
+#new-item-left{
+    width: 400px;
+    height: 500px;
+    position: absolute;
+    left: 100px;
+    top: 50px;
+    
+}
+.product-new-name{
+    font-weight: 800;
+    font-size: 35px;
+    
+}
+.product-new-tit{
+    margin: 30px 0px;
+   
+}
+.product-new-text{
+   color: rgba(0,0,0,0.5);
+   font-size: 18px;
+}
+.product-buttons-more{
+    margin: 20px 16px;
+    padding: 10px 26px;
+    background-color: #000;
+    color: #fff;
+    display: inline-block;
+    font-size: 13px;
+    line-height: 24px;
+    font-weight: 800;
+    padding: 10px 26px;
+    border-radius: 40px;
+    border: 2px solid #000;
+    outline: 0;
+}
+.product-buttons-buy{
+    padding: 10px 26px;
+    background-color: transparent;
+    border: 2px solid rgba(0,0,0,0.3);
+    color: #000;
+    border-radius: 40px;
+    display: inline-block;
+    font-size: 13px;
+    line-height: 24px;
+    font-weight: 800;
+    outline: 0;
+}
+#color-buttons{
+    position: relative;
+}
+.color-button{
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    position: relative;
+    font-size: 0;
+    box-shadow: inset 0 1px 1px 0 rgb(0 0 0 / 20%);
+    display: block;
+    overflow: visible;
+    appearance: none;
+    outline: 0;
+    border:0 ;
+}
+.color-my,.color-yb,.color-lh,.color-xrhy,.color-qrhy{
+    display: inline-block;
+    margin: 0px 10px;
+}
+.color-my>p,.color-yb>p,.color-lh>p,.color-xrhy>p,.color-qrhy>p{
+    position: absolute;
+    top: 50px;
+    left: 0;
+    display: none;
 }
