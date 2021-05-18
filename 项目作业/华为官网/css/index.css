@@ -75,8 +75,8 @@ a {
     content: "";
     width: 8px;
     height: 8px;
-    border-top: 2px solid red;
-    border-right: 2px solid red;
+    border-top: 2px solid #c3172e;
+    border-right: 2px solid #c3172e;
     
     transform: rotate(45deg);
     position:absolute;
@@ -158,6 +158,7 @@ a {
     top: 50px;
     left:-120px;
     display: none;
+    z-index: 10;
 }
 #user:hover #user-dl{
     display: block;
@@ -198,11 +199,11 @@ hr{
     background-size:contain;
 }
 #new-item-left{
-    width: 400px;
+    width: 410px;
     height: 500px;
     position: absolute;
-    left: 100px;
-    top: 50px;
+    left: 150px;
+    top: 130px;
     
 }
 .product-new-name{
@@ -217,6 +218,9 @@ hr{
 .product-new-text{
    color: rgba(0,0,0,0.5);
    font-size: 18px;
+}
+.product-buttons{
+    margin-top: 40px;
 }
 .product-buttons-more{
     margin: 20px 16px;
@@ -245,6 +249,7 @@ hr{
     outline: 0;
 }
 #color-buttons{
+    margin-top: 40px;
     position: relative;
 }
 .color-button{
@@ -269,4 +274,61 @@ hr{
     top: 50px;
     left: 0;
     display: none;
+}
+#product-wall{
+    width: 1920px;
+    height: 820px;
+    position: relative;
+}
+#product-wall-right{
+    width: 240px;
+    height: 600px;
+    background-image: url(https://consumer-img.huawei.com/content/dam/huawei-cbg-site/common/mkt/plp/kv/phones/mate40-series/cn/right.png);
+    background-repeat: no-repeat;
+    background-size:210px 580px;
+    z-index: 10;
+    display: inline-block;
+    position: absolute;
+    top:200px ;
+    left:715px;
+    display: none;
+}
+#product-wall-silver{
+    width: 240px;
+    height: 600px;
+    background-image: url(https://consumer-img.huawei.com/content/dam/huawei-cbg-site/common/mkt/plp/kv/phones/mate40-series/cn/silver.png);
+    /* background-position: 700px -200px; */
+    background-repeat: no-repeat;
+    background-size:210px 580px;
+    z-index: 20;
+    display: inline-block;
+    position: absolute;
+    top:140px ;
+    left:815px;
+    display: none;
+}
+#product-wall-mate40{
+    width: 240px;
+    height: 600px;
+    background-image: url(https://consumer-img.huawei.com/content/dam/huawei-cbg-site/common/mkt/plp/kv/phones/mate40-series/cn/mate40-pro.png);
+    background-repeat: no-repeat;
+    background-size:210px 580px;
+    z-index: 10;
+    display: inline-block;
+    position: absolute;
+    top:200px ;
+    left:715px;
+}
+#product-wall-white{
+    width: 240px;
+    height: 600px;
+    background-image: url(https://consumer-img.huawei.com/content/dam/huawei-cbg-site/common/mkt/plp/kv/phones/mate40-series/cn/white.png);
+    /* background-position: 700px -200px; */
+    background-repeat: no-repeat;
+    background-size:210px 580px;
+    z-index: 20;
+    display: inline-block;
+    position: absolute;
+    top:140px ;
+    left:815px;
 }
