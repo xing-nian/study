@@ -225,7 +225,7 @@ hr {
 /* 新商品区域 */
 #new-item {
   width: 1903px;
-  height: 820px;
+  height: 870px;
   position: relative;
   top: 50px;
   background-color: #efefef;
@@ -233,6 +233,18 @@ hr {
   background-position: right;
   background-repeat: no-repeat;
   background-size: contain;
+  overflow: hidden;
+}
+#mask{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  background-color: #333;
+  opacity: 0;
+  z-index: 21;
+  pointer-events: none;
+  transition: all .2s;
 }
 #new-item-left {
   width: 410px;
@@ -291,6 +303,8 @@ hr {
   width: 20px;
   height: 20px;
   border-radius: 50%;
+  padding: 1px 1px 0 1px;
+ 
   /* position: absolute;
             top: calc(50% - 15px);
             left: calc(50% - 15px); */
@@ -346,10 +360,14 @@ hr {
   position: relative;
   cursor: pointer;
 }
+#product-wall img{
+  width: 230px;
+  height: 590px;
+}
 #product-wall-right {
   width: 240px;
   height: 600px;
-  background-image: url(https://consumer-img.huawei.com/content/dam/huawei-cbg-site/common/mkt/plp/kv/phones/mate40-series/cn/right.png);
+  /* background-image: url(https://consumer-img.huawei.com/content/dam/huawei-cbg-site/common/mkt/plp/kv/phones/mate40-series/cn/right.png); */
   background-repeat: no-repeat;
   background-size: 210px 580px;
   z-index: 10;
@@ -361,7 +379,7 @@ hr {
 #product-wall-silver {
   width: 240px;
   height: 600px;
-  background-image: url(https://consumer-img.huawei.com/content/dam/huawei-cbg-site/common/mkt/plp/kv/phones/mate40-series/cn/silver.png);
+  /* background-image: url(https://consumer-img.huawei.com/content/dam/huawei-cbg-site/common/mkt/plp/kv/phones/mate40-series/cn/silver.png); */
   /* background-position: 700px -200px; */
   background-repeat: no-repeat;
   background-size: 210px 580px;
@@ -374,7 +392,7 @@ hr {
 #product-wall-mate40 {
   width: 240px;
   height: 600px;
-  background-image: url(https://consumer-img.huawei.com/content/dam/huawei-cbg-site/common/mkt/plp/kv/phones/mate40-series/cn/mate40-pro.png);
+  /* background-image: url(https://consumer-img.huawei.com/content/dam/huawei-cbg-site/common/mkt/plp/kv/phones/mate40-series/cn/mate40-pro.png); */
   background-repeat: no-repeat;
   background-size: 210px 580px;
   z-index: 10;
@@ -386,7 +404,7 @@ hr {
 #product-wall-white {
   width: 240px;
   height: 600px;
-  background-image: url(https://consumer-img.huawei.com/content/dam/huawei-cbg-site/common/mkt/plp/kv/phones/mate40-series/cn/white.png);
+  /* background-image: url(https://consumer-img.huawei.com/content/dam/huawei-cbg-site/common/mkt/plp/kv/phones/mate40-series/cn/white.png); */
   /* background-position: 700px -200px; */
   background-repeat: no-repeat;
   background-size: 210px 580px;
@@ -399,7 +417,7 @@ hr {
 #product-wall-right2 {
   width: 240px;
   height: 600px;
-  background-image: url(https://consumer-img.huawei.com/content/dam/huawei-cbg-site/common/mkt/plp/kv/phones/mate40-series/cn/right.png);
+  /* background-image: url(https://consumer-img.huawei.com/content/dam/huawei-cbg-site/common/mkt/plp/kv/phones/mate40-series/cn/right.png); */
   background-repeat: no-repeat;
   background-size: 210px 580px;
   z-index: 10;
@@ -411,7 +429,7 @@ hr {
 #product-wall-black {
   width: 240px;
   height: 600px;
-  background-image: url(https://consumer-img.huawei.com/content/dam/huawei-cbg-site/common/mkt/plp/kv/phones/mate40-series/cn/black.png);
+  /* background-image: url(https://consumer-img.huawei.com/content/dam/huawei-cbg-site/common/mkt/plp/kv/phones/mate40-series/cn/black.png); */
   /* background-position: 700px -200px; */
   background-repeat: no-repeat;
   background-size: 210px 580px;
@@ -424,7 +442,7 @@ hr {
 #product-wall-mate402 {
   width: 240px;
   height: 600px;
-  background-image: url(https://consumer-img.huawei.com/content/dam/huawei-cbg-site/common/mkt/plp/kv/phones/mate40-series/cn/mate40-pro.png);
+  /* background-image: url(https://consumer-img.huawei.com/content/dam/huawei-cbg-site/common/mkt/plp/kv/phones/mate40-series/cn/mate40-pro.png); */
   background-repeat: no-repeat;
   background-size: 210px 580px;
   z-index: 10;
@@ -436,7 +454,7 @@ hr {
 #product-wall-green {
   width: 240px;
   height: 600px;
-  background-image: url(https://consumer-img.huawei.com/content/dam/huawei-cbg-site/common/mkt/plp/kv/phones/mate40-series/cn/green.png);
+  /* background-image: url(https://consumer-img.huawei.com/content/dam/huawei-cbg-site/common/mkt/plp/kv/phones/mate40-series/cn/green.png); */
   /* background-position: 700px -200px; */
   background-repeat: no-repeat;
   background-size: 210px 580px;
@@ -449,7 +467,7 @@ hr {
 #product-wall-right3 {
   width: 240px;
   height: 600px;
-  background-image: url(https://consumer-img.huawei.com/content/dam/huawei-cbg-site/common/mkt/plp/kv/phones/mate40-series/cn/right.png);
+  /* background-image: url(https://consumer-img.huawei.com/content/dam/huawei-cbg-site/common/mkt/plp/kv/phones/mate40-series/cn/right.png); */
   background-repeat: no-repeat;
   background-size: 210px 580px;
   z-index: 10;
@@ -461,7 +479,7 @@ hr {
 #product-wall-yellow {
   width: 240px;
   height: 600px;
-  background-image: url(https://consumer-img.huawei.com/content/dam/huawei-cbg-site/common/mkt/plp/kv/phones/mate40-series/cn/yellow.png);
+  /* background-image: url(https://consumer-img.huawei.com/content/dam/huawei-cbg-site/common/mkt/plp/kv/phones/mate40-series/cn/yellow.png); */
   /* background-position: 700px -200px; */
   background-repeat: no-repeat;
   background-size: 210px 580px;
@@ -472,11 +490,16 @@ hr {
   left: 815px;
 }
 .color-select {
-  display: none;
+  opacity: 0;
+ 
 }
 /* .color-select:nth-child(1) {
   display: block;
 } */
+#product-con{
+  position: relative;
+  top: 100px;
+}
 .con-header-left {
   font-size: 32px;
   line-height: 1.25;
@@ -597,10 +620,11 @@ hr {
   border-radius: 10px;
   display: inline-block;
   background-color: #F0F0F0;
- 
+  cursor: pointer;
 }
 #select-con span:hover{
   background-color: #E5E5E5;
+  
 }
 #select-list {
   width: 1920px;
@@ -620,4 +644,62 @@ hr {
   top: 10px;
   left: 1530px;
   cursor: pointer;
+}
+#product-con-wall{
+  width: 1920px;
+  height: 4100px;
+}
+.floor1-item{
+  width: 1920px;
+  height: 610px;
+}
+.floor1-item1,.floor1-item2,.floor1-item3{
+  background-color: #F4F5F7;
+  float: left;
+  margin: 50px 40px;
+}
+.floor1-item1{
+  width: 860px;
+  height: 600px;
+}
+.floor1-item2{
+width: 410px;
+height: 600px;
+}
+.floor1-item3{
+width: 410px;
+height: 600px;
+}
+.item-zx{
+  display: inline-block;
+  width: 40px;
+  height: 20px;
+  color: white;
+  background-color: #D20A2C;
+  border-radius: 15px;
+  text-align: center;
+  line-height: 20px;
+  position: relative;
+  top: 20px;
+  left: 25px;
+
+}
+.item-color{
+  display: inline-block;
+ 
+}
+.item-color:nth-child(1){
+  position: relative;
+  top: 0;
+  left: 281px;
+  z-index: 1;
+}
+.item-color:nth-child(2){
+  position: relative;
+  top: 0;
+  left: 220px;
+}
+.item-color img{
+  width: 190px;
+  height: 440px;
 }
