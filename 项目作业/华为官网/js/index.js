@@ -24,3 +24,11 @@ $('.color-button').click(function(){
     // let title = $(this).index()].title;
     // $('.color-title').html(title);
 }) 
+$('.button-reset').css('display','none')
+$('.button-screen ,.icon-guanbi1').click(function(){
+    $('#select-list').slideToggle(300)
+    $('.button-reset').slideToggle(300)
+    $(this).children().toggleClass('active');
+    $(this).children().toggleClass('active1');
+    console.log($(this).children());
+})
