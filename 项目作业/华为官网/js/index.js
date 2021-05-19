@@ -30,5 +30,16 @@ $('.button-screen ,.icon-guanbi1').click(function(){
     $('.button-reset').slideToggle(300)
     $(this).children().toggleClass('active');
     $(this).children().toggleClass('active1');
-    console.log($(this).children());
+    
+})
+
+$('.icon-guanbi1').click(function(){
+    $('.arrow2').toggleClass('active');
+    $('.arrow2').toggleClass('active1');
+})
+$('.indexes ul li').click(function(){
+   console.log( $(this).html());
+   let span = $('<span>')
+   span.append($(this).html())
+   $('#select-con').append(span);
 })

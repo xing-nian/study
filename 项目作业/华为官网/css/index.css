@@ -512,6 +512,8 @@ hr {
 }
 #con-select {
   margin-top: 40px;
+  position: relative;
+ 
 }
 .button-screen {
   display: inline-block;
@@ -564,9 +566,11 @@ hr {
   height: 210px;
   float: left;
   margin-left: 50px;
+  
 }
 .indexes ul {
   list-style: none;
+  
 }
 .indexes ul li h3 {
   color: #000;
@@ -578,11 +582,35 @@ hr {
   color: #666;
   cursor: pointer;
 }
+.indexes ul li:hover{
+  color: #000;
+}
+#select-con{
+  position: absolute;
+  left: 170px;
+  top: 10px;
+}
+#select-con span{
+  padding: 3px 10px;
+  margin-left: 30px;
+  color: #000;
+  border-radius: 10px;
+  display: inline-block;
+  background-color: #F0F0F0;
+ 
+}
+#select-con span:hover{
+  background-color: #E5E5E5;
+}
 #select-list {
+  width: 1920px;
+  height: 350px;
   position: relative;
   top: -65px;
   left: 150px;
   display: none;
+  background-color: white;
+  z-index: 20;
 }
 
 .icon-guanbi1 {
