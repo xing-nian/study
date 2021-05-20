@@ -6,74 +6,75 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>无缝轮播</title>
     <style>
-        *{
-            margin: 0;
-            padding: 0;
+        * {
+          margin: 0;
+          padding: 0;
+  
+          user-select: none;
         }
-        ul{
-            list-style: none;
+        ul {
+          list-style: none;
         }
-        #view{
-            position: relative;
-            width: 1000px;
-            margin: 50px auto;
-            overflow: hidden;
-            
+        #view {
+          width: 1000px;
+          margin: 50px auto;
+          overflow: hidden;
+          position: relative;
         }
-        .banner{
-            
-            font-size: 0;
-            
+        .banner {
+          /* width: 5000px; */
+          font-size: 0;
         }
-        .banner img{
-            width: 1000px;
-            
+        .banner img {
+          width: 1000px;
         }
-        .circle{
-            width: 100px;
-            position: absolute;
-            left:calc(50%-50px);
-            bottom:20px
+        .circle {
+          width: 100px;
+          height: 10px;
+          position: absolute;
+          left: calc(50% - 50px);
+          bottom: 20px;
         }
-        .circle li{
-            width: 10px;
-            height: 10px;
-            float: left;
-            border-radius: 50%;
-            background-color: #ccc;
-            margin-right: 10px;
+        .circle li {
+          width: 10px;
+          height: 10px;
+          float: left;
+          border-radius: 50%;
+          background-color: #ccc;
+          margin-right: 10px;
         }
-        #next,#prev{
-            width: 60px;
-            height: 30px;
-            line-height: 30px;
-            text-align: center;
-            background-color: #ccc;
-            color: #fff;
-            position: relative;
-            
+        #next,
+        #prev {
+          width: 60px;
+          height: 30px;
+          line-height: 30px;
+          text-align: center;
+          background-color: #ccc;
+          color: #fff;
+          position: absolute;
+          top: calc(50% - 15px);
         }
-        #next{
-            top: -250px;
-            left: 1200px;
+        #next {
+          right: 0;
         }
-        #prev{
-            top: -250px;
-            left: 200px;
+        #prev {
+          left: 0;
         }
-        .active{
-            background-color: red;
-        }
+         /* 进度标记被选中的样式 */
+      .circle li.active {
+        background-color: red;
+      }
     </style>
 </head>
 <body>
-    <div id="view">
-        <div class="banner"></div>
+       <div id="view">
+         <div class="banner"></div>
             <ul class="circle">
             </ul>
+            <button id="prev">&lt;</button>
+            <button id="next">&gt;</button>
           </div>
-    <button id="prev">&lt;</button>
-    <button id="next">&gt;</button>
+   
 </body>
 <script src="../jquery.js"></script>
 <script>
@@ -93,7 +94,7 @@
         width:(pic.length + 1)*1000
     })
     let page = 0;
-    $('.circle li').eq(0).addClass($('active'));
+    $(".circle li").eq(page).addClass("active");
     let flag = true;
 
     function nextPage(){
@@ -101,7 +102,7 @@
         page++;
         $('.banner').animate({
         marginLeft: -1000*page
-    },500,'linear',function (){
+    },1000,'linear',function (){
         if ( page == 4) {
             page = 0;
             $('.banner').css({
@@ -112,14 +113,13 @@
     })
     $('.circle li')
     .removeClass('active')
-    .eq(page == 5 ? 0 : page)
+    .eq(page == 4 ? 0 : page)
     .addClass('active')
-    
     }
       flag = false
     }
+
     $('#next').click(nextPage)
-     
 
     $('#prev').click(function(){
       if (flag) {
@@ -133,36 +133,32 @@
         }
         $('.banner').animate({
         marginLeft: -1000*page
-    },500,'linear',function (){
+    },1000,'linear',function (){
        
         flag = true
-       
     })
-    $('.crlcle li')
+    $('.circle li')
     .removeClass('active')
     .eq(page)
     .addClass('active')
-    
     }
-
       flag = false;
-
     });
    
 //    点击进度标记
  $('.circle li').click(function(){
      page = $(this).index()
      $('.banner').animate({
-         marginLeft:-1000*$(this).index()
+         marginLeft:-1000*page
      },500)
-     $('.crlcle li').removeClass('active').eq(page).addClass('active')
+     $('.circle li').removeClass('active').eq(page).addClass('active')
  })
 //  定时器 自动轮播
-let timer = setInterval(nextPage,500)
+let timer = setInterval(nextPage,1000)
 $('#view').hover(function(){
  clearInterval(timer)
 },function(){
-    timer = setInterval(nextPage,500)
+    timer = setInterval(nextPage,1000)
 })
 </script>
 </html>

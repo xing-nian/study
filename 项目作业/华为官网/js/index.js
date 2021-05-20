@@ -62,18 +62,18 @@ $('.color-button').click(function(){
 $(window).scroll(function () {
     // 获取页面滚动高度
     let st = $("body,html").scrollTop();
-    console.log(st);
+    // console.log(st);
 
-    let top = st / 2;
+    let top = st / 1.2;
     if (st >= 104) {
-      $("new-item").css(
+      $("#ware-mask").css(
         {
           top: top - 52,
         }
       );
-      $('#mask').css({opacity:(st-104)/1000})
+      $('#mask').css({opacity:(st-104)/970})
     }else{
-      $("#new-item").css(
+      $("#ware-mask").css(
         {
           top: 100,
         }
@@ -106,7 +106,7 @@ $('.indexes ul li').click(function(){
 // $('.button-reset').click(function(){
 //     $('#select-con').remove('span')
 // })
-$('#select-con span').click(function(){
+$('#select-con').children().click(function(){
     console.log($(this));
     $(this).remove();
 })

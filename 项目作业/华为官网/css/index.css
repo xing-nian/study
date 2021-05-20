@@ -235,6 +235,12 @@ hr {
   background-size: contain;
   overflow: hidden;
 }
+#ware-mask{
+  width: 1903px;
+  height: 870px;
+  position: relative;
+  top: 50px;
+}
 #mask{
   position: absolute;
   width: 100%;
