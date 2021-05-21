@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        div{
+            position:relative;
+            width: 1300px;
+            height: 700px;
+            top: 100px;
+            left: 300px;
+        }
+        ul{
+            list-style: none;
+        }
+        li{
+         float: left;
+         width: 100px;
+         height: 700px;
+         font-size: 30px;
+         color: white;
+         text-align: center;
+        }
+        img{
+           position: relative;
+           top: 150px;
+        }
+        p{
+            position: relative;
+            top: 350px;
+        }
+        li:nth-child(2n){
+            display: none;
+            padding-left: 100px;
+            padding-top: -100px;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <ul>
+            <li style="background-color:#D8A31F ;"><p>电话</p><img src="./images/img1.png" alt=""></li>
+            <li style="background-color:#D8A31F ;width: 600px;"><img src="./images/img01.png" alt=""></li>
+            <li style="background-color:#90FD8F;"><p>WIFI</p><img src="./images/img2.png" alt=""></li>
+            <li style="background-color:#90FD8F;width: 600px;"><img src="./images/img02.png" alt=""></li>
+            <li style="background-color:#6884FC;"><p>手机</p><img src="./images/img3.png" alt=""></li>
+            <li style="background-color:#6884FC;width: 600px;"><img src="./images/img03.png" alt=""></li>
+            <li style="background-color:#FD4C56;"><p>云盘</p><img src="./images/img4.png" alt=""></li>
+            <li style="background-color:#FD4C56;width: 600px;"><img src="./images/img04.png" alt=""></li>
+            <li style="background-color:#8AE6FC ;"><p>互联网</p><img src="./images/img5.png" alt=""></li>
+            <li style="background-color:#8AE6FC ;width: 600px;"><img src="./images/img05.png" alt=""></li>
+            <li style="background-color:#B4E700;"><p>语音</p><img src="./images/img6.png" alt=""></li>
+            <li style="background-color:#B4E700;width: 600px; "><img src="./images/img06.png" alt=""></li>
+        </ul>
+    </div>
+</body>
+<script src="../jquery.js"></script>
+<script>
+     $('#start').click (function(){
+         $('.box').animate({
+            'width':'2038px',
+         },2000)
+     })
+     
+let x = 0  ;
+$('li').click(function(){
+    $('li').eq(x+1).css('display','none'); 
+    $('li').eq(($(this).index())+1).slideDown(300);
+    x = $(this).index(); 
+    console.log(x);
+})
+</script>
+</html>

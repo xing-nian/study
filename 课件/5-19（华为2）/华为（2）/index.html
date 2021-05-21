@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>华为手机</title>
+    <link rel="stylesheet" href="./css/index.css" />
+    <style>
+      .banner-center {
+        width: 340px;
+        height: 740px;
+        background-color: aquamarine;
+        position: absolute;
+        left: calc(50% - 170px);
+        bottom: 0;
+      }
+      .banner-center img {
+        height: 625px;
+      }
+      .phone {
+        width: 100%;
+        position: relative;
+        /* 最初隐藏 */
+        opacity: 0;
+      }
+      .phone-left {
+        position: absolute;
+        top: 90px;
+        left: 0;
+        z-index: 1;
+      }
+      .phone-right {
+        position: absolute;
+        top: 0px;
+        right: 0;
+        z-index: 2;
+      }
+      .mask{
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          top: 0;
+          background-color: #333;
+          opacity: 0;
+          z-index: 3;
+
+          transition: all .2s;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="nav">
+      <div class="nav-wraper">
+        <!-- 1.黑色导航 -->
+        <div class="black-nav">
+          <span>消费者业务网站</span>
+          <span class="arrow">↑</span>
+        </div>
+        <!-- 2.下拉菜单 -->
+        <div class="slide-nav"></div>
+        <!-- 3.nav-menu -->
+        <div class="nav-menu">
+          <ul>
+            <li>手机</li>
+            <li>平板电脑</li>
+            <li>笔记本</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="banner">
+      <div class="banner-wrap">
+        <div class="banner-left">
+          <!-- 颜色选项 -->
+          <ul class="color-list">
+            <li><span></span></li>
+            <li><span></span></li>
+            <li><span></span></li>
+            <li><span></span></li>
+            <li><span></span></li>
+          </ul>
+          <h4 class="color-title">秘银色</h4>
+        </div>
+        <div class="banner-right"></div>
+        <div class="banner-center">
+          <div class="center-wrap">
+            <div class="phone">
+              <div class="phone-left">
+                <img src="./images/l1.png" alt="" />
+              </div>
+              <div class="phone-right">
+                <img src="./images/r1.png" alt="" />
+              </div>
+            </div>
+            <div class="phone">
+              <div class="phone-left">
+                <img src="./images/l2.png" alt="" />
+              </div>
+              <div class="phone-right">
+                <img src="./images/r2.png" alt="" />
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="mask"></div>
+      </div>
+    </div>
+  </body>
+  <script src="./js/jquery-3.6.0.min.js"></script>
+  <script>
+    let prevIndex = 0; //记录之前显示的手机
+
+    let colorArr = [
+      { color: "#f1f6fe", title: "秘银色" },
+      { color: "#fff", title: "釉白色" },
+      { color: "#000", title: "亮黑色" },
+      { color: "#797f71", title: "夏日胡杨" },
+      { color: "#fdbc5f", title: "秋日胡杨" },
+    ];
+
+    colorArr.forEach((ele, i) => {
+      $(".color-list li")
+        .eq(i)
+        .css({
+          backgroundColor: `${ele.color}`,
+        });
+    });
+
+    // 初始 第一组手机被选中
+    $(".color-list li").eq(prevIndex).children().addClass("active");
+    $(".phone").eq(prevIndex).css("opacity", 1);
+    // 1.点击 黑色导航
+    $(".black-nav").click(function () {
+      $(".slide-nav").slideToggle();
+      // 箭头旋转 -180deg
+      $(".arrow").toggleClass("active");
+    });
+
+    //2.点击 颜色选项
+    $(".color-list li").click(function () {
+      $(".color-list li").children().removeClass("active");
+      $(this).children().addClass("active");
+      let title = colorArr[$(this).index()].title;
+      $(".color-title").html(title);
+
+      let currentIndex = $(this).index();
+      console.log(currentIndex);
+
+      // 手机动画
+      $(".phone").eq(prevIndex).animate({
+            top: 50,
+            opacity: 0,
+          },300,function () {
+          $(this).css("top", 0); 
+          //注意将原来那组手机的位置复原
+            // 原来显示的那组手机动画结束
+            // 当前应该显示的这组手机要开始动画
+        $(".phone").eq(currentIndex).css("opacity", 1).children().css("opacity", 0).eq(1).css({ top: 80 })
+              .animate({
+                top: 0,
+                opacity: 1,
+              });
+
+            // phone-left 延迟动画
+            setTimeout(() => {
+              $(".phone")
+                .eq(currentIndex)
+                .children()
+                .eq(0)
+                .css({ top: 170 })
+                .animate({
+                  top: 90,
+                  opacity: 1,
+                });
+            }, 200);
+
+            prevIndex = currentIndex;
+          }
+        );
+    });
+
+    //3.监听页面滚动事件
+    $(window).scroll(function () {
+      // 获取页面滚动高度
+      let st = $("body,html").scrollTop();
+      console.log(st);
+
+      let top = st / 2;
+      if (st >= 104) {
+        $(".banner-wrap").css(
+          {
+            top: top - 52,
+          }
+        );
+        $('.mask').css({opacity:(st-104)/1000})
+      }else{
+        $(".banner-wrap").css(
+          {
+            top: 0,
+          }
+        );
+        $('.mask').css({opacity:0})
+
+      }
+    });
+  </script>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>each() 方法</title>
+</head>
+<body>
+    <ul id="list">
+        <li>item1</li>
+        <li>item2</li>
+        <li>item3</li>
+        <li>item4</li>
+        <li>item5</li>
+        <li>item6</li>
+        <li>item7</li>
+        <li>item8</li>
+        <li>item9</li>
+        <li>item10</li>
+    </ul>
+</body>
+<script src="./jquery-3.6.0.min.js"></script>
+<script>
+    // each 逐个遍历集合中的元素
+    $('#list li').each(function(i,ele){
+        // console.log(ele); // ele是DOM对象
+        // console.log(i); //i是元素对应的索引
+        $(ele).click(function(){
+            console.log($(this).html());
+        })
+    })
+
+</script>
+</html>

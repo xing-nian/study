@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    *{
+        padding: 0;
+        margin: 0;
+    }
+   .view{
+       font-size: 0;
+   }
+    .item{
+        width: 100px;
+        height: 500px;
+        overflow: hidden;
+        position: relative;
+        display: inline-block;
+    }
+    .title{
+        /* float: left; */
+        width: 100px;
+        height: 100%;
+        /* background-image: url(./images/img1.png); */
+        background-repeat: no-repeat;
+        background-position:center 140px ;
+        line-height: 600px;
+        text-align: center;
+        color: white;
+        font-size: 24px;
+    }
+    .con{
+        /* float: left; */
+        
+        width: 500px;
+        height: 100%;
+        /* background-image: url(./images/img01.png); */
+        background-position:center center;
+        background-repeat: no-repeat;
+        position: absolute;
+        left: 100px;
+        top: 0;
+    }
+</style>
+<body>
+    <div class="view">
+        <div class="item">
+            <div class="title">
+                <h3>电话</h3>
+            </div>
+            <div class="con"></div>
+        </div>
+        <div class="item">
+            <div class="title">
+                <h3>WIFE</h3>
+            </div>
+            <div class="con"></div>
+        </div>
+        <div class="item">
+            <div class="title">
+                <h3>手机</h3>
+            </div>
+            <div class="con"></div>
+        </div>
+        <div class="item">
+            <div class="title">
+                <h3>云盘</h3>
+            </div>
+            <div class="con"></div>
+        </div>
+        <div class="item">
+            <div class="title">
+                <h3>互联网</h3>
+            </div>
+            <div class="con"></div>
+        </div>
+        <div class="item">
+            <div class="title">
+                <h3>语音</h3>
+            </div>
+            <div class="con"></div>
+        </div>
+    </div>
+</body>
+<script src="../jquery.js"></script>
+<script>
+   let colorArr = ["#D8A31F","#90FD8F","#6884FC","#FD4C56","#8AE6FC","#B4E700"]
+  // 给每个 title区域  和con 区域加背景图片
+  for(let i = 0; i<6;i++){
+      $('.title')
+      .eq(i)
+      .css({
+          backgroundImage:`url(./images/img${i+1}.png)`
+      })
+
+      $('.con')
+      .eq(i)
+      .css({
+          backgroundImage:`url(./images/img0${i+1}.png)`
+      })
+
+      
+      $('.item')
+      .eq(i)
+      .css({
+          backgroundColor:`${colorArr[i]}`
+      })
+      .attr('isOpen',0)
+    //   添加自定义属性  记录每一个item的展开闭合状态 (0:表示闭合， 1：表示展开)
+
+  }
+    // 初始  第一个item展开
+     let x = 0;
+    //  $('.item').eq(x).css({width:600}).attr('isOpen',1);
+     $('.item').eq(x).animate({
+             width:100
+         },function(){
+            $(this).attr('isOpen',0)
+         })
+     $('.title').click(function(){
+         let index = $(this).parent().index();
+         if ( $('.item').eq(index).attr('isOpen') == 0) {
+            $('.item').eq(index).animate({
+             width:600
+         },function(){
+            $(this).attr('isOpen',1)
+         })
+         }else{
+            $('.item').eq(index).animate({
+             width:100
+         },function(){
+            $(this).attr('isOpen',0)
+         })
+         }
+         x = index;
+     })
+</script>
+</html>

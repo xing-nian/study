@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>事件委托</title>
+    <style>
+        .box span{
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <p class="txt">
+            <span>hello</span>
+        </p>
+    </div>
+
+
+    <ul class="list">
+        <li>item-1</li>
+        <li>item-2</li>
+        <li>item-3</li>
+        <li>item-4</li>
+        <li><a href="#">百度</a></li>
+    </ul>
+    <button id="add">添加li</button>
+</body>
+<script src="./jquery-3.6.0.min.js"></script>
+<script>
+    // 1.如果给一个元素绑定多种事件类型
+    // $('.box').click(function(){})
+    // $('.box').mouseover(function(){})
+
+    // $('.box').on('click mouseover',function(e){
+    //     // even对象的type属性 表示事件类型
+    //     if (e.type == 'click') {
+    //         alert('触发点击事件')
+    //     } else {
+    //         console.log('触发移入事件');
+    //     }
+    // })
+
+    // 2.参数2 selector 用来过滤选定的元素，将事件绑定在选定的元素上
+    $('.box').on('click','span',function(){
+        console.log($(this)); //指向span
+        $(this).css('color','#fff')
+    })
+    // 使用 on() 方法实现事件委托：
+    $('.list').on('click','li',function(){
+        console.log('hello');
+    })
+
+    $('#add').click(function(){
+        $('.list').append($('<li>').html('新添加的li'))
+    })
+
+
+</script>
+</html>

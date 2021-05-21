@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>01-ajax发送get请求(注册)</title>
+    <style>
+         #errow{
+             color: red;
+         }
+    </style>
+</head>
+<body>
+    <form id="myform">
+        <input type="text" id="uname"><em id="errow"></em><br>
+        <input type="text" id="psw"><br>
+        <input type="submit" value="注册">
+    </form>
+</body>
+<script>
+     let myform = document.querySelector('#myform');
+     let uname = document.querySelector('#uname');
+     let psw = document.querySelector('#psw');
+     let errow = document.querySelector('#errow');
+
+     myform.onsubmit = function(e){
+         e.preventDefault();//阻止默认事件
+
+        // 1. 创建请求对象
+        let xhr = new XMLHttpRequest();
+        // 2.指定请求方式 请求路径
+        xhr.open('GET',`http://localhost:8080/register?username=${uname.value}&password=${psw.value}`)
+        //  console.log('提交');
+        // 3.发送请求
+        xhr.send();
+
+        // 4.监听事件
+        xhr.onreadystatechange = function(){
+            if (xhr.readyState == 4 && xhr.status ==200) {
+               let data = JSON.parse(xhr.responseText);
+               if (data.status == 0) {
+                errow.innerHTML = data.msg
+               }else{
+                //    alert(data.msg)
+                location.href = 'https://www.baidu.com'
+               }
+               console.log(data);
+            }
+        }
+     }
+</script>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1-初始ajax请求(天气接口)</title>
+</head>
+<body>
+    
+</body>
+<script>
+    // 1.创建请求对象
+    let xhr = new XMLHttpRequest();
+    /*
+        请求路径：
+        (1)协议：  https
+        (2)域名： restapi.amap.com 区分服务器
+        (3)端口号： 默认端口号443 (http:80)  可以省略  区分服务器下不同的服务
+        (4)资源路径：/v3/weather/weatherInfo
+        (5)参数:  ? 号后面拼接get请求参数 
+        参数格式： key=value  多个参数之间用 & 符号连接
+    
+    */
+    // 2.指定请求方式 请求路径
+    xhr.open('GET','https://restapi.amap.com/v3/weather/weatherInfo?key=d557b105e1ff9c2dc331ab9aaa24d7c1&city=郑州市')
+
+    // 3.发送请求
+    xhr.send();
+
+    // 4.接服务器返回的数据
+    // 当请求状态发生改变时，readystatechange绑定的事件函数就会被调用
+    xhr.onreadystatechange = function(){
+        /*
+            readyState: 请求状态  4：请求已完成 响应已就绪
+            status：服务端返回的请求状态码  200：ok
+        */
+        if (xhr.readyState ==4 && xhr.status == 200) {
+            // 获取服务端返回的数据
+            let data = xhr.responseText;
+            console.log(data);
+            
+        }
+    }
+</script>
+</html>

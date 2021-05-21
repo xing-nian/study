@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ajax发送post请求(注册)</title>
+    <style>
+         #errow{
+             color: red;
+         }
+    </style>
+</head>
+<body>
+    <form id="myform">
+        <input type="text" id="uname"><em id="errow"></em><br>
+        <input type="text" id="psw"><br>
+        <input type="submit" value="注册">
+    </form>
+</body>
+<script>
+     let myform = document.querySelector('#myform');
+     let uname = document.querySelector('#uname');
+     let psw = document.querySelector('#psw');
+     let errow = document.querySelector('#errow');
+    
+    //  事件绑定
+     myform.onsubmit = function(e){
+         e.preventDefault();//阻止默认事件
+
+        // 1. 创建请求对象
+        let xhr = new XMLHttpRequest();
+        // 2.指定请求方式 请求路径
+        xhr.open('POST',`http://localhost:8080/register`)
+     
+        // 3.设置请求头 定义参数格式类型
+        //  xhr.setRequestHeader('Content-type','application','x-www-form-urlencoded')
+        xhr.setRequestHeader('Content-type','application/json')
+        //   拼接请求参数
+        //  let param = `username=${uname.value}&password${psw.value}`;
+        let param = {
+            username:uname.value,
+            password:psw.value
+        }
+        // 把对象转换为json字符串
+        let paramStr = JSON.stringify(param)
+        //  4.发送请求
+         xhr.send(paramStr);
+
+        // 5.监听事件
+        xhr.onreadystatechange = function(){
+            if (xhr.readyState == 4 && xhr.status ==200) {
+               let data = JSON.parse(xhr.responseText);
+               if (data.status == 0) {
+                errow.innerHTML = data.msg
+               }else{
+                //    alert(data.msg)
+                location.href = 'https://www.baidu.com'
+               }
+               console.log(data);
+            }
+        }
+     }
+</script>
+</html>

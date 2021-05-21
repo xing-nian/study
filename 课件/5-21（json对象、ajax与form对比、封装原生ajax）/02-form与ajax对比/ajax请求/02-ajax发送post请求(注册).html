@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #error{
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <form id="myform">
+        <input type="text" id="uname"><em id="error"></em><br>
+        <input type="text" id="psw"><br>
+        <input type="submit" value="注册" id="btn">
+    </form>
+</body>
+<script>
+    let myForm = document.querySelector('#myform');
+    let uname = document.querySelector('#uname');
+    let psw = document.querySelector('#psw');
+    let error = document.querySelector('#error');
+
+    myForm.onsubmit = function(e){
+        e.preventDefault();
+
+        // 1.创建请求对象
+        let xhr = new XMLHttpRequest();
+
+        // 2.指定请求方式 请求路径
+        xhr.open('POST',"http://localhost:8080/register");
+
+        // 3.设置请求头 定义请求参数格式类型
+        // xhr.setRequestHeader('Content-type','application/x-www-form-urlencoded');
+        xhr.setRequestHeader('Content-type','application/json')
+
+        // 拼接请求参数
+        // let param = `username=${uname.value}&password=${psw.value}`;
+        let param = {
+            username:uname.value,
+            password:psw.value
+        }
+        // 把对象转换为 json 字符串
+        let paramStr = JSON.stringify(param);
+
+        // 4.发送请求
+        xhr.send(paramStr);
+
+        // 5.监听事件 接收服务器返回的数据
+        xhr.onreadystatechange = function(){
+            if (xhr.readyState == 4 && xhr.status == 200) {
+                let data = JSON.parse(xhr.responseText);
+                if (data.status == 0) {
+                    // 用户名已被注册
+                    error.innerHTML = data.msg
+                }
+            }
+        }
+    }
+</script>
+</html>

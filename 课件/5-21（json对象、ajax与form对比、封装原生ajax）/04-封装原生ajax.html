@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="btn">按钮</button>
+</body>
+<script>
+    function ajax(method,url,param,callback){
+        // 1.创建请求对象
+        let xhr = new XMLHttpRequest();
+        // 2.指定请求方式  请求路径
+        xhr.open(method,url + '?' +param);
+        // 3.发送请求
+        xhr.send();
+        // 4.接收服务端返回的数据
+        xhr.onreadystatechange = function(){
+            if (xhr.readyState == 4 && xhr.status == 200) {
+                let data = JSON.parse(xhr.responseText)
+                // 回调函数
+                callback(data)    
+            }
+        }
+    }
+
+    btn.onclick = function(){
+        
+        ajax('GET','https://autumnfish.cn/top/artists','offset=0&limit=10',function(datas){
+            console.log(datas);
+        })
+
+    }
+
+    // setInterval(function(){
+
+    // },100)
+    // setTimeout(function(){
+
+    // },100)
+
+
+
+
+</script>
+</html>

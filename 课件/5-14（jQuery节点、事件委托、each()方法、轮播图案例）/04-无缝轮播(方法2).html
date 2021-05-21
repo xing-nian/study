@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>无缝轮播</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+
+        user-select: none;
+      }
+      ul {
+        list-style: none;
+      }
+      #view {
+        width: 500px;
+        margin: 50px auto;
+        overflow: hidden;
+        position: relative;
+      }
+      .banner {
+        /* width: 5000px; */
+        font-size: 0;
+      }
+      .banner img {
+        width: 500px;
+      }
+      .circle {
+        width: 100px;
+        height: 10px;
+        position: absolute;
+        left: calc(50% - 50px);
+        bottom: 20px;
+      }
+      .circle li {
+        width: 10px;
+        height: 10px;
+        float: left;
+        border-radius: 50%;
+        background-color: #ccc;
+        margin-right: 10px;
+      }
+      #next,
+      #prev {
+        width: 60px;
+        height: 30px;
+        line-height: 30px;
+        text-align: center;
+        background-color: #ccc;
+        color: #fff;
+        position: absolute;
+        top: calc(50% - 15px);
+      }
+      #next {
+        right: 0;
+      }
+      #prev {
+        left: 0;
+      }
+      /* 进度标记被选中的样式 */
+      .circle li.active {
+        background-color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="view">
+      <div class="banner"></div>
+      <ul class="circle"></ul>
+      <div id="next">&gt;</div>
+      <div id="prev">&lt;</div>
+    </div>
+  </body>
+  <script src="./jquery-3.6.0.min.js"></script>
+  <script>
+    let imgArr = ["1.jpg", "2.jpg", "3.jpg"];
+
+    for (let i = 0; i < imgArr.length; i++) {
+      let imgSrc = imgArr[i];
+      // 创建节点 并插入到指定的位置
+      $("<img>")
+        .attr("src", "./images/" + imgSrc)
+        .appendTo($(".banner"));
+
+      $("<li>").appendTo($(".circle"));
+    }
+
+    $(".banner").css({
+      width: imgArr.length * 1000,
+    });
+
+    let page = 0;
+    // 默认第一个li被选中
+    $(".circle li").eq(page).addClass("active");
+
+    let flag = true;
+    // 点击下一页
+    $("#next").click(function () {
+      if (flag) {
+        // 进度标记的样式改变
+        page++;
+        if (page > imgArr.length - 1) {
+          page = 0;
+        }
+        $(".circle li").removeClass("active").eq(page).addClass("active");
+
+        $(".banner").animate(
+          {
+            marginLeft: -500,
+          },
+          500,
+          function () {
+            // 动画结束时 将第一张图挪到最后面
+            // $('.banner img').first().appendTo($('.banner'));
+            $(".banner img").last().after($(".banner img").first());
+            // 将 banner 设置为初始状态
+            $(".banner").css({
+              marginLeft: 0,
+            });
+
+            flag = true;
+          }
+        );
+      }
+
+      flag = false;
+    });
+
+    // 点击上一页
+    $("#prev").click(function () {
+      if (flag) {
+        page--;
+        if (page < 0) {
+          page = imgArr.length - 1;
+        }
+        $(".circle li").removeClass("active").eq(page).addClass("active");
+
+        // 先把最后一张图片挪到最前面
+        $(".banner img").first().before($(".banner img").last());
+        // 将 banner 向左移动500
+        $(".banner").css({
+          marginLeft: -500,
+        });
+        // banner 从 -500  到 0 做动画
+        $(".banner").animate(
+          {
+            marginLeft: 0,
+          },
+          500,function(){
+              flag = true;
+          }
+        );
+      }
+
+      flag = false;
+    });
+    
+
+
+    
+  </script>
+</html>

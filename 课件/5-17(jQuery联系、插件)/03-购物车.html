@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>购物车</title>
+    <style>
+      img {
+        width: 100px;
+      }
+      table,
+      th,
+      td {
+        border: 1px solid #333;
+      }
+      table {
+        border-collapse: collapse;
+        text-align: center;
+        width: 600px;
+        user-select: none;
+      }
+    </style>
+  </head>
+  <body>
+    <table id="mytb">
+      <thead>
+        <tr>
+          <th>选择</th>
+          <th>名称</th>
+          <th>图片</th>
+          <th>单价</th>
+          <th>数量</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><input type="checkbox" class="checkInp" checked /></td>
+          <td>苹果</td>
+          <td><img src="./images/1.jpg" alt="" /></td>
+          <td class="price">￥3</td>
+          <td>
+            <button class="reduce">-</button>
+            <button class="count">1</button>
+            <button class="incresae">+</button>
+          </td>
+        </tr>
+        <tr>
+          <td><input type="checkbox" class="checkInp" /></td>
+          <td>香蕉</td>
+          <td><img src="./images/1.jpg" alt="" /></td>
+          <td class="price">￥2</td>
+          <td>
+            <button class="reduce">-</button>
+            <button class="count">1</button>
+            <button class="incresae">+</button>
+          </td>
+        </tr>
+        <tr>
+          <td><input type="checkbox" class="checkInp" /></td>
+          <td>草莓</td>
+          <td><img src="./images/2.jpg" alt="" /></td>
+          <td class="price">￥5</td>
+          <td>
+            <button class="reduce">-</button>
+            <button class="count">1</button>
+            <button class="incresae">+</button>
+          </td>
+        </tr>
+        <tr>
+          <td><input type="checkbox" class="checkInp" /></td>
+          <td>橘子</td>
+          <td><img src="./images/2.jpg" alt="" /></td>
+          <td class="price">￥4</td>
+          <td>
+            <button class="reduce">-</button>
+            <button class="count">1</button>
+            <button class="incresae">+</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <div>
+      <p>全选<input type="checkbox" id="allCheck" /></p>
+      <h3>总计：￥<span id="totalPrice">3.00</span></h3>
+    </div>
+  </body>
+  <script src="./jquery-3.6.0.min.js"></script>
+  <script>
+    for(let i = 0;i<$('.checkInp').length;i++){
+        $('.checkInp').eq(i).attr('data-index',i)
+        $('.reduce').eq(i).attr('data-index',i)
+        $('.incresae').eq(i).attr('data-index',i)
+    }
+
+    // 1.全选按钮  
+    $('#allCheck').change(function(){
+        // 实现全选 和 取消全选
+        $('.checkInp').prop('checked',$(this).prop('checked'));
+
+        // 计算价格
+        let totalP = 0;
+        if (this.checked) {
+            $('.price').each((i,ele)=>{
+                let p = ele.innerHTML.replace('￥','');
+                let count = $('.count').eq(i).html();
+                console.log('价格：' + p + ',数量：' + count);
+                totalP += p*count
+            })
+            $('#totalPrice').html(totalP.toFixed(1));
+
+        }else{
+            $('#totalPrice').html('0.0');
+        }
+
+    })
+
+    
+    let totalNum = $('.checkInp').length
+    $('#mytb').click(function(e){
+        if (e.target.className == 'checkInp') { 
+        // 2.点击的是 每个单个选项
+            // 获取被选中 input 的数量
+            let seleNum = $('.checkInp:checked').length;
+            // console.log(seleNum);
+            // 设置全选按钮的选中状态
+            $('#allCheck').prop('checked',totalNum == seleNum ? true : false)
+
+            // 计算价格
+            // console.log($(e.target).parent().parent().index()); //tr的索引
+            let i = e.target.dataset.index;
+            let p = $('.price').eq(i).html().replace('￥','');
+            let n = $('.count').eq(i).html()
+            let tp = 0;
+            if (e.target.checked) { //选中 +
+                tp = p * n + $('#totalPrice').html()*1;
+            } else {//取消选中 -
+                tp = $('#totalPrice').html()*1 - p * n
+            }
+            
+            $('#totalPrice').html(tp.toFixed(1))
+        }
+        if (e.target.className == 'reduce') {
+        // 3.点击的是 -号按钮
+            // 获取原来的数量
+            let num = $(e.target).next().html() * 1;
+            if (num == 1) {
+                return;
+            } else {
+                // 设置 - 之后的数量
+                $(e.target).next().html(num - 1);
+            }
+
+            // 计算价格
+            let i = e.target.dataset.index;
+            let checkInp = $('.checkInp').eq(i);
+            let p = $('.price').eq(i).html().replace('￥','')*1;
+            let tp = $('#totalPrice').html() *1;
+            if (checkInp[0].checked) { //checkInp[0] 将jQuery对象转成 DOM对象
+                tp -= p;
+                $('#totalPrice').html(tp.toFixed(1))
+            } 
+
+        }
+        if (e.target.className == 'incresae') {
+        // 4.点击的是 +号按钮
+            // 获取原来的数量
+            let num = $(e.target).prev().html() * 1
+            // 设置 + 之后的数量
+            $(e.target).prev().html(num + 1);
+            
+            // 计算价格
+            let i = e.target.dataset.index;
+            let checkInp = $('.checkInp').eq(i);
+            let p = $('.price').eq(i).html().replace('￥','')*1;
+            let tp = $('#totalPrice').html() *1;
+            if (checkInp[0].checked) { //checkInp[0] 将jQuery对象转成 DOM对象
+                tp += p;
+                $('#totalPrice').html(tp.toFixed(1))
+            } 
+        }
+    })
+
+
+
+
+  </script>
+</html>

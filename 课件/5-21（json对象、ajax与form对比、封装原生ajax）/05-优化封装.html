@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="btn">按钮</button>
+</body>
+<script>
+
+    function ajax(params){
+        let xhr = new XMLHttpRequest();
+        
+        let str = '';
+        for (const key in params.data) {
+            str = str +  key + '=' +params.data[key] +'&'
+        }
+        // offset=0&limit=10&
+        str = str.substr(0,str.length-1)
+        xhr.open(params.type,params.url + '?' + str);
+
+        xhr.send()
+
+        xhr.onreadystatechange = function(){
+            if (xhr.readyState == 4 && xhr.status == 200) {
+                let data = JSON.parse(xhr.responseText);
+                params.success(data);
+            }
+        }
+    }
+
+
+    btn.onclick = function(){
+        ajax({
+            type:"GET",
+            url:"https://autumnfish.cn/top/artists",
+            data:{
+                offset:0,
+                limit:10,
+            },
+            success:function(responseData){
+                // 界面操作
+                console.log(responseData);
+            }
+        })
+    }
+
+</script>
+</html>

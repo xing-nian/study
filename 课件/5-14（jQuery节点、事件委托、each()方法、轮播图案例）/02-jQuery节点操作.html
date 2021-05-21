@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>节点操作</title>
+</head>
+<body>
+    <ul id="list">
+        <li>item-1</li>
+        <li class="active">item-2</li>
+        <li>item-3</li>
+    </ul>
+</body>
+<script src="./jquery-3.6.0.min.js"></script>   
+<script>
+    // 1. 创建节点
+    let li = $('<li>');
+    li.html('新添加的li');
+
+    // 2. 插入节点
+    // append()  往ul里追加一个li 
+    // $('#list').append(li);
+
+    // appendTo() 把li放在ul中
+    li.appendTo($('#list'))
+
+    // 3. before()  在某个元素前面追加元素 
+    // after() 在某个元素后面追加元素
+    $('.active').before($('<li>').html('hello'));
+    $('.active').after($('<li>').html('world'))
+
+    // 4. remove 把指定节点移除
+    $('.active').remove()
+
+
+
+
+</script>
+</html>

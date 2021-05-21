@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ajax发送get请求练习</title>
+    <style>
+        img{
+            width: 200px;
+        }
+    </style>
+</head>
+<body>
+    <button id="btn">提交</button>
+    <button>1</button>
+    <button>2</button>
+    <button>3</button>
+    <button>4</button>
+    <button>5</button>
+    <ul id="list">
+
+    </ul>
+</body>
+<script src="../../../study4/jquery.js"></script>
+<script>
+
+/*
+ 接口地址：https://autumnfish.cn/top/artists
+ 请求方式：get
+ 请求参数：?offset=0&limit=30
+
+*/ 
+
+
+// $('btn').click(function(){
+    
+// //  1.创建请求对象
+// let xhr =new XMLHttpRequest();
+// // 2.指定请求方式，请求路径
+// xhr.open('get','https://autumnfish.cn/top/artists?offset=0&limit=5')
+// // 3.发送请求
+// xhr.send();
+// // 4.获取服务端返回的数据
+// xhr.onreadystatechange = function(){
+//     if (xhr.readyState == 4 && xhr.status == 200) {
+//         let data = xhr.responseText;
+//         console.log(data);
+//     }
+// }
+// })
+
+let list = document.querySelector('#list')
+let btns = document.getElementsByTagName('button');
+for(let i = 0; i<btns.length;i++){
+    btns[i].onclick = function(){
+        
+        //  1.创建请求对象
+let xhr =new XMLHttpRequest();
+// 2.指定请求方式，请求路径
+xhr.open('get',`https://autumnfish.cn/top/artists?offset=${i*10}&limit=10`)
+// 3.发送请求
+xhr.send();
+// 4.获取服务端返回的数据
+xhr.onreadystatechange = function(){
+    if (xhr.readyState == 4 && xhr.status == 200) {
+        let data = JSON.parse(xhr.responseText);
+        let html = ''
+        data.artists.forEach(singer =>{
+           html+=`
+            <li>
+                <img src = "${singer.picUrl}">
+                <h3>${singer.name}</h3>
+                </li>
+           `
+        });
+        list.innerHTML =  html;
+    }
+}
+    }
+}
+
+</script>
+</html>

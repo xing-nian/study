@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>华为手机</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        ul{
+            list-style: none;
+        }
+        a{
+            text-decoration: none;
+            color: #333;
+        }
+        /* 导航 */
+        .nav{
+            width: 100%;
+            position: fixed;
+            top: 0;
+        }
+        .nav-wraper{
+            width: 90%;
+            margin: 0 auto;
+        }
+        .black-nav{
+            height: 24px;
+            background-color: black;
+            color: #fff;
+        }
+        .slide-nav{
+            height: 120px;
+            background-color: gray;
+            display: none;
+        }
+        .nav-menu{
+            height: 80px;
+            background-color: #d0d0d0;
+        }
+        .arrow{
+            /* 注意：行标签设置旋转无效，需要改变标签性质 */
+            display: inline-block;
+            /* 过渡 */
+            transition: all .3s;
+        }
+        .black-nav span.active{
+            transform: rotate(-180deg);
+        }
+        .nav-menu ul{
+            height: 80px;
+        }
+        .nav-menu li{
+            float: left;
+            height: 80px;
+            line-height: 80px;
+            margin: 0 10px;
+            position: relative;
+        }
+        .nav-menu li::before{
+            content: "";
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            height: 2px;
+            background-color: red;
+            /* 初始 缩放比例为0 ，则宽度为0 */
+            transform: scale(0);
+            /* 加上过渡动画 */
+            transition: all .3s;
+        }
+        .nav-menu li:hover::before{
+            /* 鼠标悬停在li上的时候，缩放比例为1，则宽度为100% */
+            transform: scale(1);
+        }
+        /* 2.横幅 */
+        .banner{
+            width: 100%;
+            background-color: lavender;
+            margin-top: 104px;
+        }
+        .banner-wrap{
+            width: 100%;
+            height: 845px;
+        }
+        .banner-left{
+            width: 50%;
+            height: 845px;
+            float: left;
+            background-color: blanchedalmond;
+        }
+        .banner-right{
+            width: 50%;
+            height: 845px;
+            float: right;
+            background-color: lightpink;
+        }
+        .color-list{
+            height: 20px;
+            margin: 200px 0px 0 100px;
+        }
+        .color-list li{
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background-color: lightseagreen;
+            float: left;
+            margin: 0 20px;
+            position: relative;
+        }
+        .color-list li span{
+            display: block;
+            opacity: 0;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            /* position: absolute;
+            top: calc(50% - 15px);
+            left: calc(50% - 15px); */
+            
+            border: 1px solid #d0d0d0;
+            transform: scale(1);
+            transition: all .3s;
+        }
+        .color-list li:hover span{
+            transform: scale(1.5);
+            opacity: 1;
+        }
+        .color-list li span.active{
+            transform: scale(2);
+            opacity: 1;
+        }
+        .color-title{
+            margin-left: 100px;
+            margin-top: 40px;
+        }
+
+
+
+
+    </style>
+</head>
+<body>
+    <div class="nav">
+        <div class="nav-wraper">
+            <!-- 1.黑色导航 -->
+            <div class="black-nav">
+                <span>消费者业务网站</span>
+                <span class="arrow">↑</span>
+            </div>
+            <!-- 2.下拉菜单 -->
+            <div class="slide-nav"></div>
+            <!-- 3.nav-menu -->
+            <div class="nav-menu">
+                <ul>
+                    <li>手机</li>
+                    <li>平板电脑</li>
+                    <li>笔记本</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="banner">
+        <div class="banner-wrap">
+            <div class="banner-left">
+                <!-- 颜色选项 -->
+                <ul class="color-list">
+                    <li><span></span></li>
+                    <li><span></span></li>
+                    <li><span></span></li>
+                    <li><span></span></li>
+                    <li><span></span></li>
+                </ul>
+                <h4 class="color-title">秘银色</h4>
+            </div>
+            <div class="banner-right"></div>
+            <div class="banner-center"></div>
+        </div>
+    </div>
+</body>
+<script src="./js/jquery-3.6.0.min.js"></script>
+<script>
+
+    let colorArr = [
+        {color:'#f1f6fe',title:'秘银色'},
+        {color:'#fff',title:'釉白色'},
+        {color:'#000',title:'亮黑色'},
+        {color:'#797f71',title:'夏日胡杨'},
+        {color:'#fdbc5f',title:'秋日胡杨'},
+    ]
+    
+    colorArr.forEach((ele,i)=>{
+        $('.color-list li').eq(i).css({
+            backgroundColor:`${ele.color}`
+        })
+    })
+
+
+    // 1.点击 黑色导航
+    $('.black-nav').click(function(){
+        $('.slide-nav').slideToggle();
+        // 箭头旋转 -180deg
+        $('.arrow').toggleClass('active');
+    })
+
+    //2.点击 颜色选项
+    $('.color-list li').click(function(){
+        $('.color-list li').children().removeClass('active');
+        $(this).children().addClass('active');
+        let title = colorArr[$(this).index()].title;
+        $('.color-title').html(title);
+    }) 
+</script>
+</html>

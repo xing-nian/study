@@ -33,7 +33,7 @@ $('.color-button').click(function(){
             console.log($(".color-select").eq(dex).children().eq(1));
         $(".color-select").eq(dex).css("opacity", 1).children().css("opacity", 0).eq(1).css({ top: 80 })
               .animate({
-                top: 150,
+                top: 100,
                 opacity: 1,
               });
 
@@ -43,9 +43,9 @@ $('.color-button').click(function(){
                 .eq(dex)
                 .children()
                 .eq(0)
-                .css({ top: 320 })
+                .css({ top: 270 })
                 .animate({
-                  top: 240,
+                  top: 190,
                   opacity: 1,
                 });
             }, 250);
@@ -64,7 +64,7 @@ $(window).scroll(function () {
     let st = $("body,html").scrollTop();
     // console.log(st);
 
-    let top = st / 1.2;
+    let top = st / 1.1;
     if (st >= 104) {
       $("#ware-mask").css(
         {

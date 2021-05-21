@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>from表单发送post请求</title>
+</head>
+<body>
+    <!-- 
+        action:定义请求地址
+        method：定义请求方式
+        name属性：给服务器传递参数
+     -->
+    <form action="http://localhost:8080/register" method="POST">
+        <input type="text" id="uname" name="username">
+        <input type="password" id="psw" name="password">
+        <input type="submit" value="注册">
+    </form>
+</body>
+<script>
+    /*
+     接口文档：
+     1.服务器地址: http://localhost:8080/register?username=xx&password=xx
+     协议类型： http
+     服务器地址：本地服务 域名：localhost  对应IP：127.0.0.1
+     端口号：8080
+     资源路径：/register
+     请求参数：username  password
+
+     请求方式：get post 都可以
+     post请求：请求参数是放在请求体中
+     传递参数 无大小限制 
+     相对于get安全
+     
+
+     2.服务器返回的数据：
+     status：值为0 表示用户名已存在：值为1 表示用户注册成功
+     msg：显示具体注册状态的信息
+    */ 
+</script>
+</html>

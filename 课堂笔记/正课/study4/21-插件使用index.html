@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .wrap{
+            width: 100px;
+            margin: 50px auto;
+        }
+        .box1{
+            
+            width: 100px;
+            height: 100px;
+            background-color: skyblue;
+            transition: all 0.5;
+        }
+        .box2{
+            width: 100px;
+            height: 100px;
+            background-color: green;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <div class="box1">平移</div>
+        <div class="box2">旋转</div>
+    </div>
+    
+</body>
+<script src="./jquery.js"></script>
+<!-- 该插件依赖于 jQuery 所以要在jQuery之后引入 -->
+<script src="./jquery-animate-css-rotate-scale.js"></script>
+<script>
+    //  jQuery 中的animate() 方法 不支持transform属性
+    $('.box1').click(function(){
+        $(this).css({
+            transform: 'translateX(500px)'
+        })
+        // $(this).animate({
+        //     // transform: 'translateX(500px)'
+        // })
+        // 插件支持 旋转 和 缩放 做动画
+      
+    })
+    $('.box2').click(function(){
+            // $(this).rotate('90deg')
+            $(this).animate({
+                rotate:45 ,
+                scale:2
+            })
+        })
+</script>
+</html>

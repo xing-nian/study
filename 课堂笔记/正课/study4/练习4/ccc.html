@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+          .box1{
+              height: 100px;
+              text-align: center;
+              line-height: 100px;
+              box-sizing: border-box;
+              /* background-color: greenyellow; */
+          }
+          .box2{
+              width: 100%;
+              height: 230px;
+              line-height: 230px;
+              /* background-color: greenyellow; */
+              
+              border-bottom: 1px solid #e0e0e0;
+              
+              box-sizing: border-box;
+              /* background-color: skyblue; */
+          }
+          span{
+              margin-right: 20px;
+              font-size: 20px;
+              display: inline-block;
+              height: 100px;
+          }
+          span:hover{
+              color: #FF6A00;
+              cursor: pointer;
+          }
+          
+          .item{
+              height: 200px;
+              float: left;
+              padding-top: 30px;
+              border-right:1px solid #f0f0f0 ;
+          }
+          #xm,#hm{
+
+              margin-left: 500px;
+              display: none;
+          }
+
+          
+    </style>
+</head>
+<body>
+    <div class="box1">
+        <span class="s1">小米手机</span>
+        <span class="s2">Redmi 红米</span>
+        <span>电视</span>
+        <span>笔记本</span>
+        <span>家电</span>
+        <span>路由器</span>
+        <span>智能硬件</span>
+        <span>服务</span>
+        <span>社区</span>
+    </div>
+    <div class="box2">
+        <div id="xm">
+        <div class="item"><img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/85e44ea2405ff8414148bbde7446b137.png?thumb=1&w=160&h=110&f=webp&q=90" alt=""> </div>
+        <div class="item"><img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/1a359e9346e3c6ee8c9d8389e3fd9458.png?thumb=1&w=160&h=110&f=webp&q=90" alt=""> </div>
+        <div class="item"><img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/a1c45eadcedeb27b1cafca0359422da9.png?thumb=1&w=160&h=110&f=webp&q=90" alt=""> </div> 
+        <div class="item"><img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/56e3379b5422cb06e5c8a0c546445606.png?thumb=1&w=160&h=110&f=webp&q=90" alt=""> </div>
+        <div class="item"><img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/f9149ef3ba2c9025a4a21c98ae793808.png?thumb=1&w=160&h=110&f=webp&q=90" alt=""> </div>
+        <div class="item"><img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/963679eaf3937351e154600ab3448460.png?thumb=1&w=160&h=110&f=webp&q=90" alt=""> </div>
+        </div>
+        <div id="hm">
+            <div class="item"><img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/acd0f27496ccdf81ef42124c35e8bfc4.png?thumb=1&w=160&h=110&f=webp&q=90" alt=""> </div>
+            <div class="item"><img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/d07671f25a2b3a6c3d4fac189f28fbe9.png?thumb=1&w=160&h=110&f=webp&q=90" alt=""> </div>
+            <div class="item"><img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/ecebd50c7840bb03d7b5e3bfe4d439c2.png?thumb=1&w=160&h=110&f=webp&q=90" alt=""> </div> 
+            <div class="item"><img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/584add2c9cfdb9eefe7b642bf191773a.png?thumb=1&w=160&h=110&f=webp&q=90" alt=""> </div>
+            <div class="item"><img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/81808cd191332114f44d8d0cb0d0813a.png?thumb=1&w=160&h=110&f=webp&q=90" alt=""> </div>
+            <div class="item"><img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/31d0dc82068abcaa46464b4baa9fbbdf.jpg?thumb=1&w=160&h=110&f=webp&q=90" alt=""> </div>
+            </div>
+    </div>
+</body>
+<script src="../jquery.js"></script>
+<script>
+        
+        
+       $('.s1 ,.box2,.box1').hover(function(e){
+           $('#xm').css('display','block');
+        $('.box2').stop(true,false).slideDown(300)
+
+    },function(){
+        $('#xm').css('display','none');
+        $('.box2').stop(true,false).slideUp(300)
+        
+    })
+    $('.s2 ,.box2').hover(function(){
+           $('#hm').css('display','block');
+        $('.box2').stop(true,false).slideDown(300)
+
+    },function(){
+        $('#hm').css('display','none');
+        $('.box2').stop(true,false).slideUp(300)
+        
+    })
+  
+    
+    
+  
+</script>
+</html>

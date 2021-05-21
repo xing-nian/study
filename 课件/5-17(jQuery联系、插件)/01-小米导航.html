@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>小米导航</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        ul{
+            list-style: none;
+        }
+        a{
+            color: #333;
+            text-decoration: none;
+        }
+        .wrap{
+            width: 800px;
+            margin: 50px auto;
+        }
+        ul.list{
+            background-color:orange;
+            height: 50px;
+            position: relative;
+        }
+        li.item{
+            float: left;
+            height: 50px;
+            padding: 0px 20px;
+        }
+        li.item>a{
+            display: inline-block;
+            height: 50px;
+            line-height: 50px;
+        }
+        .con{
+            display: none;
+            position: absolute;
+            left: 0;
+            top: 50px;
+            height: 100px;
+            padding: 20px 0;
+            background-color: paleturquoise;
+            width: 800px;
+
+        }
+        .con ul li{
+            float: left;
+            width: 50px;
+            height: 50px;
+            margin-left: 10px;
+            background-color: peachpuff;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <ul class="list">
+            <li class="item">
+               <a href="#" class="nav">小米手机</a> 
+               <div class="con">
+                   <ul>
+                       <li>手机1</li>
+                       <li>手机2</li>
+                       <li>手机3</li>
+                       <li>手机4</li>
+                   </ul>
+               </div>
+            </li>
+            <li class="item">
+                <a href="#" class="nav">红米手机</a> 
+                <div class="con">
+                    <ul>
+                        <li>红米手机1</li>
+                        <li>红米手机2</li>
+                        <li>红米手机3</li>
+                        <li>红米手机4</li>
+                    </ul>
+                </div>
+             </li>
+             <li class="item">
+                <a href="#" class="nav">小米电视</a> 
+                <div class="con">
+                    <ul>
+                        <li>电视1</li>
+                        <li>电视2</li>
+                        <li>电视3</li>
+                        <li>电视4</li>
+                    </ul>
+                </div>
+             </li>
+        </ul>
+    </div>
+</body>
+<script src="./jquery-3.6.0.min.js"></script>
+<script>
+    $('.item').hover(function(e){
+        // console.log(e.relatedTarget); // 与目前绑定事件元素相关联的元素
+        // 鼠标移入
+        // 如果移入时相关联的元素不是li，就做动画；否则就没有动画
+        if (e.relatedTarget.nodeName !== 'LI') {
+            $('.con').eq($(this).index()).slideDown();  //显示
+        } else {
+            $('.con').eq($(this).index()).show()
+        }
+        
+
+    },function(e){
+        // 鼠标移出
+        console.log(e.relatedTarget);
+        if (e.relatedTarget.nodeName !== 'LI') {
+            $('.con').eq($(this).index()).slideUp(); //隐藏
+        } else {
+            $('.con').eq($(this).index()).hide()
+        } 
+        
+    })
+
+</script>
+</html>

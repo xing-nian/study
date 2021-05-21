@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>json数据格式</title>
+</head>
+<body>
+    
+</body>
+<script>
+    // 1.什么是json？
+    // json是一种数据交换格式，拥有固定格式的字符串。
+    let json1 = '{"name":"jon","age":28,"sex":"男"}';
+    let json2 = '[{"title":"html","price":108},{"title":"css","price":99}]';
+
+    // 2. JSON.parse(jsonStr)将 json字符串 转换为 对象
+    let obj1 = JSON.parse(json1);
+    console.log(obj1);
+    console.log(obj1.name);
+
+    let obj2 = JSON.parse(json2)
+    console.log(obj2);
+    console.log(obj2[0].price);
+
+    // 3. 将对象 转换为 json字符串
+    let p = {
+        username:"Jon",
+        password:'123456',
+        hobby:['打球','唱歌'],
+        sex:'男',
+        address:'郑州市',
+        email:'123@qq.com'
+    }
+    let str = JSON.stringify(p);
+    console.log(str);
+
+
+</script>
+</html>

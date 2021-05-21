@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>华为筛选功能</title>
+        <style>
+            /* #region 基本样式 */
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+                user-select: none;
+            }
+            ul {
+                list-style: none;
+            }
+            body {
+                height: 3000px;
+            }
+            .nav {
+                width: 100%;
+                height: 100px;
+                background-color: yellow;
+                line-height: 100px;
+                text-align: center;
+                color: white;
+                font-size: 40px;
+            }
+            .filter-wrapper {
+                height: 70px;
+                position: relative;
+            }
+            .filter {
+                height: 100%;
+                background-color: lightblue;
+                width: 100%;
+                padding: 0 80px;
+                /* overflow: hidden; */
+                position: relative;
+            }
+            .filter > div {
+                float: left;
+            }
+            .filter > div:first-child {
+                line-height: 70px;
+                width: 10%;
+                position: relative;
+            }
+            .filter .filter-reset {
+                position: absolute;
+                top: 60px;
+                left: 0;
+                opacity: 0;
+            }
+            .filter .menus {
+                width: 70%;
+                display: none;
+                opacity: 0;
+                /* display: block;
+                opacity: 1; */
+                /* 初始值 */
+                margin-top: 20px;
+            }
+            .filter .menus > div {
+                float: left;
+                margin-top: 25px;
+                margin-right: 50px;
+            }
+            .filter .menus h1 {
+                font-size: 20px;
+                font-weight: bold;
+                font-family: "宋体";
+                margin-bottom: 20px;
+                padding-left: 4px;
+            }
+            .filter .menus p {
+                margin: 5px 0;
+                cursor: pointer;
+                color: gray;
+                font-size: 14px;
+                padding: 4px 8px;
+            }
+            .filter .close {
+                width: 20%;
+                line-height: 70px;
+                text-align: right;
+                position: absolute;
+                right: 80px;
+                top: 0px;
+                opacity: 0;
+            }
+            .other-content {
+                width: 100%;
+                height: 400px;
+                background-color: red;
+                color: white;
+                font-size: 30px;
+                padding: 80px;
+            }
+            .clear {
+                clear: both;
+            }
+            .filter .filter-result {
+                width: 50%;
+                /* height: 70px; */
+                /* background-color: gray; */
+                opacity: 0;
+                /* transition: all 0.5s; */
+                /* 沿y轴平移 70->0 */
+                /* transform: translateY(70px); */
+                
+                position: absolute;
+                left: 200px;
+                top: 70px;
+                pointer-events: none;
+                padding-top: 20px;
+            }
+            /* #endregion */
+            /* #region 筛选部分的动态样式 */
+            .position {
+                position: absolute;
+                top: 0;
+                left: 0;
+            }
+            .fixed {
+                position: fixed;
+                top: 0;
+                left: 0;
+            }
+            .menus p.active {
+                background-color: yellow;
+                border-radius: 10px;
+            }
+            /* 被选中的p标签 展示在filter-result中 */
+            .filter-select {
+                background-color: #999;
+                padding: 0 10px;
+                border-radius: 6px;
+                margin-right: 6px;
+                margin-bottom: 10px;
+                float: left;
+                font-size: 13px;
+                cursor: pointer;
+                height: 30px;
+                line-height: 30px;
+            }
+            /* #endregion */
+        </style>
+    </head>
+    <body>
+        <!-- 导航条 -->
+        <div class="nav">导航部分</div>
+        <!-- 筛选 -->
+        <div class="filter-wrapper">
+            <div class="filter">
+                <div class="btns">
+                    <button class="filter-btn">筛选</button>
+                    <br />
+                    <button class="filter-reset">重置</button>
+                </div>
+                <div class="menus">
+                    <div class="m-xl">
+                        <h1>系列</h1>
+                        <p>HUAWEI Mate系列</p>
+                        <p>HUAWEI Mate系列</p>
+                        <p>HUAWEI Mate系列</p>
+                        <p>HUAWEI Mate系列</p>
+                        <p>HUAWEI Mate系列</p>
+                    </div>
+                    <div class="m-jg">
+                        <h1>系列</h1>
+                        <p>0-999</p>
+                        <p>0-1999</p>
+                        <p>0-2999</p>
+                        <p>0-3999</p>
+                        <p>0-4999</p>
+                    </div>
+                    <div class="m-rl">
+                        <h1>容量</h1>
+                        <p>64GB</p>
+                        <p>128GB</p>
+                        <p>256GB及以上</p>
+                    </div>
+                    <div class="m-5g">
+                        <h1>是否支持5G</h1>
+                        <p>支持</p>
+                        <p>不支持</p>
+                    </div>
+                    <div class="m-other">
+                        <h1>其它</h1>
+                        <p>NFC</p>
+                        <p>40W快速充电</p>
+                        <p>徕卡摄像头</p>
+                    </div>
+                </div>
+                <div class="filter-result"></div>
+                <div class="close">删除</div>
+            </div>
+        </div>
+        <div class="clear"></div>
+        <div class="other-content">其它内容</div>
+    </body>
+    <script src="./jquery-3.6.0.min.js"></script>
+    <script>
+        // 1点击筛选按钮
+        let isSlide = true;
+        $('.filter-btn').click(function(){ //展开
+            if (isSlide) {
+                // filter容器的高度 从 70-->300
+                $('.filter').animate({
+                    height:300
+                })
+                // menus 显示 opacity 从 0-->1
+                $('.menus')
+                .css('display','block')
+                .animate({
+                    opacity:1
+                })
+                // 重置按钮
+                $('.filter-reset').animate({
+                    opacity:1
+                })
+                // 删除按钮
+                $('.close').animate({
+                    opacity:1
+                })
+                // 隐藏 筛选的结果
+                $('.filter-result').css({
+                    opacity:0,
+                    // transform:'translateY(70px)'
+                    top:70
+                })
+                
+            }else{// 折叠
+                // filter容器的高度 从 300-->70
+                $('.filter').animate({
+                    height:70
+                })
+                // menus 显示 opacity 从 0-->1
+                $('.menus')
+                .animate({
+                    opacity:0
+                },function(){
+                    // 动画结束， display从 block-->none
+                    $(this).css('display','none')
+
+                    // 先清空filter-result中的内容
+                    $('.filter-result').html('');
+                    // 显示筛选结果
+                    menusArr.forEach((ele_p)=>{
+                        ele_p.addClass('filter-select')
+                        $('.filter-result').append(ele_p)
+                    })
+                    $('.filter-result').animate({
+                        opacity:1,
+                        // transform:'translateY(0)'
+                        top:0
+                    })
+
+
+                })
+                // 重置按钮
+                $('.filter-reset').animate({
+                    opacity:0
+                })
+                // 删除按钮
+                $('.close').animate({
+                    opacity:0
+                })
+            }
+            isSlide = !isSlide
+        })
+
+        // 给每一个p标签添加自定义属性 ，能够唯一标识p标签
+        $('.menus p').each(function(i,ele){
+            // console.log(ele);
+            ele.dataset.index = i;
+        })
+
+        // 2.点击p标签
+        let menusArr = [];
+        $('.menus').on('click','p',function(){
+            // 切换 选中/取消选中 的样式
+            $(this).toggleClass('active');
+            if ($(this).hasClass('active')) { //选中 添加到数组中
+                // 注意：不能直接将 $(this) push 到数组中，因为这是浅拷贝
+                let p = $(this).clone()
+                menusArr.push(p)
+            } else { //取消选中 从数组中移除
+                // findIndex() 找到满足指定条件元素的索引
+               let index =  menusArr.findIndex((ele)=>{
+                    return ele.attr('data-index') == $(this).attr('data-index')
+                })
+                // 从数组中删除已经存在的元素
+                // splice()从哪个位置删除 删除几个元素
+                menusArr.splice(index,1);
+                console.log(menusArr);
+            }
+
+        })
+    </script>
+</html>
