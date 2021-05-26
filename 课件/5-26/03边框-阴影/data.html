@@ -1,0 +1,36 @@
+<!--
+ * @Description: 微信 YZS43507802
+ * @version: 1.0
+ * @Company: 梦想
+ * @Author: yinZhaoSheng
+ * @Date: 2021-05-25 00:48:37
+ * @LastEditors: yinZhaoSheng
+ * @LastEditTime: 2021-05-26 16:25:55
+ * @FilePath: \H5+CSS3\CSS3\03边框-阴影\data.html
+-->
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			span:before{
+				/* 注意 attr  不加引号 */
+				 content: attr(data-ddwq);
+				 color: red;
+				 font-size: 22px;
+				 
+			}
+			span:after{
+				 content: "/件";
+				 color: red;
+				 font-size: 22px;
+			}
+		</style>
+	</head>
+	<body>
+		<span data-ddwq="白菜">99</span>
+		<br />
+		<span data-ddwq="萝卜">65</span>
+	</body>
+</html>

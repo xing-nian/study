@@ -1,0 +1,56 @@
+<!--
+ * @Author: xing-nian
+ * @Date: 2021-05-25 10:05:24
+ * @LastEditors: your name
+ * @LastEditTime: 2021-05-25 19:04:58
+ * @Description: file content
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>4-cookie</title>
+  </head>
+  <body>
+    <!-- cookie 一般存储多页面 共享信息  -->
+    <button>存储</button>
+    <button>删除</button>
+    <button>获取</button>
+    <button>修改</button>
+    <script>
+      let saveBtn = document.querySelector("button");
+      let daleteBtn = document.querySelectorAll("button")[1];
+      let getBtn = document.querySelectorAll("button")[2];
+      let changeBtn = document.querySelectorAll("button")[3];
+      saveBtn.onclick = function () {
+        var deadTime = new Date();
+        var days = 1 * 3600 * 24 * 1000;
+
+        deadTime.setTime(deadTime.getTime() + days);
+        console.log("截止日期", deadTime);
+        document.cookie = `name=前端;expires=${deadTime}`;
+        document.cookie = "class=74";
+      };
+
+      daleteBtn.onclick = function () {
+        // 删除就是过期
+        var deadTime = new Date();
+        deadTime.setTime(deadTime.getTime() - 1);
+        //2个操作 过期时间
+        //  值为空
+        document.cookie = `class='';expires=${deadTime}`;
+      };
+
+      getBtn.onclick = function () {
+        console.log("获取", document.cookie);
+        // 获取字符串
+      };
+      changeBtn.onclick = function () {
+        document.cookie = "name=盖住";
+      };
+    </script>
+  </body>
+</html>

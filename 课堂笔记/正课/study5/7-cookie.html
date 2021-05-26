@@ -1,0 +1,43 @@
+<!--
+ * @Author: xing-nian
+ * @Date: 2021-05-26 09:34:51
+ * @LastEditors: your name
+ * @LastEditTime: 2021-05-26 09:49:14
+ * @Description: file content
+-->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button onclick="saveCookie()">存储</button>
+    <button onclick="getCookie()">获取</button>
+    <button onclick="modifyCookie()">修改</button>
+    <button onclick="deleteCookie()">删除</button>
+  </body>
+  <script src="../study4/jquery.js"></script>
+  <script src="https://cdn.bootcdn.net/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.js"></script>
+  <script>
+    //   存储
+    function saveCookie() {
+      $.cookie("year", "2021");
+      $.cookie("mouth", "5月");
+    }
+    // 获取
+    function getCookie() {
+      console.log($.cookie("year"));
+    }
+    // 修改
+    function modifyCookie() {
+      $.cookie("year", "2020");
+    }
+    // 删除
+    function deleteCookie() {
+      $.removeCookie("year");
+    }
+  </script>
+</html>

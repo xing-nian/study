@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>引入外部字体</title>
+		<link href="css/iconfont.css" rel="stylesheet" />
+		<style type="text/css">
+			div{
+				font-size: 40px;
+				margin-top: 100px;
+				font-family: yzs;
+			}
+			/* 通过@font-face引入外部字体 */
+			@font-face {
+				/* 给引入的字体取名字 */
+				font-family:yzs;
+				/* 字体存放的路径 */
+				src: url(font/font.otf);
+			}
+		
+			/* 
+			阿里字体图标
+			https://www.iconfont.cn */
+		</style>
+	</head>
+	<body>
+		<div><span class="iconfont icon-search"></span>引入外部字体引入外部字体引入外部字体</div>
+	</body>
+</html>

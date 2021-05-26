@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>弹性盒子</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+         ul{
+             list-style: none;
+             /* 给容器元素添加弹性布局 */
+             display: flex;
+             flex-direction: row; /*主轴的方向*/
+             /* flex-direction: column; */
+         }
+         li{
+             /* item 项  */
+            
+             flex: 1; /*  份数 比例 */
+             border-right: 1px solid red;
+             color: skyblue;
+         }
+         li:last-child{
+             border-right: none;
+         }
+         li:nth-child(2){
+             order: 1; /*排在后面 0为默认值不变化 值大于0 值最大的在最后*/
+         }
+         li:nth-child(1){
+             order: 3;
+         }
+    </style>
+</head>
+<body>
+    <!-- 
+        弹性盒子  伸缩布局   弹性布局
+        1.给容器元素添加弹性布局
+        2.子元素设置相应的弹性样式
+
+
+
+
+     -->
+    
+    <ul>
+        <li>微信</li>
+        <li>通讯录</li>
+        <li>朋友圈</li>
+        <li>我的</li>
+    </ul>
+</body>
+</html>

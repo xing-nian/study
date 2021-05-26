@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <ul>
+        <li> 第三阶段 承上启下 H5 + CSS3 </li>
+        <li>JS 核心 vue react</li>
+        <li>布局 css js </li>
+        <li> class id</li>
+        <li> cookie 存储 修改 删除 </li>
+        <li> Xmind </li>
+        <li>重绘 回流</li></li>
+        <li>地址栏 URL 回车</li>
+        <li></li>
+        <li></li>
+        <script>
+            // 关闭界面定时器
+            // timer1  定时器的ID 唯一的 是累加的 从 1开始
+            var timer1 = setInterval(function () {
+                // console.log("--------",i);
+            }, 100)
+            //  模拟 界面当中 有很多定时器 
+            for (var i = 0; i < 10; i++) {
+                setInterval(function () {
+                }, 100)
+            }
+            setTimeout(function(){})
+            // clearInterval(timer1)
+            var timer2 = setInterval(function () { })
+            console.log("现在界面有",timer2,"个定时器");
+            // 关闭页面所有定时器
+            for (var n = 1; n <= timer2; n++) {
+                clearInterval(n)
+            }
+        </script>
+    </ul>
+</body>
+
+</html>

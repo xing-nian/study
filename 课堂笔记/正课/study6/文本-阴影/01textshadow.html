@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+	<meta charset="UTF-8">
+	<meta name="author" name="yinZhaoSheng">
+	<title>文本阴影</title>
+	<script>	
+	   /*
+       *阴影分为文字阴影和盒模型阴影(盒阴影)，可以用来代替具有阴影效果的图片，减少页面对服务器请求的压力
+       * text-shadow 文本阴影  
+       *box-shadow 图层阴影  有时候会用盒阴影代替边框使用，因为盒阴影不占物理空间，而边框会占据空间
+       *text-shadow(x-offset,y-offset,blur-radius ,color )
+       *1 x轴偏移量:指阴影水平偏移量，值可以是正负，如果是正值，则阴影在对象的右边，负值阴影对象的左边
+       *2 y轴偏移量：指阴影垂直偏移量，值可以是正负，如果是正值，则阴影在对象的底部，负值阴影对象的顶部
+       *3 阴影模糊半径：此参数可选，只能是正值，0表示没有模糊效果，值越大阴影就越模糊   
+       *4 阴影颜色：此参数可选，可以使用rgba,颜色单词，16进制颜色等来写
+       *  需要注意的是 text-shadow可以有多组数值，中间用,隔开就行
+       */</script>
+	<style>
+		.wrap{
+			width: 1000px;;margin: 0 auto;
+		}
+		.wrap div{
+			float: left;width: 400px;margin: 20px 20px 0 0;
+			padding:30px; color:#FFF; background: #666;
+			font: bold 55px  "微软雅黑";
+			text-align: center;
+		}
+		/*文字发光*/
+		.wrap div:nth-child(1){
+			text-shadow:  0 0 20px red;
+		}
+		/*多个模糊半径*/
+		.wrap div:nth-child(2){
+			text-shadow:  0 0 5px #FFF,
+						  0 0 10px #FFF,
+						  0 0 15px #FFF,
+						  0 0 40px #FF00DE,
+						  0 0 70px #FF00DE;
+		}
+			/*投影效果 模糊值一定是0 增加质感*/
+		.wrap div:nth-child(3){
+			color: #000;
+			text-shadow:  15px 15px 0 #999;
+		}
+		/*浮雕效果 模糊值一定是0 增加质感*/
+		.wrap div:nth-child(4){
+			color:#CCC;
+			text-shadow:  -1px -1px 0 #FFF,
+						  1px 1px 0 #333,
+						  1px 1px 0 #444;
+		}
+		/*模糊效果*/
+		.wrap div:nth-child(5){
+			color:transparent;
+			text-shadow:  0 0 5px #F96;
+		}
+		/*模糊浮雕  模糊都必须设置
+		1 transparent文本颜色为透明
+		2 不设置任何方向的偏移
+		*/
+		.wrap div:nth-child(6){
+			color:transparent;
+			text-shadow: 0 0 6px #F96,
+						 -1px -1px  #FFF,
+						 1px -1px 0 #444;
+		}
+		/*内陷文本  相当于文本的影子偏移量设置一点点给人微妙的突出感觉
+ 			文字颜色设置比背景色暗
+ 			阴影颜色比背景稍微亮一点点
+		*/
+		.wrap div:nth-child(7){
+			color:#566F89;background: #C5DFF8;
+			text-shadow:  1px 1px 0 #E4F1FF;
+		}
+		/*描边效果 不设置模糊值*/
+		.wrap div:nth-child(8){
+			color:#FFF;
+			text-shadow:  1px 1px 0 #F96,
+						  -1px -1px 0 #F96;
+		}
+		/*3D文字*/
+		.wrap div:nth-child(9){
+			color:#FFF;
+			text-shadow:  1px 1px rgba(197,233,248,0.8),
+						  2px 2px rgba(197,233,248,0.8),
+						  3px 3px rgba(197,233,248,0.8),
+						  4px 4px rgba(197,233,248,0.8),
+						  5px 5px rgba(197,233,248,0.8),
+						  6px 6px rgba(197,233,248,0.8);
+		}
+		.wrap div:nth-child(10){
+			color:#FFF;
+			text-shadow:  -1px -1px rgba(197,233,248,0.8),
+						  -2px -2px rgba(197,233,248,0.8),
+						  -3px -3px rgba(197,233,248,0.8),
+						  -4px -4px rgba(197,233,248,0.8),
+						  -5px -5px rgba(197,233,248,0.8),
+						  -6px -6px rgba(197,233,248,0.8);
+		}
+		/*复古风格
+		 2个文本阴影合成  注意
+		 1 第一个阴影和背景色相同
+		 2 文本颜色和第二个阴影色相同*/
+		.wrap div:nth-child(11){
+			color:#EEE;
+			text-shadow:  5px 5px 0 #666,
+						  7px 7px 0 #eee;
+		}
+		/*补色效果
+		文字阴影和文本颜色使用不同rgba组合*/
+		.wrap div:nth-child(12){
+			color:rgba(255,179,140,0.5);
+			text-shadow: 3px 3px 0 rgba(180,255,0,0.5);
+						 
+		}
+	</style>
+</head>
+<body>
+ <div class="wrap clearfix">
+ 	<div>HTML5 </div>
+ 	<div>HTML5 </div>
+ 	<div>HTML5 </div>
+ 	<div>HTML5 </div>
+ 	<div>HTML5 </div>
+ 	<div>HTML5 </div>
+ 	<div>HTML5 </div>
+ 	<div>HTML5 </div>
+ 	<div>HTML5 </div>
+ 	<div>HTML5 </div>
+ 	<div>HTML5 </div>
+ 	<div>HTML5 </div>
+ </div>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+

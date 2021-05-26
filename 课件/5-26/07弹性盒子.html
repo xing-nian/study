@@ -1,0 +1,83 @@
+<!--
+ * @Description: 微信 YZS43507802
+ * @version: 1.0
+ * @Company: 梦想
+ * @Author: yinZhaoSheng
+ * @Date: 2021-05-26 14:23:07
+ * @LastEditors: yinZhaoSheng
+ * @LastEditTime: 2021-05-26 14:51:09
+ * @FilePath: \H5+CSS3\05-26\07弹性盒子.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>弹性盒子</title>
+    <style>
+        ul {
+            /* width: 100px; */
+            list-style: none;
+            /* 容器 添加  弹性布局 */
+            display: flex;
+            border: 1px solid greenyellow;
+            /* column reverse 竖着  主轴的方向  */
+            flex-direction: row;
+        }
+
+        li {
+            border-right: 1px solid #dedede;
+            /* item  项 
+                份数  比例
+             */
+            flex: 1;
+            text-align: center;
+            color: orange;
+        }
+       li:nth-child(2){
+           /* flex:5; */
+           /* width: 100px; */
+           order:10;
+       }
+       li:nth-child(3){
+           order:2;
+       }
+        li:last-child {
+            /* border-right: none */
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 
+        浏览器支持情况  IE 567 
+        移动端用的多 
+        
+             弹性盒子 伸缩布局  弹性布局
+            1.  容器元素 添加 弹性布局   flex
+            2.  子元素设置 相应的 弹性样式
+
+
+              父标签 容器标签的属性 
+                display: flex;
+                flex-direction: row;  主轴的方向 column竖着
+
+              子标签 item的属性
+                flex  份数
+                order 顺序 默认是0 
+
+             
+     -->
+    <ul>
+        <li>微信 -1</li>
+        <li>通讯录-2</li>
+        <li>朋友圈-3</li>
+        <li>我的-4</li>
+        <li>test-5</li>
+
+    </ul>
+</body>
+
+</html>

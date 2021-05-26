@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery-post</title>
+    <style>
+        .error {
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <form id="form">
+        <input type="text" placeholder="用户名" name="u1" id="uname"> <span class="error"></span>
+        <input type="text" placeholder="密码" name="p1" id="psw">
+        <input type="submit" value="提交" id="sub">
+    </form>
+    <script src="./jquery-3.6.0.min.js"></script>
+    <script>
+        var oinput = document.querySelector("#sub")
+        oinput.onclick = function (e) {
+            e.preventDefault();
+            //  第一个参数是 url 地址
+            // 第二个参数是 可选的 请求参数 在请求体里面 form data
+            // 第三个参数是 成功回调
+            // post请求 比 get请求安全 
+            $.post("http://localhost:8080/register", {
+                test: "post",
+                username: uname.value,
+                password: psw.value
+            }, function (res) {
+                console.log(res);
+                if (res.status !== 0) {
+                    alert("注册成功")
+                } else {
+                    $(".error").html(res.msg)
+                }
+            })
+        }
+    </script>
+</body>
+
+</html>

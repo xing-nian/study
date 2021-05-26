@@ -1,0 +1,57 @@
+<!--
+ * @Description: 微信 YZS43507802
+ * @version: 1.0
+ * @Company: 梦想
+ * @Author: yinZhaoSheng
+ * @Date: 2021-05-26 11:21:15
+ * @LastEditors: yinZhaoSheng
+ * @LastEditTime: 2021-05-26 11:33:03
+ * @FilePath: \H5+CSS3\05-26\03异常处理.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>异常处理</title>
+</head>
+
+<body>
+    <script>
+        /**
+         *   异常处理  普通的前端用的不多 主要是后端使用
+         *   
+         *  try 尝试 尽力
+         * 
+         *  finally 最后 最终的
+         * 
+         * throw  仍
+         */
+        // add()
+        try {
+            //包裹的可能有异常的代码
+            add()
+        }
+        catch(err){
+            //处理错误的代码块  异常的时候进来
+            console.log("catch 有异常情况 进来:",err);
+            throw(err)
+            
+            // 抛出异常信息 自定义异常信息
+            // throw("add is not defined")
+            console.log("throw 后面的代码不执行了");
+        }
+        finally{
+            //有没有异常都会进来
+            console.log("finally");
+        }
+
+
+
+        console.log("代码到这里了吗");
+    </script>
+</body>
+
+</html>

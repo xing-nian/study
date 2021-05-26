@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<style type="text/css">
+	body {
+				background: black;
+			}
+			
+			p {
+				width: 400px;
+				margin: 100px auto;
+			/*	设置字体大小*/
+				font-size: 80px;
+				/*设置字体粗细:
+				关键字 100 ~ 900 为字体指定了 9 级加粗度;
+				100 对应最细的字体变形，900 对应最粗的字体变形。
+				数字 400 等价于 normal，
+				而 700 等价于 bold
+				lighter bolder比父亲的文字粗一些*/
+				font-weight: 900;
+				/*字体样式,可以设置斜体*/
+				font-style: normal;
+				/*
+				text-shadow: 文字阴影,有四个参数;
+				第一个x代表水平方向的偏移量,正 向右偏移,负,向左偏移
+				第二个y代表垂直方向的偏移量,正 向下偏移,负,向上偏移
+				第三个值,代表模糊值,值越大越模糊
+				第四个,是阴影的颜色
+				*/
+				
+				color: #fff;
+				font-family: "微软雅黑 arial black";
+				
+			}
+			
+			.one {
+				text-shadow: 0 1px 0 #cccccc, 0 2px 0 #c9c9c9, 0 3px 0 #bbbbbb, 0 4px 0 #b9b9b9, 0 5px 0 #aaaaaa;
+			}
+			
+			.two {
+				position: relative;
+				color: hsl(200, 75%, 35%);
+				text-shadow: 0 0 1px currentColor, -1px -1px 1px hsl(200, 75%, 45%), 0 -1px 1px hsl(200, 75%, 40%), -1px 0 1px hsl(200, 75%, 35%), 1px -1px 1px hsl(200, 75%, 35%), 1px 0 1px hsl(200, 75%, 30%), 1px 1px 1px hsl(200, 75%, 30%), 0 1px 1px hsl(200, 75%, 30%), -1px 1px 1px hsl(200, 75%, 30%), -2px -2px 1px hsl(200, 75%, 75%), -2px -1px 1px hsl(200, 75%, 60%), -2px 0 1px hsl(200, 75%, 60%), -1px -2px 1px hsl(200, 75%, 50%), 0 -2px 1px hsl(200, 75%, 50%), 1px -2px 1px hsl(200, 75%, 50%), 2px -2px 1px hsl(200, 75%, 35%), 2px -1px 1px hsl(200, 75%, 35%), 2px 0 1px hsl(200, 75%, 30%), 2px 1px 1px hsl(200, 75%, 10%), 2px 2px 1px hsl(200, 75%, 10%), 1px 2px 1px hsl(200, 75%, 15%), 0 2px 1px hsl(200, 75%, 10%), -1px 2px 1px hsl(200, 75%, 20%), -2px 2px 1px hsl(200, 75%, 20%), -2px 1px 1px hsl(200, 75%, 10%), -3px -3px 1px #006, -2px -3px 1px #006, -1px -3px 1px #006, 0 -3px 1px #006, 1px -3px 1px #006, 2px -3px 1px #006, 3px -3px 1px #006, 3px -2px 1px #006, 3px -1px 1px #006, 3px 0 1px #006, 3px 1px 1px #006, 3px 2px 1px #006, 3px 3px 2px #006, 2px 3px 1px #006, 1px 3px 1px #006, 0 3px 1px #006, -1px 3px 1px #006, -2px 3px 1px #006, -3px 3px 1px #006, -3px 2px 1px #006, -3px 1px 1px #006, -3px 0 1px #006, -3px -1px 1px #006, -3px -2px 1px #006;
+			}
+		}
+		.two:before {
+			position: absolute;
+			content: 'OutlinedA';
+			top: -4px;
+			margin-left: -4px;
+			color: transparent;
+			text-shadow: 1px 1px 3px hsl(200, 75%, 75%);
+			opacity: .4;
+		}
+	}
+		</style>
+	</head>
+
+	<body>
+		<p class="one">字体样式</p>
+		<p class="two">OutlinedA</p>
+	</body>
+
+</html>

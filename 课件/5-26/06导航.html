@@ -1,0 +1,47 @@
+<!--
+ * @Description: 微信 YZS43507802
+ * @version: 1.0
+ * @Company: 梦想
+ * @Author: yinZhaoSheng
+ * @Date: 2021-05-26 14:14:11
+ * @LastEditors: yinZhaoSheng
+ * @LastEditTime: 2021-05-26 14:22:47
+ * @FilePath: \H5+CSS3\05-26\06导航.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>导航</title>
+    <style>
+        ul{
+            list-style: none; 
+        }
+        li{
+            float: left;
+            /* 注释 注意必须有空格  */
+            width: calc((100% - 3px)/4);
+            /* width: 24%; */
+            text-align: center;
+            border-right: 1px solid  red;
+            /* 盒模型 解决方案 */
+            /* box-sizing: border-box; */
+        }
+        li:last-child{
+            border-right:none
+        }
+    </style>
+</head>
+<body>
+    <nav> 导航 </nav>
+    <span> nav 新增的语义化标签</span>
+    <ul>
+        <li>微信</li>
+        <li>通讯录</li>
+        <li>朋友圈</li>
+        <!-- <li>我的</li> -->
+    </ul>
+</body>
+</html>

@@ -1,0 +1,100 @@
+<!--
+ * @Description: 微信 YZS43507802
+ * @version: 1.0
+ * @Company: 梦想
+ * @Author: yinZhaoSheng
+ * @Date: 2021-05-25 11:39:39
+ * @LastEditors: yinZhaoSheng
+ * @LastEditTime: 2021-05-25 16:37:45
+ * @FilePath: \H5+CSS3\05025\03cookie封装.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>封装</title>
+</head>
+
+<body>
+    <input type="text" placeholder="用户名" id="uname">
+    <input type="text" placeholder="密码" id="psw"> <br>
+    <a href="./04detail.html">详情页</a>
+    <button onclick="sCookie()"> 存储</button> <br>
+    <button onclick="mCookie()"> 修改</button> <br>
+    <button onclick="gCookie()"> 获取</button> <br>
+    <button onclick="dCookie()"> 删除</button>
+    <script>
+        //键
+        //值
+        // 存储  按钮
+        function sCookie() {
+            savaCookie(uname.value, psw.value)
+        }
+        // 修改按钮
+        function mCookie() {
+            savaCookie(uname.value, psw.value)
+        }
+
+
+        // 获取按钮
+        function gCookie() {
+           var userValue =   getCookie(uname.value)
+           console.log("根据指定的 key获取对应的cookie value值:",userValue);
+
+        }
+        //删除按钮
+        function dCookie() {
+            // 过期时间是负的
+            savaCookie(uname.value, '', -1)
+        }
+        //***********************************封装
+
+        // savaCookie(name,value)
+        // 封装为了方便 用起来顺手
+        //从使用者的角度考虑 怎么用
+        // 存储
+        function savaCookie(name, cookie, d = 7) {
+            var deadTime = new Date();
+            var days = d * 24 * 60 * 60 * 1000
+            // 怎么把毫秒数转为日期
+            deadTime.setTime(deadTime.getTime() + days)
+            console.log("截止日期", deadTime);
+            document.cookie = `${name}=${cookie};expires=${deadTime}`
+        }
+
+        //获取cookie 
+        function getCookie(key) {
+             //cookie字符串 并不是json字符串
+            // name=123; yzs=456; age=30;
+            console.log("获取:", document.cookie);
+            var cookieArr = document.cookie.split(";")
+            console.log("cookie转为数组:", cookieArr);
+            for (const k in cookieArr) {
+                var msg = cookieArr[k].split("=")
+                //  ["name", "123"]
+                //  ["yzs","456"]
+                //  ["age","30"]
+                console.log("msg",msg);
+                // userkey  uname.value
+                if (msg[0] == key) {
+                    return  msg[1]
+
+                } else {
+                    console.log("不存在这个key");
+                }
+
+            }
+        }
+     
+        // es6 默认值 =
+        function sum(a, b, c = 10) {
+            return a + b + c
+        }
+        console.log(sum(10, 20, 1));
+    </script>
+</body>
+
+</html>

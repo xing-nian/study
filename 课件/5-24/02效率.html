@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> 效率 </title>
+    <style>
+        .cell {
+            width: 10px;
+            height: 10px;
+            float: left;
+            border: 1px solid red;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="box">
+
+
+    </div>
+    <script>
+        var box = document.querySelector("#box")
+        // console.log("ss");
+        // console.warn("警告");
+        // console.error("报错");
+        // dir  table info
+        console.time("yzs");
+        var html
+        for (var i = 0; i < 1000; i++) {
+            // 方式一 900ms
+            // box.innerHTML += '<div class="cell"></div>'
+            // 方式二 2ms
+            // html +='<div class="cell"></div>'
+            var odiv = document.createElement("div")
+            odiv.innerHTML = '<div class="cell"></div>'
+            //   odiv.setAttribute()
+            box.appendChild(odiv)
+        }
+        // box.innerHTML = html
+        console.timeEnd("yzs");
+
+    </script>
+</body>
+
+</html>

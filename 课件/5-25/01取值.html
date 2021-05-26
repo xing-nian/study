@@ -1,0 +1,43 @@
+<!--
+ * @Description: 微信 YZS43507802
+ * @version: 1.0
+ * @Company: 梦想
+ * @Author: yinZhaoSheng
+ * @Date: 2021-05-25 09:40:54
+ * @LastEditors: yinZhaoSheng
+ * @LastEditTime: 2021-05-25 09:57:49
+ * @FilePath: \H5+CSS3\05025\01.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    男歌手 <input type="radio" name="type" id="" value="1" data-type="1-1">  <br>
+    女歌手 <input type="radio" name="type" id="" value="2" data-type="2-2">  <br>
+    华语歌手<input type="radio" name="type" id="" value="3" data-type="3-3"> <br>  <br>
+
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/1.9.1/jquery.js"></script>
+    <!-- <script src="./jquery.js"></script> -->
+    <script>
+// 逻辑值  1 代表男歌手 2 代表女歌手 
+//  男歌手  只是显示的用户看的
+        $("input").change(function(e){
+            // console.log(e);
+            // console.log(e.target);
+            // js对象和JQ对象的转换
+            console.log($(e.target).val());
+            // 属性传值 非常非常非常常用
+            console.log($(e.target).attr("data-type"));
+            // $(".box").html("试试")
+            // attr()
+        })
+    </script>
+
+</body>
+</html>

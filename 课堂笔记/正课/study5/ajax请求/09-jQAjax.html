@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery中的ajax()方法</title>
+    <style>
+        #error {
+            color: red;
+            
+        }
+    </style>
+</head>
+
+<body>
+    <form id="myform">
+        <input type="text" name="username" id="uname"><span id="error"></span><br>
+        <input type="text" name="password" id="psw">
+        <input type="submit" value="注册" id="register">
+    </form>
+</body>
+<script src="./jquery-3.6.0.min.js"></script>
+<script>
+    $('#myform').submit(function (e) {
+        e.preventDefault();
+        
+        $.ajax({
+            type: "post",// 请求类型 get  post ...
+            url: "http://localhost:8080/register",   //服务器地址
+            data: {
+                username:uname.value,
+                password:psw.value
+            }, //请求参数
+            //dataType: "dataType", //参数类型 默认JSON
+            success: function (res) {
+                //成功的回调
+                console.log(res);
+                if(res.status !==0){
+                    alert("注册成功")
+                }else{
+                    alert(res.msg)
+                }
+            },
+            error: function (err) {
+                // 错误回调
+                console.log("错误原因:", err);
+            },
+            complete: function () {
+                //不管失败成功都走的函数
+                // 关闭loading 动画 放这里面
+            }
+        });
+
+    })
+</script>
+
+</html>

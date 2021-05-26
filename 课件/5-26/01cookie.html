@@ -1,0 +1,55 @@
+<!--
+ * @Description: 微信 YZS43507802
+ * @version: 1.0
+ * @Company: 梦想
+ * @Author: yinZhaoSheng
+ * @Date: 2021-05-26 09:33:44
+ * @LastEditors: yinZhaoSheng
+ * @LastEditTime: 2021-05-26 09:47:12
+ * @FilePath: \H5+CSS3\05-26\01cookie.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>js-cookie</title>
+</head>
+
+<body>
+    <button onclick="saveCookie()"> 存储 </button>
+    <button onclick="getCookie()"> 获取</button>
+    <button onclick="modifyCookie()"> 修改</button>
+    <button onclick="deleteCookie()"> 删除</button>
+
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.0/jquery.js"></script>
+    <!-- jQ 封装 -->
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.js"></script>
+
+    <!-- js 原生封装 -->
+    <!-- <script src="https://cdn.bootcdn.net/ajax/libs/js-cookie/latest/js.cookie.js"></script> -->
+    <script>
+        //存储
+        function saveCookie() {
+            $.cookie("year", "2021");
+            $.cookie("month", "5月",{expires:2});
+        }
+        //获取
+        function getCookie() {
+            console.log($.cookie("month"));
+        }
+        //修改
+        function modifyCookie() {
+            $.cookie("year", "2020");
+        }
+        //删除
+        function deleteCookie() {
+            $.removeCookie("year")
+        }
+
+    </script>
+</body>
+
+</html>

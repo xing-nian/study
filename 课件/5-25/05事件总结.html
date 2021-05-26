@@ -1,0 +1,66 @@
+<!--
+ * @Description: 微信 YZS43507802
+ * @version: 1.0
+ * @Company: 梦想
+ * @Author: yinZhaoSheng
+ * @Date: 2021-05-25 17:22:45
+ * @LastEditors: yinZhaoSheng
+ * @LastEditTime: 2021-05-25 17:51:37
+ * @FilePath: \H5+CSS3\05025\05事件总结.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>事件总结</title>
+    <style>
+
+    </style>
+</head>
+
+<body>
+    <button> 事件绑定 1-1</button> <br>
+    <button> 事件监听 2-1</button> <br>
+    <!-- html  不区分大小写   js区分大小写 -->
+    <button onClick="alert('1-----2-----3')" onclick="alert('4-----5----6')"> 行内式 3-1</button> <br>
+    <!-- 支持添加多个方法 -->
+    <button onClick="show(); show2()"> 行内式3-2</button> <br>
+    <script>
+        //******************* 行内式
+
+        function show(e) {
+            console.log("行内式---",e);
+            console.log("行内式--this-",this);
+
+            alert("单独的 函数")
+        }
+        function show2() {
+            alert("单独的 函数")
+        }
+        //***********************事件绑定
+        var obtn1 = document.querySelector("button")
+        obtn1.onclick = function (e) {
+            console.log("事件绑定1-1", e);
+        }
+        //   会覆盖掉之前的绑定事件
+        obtn1.onclick = function (e) {
+            console.log("事件绑定1-2", e);
+        }
+
+        //********************事件监听
+        var obtn2 = document.querySelectorAll("button")[1]
+        //参数1 事件类型   类型不加on
+        obtn2.addEventListener("click", function (e) {
+            console.log("事件监听2-1", e);
+        })
+        obtn2.addEventListener("click", function (e) {
+            console.log("事件监听2-2", e);
+        })
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        *{
+            margin: 0;
+            padding: 0;
+        }
+
+        html{
+            height: 100%;
+        }
+        body{
+            color: #333;
+            height: 100%;
+        }
+        
+        .container{
+            min-width: 810px;
+            height: 100%;
+            min-height: 600px;
+        }
+
+        ul{
+            list-style: none;
+        }
+        
+        .header{
+            position: absolute;
+            right: 0;
+            top: 0;
+            margin: 19px 0 5px;
+            padding-right: 96px;
+            font-size: 13px;
+            z-index: 11;
+        }
+        .header ul li{
+            float: left;
+            margin-left: 20px;
+            text-decoration: underline;
+            font-weight: bold;
+            /* 鼠标指针变手 */
+            cursor: pointer;
+        }
+        .header ul li.d{
+            color: red;
+            position: relative;
+        }
+        .header ul li.d span{
+            display: block;
+            width: 7px;
+            height: 7px;
+            background-color: red;
+            border-radius: 50%;
+            position: absolute;
+            right: -7px;
+            top: 0;
+        }
+        .header ul li.x{
+            font-weight: 500;
+        }
+        .header ul li:hover{
+            color: #00c;
+        }
+
+        .header ul li.more{
+            position: absolute;
+            right: 10px;
+            top: -2px;
+            width: 60px;
+            height: 23px;
+            color: #fff;
+            line-height: 23px;
+            background-color: #38f;
+            text-align: center;
+            font-weight: 500;
+            text-decoration: none;
+        }
+
+        .sideBox{
+            width: 80px;
+            border-left: 1px solid #e7e7e7;
+            background-color: #f9f9f9;
+            height: 100%;
+            position: absolute;
+            right: 0;
+            top: 0;
+            z-index: 10;
+        }
+
+        .sideBox ul{
+            margin-top: 55px;
+            text-align: center;
+            font-size: 12px;
+        }
+
+        .sideBox ul li{
+            width: 66px;
+            height: 66px;
+            margin: 0 auto;
+            padding: 5px 0;
+            color: #666;
+            cursor: pointer;
+        }
+
+        .sideBox ul li:hover{
+            text-decoration: underline;
+        }
+
+        .sideBox ul li span{
+            display: block;
+            width: 36px;
+            height: 36px;
+            background-image: url("img/1.png");
+            /* background-repeat: no-repeat; */
+            background-size: cover;
+            /* background-position: 0 6px; */
+            margin: 6px auto;
+            /* padding: 6px 0; */
+        }
+
+        .sideBox ul li:nth-child(2) span{
+            background-image: url("img/2.png");
+        }
+        .sideBox ul li:nth-child(3) span{
+            background-image: url("img/3.png");
+        }
+        .sideBox ul li:nth-child(4) span{
+            background-image: url("img/4.png");
+        }
+        .sideBox ul li:nth-child(5) span{
+            background-image: url("img/5.png");
+        }
+        .sideBox ul li:nth-child(6) span{
+            background-image: url("img/6.png");
+        }
+
+        .moreProduct{
+            font-size: 12px;
+            color: #666;
+            display: block;
+            text-align: center;
+            margin-top: 15px;
+        }
+
+        /* 中间部分 */
+
+        .content{
+            position: absolute;
+            width: 100%;
+            margin: 0 auto;
+            top: 18%;
+        }
+
+        .lg{
+            text-align: center;
+        }
+        .lg img{
+            width: 270px;
+            height: 129px;
+        }
+        .search{
+            margin: 22px auto 0;
+            width: 640px;
+            text-align: left;
+            position: relative;
+        }
+
+        .search .outerBox{
+            display: block;
+            width: 539px;
+            height: 34px;
+            border: 1px solid #b6b6b6;
+            border-right: none;
+            position: relative;
+        }
+        .search .outerBox .c{
+            display: block;
+            width: 18px;
+            height: 16px;
+            background: url("img/c.png") no-repeat;
+            position: absolute;
+            right: 11px;
+            top: 10px;
+            cursor: pointer;
+        }
+        .search .outerBox .c:hover{
+            background-position: 0 -20px;
+        }
+
+        .search .outerBox input{
+            width: 500px;
+            border: 0;
+            margin: 6px 0 0 7px;
+            outline: none;
+            height: 22px;
+            line-height: 22px;
+            font-size: 16px;
+            font-family: arial;
+        }
+        .search .outerBox:hover{
+            border-color: #999 transparent #b3b3b3 #999;
+        }
+
+        .search-btn{
+            display: block;
+            width: 100px;
+            height: 36px;
+            line-height: 36px;
+            text-align: center;
+            color: #fff;
+            background-color: #3385ff;
+            position: absolute;
+            right: 0;
+            top: 0;
+        }
+
+        .footer{
+            width: 100%;
+            position: absolute;
+            bottom: 0;
+            text-align: center;
+        }
+        .qrCodebox{
+            width: 116px;
+            height: 116px;
+            background-color: #f9f9f9;
+            border: 1px solid #f3f3f3;
+            margin: 0 auto;
+        }
+
+        .qrCode-text .p1{
+            font-size: 16px;
+            letter-spacing: 3px;
+            line-height: 32px;
+        }
+
+        .qrCode-text .p2{
+            font-size: 14px;
+            color: #999;
+            line-height: 14px;
+            font-weight: 300;
+        }
+
+        .fb{
+            color: #999;
+            font-size: 12px;
+            margin: 40px 0 45px;
+            line-height: 22px;
+        }
+
+        .fb a{
+            color: #999;
+        }
+
+        .fb .fb-t a{
+            margin-left: 25px;
+        }
+
+        .fb .fb-b a:last-child{
+            margin-left: 19px;
+        }
+
+    </style>
+</head>
+<body>
+    
+    <div class="container">
+
+        <div class="sideBox">
+            <ul>
+                <li>
+                    <span></span>
+                    xx营销
+                </li>
+                <li>
+                    <span></span>
+                    Music
+                </li>
+                <li>
+                    <span></span>
+                    Picture
+                </li>
+                <li>
+                    <span></span>
+                    Know
+                </li>
+                <li>
+                    <span></span>
+                    文库
+                </li>
+                <li>
+                    <span></span>
+                    风云榜
+                </li>
+            </ul>
+            <a href="" class="moreProduct">全部产品</a>
+        </div>
+
+        <div class="header">
+            <ul>
+                <li class="d">抗击肺炎 <span></span> </li>
+                <li>新闻</li>
+                <li>hao123</li>
+                <li>地图</li>
+                <li>视频</li>
+                <li>贴吧</li>
+                <li>学术</li>
+                <li class="x">登陆</li>
+                <li class="x">设置</li>
+                <li class="more">更多产品</li>
+            </ul>
+            
+        </div>
+
+        <div class="content">
+            <div class="lg">
+                <img src="img/bd_logo1.png" alt="logo">
+            </div>
+            <div class="search">
+                <span class="outerBox">
+                    <input type="text">
+                    <span class="c"></span>
+                </span>
+                <span class="search-btn">xx一下</span>
+            </div>
+        </div>
+
+        <div class="footer">
+
+            <div class="ft">
+                <div class="qrCode">
+                    <div class="qrCodebox"></div>
+                    <div class="qrCode-text">
+                        <p class="p1">下载xx app</p>
+                        <p class="p2">有事儿搜一搜 没事儿看一看</p>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="fb">
+                <p class="fb-t">
+                    <a href="">把xx设为首页</a>
+                    <a href="">关于xx</a>
+                    <a href="">About xx</a>
+                    <a href="">xx推广</a>
+                    <a href="">(京)-经营性-2020-0000</a>
+                </p>
+                <p class="fb-b">
+                    ©2020 xxxxx <a href="">使用xx前必读</a> <a href="">意见反馈</a> 京ICP证000000号 <a href="">京公网安备00000000000001号</a>
+                </p>
+            </div>
+
+
+        </div>
+
+
+    </div>
+
+</body>
+</html>

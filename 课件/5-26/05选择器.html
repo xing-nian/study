@@ -1,0 +1,51 @@
+<!--
+ * @Description: 微信 YZS43507802
+ * @version: 1.0
+ * @Company: 梦想
+ * @Author: yinZhaoSheng
+ * @Date: 2021-05-26 11:39:27
+ * @LastEditors: yinZhaoSheng
+ * @LastEditTime: 2021-05-26 12:13:47
+ * @FilePath: \H5+CSS3\05-26\05选择器.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>选择器</title>
+    <style>
+        header {
+            font-weight: 800;
+        }
+
+        .content {
+            color: orange;
+        }
+        #content{
+            color:red;
+        }
+        #content  span{
+            font-style: italic;
+        }
+        p::selection{
+            color:yellowgreen;
+        }
+    </style>
+</head>
+
+<body>
+ <!-- 新增的语义化标签   当作div就行    
+        ^ $ 
+     SEO   排名  title keywords content
+    -->
+    <header>易经</header>
+    <main>
+        <p class="content" id="content">天行健，<span>君子 </span> 以自强不息</p>
+    </main>
+    <footer>作者: 不知道</footer>
+</body>
+
+</html>

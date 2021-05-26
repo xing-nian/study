@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="btn">按钮</button>
+</body>
+<script>
+
+    function ajax(options){
+        let xhr = new XMLHttpRequest();
+
+        // 参数的拼接
+        let params = '';
+        for (const key in options.data) {
+            params = params + key + '=' + options.data[key] +'&'
+        }
+        params = params.substr(0,params.length - 1)
+
+        // 判断请求类型
+        if (options.type.toLowerCase() == 'get') {
+            xhr.open(options.type,options.url + '?' + params);
+            xhr.send()
+        } else {
+            xhr.open(options.type,options.url);
+            // 设置请求头
+            xhr.setRequestHeader("Content-type",options.header);
+            // 判断请求头中 定义请求参数格式类型是什么
+            if(options.header == 'application/x-www-from-urlencoded'){
+                xhr.send(params)
+            }else{
+                xhr.send(JSON.stringify(options.data))
+            }
+        }
+
+        xhr.onreadystatechange = function(){
+            if (xhr.readyState == 4 && xhr.status == 200) {
+                let resData = xhr.responseText;
+                options.success(resData);
+            }
+        }
+
+    }
+
+    btn.onclick = function(){
+        ajax({
+            type:'post',
+            url:'http://localhost:8080/register',
+            data:{
+                username:'Jon',
+                password:'123'
+            },
+            header:'application/x-www-from-urlencoded',
+            success:function(responseData){
+                console.log(responseData);
+            }
+        })
+    }
+
+</script>
+</html>

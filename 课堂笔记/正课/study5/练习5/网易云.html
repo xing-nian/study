@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>网易云</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            overflow-x: hidden;
+        }
+        
+        a{
+            display: inline-block;
+            text-decoration: none;
+            color: #C7C7C7;
+        }
+        #logo{
+            position: relative;
+            top: -1px;
+        }
+        .item{
+            display: inline-block;
+            width: 100px;
+            height: 70px;
+            text-align: center;
+            line-height: 70px;
+            position: relative;
+            top: -28px;
+        }
+        .item:hover{
+            background-color: #000;
+        }
+        #dh-top{
+            width: 100%;
+            height: 105px;
+        }
+        #dh-user{
+            width: 100%;
+            height: 70px;
+            background-color: #242424;
+            padding: 0 400px;
+        }
+        #dh-rec{
+            width: 100%;
+            height: 30px;
+            background-color: #C20C0C;
+        }
+        #select{
+            width: 160px;
+            height: 35px;
+            outline: none;
+            border-radius: 15px;
+            border: none;
+            padding-left:40px ;
+            
+        }
+        #write-center{
+            width: 90px;
+            height: 35px;
+            text-align: center;
+            border-radius: 10px;
+            outline: none;
+            border: 1px solid #666;
+            color:#666 ;
+            background-color: #333;
+        }
+        #write-center:hover{
+            border: 1px solid #ccc;
+            color:#ccc ;
+        }
+        .box{
+            display: inline-block;
+            position: relative;
+            top: -28px;
+            left: 100px;
+        }
+        .rec-item{
+            width: 50px;
+            height: 20px;
+            color: #fff;
+            font-size: 12px;
+            margin-right: 50px;
+            text-align: center;
+        }
+        #dh-rec{
+            padding: 0 600px;
+        }
+        #img1{
+            width: 130px;
+        }
+        #img2{
+            width: 20px;
+        }
+        ul{
+            list-style: none;
+        }
+        li{
+            height: 180px;
+            width: 140px;
+            float: left;
+            margin: 30px;
+        }
+       
+        .hot-top50{
+            width: 100px;
+            height: 30px;
+            border: none;
+            outline: none;
+            background-color: #fff;
+            padding-left: 20px;
+            color: #000;
+            font-size: 12px;
+            line-height: 30px;
+            text-align: left;
+            margin: 10px 50px;
+            cursor: pointer;
+        }
+        #geshouALL{
+            width: 800px;
+            height: 2000px;
+            /* position: relative;
+            left: 650px; */
+            display: inline-block;
+            border: 1px solid #ccc;
+        }
+        #hot{
+            width: 180px;
+            height: 2000px;
+            border: 1px solid #ccc;
+            display: inline-block;
+            position: relative;
+            top: -98px;
+
+        }
+        #music-con{
+            padding: 0 450px;
+            float: left;
+        }
+       
+    </style>
+</head>
+<body>
+   <div id="dh-top">
+       <div id="dh-user">
+            <a id="logo" hidefocus='true' href="#"><img src="wyy.png" alt=""></a>
+            <span class="item"><a target="_blank" href="https://music.163.com/#">发现音乐</a></span>
+            <span class="item"><a target="_blank" href="https://music.163.com/#/my/">我的音乐</a></span>
+            <span class="item"><a target="_blank" href="https://music.163.com/#/friend">朋友</a></span>
+            <span class="item"><a target="_blank" href="https://music.163.com/store/product">商城</a></span>
+            <span class="item"><a target="_blank" href="https://music.163.com/st/musician">音乐人</a></span>
+            <span class="item"><a target="_blank" href="https://music.163.com/#/download">下载客户端</a></span>
+            <div class="box">
+            <input type="text" id="select">
+            <button id="write-center">创作者中心</button>
+            </div>
+        </div>
+       <div id="dh-rec"> 
+           <span class="rec-item">推荐</span>
+           <span class="rec-item">排行榜</span>
+           <span class="rec-item">歌单</span>
+           <span class="rec-item">直播电台</span>
+           <span class="rec-item">歌手</span>
+           <span class="rec-item">新碟上架</span>
+
+       </div>
+
+   </div>
+   <div id="music-con">
+    <div id="hot">
+        <h3>推荐</h3>
+        <button class="hot-top50">热门歌手</button>
+        <button class="hot-top50">华语男歌手</button>
+        <button class="hot-top50">华语女歌手</button>
+        <button class="hot-top50">欧美热门歌手</button>
+        <button class="hot-top50">热门乐团</button>
+        <h3>热门</h3>
+        <button class="hot-top50">热门歌手</button>
+        <button class="hot-top50">华语男歌手</button>
+        <button class="hot-top50">华语女歌手</button>
+        <button class="hot-top50">欧美热门歌手</button>
+        <button class="hot-top50">热门乐团</button>
+        <h3>私人电台</h3>
+        <button class="hot-top50">热门歌手</button>
+        <button class="hot-top50">华语男歌手</button>
+        <button class="hot-top50">华语女歌手</button>
+        <button class="hot-top50">欧美热门歌手</button>
+        <button class="hot-top50">热门乐团</button>
+        <h3>猜你喜欢</h3>
+        <button class="hot-top50">热门歌手</button>
+        <button class="hot-top50">华语男歌手</button>
+        <button class="hot-top50">华语女歌手</button>
+        <button class="hot-top50">欧美热门歌手</button>
+        <button class="hot-top50">热门乐团</button>
+        <h3>歌单推荐</h3>
+        <button class="hot-top50">热门歌手</button>
+        <button class="hot-top50">华语男歌手</button>
+        <button class="hot-top50">华语女歌手</button>
+        <button class="hot-top50">欧美热门歌手</button>
+        <button class="hot-top50">热门乐团</button>
+        <h3>网抑云</h3>
+        <button class="hot-top50">热门歌手</button>
+        <button class="hot-top50">华语男歌手</button>
+        <button class="hot-top50">华语女歌手</button>
+        <button class="hot-top50">欧美热门歌手</button>
+        <button class="hot-top50">热门乐团</button>
+        <h3>晚安</h3>
+        <button class="hot-top50">热门歌手</button>
+        <button class="hot-top50">华语男歌手</button>
+        <button class="hot-top50">华语女歌手</button>
+        <button class="hot-top50">欧美热门歌手</button>
+        <button class="hot-top50">热门乐团</button>
+        
+        
+       </div>
+       <div id="geshouALL">
+        <ul id="list">
+    
+        </ul>
+       </div>
+   </div>
+</body>
+<script src="../../../study4/jquery.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/lazyload@2.0.0-rc.2/lazyload.js"></script>
+<script>
+
+    /*
+    歌手分类列表
+说明 : 调用此接口,可获取歌手分类列表
+
+可选参数 :
+
+limit : 返回数量 , 默认为 30
+
+offset : 偏移数量，用于分页 , 如 : 如 :( 页数 -1)*30, 其中 30 为 limit 的值 , 默认为 0 initial: 按首字母索引查找参数,如 /artist/list?type=1&area=96&initial=b 返回内容将以 name 字段开头为 b 或者拼音开头为 b 为顺序排列, 热门传-1,#传0
+
+type 取值:
+
+-1:全部
+1:男歌手
+2:女歌手
+3:乐队
+area 取值:
+
+-1:全部
+7华语
+96欧美
+8:日本
+16韩国
+0:其他
+接口地址 : /artist/list
+
+调用例子 : /artist/list?type=1&area=96&initial=b /artist/list?type=2&area=2&initial=b*/ 
+
+
+let html = '';
+let list = document.querySelector('#list')
+let hot_top50 = document.getElementsByClassName('hot-top50');
+
+function geshou(x,y,z){
+    hot_top50[x].onclick = function(){
+        
+        //  1.创建请求对象
+let xhr =new XMLHttpRequest();
+// 2.指定请求方式，请求路径
+xhr.open('get',y)
+// 3.发送请求
+xhr.send();
+// 4.获取服务端返回的数据
+xhr.onreadystatechange = function(){
+    if (xhr.readyState == 4 && xhr.status == 200) {
+        let data = JSON.parse(xhr.responseText);
+        html = ''
+        data.artists.forEach(singer =>{
+           html+=`
+            <li>
+                <img id='img1' src = "${singer.picUrl}"><br>
+                <span>${singer.name}<span><img id='img2'src= "${singer.img1v1Url}">
+                    </li>   
+           `
+           
+        });
+        list.innerHTML =  html;
+    }
+}
+    }
+   
+    }
+ let xhr2 =new XMLHttpRequest();
+// 2.指定请求方式，请求路径
+xhr2.open('get','https://autumnfish.cn/top/artists?offset=0&limit=35')
+// 3.发送请求
+xhr2.send();
+// 4.获取服务端返回的数据
+xhr2.onreadystatechange = function(){
+    if (xhr2.readyState == 4 && xhr2.status == 200) {
+        let data = JSON.parse(xhr2.responseText);
+        data.artists.forEach(singer =>{
+           html+=`
+            <li>
+                <img id='img1' src = "${singer.picUrl}">
+                <br>
+                <span>${singer.name}<span><img id='img2'src= "${singer.img1v1Url}">
+                    </li>   
+           ` 
+        });
+        list.innerHTML =  html;
+    }
+}
+
+
+geshou(0,'https://autumnfish.cn/top/artists?offset=0&limit=35',);
+geshou(1,'https://autumnfish.cn/artist/list?offset=0&limit=35&type=1&area=7',)
+geshou(2,'https://autumnfish.cn/artist/list?offset=0&limit=35&type=2&area=7',)
+geshou(3,'https://autumnfish.cn/artist/list?offset=0&limit=35&type=-1&area=96',)
+geshou(4,'https://autumnfish.cn/artist/list?offset=0&limit=35&type=3&area=-1',)
+ 
+
+</script>
+</html>

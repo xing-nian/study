@@ -1,0 +1,100 @@
+<!--
+ * @Description: 微信 YZS43507802
+ * @version: 1.0
+ * @Company: 梦想
+ * @Author: yinZhaoSheng
+ * @Date: 2021-05-25 10:02:48
+ * @LastEditors: yinZhaoSheng
+ * @LastEditTime: 2021-05-25 11:36:55
+ * @FilePath: \H5+CSS3\05025\02cookie.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- 尹照胜  -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>cookie</title>
+</head>
+
+<body>
+    <!-- 
+       cookie 饼干，小甜心
+Cookie 是一些数据, 存储于你电脑上的文本文件中。
+
+当 web 服务器向浏览器发送 web 页面时，在连接关闭后，服务端不会记录用户的信息。
+
+Cookie 的作用就是用于解决 "如何记录客户端的用户信息":
+
+当用户访问 web 页面时，他的名字可以记录在 cookie 中。
+在用户下一次访问该页面时，可以在 cookie 中读取用户访问记录
+
+
+         怎么查看 控制台Application - storage--cookies
+
+        容器类的  对象 数组
+        增 
+        删 
+        改
+        查   
+
+       cookie一般存储 多页面共享的数据信息
+        用户信息  用户名 等级 
+        购物车数据 {}
+
+        
+     -->
+    <button>存储</button>
+
+    <button>删除</button>
+    <button>获取</button>
+    <button>修改</button>
+
+    <script>
+        var saveBtn = document.querySelector("button")
+        var deleteBtn = document.querySelectorAll("button")[1]
+        var getBtn = document.querySelectorAll("button")[2]
+        var modifyBtn = document.querySelectorAll("button")[3]
+
+        // 需要安装插件  Live Server
+        saveBtn.onclick = function () {
+            // 对象 的形式存储
+            // 键值对 存储
+            // expires 过期
+            // Session 会话
+            var deadTime = new Date();
+            var days = 10 * 24 * 60 * 60 * 1000
+            // 1970年
+
+            // 怎么把毫秒数转为日期
+            deadTime.setTime(deadTime.getTime() + days)
+            console.log("截止日期",deadTime);
+            document.cookie = `name=前端;expires=${deadTime}`
+            //   存储多个 一个一个存储
+            document.cookie = "class=74期"
+            //    
+            document.cookie = "location=308"
+            //     班级 class 74期
+        }
+        deleteBtn.onclick = function () {
+            //删除 就是过期
+            //big data
+            var deadTime =  new Date()
+            deadTime.setTime(deadTime.getTime()-1)
+            //2个操作 过期时间
+            //  值为空
+            document.cookie = `class='';expires=${deadTime}`
+        }
+        getBtn.onclick = function () {
+            // 获取所有的cookie 字符串
+            console.log("获取", document.cookie);
+        }
+        modifyBtn.onclick = function () {
+            document.cookie = "name=覆盖"
+        }
+    </script>
+</body>
+
+</html>

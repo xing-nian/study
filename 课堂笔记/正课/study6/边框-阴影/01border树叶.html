@@ -1,0 +1,43 @@
+<!--
+ * @Description: 微信 YZS43507802
+ * @version: 1.0
+ * @Company: 自由
+ * @Author: yinZhaoSheng
+ * @Date: 2021-05-11 20:27:22
+ * @LastEditors: yinZhaoSheng
+ * @LastEditTime: 2021-05-26 16:19:15
+ * @FilePath: \H5+CSS3\CSS3\03边框-阴影\01border树叶.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>border</title>
+    <style>
+        #box{
+            width: 300px;
+            height: 300px;
+            background-color: yellowgreen;
+            border-radius: 50%;
+            border-top-right-radius: 0;
+            border-bottom-left-radius: 0;
+            position:relative;
+        }
+        #box:after {
+            content:"";
+            display: block;
+            width: 300px;
+            height:1px; 
+            background-color: rgba(255,255,255,0.6);
+            position: absolute;
+            /* translate(x,y)  rotate(旋转角度)*/
+            transform:  translate(100px,50px) rotate(-45deg);
+        }
+    </style>
+</head>
+<body>
+    <div id="box"></div>
+</body>
+</html>

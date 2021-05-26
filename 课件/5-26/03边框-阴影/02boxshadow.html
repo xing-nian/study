@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+	<meta charset="UTF-8">
+	<meta name="author" content="yinZhaoSheng">
+	<title>css3盒阴影</title>
+	<script>
+      /*
+       *阴影分为文字阴影和盒模型阴影(盒阴影)，可以用来代替具有阴影效果的图片，减少页面对服务器请求的压力
+       *text-shadow 文本阴影  
+       *box-shadow 图层阴影  有时候会用盒阴影代替边框使用，因为盒阴影不占物理空间，而边框会占据空间
+       *box-shadow(x-offset,y-offset,blur-radius ,spread-radius,color ,inset)
+       *1   x轴偏移量:指阴影水平偏移量，值可以是正负，如果是正值，则阴影在对象的右边，负值阴影对象的左边
+       *2   y轴偏移量：指阴影垂直偏移量，值可以是正负，如果是正值，则阴影在对象的底部，负值阴影对象的顶部
+       *3   阴影模糊半径：此参数可选，只能是正值，0表示没有模糊效果，值越大阴影的边缘就越模糊   注意！！！是阴影的边缘就越模糊
+       *4   阴影扩展半径：此参数可选，值可以是正负，如果是正值，则整个阴影都延展扩大，负值则缩小
+       *5   阴影颜色：此参数可选，可以使用rgba,颜色单词，16进制颜色等来写
+       *6   投影方式：此参数可选，默认是外头影，inset内阴影
+       *  需要注意的是 box-shadow可以有多组数值，中间用,隔开就行
+       */
+	</script>
+	<style>
+		.wrap{
+			width: 1000px;height: 1500px;margin: 100px auto;
+		}
+		.wrap div{
+			float: left;width: 200px;height: 100px;margin: 60px 0 0 30px;background: #CCC;
+		}
+		/* 第一个 测试默认状态，我们并没有设置具体阴影颜色 
+		   效果 右边 下边 有了阴影 
+		   结论 默认是黑色*/
+		.wrap div:nth-child(1){
+			box-shadow: 5px 5px 5px,
+			-5px -5px 5px red;
+		}
+		/*测试阴影能否影响内容， 
+		  效果   阴影多出来的部分会撑破容器跑出来
+		  结论   对象的阴影仅仅只是一个层级上的展示，不会影响到内容*/
+		.wrap .outer {
+			width: 100px;height: 100px;border: solid 1px  #CCC;background: #FFF;
+		}
+		.wrap .outer .inter {
+			width: 60px;height: 60px;margin: 10px auto;background: #CCC; box-shadow: 50px 50px 0 0 green;
+		}
+		/* 盒阴影与边框的比较
+		   效果    一样
+		   结论  盒阴影不占物理空间，可以自由使用，
+		   但要注意层级关系 具体对比可以看浏览器css 盒模型对比  chrome  layout图 
+		*/
+		.wrap div:nth-child(3){
+			box-shadow:  0 0 0 1px red;
+		}
+		
+		.wrap div:nth-child(4){
+			border: 1px solid red;
+		}
+		.wrap div:nth-child(5){
+			box-shadow:  0 0 0 20px red;
+		}
+		
+		.wrap div:nth-child(6){
+			border: 20px solid red;
+		}
+		/*内阴影*/
+		.wrap div:nth-child(7){
+			box-shadow:  0 0 25px  red inset;
+		}
+		/*body设置朦胧样式
+		   为了不影响布局 top的取值最好和height 的值一致 ，
+		   注意top是负值 还有定位*/
+		body:before{
+			position: fixed;top:-10px;left: 0; z-index: 999;
+			width: 100%;height: 10px;content: "";
+			box-shadow:  0 0 40px rgba(255,0,0,0.9);
+		}
+		
+		
+		
+		.wrap .drop-shadow{
+			position: relative;width: 300px;height: 150px;
+			margin-left: 100px;background: #CCC;
+		}
+		.drop-shadow:before,
+		.drop-shadow:after{
+			position: absolute;content: "";left: 10px;bottom: 15px;
+			width: 50%;height: 20%;
+			max-width: 150px;
+			z-index: -1;
+			-webkit-box-shadow: 0 15px 10px rgba(125,125,125,0.8);
+			-moz-box-shadow: 0 15px 10px rgba(125,125,125,0.8);
+			box-shadow: 0 15px 10px rgba(125,125,125,0.8);
+			
+			-webkit-transform:rotate(-10deg);
+			-moz-transform:rotate(-10deg);
+			transform:rotate(-10deg);
+		}
+		.drop-shadow:after{
+			right: 10px;left: auto;
+			-webkit-transform:rotate(10deg);
+			-moz-transform:rotate(10deg);
+			transform:rotate(10deg);
+		}
+
+	
+	</style>
+</head>
+<body>
+  <div class="wrap clearfix">
+ 	<div>HTML5 </div>
+ 	<div class="outer">
+ 		<div class="inter"></div>
+ 	</div>
+ 	<div>HTML5 </div>
+ 	<div>HTML5 </div>
+ 	<div>HTML5 </div>
+ 	<div>HTML5 </div>
+ 	<div>HTML5 </div>
+ 	<div class="drop-shadow">HTML5 </div>
+ </div>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

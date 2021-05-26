@@ -1,0 +1,78 @@
+<!--
+ * @Description: 微信 YZS43507802
+ * @version: 1.0
+ * @Company: 梦想
+ * @Author: yinZhaoSheng
+ * @Date: 2021-05-25 16:33:30
+ * @LastEditors: yinZhaoSheng
+ * @LastEditTime: 2021-05-25 17:21:03
+ * @FilePath: \H5+CSS3\05025\04detail.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>detail</title>
+</head>
+<body>
+    <h1>详情页</h1>
+    <div class="showMsg"></div>
+    <script src="./yzs.tool.js"></script>
+    <script>
+//      koroFileHeader
+//文件 --- 首选项 ---设置  ---  搜索 fileheader ---Custom Made
+/**
+ * 
+ *   "fileheader.customMade": {
+    
+        "Description": "微信 YZS43507802",
+        "version": "1.0",
+        "Company": "梦想",
+        "Author": "yinZhaoSheng",
+        "Date": "Do not edit",
+        "LastEditors": "yinZhaoSheng",
+        "LastEditTime": "Do not edit",
+        "FilePath": "Do not edit",
+    },
+ * 
+ * 
+ * 
+ * 
+ */
+        //  var odiv = document.querySelector(".showMsg")
+        //  var uname = getCookie("name")
+        //  odiv.innerHTML = `用户名:${uname}`
+
+
+        document.cookie = "age=30"
+        document.cookie = "sex=男"
+
+        //不是知识没有用，是你没用
+
+        //根据name属性 获取对应的值
+        getCookieTest("name")
+
+        //  name是 你想获取的属性值对应的属性
+        function getCookieTest(name) {
+            var cookies = document.cookie
+            console.log("获取所有cookie", cookies);
+            //  字符串转数组
+            var cookieArr = cookies.split(";")
+            console.log("cookie转为数组", cookieArr);
+
+            for (var i in cookieArr) {
+                var msg = cookieArr[i].split("=")
+                // 注意这里边对这个 属性 都有多余的空格，所以需要压缩一下
+                if (msg[0].trim() == name) {
+                    console.log(msg[1]);
+                }
+                console.log(msg);
+            }
+        }
+    </script>
+</body>
+
+</html>

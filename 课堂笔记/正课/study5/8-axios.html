@@ -1,0 +1,89 @@
+<!--
+ * @Description: 微信 YZS43507802
+ * @version: 1.0
+ * @Company: 梦想
+ * @Author: yinZhaoSheng
+ * @Date: 2021-05-26 09:50:14
+ * @LastEditors: yinZhaoSheng
+ * @LastEditTime: 2021-05-26 11:20:39
+ * @FilePath: \H5+CSS3\05-26\02axios.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>axios</title>
+</head>
+
+<body>
+    <button onclick="getData()">get</button>
+    <button onclick="postData()">post</button>
+    <button onclick="ajaxData()"> ajax</button>
+    <div class="showMsg"></div>
+    <script src="https://cdn.bootcdn.net/ajax/libs/axios/0.21.1/axios.js"></script>
+    <script>
+        function getData() {
+            //network 所有界面 里面的 请求 不管 get post put都在这个面板查看
+            // axios 代码提示插件  
+            // 参数1  服务器地址
+            // 参数2   params  请求参数
+            // then  请求成功的回调函数
+            // catch 是请求失败的 回调函数
+            var showDiv = document.querySelector(".showMsg")
+            // 注意事项  get请求参数的2种形式
+            // 1. 直接在url拼接
+            // 2. 第二个参数{params:{参数}}
+            axios.get("./data.json?name=前端74期", { params: { age: 18, location: 308 } })
+                .then(res => {
+                    //请求成功的处理
+                    console.log("res:", res.data)
+                    // artisArr 所有 艺术家列表
+                    var artisArr = res.data.artists
+                    showDiv.innerHTML = artisArr[0].name
+                })
+                .catch(err => {
+                    //请求失败的处理
+                    console.error("err:", err);
+                })
+        }
+        function postData() {
+            // 参数1  服务器地址
+            // 参数2  请求参数 {} 注意和get 请求的区别
+            axios.post("http://localhost:8080/register", { test: 999 })
+                .then(res => {
+                    console.log("post -res", res)
+                })
+                .catch(err => {
+                    console.error("post -err", err);
+                })
+        }
+
+        function ajaxData() {
+            // 不常用 
+            //  axios({
+            //      method:"GET",
+            //      url:"./data.json",
+            //      data:{name:"前端74期"},
+
+            //  })
+        }
+            //异常处理
+            // restful api接口规范
+// $.ajax({
+//     type: "method",
+//     url: "url",
+//     data: "data",
+//     dataType: "dataType",
+//     success: function (response) {
+
+//     },
+// err:function(){},
+    //  complete:function(){}
+// });
+    </script>
+</body>
+
+</html>

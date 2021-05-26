@@ -1,0 +1,39 @@
+<!--
+ * @Description: 微信 YZS43507802
+ * @version: 1.0
+ * @Company: 梦想
+ * @Author: yinZhaoSheng
+ * @Date: 2021-05-26 16:43:22
+ * @LastEditors: yinZhaoSheng
+ * @LastEditTime: 2021-05-26 16:55:31
+ * @FilePath: \H5+CSS3\05-26\10iframe.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>iframe</title>
+    <style>
+         iframe{
+             width: 400px;
+             height: 500px;
+             /* background-color: red; */
+         }
+    </style>
+</head>
+<body>
+    <!--   img  href
+    iframe  标签用于在当前网页当中开辟一个新的窗口 显示另外一个网页
+    行内块标签
+    src  跳转网页的地址
+    frameborder  0 没有 1 有边框
+    -->
+     <iframe src="./06导航.html" frameborder="1" name="myframe" ></iframe>
+     <!-- target 目标 写为iframe 标签 name属性对应的值
+      a标签指定 href的 链接会跳转到 对应的iframe里面
+    -->
+     <a href="http://baidu.com" target="myframe">百度一下 </a>
+</body>
+</html>
