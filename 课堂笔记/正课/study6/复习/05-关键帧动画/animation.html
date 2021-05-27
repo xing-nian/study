@@ -1,0 +1,66 @@
+<!--
+ * @Description: 微信 YZS43507802
+ * @version: 1.0
+ * @Company: 自由
+ * @Author: yinZhaoSheng
+ * @Date: 2021-05-12 13:19:16
+ * @LastEditors: yinZhaoSheng
+ * @LastEditTime: 2021-05-27 16:57:32
+ * @FilePath: \H5+CSS3\CSS3\10关键帧动画\animation.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <style>
+        .test{
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 
+        https://animate.style/  没事多看看有哪些 动画
+        
+        轮子  造轮子
+        1.  引用 文件
+        2.  想要进行动画的标签 添加 animate__animated 样式
+        3.  想要什么动画效果 去复制 然后 粘贴
+     -->
+    <h1 class="animate__animated animate__bounce">An animated element</h1>
+    <div class="a b"> 自己的 标签</div>
+    <button onclick="ani()"> 动呀</button>
+    <button onclick="delte()"> 删除</button>
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.0/jquery.js"></script>
+    <script>
+        
+        function ani() {
+            // 删除动画样式， 可以删除多个
+            $("div").removeClass("animate__flip animate__animated")
+            
+            setTimeout(function () {
+                // 添加 动画所需要的样式  注意 可以添加多个样式
+                $("div").addClass("animate__flip animate__animated")
+            })
+            //js 方式  
+            var odiv = document.querySelector("div")
+            console.log(odiv.className);
+            // js获取标签 所有的 class 是一个数组 
+            // 可以进行  添加样式 删除样式的操作
+            console.log(odiv.classList.add("test"));
+            // https://www.runoob.com/jsref/prop-element-classList.html
+        }
+        function delte() {
+            // 删除动画样式， 可以删除多个
+            $("div").removeClass("animate__flip animate__animated")
+        }
+    </script>
+</body>
+
+</html>

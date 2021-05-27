@@ -1,0 +1,54 @@
+<!--
+ * @Description: 微信 YZS43507802
+ * @version: 1.0
+ * @Company: 自由
+ * @Author: yinZhaoSheng
+ * @Date: 2019-12-20 08:37:38
+ * @LastEditors: yinZhaoSheng
+ * @LastEditTime: 2021-05-11 23:08:26
+ * @FilePath: /H5+CSS3/CSS3/11动画2d/01 动画-介绍.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>CSS3动画</title>
+	<style>
+		.animation {
+			width: 30px;
+			height: 30px;
+			animation: change 5s infinite;
+		}
+
+		/*动画相比过渡可以控制更多细节，可以将一个动画拆成多个步骤*/
+
+		@keyframes change {
+			0% {
+				width: 30px;
+				height: 30px;
+				background-color: yellow;
+			}
+
+			/*25% {
+				width: 300px;
+				background-color: blue;
+			}*/
+
+			50% {
+				width: 30px;
+				height: 300px;
+				background-color: green;
+			}
+
+			100% {
+				width: 300px;
+				height: 300px;
+				background-color: pink;
+			}
+		}
+	</style>
+</head>
+<body>
+	<div class="animation"></div>
+</body>
+</html>

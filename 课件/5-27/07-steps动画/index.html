@@ -1,0 +1,88 @@
+<!--
+ * @Description: 微信 YZS43507802
+ * @version: 1.0
+ * @Company: 
+ * @Author: yinZhaoSheng
+ * @Date: 2019-12-20 09:01:43
+ * @LastEditors: yinZhaoSheng
+ * @LastEditTime: 2021-04-19 23:13:58
+ * @FilePath: /尹照胜H5+CSS3/CSS3/13steps动画/index.html
+-->
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<style type="text/css">
+			div{
+				width: 200px;
+				height: 200px;
+				background: red;
+				position: absolute;
+				left: 0px;
+				top: 0px;
+				/*动画的简写:引入动画的名字  执行时间  执行次数  延迟时间等*/
+				animation: donghua 2s 4 1s  ;
+				
+	/*animation-name: donghua;//动画的名称
+    animation-duration: 2s;//动画持续时间
+    animation-timing-function: ease;//动画运动轨迹
+    animation-delay: 1s;//动画延迟时间
+    animation-iteration-count: 4 ;//动画次数 infinite无限循环
+    animation-direction: normal ;运动轨迹alternate-reverse翻转和正常交替,reverse翻转
+    animation-fill-mode: none;//远动的方位
+    animation-play-state: running ;//是否让运动 paused(停止)running(运动)*/
+				
+				
+			}
+		/* 插入关键帧	
+		@keyframes 动画名称{
+			from(0%){
+				开始
+			}
+			.
+			.
+			.任意的百分比
+			.
+			to(100%){
+				结束
+			}
+		}	 */
+			
+			
+			
+			
+		@keyframes donghua{
+			from{
+				left: 0px;
+				top: 0px;}
+				
+			25%{
+				top: 0px;
+			left: 800px;
+			border-radius: 50%;
+			background: green;	
+			}
+			50%{
+				left: 800px;
+				top: 500px;
+				border-radius: 50%;
+			  background: orange;	
+			}
+			75%{
+				left: 0px;
+				top: 500px;
+				border-radius: 50%;
+			  background: blue;	
+			}	
+			to{
+			left: 0px;
+				top: 0px;
+			}
+		}	
+		</style>
+	</head>
+	<body>
+		<div></div>
+	</body>
+</html>

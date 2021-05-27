@@ -1,0 +1,68 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>小球弹跳</title>
+        <!--设置样式-->
+        <style>
+            section{
+                /*宽高*/
+                width: 800px;
+                height: 600px;
+                /*背景颜色*/
+                background-color: yellow;
+                
+                /*左右居中*/
+                margin: 100px auto;
+                
+                position: relative;
+            }
+            
+            img{
+                /*定位;让小球在父元素的中间*/
+                position: absolute;
+                left: 368px;  
+                
+                /*设置动画名称*/
+                animation-name: tanTiao;
+                /*设置动画时间*/
+                animation-duration: 5s;         
+                /*动画的填充模式：是否保持动画的状态;  forwards:向前，保持动画的结束状态；backwards：向后，保持动画的开始状态*/
+                animation-fill-mode: forwards;      
+                
+                /*设置动画的延迟时间*/
+                /*animation-delay: 2s; */
+                
+            }
+            
+            /*关键帧动画*/
+            @keyframes tanTiao{
+                0%{
+                    /*动画起始状态*/
+                    top: 0px;
+                    /*设置每一段的速度*/
+                    animation-timing-function: ease-in;
+                }20%{
+                    /*动画的结束状态*/
+                    top: 536px;  
+                    animation-timing-function: ease-out;
+                }40%{
+                    top: 100px;
+                    animation-timing-function: ease-in;
+                }60%{
+                    top: 536px;
+                     animation-timing-function: ease-out;
+                }80%{
+                    top: 200px;
+                     animation-timing-function: ease-in;
+                }100%{
+                    top: 536px;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <section>
+            <img src="earth.png" alt="小球">
+        </section>
+    </body>
+</html>

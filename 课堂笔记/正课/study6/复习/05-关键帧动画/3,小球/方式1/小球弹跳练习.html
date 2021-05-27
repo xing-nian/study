@@ -1,0 +1,66 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>小球弹跳</title>
+        <!--设置样式-->
+        <style>
+            section{
+                /*宽高*/
+                width: 800px;
+                height: 600px;
+                /*背景颜色*/
+                background-color: yellow;
+                
+                /*左右居中*/
+                margin: 100px auto;
+                
+            }
+        
+        img{
+            position: absolute;
+            left: 368px;
+            animation-name: modong;
+            animation-duration: 5s;
+            animation-fill-mode: forwards;
+        }
+        @keyframes  modong{
+            0%{
+                top: 0px;
+                animation-timing-function: ease-in;
+            }
+            20%{
+               top: 536px;
+               animation-timing-function: ease-out;
+            }
+            40%{
+                top: 100px;
+               animation-timing-function: ease-in;
+            }
+            60%{
+                top: 536px;
+               animation-timing-function: ease-out;
+            }
+            80%{
+                top: 200px;
+               animation-timing-function: ease-in;
+
+            }
+
+
+
+
+
+            
+        }
+
+
+
+
+        </style>
+    </head>
+    <body>
+        <section>
+            <img src="earth.png" alt="小球">
+        </section>
+    </body>
+</html>

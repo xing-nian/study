@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>code magic</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            position: relative;
+
+            background-image: url("./bg.jpg");
+            /* 只设置背景图片不好看  因为图片没有显示完全 */
+            background-size: cover;
+              /* background-repeat: no-repeat; */
+        }
+
+        /* 看到一直在中间 
+          其他方式
+         定位 */
+        .container {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%,-50%);
+        }
+
+        .container p {
+            font-size: 100px;
+            /* color: #ccc; */
+            color: rgba(255, 255, 255, .3);       
+            /* 大写 */
+            text-transform: uppercase;
+            letter-spacing: 8px;
+            font-weight: 500;
+            /* 以区块内的文字作为裁剪区域向外裁剪，文字的背景即为区块的背景，文字之外的区域都将被裁剪掉。 
+            玩起来 文字透明呢 color*/
+             -webkit-background-clip: text;
+/* 位置不对劲  因为上层容器定位了所以移动容器方便 */
+            background-image: url("./water.png");
+             animation: wave 30s linear infinite;
+        }
+        @keyframes wave{
+            from {
+                background-position:  0 0 ;
+            }
+            to{
+                background-position: 1000px 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 1 分析效果
+           吃劲想 哈哈 其实是图片
+        2. 骨架
+         3  样式 -->
+    <div class="container">
+        <p>codemagic</p>
+    </div>
+</body>
+
+</html>

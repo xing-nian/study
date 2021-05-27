@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>鼠标经过了</title>
+    <style>
+      .s1 {
+        width: 300px;
+        height: 200px;
+        background-color: hotpink;
+        position: absolute;
+        left: 800px;
+        top: 300px;
+        text-align: center;
+        line-height: 200px;
+      }
+      div:hover .s2 {
+        display: block;
+      }
+      div:hover::before {
+        display: block;
+      }
+      div::before {
+        content: "";
+        height: 12px;
+        width: 12px;
+        border-top: 2px solid #eee;
+        border-right: 2px solid #eee;
+        border-bottom: 2px solid #eee;
+        border-left: 0px solid #eee;
+        /* border-right: 2px solid #ddd; */
+        transform: rotate(135deg);
+        position: absolute;
+        top: 285px;
+        left: 970px;
+        display: none;
+        box-shadow: 0px 0px 2px rgb(231, 226, 226);
+      }
+      .s2 {
+        width: 100px;
+        height: 50px;
+        background-color: #fff;
+        position: absolute;
+        left: 950px;
+        top: 240px;
+        text-align: center;
+        border-bottom: 1px solid rgb(246, 243, 243);
+        line-height: 50px;
+        border-radius: 10px;
+        display: none;
+        border-top: 1px solid #ddd;
+        border-left: 1px solid #ddd;
+        border-right: 1px solid #ddd;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <span class="s1">鼠标经过了</span>
+      <span class="s2">请注意！！！</span>
+    </div>
+  </body>
+</html>

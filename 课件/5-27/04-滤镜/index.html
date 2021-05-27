@@ -1,0 +1,50 @@
+<!--
+ * @Description: 微信 YZS43507802
+ * @version: 1.0
+ * @Company: 自由
+ * @Author: yinZhaoSheng
+ * @Date: 2021-05-11 21:46:07
+ * @LastEditors: yinZhaoSheng
+ * @LastEditTime: 2021-05-11 23:50:54
+ * @FilePath: /H5+CSS3/CSS3/07滤镜/index.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>滤镜</title>
+    <style>
+        img{
+            width: 500px;
+            transition: all .5s;
+        }
+        img:hover{
+            /* 灰度 默认是0,范围 0-1 */
+            /* filter:grayscale(1); */
+            /* 褐色老照片 默认是0,范围 0-1*/
+            /* filter:sepia(1) */
+            /* 反色 默认是0 范围0-1*/
+            /* filter:invert(1) */
+            /* 透明度 默认是1  */
+            /* filter:opacity(.2) */
+            /* 亮度 */
+            /* filter:brightness(.2) */
+            /* 对比度 */
+            /* filter:contrast(.2) */
+            /* 模糊 */
+            /* filter:blur(1px) */
+            /* 阴影 */
+            filter:drop-shadow(5px 5px 5px gray)
+        }
+        #img2{
+            box-shadow: 5px 5px 5px gray;
+        }
+    </style>
+</head>
+<body>
+    <img src="./images/top.jpg" alt="">
+    <img src="./images/bj.png" alt="" id="img2">
+</body>
+</html>

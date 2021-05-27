@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"> </script>
+		<title>贪吃蛇 移动</title>
+		<style>
+		/*棋盘大小 单个棋盘的宽度*/
+			body{width: 120px;}
+			div{
+				height: 10px;
+				width: 10px;
+				float: left;
+				border: solid 1px #EEEEEE;
+			}
+			/*蛇头*/
+			.hei {background: #000;}
+			/*蛇身*/
+			.hui {background:  #999;}
+			/*食物*/
+			.hong{background: #F00;}		
+			
+		</style>
+		<script type="text/javascript">
+		//棋盘大小
+			var collength = 10;
+			//保存棋盘数据 保存的行与列 棋盘大小*棋盘大小的二维数组
+			var datalist = [];
+			 //默认向右走 
+			var fx = "ArrowRight";
+			//容器装蛇  蛇身 蛇头 坐标的[[行，列]，[行，列][行，列]]
+			var snake = [[0,0],[0,1],[0,2]];
+			//规定 蛇头 是最后一组坐标，索引就是最后一个
+			var snakeHead = snake.length-1;
+			//定时器
+			var go;
+			//渲染满屏数据 一开始渲染一次
+			$(function (){
+				hua();
+				//开启定时器
+				go =	setInterval(timer,1000);
+			});
+//			运动
+			function timer(){
+				//蛇动 从蛇尾到蛇头每节 都往前走一节也就是
+				//从蛇尾到蛇头每节 都取后面一节的坐标
+				//不包括蛇头的
+				for(var i =0;i < snakeHead; i++){
+					//前一个坐标的行/x等于下一个坐标的行/x
+					snake[i][0] = snake[i+1][0];
+					//前一个坐标的列/y等于下一个坐标的列/y
+					snake[i][1] = snake[i+1][1];
+				}
+				switch (fx){
+					//方向向上y轴 行[0,2]坐标里面的第一个元素 向上平移一个像素 -1
+					case "ArrowUp":
+						snake[snakeHead][0]--;
+						break;
+					//方向向上x轴列 向右平移一个像素 +1	
+					case "ArrowRight":
+						snake[snakeHead][1]++;
+						break;
+					//方向向上y轴 向下平移一个像素 +1
+					case "ArrowDown":
+						snake[snakeHead][0]++;
+						break;
+					//方向向上x轴 向左平移一个像素 -1
+					case "ArrowLeft":
+						snake[snakeHead][1]--;
+						break;
+				}
+				//判断撞墙 
+				//蛇头 的坐标不大于 棋盘大小
+				if(snake[snakeHead][0] <0 ||snake[snakeHead][0] >= collength || snake[snakeHead][1] <0 ||snake[snakeHead][1] >=collength){
+					clearInterval(go);
+					alert("撞墙了GAME OVER");
+					return false;
+					//return 跳出当前函数/相当于这个函数已经执行完了  后面的代码不执行
+					alert("酱油");
+				}
+				
+				//每次都得刷新棋盘
+				hua();
+			}
+			//画棋盘
+			function hua (){
+				//i行
+				for(var i =0;i<collength;i++){
+					//必须初始化一维数组 才能使用datalist[i][j] 
+					datalist[i] = [];
+					for(var j = 0 ;j <collength;j++){
+						//这就表示每行每列默认都是0
+						// 0表示白色
+//						datalist = []
+	//			datalist[i]  [[],[],[],[]]
+//	   i = 0    [a,b,c,d]
+//j = 0      a  数组[索引]
+						datalist[i][j] = 0;
+					}
+				}
+				//1 表示蛇身 不包括蛇头
+				//每次取到坐标[3,3] 然后去到里面 行 与列
+				for(var i = 0;i < snakeHead; i++){
+					var  row = snake[i][0];
+					 var coulum = snake[i][1];
+					datalist[ row][coulum]  = 1;
+				}
+				//2表示食物
+				datalist[8][4] = 2;
+				//3表示的蛇头
+//			var snake = [[0,0],[0,1],[0,2]];
+
+				 var  row = snake[snakeHead][0];
+				 var coulum = snake[snakeHead][1];
+				datalist[ row][coulum]  = 3;
+				
+				//装往 界面上添加的标签
+				var  html = [];
+				//数组里面放不同的标签
+				for(var i =0;i< collength;i++ ){
+					for(var j = 0;j< collength ;j++){
+						if( datalist[i][j] == 1){
+							//1蛇身
+							html.push("<div class='hui'></div>");
+						}else if(datalist[i][j] ==3){
+							//3蛇头
+							html.push("<div class='hei'></div>");
+						}else if(datalist[i][j] ==2){
+							//2食物
+							html.push("<div class='hong'></div>");
+						}else{
+							html.push("<div></div>");
+						}
+						
+						
+						
+						
+					}
+				}
+				//把数组转化为字符串添加到界面上
+				$("body").html(html.join(""));
+			}
+			
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

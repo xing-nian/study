@@ -1,0 +1,78 @@
+<html>
+    <head>
+        <meta charset = "utf-8">
+        <title>小球弹跳</title>
+        <style>
+            section{
+                width:800px;
+                height: 600px;
+                background-color: gray;
+                margin: 100px auto;
+                position: relative;
+            }
+            img{
+                
+                /* position: absolute; */
+                /* left: 368px; */
+                /*marge 位置只对块元素有效,
+                而img不是块元素*/
+                /*margin: 0px auto;*/
+                /*展示block块,将img转化为块元素*/
+                /*display: block;*/
+             
+                /*动画名称*/
+                animation-name:qwe;
+                /*动画时间*/
+                animation-duration:4.0s;
+                /*保持结束位置*/
+                animation-fill-mode: forwards;
+                
+            }
+            /*关键帧动画*/
+            @keyframes qwe{
+                0%{
+                    /*动画起始位置*/
+                    /*top: 0px;*/
+                    /*动画中间状态  偏移量(x,y)和    缩放比例(宽比例，高比例)    旋转角度      */
+                    transform: translate(368px,0px) scale(3) rotate(0deg);
+                    /*设置每一段的速度*/
+                    animation-timing-function: ease-in;
+                }
+                20%{
+                    /*动画结束状态*/
+                    /*top: 536px;*/
+                    transform: translate(0px,536px) scale(2,2) rotate(180deg);
+                    /*速率 :加速*/
+                    animation-timing-function: ease-out;
+                }
+                40%{
+                    /*top: 0px;*/
+                    transform: translate(368px,200px) scale(0.8,0.8) rotate(0deg);
+                    /*速率:减速*/
+                    animation-timing-function: ease-in;
+                }
+                60%{
+                    /*top: 536px;*/
+                    transform: translate(736px,536px) scale(1.5,1.5) rotate(180deg);
+                    animation-timing-function: ease-out;
+                }
+                80%{
+                    /*top: 0px;*/
+                    transform: translate(0px,400px) scale(0.6,0.6) rotate(0deg);
+                    animation-timing-function: ease-in;
+                }
+                100%{
+                    /*top: 536px;*/
+                    transform: translate(0px,536px) scale(1,1) rotate(180deg);
+                    animation-timing-function: linear;
+                }
+                
+            }
+        </style>
+    </head>
+    <body>
+        <section>
+            <img src="earth.png" alt="小球">
+        </section>
+    </body>
+</html>

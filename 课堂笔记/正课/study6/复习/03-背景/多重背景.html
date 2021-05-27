@@ -1,0 +1,49 @@
+<!--
+ * @Description: 微信 YZS43507802
+ * @version: 1.0
+ * @Company: 梦想
+ * @Author: yinZhaoSheng
+ * @Date: 2021-05-27 11:03:07
+ * @LastEditors: yinZhaoSheng
+ * @LastEditTime: 2021-05-27 11:23:24
+ * @FilePath: \H5+CSS3\CSS3\04背景\多重背景.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>多重背景</title>
+    <style>
+        body{
+            background-color:#dedede
+        }
+        .box{
+               height: 400px;
+               width:500px;
+               background-color: white;
+               margin:50px auto;
+               overflow: hidden;
+        }
+        .box div{
+            margin:50px auto;
+            height:200px;
+            width: 200px;
+            /* 每个方向 都可以单独设置 图片  位置 重复属性 */
+            background:url("./images/bg1.png") top left no-repeat,
+            url("./images/bg2.png") top right no-repeat,
+            url("./images/bg3.png") bottom left no-repeat,
+            url("./images/bg4.png") bottom right no-repeat,
+            url("./images/bg5.png") center center no-repeat
+            ;
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+            <div></div>
+    </div>
+</body>
+</html>

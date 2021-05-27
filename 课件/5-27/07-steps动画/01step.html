@@ -1,0 +1,44 @@
+<!--
+ * @Description: 微信 YZS43507802
+ * @version: 1.0
+ * @Company: 梦想
+ * @Author: yinZhaoSheng
+ * @Date: 2021-05-27 17:00:05
+ * @LastEditors: yinZhaoSheng
+ * @LastEditTime: 2021-05-27 17:12:27
+ * @FilePath: \H5+CSS3\CSS3\13steps动画\01step.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>div</title>
+    <style>
+        body{
+            background:url(./fish/bg1.jpg) no-repeat;
+            background-size:cover; 
+        }
+        div{
+           width: 174px;
+           height:126px;
+           background:url(./fish/fish8.png);
+           /* step 步 数  */
+           animation:swim 1s steps(8)  infinite;
+           /* border:1px solid  red; */
+        }
+        @keyframes swim {
+             0%{
+                background-position:0 0
+             }
+             100%{
+                background-position:0 -1008px
+             }
+        }
+    </style>
+</head>
+<body>
+    <div></div>
+</body>
+</html>

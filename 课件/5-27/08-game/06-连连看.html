@@ -1,0 +1,151 @@
+<!--
+ * @Description: 微信 YZS43507802
+ * @version: 1.0
+ * @Company: 
+ * @Author: yinZhaoSheng
+ * @Date: 2020-12-29 21:43:20
+ * @LastEditors: yinZhaoSheng
+ * @LastEditTime: 2020-12-30 13:12:59
+ * @FilePath: /前端综合/all参考手册/3连连看.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>连连看</title>
+    <style>
+        .wrapper {
+            border: 1px solid red;
+            /* width: 80%; */
+            width: 800px;
+            margin: auto;
+            overflow: hidden;
+        }
+
+        .cell {
+            float: left;
+            /* width: 25%; */
+            font-weight: bold;
+            font-size: 30px;
+            text-align: center;
+            background-color: #ccc;
+            height: 100px;
+
+        }
+        .selected{
+            font-size: 100px;
+            color:#FFF;
+            text-shadow:0px 0px 3px 3px #FFF inset;
+            box-shadow:0px 0px 3px 3px #FFF inset;
+            opacity: 0.7;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrapper">
+        <!-- <div class="cell">1</div>
+          <div class="cell">2</div> -->
+    </div>
+    <script>
+        // 全局变量 
+        var wrapper = document.querySelector(".wrapper")
+        // cell总个数
+        var ranks =[4,6,36,64,100];//所有等级
+        var rank = 0;//当前等级
+        var length = 4, numbers = [],score=0;
+        var lastCell = null;//上次点击的元素
+        // 封装函数
+        function main() {
+            // 创建8个不重复的数字 保存到 按钮
+            while (numbers.length < length / 2) {
+                // 不会重复 范围太小 会死循环
+                var num = randomNumber(1, 1000)
+                if (numbers.indexOf(num) == -1) numbers.push(num)
+            }
+            // h合并 数组
+            numbers = numbers.concat(numbers)
+            // 打乱顺序 洗牌数组
+            numbers.sort(function (a, b) {
+                //  return a >b
+                return randomNumber(1, 10) - 5
+            })
+            console.log(numbers)
+            // 创建布局
+            numbers.forEach(function (value, index) {
+                var cell = document.createElement("div");
+                wrapper.appendChild(cell);
+
+                cell.innerText = value;
+                cell.className = "cell";
+                cell.style.width = parseInt(wrapper.clientWidth / Math.sqrt(length)) + "px";
+                cell.style.height = cell.clientWidth + "px";
+                cell.style.lineHeight = cell.clientWidth + "px";
+                cell.style.backgroundColor = randomColor();
+            })
+
+        }
+        main()
+        // 给每个cell绑定效率太低下
+        //点击触发后  有事件对象
+        // currentTarget  this
+        wrapper.onclick = function (event) {
+            // target 事件从哪个子元素上触发
+            // currentTarget 和this一样,事件在谁身上绑定
+            // console.log(event.target, "点击触发>>>>>>", this)
+            // console.warn(event.currentTarget === this)//true
+            if(event.target === wrapper){
+                return 
+            }
+            // 取消上次的高亮
+            lastCell  && lastCell.classList.remove("selected")
+            // 当前点击的高亮状态
+            event.target.classList.add("selected")
+            // 当前点击的内容
+            var innerText = event.target.innerText;
+            console.log(innerText);
+            // 不为空 点击不是同一个. 内容一样
+            if(lastCell &&innerText == lastCell.innerText &&lastCell !=event.target){
+                console.log("========")
+                // wrapper.removeChild(lastCell)
+                // wrapper.removeChild(event.target)
+                // 空白处也会有操作 所以最上面  点击的是wrapper 返回
+                lastCell.style.visibility = "hidden"
+                event.target.style.visibility = "hidden"
+                score ++
+                // 一轮游戏结束 重新开始
+                if(score== length/2){
+                    // 等级
+                    rank ++
+                    length = ranks[rank]
+                    score = 0 ;
+                    lastCell = null;
+                    wrapper.innerText = ""
+                    numbers = []
+                    main()
+                }
+
+            }
+            lastCell =  event.target
+        }
+        function randomNumber(a = 1, b = 10) {
+            var max = Math.max(a, b)
+            var min = Math.min(a, b)
+            if (isNaN(max)) throw "参数不规范!!"
+            return Math.floor(Math.random() * (max - min + 1) + min)
+
+        }
+        function randomColor() {
+            var r = randomNumber(0, 255)
+            var g = randomNumber(0, 255)
+            var b = randomNumber(0, 255)
+
+            return `rgb(${r},${g},${b})`
+        }
+
+    </script>
+</body>
+
+</html>

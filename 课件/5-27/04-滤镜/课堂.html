@@ -1,0 +1,56 @@
+<!--
+ * @Description: 微信 YZS43507802
+ * @version: 1.0
+ * @Company: 梦想
+ * @Author: yinZhaoSheng
+ * @Date: 2021-05-27 14:25:34
+ * @LastEditors: yinZhaoSheng
+ * @LastEditTime: 2021-05-27 14:46:46
+ * @FilePath: \H5+CSS3\CSS3\07滤镜\课堂.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>filter</title>
+    <style>
+        img{
+            /* width: 500px; */
+            transition: all .5s;
+        }
+        img:hover{
+            /* 黑白  默认 0   0 -1 */
+            /* filter:grayscale(1); */
+            /*  怀旧  默认 0       */
+            /* filter:sepia(1); */
+            /*  反色  默认 0    */
+            /* filter:invert(1); */
+
+            /* 透明度 默认1   */
+            /* filter:opacity(.2) */
+            /* 变暗 */
+            /* filter:brightness(.4) */
+            /* filter:contrast(.3) */
+
+/*              模糊度 */
+            /* filter:blur(3px); */
+            filter:drop-shadow(5px 5px 30px red)
+            /* 注意 区别 一个是在内容周围 */
+  /*   box-shadow  盒模型的周围 */
+        }
+        .test{
+            box-shadow: 5px 5px 5px red;
+        }
+    </style>
+</head>
+<body>
+      <div>
+           <img src="./images/top.jpg" alt="">
+      </div>
+      <div>
+          <img src="./images/bj.png" alt="" class="test">
+      </div>
+</body>
+</html>

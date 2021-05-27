@@ -1,0 +1,110 @@
+<!--
+ * @Description: 微信 YZS43507802
+ * @version: 1.0
+ * @Company: 
+ * @Author: yinZhaoSheng
+ * @Date: 2021-01-22 22:14:41
+ * @LastEditors: yinZhaoSheng
+ * @LastEditTime: 2021-01-26 08:11:45
+ * @FilePath: /尹照胜JS完整/flayybird/4初始鸟飞.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>草坪移动</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0
+        }
+
+        .box {
+            position: relative;
+            width: 768px;
+            height: 973px;
+            margin: 30px auto;
+            overflow: hidden;
+            border: 1px solid #ff0000;
+
+        }
+
+        #wrap {
+            height: 896px;
+            background: url(img/background.png) no-repeat;
+        }
+
+        #grass {
+            height: 77px;
+            width: 1600px;
+            background: url(img/ground.png) repeat;
+            position: absolute;
+            left: 0;
+            bottom: 0px;
+            right: 0;
+        }
+
+        #grass2 {
+            height: 77px;
+            width: 768px;
+            background: url(img/ground.png) repeat;
+            float: left;
+        }
+
+        .bird {
+            position: absolute;
+            left: 200px;
+            top: 40%;
+            width: 93px;
+            height: 64px;
+            animation: fly 3s infinite;
+        }
+
+        @keyframes fly {
+            20% {
+                top: 30%;
+            }
+
+            40% {
+                top: 40%;
+            }
+
+            60% {
+                top: 30%;
+
+            }
+
+            80% {
+                top: 30%;
+
+            }
+
+            100% {
+                top: 40%;
+
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 草坪背景 -->
+    <div class="box">
+        <!-- 背景 -->
+        <div id="wrap">
+            <div class="bird">
+                <img src="./img2/2.png" height=100 alt="">
+            </div>
+        </div>
+        <!-- 草坪 -->
+        <div id="grass">
+            <div id="grass2">
+            </div>
+        </div>
+
+
+</body>
+
+</html>

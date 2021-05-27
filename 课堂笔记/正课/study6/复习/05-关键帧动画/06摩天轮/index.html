@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        html,body{
+            height: 100%;
+        }
+        *{
+            margin: 0;
+        }
+        body{
+            background-image: url(./img/2.jpg);
+        }
+        .wheel-box{
+            width: 1000px;
+            height: 100%;
+            margin: 0 auto;
+            animation: wheelRotate 6s linear infinite;
+        }
+        @keyframes wheelRotate {
+            0%{
+                transform:rotate(0deg);
+            }
+            100%{
+                transform:rotate(360deg) ;
+            }
+        }
+        .wheel{
+            position: relative;
+            width: 768px;
+            height: 768px;
+            background-image: url(./img/fsw.png);
+            margin: 0 auto;
+        }
+        img{
+            position: absolute;
+            top: 20px;
+            left: 315px;
+            /* accessory 附属品 */
+            animation: acce 6s linear infinite;
+            /* 设置起点 */
+            transform-origin: 50% 0;
+        }
+        @keyframes acce {
+            0%{
+                transform:rotate(0deg);
+            }
+            100%{
+                transform:rotate(-360deg) ;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="wheel-box">
+        <div class="wheel">
+            <img src="./img/girls.png" alt="">
+        </div>
+    </div>
+</body>
+</html>

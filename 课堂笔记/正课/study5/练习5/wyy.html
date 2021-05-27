@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+
+        ul{
+            list-style: none;
+        }
+
+        #dh-top{
+            height: 80px;
+            background-color: pink;
+            text-align: center;
+            line-height: 80px;
+        }
+        #dh-top{
+            width: 100%;
+            height: 105px;
+        }
+        #dh-user{
+            width: 100%;
+            height: 70px;
+            background-color: #242424;
+            padding: 0 400px;
+        }
+        #dh-rec{
+            width: 100%;
+            height: 30px;
+            background-color: #C20C0C;
+        }
+        #select{
+            width: 160px;
+            height: 35px;
+            outline: none;
+            border-radius: 15px;
+            border: none;
+            padding-left:40px ;
+            
+        }
+        #write-center{
+            width: 90px;
+            height: 35px;
+            text-align: center;
+            border-radius: 10px;
+            outline: none;
+            border: 1px solid #666;
+            color:#666 ;
+            background-color: #333;
+        }
+        #write-center:hover{
+            border: 1px solid #ccc;
+            color:#ccc ;
+        }
+        .content{
+            overflow: hidden;
+            width: 1100px;
+        }
+        .leftBox{
+            width: 260px;
+            height: 700px;
+            background-color: #eee;
+            float: left;
+        }
+        .leftBox ul{
+            margin: 20px;
+        }
+        .leftBox ul li{
+            width: 220px;
+            height: 40px;
+            font-size: 22px;
+            text-align: center;
+            line-height: 40px;
+        }
+        .flag{
+            background-color: pink;
+        }
+
+        .rightBox{
+            width: 740px;
+            float: left;
+            margin: 20px;
+        }
+
+
+        .footer{
+            height: 40px;
+            line-height: 40px;
+            text-align: center;
+            background-color: pink;
+        }
+
+    </style>
+</head>
+<body>
+    
+    <div id="dh-top">
+        <div id="dh-user">
+             <a id="logo" hidefocus='true' href="#"><img src="wyy.png" alt=""></a>
+             <span class="item"><a target="_blank" href="https://music.163.com/#">发现音乐</a></span>
+             <span class="item"><a target="_blank" href="https://music.163.com/#/my/">我的音乐</a></span>
+             <span class="item"><a target="_blank" href="https://music.163.com/#/friend">朋友</a></span>
+             <span class="item"><a target="_blank" href="https://music.163.com/store/product">商城</a></span>
+             <span class="item"><a target="_blank" href="https://music.163.com/st/musician">音乐人</a></span>
+             <span class="item"><a target="_blank" href="https://music.163.com/#/download">下载客户端</a></span>
+             <div class="box">
+             <input type="text" id="select">
+             <button id="write-center">创作者中心</button>
+             </div>
+         </div>
+        <div id="dh-rec"> 
+            <span class="rec-item">推荐</span>
+            <span class="rec-item">排行榜</span>
+            <span class="rec-item">歌单</span>
+            <span class="rec-item">直播电台</span>
+            <span class="rec-item">歌手</span>
+            <span class="rec-item">新碟上架</span>
+ 
+        </div>
+ 
+    </div>
+    <div class="content">
+        <div class="leftBox">
+            <ul>
+                <li class="flag">标题1</li>
+                <li>标题2</li>
+                <li>标题3</li>
+                <li>标题4</li>
+                <li>标题5</li>
+            </ul>
+        </div>
+        <div class="rightBox">
+            <h2>文章1的标题</h2>
+            <p>文章1的的段落，文章1的的段落，文章1的的段落，文章1的的段落，文章1的的段落，文章1 
+            
+            </p>
+        </div>
+    </div>
+    <div class="footer">
+        Copyright?? http://www.xinhua.com
+    </div>
+
+</body>
+</html>

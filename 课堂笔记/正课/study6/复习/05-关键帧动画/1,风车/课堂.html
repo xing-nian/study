@@ -1,0 +1,136 @@
+<!--
+ * @Description: 微信 YZS43507802
+ * @version: 1.0
+ * @Company: 梦想
+ * @Author: yinZhaoSheng
+ * @Date: 2021-05-27 14:49:53
+ * @LastEditors: yinZhaoSheng
+ * @LastEditTime: 2021-05-27 15:58:28
+ * @FilePath: \H5+CSS3\CSS3\10关键帧动画\1,风车\课堂.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>风车</title>
+    <style>
+        body {
+            /*网页背景*/
+            background-color: white;
+        }
+
+        /*设置块*/
+        div {
+            /*图片设置宽高*/
+            width: 1000px;
+            height: 500px;
+            /*三原色调色*/
+            background-color: rgba(200, 225, 234, 0.8);
+            background-image: url(caodi.png);
+            /*图片宽高*/
+            background-size: 1000px 500px;
+            /*100px表示上下间距,auto表示左右居中*/
+            margin: 100px auto;
+            /*让子元素img以div左上角为原点*/
+            position: relative;
+            /**/
+        }
+
+        /* 
+        
+        animation 动画 电影 名字 时长  内容 
+        注意这个时长 一定要带单位
+        animation: 动画名字 时长   重复次数
+         */
+        img {
+            /* 复合写法 */
+            /* animation: xuanZhuan 10s 3; */
+
+            /* 动画名字 */
+            animation-name:xuanZhuan;
+            /* 动画持续时间   */
+            animation-duration: 5s;
+            
+            /* 重复次数   infinite 无限次*/
+            animation-iteration-count: infinite;
+            
+            /* 速率  贝塞尔曲线  cubic-bezier(.18,1.17,.66,.97)*/
+            animation-timing-function: linear;
+            /* 延迟时间 */
+            animation-delay: 1s;
+/*          停止时候的状态 */
+            animation-fill-mode: forwards;
+        }
+
+        /* 
+          key frames 关键帧动画
+         */
+        /* @keyframes xuanZhuan {
+            0% {
+                transform: rotate(90deg)
+            }
+            100% {
+                transform: rotate(300deg)
+            }
+        } */
+        @keyframes xuanZhuan {
+            from {
+                transform: rotate(90deg)
+            }
+            to {
+                transform: rotate(300deg)
+            }
+        }
+      img:hover{
+          /* 动画播放状态   paused暂停  */
+          animation-play-state: paused
+      }
+        /*会找到父元素中的第一个img元素*/
+        img:nth-child(1) {
+            /* animation-duration: 10s; */
+            animation-iteration-count: 5;
+            animation-timing-function: linear;
+            /* reverse 反向  alternate来回转 */
+            animation-direction: alternate;
+
+
+            width: 350px;
+            height: 350px;
+            position: absolute;
+            left: 115px;
+            top: 60px;
+        }
+
+        img:nth-child(2) {
+            width: 200px;
+            height: 200px;
+            position: absolute;
+            left: 415px;
+            top: 250px;
+
+        }
+
+        img:nth-child(3) {
+            width: 300px;
+            height: 300px;
+            position: absolute;
+            left: 555px;
+            top: 170px;
+        }
+    </style>
+</head>
+
+<body>
+    <!--div是视图块-->
+    <div>
+        <!---->
+        <img src="fengche.png" alt="第一个风车">
+        <img src="fengche.png" alt="第二个风车">
+        <img src="fengche.png" alt="第三个风车">
+    </div>
+</body>
+
+</html>

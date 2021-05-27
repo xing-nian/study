@@ -1,0 +1,104 @@
+<!--
+ * @Description: 微信 YZS43507802
+ * @version: 1.0
+ * @Company: 
+ * @Author: yinZhaoSheng
+ * @Date: 2021-01-22 22:14:41
+ * @LastEditors: yinZhaoSheng
+ * @LastEditTime: 2021-01-25 22:22:54
+ * @FilePath: /尹照胜JS完整/flayybird/2鸟飞.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>草坪移动</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0
+        }
+
+        .box {
+            position: relative;
+            width: 768px;
+            height: 973px;
+            margin: 30px auto;
+            overflow: hidden;
+            border: 1px solid #ff0000;
+
+        }
+
+        #wrap {
+            height: 896px;
+            background: url(img/background.png) no-repeat;
+        }
+
+        #grass {
+            height: 77px;
+            width: 1600px;
+            background: url(img/ground.png) repeat;
+            position: absolute;
+            left: 0;
+            bottom: 0px;
+            right: 0;
+        }
+
+        #grass2 {
+            height: 77px;
+            width: 768px;
+            background: url(img/ground.png) repeat;
+            float: left;
+        }
+        .bird{
+            width: 93px;
+            height: 64px;
+            background: url(img/bird.png);
+            background-position:0px 0px;
+            background-size: cover;
+            animation: fly 1s steps(3) infinite;
+        }
+        @keyframes fly{
+            from {
+                background-position:0px 0px;
+            }
+            to{
+                background-position:-276px 0px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 草坪背景 -->
+    <div class="box">
+        <!-- 背景 -->
+        <div id="wrap"> 
+            <div class="bird"></div>
+        </div>
+        <!-- 草坪 -->
+        <div id="grass">
+            <div id="grass2">
+            </div>
+        </div>
+
+        <script>
+            var wrap = document.querySelector("#wrap")
+            var grass = document.querySelector("#grass")
+            var index = 0;//记录grass的left值
+            setInterval(function () {
+                index += 2;
+                // 第一章图片移除屏幕
+                if (index >= 768) {
+                    index = 0
+                }
+                grass.style.left = -index + "px";
+
+            }, 30)
+
+        </script>
+</body>
+
+</html>

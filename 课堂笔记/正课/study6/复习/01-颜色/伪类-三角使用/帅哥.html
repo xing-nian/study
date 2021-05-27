@@ -1,0 +1,51 @@
+<!--
+ * @Description: 微信 YZS43507802
+ * @version: 1.0
+ * @Company: 
+ * @Author: yinZhaoSheng
+ * @Date: 2019-12-20 09:08:02
+ * @LastEditors: yinZhaoSheng
+ * @LastEditTime: 2021-04-04 23:28:59
+ * @FilePath: /尹照胜H5+CSS3/4伪类-三角使用/帅哥.html
+-->
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			p{
+				width: 100px;
+				height: 100px;
+				margin: 100px auto;
+				position: relative;
+			}
+			p::before{
+					position: absolute;
+					right: -1px;
+					top: -22px;
+					content: "";
+					display: inline-block;
+					border: 10px solid transparent;
+					border-left-color: #0000FF;
+			}
+			p::after{
+				position: absolute;
+				right: -8px;
+				top: -30px;
+				content: "终南山帅";
+                width: 65px;
+				height: 20px;
+				color: #fff;
+				display: inline-block;
+				font-size: 12px;
+				text-align: center;
+				line-height: 20px;
+				background: red;
+			}
+		</style>
+	</head>
+	<body>
+		<p>终南山真帅</p>
+	</body>
+</html>

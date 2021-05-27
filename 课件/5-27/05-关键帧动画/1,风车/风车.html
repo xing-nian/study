@@ -1,0 +1,119 @@
+
+<html>
+    
+    <head>
+        <!--编码,打开时会将代码转化为二进制流传给浏览器,浏览器在显示时
+    会将二进制流还原-->
+        <meta charset = "utf-8">
+        <!--网页标题-->
+        <title>大风车</title>
+        <!--在这里写一个样式表,就是CSS-->
+        <style>
+            /*网页主题*/
+            body{
+                /*网页背景*/
+                background-color: white;
+            }
+            /*设置块*/
+            div{
+                /*图片设置宽高*/
+                width: 1000px;
+                height: 500px;
+                /*background-color: red;*/
+                /*三原色调色*/
+                background-color: rgba(200, 225, 234, 0.8);
+                background-image: url(caodi.png);
+                /*图片宽高*/
+                background-size: 1000px 500px;
+                /*100px表示上下间距,auto表示左右居中*/
+                margin: 100px auto;
+                /*让子元素img以div左上角为原点*/
+                position: relative;
+           /**/
+            }
+            /*会找到父元素中的第一个img元素*/
+            img:nth-child(1){
+                width: 350px;
+                height: 350px;
+                /*调整位置  position 位置
+                absolute 绝对位置,以父视图的左上角为原点
+                ,如果不设置absolute则以背景图片左上角为圆角
+                relative 相对位置,第二个的位置会受到第一个的影响
+                ,坐标原点不一定是父视图的左上角*/
+                position: absolute;
+                left: 115px;
+                top: 60px;
+                /*设置动画*/
+                /*animation-name: dongHua;*/
+                /*animation-duration: 2.0s;*/
+                /*动画速度函数:匀速  默认先快后慢
+                    贝塞尔曲线
+                */
+                animation-timing-function:ease-in-out;
+                /*重复次数   infinite 无限重复*/
+                animation-iteration-count: 2;
+                /* animation-direction:alternate ; */
+                animation-fill-mode: forwards;
+
+            }
+            img:nth-child(2){
+                width: 200px;
+                height: 200px;
+                position: absolute;
+                left: 415px;
+                top: 250px;
+                /* animation-iteration-count: 4; */
+
+            }
+            img:nth-child(3){
+                width: 300px;
+                height: 300px;
+                position: absolute;
+                left: 555px;
+                top: 170px;
+                /* animation-iteration-count: 6; */
+
+            }
+            img{
+                animation-name: dongHua;
+                animation-duration: 5s;
+                /*运动曲线  贝塞尔曲线*/
+                animation-timing-function: linear;
+                /*无限重复*/
+                animation-iteration-count: infinite;
+                /*延迟动画*/
+                /*animation-delay: 2.0s;*/
+                /*动画正向反向交替执行  alternate交替*/
+                /*如果动画次数为一次,不起作用*/
+                /*animation-direction:alternate ;*/
+                /*动画结束之后是否保留结束的位置,默认为none*/
+                /*animation-fill-mode: forwards;*/
+                /*暂停动画,默认是runing*/
+                /*animation-play-state: paused;*/
+                
+                /*一行搞定动画*/
+                /*animation: dongHua 2s infinate liner;*/
+            }
+            /*key 关键 frame 框架   关键帧动画  起一个动画名*/
+            @keyframes dongHua{
+                0%{
+                    /*动画开始时的状态*/
+                    /*rotate 旋转角度  0deg 就是0度*/
+                    transform: rotate(0deg);
+                }100%{
+                    /*动画结束时的状态*/
+                    transform: rotate(160deg);
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <!--div是视图块-->
+        <div>
+            <!---->
+            <img src="fengche.png" alt="第一个风车">
+            <img src="fengche.png" alt="第二个风车">
+            <img src="fengche.png" alt="第三个风车">
+        </div>
+    </body>
+</html>

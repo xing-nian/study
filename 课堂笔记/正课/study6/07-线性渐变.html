@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>线性渐变</title>
+    <style>
+        ul{
+            list-style: none;
+        }
+        li{
+            margin-top: 10px;
+            height: 100px;
+            width: 300px;
+        }
+        li:first-child{
+            /* 渐变色 是background-image
+                linear线性  gradient渐变
+                常规写法  2个颜色 从上往下
+             */
+             background-image: linear-gradient(yellow,red);
+        }
+        /* 多个颜色 */
+        li:nth-child(2){
+             background-image: linear-gradient(yellow,red,blue);
+        }
+        /* 0deg 方向从下往上 */
+        li:nth-child(3){
+             background-image: linear-gradient(0,yellow,red,blue);
+        }
+
+         /* 90deg 方向从左往右 */
+         li:nth-child(4){
+             background-image: linear-gradient(90deg,yellow,red,blue);
+        }
+
+        /* 90deg 方向从左往右 */
+        li:nth-child(5){
+             background-image: linear-gradient(-90deg,yellow,red,blue);
+        }
+         /* repeating-radial-gradient 重复线性渐变  */
+         li:nth-child(6){
+             background-image: repeating-linear-gradient(90deg,red,green,blue,skyblue);
+        }
+    </style>
+</head>
+<body>
+    <ul>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+</body>
+</html>

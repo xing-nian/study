@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"> </script>
+		<title>贪吃蛇 移动</title>
+		<style>
+		/*棋盘大小 单个棋盘的宽度*/
+			body{width: 120px;}
+			div{
+				height: 10px;
+				width: 10px;
+				float: left;
+				border: solid 1px #EEEEEE;
+			}
+			/*蛇头*/
+			.hei {background: #000;}
+			/*蛇身*/
+			.hui {background:  #999;}
+			/*食物*/
+			.hong{background:#f00;animation:1s shanshan;}
+       		 @keyframes shanshan
+       	 	{
+           		0%{background:#f88b8b;}
+         	    100%{background:#ff0000;}
+         	  }	
+			
+		</style>
+		<script type="text/javascript">
+		
+		/*
+		 * var j = [1,23,"a","b"];
+		 * var[j] =[]
+		 * [[a], ["s"],[1],[1,3],[]]
+		 * 
+		 * 
+		 * 
+		 */
+		//棋盘大小
+			var collength = 10;
+			//保存棋盘数据 保存的行与列 棋盘大小*棋盘大小的二维数组
+			var datalist = [];
+			 //默认向右走 
+			var fx = "ArrowRight";
+			//容器装蛇  蛇身 蛇头 坐标的[[行，列]，[行，列][行，列]]
+			var snake = [[0,0],[0,1],[0,2]];
+			//规定 蛇头 是最后一组坐标，索引就是最后一个
+			var snakeHead = snake.length-1;
+			
+			//食物的位置  
+			var foodx = 0;
+			var foody = 0;
+			//定时器
+			var go;
+			//渲染满屏数据 一开始渲染一次
+			$(function (){
+				//创建食物
+				createfood();
+				hua();
+				//开启定时器
+				go =	 setInterval(timer,1000);
+				$("body").keypress(function(e){
+					switch (e.key){
+						case "ArrowUp"://不能反向行走
+						case "w":
+						//方向为上的时候，不能往下走  重置定时器
+						  if( fx != "ArrowDown") inittimer("ArrowUp");
+							break;
+						case "ArrowRight"://不能反向行走
+						case "d":
+						//方向为右的时候，不能往左走  重置定时器
+						  if( fx != "ArrowLeft") inittimer("ArrowRight");
+							break;
+						case "ArrowDown"://不能反向行走
+						case "s":
+						//方向为下的时候，不能往上走  重置定时器
+						  if( fx != "ArrowUp") inittimer("ArrowDown");
+							break;
+						case "ArrowLeft"://不能反向行走
+						case "a":
+						//方向为左的时候，不能往右走  重置定时器
+						  if( fx != "ArrowRight") inittimer("ArrowLeft");
+							break;
+						default:
+							break;
+					}
+					
+				});
+			});
+			//创建食物
+		     function 	createfood  (){
+		     	var fx  = parseInt(Math.random()*collength);
+		     	var fy  = parseInt(Math.random()*collength);
+		     	//我们判断随机产生的食物坐标是否在身上
+		     	while(haspoint(fx,fy)){
+		     		//代表 食物坐标在蛇身上 那么就重新随机产生
+		     		var  fx  = parseInt(Math.random()*collength);
+		     		var  fy  = parseInt(Math.random()*collength);
+		     	}
+		     	foodx = fx;
+		     	foody = fy;
+		     };
+		     //判断一个点是否在蛇身上 点作为参数
+		     function haspoint (fx,fy){
+//		     	默认没有在蛇身
+		     	var has = false;
+		     	for(var i = 0; i < snake.length  ;i++){
+		     		if(fx == snake[i][0]  &&fy == snake[i][1]){
+		     			 has = true;
+		     		}
+		     	}
+		     	//外边的人等着我们的结果 我得告诉他们我们的结论
+		     	return has;	     	
+		     }
+		     //如果按键 方向反了 ，重新设置定时器
+		     //key 传过来的方向
+		    function  inittimer(key){
+		    		fx = key;
+		    		//重置定时器
+		    		clearInterval(go);
+		    		go =	 setInterval(timer,1000);
+		    		timer();
+		    }
+//			运动
+			function timer(){
+				//先找到头  不好找 先写出来 用坐标单独表示
+				var headx = snake[snakeHead][0];
+				var heady = snake[snakeHead][1];
+				
+				switch (fx){
+					//方向向上y轴 行[0,2]坐标里面的第一个元素 向上平移一个像素 -1
+					case "ArrowUp":
+						headx--;
+						break;
+					//方向向上x轴列 向右平移一个像素 +1	
+					case "ArrowRight":
+						heady++;
+						break;
+					//方向向上y轴 向下平移一个像素 +1
+					case "ArrowDown":
+						headx++;
+						break;
+					//方向向上x轴 向左平移一个像素 -1
+					case "ArrowLeft":
+						heady--;
+						break;
+				}
+				
+				if(foodx == headx  && foody ==heady){
+					//判断吃到食物 蛇头和食物坐标一样就吃到了
+					//增加长度 就是往蛇数组里面装 蛇吃到的 坐标
+					 snake.push([headx,heady]);
+					 //每吃一个蛇身增加， 那么蛇头索引也增加
+					 snakeHead ++;
+					 //重新生成一个食物
+					 createfood();
+				}else{
+					//没有吃到 正常走呗
+					//蛇动 从蛇尾到蛇头每节 都往前走一节也就是
+				//从蛇尾到蛇头每节 都取后面一节的坐标
+				//不包括蛇头的
+				for(var i =0;i < snakeHead; i++){
+					//前一个坐标的行/x等于下一个坐标的行/x
+					snake[i][0] = snake[i+1][0];
+					//前一个坐标的列/y等于下一个坐标的列/y
+					snake[i][1] = snake[i+1][1];
+					}
+				switch (fx){
+					//方向向上y轴 行[0,2]坐标里面的第一个元素 向上平移一个像素 -1
+					case "ArrowUp":
+						snake[snakeHead][0]--;
+						break;
+					//方向向上x轴列 向右平移一个像素 +1	
+					case "ArrowRight":
+						snake[snakeHead][1]++;
+						break;
+					//方向向上y轴 向下平移一个像素 +1
+					case "ArrowDown":
+						snake[snakeHead][0]++;
+						break;
+					//方向向上x轴 向左平移一个像素 -1
+					case "ArrowLeft":
+						snake[snakeHead][1]--;
+						break;
+					};
+				}				
+				//判断撞墙 
+				//蛇头 的坐标不大于 棋盘大小
+				if(snake[snakeHead][0] <0 ||snake[snakeHead][0] >= collength || snake[snakeHead][1] <0 ||snake[snakeHead][1] >=collength){
+					clearInterval(go);
+					alert("撞墙了GAME OVER");
+					return false;
+					//return 跳出当前函数/相当于这个函数已经执行完了  后面的代码不执行
+					alert("酱油");
+				}
+				//判断咬到尾巴
+					for(var i = 0; i < snakeHead ; i++){
+						//蛇身横x坐标 列y坐标 和蛇头的横x坐标 列y坐标比较
+						if(snake[snakeHead][0]== snake[i][0]  && snake[snakeHead][1]==snake[i][1] ){
+							clearInterval(go);
+							alert("咬到屁股了，GAME OVER");
+							return false;
+						}
+					}
+				//每次都得刷新棋盘
+				hua();
+			}
+			//画棋盘
+			function hua (){
+				//i行
+				for(var i =0;i<collength;i++){
+					//必须初始化一维数组 才能使用datalist[i][j] 
+					datalist[i] = [];
+					for(var j = 0 ;j <collength;j++){
+						//这就表示每行每列默认都是0
+						// 0表示白色
+//						datalist = []
+	//			datalist[i]  [[],[],[],[]]
+//	   i = 0    [a,b,c,d]
+//j = 0      a  数组[索引]
+						datalist[i][j] = 0;
+					}
+				}
+				//1 表示蛇身 不包括蛇头
+				//每次取到坐标[3,3] 然后去到里面 行 与列
+				for(var i = 0;i < snakeHead; i++){
+					 var  row = snake[i][0];
+					 var coulum = snake[i][1];
+					 datalist[ row][coulum]  = 1;
+				}
+				//2表示食物
+				datalist[foodx][foody] = 2;
+				//3表示的蛇头
+//			var snake = [[0,0],[0,1],[0,2]];
+
+				 var  row = snake[snakeHead][0];
+				 var coulum = snake[snakeHead][1];
+				datalist[ row][coulum]  = 3;
+				
+				//装往 界面上添加的标签
+				var  html = [];
+				//数组里面放不同的标签
+				for(var i =0;i< collength;i++ ){
+					for(var j = 0;j< collength ;j++){
+						if( datalist[i][j] == 1){
+							//1蛇身
+							html.push("<div class='hui'></div>");
+						}else if(datalist[i][j] ==3){
+							//3蛇头
+							html.push("<div class='hei'></div>");
+						}else if(datalist[i][j] ==2){
+							//2食物
+							html.push("<div class='hong'></div>");
+						}else{
+							html.push("<div></div>");
+						}
+					}
+				}
+				//把数组转化为字符串添加到界面上
+				$("body").html(html.join(""));
+			}
+			
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

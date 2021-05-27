@@ -1,0 +1,33 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>动画练习</title>
+    <style>
+        body{
+           background-color: lightcyan;
+        }
+
+        .xiong{
+            width: 1240px;
+            height: 68px;
+            background: url(http://wanlimm.com/wp-content/uploads/2018/09/201806251529912034237944.jpg);
+            animation: xiongRun 1s steps(8,end) infinite;
+        }
+        /*小鱼摇尾巴动画*/
+        @keyframes xiongRun{
+            0%{
+                background-position: 0 0;
+            }
+            100%{
+                background-position: -1008px 0 ;
+            }
+        }
+
+    </style>
+</head>
+<body>
+        <div class="xiong"></div>
+</body>
+</html>

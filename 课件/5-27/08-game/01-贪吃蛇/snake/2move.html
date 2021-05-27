@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>蛇运动</title>
+    <style>
+      body {
+        /* 为什么是240呢 
+            因为 一行20个div
+            div个数*div宽度10  + div个数*div的的左 ,右边框
+            20* 10 +20* 2px
+            200+ 40 = 240px
+             */
+        width: 240px;
+      }
+      div {
+        /* 一行显示多个div  明显的用float
+              一般还需要设置宽高 */
+        float: left;
+        height: 10px;
+        width: 10px;
+        /* 常见的测试手段,当标签看不到的时候 
+                 一般用 背景
+                   或者边框 */
+        border: solid 1px #eee;
+      }
+      /* 黑色的蛇头 */
+      .hei {
+        background: #000;
+      }
+      /* 灰色的蛇身 */
+      .hui {
+        background: #999;
+      }
+      /* 红色的食物 */
+      .hong {
+        background: #f00;
+      }
+    </style>
+  </head>
+  <body>
+    <script>
+      /*    大体上分三步 棋盘  移动  完整流程
+            棋盘
+        1.  明白棋盘是什么  
+            1.1 棋盘就是白色的div
+                棋盘是有大小的 就是有多少格/div
+                    回想下JS实现9*9乘法表 或者金字塔 或者表格
+            1.2首先 棋盘那么多一样的白框 div 
+                    肯定离不开for循环创建
+                    写for就发现什么呢 ,需要个终值 i<谁
+                这个终值由谁决定呢,在棋盘当中有什么特别的意义嘛?
+         1.3  for 终值代表着棋盘的大小
+            比如i <20 意思就是我们  是20*20的棋盘
+            双侧for 因为是 横竖 2个方向
+
+       2. 创建 蛇头  蛇身 食物
+          1. 首先明确这个三者也都是div
+                可以先把样式写了
+          2. 我们怎么表示蛇身 蛇头 食物呢
+             2.1 首先这三者也都是在棋盘上的不同位置
+               我们可以用1 表示蛇身
+                       2 食物
+                       3 蛇头
+
+        数组装我们的棋盘信息   棋盘大小*棋盘大小 的二维数组
+        而棋盘信心无非就是坐标 和状态(1: 蛇身,2:食物,3:蛇头)
+             需要用到二维数组  
+
+             [[1,2],[3,4],[4,6]]
+            //  1排 2列  
+            // 3排 3列 
+            //  4排6列 
+            [[x,y],[x1,y1],[x2,y2]] 类似我们的坐标系
+            要用二维数组 肯定得有先有个一维数组才能装二维
+            dataList[i][j]   不好理解 那就具体解释
+             i = 0  j = 0
+             dataList[0][0]  [[x,y],[],[]]
+            dataList[i]    >>> dataList[0]    >>>[x,y]数组里面的第一个元素
+            dataList[i][j] >>> dataList[0][0] >>>[][0]>> x 
+
+            所有的位置信息初始化都是白块0 
+            下一步创建棋盘的时候 要区分 白块还是蛇头 蛇身食物
+
+   ******   2  运动
+        回想下 贪吃蛇怎么玩的 能联系到哪些JS知识点
+        还是不知道怎么写,就 实例化分析找规律
+        蛇头
+        dataList[5][7] = 3
+        蛇身
+        dataList[5][6] = 1
+        dataList[5][5] = 1
+        dataList[5][4] = 1
+
+        举例子 都往右 走一格 ,怎么走
+         相应的 蛇身 蛇头 的位置会怎么变化呢
+
+          在进一步其实就是 上面的数组会怎么变化呢
+          dataList[5][8] = 3
+
+          dataList[5][7] = 1
+          dataList[5][6] = 1
+          dataList[5][5] = 1
+
+          每一个蛇身 蛇头 每一个坐标都往右移以位 也就是+1
+
+
+          所以 我们需要一个数组专门来装 蛇身 蛇头的数组 
+          每次移动的时候,让相应方向上的坐标+1
+          首先这个蛇的信息应该也是初始化的就有了
+
+
+
+          具体的移动分析了  
+           [[0,0],[0,1],[0,2]]  向右移动一格
+                  [[0,1],[0,2],[0,3]] 向右移动一格
+                         [0,2],[0,3],[0,4]] 
+        找规律
+         蛇头往右移动一格,每个蛇身向蛇头的位置移动一格
+
+         类似我们站成一队, 零头的往前走一步,后面都跟上,
+         走到原先前一个人的位置
+
+      也就是说 蛇的移动
+          是从蛇尾到蛇头每一节, 都往前走一节,
+      在进一步
+        也就是说,从蛇尾到蛇头,每节都取后面一节的坐标
+        但是呢不包括蛇头的 ,因为蛇头本身就是最后一节
+
+
+        移动必须有方向 
+        初始化一个方向 比如向右
+    */
+      var go = null
+      $(function () {
+        //  JQ引用的目的 在DOM加载完成后调用
+        hua(); //初始化,调用我们的的画棋盘方法,
+         go = setInterval(timer, 1000)
+      });
+      var collength = 20; //代表棋盘的 大小
+      var dataList = []; //[[0,0]] 原点 0排0列
+      //容器装蛇的信息 蛇身和蛇头的坐标[[行,列],[行,列],[行,列]]
+      var snake = [
+        [0, 0],
+        [0, 1],
+        [0, 2],
+      ]; //  [0,2]表示蛇头
+      //我们规定 蛇信息里面的最后一个元素用来表示蛇头
+      // 蛇头索引  snake[snake.length -1]
+      var snakeHead = snake.length - 1;
+
+      var fx = "ArrowRight"; //默认向右走
+
+      //   蛇的运动 牵扯到哪些知识点
+      function timer() {
+        //   也就是说 蛇的移动
+        //     是从蛇尾到蛇头每一节, 都往前走一节,
+        // 在进一步
+        //   也就是说,从蛇尾到蛇头,每节都取后面一节的坐标
+        //   但是呢不包括蛇头的 ,因为蛇头本身就是最后一节
+        // 还是不知道怎么写 OK考虑上面的文字
+        // 蛇头蛇尾 对应数组 每一节 对应的肯定是遍历
+        //  取后面的一节 对应的 是赋值相关操作
+        for (var i = 0; i < snakeHead; i++) {
+          // var snake = [[0,0],[0,1],[0,2]]
+          //snake = [[x,y],[行,列]]
+          //前一个坐标的行/x 等于下一个坐标的行/x
+          snake[i][0] = snake[i + 1][0];
+          //
+          //  i = 0
+          //snake[0][0]  = snake[0+1][0]
+          //[0,0][0]  =   [0,1][0]
+          // snake = [[0,0],[0,1],[0,2]]
+          // 其实就是给坐标里面的x赋值的
+          // 取到后面一节的x坐标赋值给前一节
+
+          //前一个坐标的列/y 等于下一个坐标的列/y
+          snake[i][1] = snake[i + 1][1];
+          //  i = 0
+          //snake[0][1]  = snake[0+1][1]
+          //[0,0][1]  =   [0,1][1]
+          //  [1,0]
+          // snake = [[0,1],[0,1],[0,2]]
+          // 其实就是给坐标里面的y赋值的
+          // 取到后面一节的y坐标赋值给前一节
+        }
+        // 移动比较简单 只有4个方向 上下左右
+        // 上面的for循序移动 不包括蛇头
+        // 这switch是专门来处理蛇头的
+        switch (fx) {
+          // 行向上平移一个像素
+          case "ArrowUp":
+            snake[snakeHead][0]--;
+            break;
+          //  列 向右平移一个像素
+          // [x,y]
+          case "ArrowRight":
+            snake[snakeHead][1]++;
+            break;
+          //  行向下平移一个像素
+          case "ArrowDown":
+            snake[snakeHead][0]++;
+            break;
+          // 列向左移一个像素
+          case "ArrowLeft":
+            snake[snakeHead][1]--;
+            break;
+        }
+        //  撞墙提示 
+        //***** 首先明白 撞墙 有几种情况
+        //  4种情况 因为棋盘有4个边, 4个边都可能撞
+
+        //****怎么判断撞墙了
+        //  撞墙  直观分析就是蛇头碰到了棋盘的边
+        // 怎么表示呢
+        //   1. 先把蛇头表示出来
+            // snake[snakeHead][0]
+            // snake[snakeHead][1]
+            // 2 棋盘的边怎么表示呢
+            //  就是棋盘的长度collength
+            //  要判断 所以if写起来
+            // [[x,y],[行,列]]
+            // snake[snakeHead][0]  行数 和棋盘大小的关系
+            // 蛇头的坐标 行 比棋盘的长度小是正常的
+            //  snake[snakeHead][0] >=collength
+            // 所以蛇头所在的行 比棋盘的长度大 或者相等 ,那肯定是装上右边的边了
+            // snake[snakeHead][0] < 0 
+            //  行 < 0 也代表 撞上左边的变了
+            //  列的原理是一样的
+            if(snake[snakeHead][0] < 0 ||snake[snakeHead][0] >=collength ||
+            snake[snakeHead][1] < 0 ||snake[snakeHead][1] >=collength){
+                alert("撞墙了 ,GAME OVER")
+                // 同时不要忘记 关闭定时器
+                clearInterval(go)
+            }
+
+        // 每次移动过后 重新刷新棋盘
+        hua();
+      }
+      //画棋盘
+      function hua() {
+        //   把棋盘的信息装到数组里面
+        // 就是装的棋盘 每一个格子
+        // 20*20 400个格子 400个坐标 初始化的时候都是0表示白块
+        //  [[0,0],[0,1],[0,2]]
+        for (var i = 0; i < collength; i++) {
+          dataList[i] = []; //一维数组   [1,2,3]
+          for (var j = 0; j < collength; j++) {
+            dataList[i][j] = 0; //0表示白块 初始化都是白块
+            // 1: 蛇身,2:食物,3:蛇头
+          }
+        }
+        // 1 蛇身   和蛇头是连着的
+        // 先把所有的蛇身信息 都初始化为蛇身 ,
+        // 蛇头单独设置 也可以理解为 排他思想
+        for (var i = 0; i < snakeHead; i++) {
+          // snake[i]  [[0,0],[0,1],[0,2]]
+          // i= 0 snake[0]  [0] >>  [0,0]   [0]  >>>  0
+          // i =1 snake[1]  [1] >>> [0,1]   [1]  >>>>  1
+          // dataList[row][column]  >>>dataList[0][1]
+          // 0行1列的位置
+          var row = snake[i][0];
+          var column = snake[i][1];
+          dataList[row][column] = 1;
+        }
+        //   2表示食物
+        dataList[8][4] = 2; //索引是从0开始的
+        //   [8][4]  9行5列 是食物的位置
+        //  3表示蛇头
+        // dataList[5][7] = 3;
+        // 蛇信息里面的最后一个元素用来表示蛇头
+        // [[0,0],[0,1],[0,2]]
+        // snake[snakeHead]  >>> [0,2]
+        var row = snake[snakeHead][0]; // [0,2][0]  >>>0
+        var column = snake[snakeHead][1]; //[0,2][1] >>>2
+        dataList[row][column] = 3; //dataList[0,2] =3 第0行 2列的位置蛇头
+        //棋盘
+        // i 行数 row
+        // j 列数 col
+        var html = []; //装我们的div标签
+        for (var i = 0; i < collength; i++) {
+          for (var j = 0; j < collength; j++) {
+            if (dataList[i][j] == 2) {
+              //创建 食物div标签
+              html.push("<div class='hong'></div>");
+            } else if (dataList[i][j] == 3) {
+              html.push("<div class='hei'></div>");
+            } else if (dataList[i][j] == 1) {
+              html.push("<div class='hui'></div>");
+            } else {
+              //创建div标签
+              html.push("<div></div>");
+            }
+          }
+        }
+        //创建的标签添加到界面上 但是我们的div在html里面存着
+        //  html是个数组 ,数组是不能直接展示到界面上的
+        // 必须是字符串 ,所以牵扯到 数组转字符串
+        $("body").html(html.join("")); //界面上看不到我们的div
+      }
+    </script>
+  </body>
+</html>

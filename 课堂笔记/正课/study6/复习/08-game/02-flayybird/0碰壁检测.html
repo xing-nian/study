@@ -1,0 +1,114 @@
+<!--
+ * @Description: 微信 YZS43507802
+ * @version: 1.0
+ * @Company: 
+ * @Author: yinZhaoSheng
+ * @Date: 2021-01-21 20:00:42
+ * @LastEditors: yinZhaoSheng
+ * @LastEditTime: 2021-01-22 21:58:55
+ * @FilePath: /尹照胜JS完整/flayybird/0碰壁检测.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>flayybird</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0
+        }
+        #A,
+        #B {
+            width: 200px;
+            height: 200px;
+            background-color: red;
+            font-size: 50px;
+            line-height: 200px;
+            text-align: center;
+            color: white;
+            position: absolute;
+        }
+
+        #A {
+            left: 30px;
+            top: 30px;
+        }
+
+        #B {
+            left: 500px;
+            top: 300px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- http://flappybird.io/  演示 -->
+    <div id="A">A</div>
+    <div id="B">B</div>
+    <script>
+        /*****
+         *   碰壁检测
+         * 
+         * 
+         * 
+         * 
+         * 
+         * 
+        
+        */
+        var divA = document.querySelector("#A")
+        var divB = document.querySelector("#B")
+        //   拖拽A , 鼠标按下,添加鼠标移动事件
+        divA.onmousedown = function (e) {
+            var event1 = window.event || e;
+            console.log("按下")
+            //   鼠标移动
+            document.onmousemove = function (f) {
+                var event2 = window.event || f;
+                console.log("移动")
+                // divA跟随鼠标移动
+                divA.style.left = event2.clientX - event1.offsetX + "px"
+                divA.style.top = event2.clientY - event1.offsetY + "px"
+                // 检测是否碰撞
+                if (isCrash(divA, divB)) {
+                    //撞了
+                    divB.style.backgroundColor = "yellow"
+                } else {
+                    divB.style.backgroundColor = "red"
+                }
+            }
+        }
+        //   divA的鼠标松开事件
+        divA.onmouseup = function () {
+            // 取消移动事件
+            document.onmousemove = null
+            console.log("取消")
+        }
+        function isCrash(obj1, obj2) {
+            var boolCrash = true;//假设true是是碰到了
+            var left1 = obj1.offsetLeft;
+            var right1 = obj1.offsetLeft + obj1.offsetWidth;
+            var top1 = obj1.offsetTop;
+            var bottom1 = obj1.offsetTop + obj1.offsetHeight;
+
+            var left2 = obj2.offsetLeft;
+            var right2 = obj2.offsetLeft + obj2.offsetWidth;
+            var top2 = obj2.offsetTop;
+            var bottom2 = obj2.offsetTop + obj2.offsetHeight;
+            //碰撞条件
+            if (right1 >= left2 && left1 <= right2 && bottom1 >= top2 && top1 <= bottom2) {
+                //碰撞了
+                boolCrash = true
+            } else {
+                boolCrash = false
+                // 没碰到
+            }
+            return boolCrash;
+        }
+    </script>
+</body>
+
+</html>

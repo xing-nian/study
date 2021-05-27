@@ -1,0 +1,64 @@
+<!--
+ * @Description: 微信 YZS43507802
+ * @version: 1.0
+ * @Company: 自由
+ * @Author: yinZhaoSheng
+ * @Date: 2019-12-20 08:37:32
+ * @LastEditors: yinZhaoSheng
+ * @LastEditTime: 2021-05-27 11:01:40
+ * @FilePath: \H5+CSS3\CSS3\04背景\01 背景-裁切.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<style>
+		div {
+			width: 200px;
+			height: 200px;
+			padding: 50px;
+			margin: 100px auto;
+			border: 5px dashed red;
+			background-color: yellow;
+			/* clip  切 
+			 content-box  只包含 内外部分 就是设置的 width
+			 border-box  
+			 padding-box  边框在外边
+			*/
+            background-clip: padding-box;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+			
+			/* 背景从padding区域向外裁剪，超过padding区域的背景将被裁剪掉 */
+			/* background-clip: padding-box; */
+
+			/* 此值为默认值，背景从border区域向外裁剪，也就是超出部分将被裁剪掉 
+			*/
+						/* 边框在背景色上面  */
+
+			/* background-clip: border-box; */
+			/* 背景从content区域向外裁剪，超过context区域的背景将被裁剪掉 */
+			/* background-clip: content-box; */
+			/*可以修改我的背景区域*/
+		}
+	</style>
+</head>
+<body>
+	<div></div>
+</body>
+</html>

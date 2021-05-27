@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>镜像渐变</title>
+    <style>
+        ul{
+            list-style: none;
+        }
+        li{
+            height: 300px;
+            width: 300px;
+            margin-top: 10px;
+        }
+        li:first-child{
+            /* 渐变色 是background-image
+                radial镜像  gradient渐变
+            
+             */
+             background-image: radial-gradient(yellow,red);
+        }
+        /* 多个颜色 */
+        li:nth-child(2){
+             background-image: radial-gradient(yellow,red,blue);
+        }
+        
+        li:nth-child(3){
+             background-image: radial-gradient(10px at center center,yellow,red);
+        }
+
+       
+         li:nth-child(4){
+             background-image: radial-gradient(10px  20px at center center,yellow,red,blue);
+        }
+
+        
+        li:nth-child(5){
+             background-image: radial-gradient(50px  80px  at 180px 40px,yellow,red,blue);
+        }
+        /*repeating-radial-gradient 重复镜像渐变  */
+        li:nth-child(6){
+             background-image:repeating-radial-gradient(50px  60px  at center center,yellow,red,blue)
+        }
+    </style>
+</head>
+<body>
+    <ul>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+</body>
+</html>

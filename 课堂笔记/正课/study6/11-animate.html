@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+  />
+</head>
+<style>
+     .test{
+            color: red;
+        }
+</style>
+<body>
+    <!-- 
+       网站 ： https://animate.style   
+        
+       轮子 造轮子
+
+       1.引用文件
+       2.  想要进行动画的标签 添加 animate__animated 样式
+       3.  想要什么动画效果 去复制 然后 粘贴
+    -->
+  
+        <h1 class="animate__animated animate__bounce">An animated element</h1>
+        <div class="animate__animated  animate__flip">浮动</div>
+        <button onclick="btn1()">动起来</button>
+        <button onclick="btn2()">删除</button>
+</body>
+<script src="../study4/jquery.js"></script>
+<script>
+    // 动画只执行一次 ，所以我们需要动态的添加样式
+     function btn1(){
+         // 删除动画样式， 可以删除多个
+         $('div').removeClass('animate__animated animate__flip')
+         setTimeout(function(){
+              // 添加 动画所需要的样式  注意 可以添加多个样式
+            $("div").addClass('animate__animated animate__flip')
+         })
+     }
+     //js 方式  
+     var odiv = document.querySelector("div")
+            console.log(odiv.className);
+            // js获取标签 所有的 class 是一个数组 
+            // 可以进行  添加样式 删除样式的操作
+            console.log(odiv.classList.add("test"));
+            // https://www.runoob.com/jsref/prop-element-classList.html
+        
+     
+     function btn2(){
+          // 删除动画样式， 可以删除多个
+         $("div").removeClass('animate__animated   animate__flip')
+     }
+</script>
+</html>

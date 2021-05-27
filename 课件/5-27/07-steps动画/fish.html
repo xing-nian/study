@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			body{
+				background:  #00BCD4;
+			}
+			.fish{
+				
+				width: 174px;
+                height: 126px;
+                background: url(img/fish8.png) no-repeat;
+                background-position: 0px 0px;
+                animation: fish 1.5s steps(11) infinite; 
+			}
+			@keyframes fish{
+				from{
+				background-position: 0px 0px;	
+				}
+				to{
+				background-position: 0px -1386px;	
+				}
+			}
+			.box{
+				 position: absolute;
+                left:0;
+               top:0;
+				transform: translate(0,0);
+				animation: run 20s infinite alternate-reverse;
+			}
+			@keyframes  run{
+			0%{
+				transform:translate(0px,0px) rotate(0deg) ;
+            }
+            15%{
+                transform:translate(300px,0px) rotate(25deg) ;
+            }
+            30%{
+                transform:translate(600px,0px) rotate(45deg) ;
+            }
+            50%{
+                transform:translate(600px,550px) rotate(135deg) ;
+            }
+            75%{
+                transform:translate(50px,400px) rotate(235deg);
+            }
+
+            100%{
+                transform:translate(0px,0px) rotate(360deg) ;
+            }
+			}
+		</style>
+	</head>
+	<body>
+		<div class="box">
+			<div class="fish"></div>
+		</div>
+	</body>
+</html>
