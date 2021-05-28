@@ -1,0 +1,88 @@
+<!--
+ * @Description: 微信 YZS43507802
+ * @version: 1.0
+ * @Company: 自由
+ * @Author: yinZhaoSheng
+ * @Date: 2019-12-20 08:37:50
+ * @LastEditors: yinZhaoSheng
+ * @LastEditTime: 2021-05-11 16:34:45
+ * @FilePath: /H5+CSS3/CSS3/案例/05 视距 透视/03 滚动导航栏.html
+-->
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        *{margin: 0; padding: 0;}
+        *::before,*::after {
+            box-sizing: border-box;
+        }
+        body {
+            text-align: center;
+        }
+        nav {
+            display: inline-block;
+            margin-top: 100px;
+        }
+        nav a {
+            display: inline-block;
+            color: white;
+            text-decoration: none;
+            perspective: 200px;
+        }
+        nav a span {
+            line-height: 40px;
+            background-color: #2195de;
+            display: inline-block;
+            padding: 0 25px;
+            position: relative;
+            transform-origin: top;
+            transition: all 1s;
+            transform-style: preserve-3d;
+        }
+        nav a span::after {
+            content: attr(data-hover);   /* attribute 自定义属性 的值*/
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background-color: #0965a0;
+            width: 100%;
+            height: 100%;
+            transform: rotateX(-90deg);  /* 往下翻转  是 负值 */
+            transform-origin: top;
+        }
+        nav a:hover span {
+            transform: rotateX(90deg) translateY(-20px);    /*网上翻转是正值*/
+        }
+    </style>
+</head>
+<body>
+<nav>
+    <a href="#">
+        <span data-hover="前端学院">学无止境</span>
+    </a>
+    <a href="#">
+        <span data-hover="面向对象">学无止境</span>
+    </a>
+    <a href="#">
+        <span data-hover="前端学院">学无止境</span>
+    </a>
+    <a href="#">
+        <span data-hover="面向对象">学无止境</span>
+    </a>
+    <a href="#">
+        <span data-hover="前端学院">学无止境</span>
+    </a>
+    <a href="#">
+        <span data-hover="面向对象">学无止境</span>
+    </a>
+    <a href="#">
+        <span data-hover="前端学院">学无止境</span>
+    </a>
+    <a href="#">
+        <span data-hover="面向对象">学无止境</span>
+    </a>
+</nav>
+</body>
+</html>

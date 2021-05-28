@@ -1,0 +1,40 @@
+<!--
+ * @Description: 微信 YZS43507802
+ * @version: 1.0
+ * @Company: 自由
+ * @Author: yinZhaoSheng
+ * @Date: 2019-12-20 09:08:12
+ * @LastEditors: yinZhaoSheng
+ * @LastEditTime: 2021-05-11 17:31:07
+ * @FilePath: /H5+CSS3/CSS3/12-3d/153d变换/index.html
+-->
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<style>
+			.box{
+				margin: 100px auto;
+				width: 300px;
+				/* 开启3d功能 */
+				transform-style: preserve-3d; 
+				/* 设置镜像 眼睛到物体的距离,近大远小  就是值越小
+				物体越大,值越大物体越小
+				设置给父元素，作用于所有3D转换的子元素 */
+				perspective: 500px;
+			}
+			.box img{
+				transition: all 5s;
+			}
+			.box:hover img{
+				transform:translateY(300px) translateZ(50px) rotateZ(360deg);
+			}
+		</style>
+	</head>
+	<body>
+		<div class="box">
+			<img src="img/z.jpg">
+		</div>
+	</body>
+</html>

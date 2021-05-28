@@ -1,0 +1,49 @@
+<!--
+ * @Description: 微信 YZS43507802
+ * @version: 1.0
+ * @Company: 梦想
+ * @Author: yinZhaoSheng
+ * @Date: 2021-05-28 09:28:38
+ * @LastEditors: yinZhaoSheng
+ * @LastEditTime: 2021-05-28 14:04:17
+ * @FilePath: \H5+CSS3\05-28\10过渡\过渡.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> 过渡</title>
+    <style>
+      div{
+          width: 100px;
+          height: 100px;
+          background-color: red;
+          margin: 100px auto;
+          /* 过渡动画  补间动画  
+          
+          transition: 需要过渡的属性  过渡事件 速率 
+          all
+              
+           */
+          transition: all  2s ;
+      }
+      div:hover{
+          border-radius: 50%;
+          background-color: yellowgreen;
+          transform: scale(2) ;
+          /* display: none; */
+         opacity:0;
+      }
+      
+    </style>
+</head>
+<body>
+    
+    
+   <div>
+       
+   </div>
+</body>
+</html>

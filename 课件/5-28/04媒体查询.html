@@ -1,0 +1,143 @@
+<!--
+ * @Description: 微信 YZS43507802
+ * @version: 1.0
+ * @Company: 梦想
+ * @Author: yinZhaoSheng
+ * @Date: 2021-05-28 15:29:15
+ * @LastEditors: yinZhaoSheng
+ * @LastEditTime: 2021-05-28 16:47:23
+ * @FilePath: \H5+CSS3\05-28\04媒体查询.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>媒体查询</title>
+	<style>
+		* {
+			margin: 0;
+			padding: 0;
+			list-style: none;
+		}
+
+		nav {
+			width: 100%;
+			position: relative;
+		}
+
+		nav ul {
+			width: 100%;
+			background-color: #71c8ff;
+			color: white;
+			line-height: 40px;
+			display: flex;
+		}
+
+		ul li {
+			flex: 1;
+			padding: 10px;
+			border-right: 1px solid #fff;
+		}
+
+		ul li:last-child {
+			border: none;
+		}
+
+		@media screen and (max-width:800px) {
+
+			/* 800一下的样式 */
+			nav ul {
+				display: none;
+			}
+
+			nav a {
+				width: 50px;
+				height: 50px;
+				background-color: black;
+				/* 定位 */
+				position: absolute;
+				left: 0;
+				top: 0;
+				/*  弹性盒子  */
+				display: inline-flex;
+				/*  是否换行 */
+				flex-wrap: wrap;
+				/* 主轴方向 布局  */
+				justify-content: center;
+				/* 交叉轴 布局 */
+				align-items: center;
+			}
+
+			nav a span {
+				display: inline-block;
+				width: 70%;
+				height: 2px;
+				background-color: white;
+			}
+			nav:hover a{
+				background-color: red;
+			}
+			nav:hover span:nth-child(1){
+				position: absolute;
+				transform: rotate(45deg) ;
+			}
+			nav:hover span:nth-child(2){
+				transform: rotate(-45deg) ;
+			}
+			nav:hover span:nth-child(3){
+				display:none;
+				/* opacity: 0; */
+			}
+			nav:hover ul{
+				display:block;
+				position:absolute;
+				top:80px;
+			}
+			nav:hover ul li {
+				border-bottom: 1px solid  red;
+			}
+/* 			开发的时候 鼠标悬浮状态的 属性调试
+ 1.  控制台 强制 添加 悬浮样式
+ 2.  或者先都变成正常状态下的样式 调试  成功后再加悬浮
+*/
+			nav:hover ul:before {
+				content:"";
+				background-color:#71c8ff;
+				position:absolute;
+				top:-20px;
+				left: 50px;
+				width: 40px;
+				height:40px;
+				/*  用边框 三角 也可以  */
+				/* border: 30px solid red; */
+				transform: rotate(45deg)
+			}
+		}
+	</style>
+</head>
+
+<body>
+
+	<nav class="box">
+		<a href="#">
+			<span></span>
+			<span></span>
+			<span></span>
+		</a>
+		<ul>
+			<li>导航菜单1</li>
+			<li>导航菜单2</li>
+			<li>导航菜单3</li>
+			<li>导航菜单4</li>
+			<li>导航菜单5</li>
+			<li>导航菜单6</li>
+			<li>导航菜单7</li>
+			<li>导航菜单8</li>
+		</ul>
+	</nav>
+</body>
+
+</html>

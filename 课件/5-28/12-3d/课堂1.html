@@ -1,0 +1,54 @@
+<!--
+ * @Description: 微信 YZS43507802
+ * @version: 1.0
+ * @Company: 梦想
+ * @Author: yinZhaoSheng
+ * @Date: 2021-05-28 10:01:40
+ * @LastEditors: yinZhaoSheng
+ * @LastEditTime: 2021-05-28 10:16:14
+ * @FilePath: \H5+CSS3\CSS3\12-3d\课堂1.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3D-k</title>
+    <style>
+
+        .box{
+                width: 310px;
+                height:440px;
+                border:1px solid red;
+                margin: 50px  auto;
+                /* 1 父标签设置 舞台    */
+                perspective: 700px;
+                /* 你从哪个角度去看 
+                
+                类似你站在舞台 什么位置
+                x轴 y轴
+                 */
+                /* perspective-origin: 500px 10px; */
+
+        }
+        img{
+            /* 2 子标签设置 过渡 */
+            transition: all  2s;
+            /* transform  的中心 */
+            transform-origin: bottom;
+        }
+        img:hover{
+            /* 自己随便玩玩 */
+            transform: rotateX(190deg) rotateY(280deg) rotateZ(100deg);   
+        }
+    </style>
+</head>
+<body>
+     
+    <div class="box">
+        <img src="./pk1.png" alt="">
+    </div>
+ 
+</body>
+</html>

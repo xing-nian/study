@@ -1,0 +1,42 @@
+<!--
+ * @Description: 微信 YZS43507802
+ * @version: 1.0
+ * @Company: 梦想
+ * @Author: yinZhaoSheng
+ * @Date: 2021-05-25 00:48:44
+ * @LastEditors: yinZhaoSheng
+ * @LastEditTime: 2021-05-27 22:08:02
+ * @FilePath: \H5+CSS3\CSS3\案例\翻转导航栏\snow.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+	body{
+		background-color: #000;
+	}
+	div{
+		width: 8px;
+		height: 8px;
+		background-color: #fff;
+		margin:200px;
+		border-radius: 50%;
+		transform-origin:-60px 0;
+		-webkit-animation:donghua 4s linear infinite;
+	}
+	  @-webkit-keyframes donghua{
+	  		0%{
+	  			transform:translate3d(0,0,0) rotate(0deg);
+	  		}
+	  		100%{
+	  			transform:translate3d(0,400px,0) rotate(3 60deg);
+	  		}
+	  }
+	</style>
+</head>
+<body>
+	<div></div>
+</body>
+</html>

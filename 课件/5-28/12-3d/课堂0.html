@@ -1,0 +1,52 @@
+<!--
+ * @Description: 微信 YZS43507802
+ * @version: 1.0
+ * @Company: 梦想
+ * @Author: yinZhaoSheng
+ * @Date: 2021-05-28 09:45:13
+ * @LastEditors: yinZhaoSheng
+ * @LastEditTime: 2021-05-28 14:06:59
+ * @FilePath: \H5+CSS3\05-28\12-3d\课堂0.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>课堂 -3d</title>
+    <style>
+        .box {
+                height: 500px;
+                width: 500px;
+                border: 1px solid  red;
+                /* 舞台  景深 
+                视距
+                1 视距是添加给父标签 
+                 */
+                perspective: 1000px;
+        }
+
+        .box div {
+            height: 100px;
+            width: 100px;
+            background-color: orange;
+            margin: 100px auto;
+            transition: all  3s;
+        }
+
+        .box div:hover {
+                /* transform: translateZ(100px); */
+                transform:rotateY(90deg)
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <div></div>
+    </div>
+</body>
+
+</html>

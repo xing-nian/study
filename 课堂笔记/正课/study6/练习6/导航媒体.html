@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        nav{
+            width: 100%;
+            position: relative;
+        }
+        nav ul{
+            width: 100%;
+            background-color: #71c8ff;
+            color: white;
+            line-height: 40px;
+            display: flex;
+            list-style: none;
+            
+        }
+        ul li{
+            flex: 1;
+            padding: 10px;
+            border-right: 1px solid white;
+            padding-top: 20px;
+            
+        }
+        ul li:last-child{
+            border: none;
+        }
+        @media screen and (max-width:800px){
+            nav ul{
+                display: none;
+            }
+            nav a{
+                display: inline-flex;
+                width: 50px;
+                height: 50px;
+                background-color: black;
+                position: absolute;
+                /* 主轴方向 */
+                justify-content: center;
+                /* 是否换行 */
+                flex-wrap: wrap;
+                /* 交叉轴方向 */
+                align-items: center;
+                left: 0;
+                top: 0;
+            }
+            nav a span{
+                display: inline-block;
+                width: 70%;
+                height: 2px;
+                background-color: white;
+            }
+            nav:hover a{
+                background-color: red;
+            }
+            nav:hover span{
+                position: absolute;
+                transform: rotate(45deg);
+            }
+            nav:hover span:nth-child(2){
+                transform: rotate(-45deg);
+            }
+            nav:hover span:nth-child(3){
+                display: none;
+            }
+            nav:hover ul{
+                display: block;
+                position: absolute;
+                top: 80px;
+            }
+            nav:hover ul li{
+                border-bottom: 1px solid red;
+            }
+            nav:hover ul::before{
+                width: 40px;
+                height: 40px;
+                content: "";
+                background-color: #71c8ff;
+                position: absolute;
+                top: -20px;
+                left: 30px;
+                transform: rotate(45deg);
+                
+            }
+
+        }
+    </style>
+</head>
+<body>
+    <nav class="box">
+        <a href="#">
+        <span></span>
+        <span></span>
+        <span></span>
+        </a>
+        <ul>
+            <li>导航菜单1</li>
+            <li>导航菜单2</li>
+            <li>导航菜单3</li>
+            <li>导航菜单4</li>
+            <li>导航菜单5</li>
+            <li>导航菜单6</li>
+            <li>导航菜单7</li>
+            <li>导航菜单8</li>
+        </ul>
+    </nav>
+    
+</body>
+</html>

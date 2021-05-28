@@ -1,0 +1,89 @@
+<!--
+ * @Description: 微信 YZS43507802
+ * @version: 1.0
+ * @Company: 梦想
+ * @Author: yinZhaoSheng
+ * @Date: 2021-05-25 00:48:39
+ * @LastEditors: yinZhaoSheng
+ * @LastEditTime: 2021-05-27 17:34:10
+ * @FilePath: \H5+CSS3\CSS3\11动画2d\pai.html
+-->
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			body{
+				overflow: hidden;
+			}
+			.box{
+				width: 300px;
+				height: 440px;
+				margin: 100PX auto;
+				position: relative;
+			}
+			.box img{
+				box-shadow: 0 0 10px gray;
+				position: absolute;
+				transition: all 1s;
+				/*  中心点 */
+				transform-origin: bottom right;
+			}
+			
+			.box:hover img:nth-child(8){
+				transform: rotate(10deg);
+			}
+			.box:hover img:nth-child(9){
+				transform: rotate(20deg);
+			}
+			.box:hover img:nth-child(10){
+				transform: rotate(30deg);
+			}
+			.box:hover img:nth-child(11){
+				transform: rotate(40deg);
+			}
+			.box:hover img:nth-child(12){
+				transform: rotate(50deg);
+			}
+			.box:hover img:nth-child(13){
+				transform: rotate(60deg);
+			}
+			.box:hover img:nth-child(6){
+				transform: rotate(-10deg);
+			}
+			.box:hover img:nth-child(5){
+				transform: rotate(-20deg);
+			}
+			.box:hover img:nth-child(4){
+				transform: rotate(-30deg);
+			}
+			.box:hover img:nth-child(3){
+				transform: rotate(-40deg);
+			}
+			.box:hover img:nth-child(2){
+				transform: rotate(-50deg);
+			}
+			.box:hover img:nth-child(1){
+				transform: rotate(-60deg);
+			}
+		</style>
+	</head>
+	<body>
+		<div class="box">
+			<img src="img/pk1.png" />
+			<img src="img/pk2.png" />
+			<img src="img/pk2.png" />
+			<img src="img/pk2.png" />
+			<img src="img/pk2.png" />
+			<img src="img/pk2.png" />
+			<img src="img/pk2.png" />
+			<img src="img/pk2.png" />
+			<img src="img/pk2.png" />
+			<img src="img/pk2.png" />
+			<img src="img/pk2.png" />
+			<img src="img/pk2.png" />
+			<img src="img/pk2.png" />
+		</div>
+	</body>
+</html>

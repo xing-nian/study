@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3d</title>
+    <style>
+        .box{
+            width: 500px;
+            height: 500px;
+            border: 1px solid red;
+            /* 景深 视距  子标签需求  给父标签添加属性  */
+            perspective:500px ;
+        }
+        .box div{
+            height: 100px;
+            width: 100px;
+            background-color: orange;
+            margin: 100px auto;
+            transition: all 1s;
+        }
+        .box div:hover{
+            /* transform: translateX(100px); */
+            transform: rotateY(290deg) scale(3);
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <div>转不转</div>
+    </div>
+</body>
+</html>

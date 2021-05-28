@@ -1,0 +1,69 @@
+<!--
+ * @Description: 微信 YZS43507802
+ * @version: 1.0
+ * @Company: 梦想
+ * @Author: yinZhaoSheng
+ * @Date: 2021-05-28 14:10:57
+ * @LastEditors: yinZhaoSheng
+ * @LastEditTime: 2021-05-28 14:42:32
+ * @FilePath: \H5+CSS3\05-28\媒体查询.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>媒体查询</title>
+    <!-- 
+      媒体查询 响应式布局   
+       在不同的屏幕尺寸下 ，显示不同的样式
+        1.  屏幕类型
+        2.  媒体特性 尺寸
+
+        超小屏幕 手机 (<768px)	
+        小屏幕 平板 (≥768px)	
+        中等屏幕 桌面显示器 (≥992px)	
+        大屏幕 大桌面显示器 (≥1200px)
+     -->
+
+    <style>
+        div {
+            height: 100px;
+            background-color: red;
+        }
+
+
+        @media only screen and (max-width: 520px) {
+
+            /* <=520的时候  
+            的样式 */
+            div {
+                background-color: yellowgreen;
+            }
+        }
+
+        /* 通常这个媒体类型 写all  */
+        @media all and (min-width:550px) {
+            div {
+                background-color: black;
+            }
+        }
+
+        /*   注意格式 空格   */
+        @media only screen and (min-width:820px) and (max-width:900px) {
+
+            /* =<820    进来 <= 900*/
+            div {
+                background-color: orange;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div></div>
+</body>
+
+</html>

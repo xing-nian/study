@@ -1,0 +1,30 @@
+*{margin: 0;padding: 0;box-sizing: border-box;}
+.hedd{ background: #f6f6f6;height: 88px;display: block}
+.hedd span{display: block; color: #f6f6ff; position: relative; top: -54px; left: 20px; font-size: 24px;}
+.left-im{float: left;margin-left: 20px;height: 88px;display: block;padding-top: 10px;text-decoration: none}
+.left-im img{width: 100%;}
+.right-im{float: right;margin-right: 20px;height: 88px;display: block;padding-top: 10px;text-decoration: none}
+.right-im img{ width: 100%;}
+.cengt{width: 100%; border-top:1px solid #cbcbcb ; float: left;}
+h4{display: block;height: 62px;padding-top: 20px;font-size: 25px;margin-left: 2px;}
+.cengt span{    height: 28px;display: block;font-size: 16px;margin-left: 2px;}
+.cengt span a{text-decoration: none;color:#808080 ;}
+.cengt p{color: #1f1f1f;line-height: 36px;margin-left: 2px;margin: 12px;
+    font-size: 19px;}
+.wiede{ width: 100%; height: 50px; background: #f6f6f6; float: left; border-top: 1px solid #ccc;}
+.wiede span{  width: 50%;
+    height: 35px;
+    background: #f6f6f6;
+    border: 1px solid #ccc;
+    border-radius: 23.5px;
+    display: block;
+    float: left;
+    line-height: 34px;
+    margin-top: 6px;
+    margin-left: 6px;}
+.wiede img{width: 31px;padding-left: 11px;}
+.wiede i{color: red; 
+    display: block;
+    float: left;
+    padding-top: 10px;
+    margin-left: 18px;}

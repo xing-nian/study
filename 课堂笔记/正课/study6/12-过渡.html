@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            margin: 100px auto;
+            /* 
+               过渡动画    补间动画
+               transition :需要过渡的动画  时间
+             */
+            transition:border-radius  2s cubic-bezier(0.075, 0.82, 0.165, 1);
+        }
+        div:hover{
+            border-radius: 50%;
+            background-color: skyblue ;
+            /* 放大倍数 */
+            transform: scale(0.01);
+            }
+            
+        /*过渡属性
+        transition-property: all;
+        过渡持续时间
+        transition-duration: 0. 5s;
+        过渡的变化过程
+        transition-timing-function: ease;
+        过渡延迟时间
+        transition-delay: 0s;
+        */
+        
+    </style>
+</head>
+<body>
+    <div>
+
+    </div>
+</body>
+</html>

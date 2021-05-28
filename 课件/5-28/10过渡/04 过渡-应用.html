@@ -1,0 +1,39 @@
+<!--
+ * @Description: 微信 YZS43507802
+ * @version: 1.0
+ * @Company: 梦想
+ * @Author: yinZhaoSheng
+ * @Date: 2021-05-25 00:48:39
+ * @LastEditors: yinZhaoSheng
+ * @LastEditTime: 2021-05-28 09:38:07
+ * @FilePath: \H5+CSS3\CSS3\10过渡\04 过渡-应用.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>CSS3过渡</title>
+	<style>
+		body {
+			background-color: #F2F2F2;
+		}
+		.zoom {
+			width: 300px;
+			height: 300px;
+			border: 1px solid #CCC;
+			margin: 100px auto;
+			background-image: url(./images/bg.jpg);
+			background-position: center;
+			background-size: 100% auto;
+			/* position: relative; */
+			transition: all 1.5s;
+		}
+		.zoom:hover {
+			background-size: 220% auto;
+		}
+	</style>
+</head>
+<body>
+	<div class="zoom"></div>
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>落地页</title>
+
+    <link rel="stylesheet" href="luodi.css">
+</head>
+
+<body>
+    <section>
+        <header>
+            <a href="#" class="logo">尹照胜</a>
+            <div class="toggle"></div>
+        </header>
+        <div class="container">
+            <div class="box">
+                <div class="imgBx">
+                    <img src="img2/1.jpeg">
+                </div>
+            </div>
+            <div class="box">
+                <div class="imgBx">
+                    <img src="img2/2.jpeg">
+                </div>
+            </div>
+            <div class="box">
+                <div class="imgBx">
+                    <img src="img2/3.jpeg">
+                </div>
+            </div>
+            <div class="box">
+                <div class="imgBx">
+                    <img src="img2/4.jpg">
+                </div>
+            </div>
+        </div>
+        <div class="footer">
+            <ul class="sci">
+                <li><a href="#">微信</a></li>
+                <li><a href="#">抖音</a></li>
+                <li><a href="#">微博</a></li>
+
+            </ul>
+            <p class="copyrightText">
+                @YZS43507802
+            </p>
+        </div>
+    </section>
+    <script>
+        const imgBx = document.querySelectorAll(".imgBx")
+        imgBx.forEach(popup => {
+            popup.addEventListener('click', () => {
+                console.log(11,popup)
+                popup.classList.toggle('active')
+            })
+        })
+
+    </script>
+</body>
+
+</html>

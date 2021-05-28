@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+        background:url("img/bg.jpg");
+        -webkit-background-size : cover;
+        background-size: cover;;
+        overflow: hidden;
+      }
+        .box{
+            width: 800px;
+            height: 900px;
+            /* 父标签设置景深 */
+            perspective:1000px;
+            position: relative;
+            margin: 0 auto;
+        }
+        .view{
+            height: 800px;
+            transform-style: preserve-3d;
+            transition: all 20s;
+            /* animation: zhuan 3s infinite; */
+            
+        }
+        /* @keyframes zhuan{
+            0%{
+                transform: rotateX(166px);
+            } 
+            100%{
+                transform: rotateX(360px) rotateY(360px);
+            }
+        } */
+        .view:hover{
+            /* transform: rotateX(300deg) translateX(100PX); */
+            transform: rotateX(-1080deg) rotateY(1080deg);
+            
+        }
+        .view div{
+           
+            
+            width: 300px;
+            height: 300px;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            font-size: 100px;
+            text-align: center;
+            line-height: 300px;
+            color: white;
+            margin: -150px;
+            
+        }
+        .view div:nth-child(1){
+            background-color: rgba(4,135,200,0.5);
+            color: yellowgreen;
+            transform:rotateX(90deg) translateZ(200px);
+        }
+        .view div:nth-child(2){
+            background-color: rgba(200,50,100,0.5);
+            color: lightcoral;
+            transform:rotateY(90deg) translateZ(200px);
+            
+        }
+        .view div:nth-child(3){
+            background-color: rgba(150,150,100,0.5);
+            color: lightgreen;
+            transform: rotateX(-90deg)translateZ(200px);
+            
+        }
+        .view div:nth-child(4){
+            background-color: rgba(100,200,30,0.5);
+            color: lightblue;
+            transform:rotateY(-90deg) translateZ(200px);
+        }
+        .view div:nth-child(5){
+            background-color: rgba(250,255,30,0.5);
+            color: indianred;
+            transform:rotateY(180deg) translateZ(200px);
+        }
+        .view div:nth-child(6){
+            background-color: rgba(255,0,30,0.5);
+            color: firebrick;
+            transform:rotateY(360deg) translateZ(200px);
+            
+        }
+        img{
+            width: 280px;
+            height: 280px;
+            opacity: 0.8;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <div class="view">
+            <div><img src="./img/1.jpg" alt=""></div>
+            <div><img src="./img/2.jpg" alt=""></div>
+            <div><img src="./img/3.jpg" alt=""></div>
+            <div><img src="./img/4.jpg" alt=""></div>
+            <div><img src="./img/5.jpg" alt=""></div>
+            <div><img src="./img/6.jpg" alt=""></div>
+        </div>
+    </div>
+</body>
+</html>

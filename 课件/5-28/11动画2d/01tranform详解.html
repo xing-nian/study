@@ -1,0 +1,63 @@
+<!--
+ * @Description: 微信 YZS43507802
+ * @version: 1.0
+ * @Company: 自由
+ * @Author: yinZhaoSheng
+ * @Date: 2019-12-20 08:58:23
+ * @LastEditors: yinZhaoSheng
+ * @LastEditTime: 2021-05-11 23:09:55
+ * @FilePath: /H5+CSS3/CSS3/11动画2d/index.html
+-->
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<title>2d变换</title>
+	<style type="text/css">
+		/*通过2d转换的平移,让一个盒子放在屏幕的正中间*/
+		.box {
+			width: 200px;
+			height: 200px;
+			background: red;
+			transition: all 2s;
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%) rotate(0);
+
+			/*
+     transform:2d转换的参数
+    translate:(水平位移，垂直位移)注意,永远是先做位移再做其他
+            正值：向右向下
+            负值：向左向上
+            如果只写一个值 水平移动
+            百分比 ：相对于自身移动
+             
+      scale: 缩放
+    scale(水平放缩比例，垂直放缩比例)；
+                大于1：放大
+                小于1：缩小
+                如果只写一个值等比例缩放
+    
+     rotate（角度） 旋转
+            正值 顺时针
+            赋值：逆时针
+      skew()斜切;
+     transform-origin改变中心点的位置  
+				
+			*/}
+			div:hover {
+				transform: translate(-50%, -50%) rotate(360deg);
+				transform-origin: left center;
+			}
+	</style>
+</head>
+
+<body>
+	<div class="box">
+
+	</div>
+</body>
+
+</html>

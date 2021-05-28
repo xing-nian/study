@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        body{
+            background-color:rgb(189, 234, 252);
+          }
+          #div1{
+           width: 800px;
+           margin: 20px auto;
+           border: 4px solid rgb(211, 120, 0);
+           text-align: center;
+          }
+        .ch{
+          position: relative;
+          width: 180px;
+          height: 150px;
+          border-radius: 10px;
+          margin: 2px auto;
+          border: 2px solid yellow;
+        }
+        #btn,#btn1{
+          width: 100px;
+          height: 50px;
+          font-size: 15px;
+          border-radius: 10px;
+          cursor: pointer;
+          margin: 10px 50px 0 50px;
+          color: rgb(42, 165, 73);
+          background-color: pink;
+      }
+      .luc{
+        font-size: 20px;
+        font-weight: bold;
+        margin: 10px auto;
+        text-align: center;
+        color: green;
+       }
+      ul li{
+         vertical-align: top;
+         display: inline-block;
+         width: 100px;
+         height: 50px;
+         border-radius: 35%;
+         border: 3px dashed palevioletred;
+         text-align: center;
+         line-height: 50px;
+         margin: 5px 5px;
+        }
+        li.change{
+         background-color: rgb(255, 47, 47);
+         font-size: 15px;
+         color: black;
+         font-weight: bolder;
+        }
+        .name{
+         position: absolute;
+         font-size: 35px;
+         left: 40px;
+         top: 50px;
+         color: red;
+        }
+        .ch{
+         position: relative;
+         width: 180px;
+         height: 150px;
+         border-radius: 10px;
+         margin: 2px auto;
+         border: 2px solid yellow;
+        }
+      
+    </style>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="div1">
+        <input type="button" value="开始点名" id="btn">
+        <input type="button" value="停止" id="btn1">
+        <div class="luc">要开始点名了</div>
+        <div class="ch">
+        <span class="name"></span>
+        </div>
+       </div>
+</body>
+<script>
+    var div1 = document.querySelector("#div1");
+    var btn = document.querySelector("#btn");
+    var btn1 = document.querySelector("#btn1");
+
+    var oul =document.createElement('ul');
+    div1.appendChild(oul)
+
+    
+
+    var arr = ["桑旭明","卞款","李岩","李珍珍","王文鹏","白龙飞","申继锋","徐艳龙","李林阳","贾鹏","张宇","张昊","宋文重","冷心诚","高铭鑫","董硕","刘学远","韩勇锋","蔡玉辉","李义","程骋","陈相菩","刘雨","王旭静","崔若男","王荣","陈肖波","刘星宇","曾庆武","鲁梦珂","汪晨","孟祥昊","董威振","范凯雨","葛玲","安栋豪","祁航","徐文昊","李政洋","许佳辉","程天","苏亚兵","张锐","张翔","崔鑫","闵文韬","李澳祥","张徐凯","张恒源","张旭辉","王东升","马悦超","张恒"]
+    for (let i = 0; i < arr.length; i++) {
+        var objli=document.createElement("li")
+        objli.innerHTML = arr[i];
+        oul.appendChild(objli)
+        
+    }
+    var oli = document.querySelectorAll('li')
+
+    var timer = null
+    btn.onclick=function(){
+        clearInterval(timer);
+     timer= setInterval(function(){
+        var i = Math.floor(Math.random()*arr.length)
+        for(var j=0;j<oli.length;j++){
+   oli[j].removeAttribute("class");
+  }
+  //为随机选择的li重新设置类样式
+  oli[i].className="change";
+ },100);
+};
+
+btn1.onclick=function () {
+ //清除timer;
+ clearInterval(timer);
+ //根据类样式找到选中的元素
+ var choise = document.getElementsByClassName("change")[0];
+ //获取选中元素的内容
+ var name=choise.innerText;
+ //获取选中展示位置
+ var nameSpan = document.getElementsByClassName('name')[0];
+ //位置添加内容
+ nameSpan.innerText=name;
+}
+    
+</script>
+</html>

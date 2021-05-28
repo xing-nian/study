@@ -1,0 +1,303 @@
+ 
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=GBK">
+        <style>
+        *{
+        	margin:0;padding:0;
+        }
+		.card{
+			 position: absolute;
+			 border:1px solid black;
+			 border-radius:8px;
+		}
+        </style>
+        </head>
+        <body>
+       		<div class="box" id="div_box" >
+       		</div>
+        </body>
+        
+<script>
+//1.空白的地方点击最上面开始移动卡片
+//2.拖动卡片超过多少范围会飞出去(上、下、左、右四种方向)--拖中间的也可以
+
+	(function(){
+		var div_box = document.getElementById("div_box");// 获取盒子
+			div_box.addEventListener('click',tranBox);
+			
+		var boxStack=[];//用来存储卡片dom对象的
+	
+		//创建卡片
+		function initCard(){
+			var screenWidth = window.screen.availWidth-20;
+			var screenHeight = window.screen.availHeight-110;
+			div_box.style.width=screenWidth+'px';
+			div_box.style.height=screenHeight+'px';
+			
+			var card_num=4;
+			for(var i=1;i<=card_num;i++){//生成卡片
+				var div = document.createElement("div");
+					div.id="card"+i;
+					div.className="card";
+					div.addEventListener('mousedown',drag);	
+					/*var img = document.createElement("img");
+						img.src="images/"+i+".jpg";
+						div.appendChild(img);*/
+					
+					div_box.appendChild(div);
+					
+					boxStack.push(div);//一个个的推入到盒子队列
+			}
+			//第一次设置卡片样式
+			reset();
+		}
+		
+		var left=600,top=160,marginLeft=marginTop=24,zIndex=2,width=120,height=200;
+		//重新设置卡片的样式
+		function reset(){
+			for(var i=0;i<boxStack.length;i++){
+				//对每一张卡片设置样式，每张稍微有点不一样
+				var obj = boxStack[i];
+				 	obj.style.left=left+'px';
+				 	obj.style.top=top+'px';
+					obj.style.marginLeft=marginLeft-i*6+'px';
+					obj.style.marginTop=marginTop-i*6+'px';
+					obj.style.zIndex=zIndex+i;
+					obj.style.width=(width+i*12)+'px';
+					obj.style.height=height+'px';
+					
+					//obj.children[0].style.width=(width+i*12)+'px';
+					//obj.children[0].style.height=height+'px';
+					
+					//每个卡片设置不同的颜色
+					switch (obj.id) {
+						case 'card1':
+							obj.style.background = 'aliceblue';
+							break;
+						case 'card2':
+							obj.style.background = 'skyblue';
+							break;
+						case 'card3':
+							obj.style.background = 'powderblue';
+							break;
+						case 'card4':
+							obj.style.background = 'steelblue';
+							break;
+						
+					}
+			}
+		}
+		//拖动卡片的事件函数
+		function tran(e){
+			var e = e || window.event;
+			var target = e.target || e.srcElement;
+			console.log(target.id);
+			if(target.id){
+				//拖动当前的卡片
+			 	move_tran(target);
+			}
+		}
+		//点击box的事件函数
+		function tranBox(e){
+			var e = e || window.event;
+			var target = e.target || e.srcElement;
+			if(target.id){
+				if(target.id==='div_box'){//点击div_box从最上面开始飞
+					move_tran(boxStack[boxStack.length-1]);
+				}
+			}
+		}
+		
+		var moveFlag=false;//正在移动表示，有卡片正在移动，move 函数将不会被调用
+		function move_tran(obj,direction,step){
+			if(moveFlag) return ;//表示有卡片正在移动，move 函数将不会被调用
+			if(obj.timer) return ;//避免重复点击
+			moveFlag=true;//设置当前正在移动
+			step=step||0;
+			
+			var cb = (function (){//回调函数
+				var speed=5;
+				var screenTotal=0;
+				var distance = 0;
+				var endFlag=false;
+				function init(){//处理初始步距
+					if(direction=='top'||direction=='bottom'){
+						speed=10;
+						screenTotal = window.screen.availHeight;
+						distance = Math.ceil((top+step)/screenTotal*100);
+					}else{
+						screenTotal = window.screen.availWidth;
+						distance = Math.ceil((left+step)/screenTotal*100);
+					}
+				}
+				
+				init();
+				
+				return function(){
+					//针对上下左右有不同的设置
+					if(direction=='left'){
+						distance -= speed;
+						dire='left';
+						if(distance<=1){
+							endFlag=true;
+						}
+					}else if(direction=='top'){
+						distance -= speed;
+						dire='top';
+						if(distance<=1){
+							endFlag=true;
+						}
+					}else if(direction=='bottom'){
+						distance += speed;
+						dire='top';
+						if(distance>=90){
+							endFlag=true;
+						}
+					}else{
+						distance += speed;
+						dire='left';
+						//超过一定范围就调整卡片
+						if(distance>=90){
+							endFlag=true;
+						}
+					}
+					
+					if(endFlag){
+						//清除定时器
+						clearInterval(obj.timer);
+						obj.timer=null;
+						//把当前元素 从盒子队列中移动到最前面
+						moveFlag=false;
+						
+						var index = boxStack.findIndex(function(item){
+							return obj.id==item.id;
+						})
+						
+						var cur = boxStack.splice(index,1);
+						
+						boxStack.unshift(cur[0]);//添加到队列最前面
+						
+						setTimeout(function(){
+							reset();//重新部署盒子
+						},50)//设置重写设置盒子样式的延时，看起来更舒服	
+						return ;
+					}
+					console.log("distance===",distance)
+					//设置left或者top作移动
+					obj.style[dire]=distance +'%';
+				}
+			})();
+			
+			
+			obj.timer = setInterval(cb,35);
+			
+		}
+
+
+		/* 鼠标拖动 */
+	 	/*
+         * 分析：
+         * 获取鼠标实时移动的坐标；m_move_x,m_move_y
+         * 鼠标按下时的坐标；m_down_x,m_down_y
+         * div的坐标；dx,dy
+         * div的新坐标；ndx,ndy
+         * 最大边界maxX,maxY
+         * 鼠标相对位移 nx,ny
+         */
+ 
+        var isDown = false;//记录鼠标状态
+        var recover = false;
+        var move_div;//要操作的div对象
+        var m_move_x,m_move_y,m_down_x,m_down_y,dx,dy,ndx,ndy,maxX,maxY,nx=0,ny=0;
+ 
+        //鼠标按下
+        function drag(e){
+        	var e = e || event;
+            move_div = this;
+            isDown = true;
+ 
+            //获取鼠标按下时坐标
+            m_down_x = e.clientX;
+            m_down_y = e.clientY;
+            
+            //实时更新div的坐标
+            dx = move_div.offsetLeft;
+            dy = move_div.offsetTop;
+        }
+        //鼠标移动
+        document.onmousemove=function move(e){
+			 var e = e || event;
+            //鼠标按下时移动才触发
+            if(isDown && move_div){
+	            //获取鼠标移动实时坐标
+	            m_move_x = e.clientX;
+	            m_move_y = e.clientY;
+	           
+	            nx = m_move_x-m_down_x;
+	            ny = m_move_y-m_down_y;
+	            
+	            if(Math.abs(nx)>=200){
+	          		move_tran(move_div,nx>0?'right':'left',nx);
+	          		isDown = false;
+            		move_div= null;
+	            	return ;
+	            }else if(Math.abs(ny)>=100){
+	            	move_tran(move_div,ny>0?'bottom':'top',ny);
+	          		isDown = false;
+            		move_div= null;
+	            	return ;
+	            }
+	         
+	            var id = move_div.id.substr(4);
+	            ndx = dx+nx-(id-1)*4;
+	            ndy = dy+ny-(id-1)*4;
+	            
+				//设置拖动的边界
+				maxX = window.screen.availWidth-20-move_div.offsetWidth;
+				maxY = window.screen.availHeight-110-move_div.offsetHeight;
+				if(ndx<=0){
+					ndx=1;
+				}
+				if(ndy<=0){
+					ndy=1;
+				}
+				if(ndx>=maxX){
+					ndx=maxX;
+				}
+				if(ndy>=maxY){
+					ndy=maxY;
+				}
+				
+                //把新div坐标值赋给div对象
+                move_div.style.left = ndx+"px";
+                move_div.style.top = ndy+"px";
+            }
+ 
+        }
+ 
+        //鼠标释放
+        document.onmouseup=function up(e){
+            var e = e || event;
+            //获取鼠标移动实时坐标
+            m_move_x = e.clientX;
+            m_move_y = e.clientY;
+           
+            nx = m_move_x-m_down_x;
+            ny = m_move_y-m_down_y;
+	            
+	        if(nx<300){
+          		reset();
+            }
+            isDown = false;
+            move_div= null;
+		 }
+
+		//初始化
+		initCard();
+		
+	})()
+
+</script>
+</html>

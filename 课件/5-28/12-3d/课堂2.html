@@ -1,0 +1,116 @@
+<!--
+ * @Description: 微信 YZS43507802
+ * @version: 1.0
+ * @Company: 梦想
+ * @Author: yinZhaoSheng
+ * @Date: 2021-05-28 10:18:03
+ * @LastEditors: yinZhaoSheng
+ * @LastEditTime: 2021-05-28 11:30:00
+ * @FilePath: \H5+CSS3\CSS3\12-3d\课堂2.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>立方体</title>
+    <style>
+        .box {
+            height: 900px;
+            width: 800px;
+            /* 1 父标签 设置景深 */
+            perspective: 1000px;
+            /* 定位 */
+            position: relative;
+            border: 1px solid red;
+        }
+
+        .view {
+            height: 800px;
+            /*  
+             2. 3d 透视效果 
+             */
+            transform-style: preserve-3d;
+            /* 3. 过渡属性 动画 */
+            /* transition: all 5s; */
+            animation: enjoy 5s infinite;
+        }
+        @keyframes enjoy {
+            0%{
+            transform: rotateX(166deg) 
+                
+            }
+            100%{
+            transform: rotateX(66deg) rotateY(66deg)
+
+            }
+        }
+        .view div {
+            width: 300px;
+            height: 300px;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            font-size: 100px;
+            text-align: center;
+            line-height: 300px;
+            color: white;
+            background-color: rgba(0, 0, 0, 0.5);
+            margin: -200px;
+        }
+        .view:hover {
+            /* background-color: red; */
+            /* left:100px; */
+            transform: rotateX(66deg) rotateY(66deg)
+        }
+
+        .view div:nth-child(1) {
+            color: green;
+            transform: rotateX(90deg) translateZ(251px);
+        }
+
+        .view div:nth-child(2) {
+            color: yellowgreen;
+            transform: rotateX(180deg) translateZ(200px);
+
+        }
+
+        .view div:nth-child(3) {
+            color: red;
+            transform: rotateX(-90deg) translateZ(200px);
+        }
+
+        .view div:nth-child(4) {
+            color: black;
+            transform: rotateY(-90deg) translateZ(200px);
+        }
+
+        .view div:nth-child(5) {
+            color: aqua;
+            transform: rotateY(90deg) translateZ(200px);
+        }
+
+        .view div:nth-child(6) {
+            color: rgb(255, 127, 217);
+            transform: translateZ(200px);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <div class="view">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+            <div>4</div>
+            <div>5</div>
+            <div>6</div>
+        </div>
+    </div>
+
+</body>
+
+</html>

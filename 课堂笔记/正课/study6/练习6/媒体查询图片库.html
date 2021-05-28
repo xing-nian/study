@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0px;
+        }
+       ul{
+            list-style: none;
+            display: flex;
+            flex-wrap: wrap;
+       }
+       ul li{
+            height: 100px;
+            margin: 5px;
+            text-align: center;
+       }
+      
+       img{
+           height: 100px;
+       }
+       @media all and (max-width:400px){
+            /* 1行 */
+            li{
+                flex: 100%;
+                border: 1px solid red;
+                
+            }
+        }
+        @media all and (min-width:400px) and (max-width:600px){
+            /* 2行 */
+            li{
+                flex: 45%;
+                border: 1px solid lightgreen;
+            }
+        }
+        @media all and (min-width:600px) and (max-width:800px){
+            /* 3行 */
+            li{
+                flex: 29%;
+                border: 1px solid rgb(144, 150, 238);
+            }
+        }
+        @media all and (min-width:801px){
+            /* 4行 */
+            li{
+                flex: 20%;
+                border: 1px solid rgb(238, 144, 144);
+            }
+        }
+    </style>
+</head>
+<body>
+    <ul>
+    </ul>
+</body>
+<script src="./goodList.js"></script>
+<script>
+    var oul=document.querySelector('ul')
+    for (let i = 0; i < goodList.length; i++) {
+       var objli = document.createElement('li')
+       var oimg = document.createElement('img')
+       oimg.src =goodList[i].imageUrl
+       objli.appendChild(oimg)
+       oul.appendChild(objli)
+    }
+</script>
+</html>

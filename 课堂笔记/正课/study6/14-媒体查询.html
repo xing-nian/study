@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>14-媒体查询</title>
+     <!-- 
+        在不同的 屏幕尺寸下  ，显示不同的样式
+        1.屏幕类型
+        2.媒体特性  尺寸
+     -->
+    
+    <style>
+        div{
+            height: 100px;
+            background-color: red;
+            
+        }
+        @media only screen and (min-width:520px){
+            /* 屏幕尺寸大于 520 的样式 */
+            div{
+                background-color: lightblue;
+            }
+        }
+        @media all  and (min-width:550px){
+             /* 屏幕尺寸大于 550 的样式 */
+            
+            div{
+                background-color: black;
+            }
+        }
+        @media only screen and (min-width:820px)and (max-width:900px){
+             /* 屏幕尺寸大于 820  小于900px的样式 */
+            
+            div{
+                background-color: orange;
+            }
+        }
+    </style>
+</head>
+<body>
+   <div></div>
+</body>
+</html>
