@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./练习6/js/swipe.css">
+    <title>swiper</title>
+    <style>
+        .swiper-container,
+        .swiper-warpper,
+        img{
+            width: 400px;
+            height: 300px;
+        }
+        
+       
+    </style>
+</head>
+<body>
+    <div class="swiper-container">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide"><img src="./练习6/img/1.jpg" alt=""></div>
+            <div class="swiper-slide"><img src="./练习6/img/2.jpg" alt=""></div>
+            <div class="swiper-slide"><img src="./练习6/img/3.jpg" alt=""></div>
+            <div class="swiper-slide"><img src="./练习6/img/4.jpg" alt=""></div>
+            <div class="swiper-slide"><img src="./练习6/img/5.jpg" alt=""></div>
+        </div>
+        <!-- 如果需要分页器 -->
+        <div class="swiper-pagination"></div>
+        
+        <!-- 如果需要导航按钮 -->
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+        
+        <!-- 如果需要滚动条 -->
+        <div class="swiper-scrollbar"></div>
+    </div>
+</body>
+<script src="./练习6/js/swiper.js"></script>
+
+<script>
+    // 参数1 swiper 容器  
+    // 参数2 配置信息
+    new Swiper(".swiper-container",{
+        loop:true,
+        effect:"cube",
+        // 分页器 就是轮播图下面那个点
+        // 上面轮播分页  写的什么 复制
+        pagination:".swiper-pagination",
+        // 滚动条
+        scrollbar:".swiper-scrollbar"
+    })
+</script>
+</html>

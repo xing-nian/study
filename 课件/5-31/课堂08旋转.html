@@ -1,0 +1,44 @@
+<!--
+ * @Description: 微信 YZS43507802
+ * @version: 1.0
+ * @Company: 梦想
+ * @Author: yinZhaoSheng
+ * @Date: 2021-05-31 14:55:15
+ * @LastEditors: yinZhaoSheng
+ * @LastEditTime: 2021-05-31 15:10:29
+ * @FilePath: \H5+CSS3\手机端\02移动事件\课堂08旋转.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>旋转</title>
+</head>
+<body>
+    <img src="./img/4.jpg" alt="" id="img1"  height="300" width="200">
+    <script src="./js/touch-0.2.14.js"></script>
+    <script>
+        touch.on("#img1","touchstart",function(event){
+            event.preventDefault();
+            //启动旋转事件
+            event.startRotate()
+        })
+        var img1 = document.querySelector("#img1")
+        img1.style.transition = "all ease 5s";
+        touch.on("#img1","rotate",function(){
+            console.log("旋转");
+            // 获取旋转的角度
+             var angle ;
+            //  判断手指状态是否在移动
+             if(event.fingerStatus =="move"){
+                angle = event.rotation
+             }
+             console.log("旋转角度",angle);
+            //  单位 deg不要忘记
+            this.style.transform = `rotate(${angle}deg)`
+        })
+    </script>
+</body>
+</html>

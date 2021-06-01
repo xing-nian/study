@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>横竖屏</title>
+</head>
+<body>
+    横竖屏:<span></span>
+    角度:<div></div>
+    <img src="./练习6/img/5.jpg" alt="" width="200px" height="300px">
+</body>
+<script>
+    // 从pc端进入到移动端 界面没效果
+    // 通常情况下浏览器没反应过来 要刷新一下页面
+    var ospan = document.querySelector('span')
+    var odiv = document.querySelector('div')
+    var oImg = document.querySelector('img')
+    window.onorientationchange = function(){
+        console.log("获取旋转角度",window.orientation);
+        switch (window.orientation) {
+            case 0:{
+    // 竖屏
+            ospan.innerHTML="竖屏"
+            odiv.innerHTML = "0度"
+            oImg.src = "./练习6/img/1.jpg"
+                break;
+            }
+            case 90:{
+    // 横屏
+            ospan.innerHTML="横屏"
+            odiv.innerHTML = "90度"
+            oImg.src = "./练习6/img/2.jpg"
+                break;
+            }
+    // 右横屏
+            case -90:{
+            ospan.innerHTML="右横屏"
+            odiv.innerHTML = "-90度"
+            oImg.src = "./练习6/img/3.jpg"
+                break;
+            }
+                
+                
+        
+        }
+    }
+</script>
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>滑动删除</title>
+    <style>
+         .view{
+             width: 500px;
+             height: 80px;
+             overflow: hidden;
+             border-bottom: 1px solid red;
+             
+         }
+         .content{
+             width: 700px;
+             height: 80px;
+             display: flex;
+         }
+         .left{
+             background-color: yellowgreen;
+             height: 80px;
+             line-height: 80px;
+             text-align: center;
+             flex: 0 0 500px;
+         }
+         .right{
+             background-color: lightseagreen;
+             height: 80px;
+             line-height: 80px;
+             text-align: center;
+             flex:0 0 200px;
+         }
+    </style>
+</head>
+<body>
+    <div class="view">
+        <div class="content">
+            <div class="left">六一儿童节</div>
+            <div class="right">删除</div>
+        </div>
+       
+    </div>
+    <div class="view">
+        <div class="content">
+            <div class="left">六一儿童节</div>
+            <div class="right">删除</div>
+        </div>
+       
+    </div>
+    <div class="view">
+        <div class="content">
+            <div class="left">六一儿童节</div>
+            <div class="right">删除</div>
+        </div>
+    </div>
+    <div class="view">
+        <div class="content">
+            <div class="left">六一儿童节</div>
+            <div class="right">删除</div>
+        </div>
+       
+    </div>
+</body>
+<script src="./封装js/iscroll.js"></script>
+<script>
+    //  var myscroll = new IScroll(".view",{
+    //     scrollX:true
+    //  })
+    var views =document.querySelectorAll('.view')
+    for (let i = 0; i < views.length; i++) {
+        var myscroll = new IScroll(views[i],{
+        scrollX:true
+    })
+        
+    }
+    // 如果写了删除事件  界面没有更新
+    // 手动的调用刷新方法
+    // myscroll.refresh();
+</script>
+</html>

@@ -1,0 +1,85 @@
+<!--
+ * @Description: 微信 YZS43507802
+ * @version: 1.0
+ * @Company: 梦想
+ * @Author: yinZhaoSheng
+ * @Date: 2021-05-31 14:15:27
+ * @LastEditors: yinZhaoSheng
+ * @LastEditTime: 2021-05-31 14:54:22
+ * @FilePath: \H5+CSS3\手机端\02移动事件\课堂06.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>touch.js</title>
+    <style>
+        div {
+            /* transform: translate3d(x,y,z) */
+        }
+    </style>
+</head>
+
+<body>
+    <img src="./img/3.jpg" alt="" height="300" width="200" class="img1">
+    <script src="./js/touch-0.2.14.js"></script>
+    <script>
+        /********************************
+         *
+         * Touch.js是移动设备上的手势识别与事件库, 由百度云Clouda团队维护，也是在百度内部广泛使用的开发工具.
+Touch.js的代码已托管于github并开源，希望能帮助国内更多的开发者学习和开发出优秀的App产品.
+
+Touch.js手势库专为移动设备设计, 请在Webkit内核浏览器中使用.
+
+特点
+无侵入设计,与现有代码与框架共存
+原生出色的加速度感知与缓动效果,优秀的单指旋转手势
+基于原生事件,支持事件代理, 性能更好
+极简的API,秒速上手, 玩转手势
+         *
+         *
+         *
+         *  touch.on(参数1,参数2,参数3)
+         * 
+         * 参数1: 执行该事件的标签元素或者是选择器对应的对象
+         * 参数2：手势事件类型（可以多个，空格隔开）
+         * 参数3：事件函数
+         */
+        var oimg = document.querySelector("img")
+        // touch.on(oimg,"touchstart",function(){
+        //     console.log("-----------");
+        // })
+        touch.on(".img1", "touchstart", function (e) {
+            var event = e || window.event
+            // 阻止浏览器默认事件
+            event.preventDefault();
+            console.log("class ---img1", e);
+            // this 指向事件源
+            console.log("this:", this);
+        })
+        //  swipe    
+        var x = 0;
+        var y = 0;
+        touch.on(".img1", "swipeleft", function () {
+            console.log("swiper  left");
+            // 模板字符串反引号
+                x -=50;
+                /* transform: translate3d(x,y,z) */
+            this.style.transform = `translate3d(${x}px,${y}px,0)`
+        })
+        touch.on(".img1", "swiperight", function () {
+            console.log("swiper  right");
+            // 模板字符串反引号
+                x +=50;
+                /* transform: translate3d(x,y,z) */
+            this.style.transform = `translate3d(${x}px,${y}px,0)`
+        })
+//         swipeup	向上滑动
+// swipedown	向下滑动
+    </script>
+</body>
+
+</html>

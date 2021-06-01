@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>zepto</title>
+</head>
+<body>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+ 
+</body>
+<script src="./练习6/js/zetop.js"></script>
+<script src="./练习6/js/animation.js"></script>
+<script>
+    $("div").html("移动端jq zepto").css({
+        border:"1px solid red",
+        height:"40px",
+        marginBottom:"10px",
+        textAlign:"center",
+        lineHeight:"40px"
+    })
+    $("div").click(function(){
+       
+        $(this).css({
+            backgroundColor:"skyblue"
+        })
+        // 移动端动画需要引入这个动画库animate.js
+        // 第一个参数是动画的属性和值
+        // 第二个参数是动画持续时间
+        // 第三个参数是移动速率 贝塞尔曲线 ease
+        // 第四个参数是 动画结束的回调函数
+        // 第五个参数延迟时间
+        $(this).animate({
+            marginBottom:"200px",
+            height:"100px",
+            lineHeight:"100px"
+        },2000,"linear",function(){
+            $(this).html("动画结束")
+        },200)
+    })
+</script>
+</html>

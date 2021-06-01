@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>div-1</div>
+    <div>div-2</div>
+    <div>div-3</div>
+    <div>div-4</div>
+    <div>div-5</div>
+    <div>div-6</div>
+    <div>div-7</div>
+    <div>div-8</div>
+    <div>div-9</div>
+    <div>div-10</div>
+</body>
+<script src="./练习6/js/zetop.js"></script>
+<script src="./练习6/js/touch.js"></script>
+<script>
+    $("div").css({
+        border:"1px solid red",
+        height:"40px",
+        marginBottom:"5px"
+    })
+    $("div").eq(0).html("测试")
+    
+    // pc端是click
+    // 移动端用tap 切换到手机调试模式
+    $("div").eq(1).tap(function(){
+        $(this).html("单击事件")
+    })
+    $("div").eq(2).doubleTap(function(){
+        $(this).html("双击事件")
+    })
+    $("div").eq(3).longTap(function(){
+        $(this).html("长按事件")
+    })
+    $("div").eq(4).swipe(function(){
+        $(this).html("清扫事件")
+    })
+    $("div").eq(5).swipeLeft(function(){
+        $(this).html("左清扫事件")
+    })
+    $("div").eq(6).swipeRight(function(){
+        $(this).html("右清扫事件")
+    })
+    $("div").eq(7).swipeUp(function(){
+        $(this).html("上清扫事件")
+    })
+    $("div").eq(8).swipeDown(function(){
+        $(this).html("下清扫事件")
+    })
+</script>
+</html>

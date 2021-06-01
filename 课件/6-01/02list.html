@@ -1,0 +1,41 @@
+<!--
+ * @Description: 微信 YZS43507802
+ * @version: 1.0
+ * @Company: 
+ * @Author: yinZhaoSheng
+ * @Date: 2017-01-17 10:53:10
+ * @LastEditors: yinZhaoSheng
+ * @LastEditTime: 2021-05-31 23:39:00
+ * @FilePath: \H5+CSS3\H5-api\02新增表单\新增的input属性\02list.html
+-->
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</head>
+
+<body>
+    <h2>HTML5自动完成功能示例</h2>
+    输入你最喜欢的城市名称<br><br>
+    <form autocompelete="off">
+        <input type="text" id="city" list="cityList">
+        <datalist id="cityList" >
+            <option value="zhengzhou">郑州</option>
+            <option value="zhongyuanqu">中原区</option>
+            <option value="gaoxinjishukaifaqu">高新技术开发区</option>
+            <option value="erqiqu">二七区</option>
+        </datalist>
+    </form>
+    <form action="testform.asp" method="get">
+        请输入网址： <input type="url" list="url_list" name="weblink" />
+        <datalist id="url_list">
+            <option label="新浪" value="http://www.sina.com.cn" />
+            <option label="搜狐" value="http://www.sohu.com" />
+            <option label="网易" value="http://www.163.com" />
+        </datalist>
+        <input type="submit" value="提交" />
+        </form>
+</body>
+
+</html>

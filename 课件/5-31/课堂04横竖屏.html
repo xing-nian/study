@@ -1,0 +1,65 @@
+<!--
+ * @Description: 微信 YZS43507802
+ * @version: 1.0
+ * @Company: 梦想
+ * @Author: yinZhaoSheng
+ * @Date: 2021-05-31 11:18:21
+ * @LastEditors: yinZhaoSheng
+ * @LastEditTime: 2021-05-31 11:39:59
+ * @FilePath: \H5+CSS3\手机端\02移动事件\课堂04横竖屏.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>横竖屏</title>
+</head>
+
+<body>
+    <!-- 陀螺仪 需要硬件支持 -->
+    横竖屏：<span></span>
+    角度:<div></div>
+    <img src="./img/1.jpeg" alt="" width="200px" height="300px">
+    <script>
+        //   从PC端进入到移动端  界面没效果
+        // 通常情况下 在刷新下界面 因为浏览器可能还没有反应过来，以为当前是PC端
+        var ospan = document.querySelector("span")
+        var odiv = document.querySelector("div")
+        var oImg = document.querySelector("img")
+        //  全都是小写
+        window.onorientationchange = function () {
+            console.log("获取旋转角度:", window.orientation);
+//   0  90   -90 右横屏
+            switch (window.orientation) {
+                case 0: {
+                    // 竖屏     
+                    ospan.innerHTML = "竖屏";
+                    odiv.innerHTML = "0度";
+                    oImg.src = "./img/2.jpeg"
+                    break;
+                }
+                case 90: {
+                    // 横屏
+                    ospan.innerHTML = "横屏";
+                    odiv.innerHTML = "90度"
+                    oImg.src = "./img/3.jpg"
+
+                    break;
+                }
+                case -90: {
+                    // 右横屏
+                    ospan.innerHTML = "右横屏";
+                    odiv.innerHTML = "-90度"
+                    oImg.src = "./img/4.jpg"
+
+                    break;
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>

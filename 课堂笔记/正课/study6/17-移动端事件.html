@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>移动端事件</title>
+</head>
+<style>
+   div{
+       background-color: red;
+   }
+</style>
+<body>
+    <button>修改</button>
+    <div>看完的颜色</div>
+</body>
+<script>
+    var btn=document.querySelector('button')
+    var odiv=document.querySelector('div')
+    btn.onclick=function(){
+        odiv.style.backgroundColor="black"
+    }
+    // 移动端有专门的事件处理
+    // 另外要注意的是 移动端的调试  最好在移动端
+    // 但是pc端的点击事件有300ms的延迟
+    btn.addEventListener("click",function(){
+        odiv.style.backgroundColor = "yellow"
+    })
+</script>
+</html>

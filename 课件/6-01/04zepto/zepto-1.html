@@ -1,0 +1,41 @@
+<!--
+ * @Description: 微信 YZS43507802
+ * @version: 1.0
+ * @Company: 梦想
+ * @Author: yinZhaoSheng
+ * @Date: 2021-06-01 14:21:52
+ * @LastEditors: yinZhaoSheng
+ * @LastEditTime: 2021-06-01 14:28:08
+ * @FilePath: \H5+CSS3\手机端\04zepto\zepto-1.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>zepto</title>
+</head>
+<body>
+    
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <script src="./js/zepto.min.js"></script>
+    <script>
+         $("div").html("移动端jQ zepto").css({
+             border: "1px solid red",
+             height: "40px",
+             lineHeight: "40px",
+             marginBottom:"10px",
+             textAlign: "center"
+         })
+         $("div").click(function(){
+             $(this).css({
+                 backgroundColor:"orange"
+             })
+         })
+    </script>
+</body>
+</html>

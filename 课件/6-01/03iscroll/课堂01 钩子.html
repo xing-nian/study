@@ -1,0 +1,104 @@
+<!--
+ * @Description: 微信 YZS43507802
+ * @version: 1.0
+ * @Company: 梦想
+ * @Author: yinZhaoSheng
+ * @Date: 2021-05-31 17:16:28
+ * @LastEditors: yinZhaoSheng
+ * @LastEditTime: 2021-06-01 09:45:19
+ * @FilePath: \H5+CSS3\手机端\03iscroll\课堂11-iscroll-轮播图.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>轮播图</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        .wrap {
+            margin: 0 auto;
+            position: relative;
+            overflow: hidden;
+            width: 300px;
+            /* 容器的高度比图片的高度大点 */
+            height: 230px;
+        }
+        ul {
+            width: 1200px;
+        }
+        ul li {
+            /* 为什么要float  左右排列 */
+            float: left;
+        }
+        img {
+            width: 300px;
+            height: 200px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrap">
+        <ul>
+            <li>
+                <img src="./img/1.webp" alt="">
+            </li>
+            <li>
+                <img src="./img/2.webp" alt="">
+            </li>
+            <li>
+                <img src="./img/3.webp" alt="">
+            </li>
+            <li>
+                <img src="./img/4.webp" alt="">
+            </li>
+        </ul>
+
+    </div>
+    <script src="./js/iscroll.js"></script>
+    <script>
+        var myScroll = new IScroll(".wrap",{
+            // 开启水平方向的滚动
+            scrollX:true,
+            // 开启竖直方向的滚动
+            scrollY:false,
+            // 是否回弹
+            bounce:true,
+            // 启用滚轮事件
+            mouseWheel:true,
+            // 是否启用滚动条
+            scrollbars:true, 
+            // 惯性
+            momentum:false,
+            // 是否整页滚动
+            snap:true
+        })
+        // 钩子函数  生命周期
+        // 回调函数 一定是别人来调用
+        myScroll.on("beforeScrollStart",function(){
+            console.log("before 还没开始滚动");
+        })
+        myScroll.on("scrollStart",function(){
+            console.log("scroll     Start 开始滚动了");
+        })
+        myScroll.on("scroll",function(){
+            // 需要搭配另外一个工具库使用
+            console.log("scroll------滚动中");
+        })
+        myScroll.on("scrollEnd",function(){
+            // 指向的是 IScroll滚动对象
+            // x: -300 当前滚动的距离
+            // currentPage:  pageX: 1 当前的页码
+            console.log("-------end 结束",this);
+        })
+    </script>
+</body>
+
+</html>

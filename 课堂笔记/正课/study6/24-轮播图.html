@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        ul{
+            list-style: none;
+        }
+        .wrap{
+            margin: 0 0px;
+            position: relative;
+            overflow: hidden;
+            width: 300px;
+            height: 230px;
+        }
+        ul{
+            width: 1200px;
+        }
+        ul li{
+            float:  left;
+        }
+        img{
+            width: 300px;
+            height: 200px;
+            
+        }
+    </style>
+</head>
+
+<body>
+<div class="wrap">
+    <ul>
+        <li><img src="./练习6/img/3.jpg" alt=""></li>
+        <li><img src="./练习6/img/1.jpg" alt=""></li>
+        <li><img src="./练习6/img/2.jpg" alt=""></li>
+        <li><img src="./练习6/img/4.jpg" alt=""></li>
+    </ul>
+</div>
+<script src="./封装js/iscroll.js"></script>
+<script>
+     var myscroll = new IScroll('.wrap',{
+        //  开启水平方向的滚动
+         scrollX:true,
+        //  开启竖直方向的滚动
+        scrollY:false,
+        // 是否回弹
+        bounce:true,
+        // 启动滚轮
+        mouseWheel:true,
+        // 是否启动滚动条
+        scrollbars:true,
+        // 启动惯性
+        momentum:true,
+        // 是否整页滚动
+        snap:true
+     })
+    //  钩子函数  生命周期
+    // 回调函数一定是别人调用
+    myscroll.on('beforeScrollStart',function(){
+        console.log("before 还没开始滚动" );
+    })
+    myscroll.on('scrollStart',function(){
+        console.log("scroll  Start 开始滚动了");
+    })
+    myscroll.on('scroll',function(){
+        // 需要搭配另一个库使用
+        console.log("scroll-------");    
+
+    })
+    myscroll.on('scrollEnd',function(){
+        // this指向滚动对象
+        // x=-300 当前滚动距离
+        // currentPage pageX:1 当前的页码
+        console.log("----end  结束 ",this);
+    })
+</script>
+</body>
+</html>

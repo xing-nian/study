@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>audio</title>
+</head>
+<body>
+    <audio src="./mp3/李白.mp3" controls></audio>
+    <button onclick="playBtn()">播放</button>
+    <button onclick="pauseBtn()">暂停</button>
+    <button onclick="volumeBigBtn()">声音放大</button>
+    <button onclick="volumeSmallBtn()">声音减小</button>
+    <div class="showVo"></div>
+</body>
+<script>
+        var audio = document.querySelector("audio");
+        var showVo = document.querySelector(".showVo");
+    // 播放按钮
+    function playBtn(){
+        audio.play();
+    }
+    // 暂停
+    function pauseBtn(){
+        audio.pause();
+    }
+    // 音量增大
+    function volumeBigBtn(){
+        if (audio.volume < 1) {
+            audio.volume += 0.1
+            
+        }else{
+            audio.volume =1
+            alert("声音已经是最大的")
+        }
+        showVo.innerHTML = audio.volume
+    }
+     // 音量减小
+     function volumeSmallBtn(){
+        if (audio.volume >0) {
+            audio.volume -= 0.1
+            
+        }else{
+            audio.volume <=0
+            alert("静音")
+        }
+        showVo.innerHTML = audio.volume
+    }
+</script>
+</html>

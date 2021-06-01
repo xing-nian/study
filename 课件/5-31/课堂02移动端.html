@@ -1,0 +1,72 @@
+<!--
+ * @Description: 微信 YZS43507802
+ * @version: 1.0
+ * @Company: 梦想
+ * @Author: yinZhaoSheng
+ * @Date: 2021-05-31 10:02:03
+ * @LastEditors: yinZhaoSheng
+ * @LastEditTime: 2021-05-31 11:01:11
+ * @FilePath: \H5+CSS3\手机端\02移动事件\课堂02移动端.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>移动端</title>
+</head>
+
+<body>
+    <div> 看完的颜色</div>
+    <script>
+        var odiv = document.querySelector("div")
+        //    touch 触摸start
+        // 注意移动端只是有了专门的事件类型
+        // touchstart  开始触摸
+        odiv.addEventListener("touchstart", function (e) {
+            //    e 移动端事件参数
+            // 其中 touches 类似于PC端的 target
+            //  touches是个类数组
+            // 因为移动端可以多手指操作
+            // e.touches[0].clientX
+            // e.touches[0].pageX     
+            console.log("事件参数", e.touches[0]);
+            odiv.style.backgroundColor = "red"
+            odiv.innerHTML = "touch  start"
+        })
+        //移动事件 
+        odiv.addEventListener("touchmove", function () {
+            odiv.style.backgroundColor = "yellow"
+            odiv.innerHTML = "touch   move"
+        })
+        // 触摸结束 就是手指离开了
+        odiv.addEventListener("touchend", function () {
+            odiv.style.backgroundColor = "green"
+            odiv.innerHTML = "touchs end"
+        })
+        //  被动的取消 来个视频 电话
+        odiv.addEventListener("touchcancel", function () {
+            odiv.style.backgroundColor = "black"
+            odiv.innerHTML = "touchs cacel"
+
+        })
+        //    随机n颜色  随机数
+        // randmNum(10,30)  10-30整数
+        function randmNum(min = 10, max = 30) {
+            min = Math.min(max, min)
+            max = Math.max(max, min)
+            // Math.random() [0,1)
+             // Math.random()*10 [0,10)
+             // Math.random()*10  + 20 [10,30)
+
+            return parseInt(Math.random() * (max - min + 1) + min)
+        }
+        function randomColor(){
+            return  `rgba`
+        }
+    </script>
+</body>
+
+</html>

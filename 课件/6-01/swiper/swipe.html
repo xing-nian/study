@@ -1,0 +1,79 @@
+<!--
+ * @Description: 微信 YZS43507802
+ * @version: 1.0
+ * @Company: 梦想
+ * @Author: yinZhaoSheng
+ * @Date: 2021-06-01 11:33:01
+ * @LastEditors: yinZhaoSheng
+ * @LastEditTime: 2021-06-01 11:59:55
+ * @FilePath: \H5+CSS3\swiper\swipe.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>swiper</title>
+    <link rel="stylesheet" href="./js/swiper-3.4.2.min.css">
+    <style>
+        .swiper-container,
+        .swiper-wrapper,
+        img {
+            width: 320px;
+            height: 200px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="swiper-container">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">
+                <img src="./img/2.jpg" alt="">
+            </div>
+            <div class="swiper-slide">
+                <img src="./img/3.jpg" alt="">
+            </div>
+            <div class="swiper-slide">
+                <img src="./img/4.jpg" alt="">
+            </div>
+            <div class="swiper-slide">
+                <img src="./img/5.jpg" alt="">
+            </div>
+        </div>
+        <!-- 如果需要分页器 -->
+        <div class="swiper-pagination"></div>
+
+        <!-- 如果需要导航按钮 -->
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+
+        <!-- 如果需要滚动条 -->
+        <div class="swiper-scrollbar"></div>
+    </div>
+    <script src="./js/swiper-3.4.2.min.js"></script>
+    <script>
+        // 参数1 swiper容器  选择器
+        // 参数2 配置信息
+        new Swiper(".swiper-container", {
+            // 是否开启循环模式
+            loop: true,
+            // 切换特效
+            effect: "cube",
+            // 分页器 就是轮播图下面的那个点
+            //   上面轮播模板分页 写的是什么 复制过来
+            pagination: ".swiper-pagination",
+            // 滚动条
+            scrollbar: ".swiper-scrollbar",
+            // 如果需要前进后退按钮
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+        })
+    </script>
+</body>
+
+</html>

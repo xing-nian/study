@@ -1,0 +1,98 @@
+<!--
+ * @Description: 微信 YZS43507802
+ * @version: 1.0
+ * @Company: 梦想
+ * @Author: yinZhaoSheng
+ * @Date: 2021-06-01 11:02:18
+ * @LastEditors: yinZhaoSheng
+ * @LastEditTime: 2021-06-01 11:21:38
+ * @FilePath: \H5+CSS3\手机端\03iscroll\课堂03滑动删除.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>滑动删除</title>
+    <style>
+        .view {
+            width: 500px;
+            height: 80px;
+            overflow: hidden;
+            border: 1px solid red;
+        }
+
+        .content {
+            width: 700px;
+            height: 80px;
+            display: flex;
+        }
+
+        .left {
+            /* flex: 7; */
+            flex:0 0 500px;
+            height: 80px;
+            line-height: 80px;
+            text-align: center;
+            background-color: turquoise;
+        }
+
+        .right {
+            /* flex 设置固定的宽度  */
+            flex: 0 0 200px;
+            /* flex: 3; */
+            height: 80px;
+            line-height: 80px;
+            text-align: center;
+            background-color: orange;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="view">
+        <div class="content">
+            <div class="left">六一儿童节 </div>
+            <div class="right">删除</div>
+        </div>
+    </div>
+    <div class="view">
+        <div class="content">
+            <div class="left">六一儿童节 </div>
+            <div class="right">删除</div>
+        </div>
+    </div>
+    <div class="view">
+        <div class="content">
+            <div class="left">六一儿童节 </div>
+            <div class="right">删除</div>
+        </div>
+    </div>
+    <div class="view">
+        <div class="content">
+            <div class="left">六一儿童节 </div>
+            <div class="right">删除</div>
+        </div>
+    </div>
+    <script src="./js/iscroll.js"></script>
+    <script>
+        // var myScroll = new IScroll(".view",{
+        //     scrollX:true
+        // })
+        var views = document.querySelectorAll('.view')
+        // 因为iscroll结构比较严谨，所以需要通过
+        //  循环给每个列表都添加 滚动对象
+        for (var i = 0; i < views.length; i++) {
+            var myScroll = new IScroll(views[i], {
+                scrollX: true
+            })
+        }
+        // 如果写了删除事件 界面没有更新
+        // 手动的调用刷新方法
+        // myScroll.refresh()
+    </script>
+</body>
+
+</html>

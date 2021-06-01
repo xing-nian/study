@@ -1,0 +1,51 @@
+<!--
+ * @Description: 微信 YZS43507802
+ * @version: 1.0
+ * @Company: 梦想
+ * @Author: yinZhaoSheng
+ * @Date: 2021-06-01 14:21:52
+ * @LastEditors: yinZhaoSheng
+ * @LastEditTime: 2021-06-01 14:38:28
+ * @FilePath: \H5+CSS3\手机端\04zepto\zepto-2动画.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>zepto-2</title>
+</head>
+<body>
+    
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <script src="./js/zepto.min.js"></script>
+    <script src="./js/animation.js"></script>
+    <script>
+         $("div").html("移动端jQ zepto").css({
+             border: "1px solid red",
+             height: "40px",
+             lineHeight: "40px",
+             marginBottom:"10px",
+             textAlign: "center"
+         })
+        //  移动端动画 记得需要引入这个动画库
+        // 第一个参数是 需要动画的 属性和值
+        // 第二个参数是 动画持续时间
+        // 第三个参数是 运动速率 贝塞尔曲线 ease 
+        // 第四个参数是 动画结束的回调函数
+        // 第五个参数是 延迟时间
+         $("div").click(function(){
+             $(this).animate({
+                 marginTop:"100px",
+                 borderRadius:"50%"
+             },5000,"linear",function(){
+                    $(this).html("动画结束")
+             },2000)
+         })
+    </script>
+</body>
+</html>

@@ -1,0 +1,62 @@
+<!--
+ * @Description: 微信 YZS43507802
+ * @version: 1.0
+ * @Company: 梦想
+ * @Author: yinZhaoSheng
+ * @Date: 2021-06-01 14:46:53
+ * @LastEditors: yinZhaoSheng
+ * @LastEditTime: 2021-06-01 14:58:09
+ * @FilePath: \H5+CSS3\手机端\04zepto\zepto-3手势.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>手势</title>
+</head>
+<body>
+    <div>div-1</div>
+    <div>div-2</div>
+    <div>div-3</div>
+    <div>div-4</div>
+    <div>div-5</div>
+    <div>div-6</div>
+    <div>div-7</div>
+    <div>div-8</div>
+    <div>div-9</div>
+    <div>div-10</div>
+    <script src="./js/zepto.min.js"></script>
+    <script src="./js/touch.js"></script>
+    <script>
+        $("div").css({
+            border: "1px solid red",
+            height:"40px",
+            marginBottom:"5px"
+        })
+        $("div").eq(0).html("测试")
+        // 移动端用这个tap  切换到手机调试模式，刷新
+        // PC端是click
+        $("div").eq(1).tap(function(){
+            $(this).html("单击事件")
+        })
+        // 双击事件
+        $("div").eq(2).doubleTap(function(){
+            $(this).html("双击事件")
+        })
+        //长按事件
+        $("div").eq(3).longTap(function(){
+            $(this).html("长按事件")
+        })
+         //轻扫事件
+         $("div").eq(4).swipe(function(){
+            $(this).html("轻扫事件")
+        })
+         //左轻扫事件
+         $("div").eq(5).swipeLeft(function(){
+            $(this).html("左轻扫事件")
+        })
+    </script>
+</body>
+</html>
