@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <img src="" alt="">
+    名称:<div id="show"></div>
+    地址:<div id="show1"></div>
+    区域:<div id="show2"></div>
+    纬度:<div id="show3"></div>
+    经度:<div id="show4"></div>
+</body>
+<script>
+    var show4 =document.querySelector("#show4")
+     var show3 =document.querySelector("#show3")
+    var show2 =document.querySelector("#show2")
+     var show1 =document.querySelector("#show1")
+    var show =document.querySelector("#show")
+function showInfo(res){
+    console.log(res);
+   for (var i = 0; i <res.results.length; i++) {
+    show.innerHTML = res.results[i].name;
+    show1.innerHTML = res.results[i].address;
+    show2.innerHTML = res.results[i].area;
+    show3.innerHTML = res.results[i].location.lat;
+    show4.innerHTML = res.results[i].location.lng;
+    console.log(res.results.length);
+   }
+}
+
+</script>
+<script src="https://api.map.baidu.com/place/v2/search?query=ATM机&tag=银行&region=郑州&output=json&ak=QFuttil6cGdsc0aL3OGglfLHd40wS85B&callback=showInfo"></script>
+</html>

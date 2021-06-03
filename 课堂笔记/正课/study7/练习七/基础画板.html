@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    canvas{
+        border:1px solid black;
+        position: relative;
+    }
+    input{
+        position: absolute;
+        z-index: 5;
+
+    }
+</style>
+<body>
+    <input onclick="colorBtn()" type="color">
+    <canvas >
+      画板
+      
+    </canvas>
+    
+</body>
+<script>
+     var canvas  = document.querySelector('canvas')
+     var ctx = canvas.getContext("2d")
+     var color = document.querySelector('input')
+
+     wh();
+     //    canvas与屏幕宽高一致
+    function wh() {
+    let pageWidth = document.documentElement.clientWidth;
+    let pageHeight = document.documentElement.clientHeight;
+    canvas.width = pageWidth;
+    canvas.height = pageHeight;
+}
+
+     //设置线宽
+    ctx.lineWidth = '3';
+    
+    var flag = false;
+    canvas.onmousedown = (e)=>{
+        // console.log("down");
+        ctx.beginPath();
+        ctx.moveTo(e.clientX-15,e.clientY-15)
+        flag = true;
+    }
+    canvas.onmouseup = (e)=>{
+        flag = false;
+        ctx.moveTo()
+        // console.log("up");
+    }
+
+    canvas.onmousemove = (e)=>{
+        // console.log("move");
+        if(!flag) return;
+        ctx.lineTo(e.clientX-15,e.clientY-15);
+        
+        ctx.strokeStyle = color.value;
+        ctx.strokeStyle = ctx.strokeStyle;
+        ctx.stroke();//执行绘制线条
+
+    }
+
+</script>
+</html>

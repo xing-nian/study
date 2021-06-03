@@ -1,0 +1,70 @@
+<!--
+ * @Description: 微信 YZS43507802
+ * @version: 1.0
+ * @Company: 梦想
+ * @Author: yinZhaoSheng
+ * @Date: 2021-06-02 16:08:51
+ * @LastEditors: yinZhaoSheng
+ * @LastEditTime: 2021-06-02 16:48:51
+ * @FilePath: \H5+CSS3\06-02\定位.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>定位</title>
+</head>
+
+<body>
+    <div id="showInfo"></div>
+    <script>
+        /****************************************************************
+         * 
+         *  定位  卫星  GPS 北斗  
+         *     wifi 基站   Ip 
+         * 
+         *因为定位属于 隐私 所以需要获得用户的同意  所以有弹出提示
+         * 
+         */
+        if (navigator.geolocation) {
+            // 支持
+            // getCurrentPosition  获取当前的位置
+            navigator.geolocation.getCurrentPosition(successCallback, errorCallback)
+        } else {
+            // 不支持
+            alert("抱歉您的浏览器 不太行 ")
+        }
+
+        function successCallback(position) {
+            //  因我们知道这个函数是 获取当前位置成功的回调
+            //  也就是说这个函数里面 JS应该会有参数告诉我们 位置信息
+            // 但是我们又不知道 都有哪些信息 
+            // 这个时候之家打印这个 arguments
+
+            // 回顾一下  就像你点击了键盘 ，鼠标 
+            //js 的事件参数 会有对应的信息一样
+            // *********代码不重要 ，怎么想出来，怎么写的比较重要
+            //  打印函数的参数
+            // coords 坐标
+            // longitude 经度 0 - 180 
+            // latitude  维度 0 - 90
+            console.log("成功", arguments);
+            showInfo.innerHTML  =`经度：${position.coords.longitude} <br>
+                维度：${position.coords.latitude}
+            `
+            // 经纬度转为 地图坐标
+            // 借助 地图  百度地图  高德地图
+            // 开放平台 API
+        }
+        function errorCallback() {
+            //  打印函数的参数
+            console.log("失败", arguments);
+
+        }
+    </script>
+</body>
+
+</html>

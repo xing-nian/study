@@ -1,0 +1,102 @@
+<!--
+ * @Description: 微信 YZS43507802
+ * @version: 1.0
+ * @Company: 梦想
+ * @Author: yinZhaoSheng
+ * @Date: 2021-06-02 14:24:59
+ * @LastEditors: yinZhaoSheng
+ * @LastEditTime: 2021-06-02 16:07:06
+ * @FilePath: \H5+CSS3\06-02\前端存储.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>前端存储</title>
+</head>
+
+<body>
+    <button onclick="saveBtn()">存储/增加</button>
+    <button onclick="getBtn()"> 获取</button>
+    <button onclick="modifyBtn()"> 修改</button>
+    <button onclick="deleteBtn()"> 删除 </button>
+    <!-- 用来展示获取的内容 -->
+    <div id="showInfo"></div>
+    <script>
+        /****************************************************************
+         * Web 存储 API 提供了 sessionStorage （会话存储） 和 localStorage（本地存储）两个存储对象来对网页的数据进行添加、删除、修改、查询操作。
+
+localStorage 用于长久保存整个网站的数据，保存的数据没有过期时间，直到手动去除。
+
+sessionStorage 用于临时保存同一窗口(或标签页)的数据，在关闭窗口或标签页之后将会删除这些数据。
+   // 删除指定的key 和对应的 值
+        localStorage.removeItem("key")
+            localStorage.removeItem("year")
+         清空
+             localStorage.clear()
+          * storage  
+             
+                  4-5M左右
+                  请求不会携带
+
+         * cookie  指定过期时间 
+                   4kb左右
+                    发请求的时候会携带 
+
+         * 查看 storage 
+         *   控制台 选择 ---application ----storage
+         * 
+         *   以 key-value的形式存储
+         *   只能存储 字符串
+         */
+       //  存储
+        function saveBtn() {
+            // setItem("key",value)
+            window.localStorage.setItem("year",2021)
+            window.localStorage.setItem("fullYear","2021-06-02")
+            // 第二种存储的方式
+            // localStorage.属性 = 属性值
+            window.localStorage.weather = "晴，38°"
+            var user = {
+                name:"前端-74期",
+                vip:6,
+                classRoom:308
+            }
+            // 压缩成JSON字符串
+            var userStr = JSON.stringify(user)
+            window.localStorage.setItem("user",userStr)
+        }
+        // 获取
+        function getBtn() {
+            //获取 方式1***** getItem("key")
+            //获取 方式2***** localStorage.属性
+            var user = localStorage.getItem("user")
+            // 把压缩的 JSON字符串解析成JSON 对象
+            var useObj = JSON.parse(user)
+            showInfo.innerHTML = `年份:${localStorage.getItem("year")+10},  <br>
+            日期:${localStorage.getItem("fullYear")},  <br>
+            用户信息:${ useObj.name },  <br>
+             天气:${localStorage.weather}
+            `
+        }
+        // 修改
+        function modifyBtn() {
+            localStorage.weather = "六月的雨 27度"
+            localStorage.setItem("fullYear","2022年-6月2号")
+        }
+        // 删除
+        function deleteBtn() {
+            // 删除指定的key 和对应的 值
+            // localStorage.removeItem("key")
+            localStorage.removeItem("year")
+            // 清空
+            // localStorage.clear()
+        }
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,80 @@
+<!--
+ * @Description: 微信 YZS43507802
+ * @version: 1.0
+ * @Company: 梦想
+ * @Author: yinZhaoSheng
+ * @Date: 2021-06-02 16:57:02
+ * @LastEditors: yinZhaoSheng
+ * @LastEditTime: 2021-06-02 17:38:25
+ * @FilePath: \H5+CSS3\06-02\百度地图.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body,
+        html,
+        #container {
+            overflow: hidden;
+            width: 300px;
+            height: 300px;
+            margin: 0;
+            font-family: "微软雅黑";
+        }
+    </style>
+</head>
+
+<body>
+    <!--  打开百度地图开放平台 -->
+    <!-- 
+        第一次使用百度地图
+        1 开发者文档 web开发 JavaScript API
+         2 左侧菜单 开发指南 账号和获取密钥
+            页面下方申请密钥 ak
+            完成操作
+          3 点击申请 
+
+
+        已经有百度地图账号的 情况下的步骤
+        
+          4 登录账号  菜单上方 有控制台
+          5 左侧  有菜单 选择应用管理
+          6 我的应用   
+          可以查看自己以前的应用
+          7 也可以创建新的应用 
+                应用名称 随便填
+                应用类型 根据自己的需求 目前是浏览器端
+
+                 白名单 测试的时候可以填* 
+          
+            
+            
+
+        如何使用 百度地图
+        1 百度地图开放平台首页
+        2开发者文档 web开发 JavaScript API
+        3左侧菜单 有个示例 DEMO
+        4 选择你想要的 地图
+         -->
+
+    <!--  1. 复制百度地图 脚本 src  路径 ak改为自己的 -->
+    <!--  2.  写 地图显示的 容器标签 -->
+    <!--  3.  设置地图容器标签的 样式 -->
+    <!--  4.  创建百度地图对象 -->
+    <!--  5.  一些具体的 配置信息 -->
+    <div id="container"></div>
+    <script src="https://api.map.baidu.com/api?type=webgl&v=1.0&ak=AG8pR7BDx7cSBzD9ykA7OWKQCs8QO8LP"></script>
+    <script>
+        // 参数是 你的 地图标签容器的id
+        var map = new BMapGL.Map('container'); // 创建Map实例
+        map.centerAndZoom('上海市', 12); // 初始化地图,设置中心点坐标和地图级别
+        map.enableScrollWheelZoom(true); // 开启鼠标滚轮缩放
+    </script>
+</body>
+
+</html>

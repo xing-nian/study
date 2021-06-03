@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>文字</title>
+    <style>
+        canvas{
+            border: 1px solid red;
+        }
+    </style>
+</head>
+<body>
+    <canvas width="500" height="500">看见就是你不学习</canvas>
+    <script>
+        var myCanvas = document.querySelector('canvas')
+        //  获取画布环境
+        var ctx = myCanvas.getContext("2d")
+        ctx.font = "60px 隶书"
+        ctx.fillStyle = "red"
+        // 阴影模糊度
+        ctx.shadowBlur = 1
+        // 阴影模糊颜色
+        ctx.shadowColor ="red"
+        // 正值向右
+        ctx.shadowOffsetX = 3
+        // 正值向下
+        ctx.shadowOffsetY = 3
+        ctx.fillText("74期",200,220)
+
+        ctx.strokeStyle = "green"
+        ctx.strokeText("端午节",40,400)
+    </script>
+</body>
+</html>

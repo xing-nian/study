@@ -1,0 +1,76 @@
+<!--
+ * @Description: 微信 YZS43507802
+ * @version: 1.0
+ * @Company: 梦想
+ * @Author: yinZhaoSheng
+ * @Date: 2021-06-02 14:24:59
+ * @LastEditors: yinZhaoSheng
+ * @LastEditTime: 2021-06-02 15:20:44
+ * @FilePath: \H5+CSS3\06-02\前端存储session.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>前端存储</title>
+</head>
+
+<body>
+    <button onclick="saveBtn()">存储/增加</button>
+    <button onclick="getBtn()"> 获取</button>
+    <button onclick="modifyBtn()"> 修改</button>
+    <button onclick="deleteBtn()"> 删除 </button>
+    <!-- 用来展示获取的内容 -->
+    <div id="showInfo"></div>
+    <script>
+      //  存储
+        function saveBtn() {
+            // setItem("key",value)
+            window.sessionStorage.setItem("year",2021)
+            window.sessionStorage.setItem("fullYear","2021-06-02")
+            // 第二种存储的方式
+            // sessionStorage.属性 = 属性值
+            window.sessionStorage.weather = "晴，38°"
+            var user = {
+                name:"前端-74期",
+                vip:6,
+                classRoom:308
+            }
+            // 压缩成JSON字符串
+            var userStr = JSON.stringify(user)
+            window.sessionStorage.setItem("user",userStr)
+        }
+        // 获取
+        function getBtn() {
+            //获取 方式1***** getItem("key")
+            //获取 方式2***** sessionStorage.属性
+            var user = sessionStorage.getItem("user")
+            // 把压缩的 JSON字符串解析成JSON 对象
+            var useObj = JSON.parse(user)
+            showInfo.innerHTML = `年份:${sessionStorage.getItem("year")+10},  <br>
+            日期:${sessionStorage.getItem("fullYear")},  <br>
+            用户信息:${ useObj.name },  <br>
+             天气:${sessionStorage.weather}
+            `
+        }
+        // 修改
+        function modifyBtn() {
+            sessionStorage.weather = "六月的雨 27度"
+            sessionStorage.setItem("fullYear","2022年-6月2号")
+        }
+        // 删除
+        function deleteBtn() {
+            // 删除指定的key 和对应的 值
+            // sessionStorage.removeItem("key")
+            sessionStorage.removeItem("year")
+            // 清空
+            // sessionStorage.clear()
+        }
+
+    </script>
+</body>
+
+</html>

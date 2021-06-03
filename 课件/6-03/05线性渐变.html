@@ -1,0 +1,43 @@
+<!--
+ * @Description: 微信 YZS43507802
+ * @version: 1.0
+ * @Company: 
+ * @Author: yinZhaoSheng
+ * @Date: 2021-04-07 17:07:10
+ * @LastEditors: yinZhaoSheng
+ * @LastEditTime: 2021-06-03 16:38:01
+ * @FilePath: \H5+CSS3\H5-api\08canvas\05线性渐变.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>渐变</title>
+    <style>
+        canvas{
+            margin:50px 50px;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="myCanvas" width="500" height="300" style="border:1px solid #000000">
+        浏览器太lower
+    </canvas>
+    <script>
+        var mycanvas = document.querySelector("canvas");
+        var ctx = mycanvas.getContext("2d");
+        // 创建渐变
+        // 当我们使用渐变对象，必须使用两种或两种以上的停止颜色。
+// addColorStop()方法指定颜色停止，参数使用坐标来描述，可以是0至1.
+//     createRadialGradient
+        var grd = ctx.createLinearGradient(0,0,100,0)
+        grd.addColorStop(0,"red")
+        grd.addColorStop(1,"black")
+        // 填充渐变
+        ctx.fillStyle = grd
+        ctx.fillRect(10,10,150,80)
+    </script>
+</body>
+</html>

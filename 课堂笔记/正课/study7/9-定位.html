@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>定位</title>
+</head>
+<body>
+    <div id="showInfo"></div>
+</body>
+<script>
+    var showInfo = document.querySelector("#showInfo")
+    /*
+        定位  卫星  GPS  北斗
+        WiFi  基站   IP
+        因为定位属于 隐私 所以需要获得用户的同意  所以有弹出提示
+
+    */ 
+   if(navigator.geolocation){
+    //    支持
+    // getCurrentPosition 获取当前位置
+        navigator.geolocation.getCurrentPosition(secess,errow)
+    }else{
+    // 不支持
+        alert('抱歉，你不太行')
+    }
+   function secess(position){
+    
+    //因我们知道这个函数是获取当前位置成功的回调
+    //也就是说这个函数里面JS应该会有参数告诉我们位置信息
+    //但是我们又不知道都有哪些信息﹐
+    //这个时候直接打印这个arguments
+    //    打印函数的参数
+    console.log("成功",arguments);
+    // latitude 纬度  0 - 90
+    // longitude 经度 0 - 180
+    showInfo.innerHTML = `经度：${position.coords.longitude}<br>
+    纬度：${position.coords.latitude}
+    `
+
+    // 经纬度转换为地图 借助开放平台   百度地图  高德地图
+   }
+   function errow(){
+    //    打印函数的参数
+    console.log("失败",arguments);
+    }
+</script>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>canvas</title>
+    <style>
+        canvas{
+            border: 1px solid red;
+            /* 不要设置宽高 */
+        }
+    </style>
+</head>
+<body>
+    <canvas width="300" height="300"> 新标签 不支持 才显示</canvas>
+    <!-- 
+        canvas 是一个新标签 具有 height weight属性
+        ！！！！不要通过css样式来设置宽高  会有问题
+        画布  但是想要具备画布的功能 还需要js来写
+     -->
+     <script>
+        //  1. canvas 标签 属性设置宽高
+        //  2.获取画布对象
+        //  3.获取画布环境
+
+        //  获取画布对象
+         var myCanvas = document.querySelector('canvas')
+        //  获取画布环境
+        var ctx = myCanvas.getContext("2d")
+        // 在画布上 定位一个矩形 （x  ，y， 宽， 高）
+        // x  y  相对于画布左上角的位置
+        // 画笔颜色
+        ctx.fillStyle="red"
+        // ctx.fillRect(10,10,50,50)
+
+        for (let i = 0; i < 10; i++) {
+            ctx.fillRect(i*30,i*30,30,30)
+            
+        }
+        for (let i = 10; i >0; i--) {
+            ctx.fillRect(i*30,i*30,30,30)
+            
+        }
+        
+     </script>
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!--
+ * @Description: 微信 YZS43507802
+ * @version: 1.0
+ * @Company: 梦想
+ * @Author: yinZhaoSheng
+ * @Date: 2021-06-03 09:31:04
+ * @LastEditors: yinZhaoSheng
+ * @LastEditTime: 2021-06-03 09:56:40
+ * @FilePath: \H5+CSS3\06-03\01完整的定位地图.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>定位地图</title>
+    <style>
+         #myBaiduMap{
+             height:500px;
+             width: 600px;
+         }
+    </style>
+</head>
+<body>
+    <div id="myBaiduMap"></div>
+    <!-- 1. 引用 百度地图  -->
+    <!-- 2. 创建容器标签  -->
+    <!-- 3. 设置容器标签的高 和其他属性 -->
+    <!-- 4. 创建百度地图 对象 -->
+    <!-- 5. 设置中心点 -->
+    <script src="https://api.map.baidu.com/api?type=webgl&v=1.0&ak=AG8pR7BDx7cSBzD9ykA7OWKQCs8QO8LP"></script>
+    <script>
+// ak   application  key
+//API   application  interface 接口
+        if(navigator.geolocation){
+            navigator.geolocation.getCurrentPosition(succCB,errCB)
+        }else{
+            alert("不支持")
+        }
+        function succCB(pos){
+            // pos.coodrs.latitude 维度
+            // pos.coodrs.longitude 经度
+            console.log("位置信息",pos);
+            var jingDu = pos.coords.longitude
+            var weidu = pos.coords.latitude
+            var myMap =  new BMapGL.Map('myBaiduMap');
+            var point1 = new BMapGL.Point(jingDu, weidu);
+            myMap.centerAndZoom(point1, 15);
+        }
+        function errCB(err){
+            console.log("失败:",err);
+        }
+    </script>
+</body>
+</html>

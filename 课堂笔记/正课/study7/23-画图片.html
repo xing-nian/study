@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>画图片</title>
+    <style>
+        img{
+            width: 800px;
+        }
+        canvas{
+            border: 1px solid red;
+        }
+    </style>
+</head>
+<body>
+    <!-- <img src="./img/阿尔卑斯山风景4k高清壁纸3840x2160_彼岸图网.jpg" alt=""><br> -->
+    <canvas width="800" height="520">
+        敲个捶捶
+    </canvas>
+    <video src="./mp4/1407101.mp4"></video>
+    <script>
+        // 图片对象
+        var img = new Image();
+        img.src = "./img/阿尔卑斯山风景4k高清壁纸3840x2160_彼岸图网.jpg"
+        
+         var mycanvas = document.querySelector('canvas')
+         var ctx = mycanvas.getContext('2d');
+        //  
+         img.onload = function(){
+            ctx.drawImage(img,0,0,800,520)
+         }
+    </script>
+</body>
+</html>

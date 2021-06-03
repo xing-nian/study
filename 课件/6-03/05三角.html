@@ -1,0 +1,62 @@
+<!--
+ * @Description: 微信 YZS43507802
+ * @version: 1.0
+ * @Company: 梦想
+ * @Author: yinZhaoSheng
+ * @Date: 2021-06-03 11:19:10
+ * @LastEditors: yinZhaoSheng
+ * @LastEditTime: 2021-06-03 11:52:48
+ * @FilePath: \H5+CSS3\06-03\05三角.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>canvas</title>
+    <style>
+        #myCanvas {
+            border: 1px solid red;
+            margin-left: 100px;
+            /* 不要在这设置宽高 */
+            /* width: 600px; */
+        }
+    </style>
+</head>
+
+<body>
+    <canvas height="300" width="300" id="myCanvas"> 新标签不支持 才显示</canvas>
+    <!-- 
+        canvas 是一个新标签具备 height width属性
+        ！！！！不要通过 css样式来设置宽高 会有问题
+        画布  但是想要具备画布的功能 还需要JS来写
+
+        1.  canvas 标签 属性设置 宽高
+        2. 获取画布对象
+        3. 获取画布环境
+     -->
+    <script>
+        //  获取画布对象
+        var myCanvas = document.querySelector("#myCanvas")
+        //  获取画布环境 画笔
+        var ctx = myCanvas.getContext("2d");
+        // 开始路径
+        ctx.strokeStyle   = "red"
+        //设置线段的 宽 不带单位
+        ctx.lineWidth = 10
+        // 移动
+        ctx.moveTo(0,0)
+        ctx.lineTo(200,100)
+        ctx.lineTo(300,100)
+        ctx.lineTo(0,0)
+        ctx.stroke()
+    
+        // ctx.fillStyle = "red"
+        // ctx.fillRect(100,100,200,200)
+     
+    </script>
+</body>
+
+</html>

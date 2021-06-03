@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        /**
+         * 二进制     0 1 
+         * 八进制     0 1 2 3 4 5 6 7
+         * 十进制     0 1 2 3 4 5 6 7 8 9 
+         * 十六进制   0 1 2 3 4 5 6 7 9 a b c d e f
+         * 
+         * 
+         *   123 权重 百十个
+         *   10^2*1 + 10^1*2 + 10^0*3 
+         *  编程里面 0开头表示八进制   010  8
+         *          0x开头表示十六进制 0xa 10
+         * 
+         * 
+         */
+        // parseInt(数字，进制)
+        console.log(parseInt(10, 2));
+        console.log(parseInt(10, 8));
+        console.log(parseInt(10, 10));
+        console.log(parseInt(10, 16));
+    // 因为计算机只认识二进制
+    // 所以 计算机在进行计算的时候
+    // 是先把所有的数字转为二进制 ，进行结算得出 结果（二进制）
+    // 再把这个二进制的结果转为10进制 
+
+    // 所有在计算的时候就会 在 2个转换的过程有不准确的 情况产生
+
+    // 实际开发怎么避免
+    // 因为 这个牵扯到计算保存
+    // 钱  单位 分 或者  最少数据库存的都是分
+    // 1.5元   15角 150分   
+    </script>
+</body>
+
+</html>

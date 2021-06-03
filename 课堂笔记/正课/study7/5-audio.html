@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>audio</title>
+</head>
+<body>
+    <audio src="./mp3/李白.mp3" controls></audio>
+    <button onclick="playBtn()">播放</button>
+    <button onclick="pauseBtn()">暂停</button>
+    <button onclick="volumeBigBtn()">声音放大</button>
+    <button onclick="volumeSmallBtn()">声音减小</button>
+    <button  onclick="rateBtn()">倍速+</button>
+    <button  onclick="rateBtn2()">倍速-</button>
+    <button onclick="quickBtn()">快进十秒</button>
+    <button onclick=" muteBtn()" >静音</button>
+    <button onclick="resetBtn()">重播</button>
+    
+    <div class="showVo"></div>
+</body>
+<script>
+        var audio = document.querySelector("audio");
+        var showVo = document.querySelector(".showVo");
+        console.dir(audio);
+        audio.volume =0.5;
+    // 播放按钮
+    function playBtn(){
+        audio.play();
+    }
+    // 暂停
+    function pauseBtn(){
+        audio.pause();
+    }
+    // 音量增大 
+    function volumeBigBtn(){
+      audio.volume = audio.volume< 1?audio.volume +0.1 :1;
+      audio.muted = false
+      if (audio.volume >=0.9) {
+          alert('声音已经最大了')
+      }
+      showVo.innerHTML=audio.volume;
+    }
+     // 音量减小
+     function volumeSmallBtn(){
+      audio.volume = audio.volume>0 ?audio.volume -0.1 :0;
+      audio.muted = false
+      if (audio.volume <=0.1) {
+          alert('声音已经最小了')
+      }
+      showVo.innerHTML=audio.volume;
+    }
+    function rateBtn(){
+        audio.playbackRate +=0.1
+        // audio.playbackRate -= 0.1
+        showVo.innerHTML ="倍速"+audio.playbackRate
+    }
+    function rateBtn2(){
+        audio.playbackRate -=0.1
+        // audio.playbackRate -= 0.1
+        showVo.innerHTML ="倍速"+audio.playbackRate
+    }
+    function quickBtn(){
+        audio.currentTime += 10
+        showVo.innerHTML ="时间"+audio.currentTime
+    }
+    function muteBtn(){
+        audio.muted = true
+        showVo.innerHTML ="静音状态"+audio.muted
+    }
+    function resetBtn(){
+        // 重新加载音频元素
+        audio.load();
+        audio.paly();
+    }
+</script>
+</html>

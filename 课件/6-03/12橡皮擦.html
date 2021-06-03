@@ -1,0 +1,39 @@
+<!--
+ * @Description: 微信 YZS43507802
+ * @version: 1.0
+ * @Company: 梦想
+ * @Author: yinZhaoSheng
+ * @Date: 2021-06-03 16:07:49
+ * @LastEditors: yinZhaoSheng
+ * @LastEditTime: 2021-06-03 16:12:47
+ * @FilePath: \H5+CSS3\06-03\12橡皮擦.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>橡皮擦</title>
+    <style>
+        canvas{
+            border:1px solid red;
+        }
+    </style>
+</head>
+<body>
+      <canvas height="600" width="600">
+          看见就是你不支持
+      </canvas>
+      <script>
+        /** @type {HTMLCanvasElement} */
+           var myCanvas = document.querySelector("canvas")
+           var ctx = myCanvas.getContext("2d")
+           ctx.fillRect(100,100,100,100)
+        //    清除功能(x,y,宽,高)
+           ctx.clearRect(90,100,10,10)
+           ctx.clearRect(150,110,10,10)
+
+      </script>
+</body>
+</html>

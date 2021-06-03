@@ -1,0 +1,35 @@
+<!--
+ * @Description: 微信 YZS43507802
+ * @version: 1.0
+ * @Company: 梦想
+ * @Author: yinZhaoSheng
+ * @Date: 2021-06-03 10:02:38
+ * @LastEditors: yinZhaoSheng
+ * @LastEditTime: 2021-06-03 10:29:17
+ * @FilePath: \H5+CSS3\06-03\01地点检索.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>地点检索</title>
+    <link rel="stylesheet" href="">
+</head>
+<body>
+    <!-- get请求 -->
+    <img src="" alt="">
+    <script>
+        // 赋值刚才callback=后面的值
+         function showInfo(res){
+            console.log(res);
+            //把 results 数据显示到界面上
+         } 
+        //  这就是所谓的JSONP 能解决跨域问题
+    </script>
+    <!-- 地址后面跟上&callback=值 -->
+    <script src="http://api.map.baidu.com/place/v2/search?query=ATM%E6%9C%BA&tag=%E9%93%B6%E8%A1%8C&region=%E9%83%91%E5%B7%9E&output=json&ak=AG8pR7BDx7cSBzD9ykA7OWKQCs8QO8LP&callback=showInfo"></script>
+
+</body>
+</html>

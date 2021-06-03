@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>canvas</title>
+    <style>
+        canvas{
+            border: 1px solid red;
+            /* 不要设置宽高 */
+        }
+    </style>
+</head>
+<body>
+    <canvas width="500" height="500"> </canvas>
+  
+     <script>
+      
+         var myCanvas = document.querySelector('canvas')
+        //  获取画布环境
+        var ctx = myCanvas.getContext("2d")
+        
+        ctx.strokeStyle="rgba(35,224,130,0.7)"
+    // 开始路径 不带参数
+       ctx.beginPath()
+    // moveTo是起点
+        ctx.moveTo(30,30)
+        ctx.lineTo(300,300)
+        ctx.lineTo(30,300)
+        // 闭合路径  会把点的末尾 和 起点连起来
+        ctx.closePath()
+        ctx.stroke()
+
+        // moveTO()和之前的点不连起来
+        ctx.beginPath()
+        ctx.moveTo(30,30)
+        ctx.lineTo(300,30)
+        ctx.lineTo(300,300)
+        ctx.closePath()
+        ctx.stroke()
+       
+     </script>
+</body>
+</html>

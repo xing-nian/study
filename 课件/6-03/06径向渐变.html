@@ -1,0 +1,42 @@
+<!--
+ * @Description: 微信 YZS43507802
+ * @version: 1.0
+ * @Company: 
+ * @Author: yinZhaoSheng
+ * @Date: 2021-04-07 17:07:10
+ * @LastEditors: yinZhaoSheng
+ * @LastEditTime: 2021-04-07 17:23:04
+ * @FilePath: /尹照胜H5+CSS3/01canvas/06径向渐变.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>渐变</title>
+    <style>
+        canvas{
+            margin:50px 50px;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="myCanvas" width="500" height="300" style="border:1px solid #000000">
+        浏览器太lower
+    </canvas>
+    <script>
+        var mycanvas = document.querySelector("canvas");
+        var ctx = mycanvas.getContext("2d");
+        // 创建渐变
+        // 当我们使用渐变对象，必须使用两种或两种以上的停止颜色。
+// addColorStop()方法指定颜色停止，参数使用坐标来描述，可以是0至1.
+        var grd = ctx.createRadialGradient(75,45,5,90,60,100)
+        grd.addColorStop(0,"red")
+        grd.addColorStop(1,"black")
+        // 填充渐变
+        ctx.fillStyle = grd
+        ctx.fillRect(20,10,150,80)
+    </script>
+</body>
+</html>

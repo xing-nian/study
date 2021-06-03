@@ -1,0 +1,14 @@
+怎么打开终端
+    windows +R  输入cmd
+
+   或者开始菜单右键  powerShell
+   或者一些开发工具内嵌的终端
+
+   再或者 终端 app  
+
+1. 查看 ip地址  ipconfig
+2. 查看网络是否通
+   ping 192.168.202.2  
+   ping  baidu.com
+3. cls  清屏
+ clear screen

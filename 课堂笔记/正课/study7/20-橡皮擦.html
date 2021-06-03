@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>橡皮擦</title>
+    <style>
+        canvas{
+            border: 1px solid red;
+        }
+    </style>
+</head>
+<body>
+    <canvas width="500" height="500">看见就是你不学习</canvas>
+    <script>
+        var myCanvas = document.querySelector('canvas')
+        //  获取画布环境
+        var ctx = myCanvas.getContext("2d")
+        ctx.fillRect(100,100,100,100)
+        // 清除功能(x,y,宽,高)
+        // ctx.clearRect(90,100,100,100)
+        ctx.clearRect(150,150,10,10)
+    </script>
+</body>
+</html>

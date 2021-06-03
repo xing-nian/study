@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>定位</title>
+</head>
+<style>
+   body,
+    html,
+    #container {
+        overflow: hidden;
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        font-family: "微软雅黑";
+    }
+    </style>
+<body>
+    <div id="container"></div>
+</body>
+<script src="https://api.map.baidu.com/api?type=webgl&v=1.0&ak=QFuttil6cGdsc0aL3OGglfLHd40wS85B"></script>
+
+<script>
+
+   if(navigator.geolocation){
+    //    支持
+    // getCurrentPosition 获取当前位置
+        navigator.geolocation.getCurrentPosition(secess)
+    }
+   function secess(position){
+    var x = position.coords.longitude;
+    var y = position.coords.latitude
+
+    var map = new BMapGL.Map('container'); // 创建Map实例
+    map.centerAndZoom(new BMapGL.Point(x,y), 17); // 初始化地图,设置中心点坐标和地图级别
+    map.enableScrollWheelZoom(true); // 开启鼠标滚轮缩放
+
+
+    // 经纬度转换为地图 借助开放平台   百度地图  高德地图
+   }
+
+
+</script>
+</html>

@@ -1,0 +1,80 @@
+<!--
+ * @Description: 微信 YZS43507802
+ * @version: 1.0
+ * @Company: 梦想
+ * @Author: yinZhaoSheng
+ * @Date: 2021-06-03 11:19:10
+ * @LastEditors: yinZhaoSheng
+ * @LastEditTime: 2021-06-03 15:20:32
+ * @FilePath: \H5+CSS3\06-03\10for.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>canvas</title>
+    <style>
+        #myCanvas {
+            border: 1px solid red;
+            margin-left: 100px;
+            /* 不要在这设置宽高 */
+            /* width: 600px; */
+        }
+    </style>
+</head>
+
+<body>
+    <canvas id="myCanvas"> 新标签不支持 才显示</canvas>
+    <!-- 
+        canvas 是一个新标签具备 height width属性
+        ！！！！不要通过 css样式来设置宽高 会有问题
+        画布  但是想要具备画布的功能 还需要JS来写
+
+        1.  canvas 标签 属性设置 宽高
+        2. 获取画布对象
+        3. 获取画布环境
+     -->
+    <script>
+        /** @type {HTMLCanvasElement} */
+        //  获取画布对象
+        var myCanvas = document.querySelector("#myCanvas")
+        // 通过属性的方式设置画布大小
+        myCanvas.width = 500
+        myCanvas.height = 500
+        //  获取画布环境 画笔
+        var ctx = myCanvas.getContext("2d");
+        var w = ctx.canvas.width;
+        var h = ctx.canvas.height;
+        /*分成几等分*/
+        var num = 5;
+        /*一份多少弧度*/
+        var angle = Math.PI * 2 / num;
+        /*原点坐标*/
+        var x0 = w / 2;
+        var y0 = h / 2;
+        /*获取随机颜色*/
+        var getRandomColor = function () {
+            var r = Math.floor(Math.random() * 256);
+            var g = Math.floor(Math.random() * 256);
+            var b = Math.floor(Math.random() * 256);
+            return 'rgb(' + r + ',' + g + ',' + b + ')';
+        }
+        /*上一次绘制的结束弧度等于当前次的起始弧度*/
+        //var startAngle = 0;
+        for (var i = 0; i < num; i++) {
+            var startAngle = i * angle;
+            var endAngle = (i + 1) * angle;
+            ctx.beginPath();
+            ctx.moveTo(x0, y0);
+            ctx.arc(x0, y0, 150, startAngle, endAngle);
+            /*随机颜色*/
+            ctx.fillStyle = getRandomColor();
+            ctx.fill();
+        }
+    </script>
+</body>
+
+</html>

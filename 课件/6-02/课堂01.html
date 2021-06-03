@@ -1,0 +1,104 @@
+<!--
+ * @Description: 微信 YZS43507802
+ * @version: 1.0
+ * @Company: 梦想
+ * @Author: yinZhaoSheng
+ * @Date: 2021-06-02 09:43:34
+ * @LastEditors: yinZhaoSheng
+ * @LastEditTime: 2021-06-02 11:47:41
+ * @FilePath: \H5+CSS3\H5-api\03Video-audio\课堂01.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- 浏览器支持的格式  autoplay-->
+    <audio src="./李白.mp3" controls> 浏览器不支持</audio> <br>
+
+    <button onclick="playBtn()">播放</button>
+    <button onclick="pauseBtn()">暂停</button>
+    <button onclick="volumeBigBtn()">音量+</button>
+    <button onclick="volumeSmBtn()">音量-</button>
+    <button onclick="rateBtn()">倍速</button>
+    <button onclick="quickBtn()">快进10秒</button>
+    <button onclick="muteBtn()">静音</button>
+    <button onclick="resetBtn()">重播</button>
+
+    <div id="showVo"></div>
+    <script>
+        // 1. 获取 audio 对象
+        var audio = document.querySelector("audio")
+        console.log(audio);
+        // 查看标签的属性
+        console.dir(audio);
+        window.onload = function () {
+            console.log("时长 onload:", audio.duration);
+        }
+        console.log("时长:", audio.duration);
+        // 音频的 一些钩子函数
+        audio.oncanplay = function () {
+            console.log("时长 oncanplay:", audio.duration);
+        }
+        // 播放
+        function playBtn() {
+            // JS 自带的API/ 方法
+            audio.play()
+        }
+        //暂停
+        function pauseBtn() {
+            audio.pause()
+        }
+        //  声音放大 0 -1
+        function volumeBigBtn() {
+            audio.volume = audio.volume < 1 ? audio.volume + 0.1 : 1
+            if (audio.volume >= 1) {
+                alert("声音已经最大了")
+            }
+            showVo.innerHTML = audio.volume
+        }
+        // 声音减小
+        function volumeSmBtn() {
+            audio.volume = audio.volume > 0 ? audio.volume - 0.1 : 0
+            if (audio.volume <= 0) {
+                alert("声音已经最小了")
+            }
+            showVo.innerHTML = audio.volume
+        }
+        // 倍速
+        function rateBtn() {
+            // 最高是16倍
+            audio.playbackRate += 0.1
+            // audio.playbackRate -= 0.1
+            showVo.innerHTML = "倍速" + audio.playbackRate
+        }
+        // 快进指定的秒数
+        function quickBtn() {
+            // 单位是秒
+            showVo.innerHTML = "时间:" + audio.currentTime
+            audio.currentTime += 10
+        }
+        // 静音
+        function muteBtn() {
+            audio.muted = true
+            showVo.innerHTML = "静音状态:" + audio.muted
+        }
+        //重播
+        function resetBtn() {
+            // 重新加载音频元素
+            audio.load()
+            audio.play()
+        }
+
+    </script>
+
+
+</body>
+
+</html>

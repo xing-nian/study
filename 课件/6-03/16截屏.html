@@ -1,0 +1,41 @@
+<!--
+ * @Description: 微信 YZS43507802
+ * @version: 1.0
+ * @Company: 梦想
+ * @Author: yinZhaoSheng
+ * @Date: 2021-06-03 17:08:26
+ * @LastEditors: yinZhaoSheng
+ * @LastEditTime: 2021-06-03 17:19:23
+ * @FilePath: \H5+CSS3\06-03\16截屏.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>canvas</title>
+    <style>
+        canvas{
+            border: 1px solid red;
+        }
+    </style>
+</head>
+<body>
+      <video src="./1407101.mp4" controls id="vid"
+      width="500" height="300"
+      ></video>
+      <button onclick="caputre()">截屏</button>
+      <canvas width="500" height="300"> 看不到我 看不到我</canvas>
+      <script>
+          var myCanvas = document.querySelector("canvas")
+          var ctx = myCanvas.getContext("2d")
+        //   截屏按钮
+          function caputre(){
+              //截图的大小是 资源的原始大小
+            //   填写宽高会等比缩放截图
+              ctx.drawImage(vid,10,10,500,300)
+          }
+      </script>
+</body>
+</html>

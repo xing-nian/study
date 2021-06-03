@@ -12,11 +12,14 @@
     <button onclick="pauseBtn()">暂停</button>
     <button onclick="volumeBigBtn()">声音放大</button>
     <button onclick="volumeSmallBtn()">声音减小</button>
+    
     <div class="showVo"></div>
 </body>
 <script>
+    
         var audio = document.querySelector("audio");
         var showVo = document.querySelector(".showVo");
+        console.dir(audio);
     // 播放按钮
     function playBtn(){
         audio.play();
@@ -47,5 +50,6 @@
         }
         showVo.innerHTML = audio.volume
     }
+ 
 </script>
 </html>

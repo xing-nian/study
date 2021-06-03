@@ -1,0 +1,45 @@
+<!--
+ * @Description: 微信 YZS43507802
+ * @version: 1.0
+ * @Company: 梦想
+ * @Author: yinZhaoSheng
+ * @Date: 2021-06-03 16:46:41
+ * @LastEditors: yinZhaoSheng
+ * @LastEditTime: 2021-06-03 17:01:47
+ * @FilePath: \H5+CSS3\06-03\14图片.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>画图片</title>
+    <style>
+        canvas {
+            border: 1px solid red;
+        }
+    </style>
+</head>
+
+<body>
+    <img src="./1.jpeg" alt="" id="img1">
+    <canvas id="canvas" width="700" height="700">
+        看的你证明你不行
+    </canvas>
+    <script>
+        var img = document.querySelector("#img1")
+        var myCanvas = document.querySelector("canvas")
+        var ctx = myCanvas.getContext("2d");
+        // 在img内容加载完毕的时候在画
+        img.onload = function(){
+            // drawImage(图片资源,x,y,宽,高)
+            ctx.drawImage(img,0,0,400,500)
+        }
+
+        
+    </script>
+</body>
+
+</html>

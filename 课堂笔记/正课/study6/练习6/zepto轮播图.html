@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>zepto轮播图</title>
+    <style>
+        .wrap{
+            width: 290px;
+            height: 250px;
+            overflow: hidden;
+        }
+        .slide{
+           width: 285px;
+           display: inline-block;
+        }
+        img{
+            width: 280px;
+            height: 250px;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <div class="wrapper">
+            <div class="slide"><img src="./img/1.jpg" alt=""></div>
+            <div class="slide"><img src="./img/2.jpg" alt=""></div>
+            <div class="slide"><img src="./img/3.jpg" alt=""></div>
+            <div class="slide"><img src="./img/4.jpg" alt=""></div>
+            <div class="slide"><img src="./img/5.jpg" alt=""></div>
+        </div>
+</body>
+<script src="./js/zetop.js"></script>
+<script src="./js/touch.js"></script>
+<script>
+     $(".slide").swipeLeft(function(){
+        $(this).animate({
+        right:300,
+
+        })
+    })
+    $(".slide").eq(6).swipeRight(function(){
+        $(this).animate({
+        left:300,
+    })
+})
+</script>
+</html>

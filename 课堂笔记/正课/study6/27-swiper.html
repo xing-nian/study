@@ -43,13 +43,21 @@
     // 参数1 swiper 容器  
     // 参数2 配置信息
     new Swiper(".swiper-container",{
+        direction: 'vertical',
         loop:true,
         effect:"cube",
         // 分页器 就是轮播图下面那个点
         // 上面轮播分页  写的什么 复制
         pagination:".swiper-pagination",
         // 滚动条
-        scrollbar:".swiper-scrollbar"
+        scrollbar:".swiper-scrollbar",
+
+          // 如果需要前进后退按钮
+    nextButton: '.swiper-button-next',
+    prevButton: '.swiper-button-prev',
+    // 速度
+    speed:1000
     })
+
 </script>
 </html>

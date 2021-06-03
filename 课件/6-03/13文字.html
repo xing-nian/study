@@ -1,0 +1,61 @@
+<!--
+ * @Description: 微信 YZS43507802
+ * @version: 1.0
+ * @Company: 梦想
+ * @Author: yinZhaoSheng
+ * @Date: 2021-06-03 16:07:49
+ * @LastEditors: yinZhaoSheng
+ * @LastEditTime: 2021-06-03 16:34:30
+ * @FilePath: \H5+CSS3\06-03\13文字.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>文字</title>
+    <style>
+        canvas {
+            border: 1px solid red;
+        }
+    </style>
+</head>
+
+<body>
+    <canvas height="600" width="600">
+        看见就是你不支持
+    </canvas>
+    <script>
+        /** @type {HTMLCanvasElement} */
+        var myCanvas = document.querySelector("canvas")
+        var ctx = myCanvas.getContext("2d")
+        // 必须2个参数 中间空格隔开
+        ctx.font = "100px 楷体"
+        ctx.fillStyle = "red"
+        // 阴影模糊度   
+        ctx.shadowBlur = 10
+        //  阴影颜色
+        ctx.shadowColor = "green"
+        //    水平偏移 正值向右
+        ctx.shadowOffsetX = 10
+        //    竖直偏移 正值是向下
+        ctx.shadowOffsetY = 100
+        ctx.fillText("前端-74期", 100, 100)
+
+
+        ctx.shadowBlur = 1
+        //  阴影颜色
+        ctx.shadowColor = "red"
+        //    水平偏移 正值向右
+        ctx.shadowOffsetX = 5
+        //    竖直偏移 正值是向下
+        ctx.shadowOffsetY = 5
+        ctx.strokeStyle = "green"
+        ctx.strokeText("端午节 安康", 40, 400)
+
+    </script>
+</body>
+
+</html>

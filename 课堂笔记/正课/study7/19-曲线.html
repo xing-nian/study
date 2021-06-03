@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>canvas-曲线</title>
+    <style>
+        canvas{
+            border: 1px solid red;
+            /* 不要设置宽高 */
+        }
+    </style>
+</head>
+<body>
+    <canvas width="500" height="500"> </canvas>
+  
+     <script>
+      
+         var myCanvas = document.querySelector('canvas')
+        //  获取画布环境
+        var ctx = myCanvas.getContext("2d")
+
+        // ctx.beginPath();
+        // ctx.moveTo(10,10)
+        // // ctx.quadraticCurveTo (弯曲程度x，弯曲程度y，x，y)
+        // ctx.quadraticCurveTo(3,500,300,250)
+        // ctx.closePath()
+        // ctx.stroke()
+
+        
+        ctx.beginPath();
+        ctx.moveTo(10,300)
+        //贝塞尔曲线 (起始点x，起始点y，倾斜度x，倾斜度y，终点x，终点y) 
+        ctx.bezierCurveTo(0,100,300,300,300,100)
+        ctx.stroke()
+      
+
+  
+   
+     </script>
+</body>
+</html>

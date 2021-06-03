@@ -1,0 +1,64 @@
+<!--
+ * @Description: 微信 YZS43507802
+ * @version: 1.0
+ * @Company: 梦想
+ * @Author: yinZhaoSheng
+ * @Date: 2021-06-02 11:06:55
+ * @LastEditors: yinZhaoSheng
+ * @LastEditTime: 2021-06-02 11:28:54
+ * @FilePath: \H5+CSS3\H5-api\03Video-audio\jq-JS.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var oimg = document.querySelector("img")
+        console.log(oimg);
+        /*
+window.onload没有简化写法
+$(document).ready(function(){})可以简写成$(function(){}
+*/
+    </script>
+</head>
+
+<body>
+    <img src="./1.jpg" alt="">
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.0/jquery.js"></script>
+    <script>
+
+        var oimg = document.querySelector("img")
+        console.log("下边：", oimg.width);
+            // 比如图片 标签加载了，但是图片内容没出现，所以获取不到宽高
+            // 比如音频 视频标签加载了，但是 视频 音频内容没加载
+        window.onload = function () {
+            // 生命周期方法 
+            // 页面标签 和内容都加载完毕的时候执行
+            // 比如图片 标签加载了，   而且图片内容也加载了
+            // 比如音频 视频标签加载了，而且视频 音频内容也加载了
+            console.log("onload ：", oimg.width);
+            alert("js1-1-1")
+        }
+        // onload会覆盖，只有一个生效
+        window.onload = function(){
+            alert("js-2-2-2")
+        }
+        // JQ的 标签加载完毕 
+        // 可以写多个
+        $(function(){
+            console.log("jQ",$("img").width())
+            alert("jQ 1-1--1")
+            
+        })
+        $(function(){
+            alert("jQ  -2-2-")
+            
+        })
+    </script>
+</body>
+
+</html>

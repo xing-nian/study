@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <img src="./img/阿尔卑斯山风景4k高清壁纸3840x2160_彼岸图网.jpg" alt="">
+    <script src="../study4/jquery.js"></script>
+    <script>
+        var oimg = document.querySelector("img")
+        console.log("下边：",oimg.width);
+         // 比如图片 标签加载了 但是图片内容没出现，所以获取不到宽高
+            // 比如音频 视频标签加载了，但是音频  视频内容没加载
+        window.onload = function(){
+            // 生命周期方法
+            // 页面标签 和内容加载完毕的时候执行
+            // 比如图片 标签加载了 图片内容也加载了
+            // 比如音频视频 标签加载了 内容也加载了
+           console.log("onload:",oimg.width);
+           alert("js-1-1")
+        }
+        // onload会覆盖  只有一个生效
+        window.onload = function(){
+            alert("js-2-2")
+        }
+      
+
+        // jQ 标签加载完毕
+        // 可以写多个
+        $(function(){
+            console.log("jQ",$("img").width());
+            alert("JQ 1-1")
+        })
+        $(function(){
+            alert("jQ-2-2")
+        })
+    </script>
+</body>
+
+</html>

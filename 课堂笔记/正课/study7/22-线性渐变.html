@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>文字</title>
+    <style>
+        canvas{
+            border: 1px solid red;
+        }
+    </style>
+</head>
+<body>
+    <canvas width="500" height="500">看见就是你不学习</canvas>
+    <script>
+        var myCanvas = document.querySelector('canvas')
+        //  获取画布环境
+        var ctx = myCanvas.getContext("2d")
+       // 渐变方向 (右 ,下 , 左 ,上  ) 
+        var grd = ctx.createLinearGradient(0,0,0,100)
+        grd.addColorStop(0,"red")
+        grd.addColorStop(1,"rgba(164,130,230,0.8)")
+        // 填充渐变
+        ctx.fillStyle = grd
+        ctx.fillRect(10,10,200,300)
+    </script>
+</body>
+</html>

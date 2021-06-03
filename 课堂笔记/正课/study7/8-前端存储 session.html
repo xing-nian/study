@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>前端存储</title>
+</head>
+<body>
+     <button onclick="saveBtn()">存储/增加</button>
+     <button onclick="getBtn()">获取</button>
+     <button onclick="modifyBtn()">修改</button>
+     <button onclick="deleteBtn()">删除</button>
+     <div class="showInfo"></div>
+</body>
+<script>
+var showInfo = document.querySelector(".showInfo")
+    // 以key-value 形式存储  只能存储字符串
+    // 存储
+    //    第一种方式
+       function  saveBtn(){
+        window.sessionStorage.setItem('year',2021)
+        window.sessionStorage.setItem('fullyear','2021-6')
+    //    第二种方式
+    // sessionStorage.属性=属性值
+       window.sessionStorage.weather= "晴,28°"
+       var user = {
+           name:"前端74",
+           num:56
+       }
+      var userStr = JSON.stringify(user)
+      window.sessionStorage.setItem("user",userStr)
+     }
+     
+    //  获取
+       function  getBtn(){
+            var user = sessionStorage.getItem("user")
+            var useObj =JSON.parse(user)
+
+           showInfo.innerHTML = `年份:${window.sessionStorage.getItem("year")+10},<br>
+           日期：${sessionStorage.getItem("fullyear")},<br>
+           用户信息:${useObj.name},<br>
+           天气:${sessionStorage.weather}
+           `
+         
+        }
+    // 修改  
+        function  modifyBtn(){
+         sessionStorage.weather = "三"
+         sessionStorage.setItem("fullyear","勾八")
+        }
+    // 删除
+        function  deleteBtn(){
+         sessionStorage.clear()
+         showInfo.innerHTML =""
+        }
+        
+</script>
+</html>

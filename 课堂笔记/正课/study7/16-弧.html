@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>canvas</title>
+    <style>
+        canvas{
+            border: 1px solid red;
+            /* 不要设置宽高 */
+        }
+    </style>
+</head>
+<body>
+    <canvas width="500" height="500"> </canvas>
+  
+     <script>
+      
+         var myCanvas = document.querySelector('canvas')
+        //  获取画布环境
+        var ctx = myCanvas.getContext("2d")
+
+
+        
+        ctx.strokeStyle="rgba(35,224,130,0.7)"
+        ctx.beginPath()
+        // 角度 和 弧度
+        //  半径 原点 弧度 
+        // ctx.arc(x,y,半径,开始弧度,结束弧度)
+        ctx.arc(250,250,100,0,Math.PI)
+        
+        function degToAngele(deg){
+            return deg*Math.PI /180
+        }
+        // ctx.closePath()
+        ctx.fillStyle = "Red"
+        ctx.fill()
+        // ctx.stroke()
+        ctx.beginPath()
+        ctx.arc(250,250,100,Math.PI,Math.PI*2)
+        ctx.fillStyle = "green"
+        ctx.fill()
+
+  
+   
+     </script>
+</body>
+</html>
